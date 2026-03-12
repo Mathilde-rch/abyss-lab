@@ -109,11 +109,46 @@ footer{
     padding:60px 0;
     font-size:0.9rem;
 }
+/* ===== VIDEO BACKGROUND ===== */
 
+.video-background{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    overflow:hidden;
+}
+
+.video-background video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:0.35;
+}
+
+/* overlay sombre pour lisibilité */
+
+.video-background::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.45);
+}
 </style>
 
 </head>
-<body>
+<body> 
+    <!-- BACKGROUND VIDEO -->
+<div class="video-background">
+  <video autoplay muted loop playsinline poster="assets/video/fallback.jpg">
+    <source src="assets/video/abyss.mp4" type="video/mp4">
+  </video>
+</div>
 
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-black py-3 thin-border">
