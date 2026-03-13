@@ -19,7 +19,55 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
       <span class="navbar-toggler-icon"></span>
     </button>
+/* ===== VIDEO BACKGROUND ===== */
 
+.video-background{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    overflow:hidden;
+}
+
+.video-background video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* overlay sombre pour lisibilité */
+
+.video-background::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.45);
+}
+</style>
+
+</head>
+<body> 
+    <!-- BACKGROUND VIDEO -->
+<div class="video-background">
+  <video autoplay muted loop playsinline preload="auto">
+    <source src="assets/video/abyss-lab.mp4" type="video/mp4">
+  </video>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark py-3">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">ABYSS LAB.</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
     <div class="collapse navbar-collapse justify-content-end" id="navmenu">
       <ul class="navbar-nav">
 
