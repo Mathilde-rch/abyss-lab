@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Découvrez les services Abyss Lab : brand content, UGC, réseaux sociaux et inbound marketing.">
+  <meta name="description" content="Abyss Lab conçoit des stratégies créatives et marketing 360° pour les marques hôtelières, restaurants et lieux lifestyle.">
   <title>Services | ABYSS LAB</title>
 
   <!-- Bootstrap CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/couture" rel="stylesheet">
 
-  <!-- Ton CSS -->
+  <!-- CSS global -->
   <link rel="stylesheet" href="assets/css/style.css">
 
   <style>
@@ -27,28 +27,15 @@
     }
 
     .section-space{
-      padding:100px 0;
+      padding:110px 0;
     }
 
     .thin-border{
-      border-bottom:1px solid #222;
+      border-bottom:1px solid rgba(255,255,255,0.12);
     }
 
-    /* ===== NAVBAR ===== */
-    .navbar{
-      position:relative;
-      z-index:20;
-      transition:background-color 0.3s ease, backdrop-filter 0.3s ease;
-    }
-
-    .navbar.scrolled{
-      background:rgba(0,0,0,0.72);
-      backdrop-filter:blur(10px);
-    }
-
-    .nav-link.active{
-      color:#fff !important;
-      font-weight:700;
+    .montserrat{
+      font-family:"Montserrat", sans-serif;
     }
 
     /* ===== VIDEO BACKGROUND ===== */
@@ -76,57 +63,196 @@
       z-index:1;
     }
 
-    /* ===== SERVICES PAGE ===== */
+    /* ===== NAVBAR ===== */
+    .navbar{
+      position:relative;
+      z-index:20;
+      transition:background-color 0.3s ease, backdrop-filter 0.3s ease;
+    }
+
+    .navbar.scrolled{
+      background:rgba(0,0,0,0.72);
+      backdrop-filter:blur(10px);
+    }
+
+    .nav-link.active{
+      color:#fff !important;
+      font-weight:700;
+    }
+
+    /* ===== HERO ===== */
+    .services-hero{
+      position:relative;
+      z-index:2;
+      padding:110px 0 70px;
+    }
+
+    .hero-kicker{
+      font-family:"Montserrat", sans-serif;
+      font-size:0.85rem;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      color:rgba(255,255,255,0.7);
+      margin-bottom:20px;
+    }
+
+    .hero-title{
+      font-size:3rem;
+      line-height:1.05;
+      letter-spacing:1px;
+      margin-bottom:24px;
+    }
+
+    .hero-text{
+      font-family:"Montserrat", sans-serif;
+      font-size:1.05rem;
+      line-height:1.9;
+      color:#f2f2f2;
+      max-width:760px;
+      margin-bottom:0;
+    }
+
+    /* ===== SECTION INTRO ===== */
+    .services-intro{
+      position:relative;
+      z-index:2;
+      padding:0 0 40px;
+    }
+
+    .intro-line{
+      border-top:1px solid rgba(255,255,255,0.12);
+      padding-top:35px;
+    }
+
+    .intro-text{
+      font-family:"Montserrat", sans-serif;
+      font-size:1rem;
+      line-height:1.9;
+      color:#f2f2f2;
+      max-width:920px;
+    }
+
+    /* ===== SERVICES ===== */
     .services-wrapper{
       position:relative;
       z-index:2;
     }
 
-    .page-title{
-      font-family:'couture', sans-serif;
-      font-size:2.2rem;
-      letter-spacing:1px;
-      margin-bottom:70px;
-    }
-
     .service-block{
-      margin-bottom:70px;
-    }
-
-    .service-text h2{
-      font-family:'couture', sans-serif;
-      font-size:1.4rem;
-      letter-spacing:0.5px;
-      margin-bottom:18px;
-      color:#fff;
-    }
-
-    .service-text p{
-      font-family:"Montserrat", sans-serif;
-      color:#f2f2f2;
-      line-height:1.8;
-      font-size:1rem;
-      margin-bottom:25px;
-      max-width:520px;
+      padding:70px 0;
+      border-top:1px solid rgba(255,255,255,0.12);
     }
 
     .service-media img,
     .service-media video{
       width:100%;
-      height:500px;
+      height:560px;
       object-fit:cover;
       display:block;
     }
 
+    .service-text{
+      padding-right:30px;
+    }
+
+    .service-index{
+      font-family:"Montserrat", sans-serif;
+      font-size:0.82rem;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      color:rgba(255,255,255,0.55);
+      margin-bottom:14px;
+    }
+
+    .service-title{
+      font-size:1.7rem;
+      line-height:1.15;
+      letter-spacing:0.6px;
+      margin-bottom:20px;
+    }
+
+    .service-highlight{
+      font-family:"Montserrat", sans-serif;
+      font-size:1rem;
+      line-height:1.8;
+      color:#fff;
+      margin-bottom:18px;
+    }
+
+    .service-highlight strong{
+      font-weight:700;
+      font-style:italic;
+    }
+
+    .service-description{
+      font-family:"Montserrat", sans-serif;
+      font-size:1rem;
+      line-height:1.9;
+      color:#f2f2f2;
+      margin-bottom:24px;
+    }
+
+    .service-list{
+      list-style:none;
+      padding:0;
+      margin:0 0 30px 0;
+    }
+
+    .service-list li{
+      font-family:"Montserrat", sans-serif;
+      color:#d9d9d9;
+      line-height:1.8;
+      margin-bottom:8px;
+      position:relative;
+      padding-left:18px;
+    }
+
+    .service-list li::before{
+      content:"—";
+      position:absolute;
+      left:0;
+      top:0;
+      color:rgba(255,255,255,0.7);
+    }
+
     .btn-outline-light{
       border-radius:30px;
-      padding:8px 25px;
+      padding:10px 24px;
       font-family:"Montserrat", sans-serif;
+      font-size:0.92rem;
+      letter-spacing:0.4px;
+    }
+
+    /* ===== CTA ===== */
+    .services-cta{
+      position:relative;
+      z-index:2;
+      padding:40px 0 110px;
+    }
+
+    .cta-box{
+      border-top:1px solid rgba(255,255,255,0.12);
+      border-bottom:1px solid rgba(255,255,255,0.12);
+      padding:55px 0;
+    }
+
+    .cta-title{
+      font-size:1.8rem;
+      line-height:1.2;
+      margin-bottom:18px;
+    }
+
+    .cta-text{
+      font-family:"Montserrat", sans-serif;
+      color:#f2f2f2;
+      line-height:1.9;
+      max-width:760px;
+      margin-bottom:28px;
     }
 
     /* ===== FOOTER ===== */
     footer{
-      border-top:1px solid rgba(255,255,255,0.15);
+      border-top:1px solid rgba(255,255,255,0.12);
       padding:60px 0;
       font-size:0.9rem;
       position:relative;
@@ -154,9 +280,12 @@
     }
 
     @media (max-width: 991px){
-      .page-title{
-        font-size:1.8rem;
-        margin-bottom:50px;
+      .hero-title{
+        font-size:2.2rem;
+      }
+
+      .service-text{
+        padding-right:0;
       }
 
       .service-media img,
@@ -165,21 +294,37 @@
       }
 
       .service-block{
-        margin-bottom:50px;
+        padding:50px 0;
       }
     }
 
     @media (max-width: 768px){
       .section-space{
-        padding:70px 0;
+        padding:80px 0;
       }
 
-      .service-text h2{
-        font-size:1.2rem;
+      .services-hero{
+        padding:80px 0 50px;
       }
 
-      .service-text p{
+      .hero-title{
+        font-size:1.8rem;
+      }
+
+      .hero-text,
+      .intro-text,
+      .service-description,
+      .service-highlight,
+      .cta-text{
         font-size:0.96rem;
+      }
+
+      .service-title{
+        font-size:1.3rem;
+      }
+
+      .cta-title{
+        font-size:1.4rem;
       }
     }
   </style>
@@ -187,7 +332,7 @@
 
 <body>
 
-  <!-- BACKGROUND VIDEO -->
+  <!-- VIDEO BACKGROUND -->
   <div class="video-background">
     <video autoplay muted loop playsinline preload="auto">
       <source src="assets/video/abyss-lab.mp4" type="video/mp4">
@@ -222,64 +367,199 @@
     </div>
   </nav>
 
-  <!-- CONTENT -->
-  <section class="section-space services-wrapper">
+  <!-- HERO -->
+  <section class="services-hero fade-in">
+    <div class="container">
+      <p class="hero-kicker">Abyss Lab — Services</p>
+      <h1 class="hero-title">Des stratégies créatives pensées pour révéler, structurer et amplifier votre marque.</h1>
+      <p class="hero-text">
+        Abyss Lab accompagne les marques hôtelières, restaurants, lieux lifestyle et projets ambitieux
+        dans la construction d’une image forte, désirable et cohérente. Notre approche mêle vision de marque,
+        direction artistique, contenu, rayonnement digital et activation opérationnelle.
+      </p>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="services-intro fade-in">
+    <div class="container">
+      <div class="intro-line">
+        <p class="intro-text">
+          Chaque accompagnement est pensé comme un écosystème. Nous ne créons pas seulement de beaux contenus :
+          nous structurons une présence, clarifions un positionnement, donnons de la profondeur à votre image
+          et transformons votre univers en levier de désirabilité, de visibilité et de croissance.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-wrapper">
     <div class="container">
 
-      <h1 class="page-title fade-in">SERVICES</h1>
-
+      <!-- SERVICE 1 -->
       <div class="row align-items-center gy-5 service-block fade-in">
-        <div class="col-12 col-lg-6 service-text">
-          <h2>BRAND CONTENT</h2>
-          <p>Accroître l’attractivité de la marque et stimuler la croissance commerciale.</p>
-          <a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light">CONTACT</a>
+        <div class="col-12 col-lg-6">
+          <div class="service-text">
+            <p class="service-index">01 — Brand content & UGC</p>
+            <h2 class="service-title">Créer une image vivante, désirable et cohérente.</h2>
+
+            <p class="service-highlight">
+              <strong>Nous concevons et déployons des stratégies de brand content et de direction artistique à 360° pour les marques hôtelières, restaurants et lieux lifestyle.</strong>
+            </p>
+
+            <p class="service-description">
+              De la création de contenus lifestyle à la cohérence visuelle globale, nous accompagnons les marques
+              dans la valorisation et l’activation de leur image. Chaque contenu est pensé pour renforcer votre
+              territoire, nourrir votre storytelling et installer une perception premium durable.
+            </p>
+
+            <ul class="service-list">
+              <li>Direction artistique et cohérence visuelle</li>
+              <li>Brand content éditorial et lifestyle</li>
+              <li>UGC premium et contenus incarnés</li>
+              <li>Production photo et vidéo</li>
+              <li>Déclinaisons digitales pour campagnes et réseaux</li>
+            </ul>
+
+            <a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light">CONTACT</a>
+          </div>
         </div>
 
-        <div class="col-12 col-lg-6 service-media">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944261/1_u4uw1i.jpg" alt="Brand Content Abyss Lab" class="img-fluid">
+        <div class="col-12 col-lg-6">
+          <div class="service-media">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944261/1_u4uw1i.jpg" alt="Brand content et UGC Abyss Lab">
+          </div>
         </div>
       </div>
 
+      <!-- SERVICE 2 -->
       <div class="row align-items-center gy-5 service-block fade-in">
-        <div class="col-12 col-lg-6 order-lg-2 service-text">
-          <h2>UGC</h2>
-          <p>Génération de contenu qui parle à votre communauté.</p>
-          <a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light">CONTACT</a>
+        <div class="col-12 col-lg-6 order-lg-2">
+          <div class="service-text">
+            <p class="service-index">02 — Réseaux sociaux</p>
+            <h2 class="service-title">Transformer votre présence digitale en espace d’engagement.</h2>
+
+            <p class="service-highlight">
+              <strong>Renforcer la présence digitale en créant de l’engagement authentique avec les communautés, valoriser l’image à travers des contenus visuels impactants.</strong>
+            </p>
+
+            <p class="service-description">
+              De la création de contenus visuels au pilotage de la stratégie Community Management, en passant par
+              les publications, l’animation des communautés et les campagnes Social Ads, nous accompagnons les marques
+              à 360° pour maximiser leur impact digital.
+            </p>
+
+            <ul class="service-list">
+              <li>Stratégie éditoriale et social media</li>
+              <li>Calendrier de publication</li>
+              <li>Création de contenus fixes et vidéo</li>
+              <li>Community management</li>
+              <li>Campagnes sponsorisées et amplification</li>
+            </ul>
+
+            <a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light">CONTACT</a>
+          </div>
         </div>
 
-        <div class="col-12 col-lg-6 order-lg-1 service-media">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944266/2_qsuenx.jpg" alt="UGC Abyss Lab" class="img-fluid">
+        <div class="col-12 col-lg-6 order-lg-1">
+          <div class="service-media">
+            <video autoplay muted loop playsinline>
+              <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/15_bfvtos.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
 
+      <!-- SERVICE 3 -->
       <div class="row align-items-center gy-5 service-block fade-in">
-        <div class="col-12 col-lg-6 service-text">
-          <h2>RESEAUX SOCIAUX</h2>
-          <p>Générer de l'engagement par la notoriété.</p>
-          <a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light">CONTACT</a>
+        <div class="col-12 col-lg-6">
+          <div class="service-text">
+            <p class="service-index">03 — Inbound marketing</p>
+            <h2 class="service-title">Attirer, convaincre et convertir avec plus de justesse.</h2>
+
+            <p class="service-highlight">
+              <strong>Nous structurons des parcours de contenu qui renforcent la présence digitale et soutiennent l’acquisition par des prises de parole plus stratégiques.</strong>
+            </p>
+
+            <p class="service-description">
+              L’inbound marketing permet de travailler la visibilité et l’attractivité de votre marque dans la durée.
+              Nous créons des contenus et des mécaniques capables d’attirer les bons publics, de nourrir la relation
+              et de renforcer la crédibilité de votre univers.
+            </p>
+
+            <ul class="service-list">
+              <li>Stratégie de contenu d’acquisition</li>
+              <li>Pages éditoriales et contenus de marque</li>
+              <li>Parcours de conversion</li>
+              <li>Optimisation des prises de parole digitales</li>
+              <li>Vision long terme de la présence en ligne</li>
+            </ul>
+
+            <a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light">CONTACT</a>
+          </div>
         </div>
 
-        <div class="col-12 col-lg-6 service-media">
-          <video autoplay muted loop playsinline class="img-fluid">
-            <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/15_bfvtos.mp4" type="video/mp4">
-          </video>
+        <div class="col-12 col-lg-6">
+          <div class="service-media">
+            <video autoplay muted loop playsinline>
+              <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/16_phtw8d.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
 
+      <!-- SERVICE 4 -->
       <div class="row align-items-center gy-5 service-block fade-in">
-        <div class="col-12 col-lg-6 order-lg-2 service-text">
-          <h2>INBOUND MARKETING</h2>
-          <p>Renforcer la présence digitale et l'acquisition par des contenus impactants.</p>
-          <a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light">CONTACT</a>
+        <div class="col-12 col-lg-6 order-lg-2">
+          <div class="service-text">
+            <p class="service-index">04 — Conseil & stratégie 360°</p>
+            <h2 class="service-title">Donner une direction claire à votre image et à vos actions.</h2>
+
+            <p class="service-highlight">
+              <strong>Nous accompagnons les marques dans la structuration globale de leur communication afin d’aligner positionnement, image, contenu et activation.</strong>
+            </p>
+
+            <p class="service-description">
+              Avant de produire, il faut comprendre. Cette approche permet d’identifier les bons axes, les bons messages,
+              les priorités et les leviers pertinents pour faire rayonner votre marque avec cohérence et ambition.
+            </p>
+
+            <ul class="service-list">
+              <li>Audit d’image et de présence digitale</li>
+              <li>Positionnement de marque</li>
+              <li>Recommandations stratégiques</li>
+              <li>Plan d’action marketing & communication</li>
+              <li>Accompagnement au déploiement</li>
+            </ul>
+
+            <a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light">CONTACT</a>
+          </div>
         </div>
 
-        <div class="col-12 col-lg-6 order-lg-1 service-media">
-          <video autoplay muted loop playsinline class="img-fluid">
-            <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/16_phtw8d.mp4" type="video/mp4">
-          </video>
+        <div class="col-12 col-lg-6 order-lg-1">
+          <div class="service-media">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Conseil et stratégie 360 Abyss Lab">
+          </div>
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="services-cta fade-in">
+    <div class="container">
+      <div class="cta-box">
+        <h2 class="cta-title">Un besoin ponctuel ou un accompagnement global ?</h2>
+        <p class="cta-text">
+          Abyss Lab construit des accompagnements sur mesure selon vos enjeux :
+          lancement, repositionnement, rayonnement digital, création de contenu,
+          activation d’image ou stratégie globale. Chaque mission est pensée pour servir
+          une marque, un lieu, une expérience et une ambition.
+        </p>
+        <a href="contact.html" class="btn btn-outline-light">PARLER DE VOTRE PROJET</a>
+      </div>
     </div>
   </section>
 
@@ -344,9 +624,3 @@
 
 </body>
 </html>
-
-faders.forEach(fader=>{
-    appearOnScroll.observe(fader);
-});
-
-</script>
