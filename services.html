@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Abyss Lab conçoit des stratégies créatives et marketing 360° pour les marques hôtelières, restaurants et lieux lifestyle.">
+  <meta name="description" content="Abyss Lab est une agence de strategie marketing, communication digitale, brand content, UGC, reseaux sociaux et direction artistique pour hotels, restaurants et lieux lifestyle.">
   <title>Services | ABYSS LAB</title>
 
   <!-- Bootstrap CDN -->
@@ -89,18 +89,19 @@
 
     .hero-kicker{
       font-family:"Montserrat", sans-serif;
-      font-size:0.85rem;
-      letter-spacing:2px;
+      font-size:0.75rem;
+      letter-spacing:2.5px;
       text-transform:uppercase;
       color:rgba(255,255,255,0.7);
-      margin-bottom:20px;
+      margin-bottom:18px;
     }
 
     .hero-title{
-      font-size:3rem;
-      line-height:1.05;
-      letter-spacing:1px;
-      margin-bottom:24px;
+      font-size:3.2rem;
+      line-height:1.02;
+      letter-spacing:1.2px;
+      margin-bottom:26px;
+      max-width:980px;
     }
 
     .hero-text{
@@ -108,11 +109,11 @@
       font-size:1.05rem;
       line-height:1.9;
       color:#f2f2f2;
-      max-width:760px;
+      max-width:780px;
       margin-bottom:0;
     }
 
-    /* ===== SECTION INTRO ===== */
+    /* ===== INTRO ===== */
     .services-intro{
       position:relative;
       z-index:2;
@@ -139,42 +140,53 @@
     }
 
     .service-block{
-      padding:70px 0;
+      padding:76px 0;
       border-top:1px solid rgba(255,255,255,0.12);
     }
 
     .service-media img,
     .service-media video{
       width:100%;
-      height:560px;
+      height:580px;
       object-fit:cover;
       display:block;
     }
 
     .service-text{
-      padding-right:30px;
+      padding-right:34px;
     }
 
     .service-index{
       font-family:"Montserrat", sans-serif;
-      font-size:0.82rem;
-      letter-spacing:2px;
+      font-size:0.72rem;
+      letter-spacing:2.6px;
       text-transform:uppercase;
-      color:rgba(255,255,255,0.55);
-      margin-bottom:14px;
+      color:rgba(255,255,255,0.48);
+      margin-bottom:16px;
     }
 
     .service-title{
-      font-size:1.7rem;
-      line-height:1.15;
-      letter-spacing:0.6px;
-      margin-bottom:20px;
+      font-size:2.2rem;
+      line-height:1.02;
+      letter-spacing:0.8px;
+      margin-bottom:18px;
+      color:#fff;
+      text-transform:uppercase;
+    }
+
+    .service-subtitle{
+      font-family:"Montserrat", sans-serif;
+      font-size:0.88rem;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      color:rgba(255,255,255,0.62);
+      margin-bottom:24px;
     }
 
     .service-highlight{
       font-family:"Montserrat", sans-serif;
       font-size:1rem;
-      line-height:1.8;
+      line-height:1.85;
       color:#fff;
       margin-bottom:18px;
     }
@@ -187,32 +199,36 @@
     .service-description{
       font-family:"Montserrat", sans-serif;
       font-size:1rem;
-      line-height:1.9;
+      line-height:1.95;
       color:#f2f2f2;
-      margin-bottom:24px;
+      margin-bottom:28px;
     }
 
-    .service-list{
-      list-style:none;
-      padding:0;
-      margin:0 0 30px 0;
+    .service-points{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px 18px;
+      margin-bottom:32px;
     }
 
-    .service-list li{
+    .service-point{
+      border:1px solid rgba(255,255,255,0.12);
+      padding:14px 16px;
       font-family:"Montserrat", sans-serif;
-      color:#d9d9d9;
-      line-height:1.8;
-      margin-bottom:8px;
-      position:relative;
-      padding-left:18px;
+      font-size:0.94rem;
+      line-height:1.5;
+      color:#e8e8e8;
+      background:rgba(255,255,255,0.02);
+      backdrop-filter:blur(2px);
     }
 
-    .service-list li::before{
-      content:"—";
-      position:absolute;
-      left:0;
-      top:0;
-      color:rgba(255,255,255,0.7);
+    .service-point span{
+      display:block;
+      font-size:0.72rem;
+      letter-spacing:1.8px;
+      text-transform:uppercase;
+      color:rgba(255,255,255,0.45);
+      margin-bottom:6px;
     }
 
     .btn-outline-light{
@@ -237,9 +253,10 @@
     }
 
     .cta-title{
-      font-size:1.8rem;
-      line-height:1.2;
+      font-size:2rem;
+      line-height:1.12;
       margin-bottom:18px;
+      text-transform:uppercase;
     }
 
     .cta-text{
@@ -281,7 +298,7 @@
 
     @media (max-width: 991px){
       .hero-title{
-        font-size:2.2rem;
+        font-size:2.3rem;
       }
 
       .service-text{
@@ -294,7 +311,15 @@
       }
 
       .service-block{
-        padding:50px 0;
+        padding:54px 0;
+      }
+
+      .service-title{
+        font-size:1.7rem;
+      }
+
+      .service-points{
+        grid-template-columns:1fr;
       }
     }
 
@@ -308,7 +333,7 @@
       }
 
       .hero-title{
-        font-size:1.8rem;
+        font-size:1.9rem;
       }
 
       .hero-text,
@@ -320,11 +345,19 @@
       }
 
       .service-title{
-        font-size:1.3rem;
+        font-size:1.45rem;
+      }
+
+      .service-subtitle{
+        font-size:0.78rem;
       }
 
       .cta-title{
-        font-size:1.4rem;
+        font-size:1.45rem;
+      }
+
+      .service-point{
+        font-size:0.9rem;
       }
     }
   </style>
@@ -371,11 +404,11 @@
   <section class="services-hero fade-in">
     <div class="container">
       <p class="hero-kicker">Abyss Lab — Services</p>
-      <h1 class="hero-title">Des stratégies créatives pensées pour révéler, structurer et amplifier votre marque.</h1>
+      <h1 class="hero-title">Agence de strategie marketing, communication digitale et direction artistique pour marques hotellerie, restauration et lifestyle.</h1>
       <p class="hero-text">
-        Abyss Lab accompagne les marques hôtelières, restaurants, lieux lifestyle et projets ambitieux
-        dans la construction d’une image forte, désirable et cohérente. Notre approche mêle vision de marque,
-        direction artistique, contenu, rayonnement digital et activation opérationnelle.
+        Abyss Lab accompagne les hotels, restaurants, lieux de vie et marques premium dans la construction d’une image forte,
+        la creation de contenu, la strategie reseaux sociaux, le brand content et l’activation digitale. Chaque service est pense
+        pour renforcer votre presence en ligne, developper votre desirabilite et soutenir votre croissance.
       </p>
     </div>
   </section>
@@ -385,9 +418,9 @@
     <div class="container">
       <div class="intro-line">
         <p class="intro-text">
-          Chaque accompagnement est pensé comme un écosystème. Nous ne créons pas seulement de beaux contenus :
-          nous structurons une présence, clarifions un positionnement, donnons de la profondeur à votre image
-          et transformons votre univers en levier de désirabilité, de visibilité et de croissance.
+          Notre approche relie strategie de marque, image, storytelling, contenu visuel, community management et visibilite digitale.
+          Nous construisons des accompagnements sur mesure pour aider les marques a clarifier leur positionnement, renforcer leur notoriete
+          et deployer une communication coherente sur l’ensemble de leurs canaux.
         </p>
       </div>
     </div>
@@ -401,26 +434,39 @@
       <div class="row align-items-center gy-5 service-block fade-in">
         <div class="col-12 col-lg-6">
           <div class="service-text">
-            <p class="service-index">01 — Brand content & UGC</p>
-            <h2 class="service-title">Créer une image vivante, désirable et cohérente.</h2>
+            <p class="service-index">01 / Expertise</p>
+            <h2 class="service-title">BRAND CONTENT</h2>
+            <p class="service-subtitle">and ugc</p>
 
             <p class="service-highlight">
-              <strong>Nous concevons et déployons des stratégies de brand content et de direction artistique à 360° pour les marques hôtelières, restaurants et lieux lifestyle.</strong>
+              <strong>Nous concevons et deployons des strategies de brand content et de direction artistique a 360 pour les marques hotellerie, restaurants et lieux lifestyle.</strong>
             </p>
 
             <p class="service-description">
-              De la création de contenus lifestyle à la cohérence visuelle globale, nous accompagnons les marques
-              dans la valorisation et l’activation de leur image. Chaque contenu est pensé pour renforcer votre
-              territoire, nourrir votre storytelling et installer une perception premium durable.
+              De la creation de contenus lifestyle a la coherence visuelle globale, nous accompagnons les marques dans la valorisation
+              de leur image, la production de contenus photo et video, l’activation editoriale et le developpement d’un univers de marque
+              identifiable. Cette expertise soutient la visibilite, la desirabilite et la conversion sur les reseaux sociaux, les campagnes
+              digitales et les supports de communication.
             </p>
 
-            <ul class="service-list">
-              <li>Direction artistique et cohérence visuelle</li>
-              <li>Brand content éditorial et lifestyle</li>
-              <li>UGC premium et contenus incarnés</li>
-              <li>Production photo et vidéo</li>
-              <li>Déclinaisons digitales pour campagnes et réseaux</li>
-            </ul>
+            <div class="service-points">
+              <div class="service-point">
+                <span>Contenu</span>
+                Production photo, video et contenus lifestyle
+              </div>
+              <div class="service-point">
+                <span>Direction</span>
+                Direction artistique et coherence visuelle
+              </div>
+              <div class="service-point">
+                <span>Activation</span>
+                UGC premium et contenus incarnes pour la marque
+              </div>
+              <div class="service-point">
+                <span>Diffusion</span>
+                Adaptation des contenus pour web, social media et campagnes
+              </div>
+            </div>
 
             <a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light">CONTACT</a>
           </div>
@@ -428,7 +474,7 @@
 
         <div class="col-12 col-lg-6">
           <div class="service-media">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944261/1_u4uw1i.jpg" alt="Brand content et UGC Abyss Lab">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944261/1_u4uw1i.jpg" alt="Agence brand content et UGC pour hotels restaurants et lieux lifestyle">
           </div>
         </div>
       </div>
@@ -437,26 +483,38 @@
       <div class="row align-items-center gy-5 service-block fade-in">
         <div class="col-12 col-lg-6 order-lg-2">
           <div class="service-text">
-            <p class="service-index">02 — Réseaux sociaux</p>
-            <h2 class="service-title">Transformer votre présence digitale en espace d’engagement.</h2>
+            <p class="service-index">02 / Expertise</p>
+            <h2 class="service-title">RESEAUX SOCIAUX</h2>
+            <p class="service-subtitle">community management and social ads</p>
 
             <p class="service-highlight">
-              <strong>Renforcer la présence digitale en créant de l’engagement authentique avec les communautés, valoriser l’image à travers des contenus visuels impactants.</strong>
+              <strong>Renforcer la presence digitale en creant de l’engagement authentique avec les communautes et en valorisant l’image a travers des contenus visuels impactants.</strong>
             </p>
 
             <p class="service-description">
-              De la création de contenus visuels au pilotage de la stratégie Community Management, en passant par
-              les publications, l’animation des communautés et les campagnes Social Ads, nous accompagnons les marques
-              à 360° pour maximiser leur impact digital.
+              De la creation de contenus visuels au pilotage de la strategie de community management, en passant par les publications,
+              l’animation des communautes et les campagnes social ads, nous accompagnons les marques a 360 pour maximiser leur impact digital.
+              L’objectif est de renforcer la notoriete, installer une ligne editoriale forte et soutenir la performance des reseaux sociaux.
             </p>
 
-            <ul class="service-list">
-              <li>Stratégie éditoriale et social media</li>
-              <li>Calendrier de publication</li>
-              <li>Création de contenus fixes et vidéo</li>
-              <li>Community management</li>
-              <li>Campagnes sponsorisées et amplification</li>
-            </ul>
+            <div class="service-points">
+              <div class="service-point">
+                <span>Strategie</span>
+                Strategie editoriale et ligne de contenu social media
+              </div>
+              <div class="service-point">
+                <span>Animation</span>
+                Community management et gestion des interactions
+              </div>
+              <div class="service-point">
+                <span>Creation</span>
+                Reels, stories, contenus fixes et declinaisons visuelles
+              </div>
+              <div class="service-point">
+                <span>Amplification</span>
+                Campagnes sponsorisees et social ads
+              </div>
+            </div>
 
             <a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light">CONTACT</a>
           </div>
@@ -475,26 +533,38 @@
       <div class="row align-items-center gy-5 service-block fade-in">
         <div class="col-12 col-lg-6">
           <div class="service-text">
-            <p class="service-index">03 — Inbound marketing</p>
-            <h2 class="service-title">Attirer, convaincre et convertir avec plus de justesse.</h2>
+            <p class="service-index">03 / Expertise</p>
+            <h2 class="service-title">INBOUND MARKETING</h2>
+            <p class="service-subtitle">contenu, visibilite and acquisition</p>
 
             <p class="service-highlight">
-              <strong>Nous structurons des parcours de contenu qui renforcent la présence digitale et soutiennent l’acquisition par des prises de parole plus stratégiques.</strong>
+              <strong>Nous structurons des prises de parole et des parcours de contenu capables de renforcer la presence digitale et de soutenir l’acquisition.</strong>
             </p>
 
             <p class="service-description">
-              L’inbound marketing permet de travailler la visibilité et l’attractivité de votre marque dans la durée.
-              Nous créons des contenus et des mécaniques capables d’attirer les bons publics, de nourrir la relation
-              et de renforcer la crédibilité de votre univers.
+              L’inbound marketing permet de developper une visibilite durable, d’attirer les bons publics et de consolider la credibilite d’une marque.
+              Nous travaillons les contenus, les pages, les messages et les parcours pour faire emerger une presence en ligne plus strategique,
+              mieux referencee et plus performante dans le temps.
             </p>
 
-            <ul class="service-list">
-              <li>Stratégie de contenu d’acquisition</li>
-              <li>Pages éditoriales et contenus de marque</li>
-              <li>Parcours de conversion</li>
-              <li>Optimisation des prises de parole digitales</li>
-              <li>Vision long terme de la présence en ligne</li>
-            </ul>
+            <div class="service-points">
+              <div class="service-point">
+                <span>Visibilite</span>
+                Contenus strategiques pour presence digitale et acquisition
+              </div>
+              <div class="service-point">
+                <span>Messages</span>
+                Structuration des prises de parole et du storytelling
+              </div>
+              <div class="service-point">
+                <span>Parcours</span>
+                Optimisation des pages et logiques de conversion
+              </div>
+              <div class="service-point">
+                <span>SEO</span>
+                Renforcement du contenu pour une meilleure recherche organique
+              </div>
+            </div>
 
             <a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light">CONTACT</a>
           </div>
@@ -513,25 +583,38 @@
       <div class="row align-items-center gy-5 service-block fade-in">
         <div class="col-12 col-lg-6 order-lg-2">
           <div class="service-text">
-            <p class="service-index">04 — Conseil & stratégie 360°</p>
-            <h2 class="service-title">Donner une direction claire à votre image et à vos actions.</h2>
+            <p class="service-index">04 / Expertise</p>
+            <h2 class="service-title">CONSEIL ET STRATEGIE</h2>
+            <p class="service-subtitle">marketing and communication 360</p>
 
             <p class="service-highlight">
               <strong>Nous accompagnons les marques dans la structuration globale de leur communication afin d’aligner positionnement, image, contenu et activation.</strong>
             </p>
 
             <p class="service-description">
-              Avant de produire, il faut comprendre. Cette approche permet d’identifier les bons axes, les bons messages,
-              les priorités et les leviers pertinents pour faire rayonner votre marque avec cohérence et ambition.
+              Avant de produire, il faut clarifier. Cette expertise permet d’identifier les bons axes de communication,
+              les priorites marketing, les opportunites de visibilite et les leviers de developpement les plus pertinents.
+              Nous construisons une feuille de route claire pour faire rayonner une marque avec coherence, exigence et ambition.
             </p>
 
-            <ul class="service-list">
-              <li>Audit d’image et de présence digitale</li>
-              <li>Positionnement de marque</li>
-              <li>Recommandations stratégiques</li>
-              <li>Plan d’action marketing & communication</li>
-              <li>Accompagnement au déploiement</li>
-            </ul>
+            <div class="service-points">
+              <div class="service-point">
+                <span>Audit</span>
+                Analyse d’image, de positionnement et de presence digitale
+              </div>
+              <div class="service-point">
+                <span>Vision</span>
+                Recommandations marketing et communication 360
+              </div>
+              <div class="service-point">
+                <span>Plan</span>
+                Priorisation des actions et feuille de route operationnelle
+              </div>
+              <div class="service-point">
+                <span>Accompagnement</span>
+                Suivi strategique et pilotage du deploiement
+              </div>
+            </div>
 
             <a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light">CONTACT</a>
           </div>
@@ -539,7 +622,7 @@
 
         <div class="col-12 col-lg-6 order-lg-1">
           <div class="service-media">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Conseil et stratégie 360 Abyss Lab">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Agence de strategie marketing et communication digitale a Bordeaux">
           </div>
         </div>
       </div>
@@ -551,12 +634,11 @@
   <section class="services-cta fade-in">
     <div class="container">
       <div class="cta-box">
-        <h2 class="cta-title">Un besoin ponctuel ou un accompagnement global ?</h2>
+        <h2 class="cta-title">UN BESOIN PONCTUEL OU UN ACCOMPAGNEMENT GLOBAL ?</h2>
         <p class="cta-text">
-          Abyss Lab construit des accompagnements sur mesure selon vos enjeux :
-          lancement, repositionnement, rayonnement digital, création de contenu,
-          activation d’image ou stratégie globale. Chaque mission est pensée pour servir
-          une marque, un lieu, une expérience et une ambition.
+          Abyss Lab construit des accompagnements sur mesure en strategie marketing, communication digitale, brand content,
+          direction artistique, reseaux sociaux et image de marque. Que vous souhaitiez lancer un lieu, repositionner une marque,
+          renforcer votre visibilite ou structurer votre presence digitale, chaque mission est pensee pour servir une ambition concrete.
         </p>
         <a href="contact.html" class="btn btn-outline-light">PARLER DE VOTRE PROJET</a>
       </div>
@@ -620,6 +702,10 @@
     faders.forEach(fader => {
       appearOnScroll.observe(fader);
     });
+  </script>
+
+</body>
+</html>
   </script>
 
 </body>
