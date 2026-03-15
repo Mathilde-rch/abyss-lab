@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Abyss Lab est une agence de strategie marketing, communication digitale, brand content, reseaux sociaux et direction artistique pour hotels, restaurants et lieux lifestyle.">
+  <meta name="description" content="Abyss Lab, agence de strategie marketing, communication digitale, brand content, UGC, reseaux sociaux, direction artistique et image de marque pour hotels, restaurants et lieux lifestyle.">
   <title>Services | ABYSS LAB</title>
 
   <!-- Bootstrap CDN -->
@@ -13,34 +13,47 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/couture" rel="stylesheet">
 
-  <!-- Ton CSS -->
+  <!-- CSS global -->
   <link rel="stylesheet" href="assets/css/style.css">
 
   <style>
     /* ===== GLOBAL ===== */
+    :root{
+      --white: #ffffff;
+      --white-85: rgba(255,255,255,0.85);
+      --white-70: rgba(255,255,255,0.70);
+      --white-55: rgba(255,255,255,0.55);
+      --white-18: rgba(255,255,255,0.18);
+      --white-12: rgba(255,255,255,0.12);
+      --white-08: rgba(255,255,255,0.08);
+      --bg-dark: #000000;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
-      background:#000;
-      color:#fff;
+      background:var(--bg-dark);
+      color:var(--white);
       font-family:'couture', sans-serif;
       position:relative;
       min-height:100vh;
+      overflow-x:hidden;
     }
 
     .section-space{
       padding:110px 0;
     }
 
-    .thin-border{
-      border-bottom:1px solid rgba(255,255,255,0.12);
+    .montserrat{
+      font-family:"Montserrat", sans-serif;
     }
 
     /* ===== VIDEO BACKGROUND ===== */
     .video-background{
       position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
+      inset:0;
       z-index:-2;
       overflow:hidden;
     }
@@ -55,20 +68,26 @@
       content:"";
       position:absolute;
       inset:0;
-      background:rgba(0,0,0,0.58);
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.42), rgba(0,0,0,0.72)),
+        rgba(0,0,0,0.25);
       z-index:1;
     }
 
     /* ===== NAVBAR ===== */
     .navbar{
       position:relative;
-      z-index:20;
+      z-index:30;
       transition:background-color 0.3s ease, backdrop-filter 0.3s ease;
     }
 
     .navbar.scrolled{
-      background:rgba(0,0,0,0.72);
-      backdrop-filter:blur(10px);
+      background:rgba(0,0,0,0.68);
+      backdrop-filter:blur(14px);
+    }
+
+    .navbar-brand{
+      letter-spacing:1px;
     }
 
     .nav-link.active{
@@ -80,8 +99,7 @@
     .services-hero{
       position:relative;
       z-index:2;
-      padding:160px 0 110px;
-      max-width:980px;
+      padding:140px 0 72px;
     }
 
     .hero-kicker{
@@ -89,213 +107,271 @@
       font-size:12px;
       letter-spacing:3px;
       text-transform:uppercase;
-      color:rgba(255,255,255,0.68);
-      margin-bottom:22px;
+      color:var(--white-70);
+      margin-bottom:18px;
     }
 
     .hero-title{
-      font-size:4.25rem;
-      line-height:0.98;
-      letter-spacing:1px;
-      margin-bottom:26px;
+      font-size:4.4rem;
+      line-height:0.96;
+      letter-spacing:0.5px;
       text-transform:uppercase;
       max-width:1100px;
+      margin-bottom:18px;
     }
 
     .hero-subtitle{
       font-family:"Montserrat", sans-serif;
-      font-size:0.86rem;
-      letter-spacing:2.3px;
-      text-transform:uppercase;
-      color:rgba(255,255,255,0.76);
-      margin-bottom:18px;
-    }
-
-    .hero-description{
-      font-family:"Montserrat", sans-serif;
+      color:var(--white-85);
       font-size:1rem;
       line-height:1.8;
-      color:#f2f2f2;
-      max-width:560px;
-      margin-bottom:32px;
+      max-width:540px;
+      margin-bottom:0;
     }
 
-    .hero-cta{
-      display:inline-block;
-      border:1px solid rgba(255,255,255,0.6);
-      padding:12px 28px;
-      border-radius:40px;
-      font-family:"Montserrat", sans-serif;
-      font-size:0.84rem;
-      letter-spacing:1px;
+    /* ===== APPLE-LIKE SERVICE STRIP ===== */
+    .services-strip{
+      position:relative;
+      z-index:2;
+      padding:18px 0 56px;
+    }
+
+    .services-strip-wrap{
+      display:flex;
+      gap:18px;
+      overflow-x:auto;
+      padding-bottom:12px;
+      scrollbar-width:none;
+      -ms-overflow-style:none;
+    }
+
+    .services-strip-wrap::-webkit-scrollbar{
+      display:none;
+    }
+
+    .service-chip{
+      flex:0 0 210px;
       text-decoration:none;
       color:#fff;
-      transition:all 0.3s ease;
+      transition:transform 0.35s ease, opacity 0.35s ease, border-color 0.35s ease;
     }
 
-    .hero-cta:hover{
-      background:#fff;
-      color:#000;
+    .service-chip:hover{
+      transform:translateY(-6px);
+      color:#fff;
     }
 
-    /* ===== MICRO INTRO ===== */
+    .service-chip-media{
+      position:relative;
+      height:220px;
+      border:1px solid var(--white-12);
+      background:rgba(255,255,255,0.04);
+      overflow:hidden;
+      margin-bottom:14px;
+    }
+
+    .service-chip-media img,
+    .service-chip-media video{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transition:transform 0.55s ease;
+    }
+
+    .service-chip:hover .service-chip-media img,
+    .service-chip:hover .service-chip-media video{
+      transform:scale(1.04);
+    }
+
+    .service-chip-label{
+      font-size:1rem;
+      line-height:1.15;
+      margin-bottom:6px;
+      text-transform:uppercase;
+    }
+
+    .service-chip-meta{
+      font-family:"Montserrat", sans-serif;
+      font-size:0.76rem;
+      letter-spacing:1.8px;
+      text-transform:uppercase;
+      color:var(--white-55);
+    }
+
+    /* ===== INTRO STATEMENT ===== */
     .services-intro{
       position:relative;
       z-index:2;
-      padding:0 0 28px;
+      padding:8px 0 30px;
     }
 
-    .intro-line{
-      border-top:1px solid rgba(255,255,255,0.12);
+    .services-intro-box{
+      border-top:1px solid var(--white-12);
       padding-top:28px;
     }
 
-    .intro-text{
+    .services-intro-text{
       font-family:"Montserrat", sans-serif;
+      max-width:760px;
       font-size:1rem;
       line-height:1.85;
-      color:#f2f2f2;
-      max-width:760px;
+      color:var(--white-85);
       margin:0;
     }
 
-    /* ===== SERVICES ===== */
+    /* ===== DETAIL SECTIONS ===== */
     .services-wrapper{
       position:relative;
       z-index:2;
+      padding:10px 0 40px;
     }
 
-    .service-block{
+    .service-section{
+      border-top:1px solid var(--white-12);
       padding:76px 0;
-      border-top:1px solid rgba(255,255,255,0.12);
     }
 
-    .service-media img,
-    .service-media video{
-      width:100%;
-      height:580px;
-      object-fit:cover;
+    .service-section:first-child{
+      margin-top:0;
+    }
+
+    .service-section-media{
+      position:relative;
+      overflow:hidden;
+      border:1px solid var(--white-12);
+      background:rgba(255,255,255,0.03);
+    }
+
+    .service-section-media img,
+    .service-section-media video{
       display:block;
+      width:100%;
+      height:620px;
+      object-fit:cover;
     }
 
-    .service-text{
-      padding-right:34px;
+    .service-section-text{
+      padding-right:40px;
     }
 
-    .service-index{
+    .service-section-index{
       font-family:"Montserrat", sans-serif;
       font-size:0.72rem;
-      letter-spacing:2.6px;
+      letter-spacing:2.5px;
       text-transform:uppercase;
-      color:rgba(255,255,255,0.48);
-      margin-bottom:16px;
+      color:var(--white-55);
+      margin-bottom:14px;
     }
 
-    .service-title{
-      font-size:2.35rem;
-      line-height:1;
-      letter-spacing:0.8px;
+    .service-section-title{
+      font-size:2.7rem;
+      line-height:0.95;
+      text-transform:uppercase;
       margin-bottom:10px;
-      color:#fff;
-      text-transform:uppercase;
     }
 
-    .service-subtitle{
+    .service-section-subtitle{
       font-family:"Montserrat", sans-serif;
-      font-size:0.82rem;
+      font-size:0.8rem;
       letter-spacing:2.2px;
       text-transform:uppercase;
-      color:rgba(255,255,255,0.58);
+      color:var(--white-55);
       margin-bottom:24px;
     }
 
-    .service-highlight{
+    .service-section-hook{
       font-family:"Montserrat", sans-serif;
       font-size:1rem;
       line-height:1.85;
-      color:#fff;
-      margin-bottom:18px;
+      color:var(--white);
+      margin-bottom:16px;
     }
 
-    .service-highlight strong{
+    .service-section-hook strong{
       font-weight:700;
       font-style:italic;
     }
 
-    .service-description{
+    .service-section-text p{
       font-family:"Montserrat", sans-serif;
       font-size:1rem;
       line-height:1.9;
-      color:#f2f2f2;
-      margin-bottom:28px;
+      color:var(--white-85);
+      margin-bottom:0;
     }
 
-    .service-points{
+    .service-section-grid{
       display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:12px 18px;
-      margin-bottom:32px;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:14px;
+      margin:28px 0 32px;
     }
 
-    .service-point{
-      border:1px solid rgba(255,255,255,0.12);
-      padding:14px 16px;
+    .service-card{
+      border:1px solid var(--white-12);
+      background:rgba(255,255,255,0.03);
+      padding:16px 18px;
+      min-height:92px;
+    }
+
+    .service-card-title{
       font-family:"Montserrat", sans-serif;
-      font-size:0.94rem;
-      line-height:1.55;
-      color:#e8e8e8;
-      background:rgba(255,255,255,0.02);
-      backdrop-filter:blur(2px);
+      font-size:0.7rem;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      color:var(--white-55);
+      margin-bottom:7px;
     }
 
-    .service-point span{
-      display:block;
-      font-size:0.7rem;
-      letter-spacing:1.8px;
-      text-transform:uppercase;
-      color:rgba(255,255,255,0.45);
-      margin-bottom:6px;
+    .service-card-text{
+      font-family:"Montserrat", sans-serif;
+      font-size:0.95rem;
+      line-height:1.55;
+      color:var(--white-85);
+      margin:0;
     }
 
     .btn-outline-light{
-      border-radius:30px;
+      border-radius:999px;
       padding:10px 24px;
       font-family:"Montserrat", sans-serif;
-      font-size:0.92rem;
-      letter-spacing:0.4px;
+      font-size:0.86rem;
+      letter-spacing:0.8px;
+      text-transform:uppercase;
     }
 
     /* ===== CTA ===== */
     .services-cta{
       position:relative;
       z-index:2;
-      padding:40px 0 110px;
+      padding:20px 0 110px;
     }
 
-    .cta-box{
-      border-top:1px solid rgba(255,255,255,0.12);
-      border-bottom:1px solid rgba(255,255,255,0.12);
-      padding:55px 0;
+    .services-cta-box{
+      border-top:1px solid var(--white-12);
+      border-bottom:1px solid var(--white-12);
+      padding:56px 0;
     }
 
-    .cta-title{
-      font-size:2rem;
-      line-height:1.08;
-      margin-bottom:18px;
+    .services-cta-title{
+      font-size:2.15rem;
+      line-height:1;
       text-transform:uppercase;
+      margin-bottom:16px;
     }
 
-    .cta-text{
+    .services-cta-text{
       font-family:"Montserrat", sans-serif;
-      color:#f2f2f2;
-      line-height:1.9;
       max-width:760px;
+      color:var(--white-85);
+      line-height:1.9;
       margin-bottom:28px;
     }
 
     /* ===== FOOTER ===== */
     footer{
-      border-top:1px solid rgba(255,255,255,0.12);
+      border-top:1px solid var(--white-12);
       padding:60px 0;
       font-size:0.9rem;
       position:relative;
@@ -313,7 +389,7 @@
     /* ===== FADE IN ===== */
     .fade-in{
       opacity:0;
-      transform:translateY(30px);
+      transform:translateY(26px);
       transition:opacity 0.8s ease, transform 0.8s ease;
     }
 
@@ -322,72 +398,75 @@
       transform:translateY(0);
     }
 
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1199px){
+      .hero-title{
+        font-size:3.6rem;
+      }
+    }
+
     @media (max-width: 991px){
       .services-hero{
-        padding:120px 0 80px;
+        padding:118px 0 58px;
       }
 
       .hero-title{
-        font-size:2.6rem;
+        font-size:2.55rem;
       }
 
-      .service-text{
+      .service-section-text{
         padding-right:0;
       }
 
-      .service-media img,
-      .service-media video{
+      .service-section-title{
+        font-size:2rem;
+      }
+
+      .service-section-media img,
+      .service-section-media video{
         height:auto;
       }
 
-      .service-block{
-        padding:54px 0;
-      }
-
-      .service-title{
-        font-size:1.8rem;
-      }
-
-      .service-points{
-        grid-template-columns:1fr;
+      .service-section{
+        padding:58px 0;
       }
     }
 
     @media (max-width: 768px){
-      .section-space{
-        padding:80px 0;
-      }
-
-      .services-hero{
-        padding:96px 0 60px;
-      }
-
       .hero-title{
         font-size:2rem;
       }
 
-      .hero-description,
-      .intro-text,
-      .service-description,
-      .service-highlight,
-      .cta-text{
+      .hero-subtitle,
+      .services-intro-text,
+      .service-section-hook,
+      .service-section-text p,
+      .services-cta-text{
         font-size:0.96rem;
       }
 
-      .service-title{
+      .service-chip{
+        flex:0 0 170px;
+      }
+
+      .service-chip-media{
+        height:180px;
+      }
+
+      .service-section-title{
+        font-size:1.55rem;
+      }
+
+      .service-section-subtitle{
+        font-size:0.74rem;
+      }
+
+      .service-section-grid{
+        grid-template-columns:1fr;
+      }
+
+      .services-cta-title{
         font-size:1.45rem;
-      }
-
-      .service-subtitle{
-        font-size:0.76rem;
-      }
-
-      .cta-title{
-        font-size:1.45rem;
-      }
-
-      .service-point{
-        font-size:0.9rem;
       }
     }
   </style>
@@ -434,226 +513,273 @@
   <section class="services-hero fade-in">
     <div class="container">
       <p class="hero-kicker">ABYSS LAB — SERVICES</p>
-
       <h1 class="hero-title">
-        REVEAL THE DEPTH<br>
-        OF YOUR BRAND
+        STRATEGIE, IMAGE<br>
+        ET CONTENU POUR<br>
+        FAIRE EMERGER<br>
+        LES MARQUES
       </h1>
-
       <p class="hero-subtitle">
-        strategie marketing · brand content · reseaux sociaux · direction artistique
+        agence de strategie marketing et communication digitale pour hotellerie, restauration et lifestyle
       </p>
-
-      <p class="hero-description">
-        Agence de strategie marketing et communication digitale specialisee dans les univers hotellerie, restauration et lifestyle.
-      </p>
-
-      <a href="#services" class="hero-cta">DECOUVRIR LES EXPERTISES</a>
     </div>
   </section>
 
-  <!-- MICRO INTRO -->
+  <!-- VISUAL SERVICE NAV -->
+  <section class="services-strip fade-in">
+    <div class="container">
+      <div class="services-strip-wrap">
+
+        <a href="#brand-content" class="service-chip">
+          <div class="service-chip-media">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944261/1_u4uw1i.jpg" alt="Brand content et UGC">
+          </div>
+          <h2 class="service-chip-label">BRAND CONTENT</h2>
+          <p class="service-chip-meta">and ugc</p>
+        </a>
+
+        <a href="#reseaux-sociaux" class="service-chip">
+          <div class="service-chip-media">
+            <video autoplay muted loop playsinline>
+              <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/15_bfvtos.mp4" type="video/mp4">
+            </video>
+          </div>
+          <h2 class="service-chip-label">RESEAUX SOCIAUX</h2>
+          <p class="service-chip-meta">community and ads</p>
+        </a>
+
+        <a href="#inbound-marketing" class="service-chip">
+          <div class="service-chip-media">
+            <video autoplay muted loop playsinline>
+              <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/16_phtw8d.mp4" type="video/mp4">
+            </video>
+          </div>
+          <h2 class="service-chip-label">INBOUND</h2>
+          <p class="service-chip-meta">content and acquisition</p>
+        </a>
+
+        <a href="#strategie-360" class="service-chip">
+          <div class="service-chip-media">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Conseil et strategie 360">
+          </div>
+          <h2 class="service-chip-label">STRATEGIE 360</h2>
+          <p class="service-chip-meta">marketing and communication</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SHORT INTRO -->
   <section class="services-intro fade-in">
     <div class="container">
-      <div class="intro-line">
-        <p class="intro-text">
-          Nous concevons des strategies de contenu, d’image et de presence digitale pour developper desirabilite, notoriete et croissance.
+      <div class="services-intro-box">
+        <p class="services-intro-text">
+          Abyss Lab conçoit des expertises pensées pour renforcer desirabilite, notoriete, presence digitale et croissance.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES -->
+  <!-- DETAILED SERVICES -->
   <section class="services-wrapper" id="services">
     <div class="container">
 
-      <!-- SERVICE 1 -->
-      <div class="row align-items-center gy-5 service-block fade-in">
-        <div class="col-12 col-lg-6">
-          <div class="service-text">
-            <p class="service-index">01 / Expertise</p>
-            <h2 class="service-title">BRAND CONTENT</h2>
-            <p class="service-subtitle">and ugc</p>
+      <!-- BRAND CONTENT -->
+      <section class="service-section fade-in" id="brand-content">
+        <div class="row align-items-center gy-5">
+          <div class="col-12 col-lg-6">
+            <div class="service-section-text">
+              <p class="service-section-index">01 / Expertise</p>
+              <h2 class="service-section-title">BRAND CONTENT</h2>
+              <p class="service-section-subtitle">and ugc</p>
 
-            <p class="service-highlight">
-              <strong>Nous concevons et deployons des strategies de brand content et de direction artistique a 360 pour les marques hotellerie, restaurants et lieux lifestyle.</strong>
-            </p>
+              <p class="service-section-hook">
+                <strong>Nous concevons et deployons des strategies de brand content et de direction artistique a 360 pour les marques hotellerie, restaurants et lieux lifestyle.</strong>
+              </p>
 
-            <p class="service-description">
-              De la creation de contenus lifestyle a la coherence visuelle globale, nous accompagnons les marques dans la valorisation de leur image, la production de contenus photo et video et l’activation editoriale pour renforcer leur presence digitale.
-            </p>
+              <p>
+                De la creation de contenus lifestyle a la coherence visuelle globale, nous accompagnons les marques dans la valorisation de leur image, la production de contenus photo et video et l’activation editoriale pour renforcer leur presence digitale.
+              </p>
 
-            <div class="service-points">
-              <div class="service-point">
-                <span>Contenu</span>
-                Production photo, video et contenus lifestyle
+              <div class="service-section-grid">
+                <div class="service-card">
+                  <div class="service-card-title">Contenu</div>
+                  <p class="service-card-text">Production photo, video et contenus lifestyle premium.</p>
+                </div>
+                <div class="service-card">
+                  <div class="service-card-title">Direction</div>
+                  <p class="service-card-text">Direction artistique et coherence visuelle globale.</p>
+                </div>
+                <div class="service-card">
+                  <div class="service-card-title">UGC</div>
+                  <p class="service-card-text">Contenus incarnes et formats premium adaptes aux usages sociaux.</p>
+                </div>
+                <div class="service-card">
+                  <div class="service-card-title">Diffusion</div>
+                  <p class="service-card-text">Declinaisons pour site web, reseaux sociaux et campagnes digitales.</p>
+                </div>
               </div>
-              <div class="service-point">
-                <span>Direction</span>
-                Direction artistique et coherence visuelle
-              </div>
-              <div class="service-point">
-                <span>Activation</span>
-                UGC premium et contenus incarnes
-              </div>
-              <div class="service-point">
-                <span>Diffusion</span>
-                Adaptation web, social media et campagnes
-              </div>
+
+              <a href="contact.html" class="btn btn-outline-light">PARLER DE VOTRE PROJET</a>
             </div>
-
-            <a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light">CONTACT</a>
           </div>
-        </div>
 
-        <div class="col-12 col-lg-6">
-          <div class="service-media">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944261/1_u4uw1i.jpg" alt="Agence brand content et UGC pour hotels restaurants et lieux lifestyle">
-          </div>
-        </div>
-      </div>
-
-      <!-- SERVICE 2 -->
-      <div class="row align-items-center gy-5 service-block fade-in">
-        <div class="col-12 col-lg-6 order-lg-2">
-          <div class="service-text">
-            <p class="service-index">02 / Expertise</p>
-            <h2 class="service-title">RESEAUX SOCIAUX</h2>
-            <p class="service-subtitle">community management and social ads</p>
-
-            <p class="service-highlight">
-              <strong>Renforcer la presence digitale en creant de l’engagement authentique avec les communautes et en valorisant l’image par des contenus visuels impactants.</strong>
-            </p>
-
-            <p class="service-description">
-              De la creation de contenus visuels au pilotage de la strategie de community management, en passant par les publications et les campagnes social ads, nous accompagnons les marques pour developper visibilite, engagement et notoriete.
-            </p>
-
-            <div class="service-points">
-              <div class="service-point">
-                <span>Strategie</span>
-                Ligne editoriale et plan de contenu social media
-              </div>
-              <div class="service-point">
-                <span>Animation</span>
-                Community management et interactions
-              </div>
-              <div class="service-point">
-                <span>Creation</span>
-                Reels, stories, contenus fixes et declinaisons
-              </div>
-              <div class="service-point">
-                <span>Amplification</span>
-                Campagnes sponsorisees et social ads
-              </div>
+          <div class="col-12 col-lg-6">
+            <div class="service-section-media">
+              <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944261/1_u4uw1i.jpg" alt="Agence brand content et UGC pour hotels restaurants et lieux lifestyle">
             </div>
-
-            <a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light">CONTACT</a>
           </div>
         </div>
+      </section>
 
-        <div class="col-12 col-lg-6 order-lg-1">
-          <div class="service-media">
-            <video autoplay muted loop playsinline>
-              <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/15_bfvtos.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
+      <!-- RESEAUX SOCIAUX -->
+      <section class="service-section fade-in" id="reseaux-sociaux">
+        <div class="row align-items-center gy-5">
+          <div class="col-12 col-lg-6 order-lg-2">
+            <div class="service-section-text">
+              <p class="service-section-index">02 / Expertise</p>
+              <h2 class="service-section-title">RESEAUX SOCIAUX</h2>
+              <p class="service-section-subtitle">community management and social ads</p>
 
-      <!-- SERVICE 3 -->
-      <div class="row align-items-center gy-5 service-block fade-in">
-        <div class="col-12 col-lg-6">
-          <div class="service-text">
-            <p class="service-index">03 / Expertise</p>
-            <h2 class="service-title">INBOUND MARKETING</h2>
-            <p class="service-subtitle">contenu, visibilite and acquisition</p>
+              <p class="service-section-hook">
+                <strong>Renforcer la presence digitale en creant de l’engagement authentique avec les communautes et en valorisant l’image par des contenus visuels impactants.</strong>
+              </p>
 
-            <p class="service-highlight">
-              <strong>Nous structurons des prises de parole et des parcours de contenu capables de renforcer la presence digitale et de soutenir l’acquisition.</strong>
-            </p>
+              <p>
+                De la creation de contenus visuels au pilotage de la strategie de community management, en passant par les publications et les campagnes social ads, nous accompagnons les marques pour developper visibilite, engagement et notoriete sur les reseaux sociaux.
+              </p>
 
-            <p class="service-description">
-              L’inbound marketing permet de developper une visibilite durable, d’attirer les bons publics et de consolider la credibilite d’une marque. Nous travaillons contenus, messages et parcours pour rendre votre presence en ligne plus strategique et performante.
-            </p>
-
-            <div class="service-points">
-              <div class="service-point">
-                <span>Visibilite</span>
-                Contenus strategiques pour acquisition digitale
+              <div class="service-section-grid">
+                <div class="service-card">
+                  <div class="service-card-title">Strategie</div>
+                  <p class="service-card-text">Ligne editoriale et plan de contenu social media.</p>
+                </div>
+                <div class="service-card">
+                  <div class="service-card-title">Animation</div>
+                  <p class="service-card-text">Community management et gestion des interactions.</p>
+                </div>
+                <div class="service-card">
+                  <div class="service-card-title">Creation</div>
+                  <p class="service-card-text">Reels, stories, contenus fixes et declinaisons visuelles.</p>
+                </div>
+                <div class="service-card">
+                  <div class="service-card-title">Amplification</div>
+                  <p class="service-card-text">Campagnes sponsorisees et social ads.</p>
+                </div>
               </div>
-              <div class="service-point">
-                <span>Messages</span>
-                Storytelling et structuration des prises de parole
-              </div>
-              <div class="service-point">
-                <span>Parcours</span>
-                Optimisation des pages et conversion
-              </div>
-              <div class="service-point">
-                <span>SEO</span>
-                Renforcement du contenu pour la recherche organique
-              </div>
+
+              <a href="contact.html" class="btn btn-outline-light">PARLER DE VOTRE PROJET</a>
             </div>
-
-            <a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light">CONTACT</a>
           </div>
-        </div>
 
-        <div class="col-12 col-lg-6">
-          <div class="service-media">
-            <video autoplay muted loop playsinline>
-              <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/16_phtw8d.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-
-      <!-- SERVICE 4 -->
-      <div class="row align-items-center gy-5 service-block fade-in">
-        <div class="col-12 col-lg-6 order-lg-2">
-          <div class="service-text">
-            <p class="service-index">04 / Expertise</p>
-            <h2 class="service-title">CONSEIL ET STRATEGIE</h2>
-            <p class="service-subtitle">marketing and communication 360</p>
-
-            <p class="service-highlight">
-              <strong>Nous accompagnons les marques dans la structuration globale de leur communication afin d’aligner positionnement, image, contenu et activation.</strong>
-            </p>
-
-            <p class="service-description">
-              Avant de produire, il faut clarifier. Cette expertise permet d’identifier les bons axes de communication, les priorites marketing et les leviers de developpement les plus pertinents pour faire rayonner une marque avec coherence et ambition.
-            </p>
-
-            <div class="service-points">
-              <div class="service-point">
-                <span>Audit</span>
-                Analyse d’image, de positionnement et de presence digitale
-              </div>
-              <div class="service-point">
-                <span>Vision</span>
-                Recommandations marketing et communication 360
-              </div>
-              <div class="service-point">
-                <span>Plan</span>
-                Priorisation des actions et feuille de route
-              </div>
-              <div class="service-point">
-                <span>Accompagnement</span>
-                Suivi strategique et pilotage du deploiement
-              </div>
+          <div class="col-12 col-lg-6 order-lg-1">
+            <div class="service-section-media">
+              <video autoplay muted loop playsinline>
+                <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/15_bfvtos.mp4" type="video/mp4">
+              </video>
             </div>
-
-            <a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light">CONTACT</a>
           </div>
         </div>
+      </section>
 
-        <div class="col-12 col-lg-6 order-lg-1">
-          <div class="service-media">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Agence de strategie marketing et communication digitale a Bordeaux">
+      <!-- INBOUND -->
+      <section class="service-section fade-in" id="inbound-marketing">
+        <div class="row align-items-center gy-5">
+          <div class="col-12 col-lg-6">
+            <div class="service-section-text">
+              <p class="service-section-index">03 / Expertise</p>
+              <h2 class="service-section-title">INBOUND MARKETING</h2>
+              <p class="service-section-subtitle">content, visibilite and acquisition</p>
+
+              <p class="service-section-hook">
+                <strong>Nous structurons des prises de parole et des parcours de contenu capables de renforcer la presence digitale et de soutenir l’acquisition.</strong>
+              </p>
+
+              <p>
+                L’inbound marketing permet de developper une visibilite durable, d’attirer les bons publics et de consolider la credibilite d’une marque. Nous travaillons contenus, messages et parcours pour rendre votre presence en ligne plus strategique et performante.
+              </p>
+
+              <div class="service-section-grid">
+                <div class="service-card">
+                  <div class="service-card-title">Visibilite</div>
+                  <p class="service-card-text">Contenus strategiques pour acquisition et presence digitale.</p>
+                </div>
+                <div class="service-card">
+                  <div class="service-card-title">Messages</div>
+                  <p class="service-card-text">Storytelling et structuration des prises de parole.</p>
+                </div>
+                <div class="service-card">
+                  <div class="service-card-title">Parcours</div>
+                  <p class="service-card-text">Optimisation des pages et mecanismes de conversion.</p>
+                </div>
+                <div class="service-card">
+                  <div class="service-card-title">SEO</div>
+                  <p class="service-card-text">Renforcement du contenu pour la recherche organique.</p>
+                </div>
+              </div>
+
+              <a href="contact.html" class="btn btn-outline-light">PARLER DE VOTRE PROJET</a>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6">
+            <div class="service-section-media">
+              <video autoplay muted loop playsinline>
+                <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/16_phtw8d.mp4" type="video/mp4">
+              </video>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <!-- STRATEGIE -->
+      <section class="service-section fade-in" id="strategie-360">
+        <div class="row align-items-center gy-5">
+          <div class="col-12 col-lg-6 order-lg-2">
+            <div class="service-section-text">
+              <p class="service-section-index">04 / Expertise</p>
+              <h2 class="service-section-title">CONSEIL ET STRATEGIE</h2>
+              <p class="service-section-subtitle">marketing and communication 360</p>
+
+              <p class="service-section-hook">
+                <strong>Nous accompagnons les marques dans la structuration globale de leur communication afin d’aligner positionnement, image, contenu et activation.</strong>
+              </p>
+
+              <p>
+                Avant de produire, il faut clarifier. Cette expertise permet d’identifier les bons axes de communication, les priorites marketing et les leviers de developpement les plus pertinents pour faire rayonner une marque avec coherence et ambition.
+              </p>
+
+              <div class="service-section-grid">
+                <div class="service-card">
+                  <div class="service-card-title">Audit</div>
+                  <p class="service-card-text">Analyse d’image, de positionnement et de presence digitale.</p>
+                </div>
+                <div class="service-card">
+                  <div class="service-card-title">Vision</div>
+                  <p class="service-card-text">Recommandations marketing et communication 360.</p>
+                </div>
+                <div class="service-card">
+                  <div class="service-card-title">Plan</div>
+                  <p class="service-card-text">Priorisation des actions et feuille de route claire.</p>
+                </div>
+                <div class="service-card">
+                  <div class="service-card-title">Accompagnement</div>
+                  <p class="service-card-text">Suivi strategique et pilotage du deploiement.</p>
+                </div>
+              </div>
+
+              <a href="contact.html" class="btn btn-outline-light">PARLER DE VOTRE PROJET</a>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6 order-lg-1">
+            <div class="service-section-media">
+              <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Agence de strategie marketing et communication digitale a Bordeaux">
+            </div>
+          </div>
+        </div>
+      </section>
 
     </div>
   </section>
@@ -661,9 +787,9 @@
   <!-- CTA -->
   <section class="services-cta fade-in">
     <div class="container">
-      <div class="cta-box">
-        <h2 class="cta-title">UN BESOIN PONCTUEL OU UN ACCOMPAGNEMENT GLOBAL ?</h2>
-        <p class="cta-text">
+      <div class="services-cta-box">
+        <h2 class="services-cta-title">UN BESOIN PONCTUEL OU UN ACCOMPAGNEMENT GLOBAL ?</h2>
+        <p class="services-cta-text">
           Abyss Lab construit des accompagnements sur mesure en strategie marketing, communication digitale, brand content, direction artistique, reseaux sociaux et image de marque pour hotels, restaurants et lieux lifestyle.
         </p>
         <a href="contact.html" class="btn btn-outline-light">PARLER DE VOTRE PROJET</a>
