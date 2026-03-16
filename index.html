@@ -32,16 +32,6 @@
       scroll-behavior:smooth;
     }
 
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--white);
-      font-family:'Montserrat',sans-serif;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      text-rendering:optimizeLegibility;
-    }
-
     a{
       transition:all .3s ease;
     }
@@ -61,7 +51,6 @@
       inset:0;
       z-index:-2;
       overflow:hidden;
-      background:#000;
     }
 
     .video-background video{
@@ -75,31 +64,29 @@
       position:absolute;
       inset:0;
       background:
-        radial-gradient(circle at 20% 20%, rgba(53,87,180,.18), transparent 28%),
-        radial-gradient(circle at 80% 65%, rgba(0,140,255,.10), transparent 25%),
-        linear-gradient(180deg, rgba(0,0,0,.30) 0%, rgba(0,0,0,.48) 100%);
+        linear-gradient(to bottom, rgba(0,0,0,0.42), rgba(0,0,0,0.72)),
+        rgba(0,0,0,0.25);
+      z-index:1;
     }
 
     /* ===== NAVBAR ===== */
     .navbar{
-      transition:background .3s ease, backdrop-filter .3s ease, border-color .3s ease;
+      position:relative;
+      z-index:30;
+      transition:background-color 0.3s ease, backdrop-filter 0.3s ease;
     }
 
     .navbar.scrolled{
-      background:rgba(0,0,0,.58);
-      backdrop-filter:blur(10px);
-      -webkit-backdrop-filter:blur(10px);
-      border-bottom:1px solid rgba(255,255,255,.06);
+      background:rgba(0,0,0,0.68);
+      backdrop-filter:blur(14px);
     }
 
     .navbar-brand{
-      font-family:'couture',sans-serif;
-      letter-spacing:.10em;
-      font-size:1.05rem;
-      color:var(--white)!important;
+      letter-spacing:1px;
     }
 
     .nav-link{
+      font-family: 'couture', sans-serif;
       font-size:.80rem;
       letter-spacing:.16em;
       text-transform:uppercase;
@@ -553,12 +540,11 @@
     </video>
   </div>
 
-  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark py-3">
     <div class="container">
-      <a class="navbar-brand" href="index.html">ABYSS LAB.</a>
+      <a class="navbar-brand fw-bold" href="index.html">ABYSS LAB.</a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-label="Ouvrir le menu">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Ouvrir le menu">
         <span class="navbar-toggler-icon"></span>
       </button>
 

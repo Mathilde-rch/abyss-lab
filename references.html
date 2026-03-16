@@ -1,296 +1,572 @@
+<!DOCTYPE html>
+<html lang="fr">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ABYSS LAB</title>
 
-<!-- Bootstrap CDN -->
+<meta name="description" content="References Abyss Lab : collaborations, guest apps, web design et identite visuelle pour hotels, restaurants et lieux lifestyle.">
+
+<title>References | ABYSS LAB</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Ton CSS -->
+<link href="https://fonts.cdnfonts.com/css/couture" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
 <link rel="stylesheet" href="assets/css/style.css">
+
+
+<style>
+
+:root{
+--white:#ffffff;
+--white-soft:rgba(255,255,255,.82);
+--white-muted:rgba(255,255,255,.68);
+--line:rgba(255,255,255,.14);
+--bg:#000;
+}
+
+/* GLOBAL */
+
+html{scroll-behavior:smooth;}
+
+img{max-width:100%;display:block;}
+
+.section-space{padding:96px 0;}
+
+
+/* VIDEO BACKGROUND */
+
+.video-background{
+position:fixed;
+inset:0;
+z-index:-2;
+overflow:hidden;
+}
+
+.video-background video{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.video-background::after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.75));
+}
+
+
+/* NAVBAR */
+
+.navbar{
+position:relative;
+z-index:20;
+transition:.3s;
+}
+
+.navbar.scrolled{
+background:rgba(0,0,0,.7);
+backdrop-filter:blur(14px);
+}
+
+.nav-link{
+font-family:'couture',sans-serif;
+font-size:.80rem;
+letter-spacing:.16em;
+text-transform:uppercase;
+color:var(--white-soft)!important;
+padding-left:1rem!important;
+padding-right:1rem!important;
+}
+
+.nav-link.active,
+.nav-link:hover{
+color:white!important;
+}
+
+
+/* HERO */
+
+.services-hero{
+padding:140px 0 70px;
+position:relative;
+z-index:2;
+}
+
+.hero-kicker{
+font-family:"Montserrat",sans-serif;
+font-size:12px;
+letter-spacing:3px;
+text-transform:uppercase;
+color:var(--white-muted);
+margin-bottom:18px;
+}
+
+.hero-title{
+font-size:4rem;
+line-height:.95;
+text-transform:uppercase;
+margin-bottom:18px;
+max-width:900px;
+}
+
+.hero-subtitle{
+font-family:"Montserrat";
+max-width:520px;
+line-height:1.8;
+color:var(--white-soft);
+}
+
+
+/* SECTION */
+
+.service-section{
+border-top:1px solid rgba(255,255,255,.15);
+padding:80px 0;
+position:relative;
+z-index:2;
+}
+
+.service-section-title{
+font-size:2.4rem;
+text-transform:uppercase;
+margin-bottom:15px;
+}
+
+.service-section-index{
+font-family:"Montserrat";
+font-size:.75rem;
+letter-spacing:2px;
+text-transform:uppercase;
+color:var(--white-muted);
+margin-bottom:12px;
+}
+
+.service-section-hook{
+font-family:"Montserrat";
+font-size:1rem;
+line-height:1.8;
+margin-bottom:16px;
+}
+
+.service-section p{
+font-family:"Montserrat";
+color:var(--white-soft);
+line-height:1.8;
+}
+
+
+/* IMAGES */
+
+.reference-media{
+overflow:hidden;
+border:1px solid rgba(255,255,255,.15);
+background:rgba(255,255,255,.03);
+}
+
+.reference-media img,
+.reference-media video{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+
+/* CTA */
+
+.services-cta{
+padding:80px 0;
+border-top:1px solid rgba(255,255,255,.15);
+}
+
+.services-cta-title{
+font-size:2rem;
+text-transform:uppercase;
+margin-bottom:18px;
+}
+
+.services-cta-text{
+font-family:"Montserrat";
+max-width:700px;
+line-height:1.9;
+color:var(--white-soft);
+}
+
+
+/* FOOTER */
+
+footer{
+border-top:1px solid rgba(255,255,255,.15);
+padding:60px 0;
+font-size:.9rem;
+}
+
+
+/* FADE */
+
+.fade-in{
+opacity:0;
+transform:translateY(26px);
+transition:.8s;
+}
+
+.fade-in.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width:991px){
+
+.hero-title{font-size:2.5rem;}
+
+.service-section-title{font-size:1.8rem;}
+
+}
+
+</style>
+
 </head>
-<nav class="navbar navbar-expand-lg navbar-dark bg-black py-3 thin-border">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">ABYSS LAB.</a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<body>
 
-    <div class="collapse navbar-collapse justify-content-end" id="navmenu">
-      <ul class="navbar-nav">
 
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">A PROPOS</a>
-        </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="services.html">SERVICES</a>
-        </li>
+<!-- VIDEO -->
 
-        <li class="nav-item">
-          <a class="nav-link" href="references.html">REFERENCES</a>
-        </li>
+<div class="video-background">
 
-        <li class="nav-item">
-          <a class="nav-link" href="contact.html">CONTACT</a>
-        </li>
+<video autoplay muted loop playsinline preload="auto">
+<source src="assets/video/abyss-lab.mp4" type="video/mp4">
+</video>
 
-      </ul>
-    </div>
-  </div>
-</nav>
-<section class="section-spacing">
+</div>
+
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg navbar-dark py-3">
+
 <div class="container">
 
-<h1 class="page-title mb-5">REFERENCES</h1>
+<a class="navbar-brand fw-bold" href="index.html">ABYSS LAB.</a>
 
-<section class="section-space">
-  <div class="container">
-    <div class="row align-items-center gy-5">
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+<span class="navbar-toggler-icon"></span>
+</button>
 
-      <!-- TEXTE -->
-      <div class="col-12 col-lg-5">
-        <h2 class="mb-4">COLLABORATIONS<br>& INFLUENCE</h2>
+<div class="collapse navbar-collapse justify-content-end" id="navmenu">
 
-        <p class="fw-semibold">
-          Renforcer votre visibilité, générer de l’engagement qualifié
-          et créer des expériences de marque durables.
-        </p>
+<ul class="navbar-nav">
 
-        <p>
-          Nous accompagnons les marques et lieux dans la création et le pilotage
-          de collaborations alignées avec leur ADN.
-          De la sélection des profils à la coordination des activations,
-          nous développons des partenariats authentiques à forte valeur ajoutée.
-        </p>
+<li class="nav-item">
+<a class="nav-link" href="index.html">A PROPOS</a>
+</li>
 
-        <a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light mt-3">CONTACT</a>
-      </div>
+<li class="nav-item">
+<a class="nav-link" href="services.html">SERVICES</a>
+</li>
 
-      <!-- MOSAIQUE IMAGES -->
-      <div class="col-12 col-lg-7">
-        <div class="row g-3">
-          <div class="col-6 col-md-4">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944484/7_etntek.jpg" class="img-fluid rounded">
-          </div>
-          <div class="col-6 col-md-4">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944485/8_tdlijm.jpg" class="img-fluid rounded">
-          </div>
-          <div class="col-6 col-md-4">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771943973/2_kildtp.jpg" class="img-fluid rounded">
-          </div>
-          <div class="col-6 col-md-4">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944486/9_hb4u5m.jpg" class="img-fluid rounded">
-          </div>
-          <div class="col-6 col-md-4">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944496/11_snjoba.jpg" class="img-fluid rounded">
-          </div>
-          <div class="col-6 col-md-4">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944497/12_mjlqal.jpg" class="img-fluid rounded">
-          </div>
-        </div>
-      </div>
+<li class="nav-item">
+<a class="nav-link active" href="references.html">REFERENCES</a>
+</li>
 
-    </div>
-  </div>
+<li class="nav-item">
+<a class="nav-link" href="contact.html">CONTACT</a>
+</li>
+
+</ul>
+
+</div>
+</div>
+</nav>
+
+
+
+<!-- HERO -->
+
+<section class="services-hero fade-in">
+
+<div class="container">
+
+<p class="hero-kicker">ABYSS LAB — REFERENCES</p>
+
+<h1 class="hero-title">
+PROJETS<br>
+ET COLLABORATIONS
+</h1>
+
+<p class="hero-subtitle">
+Collaborations marketing, guest apps, web design et identite visuelle pour hotels, restaurants et lieux lifestyle.
+</p>
+
+</div>
+
 </section>
-<br>
-<section class="section-space">
-  <div class="container">
-    <div class="row align-items-center gy-5">
 
-      <!-- TEXTE -->
-      <div class="col-12 col-lg-5">
-        <h2 class="mb-4">GUEST APP</h2>
 
-        <p class="fw-semibold">
-          Maximiser l’engagement client et le ROI grâce à une expérience digitale optimisée.
-        </p>
 
-        <p>
-          Conception de parcours client, UX/UI design et fonctionnalités interactives,
-          accompagnées de la gestion, promotion et mise à jour,
-          pour maximiser l’engagement et la performance digitale.
-        </p>
+<!-- REFERENCES -->
 
-        <a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light mt-3">CONTACT</a>
-      </div>
+<section class="container">
 
-      <!-- IMAGES -->
-      <div class="col-12 col-lg-7">
-        <div class="row g-4 align-items-end">
-          <div class="col-6">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771945281/DE%CC%81COUVRIR_EN_EXCLUSIVITE%CC%81_bbuxaz.gif" class="img-fluid rounded">
-            <small class="d-block mt-2 text-muted">Création Guest app Mondrian x Duve</small>
-          </div>
-          <div class="col-6">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771947024/17_gmnxl2.jpg" class="img-fluid rounded">
-            <small class="d-block mt-2 text-muted">
-              Création Guest app des 10 établissements Millésime x Bowo
-            </small>
-          </div>
-          <div class="col-6">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771947028/18_bqmzmu.jpg" class="img-fluid rounded">
-            <small class="d-block mt-2 text-muted">Création Guest app Mondrian x Duve</small>
-          </div>
-          <div class="col-6">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771947029/19_bwjyak.jpg" class="img-fluid rounded">
-            <small class="d-block mt-2 text-muted">
-              Création Guest app des 10 établissements Millésime x Bowo
-            </small>
-          </div>
-        </div>
-      </div>
 
-    </div>
-  </div>
+
+<!-- COLLAB -->
+
+<section class="service-section fade-in">
+
+<div class="row align-items-center gy-5">
+
+<div class="col-lg-5">
+
+<p class="service-section-index">01 / Collaboration</p>
+
+<h2 class="service-section-title">
+COLLABORATIONS & INFLUENCE
+</h2>
+
+<p class="service-section-hook">
+<strong>Renforcer la visibilité et créer des expériences de marque durables.</strong>
+</p>
+
+<p>
+Nous accompagnons les marques dans la création et la coordination de collaborations stratégiques.
+De la sélection des profils à l’activation des campagnes, chaque partenariat est pensé pour générer impact et engagement.
+</p>
+
+<a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light mt-3">
+CONTACT
+</a>
+
+</div>
+
+<div class="col-lg-7">
+
+<div class="row g-3">
+
+<div class="col-6 col-md-4">
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944484/7_etntek.jpg" class="img-fluid rounded">
+</div>
+
+<div class="col-6 col-md-4">
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944485/8_tdlijm.jpg" class="img-fluid rounded">
+</div>
+
+<div class="col-6 col-md-4">
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771943973/2_kildtp.jpg" class="img-fluid rounded">
+</div>
+
+<div class="col-6 col-md-4">
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944486/9_hb4u5m.jpg" class="img-fluid rounded">
+</div>
+
+<div class="col-6 col-md-4">
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944496/11_snjoba.jpg" class="img-fluid rounded">
+</div>
+
+<div class="col-6 col-md-4">
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944497/12_mjlqal.jpg" class="img-fluid rounded">
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
-<br>
-<section class="section-space">
-  <div class="container">
-    <div class="row align-items-center gy-5">
 
-      <!-- TEXTE -->
-      <div class="col-12 col-lg-5">
-        <h2 class="mb-4">SITES INTERNET</h2>
 
-        <p class="fw-semibold">
-          Maximiser la visibilité en ligne, générer du trafic qualifié
-          et transformer les visiteurs en clients.
-        </p>
 
-        <p>
-          Création, refonte et optimisation de sites internet,
-          web design, SEO, webmarketing et stratégies SEO/SEA
-          pour des sites performants et visibles.
-        </p>
+<!-- GUEST APP -->
 
-        <a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light mt-3">CONTACT</a>
-      </div>
+<section class="service-section fade-in">
 
-      <!-- IMAGES -->
-      <div class="col-12 col-lg-7">
-        <div class="row g-4">
-          <div class="col-12">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771947242/Design_sans_titre_3_xtitbt.png" class="img-fluid rounded">
-          </div>
-          <div class="col-6">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771947205/Design_sans_titre_12_mbfiof.jpg" class="img-fluid rounded">
-          </div>
-          <div class="col-6">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1772017315/Capture_d_e%CC%81cran_2026-02-25_a%CC%80_12.01.47_hnjpag.png" class="img-fluid rounded">
-          </div>
-        </div>
-      </div>
+<div class="row align-items-center gy-5">
 
-    </div>
-  </div>
+<div class="col-lg-5">
+
+<p class="service-section-index">02 / Produit digital</p>
+
+<h2 class="service-section-title">
+GUEST APP
+</h2>
+
+<p class="service-section-hook">
+<strong>Maximiser l’engagement client grâce à une expérience digitale optimisée.</strong>
+</p>
+
+<p>
+UX, parcours client et fonctionnalités interactives pour transformer l’expérience client et renforcer la relation avec les visiteurs.
+</p>
+
+<a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light mt-3">
+CONTACT
+</a>
+
+</div>
+
+<div class="col-lg-7">
+
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771947024/17_gmnxl2.jpg" class="img-fluid rounded">
+
+</div>
+
+</div>
+
 </section>
-<br>
-<section class="section-space">
-  <div class="container">
-    <div class="row align-items-center gy-5">
 
-      <!-- TEXTE -->
-      <div class="col-12 col-lg-5">
-        <h2 class="mb-4">GRAPHISME</h2>
 
-        <p class="fw-semibold">
-          Renforcer l’identité visuelle, créer une expérience client cohérente
-          et maximiser l’impact de la marque à chaque point de contact.
-        </p>
 
-        <p>
-          Application et création de branding à 360°,
-          conception de tous les supports de communication
-          pour accompagner l’expérience client complète
-          d’un hôtel 5 étoiles ou d’une marque premium.
-        </p>
+<!-- WEB -->
 
-        <a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light mt-3">CONTACT</a>
-      </div>
+<section class="service-section fade-in">
 
-      <!-- IMAGES -->
-      <div class="col-12 col-lg-7">
-        <div class="row g-4 align-items-end">
-          <div class="col-6">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1772016899/Capture_d_e%CC%81cran_2026-01-19_a%CC%80_12.05.14_jv60f4.png" class="img-fluid rounded">
-            <small class="d-block mt-2 text-muted">
-              Rebranding identité visuelle Mondrian
-            </small>
-          </div>
-          <div class="col-6">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1772016900/Capture_d_e%CC%81cran_2026-01-19_a%CC%80_12.05.56_tsmbr5.png" class="img-fluid rounded">
-            <small class="d-block mt-2 text-muted">
-              Création illustrations cocktails
-            </small>
-          </div>
-        </div>
-      </div>
+<div class="row align-items-center gy-5">
 
-    </div>
-  </div>
+<div class="col-lg-5">
+
+<p class="service-section-index">03 / Digital</p>
+
+<h2 class="service-section-title">
+SITES INTERNET
+</h2>
+
+<p class="service-section-hook">
+<strong>Créer des sites performants qui génèrent trafic et conversion.</strong>
+</p>
+
+<p>
+Création et optimisation de sites internet, UX design, SEO et stratégie digitale.
+</p>
+
+<a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light mt-3">
+CONTACT
+</a>
+
+</div>
+
+<div class="col-lg-7">
+
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771947242/Design_sans_titre_3_xtitbt.png" class="img-fluid rounded">
+
+</div>
+
+</div>
+
 </section>
-<br>
+
+
+
+</section>
+
+
+
+<!-- CTA -->
+
+<section class="services-cta fade-in">
+
+<div class="container">
+
+<h2 class="services-cta-title">
+UN PROJET EN TETE ?
+</h2>
+
+<p class="services-cta-text">
+Abyss Lab accompagne hotels, restaurants et lieux lifestyle dans la creation de strategie marketing, brand content et experiences digitales.
+</p>
+
+<a href="contact.html" class="btn btn-outline-light">
+PARLER DE VOTRE PROJET
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- FOOTER -->
 
 <footer>
+
 <div class="container">
+
 <div class="row">
-<div class="col-12 col-md-6">
+
+<div class="col-md-6">
+
 <strong>ABYSS LAB.</strong><br>
-Agence basée Bordeaux. Déplacement partout en France.
+Agence basée Bordeaux.
+
 </div>
 
-<div class="col-12 col-md-6 text-md-end mt-4 mt-md-0">
+<div class="col-md-6 text-md-end mt-4 mt-md-0">
+
 <a href="mentions-legales.html" class="text-white me-3">Mentions légales</a>
+
 <a href="cgu.html" class="text-white me-3">CGU</a>
-<a href="politique-confidentialite.html" class="text-white">Politique de confidentialité</a>
+
+<a href="politique-confidentialite.html" class="text-white">
+Politique de confidentialité
+</a>
+
 </div>
 
 </div>
+
 </div>
+
 </footer>
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-  const currentLocation = location.pathname.split("/").pop();
-  const menuItems = document.querySelectorAll(".nav-link");
 
-  menuItems.forEach(link => {
-    if(link.getAttribute("href") === currentLocation){
-      link.classList.add("active");
-    }
-  });
-});
-</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
 <script>
 
-/* Sticky navbar */
-window.addEventListener("scroll", function(){
-    const navbar = document.querySelector(".navbar");
-    navbar.classList.toggle("scrolled", window.scrollY > 50);
+window.addEventListener("scroll",function(){
+const navbar=document.querySelector(".navbar");
+navbar.classList.toggle("scrolled",window.scrollY>50);
 });
 
-/* Fade-in on scroll */
-const faders = document.querySelectorAll(".fade-in");
+const faders=document.querySelectorAll(".fade-in");
 
-const appearOptions = {
-    threshold:0.2
-};
+const appearOnScroll=new IntersectionObserver(function(entries,observer){
 
-const appearOnScroll = new IntersectionObserver(function(entries, observer){
-    entries.forEach(entry=>{
-        if(!entry.isIntersecting) return;
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-    });
-}, appearOptions);
+entries.forEach(entry=>{
+
+if(!entry.isIntersecting)return;
+
+entry.target.classList.add("visible");
+
+observer.unobserve(entry.target);
+
+});
+
+},{threshold:.15});
 
 faders.forEach(fader=>{
-    appearOnScroll.observe(fader);
+appearOnScroll.observe(fader);
 });
 
 </script>
+
+</body>
+</html>
