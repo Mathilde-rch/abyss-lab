@@ -3,8 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Abyss Lab révèle l’essence profonde des marques grâce à une stratégie créative, une direction artistique forte et des expériences digitales pensées pour l’hôtellerie, le lifestyle et les marques ambitieuses.">
-  <title>ABYSS LAB</title>
+  <meta name="description" content="Abyss Lab, agence de stratégie de marque, direction artistique, brand content et création de sites internet premium à Bordeaux pour l’hôtellerie, le lifestyle et les marques ambitieuses.">
+  <meta name="keywords" content="Abyss Lab, agence branding Bordeaux, stratégie de marque, direction artistique, brand content, site internet premium, agence communication luxe, marketing hôtellerie luxe, création site vitrine Bordeaux">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Abyss Lab">
+  <meta property="og:title" content="ABYSS LAB">
+  <meta property="og:description" content="Stratégie de marque, direction artistique et expériences digitales pour les marques, lieux et maisons qui veulent se distinguer.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <title>ABYSS LAB | Stratégie de marque, direction artistique & expériences digitales</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,17 +25,28 @@
     :root{
       --white:#ffffff;
       --white-soft:rgba(255,255,255,.82);
-      --white-muted:rgba(255,255,255,.68);
+      --white-muted:rgba(255,255,255,.66);
       --line:rgba(255,255,255,.14);
-      --line-soft:rgba(255,255,255,.10);
+      --line-soft:rgba(255,255,255,.09);
       --navy:#001D51;
       --glow-a:rgba(74,159,255,.20);
       --glow-b:rgba(0,102,255,.12);
+      --glow-c:rgba(255,255,255,.30);
       --bg:#000000;
+      --panel:rgba(8,8,8,.34);
+      --panel-strong:rgba(8,8,8,.52);
+      --panel-soft:rgba(255,255,255,.03);
     }
 
     html{
       scroll-behavior:smooth;
+    }
+
+    body{
+      color:var(--white);
+      background:#000;
+      overflow-x:hidden;
+      font-family:'Montserrat',sans-serif;
     }
 
     a{
@@ -42,18 +60,33 @@
 
     .section-space{
       padding:96px 0;
+      position:relative;
+      z-index:2;
+    }
+
+    .section-band{
+      background:linear-gradient(180deg, rgba(0,0,0,.44), rgba(0,0,0,.58));
+      border-top:1px solid var(--line-soft);
+      border-bottom:1px solid var(--line-soft);
+      backdrop-filter:blur(2px);
+    }
+
+    .section-panel{
+      background:rgba(0,0,0,.34);
+      border-top:1px solid rgba(255,255,255,.08);
+      border-bottom:1px solid rgba(255,255,255,.08);
     }
 
     .section-intro{
-      max-width:780px;
-      margin:0 auto 44px;
+      max-width:790px;
+      margin:0 auto 46px;
       text-align:center;
     }
 
     .section-label{
       display:block;
       margin-bottom:14px;
-      font-size:.75rem;
+      font-size:.74rem;
       font-weight:700;
       letter-spacing:.22em;
       text-transform:uppercase;
@@ -69,7 +102,7 @@
     }
 
     .section-copy{
-      max-width:840px;
+      max-width:860px;
       margin:18px auto 0;
       font-size:1rem;
       line-height:1.9;
@@ -82,6 +115,7 @@
       inset:0;
       z-index:-2;
       overflow:hidden;
+      background:#000;
     }
 
     .video-background video{
@@ -95,8 +129,8 @@
       position:absolute;
       inset:0;
       background:
-        linear-gradient(to bottom, rgba(0,0,0,0.42), rgba(0,0,0,0.72)),
-        rgba(0,0,0,0.25);
+        linear-gradient(to bottom, rgba(0,0,0,0.38), rgba(0,0,0,0.74)),
+        rgba(0,0,0,0.24);
       z-index:1;
     }
 
@@ -104,16 +138,18 @@
     .navbar{
       position:relative;
       z-index:30;
-      transition:background-color 0.3s ease, backdrop-filter 0.3s ease;
+      transition:background-color .3s ease, backdrop-filter .3s ease;
     }
 
     .navbar.scrolled{
-      background:rgba(0,0,0,0.68);
+      background:rgba(0,0,0,.68);
       backdrop-filter:blur(14px);
     }
 
     .navbar-brand{
+      font-family:'couture',sans-serif;
       letter-spacing:1px;
+      color:var(--white)!important;
     }
 
     .nav-link{
@@ -174,7 +210,7 @@
       justify-content:center;
       gap:14px;
       flex-wrap:wrap;
-      margin-top:32px;
+      margin-top:34px;
     }
 
     @media(min-width:992px){
@@ -200,6 +236,8 @@
 
     .btn-outline-light{
       border-color:rgba(255,255,255,.55);
+      background:transparent;
+      color:var(--white);
     }
 
     .btn-outline-light:hover{
@@ -250,13 +288,74 @@
       }
     }
 
-    /* ===== VALUE CARDS ===== */
-    .value-card{
+    .manifesto-glow{
+      max-width:1080px;
+    }
+
+    .glow-line{
+      margin:0 0 10px;
+      color:rgba(255,255,255,.52);
+      transition:color .8s ease;
+    }
+
+    .glow-line span{
+      display:inline-block;
+      margin:0 .10em;
+    }
+
+    .glow-line .glow-word{
+      color:rgba(255,255,255,.60);
+      text-shadow:none;
+      transition:
+        color .85s ease,
+        text-shadow .85s ease,
+        transform .85s ease,
+        opacity .85s ease;
+      opacity:.88;
+    }
+
+    .glow-line-soft{
+      max-width:980px;
+      margin:18px auto 0;
+      font-size:1.02rem;
+      line-height:1.9;
+    }
+
+    .manifesto-glow.is-visible .glow-line{
+      color:rgba(255,255,255,.78);
+    }
+
+    .manifesto-glow.is-visible .glow-word{
+      color:var(--white);
+      text-shadow:
+        0 0 12px rgba(255,255,255,.16),
+        0 0 22px var(--glow-a),
+        0 0 36px var(--glow-b),
+        0 0 8px var(--glow-c);
+      transform:translateY(-1px);
+      opacity:1;
+    }
+
+    /* ===== CARDS / BLOCKS ===== */
+    .elevated-card{
       height:100%;
       padding:30px 24px;
       border:1px solid var(--line);
-      background:rgba(255,255,255,.02);
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
       text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .elevated-card::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      height:1px;
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,.34), transparent);
+      opacity:.8;
     }
 
     .value-icon{
@@ -281,12 +380,22 @@
       margin:0;
     }
 
-    /* ===== PILLARS ===== */
     .pillar-card{
       height:100%;
       border:1px solid var(--line);
-      background:rgba(255,255,255,.02);
+      background:linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.015));
       padding:34px 28px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .pillar-card::before{
+      content:"";
+      position:absolute;
+      inset:0 auto auto 0;
+      width:100%;
+      height:1px;
+      background:linear-gradient(90deg, rgba(255,255,255,.22), transparent);
     }
 
     .pillar-title{
@@ -338,6 +447,7 @@
       background:#0a0a0a;
       isolation:isolate;
       height:100%;
+      border:1px solid var(--line);
     }
 
     .universe-card::after{
@@ -387,6 +497,12 @@
     }
 
     /* ===== FOUNDER ===== */
+    .founder-shell{
+      padding:28px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.012));
+    }
+
     .founder-image-wrap{
       overflow:hidden;
       background:rgba(255,255,255,.03);
@@ -424,6 +540,8 @@
 
     .founder-quote{
       margin:28px 0 0;
+      padding-top:22px;
+      border-top:1px solid var(--line-soft);
       font-size:1.06rem;
       line-height:1.9;
       color:var(--white);
@@ -437,6 +555,7 @@
       border-bottom:1px solid var(--line);
       padding:26px 18px 20px;
       text-align:center;
+      background:rgba(255,255,255,.012);
     }
 
     .method-label{
@@ -466,8 +585,17 @@
     }
 
     /* ===== SEO TEXT ===== */
+    .seo-block{
+      max-width:1080px;
+      margin:0 auto;
+      padding:44px 34px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.012));
+      text-align:center;
+    }
+
     .seo-text{
-      max-width:1020px;
+      max-width:980px;
       margin:0 auto;
       text-align:center;
       font-size:1rem;
@@ -477,6 +605,7 @@
 
     .seo-text strong{
       color:var(--white);
+      font-weight:700;
     }
 
     /* ===== FINAL CTA ===== */
@@ -484,6 +613,9 @@
       max-width:860px;
       margin:0 auto;
       text-align:center;
+      padding:46px 34px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.012));
     }
 
     .final-cta-title{
@@ -507,6 +639,10 @@
       border-top:1px solid var(--line);
       padding:34px 0 14px;
       margin-top:10px;
+      position:relative;
+      z-index:2;
+      background:rgba(0,0,0,.22);
+      backdrop-filter:blur(3px);
     }
 
     .footer-top{
@@ -644,6 +780,19 @@
       white-space:nowrap;
     }
 
+    /* ===== ACCESSIBILITY / SEO ===== */
+    .visually-hidden-focusable:not(:focus):not(:focus-within){
+      position:absolute!important;
+      width:1px!important;
+      height:1px!important;
+      padding:0!important;
+      margin:-1px!important;
+      overflow:hidden!important;
+      clip:rect(0,0,0,0)!important;
+      white-space:nowrap!important;
+      border:0!important;
+    }
+
     /* ===== ANIMATIONS ===== */
     .fade-in{
       opacity:0;
@@ -686,10 +835,10 @@
         white-space:normal;
       }
 
-      .value-card,
-      .pillar-card,
-      .method-step{
-        min-height:auto;
+      .founder-shell,
+      .seo-block,
+      .final-cta{
+        padding:28px 22px;
       }
     }
 
@@ -699,10 +848,21 @@
       }
 
       .header{
-        font-size:.78rem;
-        letter-spacing:.16em;
+        font-size:.80rem;
+        letter-spacing:.18em;
       }
 
+      .section-title,
+      .final-cta-title{
+        font-size:1.6rem;
+      }
+
+      .manifesto{
+        font-size:1.08rem;
+        line-height:1.75;
+      }
+
+      .glow-line-soft,
       .hero-text,
       .section-copy,
       .seo-text,
@@ -711,18 +871,8 @@
         line-height:1.85;
       }
 
-      .manifesto{
-        font-size:1.08rem;
-        line-height:1.75;
-      }
-
-      .section-title,
-      .final-cta-title{
-        font-size:1.65rem;
-      }
-
       .universe-card img{
-        height:360px;
+        height:380px;
       }
 
       .footer{
@@ -748,20 +898,43 @@
       }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ProfessionalService",
+    "name":"Abyss Lab",
+    "url":"https://abyss-lab.com/",
+    "description":"Agence de stratégie de marque, direction artistique, brand content et création de sites internet premium à Bordeaux.",
+    "areaServed":"FR",
+    "address":{
+      "@type":"PostalAddress",
+      "addressLocality":"Bordeaux",
+      "addressCountry":"FR"
+    },
+    "sameAs":[
+      "https://www.instagram.com/abyss.lab_/",
+      "https://www.linkedin.com/company/abyss-lab/",
+      "https://www.tiktok.com/@abyss.lab"
+    ]
+  }
+  </script>
 </head>
 
 <body>
 
+  <a href="#main-content" class="visually-hidden-focusable">Aller au contenu principal</a>
+
   <!-- BACKGROUND VIDEO -->
-  <div class="video-background">
-    <video autoplay muted loop playsinline webkit-playsinline id="bg-video">
+  <div class="video-background" aria-hidden="true">
+    <video autoplay muted loop playsinline webkit-playsinline id="bg-video" preload="metadata">
       <source src="assets/video/abyss-lab.mp4" type="video/mp4">
     </video>
   </div>
 
-  <nav class="navbar navbar-expand-lg navbar-dark py-3">
+  <nav class="navbar navbar-expand-lg navbar-dark py-3" aria-label="Navigation principale">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">ABYSS LAB.</a>
+      <a class="navbar-brand fw-bold" href="index.html" aria-label="Abyss Lab - Retour à l’accueil">ABYSS LAB.</a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Ouvrir le menu">
         <span class="navbar-toggler-icon"></span>
@@ -786,325 +959,345 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero fade-in" id="top">
-    <div class="container">
-      <h1 class="hero-title">ABYSS LAB.</h1>
-      <p class="header">FROM DEPTH, DISTINCTION EMERGES</p>
-      <p class="hero-text">
-        Conseil en image, stratégie de marque et direction créative pour les marques,
-        lieux et maisons qui veulent dépasser la simple présence pour construire
-        une empreinte forte, cohérente et désirable.
-      </p>
+  <main id="main-content">
 
-      <div class="hero-actions">
-        <a href="#approche" class="btn btn-outline-light">Découvrir l’approche</a>
-        <a href="references.html" class="btn-solid-light">Voir les références</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- MANIFESTO -->
-  <section class="section-space fade-in section-line" id="approche">
-    <div class="container">
-      <div class="manifesto">
-        <p>Au-delà de l’image, révéler une direction.</p>
-        <p>Au-delà de la présence, construire une empreinte.</p>
-        <p>Abyss Lab accompagne les marques ambitieuses qui veulent exister avec plus de clarté, plus de cohérence et plus de distinction.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- VALUE ADDED -->
-  <section class="section-space fade-in section-line">
-    <div class="container">
-      <div class="section-intro">
-        <span class="section-label">Valeur ajoutée</span>
-        <h2 class="section-title">Ce qu’Abyss Lab révèle</h2>
-        <p class="section-copy">
-          Avant de produire des contenus ou de déployer des supports, l’enjeu est de faire émerger
-          ce qui rend une marque lisible, désirable et mémorable.
+    <!-- HERO -->
+    <section class="hero fade-in">
+      <div class="container">
+        <h1 class="hero-title">ABYSS LAB.</h1>
+        <p class="header">FROM DEPTH, DISTINCTION EMERGES</p>
+        <p class="hero-text">
+          Conseil en image, stratégie de marque et direction créative pour les marques,
+          lieux et maisons qui veulent dépasser la simple présence pour construire
+          une empreinte forte, cohérente et désirable.
         </p>
-      </div>
 
-      <div class="row g-4">
-        <div class="col-12 col-md-6 col-lg-3">
-          <div class="value-card">
-            <div class="value-icon"><i class="bi bi-stars"></i></div>
-            <div class="value-title">Une image plus désirable</div>
-            <p class="value-text">
-              Créer un univers visuel plus juste, plus premium et plus cohérent avec l’ambition de la marque.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-3">
-          <div class="value-card">
-            <div class="value-icon"><i class="bi bi-compass"></i></div>
-            <div class="value-title">Un positionnement plus clair</div>
-            <p class="value-text">
-              Clarifier l’ADN, le territoire d’expression et la singularité qui doivent réellement émerger.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-3">
-          <div class="value-card">
-            <div class="value-icon"><i class="bi bi-grid-1x2"></i></div>
-            <div class="value-title">Une marque plus cohérente</div>
-            <p class="value-text">
-              Aligner vision, image, discours et expérience pour construire une présence plus solide et durable.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-3">
-          <div class="value-card">
-            <div class="value-icon"><i class="bi bi-gem"></i></div>
-            <div class="value-title">Une présence plus premium</div>
-            <p class="value-text">
-              Déployer une image de marque qui élève la perception, la désirabilité et la valeur perçue.
-            </p>
-          </div>
+        <div class="hero-actions">
+          <a href="#approche" class="btn btn-outline-light">Découvrir l’approche</a>
+          <a href="references.html" class="btn-solid-light">Voir les références</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- EXPERTISE -->
-  <section class="section-space fade-in section-line">
-    <div class="container">
-      <div class="section-intro">
-        <span class="section-label">Expertise</span>
-        <h2 class="section-title">Une approche structurée en trois piliers</h2>
-        <p class="section-copy">
-          Abyss Lab ne se limite pas à une addition de prestations. L’agence construit des marques plus fortes
-          en travaillant à la fois le fond, la forme et le déploiement.
-        </p>
-      </div>
-
-      <div class="row g-4">
-        <div class="col-12 col-lg-4">
-          <div class="pillar-card">
-            <h3 class="pillar-title">Positionnement &amp; Narration</h3>
-            <p class="pillar-text">
-              Clarifier ce que la marque est, ce qu’elle doit exprimer et la manière dont elle doit être perçue.
-            </p>
-            <ul class="pillar-list">
-              <li>Plateforme de marque</li>
-              <li>Storytelling & territoire éditorial</li>
-              <li>Stratégie marketing & communication</li>
-              <li>Vision, ton et cohérence d’ensemble</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-12 col-lg-4">
-          <div class="pillar-card">
-            <h3 class="pillar-title">Image &amp; Contenus</h3>
-            <p class="pillar-text">
-              Traduire cette direction en présence visuelle forte, désirable et immédiatement reconnaissable.
-            </p>
-            <ul class="pillar-list">
-              <li>Direction artistique</li>
-              <li>Brand content & UGC</li>
-              <li>Graphisme & identité visuelle</li>
-              <li>Contenus premium pour social media</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-12 col-lg-4">
-          <div class="pillar-card">
-            <h3 class="pillar-title">Expérience &amp; Déploiement</h3>
-            <p class="pillar-text">
-              Déployer la marque sur les bons supports pour renforcer sa visibilité, son impact et son attractivité.
-            </p>
-            <ul class="pillar-list">
-              <li>Réseaux sociaux</li>
-              <li>Collaborations & influence</li>
-              <li>Sites internet vitrine</li>
-              <li>Guest app & expérience client</li>
-            </ul>
-          </div>
+    <!-- MANIFESTO -->
+    <section class="section-space fade-in section-band" id="approche">
+      <div class="container">
+        <div class="manifesto manifesto-glow">
+          <p class="glow-line">
+            <span>Au-delà de l’image,</span>
+            <span class="glow-word">révéler une direction.</span>
+          </p>
+          <p class="glow-line">
+            <span>Au-delà de la présence,</span>
+            <span class="glow-word">construire une empreinte.</span>
+          </p>
+          <p class="glow-line glow-line-soft">
+            <span>Abyss Lab accompagne les marques ambitieuses qui veulent exister avec plus de</span>
+            <span class="glow-word">clarté</span>,
+            <span class="glow-word">cohérence</span>
+            <span>et</span>
+            <span class="glow-word">distinction.</span>
+          </p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- UNIVERSES -->
-  <section class="section-space fade-in section-line">
-    <div class="container">
-      <div class="section-intro">
-        <span class="section-label">Univers</span>
-        <h2 class="section-title">Des terrains d’expression où l’image fait la différence</h2>
-        <p class="section-copy">
-          Hôtellerie de luxe, restauration, lifestyle, lieux de destination ou lancements de marque :
-          Abyss Lab accompagne les univers qui doivent séduire avant même de s’expliquer.
-        </p>
-      </div>
+    <!-- WHAT CHANGES -->
+    <section class="section-space fade-in">
+      <div class="container">
+        <div class="section-intro">
+          <span class="section-label">Ce qui change</span>
+          <h2 class="section-title">Ce qu’une marque gagne quand sa profondeur devient lisible</h2>
+          <p class="section-copy">
+            Avant les supports, les contenus ou les campagnes, l’enjeu est de faire émerger
+            ce qui donne à une marque plus de justesse, plus d’impact et une présence plus distincte.
+          </p>
+        </div>
 
-      <div class="row g-4">
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="universe-card">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773415496/guest_app_hotellerie_agence_bordeaux_gldvjc.jpg" alt="Hôtellerie de luxe">
-            <div class="universe-content">
-              <div class="universe-title">Hôtellerie de luxe</div>
-              <p class="universe-text">
-                Construire des univers désirables et cohérents, pensés pour l’expérience, l’image et la conversion.
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="elevated-card">
+              <div class="value-icon"><i class="bi bi-stars"></i></div>
+              <h3 class="value-title">Une image plus désirable</h3>
+              <p class="value-text">
+                Un univers visuel plus affirmé, plus premium et plus aligné avec l’ambition réelle de la marque.
               </p>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="elevated-card">
+              <div class="value-icon"><i class="bi bi-compass"></i></div>
+              <h3 class="value-title">Un positionnement plus clair</h3>
+              <p class="value-text">
+                Une lecture plus nette de l’ADN, du territoire de marque et de la singularité à faire émerger.
+              </p>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="elevated-card">
+              <div class="value-icon"><i class="bi bi-grid-1x2"></i></div>
+              <h3 class="value-title">Une cohérence plus forte</h3>
+              <p class="value-text">
+                Une marque pensée comme un tout, où image, discours, expérience et perception avancent ensemble.
+              </p>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="elevated-card">
+              <div class="value-icon"><i class="bi bi-gem"></i></div>
+              <h3 class="value-title">Une présence plus premium</h3>
+              <p class="value-text">
+                Une marque qui ne se contente plus d’exister, mais qui s’impose avec plus d’évidence.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERTISE -->
+    <section class="section-space fade-in section-panel">
+      <div class="container">
+        <div class="section-intro">
+          <span class="section-label">Expertise</span>
+          <h2 class="section-title">Une approche structurée pour révéler, traduire et déployer</h2>
+          <p class="section-copy">
+            Abyss Lab accompagne les marques avec une logique claire : travailler le fond, façonner la forme
+            et déployer une présence à la hauteur de ce qu’elles portent réellement.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-12 col-lg-4">
+            <article class="pillar-card">
+              <h3 class="pillar-title">Positionnement &amp; narration</h3>
+              <p class="pillar-text">
+                Clarifier l’ADN, affirmer le territoire de marque et définir une ligne de récit capable de guider chaque prise de parole.
+              </p>
+              <ul class="pillar-list">
+                <li>Plateforme de marque</li>
+                <li>Storytelling & territoire éditorial</li>
+                <li>Stratégie marketing & communication</li>
+                <li>Vision, ton et cohérence d’ensemble</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="col-12 col-lg-4">
+            <article class="pillar-card">
+              <h3 class="pillar-title">Image &amp; contenus</h3>
+              <p class="pillar-text">
+                Traduire cette direction en présence visuelle forte, désirable et immédiatement reconnaissable sur les bons points de contact.
+              </p>
+              <ul class="pillar-list">
+                <li>Direction artistique</li>
+                <li>Brand content & UGC</li>
+                <li>Graphisme & identité visuelle</li>
+                <li>Contenus premium pour social media</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="col-12 col-lg-4">
+            <article class="pillar-card">
+              <h3 class="pillar-title">Expérience &amp; déploiement</h3>
+              <p class="pillar-text">
+                Déployer la marque sur le digital, les réseaux, les collaborations et les supports qui renforcent sa valeur perçue.
+              </p>
+              <ul class="pillar-list">
+                <li>Réseaux sociaux</li>
+                <li>Collaborations & influence</li>
+                <li>Sites internet vitrine</li>
+                <li>Guest app & expérience client</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UNIVERSES -->
+    <section class="section-space fade-in">
+      <div class="container">
+        <div class="section-intro">
+          <span class="section-label">Univers</span>
+          <h2 class="section-title">Des secteurs où l’image ne suffit pas : elle doit faire ressentir</h2>
+          <p class="section-copy">
+            Hôtellerie de luxe, restauration, art de vivre, projets lifestyle ou lancements de marque :
+            des univers où la perception, le détail et la cohérence font toute la différence.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="universe-card">
+              <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773415496/guest_app_hotellerie_agence_bordeaux_gldvjc.jpg" alt="Hôtellerie de luxe - stratégie de marque et expérience client">
+              <div class="universe-content">
+                <h3 class="universe-title">Hôtellerie de luxe</h3>
+                <p class="universe-text">
+                  Construire des univers désirables et cohérents, pensés pour l’expérience, l’image et la conversion.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="universe-card">
+              <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773412647/brand_content_mathilde_ranchon_ucmesi.jpg" alt="Restauration et art de vivre - direction artistique et brand content">
+              <div class="universe-content">
+                <h3 class="universe-title">Restauration &amp; art de vivre</h3>
+                <p class="universe-text">
+                  Révéler l’atmosphère, le détail et la singularité qui transforment un lieu en destination.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="universe-card">
+              <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Lancement de marque et site internet premium">
+              <div class="universe-content">
+                <h3 class="universe-title">Lancements &amp; présence digitale</h3>
+                <p class="universe-text">
+                  Donner à une marque naissante ou en évolution une présence plus affirmée, plus crédible et plus premium.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOUNDER -->
+    <section class="section-space fade-in section-panel">
+      <div class="container">
+        <div class="founder-shell">
+          <div class="row align-items-center gy-5">
+            <div class="col-12 col-md-5 col-lg-5">
+              <div class="founder-image-wrap">
+                <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773329727/agence_mathilde_ranchon_jtx26v.jpg" alt="Mathilde Ranchon, fondatrice d’Abyss Lab">
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-6 offset-lg-1">
+              <h2 class="founder-title">MATHILDE RANCHON</h2>
+              <p class="founder-subtitle">Fondatrice Abyss Lab.</p>
+
+              <p class="standard">
+                Avec un parcours spécialisé en marketing & communication dans l’hôtellerie de luxe et le lifestyle,
+                j’accompagne les marques ambitieuses dans la structuration de leur image, la clarification de leur positionnement
+                et le déploiement d’une présence plus forte sur leurs points de contact.
+              </p>
+
+              <p class="standard">
+                Mon approche consiste à aller au-delà de l’exécution pour révéler ce qui mérite réellement d’émerger :
+                une intention plus lisible, une identité plus cohérente et une marque capable de marquer durablement les esprits.
+              </p>
+
+              <p class="founder-quote">
+                Révéler ce qui distingue profondément une marque, puis le traduire en image, en récit et en expérience.
+              </p>
+
+              <a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light mt-3">Contact</a>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="universe-card">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773412647/brand_content_mathilde_ranchon_ucmesi.jpg" alt="Restauration et art de vivre">
-            <div class="universe-content">
-              <div class="universe-title">Restauration &amp; art de vivre</div>
-              <p class="universe-text">
-                Révéler l’atmosphère, le détail et la singularité qui transforment un lieu en destination.
+    <!-- METHOD -->
+    <section class="section-space fade-in">
+      <div class="container">
+        <div class="section-intro">
+          <span class="section-label">Méthode</span>
+          <h2 class="section-title">Une approche en profondeur, pensée pour durer</h2>
+          <p class="section-copy">
+            Chaque accompagnement suit une progression simple et lisible : comprendre, révéler, traduire, déployer.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="method-step">
+              <span class="method-label">01</span>
+              <h3 class="method-title">Observer</h3>
+              <p class="method-text">
+                Analyser l’existant, les usages, les décalages et les points de force à révéler.
               </p>
-            </div>
+            </article>
           </div>
-        </div>
 
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="universe-card">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Lancements de marque et présence digitale">
-            <div class="universe-content">
-              <div class="universe-title">Lancements &amp; présence digitale</div>
-              <p class="universe-text">
-                Donner à une marque naissante ou en évolution une présence plus affirmée, plus crédible et plus premium.
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="method-step">
+              <span class="method-label">02</span>
+              <h3 class="method-title">Révéler</h3>
+              <p class="method-text">
+                Faire émerger la singularité, le positionnement et la direction qui doivent guider la marque.
               </p>
-            </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="method-step">
+              <span class="method-label">03</span>
+              <h3 class="method-title">Traduire</h3>
+              <p class="method-text">
+                Donner forme à cette vision à travers les mots, l’image, le contenu et l’esthétique.
+              </p>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="method-step">
+              <span class="method-label">04</span>
+              <h3 class="method-title">Déployer</h3>
+              <p class="method-text">
+                Décliner cette présence sur les supports les plus pertinents pour renforcer sa portée.
+              </p>
+            </article>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FONDATRICE -->
-  <section class="section-space fade-in section-line">
-    <div class="container">
-      <div class="row align-items-center gy-5">
-        <div class="col-12 col-md-5 col-lg-5">
-          <div class="founder-image-wrap">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773329727/agence_mathilde_ranchon_jtx26v.jpg" alt="Mathilde Ranchon - Fondatrice Abyss Lab">
+    <!-- SEO BLOCK -->
+    <section class="section-space fade-in section-band">
+      <div class="container">
+        <div class="seo-block">
+          <div class="section-intro mb-0">
+            <span class="section-label">Positionnement</span>
+            <h2 class="section-title">Agence de branding, direction artistique et stratégie de marque à Bordeaux</h2>
           </div>
-        </div>
 
-        <div class="col-12 col-md-5 col-lg-5 offset-lg-1">
-          <h3 class="founder-title">MATHILDE RANCHON</h3>
-          <p class="founder-subtitle">Fondatrice Abyss Lab.</p>
-
-          <p class="standard">
-            Avec un parcours spécialisé en marketing & communication dans l’hôtellerie de luxe et le lifestyle,
-            j’accompagne les marques ambitieuses dans la structuration de leur image, la clarification de leur positionnement
-            et le déploiement d’une présence plus forte sur leurs points de contact.
+          <p class="seo-text mt-4">
+            <strong>Abyss Lab</strong> accompagne les marques, hôtels, restaurants, lieux de vie et projets lifestyle
+            qui souhaitent renforcer leur image, clarifier leur positionnement et développer une présence plus désirable.
+            De la <strong>stratégie marketing & communication</strong> à la <strong>direction artistique</strong>,
+            du <strong>brand content</strong> à la <strong>création de site internet vitrine premium</strong>,
+            l’agence conçoit des expériences de marque plus fortes, plus cohérentes et pensées pour durer.
           </p>
+        </div>
+      </div>
+    </section>
 
-          <p class="standard">
-            Mon approche consiste à aller au-delà de l’exécution pour révéler ce qui mérite réellement d’émerger :
-            une intention plus lisible, une identité plus cohérente et une marque capable de marquer durablement les esprits.
+    <!-- FINAL CTA -->
+    <section class="section-space fade-in">
+      <div class="container">
+        <div class="final-cta">
+          <h2 class="final-cta-title">Construisons une marque qui ne reste pas en surface.</h2>
+          <p class="final-cta-text">
+            Basée à Bordeaux, Abyss Lab accompagne des projets en France et à l’étranger avec une approche
+            sensible, stratégique et résolument orientée image.
           </p>
-
-          <p class="founder-quote">
-            Révéler ce qui distingue profondément une marque, puis le traduire en image, en récit et en expérience.
-          </p>
-
-          <a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light mt-3">Contact</a>
+          <a href="contact.html" class="btn btn-outline-light">Parler de votre projet</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- METHOD -->
-  <section class="section-space fade-in section-line">
-    <div class="container">
-      <div class="section-intro">
-        <span class="section-label">Méthode</span>
-        <h2 class="section-title">Une approche en profondeur</h2>
-        <p class="section-copy">
-          Chaque accompagnement suit une logique simple : comprendre, révéler, traduire et déployer.
-        </p>
-      </div>
-
-      <div class="row g-4">
-        <div class="col-12 col-md-6 col-lg-3">
-          <div class="method-step">
-            <span class="method-label">01</span>
-            <div class="method-title">Observer</div>
-            <p class="method-text">
-              Analyser l’existant, les usages, les décalages et les points de force à révéler.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-3">
-          <div class="method-step">
-            <span class="method-label">02</span>
-            <div class="method-title">Révéler</div>
-            <p class="method-text">
-              Faire émerger la singularité, le positionnement et la direction qui doivent guider la marque.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-3">
-          <div class="method-step">
-            <span class="method-label">03</span>
-            <div class="method-title">Traduire</div>
-            <p class="method-text">
-              Donner forme à cette vision à travers les mots, l’image, le contenu et l’esthétique.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-3">
-          <div class="method-step">
-            <span class="method-label">04</span>
-            <div class="method-title">Déployer</div>
-            <p class="method-text">
-              Décliner cette présence sur les supports les plus pertinents pour renforcer sa portée.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SEO BLOCK -->
-  <section class="section-space fade-in section-line">
-    <div class="container">
-      <div class="section-intro">
-        <span class="section-label">Positionnement</span>
-        <h2 class="section-title">Agence de branding, stratégie de marque et direction artistique à Bordeaux</h2>
-      </div>
-
-      <p class="seo-text">
-        <strong>Abyss Lab</strong> accompagne les marques, hôtels, restaurants, lieux de vie et projets lifestyle
-        qui souhaitent renforcer leur image, clarifier leur positionnement et développer une présence plus désirable.
-        De la <strong>stratégie marketing & communication</strong> à la <strong>direction artistique</strong>,
-        du <strong>brand content</strong> à la <strong>création de site internet vitrine</strong>,
-        l’agence conçoit des expériences de marque plus fortes, plus cohérentes et pensées pour durer.
-      </p>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section class="section-space fade-in section-line">
-    <div class="container">
-      <div class="final-cta">
-        <h2 class="final-cta-title">Construisons une marque qui ne reste pas en surface.</h2>
-        <p class="final-cta-text">
-          Basée à Bordeaux, Abyss Lab accompagne des projets en France et à l’étranger avec une approche
-          sensible, stratégique et résolument orientée image.
-        </p>
-        <a href="contact.html" class="btn btn-outline-light">Parler de votre projet</a>
-      </div>
-    </div>
-  </section>
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -1231,10 +1424,22 @@
     faders.forEach(fader => {
       appearOnScroll.observe(fader);
     });
-  </script>
 
-</body>
-</html>
+    const manifesto = document.querySelector(".manifesto-glow");
+
+    if (manifesto) {
+      const manifestoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            manifesto.classList.add("is-visible");
+          }
+        });
+      }, {
+        threshold:0.45
+      });
+
+      manifestoObserver.observe(manifesto);
+    }
   </script>
 
 </body>
