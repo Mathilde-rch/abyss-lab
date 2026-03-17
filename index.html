@@ -3,18 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Abyss Lab, studio de stratégie de marque, direction artistique, brand content et création de sites internet premium à Bordeaux pour les marques, lieux et maisons qui veulent émerger avec plus de distinction.">
-  <meta name="keywords" content="Abyss Lab, stratégie de marque Bordeaux, direction artistique, brand content, site internet premium, branding luxe, communication hôtellerie, image de marque lifestyle">
-  <meta name="robots" content="index, follow">
+  <meta name="description" content="Abyss Lab accompagne les marques, hôtels, restaurants et projets lifestyle avec une stratégie de marque, une direction artistique et une présence digitale pensées pour faire émerger ce qui les distingue.">
+  <meta name="keywords" content="Abyss Lab, agence branding Bordeaux, stratégie de marque Bordeaux, direction artistique luxe, brand content, site internet premium, communication hôtellerie luxe, image de marque lifestyle, création site vitrine Bordeaux">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="author" content="Abyss Lab">
-  <meta property="og:title" content="ABYSS LAB">
+  <meta name="theme-color" content="#000000">
+  <link rel="canonical" href="https://abyss-lab.com/">
+
+  <meta property="og:title" content="ABYSS LAB | Stratégie de marque, direction artistique & image premium">
   <meta property="og:description" content="Nous révélons ce qui distingue profondément une marque pour le traduire en image, narration et présence.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://abyss-lab.com/">
   <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Abyss Lab">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ABYSS LAB | Stratégie de marque, direction artistique & image premium">
+  <meta name="twitter:description" content="Nous révélons ce qui distingue profondément une marque pour le traduire en image, narration et présence.">
+
   <title>ABYSS LAB | Stratégie de marque, direction artistique & image premium</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link rel="dns-prefetch" href="//res.cloudinary.com">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/couture" rel="stylesheet">
@@ -76,9 +91,13 @@
     }
 
     .section-intro{
-      max-width:880px;
+      max-width:900px;
       margin:0 auto 52px;
       text-align:center;
+    }
+
+    .section-intro-tight{
+      margin-bottom:12px;
     }
 
     .section-label{
@@ -127,7 +146,7 @@
       position:absolute;
       inset:0;
       background:
-        linear-gradient(to bottom, rgba(0,0,0,.34), rgba(0,0,0,.74)),
+        linear-gradient(to bottom, rgba(0,0,0,.34), rgba(0,0,0,.76)),
         rgba(0,0,0,.20);
       z-index:1;
     }
@@ -195,7 +214,7 @@
     }
 
     .hero-text{
-      max-width:820px;
+      max-width:780px;
       margin:0 auto;
       text-align:center;
       font-size:1.04rem;
@@ -205,7 +224,7 @@
 
     .hero-strong{
       color:var(--white);
-      font-weight:600;
+      font-weight:700;
     }
 
     .hero-actions{
@@ -351,10 +370,10 @@
       color:var(--white-soft);
     }
 
-    /* ===== STRENGTH LEAD ===== */
+    /* ===== STRENGTH ===== */
     .strength-lead{
       max-width:980px;
-      margin:0 auto 54px;
+      margin:0 auto 0;
       text-align:center;
       font-size:1.14rem;
       line-height:1.95;
@@ -595,6 +614,84 @@
       color:var(--white-soft);
     }
 
+    /* ===== CONTACT ===== */
+    .contact-grid{
+      row-gap:34px;
+    }
+
+    .contact-card{
+      position:relative;
+      height:100%;
+      padding-top:22px;
+    }
+
+    .contact-card::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:72px;
+      height:1px;
+      background:linear-gradient(90deg, rgba(255,255,255,.72), transparent);
+    }
+
+    .contact-card-title{
+      margin:0 0 12px;
+      font-size:.98rem;
+      font-weight:700;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--white);
+    }
+
+    .contact-card-text,
+    .contact-card a{
+      font-size:.96rem;
+      line-height:1.9;
+      color:var(--white-soft);
+      text-decoration:none;
+    }
+
+    .contact-card a:hover{
+      color:var(--white);
+    }
+
+    .contact-form .form-control,
+    .contact-form .form-select{
+      background:transparent;
+      border:1px solid rgba(255,255,255,.24);
+      border-radius:0;
+      min-height:54px;
+      color:var(--white);
+      padding:14px 16px;
+      font-size:.95rem;
+      box-shadow:none;
+    }
+
+    .contact-form textarea.form-control{
+      min-height:160px;
+      resize:vertical;
+    }
+
+    .contact-form .form-control::placeholder{
+      color:rgba(255,255,255,.52);
+    }
+
+    .contact-form .form-control:focus,
+    .contact-form .form-select:focus{
+      border-color:rgba(255,255,255,.56);
+      background:transparent;
+      color:var(--white);
+      box-shadow:none;
+    }
+
+    .contact-note{
+      margin-top:16px;
+      font-size:.88rem;
+      line-height:1.8;
+      color:var(--white-muted);
+    }
+
     /* ===== SEO ===== */
     .seo-text{
       max-width:980px;
@@ -608,6 +705,30 @@
     .seo-text strong{
       color:var(--white);
       font-weight:700;
+    }
+
+    .seo-links{
+      margin-top:28px;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:12px 18px;
+    }
+
+    .seo-links a{
+      font-size:.84rem;
+      line-height:1.6;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--white-soft);
+      text-decoration:none;
+      border-bottom:1px solid rgba(255,255,255,.16);
+      padding-bottom:3px;
+    }
+
+    .seo-links a:hover{
+      color:var(--white);
+      border-color:rgba(255,255,255,.46);
     }
 
     /* ===== CTA ===== */
@@ -916,20 +1037,57 @@
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
-    "@type":"ProfessionalService",
-    "name":"Abyss Lab",
-    "url":"https://abyss-lab.com/",
-    "description":"Studio de stratégie de marque, direction artistique, brand content et création de sites internet premium à Bordeaux.",
-    "areaServed":"FR",
-    "address":{
-      "@type":"PostalAddress",
-      "addressLocality":"Bordeaux",
-      "addressCountry":"FR"
-    },
-    "sameAs":[
-      "https://www.instagram.com/abyss.lab_/",
-      "https://www.linkedin.com/company/abyss-lab/",
-      "https://www.tiktok.com/@abyss.lab"
+    "@graph":[
+      {
+        "@type":"ProfessionalService",
+        "name":"Abyss Lab",
+        "url":"https://abyss-lab.com/",
+        "email":"mathilde@abyss-lab.com",
+        "description":"Studio de stratégie de marque, direction artistique, brand content et création de sites internet premium à Bordeaux.",
+        "areaServed":"FR",
+        "address":{
+          "@type":"PostalAddress",
+          "addressLocality":"Bordeaux",
+          "addressCountry":"FR"
+        },
+        "sameAs":[
+          "https://www.instagram.com/abyss.lab_/",
+          "https://www.linkedin.com/company/abyss-lab/",
+          "https://www.tiktok.com/@abyss.lab"
+        ]
+      },
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {
+            "@type":"ListItem",
+            "position":1,
+            "name":"Accueil",
+            "item":"https://abyss-lab.com/"
+          }
+        ]
+      },
+      {
+        "@type":"FAQPage",
+        "mainEntity":[
+          {
+            "@type":"Question",
+            "name":"Que fait Abyss Lab ?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Abyss Lab accompagne les marques dans leur stratégie de marque, leur direction artistique, leur brand content et leur présence digitale afin de révéler ce qui les distingue."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"À qui s’adresse Abyss Lab ?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Abyss Lab accompagne notamment les marques premium, l’hôtellerie, la restauration, les lieux de vie et les projets lifestyle qui souhaitent renforcer leur image et leur cohérence."
+            }
+          }
+        ]
+      }
     ]
   }
   </script>
@@ -958,7 +1116,7 @@
           <li class="nav-item"><a class="nav-link active" href="index.html">A PROPOS</a></li>
           <li class="nav-item"><a class="nav-link" href="services.html">SERVICES</a></li>
           <li class="nav-item"><a class="nav-link" href="references.html">REFERENCES</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
         </ul>
       </div>
     </div>
@@ -972,8 +1130,8 @@
         <h1 class="hero-title">ABYSS LAB.</h1>
         <p class="header">FROM DEPTH, DISTINCTION EMERGES</p>
         <p class="hero-text">
-          Nous accompagnons les marques, lieux et maisons qui veulent dépasser le simple “beau”
-          pour construire une présence plus juste, plus désirable et <span class="hero-strong">véritablement distinctive</span>.
+          Nous faisons émerger ce qui distingue une marque, puis nous le traduisons en image,
+          en récit et en présence pour qu’elle s’impose avec <span class="hero-strong">plus de justesse, plus de désir et plus d’évidence.</span>
         </p>
 
         <div class="hero-actions">
@@ -1061,11 +1219,11 @@
     <!-- STRENGTH -->
     <section class="section-space section-separator fade-in">
       <div class="container">
-        <div class="section-intro">
-          <span class="section-label">Notre force</span>
-          <h2 class="section-title">Nous ne faisons pas qu’accompagner une marque. Nous faisons émerger ce qui doit vraiment se voir.</h2>
+        <div class="section-intro section-intro-tight">
+          <span class="section-label">Là où nous allons plus loin</span>
+          <h2 class="section-title">Nous ne suivons pas la surface d’une marque. Nous révélons ce qui doit émerger.</h2>
           <p class="section-copy">
-            Là où beaucoup ajoutent des actions, nous travaillons ce qui transforme réellement la perception :
+            Là où beaucoup ajoutent des actions, nous travaillons ce qui transforme vraiment la perception :
             <span class="emphasis">la justesse du positionnement</span>,
             <span class="emphasis">la cohérence de l’image</span>
             et
@@ -1074,18 +1232,17 @@
         </div>
 
         <p class="strength-lead reveal-up">
-          Notre valeur n’est pas d’ajouter du bruit.  
-          <strong>Elle est de révéler ce qui mérite d’émerger</strong>, puis de lui donner une traduction forte,
-          désirable et cohérente à travers l’image, le récit et l’expérience.
+          Nous n’ajoutons pas du bruit. <strong>Nous faisons émerger l’essentiel</strong>,
+          puis nous lui donnons une traduction forte, désirable et cohérente à travers l’image, le récit et l’expérience.
         </p>
       </div>
     </section>
 
     <!-- EXPERTISE -->
-    <section class="section-space section-separator fade-in">
+    <section class="section-space section-separator fade-in" id="services">
       <div class="container">
         <div class="section-intro">
-          <span class="section-label">Là où nous intervenons vraiment</span>
+          <span class="section-label">Ce que nous faisons émerger</span>
           <h2 class="section-title">Une approche qui aligne le fond, la forme et la présence</h2>
           <p class="section-copy">
             Chaque accompagnement suit une même logique : révéler la profondeur d’une marque,
@@ -1143,10 +1300,10 @@
     </section>
 
     <!-- UNIVERSES -->
-    <section class="section-space section-separator fade-in">
+    <section class="section-space section-separator fade-in" id="references">
       <div class="container">
         <div class="section-intro">
-          <span class="section-label">Univers de prédilection</span>
+          <span class="section-label">Les univers où nous créons de la distinction</span>
           <h2 class="section-title">Des secteurs où la perception fait la valeur</h2>
           <p class="section-copy">
             Hôtellerie de luxe, restauration, lifestyle, lieux de destination ou lancements de marque :
@@ -1219,15 +1376,15 @@
               </p>
 
               <p class="standard">
-                Notre approche consiste à aller au-delà de l’exécution pour révéler ce qui mérite réellement d’émerger :
-                une intention plus lisible, une identité plus cohérente et une marque capable de marquer durablement les esprits.
+                Notre accompagnement va au-delà de l’exécution : nous révélons ce qui mérite réellement d’émerger,
+                afin de faire naître une marque plus lisible, plus cohérente et plus mémorable.
               </p>
 
               <p class="founder-quote">
                 Nous révélons ce qui distingue profondément une marque, puis nous le traduisons en image, en récit et en expérience.
               </p>
 
-              <a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light mt-3">Contact</a>
+              <a href="mailto:mathilde@abyss-lab.com" class="btn btn-outline-light mt-3">Contact</a>
             </div>
           </div>
         </div>
@@ -1238,8 +1395,8 @@
     <section class="section-space section-separator fade-in">
       <div class="container">
         <div class="section-intro">
-          <span class="section-label">Méthode</span>
-          <h2 class="section-title">Une progression claire, pensée pour faire émerger l’essentiel</h2>
+          <span class="section-label">Le chemin vers l’émergence</span>
+          <h2 class="section-title">Une méthode claire pour révéler l’essentiel</h2>
           <p class="section-copy">
             Observer, révéler, traduire, déployer : une méthode qui évite le superficiel et construit une présence durable.
           </p>
@@ -1289,11 +1446,98 @@
       </div>
     </section>
 
+    <!-- CONTACT -->
+    <section class="section-space section-separator fade-in" id="contact">
+      <div class="container">
+        <div class="section-intro">
+          <span class="section-label">Entrer en profondeur</span>
+          <h2 class="section-title">Parlons de ce qui doit émerger</h2>
+          <p class="section-copy">
+            Un projet de marque, de repositionnement, de direction artistique, de brand content ou de site internet premium ?
+            Écrivons la suite ensemble.
+          </p>
+        </div>
+
+        <div class="row contact-grid g-5 align-items-start">
+          <div class="col-12 col-lg-4">
+            <div class="contact-card reveal-up">
+              <h3 class="contact-card-title">Email</h3>
+              <p class="contact-card-text">
+                <a href="mailto:mathilde@abyss-lab.com">mathilde@abyss-lab.com</a>
+              </p>
+            </div>
+
+            <div class="contact-card reveal-up mt-4 mt-lg-5">
+              <h3 class="contact-card-title">Basée à Bordeaux</h3>
+              <p class="contact-card-text">Disponible partout en France et à l’international.</p>
+            </div>
+
+            <div class="contact-card reveal-up mt-4 mt-lg-5">
+              <h3 class="contact-card-title">Liens utiles</h3>
+              <p class="contact-card-text">
+                <a href="services.html">Découvrir les services</a><br>
+                <a href="references.html">Voir les références</a><br>
+                <a href="mentions-legales.html">Mentions légales</a><br>
+                <a href="https://www.linkedin.com/company/abyss-lab/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-8">
+            <form class="contact-form reveal-up" action="mailto:mathilde@abyss-lab.com" method="post" enctype="text/plain">
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label for="name" class="visually-hidden">Nom</label>
+                  <input type="text" class="form-control" id="name" name="Nom" placeholder="Nom" required>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="email" class="visually-hidden">Email</label>
+                  <input type="email" class="form-control" id="email" name="Email" placeholder="Email" required>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="brand" class="visually-hidden">Marque ou société</label>
+                  <input type="text" class="form-control" id="brand" name="Marque ou société" placeholder="Marque ou société">
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="need" class="visually-hidden">Besoin</label>
+                  <select class="form-select" id="need" name="Besoin">
+                    <option value="">Type de besoin</option>
+                    <option>Stratégie de marque</option>
+                    <option>Direction artistique</option>
+                    <option>Brand content</option>
+                    <option>Réseaux sociaux</option>
+                    <option>Site internet premium</option>
+                    <option>Autre demande</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <label for="message" class="visually-hidden">Message</label>
+                  <textarea class="form-control" id="message" name="Message" placeholder="Parlez-nous de votre projet" required></textarea>
+                </div>
+
+                <div class="col-12">
+                  <button type="submit" class="btn btn-outline-light">Envoyer</button>
+                  <p class="contact-note">
+                    Ce formulaire ouvre votre messagerie avec le message prêt à être envoyé à
+                    <a href="mailto:mathilde@abyss-lab.com">mathilde@abyss-lab.com</a>.
+                  </p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- SEO BLOCK -->
     <section class="section-space section-separator fade-in">
       <div class="container">
         <div class="section-intro">
-          <span class="section-label">Positionnement</span>
+          <span class="section-label">Présence indexable</span>
           <h2 class="section-title">Un studio de stratégie de marque, direction artistique et image premium à Bordeaux</h2>
         </div>
 
@@ -1304,6 +1548,15 @@
           du <strong>brand content</strong> à la <strong>création de site internet vitrine premium</strong>,
           nous concevons des expériences de marque plus fortes, plus cohérentes et pensées pour durer.
         </p>
+
+        <div class="seo-links">
+          <a href="services.html" title="Services Abyss Lab">Stratégie de marque</a>
+          <a href="services.html" title="Direction artistique Abyss Lab">Direction artistique</a>
+          <a href="services.html" title="Brand content Abyss Lab">Brand content</a>
+          <a href="services.html" title="Site internet premium Abyss Lab">Site internet premium</a>
+          <a href="references.html" title="Références Abyss Lab">Références</a>
+          <a href="#contact" title="Contacter Abyss Lab">Contact</a>
+        </div>
       </div>
     </section>
 
@@ -1316,7 +1569,7 @@
             Basée à Bordeaux, Abyss Lab accompagne des projets en France et à l’étranger avec une approche sensible,
             stratégique et résolument orientée image.
           </p>
-          <a href="contact.html" class="btn btn-outline-light">Parler de votre projet</a>
+          <a href="#contact" class="btn btn-outline-light">Parler de votre projet</a>
         </div>
       </div>
     </section>
@@ -1367,7 +1620,7 @@
           <a href="index.html">A propos</a>
           <a href="services.html">Services</a>
           <a href="references.html">Références</a>
-          <a href="contact.html">Contact</a>
+          <a href="#contact">Contact</a>
         </nav>
       </div>
 
