@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Abyss Lab, studio de stratégie de marque, direction artistique, brand content et création de sites internet premium à Bordeaux pour les marques, lieux et maisons qui veulent se distinguer durablement.">
-  <meta name="keywords" content="Abyss Lab, stratégie de marque Bordeaux, direction artistique, brand content, site internet premium, communication luxe, branding hôtellerie, image de marque lifestyle">
+  <meta name="description" content="Abyss Lab, studio de stratégie de marque, direction artistique, brand content et création de sites internet premium à Bordeaux pour les marques, lieux et maisons qui veulent émerger avec plus de distinction.">
+  <meta name="keywords" content="Abyss Lab, stratégie de marque Bordeaux, direction artistique, brand content, site internet premium, branding luxe, communication hôtellerie, image de marque lifestyle">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Abyss Lab">
   <meta property="og:title" content="ABYSS LAB">
-  <meta property="og:description" content="Révéler ce qui distingue profondément une marque, puis le traduire en image, narration et présence.">
+  <meta property="og:description" content="Nous révélons ce qui distingue profondément une marque pour le traduire en image, narration et présence.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <title>ABYSS LAB | Stratégie de marque, direction artistique & image premium</title>
@@ -28,7 +28,6 @@
       --white-muted:rgba(255,255,255,.68);
       --line:rgba(255,255,255,.16);
       --line-soft:rgba(255,255,255,.10);
-      --navy:#001D51;
       --glow-a:rgba(74,159,255,.16);
       --glow-b:rgba(0,102,255,.10);
       --bg:#000000;
@@ -128,7 +127,7 @@
       position:absolute;
       inset:0;
       background:
-        linear-gradient(to bottom, rgba(0,0,0,.34), rgba(0,0,0,.72)),
+        linear-gradient(to bottom, rgba(0,0,0,.34), rgba(0,0,0,.74)),
         rgba(0,0,0,.20);
       z-index:1;
     }
@@ -196,7 +195,7 @@
     }
 
     .hero-text{
-      max-width:780px;
+      max-width:820px;
       margin:0 auto;
       text-align:center;
       font-size:1.04rem;
@@ -317,64 +316,54 @@
       opacity:1;
     }
 
-    /* ===== FORCE BLOCK ===== */
-    .force-lead{
-      max-width:980px;
-      margin:0 auto 54px;
+    /* ===== WHAT CHANGES ===== */
+    .change-card{
+      height:100%;
       text-align:center;
-      font-size:1.15rem;
-      line-height:1.9;
-      color:var(--white-soft);
-    }
-
-    .force-lead strong{
-      color:var(--white);
-      font-weight:700;
-    }
-
-    .force-points{
-      row-gap:34px;
-    }
-
-    .force-item{
+      padding:10px 18px 0;
       position:relative;
-      padding-top:24px;
     }
 
-    .force-item::before{
+    .change-card::before{
       content:"";
       position:absolute;
       top:0;
-      left:0;
-      width:74px;
+      left:50%;
+      transform:translateX(-50%);
+      width:76px;
       height:1px;
-      background:linear-gradient(90deg, rgba(255,255,255,.72), transparent);
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,.72), transparent);
     }
 
-    .force-number{
-      display:block;
-      margin-bottom:12px;
-      font-size:.72rem;
-      letter-spacing:.20em;
-      text-transform:uppercase;
+    .change-title{
+      margin:18px 0 14px;
+      font-size:.92rem;
       font-weight:700;
-      color:var(--white-soft);
-    }
-
-    .force-title{
-      margin:0 0 12px;
-      font-size:1.05rem;
-      font-weight:700;
-      letter-spacing:.08em;
+      letter-spacing:.18em;
       text-transform:uppercase;
       color:var(--white);
     }
 
-    .force-text{
+    .change-text{
       margin:0;
-      font-size:.96rem;
+      font-size:.95rem;
       line-height:1.9;
       color:var(--white-soft);
+    }
+
+    /* ===== STRENGTH LEAD ===== */
+    .strength-lead{
+      max-width:980px;
+      margin:0 auto 54px;
+      text-align:center;
+      font-size:1.14rem;
+      line-height:1.95;
+      color:var(--white-soft);
+    }
+
+    .strength-lead strong{
+      color:var(--white);
+      font-weight:700;
     }
 
     /* ===== EXPERTISE ===== */
@@ -436,7 +425,7 @@
       background:rgba(255,255,255,.55);
     }
 
-    /* ===== UNIVERS ===== */
+    /* ===== UNIVERSES ===== */
     .universe-card{
       position:relative;
       overflow:hidden;
@@ -644,7 +633,7 @@
       color:var(--white-soft);
     }
 
-    /* ===== EMPHASIS ANIMATIONS ===== */
+    /* ===== ANIMATIONS ===== */
     .reveal-up{
       opacity:0;
       transform:translateY(24px);
@@ -813,7 +802,6 @@
       white-space:nowrap;
     }
 
-    /* ===== ACCESSIBILITY ===== */
     .visually-hidden-focusable:not(:focus):not(:focus-within){
       position:absolute!important;
       width:1px!important;
@@ -826,7 +814,6 @@
       border:0!important;
     }
 
-    /* ===== FADE IN ===== */
     .fade-in{
       opacity:0;
       transform:translateY(22px);
@@ -838,7 +825,6 @@
       transform:translateY(0);
     }
 
-    /* ===== RESPONSIVE ===== */
     @media(max-width:991.98px){
       .section-space{
         padding:82px 0;
@@ -892,7 +878,7 @@
       .glow-line-soft,
       .hero-text,
       .section-copy,
-      .force-lead,
+      .strength-lead,
       .seo-text,
       .final-cta-text{
         font-size:.96rem;
@@ -986,7 +972,7 @@
         <h1 class="hero-title">ABYSS LAB.</h1>
         <p class="header">FROM DEPTH, DISTINCTION EMERGES</p>
         <p class="hero-text">
-          Abyss Lab accompagne les marques, lieux et maisons qui veulent dépasser le simple “beau”
+          Nous accompagnons les marques, lieux et maisons qui veulent dépasser le simple “beau”
           pour construire une présence plus juste, plus désirable et <span class="hero-strong">véritablement distinctive</span>.
         </p>
 
@@ -1020,64 +1006,51 @@
       </div>
     </section>
 
-    <!-- FORCE -->
+    <!-- WHAT CHANGES -->
     <section class="section-space section-separator fade-in">
       <div class="container">
         <div class="section-intro">
-          <span class="section-label">Votre force devient lisible</span>
-          <h2 class="section-title">Je ne rends pas une marque seulement plus visible. Je la rends plus évidente.</h2>
+          <span class="section-label">Ce qui change</span>
+          <h2 class="section-title">Ce qu’une marque gagne quand sa profondeur devient lisible</h2>
           <p class="section-copy">
-            Là où beaucoup produisent des contenus ou empilent des actions, Abyss Lab travaille ce qui change réellement la perception :
-            <span class="emphasis">la justesse du positionnement</span>,
-            <span class="emphasis">la cohérence de l’image</span>
-            et
-            <span class="emphasis">la capacité d’une marque à laisser une empreinte.</span>
+            Avant les supports, les contenus ou les campagnes, l’enjeu est de faire émerger
+            ce qui donne à une marque plus de justesse, plus d’impact et une présence plus distincte.
           </p>
         </div>
 
-        <p class="force-lead reveal-up">
-          Ma valeur n’est pas d’ajouter du bruit.  
-          <strong>Elle est de révéler ce qui mérite d’émerger</strong>, puis de lui donner une traduction forte,
-          désirable et cohérente sur l’ensemble des points de contact.
-        </p>
-
-        <div class="row force-points">
+        <div class="row g-5">
           <div class="col-12 col-md-6 col-lg-3">
-            <div class="force-item reveal-up">
-              <span class="force-number">01</span>
-              <h3 class="force-title">Lire au-delà de la surface</h3>
-              <p class="force-text">
-                Identifier ce qu’une marque exprime déjà, ce qu’elle brouille et ce qu’elle devrait affirmer avec plus de force.
+            <div class="change-card reveal-up">
+              <h3 class="change-title">Une image plus désirable</h3>
+              <p class="change-text">
+                Un univers visuel plus affirmé, plus premium et plus aligné avec l’ambition réelle de la marque.
               </p>
             </div>
           </div>
 
           <div class="col-12 col-md-6 col-lg-3">
-            <div class="force-item reveal-up">
-              <span class="force-number">02</span>
-              <h3 class="force-title">Faire émerger sa singularité</h3>
-              <p class="force-text">
-                Clarifier un territoire, un ton, une intention et une posture capables de la distinguer durablement.
+            <div class="change-card reveal-up">
+              <h3 class="change-title">Un positionnement plus clair</h3>
+              <p class="change-text">
+                Une lecture plus nette de l’ADN, du territoire de marque et de la singularité à faire émerger.
               </p>
             </div>
           </div>
 
           <div class="col-12 col-md-6 col-lg-3">
-            <div class="force-item reveal-up">
-              <span class="force-number">03</span>
-              <h3 class="force-title">Traduire sans diluer</h3>
-              <p class="force-text">
-                Donner forme à cette vision à travers l’image, les mots, le contenu et les expériences digitales.
+            <div class="change-card reveal-up">
+              <h3 class="change-title">Une cohérence plus forte</h3>
+              <p class="change-text">
+                Une marque pensée comme un tout, où image, discours, expérience et perception avancent ensemble.
               </p>
             </div>
           </div>
 
           <div class="col-12 col-md-6 col-lg-3">
-            <div class="force-item reveal-up">
-              <span class="force-number">04</span>
-              <h3 class="force-title">Élever la perception</h3>
-              <p class="force-text">
-                Faire en sorte qu’une marque ne soit pas seulement vue, mais ressentie comme plus juste, plus forte et plus premium.
+            <div class="change-card reveal-up">
+              <h3 class="change-title">Une présence plus premium</h3>
+              <p class="change-text">
+                Une marque qui ne se contente plus d’exister, mais qui s’impose avec plus d’évidence.
               </p>
             </div>
           </div>
@@ -1085,15 +1058,38 @@
       </div>
     </section>
 
+    <!-- STRENGTH -->
+    <section class="section-space section-separator fade-in">
+      <div class="container">
+        <div class="section-intro">
+          <span class="section-label">Notre force</span>
+          <h2 class="section-title">Nous ne faisons pas qu’accompagner une marque. Nous faisons émerger ce qui doit vraiment se voir.</h2>
+          <p class="section-copy">
+            Là où beaucoup ajoutent des actions, nous travaillons ce qui transforme réellement la perception :
+            <span class="emphasis">la justesse du positionnement</span>,
+            <span class="emphasis">la cohérence de l’image</span>
+            et
+            <span class="emphasis">la capacité d’une marque à laisser une empreinte durable.</span>
+          </p>
+        </div>
+
+        <p class="strength-lead reveal-up">
+          Notre valeur n’est pas d’ajouter du bruit.  
+          <strong>Elle est de révéler ce qui mérite d’émerger</strong>, puis de lui donner une traduction forte,
+          désirable et cohérente à travers l’image, le récit et l’expérience.
+        </p>
+      </div>
+    </section>
+
     <!-- EXPERTISE -->
     <section class="section-space section-separator fade-in">
       <div class="container">
         <div class="section-intro">
-          <span class="section-label">Là où Abyss Lab agit vraiment</span>
+          <span class="section-label">Là où nous intervenons vraiment</span>
           <h2 class="section-title">Une approche qui aligne le fond, la forme et la présence</h2>
           <p class="section-copy">
-            Chaque intervention part d’un même principe : une image forte n’a de valeur que si elle repose sur une direction claire
-            et si elle se déploie avec cohérence.
+            Chaque accompagnement suit une même logique : révéler la profondeur d’une marque,
+            clarifier ce qui la distingue et le déployer avec cohérence sur les bons points de contact.
           </p>
         </div>
 
@@ -1102,7 +1098,7 @@
             <article class="pillar-card reveal-up">
               <h3 class="pillar-title">Positionnement &amp; narration</h3>
               <p class="pillar-text">
-                Définir ce que la marque est, ce qu’elle doit exprimer et la manière dont elle doit être perçue.
+                Nous clarifions ce que la marque est, ce qu’elle doit exprimer et la manière dont elle doit être perçue.
               </p>
               <ul class="pillar-list">
                 <li>Plateforme de marque</li>
@@ -1117,7 +1113,7 @@
             <article class="pillar-card reveal-up">
               <h3 class="pillar-title">Image &amp; contenus</h3>
               <p class="pillar-text">
-                Traduire cette direction en présence visuelle forte, désirable et immédiatement reconnaissable.
+                Nous traduisons cette direction en présence visuelle forte, désirable et immédiatement reconnaissable.
               </p>
               <ul class="pillar-list">
                 <li>Direction artistique</li>
@@ -1132,7 +1128,7 @@
             <article class="pillar-card reveal-up">
               <h3 class="pillar-title">Expérience &amp; déploiement</h3>
               <p class="pillar-text">
-                Déployer la marque sur les supports qui renforcent réellement sa perception et sa valeur.
+                Nous déployons la marque sur les supports qui renforcent réellement sa perception et sa valeur.
               </p>
               <ul class="pillar-list">
                 <li>Réseaux sociaux</li>
@@ -1146,7 +1142,7 @@
       </div>
     </section>
 
-    <!-- UNIVERS -->
+    <!-- UNIVERSES -->
     <section class="section-space section-separator fade-in">
       <div class="container">
         <div class="section-intro">
@@ -1166,7 +1162,7 @@
                 <span class="universe-kicker">Hospitality</span>
                 <h3 class="universe-title">Hôtellerie de luxe</h3>
                 <p class="universe-text">
-                  Construire des univers désirables et cohérents, pensés pour l’expérience, l’image et la conversion.
+                  Nous façonnons des univers désirables et cohérents, pensés pour l’expérience, l’image et la conversion.
                 </p>
               </div>
             </article>
@@ -1179,7 +1175,7 @@
                 <span class="universe-kicker">Lifestyle</span>
                 <h3 class="universe-title">Restauration &amp; art de vivre</h3>
                 <p class="universe-text">
-                  Révéler l’atmosphère, le détail et la singularité qui transforment un lieu en destination.
+                  Nous révélons l’atmosphère, le détail et la singularité qui transforment un lieu en destination.
                 </p>
               </div>
             </article>
@@ -1192,7 +1188,7 @@
                 <span class="universe-kicker">Digital presence</span>
                 <h3 class="universe-title">Lancements &amp; présence digitale</h3>
                 <p class="universe-text">
-                  Donner à une marque une présence plus affirmée, plus crédible et plus premium dès ses premiers points de contact.
+                  Nous donnons à une marque une présence plus affirmée, plus crédible et plus premium dès ses premiers points de contact.
                 </p>
               </div>
             </article>
@@ -1218,17 +1214,17 @@
 
               <p class="standard">
                 Avec un parcours spécialisé en marketing & communication dans l’hôtellerie de luxe et le lifestyle,
-                j’accompagne les marques ambitieuses dans la structuration de leur image, la clarification de leur positionnement
+                nous accompagnons les marques ambitieuses dans la structuration de leur image, la clarification de leur positionnement
                 et le déploiement d’une présence plus forte sur leurs points de contact.
               </p>
 
               <p class="standard">
-                Mon approche consiste à aller au-delà de l’exécution pour révéler ce qui mérite réellement d’émerger :
+                Notre approche consiste à aller au-delà de l’exécution pour révéler ce qui mérite réellement d’émerger :
                 une intention plus lisible, une identité plus cohérente et une marque capable de marquer durablement les esprits.
               </p>
 
               <p class="founder-quote">
-                Révéler ce qui distingue profondément une marque, puis le traduire en image, en récit et en expérience.
+                Nous révélons ce qui distingue profondément une marque, puis nous le traduisons en image, en récit et en expérience.
               </p>
 
               <a href="mailto:mathilde.ranchon@outlook.fr" class="btn btn-outline-light mt-3">Contact</a>
@@ -1255,7 +1251,7 @@
               <span class="method-label">01</span>
               <h3 class="method-title">Observer</h3>
               <p class="method-text">
-                Analyser l’existant, les usages, les décalages et les points de force à révéler.
+                Nous analysons l’existant, les usages, les décalages et les points de force à révéler.
               </p>
             </article>
           </div>
@@ -1265,7 +1261,7 @@
               <span class="method-label">02</span>
               <h3 class="method-title">Révéler</h3>
               <p class="method-text">
-                Faire émerger la singularité, le positionnement et la direction qui doivent guider la marque.
+                Nous faisons émerger la singularité, le positionnement et la direction qui doivent guider la marque.
               </p>
             </article>
           </div>
@@ -1275,7 +1271,7 @@
               <span class="method-label">03</span>
               <h3 class="method-title">Traduire</h3>
               <p class="method-text">
-                Donner forme à cette vision à travers les mots, l’image, le contenu et l’esthétique.
+                Nous donnons forme à cette vision à travers les mots, l’image, le contenu et l’esthétique.
               </p>
             </article>
           </div>
@@ -1285,7 +1281,7 @@
               <span class="method-label">04</span>
               <h3 class="method-title">Déployer</h3>
               <p class="method-text">
-                Décliner cette présence sur les supports les plus pertinents pour renforcer sa portée.
+                Nous déclinons cette présence sur les supports les plus pertinents pour renforcer sa portée.
               </p>
             </article>
           </div>
@@ -1306,7 +1302,7 @@
           qui souhaitent renforcer leur image, clarifier leur positionnement et développer une présence plus désirable.
           De la <strong>stratégie marketing & communication</strong> à la <strong>direction artistique</strong>,
           du <strong>brand content</strong> à la <strong>création de site internet vitrine premium</strong>,
-          le studio conçoit des expériences de marque plus fortes, plus cohérentes et pensées pour durer.
+          nous concevons des expériences de marque plus fortes, plus cohérentes et pensées pour durer.
         </p>
       </div>
     </section>
@@ -1327,7 +1323,6 @@
 
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
 
@@ -1480,10 +1475,6 @@
     revealUps.forEach(item => {
       revealObserver.observe(item);
     });
-  </script>
-
-</body>
-</html>
   </script>
 
 </body>
