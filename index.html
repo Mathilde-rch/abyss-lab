@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Abyss Lab, agence de stratégie de marque, direction artistique, brand content et création de sites internet premium à Bordeaux pour l’hôtellerie, le lifestyle et les marques ambitieuses.">
-  <meta name="keywords" content="Abyss Lab, agence branding Bordeaux, stratégie de marque, direction artistique, brand content, site internet premium, agence communication luxe, marketing hôtellerie luxe, création site vitrine Bordeaux">
+  <meta name="description" content="Abyss Lab, studio de stratégie de marque, direction artistique, brand content et création de sites internet premium à Bordeaux pour les marques, lieux et maisons qui veulent se distinguer durablement.">
+  <meta name="keywords" content="Abyss Lab, stratégie de marque Bordeaux, direction artistique, brand content, site internet premium, communication luxe, branding hôtellerie, image de marque lifestyle">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Abyss Lab">
   <meta property="og:title" content="ABYSS LAB">
-  <meta property="og:description" content="Stratégie de marque, direction artistique et expériences digitales pour les marques, lieux et maisons qui veulent se distinguer.">
+  <meta property="og:description" content="Révéler ce qui distingue profondément une marque, puis le traduire en image, narration et présence.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
-  <title>ABYSS LAB | Stratégie de marque, direction artistique & expériences digitales</title>
+  <title>ABYSS LAB | Stratégie de marque, direction artistique & image premium</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,18 +24,14 @@
   <style>
     :root{
       --white:#ffffff;
-      --white-soft:rgba(255,255,255,.82);
-      --white-muted:rgba(255,255,255,.66);
-      --line:rgba(255,255,255,.14);
-      --line-soft:rgba(255,255,255,.09);
+      --white-soft:rgba(255,255,255,.84);
+      --white-muted:rgba(255,255,255,.68);
+      --line:rgba(255,255,255,.16);
+      --line-soft:rgba(255,255,255,.10);
       --navy:#001D51;
-      --glow-a:rgba(74,159,255,.20);
-      --glow-b:rgba(0,102,255,.12);
-      --glow-c:rgba(255,255,255,.30);
+      --glow-a:rgba(74,159,255,.16);
+      --glow-b:rgba(0,102,255,.10);
       --bg:#000000;
-      --panel:rgba(8,8,8,.34);
-      --panel-strong:rgba(8,8,8,.52);
-      --panel-soft:rgba(255,255,255,.03);
     }
 
     html{
@@ -43,10 +39,10 @@
     }
 
     body{
-      color:var(--white);
       background:#000;
-      overflow-x:hidden;
+      color:var(--white);
       font-family:'Montserrat',sans-serif;
+      overflow-x:hidden;
     }
 
     a{
@@ -59,27 +55,30 @@
     }
 
     .section-space{
-      padding:96px 0;
+      padding:108px 0;
       position:relative;
       z-index:2;
     }
 
-    .section-band{
-      background:linear-gradient(180deg, rgba(0,0,0,.44), rgba(0,0,0,.58));
-      border-top:1px solid var(--line-soft);
-      border-bottom:1px solid var(--line-soft);
-      backdrop-filter:blur(2px);
+    .section-separator{
+      position:relative;
     }
 
-    .section-panel{
-      background:rgba(0,0,0,.34);
-      border-top:1px solid rgba(255,255,255,.08);
-      border-bottom:1px solid rgba(255,255,255,.08);
+    .section-separator::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:50%;
+      transform:translateX(-50%);
+      width:min(1120px, calc(100% - 32px));
+      height:1px;
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,.22), transparent);
+      pointer-events:none;
     }
 
     .section-intro{
-      max-width:790px;
-      margin:0 auto 46px;
+      max-width:880px;
+      margin:0 auto 52px;
       text-align:center;
     }
 
@@ -88,24 +87,24 @@
       margin-bottom:14px;
       font-size:.74rem;
       font-weight:700;
-      letter-spacing:.22em;
+      letter-spacing:.24em;
       text-transform:uppercase;
       color:var(--white-soft);
     }
 
     .section-title{
       margin:0;
-      font-size:2rem;
-      line-height:1.2;
+      font-size:2.15rem;
+      line-height:1.18;
       font-weight:600;
       color:var(--white);
     }
 
     .section-copy{
       max-width:860px;
-      margin:18px auto 0;
+      margin:20px auto 0;
       font-size:1rem;
-      line-height:1.9;
+      line-height:1.95;
       color:var(--white-soft);
     }
 
@@ -129,8 +128,8 @@
       position:absolute;
       inset:0;
       background:
-        linear-gradient(to bottom, rgba(0,0,0,0.38), rgba(0,0,0,0.74)),
-        rgba(0,0,0,0.24);
+        linear-gradient(to bottom, rgba(0,0,0,.34), rgba(0,0,0,.72)),
+        rgba(0,0,0,.20);
       z-index:1;
     }
 
@@ -153,7 +152,7 @@
     }
 
     .nav-link{
-      font-family:'couture', sans-serif;
+      font-family:'couture',sans-serif;
       font-size:.80rem;
       letter-spacing:.16em;
       text-transform:uppercase;
@@ -187,7 +186,7 @@
     }
 
     .header{
-      margin:0 0 24px;
+      margin:0 0 22px;
       text-align:center;
       font-weight:600;
       font-size:.92rem;
@@ -197,12 +196,17 @@
     }
 
     .hero-text{
-      max-width:760px;
+      max-width:780px;
       margin:0 auto;
       text-align:center;
-      font-size:1.02rem;
+      font-size:1.04rem;
       line-height:1.95;
       color:var(--white-soft);
+    }
+
+    .hero-strong{
+      color:var(--white);
+      font-weight:600;
     }
 
     .hero-actions{
@@ -213,17 +217,6 @@
       margin-top:34px;
     }
 
-    @media(min-width:992px){
-      .hero-title{
-        font-size:5rem;
-      }
-
-      .header{
-        font-size:1rem;
-      }
-    }
-
-    /* ===== BUTTONS ===== */
     .btn-outline-light,
     .btn-solid-light{
       border-radius:999px;
@@ -262,39 +255,29 @@
       border-color:rgba(255,255,255,.55);
     }
 
-    /* ===== MANIFESTO ===== */
-    .manifesto{
-      max-width:1020px;
-      margin:0 auto;
-      text-align:center;
-      font-size:1.18rem;
-      line-height:1.8;
-      font-weight:500;
-      color:var(--white);
-    }
-
-    .manifesto p{
-      margin-bottom:10px;
-    }
-
-    .manifesto p:last-child{
-      margin-bottom:0;
-    }
-
     @media(min-width:992px){
-      .manifesto{
-        font-size:1.55rem;
-        line-height:1.55;
+      .hero-title{
+        font-size:5rem;
+      }
+
+      .header{
+        font-size:1rem;
       }
     }
 
-    .manifesto-glow{
+    /* ===== MANIFESTO ===== */
+    .manifesto{
       max-width:1080px;
+      margin:0 auto;
+      text-align:center;
+      font-size:1.2rem;
+      line-height:1.85;
+      font-weight:500;
     }
 
     .glow-line{
       margin:0 0 10px;
-      color:rgba(255,255,255,.52);
+      color:rgba(255,255,255,.54);
       transition:color .8s ease;
     }
 
@@ -303,9 +286,8 @@
       margin:0 .10em;
     }
 
-    .glow-line .glow-word{
-      color:rgba(255,255,255,.60);
-      text-shadow:none;
+    .glow-word{
+      color:rgba(255,255,255,.62);
       transition:
         color .85s ease,
         text-shadow .85s ease,
@@ -315,103 +297,117 @@
     }
 
     .glow-line-soft{
-      max-width:980px;
+      max-width:960px;
       margin:18px auto 0;
-      font-size:1.02rem;
-      line-height:1.9;
+      font-size:1.04rem;
+      line-height:1.95;
     }
 
-    .manifesto-glow.is-visible .glow-line{
-      color:rgba(255,255,255,.78);
+    .manifesto.is-visible .glow-line{
+      color:rgba(255,255,255,.82);
     }
 
-    .manifesto-glow.is-visible .glow-word{
+    .manifesto.is-visible .glow-word{
       color:var(--white);
       text-shadow:
-        0 0 12px rgba(255,255,255,.16),
-        0 0 22px var(--glow-a),
-        0 0 36px var(--glow-b),
-        0 0 8px var(--glow-c);
+        0 0 10px rgba(255,255,255,.12),
+        0 0 18px var(--glow-a),
+        0 0 28px var(--glow-b);
       transform:translateY(-1px);
       opacity:1;
     }
 
-    /* ===== CARDS / BLOCKS ===== */
-    .elevated-card{
-      height:100%;
-      padding:30px 24px;
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+    /* ===== FORCE BLOCK ===== */
+    .force-lead{
+      max-width:980px;
+      margin:0 auto 54px;
       text-align:center;
-      position:relative;
-      overflow:hidden;
+      font-size:1.15rem;
+      line-height:1.9;
+      color:var(--white-soft);
     }
 
-    .elevated-card::before{
+    .force-lead strong{
+      color:var(--white);
+      font-weight:700;
+    }
+
+    .force-points{
+      row-gap:34px;
+    }
+
+    .force-item{
+      position:relative;
+      padding-top:24px;
+    }
+
+    .force-item::before{
       content:"";
       position:absolute;
       top:0;
       left:0;
-      right:0;
+      width:74px;
       height:1px;
-      background:linear-gradient(90deg, transparent, rgba(255,255,255,.34), transparent);
-      opacity:.8;
+      background:linear-gradient(90deg, rgba(255,255,255,.72), transparent);
     }
 
-    .value-icon{
-      font-size:1.35rem;
-      color:var(--white);
-      margin-bottom:18px;
-    }
-
-    .value-title{
-      font-size:.90rem;
+    .force-number{
+      display:block;
+      margin-bottom:12px;
+      font-size:.72rem;
+      letter-spacing:.20em;
+      text-transform:uppercase;
       font-weight:700;
-      letter-spacing:.16em;
+      color:var(--white-soft);
+    }
+
+    .force-title{
+      margin:0 0 12px;
+      font-size:1.05rem;
+      font-weight:700;
+      letter-spacing:.08em;
       text-transform:uppercase;
       color:var(--white);
-      margin-bottom:14px;
     }
 
-    .value-text{
-      font-size:.94rem;
-      line-height:1.85;
-      color:var(--white-soft);
+    .force-text{
       margin:0;
+      font-size:.96rem;
+      line-height:1.9;
+      color:var(--white-soft);
     }
 
+    /* ===== EXPERTISE ===== */
     .pillar-card{
-      height:100%;
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.015));
-      padding:34px 28px;
       position:relative;
-      overflow:hidden;
+      height:100%;
+      padding:10px 0 0;
     }
 
     .pillar-card::before{
       content:"";
       position:absolute;
-      inset:0 auto auto 0;
-      width:100%;
+      top:0;
+      left:0;
+      width:86px;
       height:1px;
-      background:linear-gradient(90deg, rgba(255,255,255,.22), transparent);
+      background:linear-gradient(90deg, rgba(255,255,255,.72), transparent);
     }
 
     .pillar-title{
+      margin:16px 0 14px;
       font-size:1.2rem;
       font-weight:700;
       letter-spacing:.06em;
       text-transform:uppercase;
       color:var(--white);
-      margin-bottom:14px;
     }
 
     .pillar-text{
       font-size:.96rem;
       line-height:1.9;
       color:var(--white-soft);
-      margin-bottom:20px;
+      margin-bottom:18px;
     }
 
     .pillar-list{
@@ -440,28 +436,27 @@
       background:rgba(255,255,255,.55);
     }
 
-    /* ===== UNIVERSE CARDS ===== */
+    /* ===== UNIVERS ===== */
     .universe-card{
       position:relative;
       overflow:hidden;
       background:#0a0a0a;
       isolation:isolate;
       height:100%;
-      border:1px solid var(--line);
     }
 
     .universe-card::after{
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(180deg, rgba(0,0,0,.08) 15%, rgba(0,0,0,.56) 100%);
+      background:linear-gradient(180deg, rgba(0,0,0,.06) 15%, rgba(0,0,0,.62) 100%);
       z-index:1;
       pointer-events:none;
     }
 
     .universe-card img{
       width:100%;
-      height:430px;
+      height:470px;
       object-fit:cover;
       transition:transform .55s ease, opacity .55s ease;
     }
@@ -479,13 +474,23 @@
       z-index:2;
     }
 
+    .universe-kicker{
+      display:block;
+      margin-bottom:10px;
+      font-size:.70rem;
+      letter-spacing:.20em;
+      text-transform:uppercase;
+      font-weight:700;
+      color:var(--white-soft);
+    }
+
     .universe-title{
+      margin:0 0 10px;
       font-size:1.02rem;
       font-weight:700;
       letter-spacing:.12em;
       text-transform:uppercase;
       color:var(--white);
-      margin-bottom:10px;
     }
 
     .universe-text{
@@ -493,16 +498,10 @@
       line-height:1.8;
       color:var(--white-soft);
       margin:0;
-      max-width:280px;
+      max-width:300px;
     }
 
     /* ===== FOUNDER ===== */
-    .founder-shell{
-      padding:28px;
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.012));
-    }
-
     .founder-image-wrap{
       overflow:hidden;
       background:rgba(255,255,255,.03);
@@ -512,6 +511,21 @@
       width:100%;
       height:auto;
       object-fit:cover;
+    }
+
+    .founder-copy{
+      position:relative;
+      padding-top:26px;
+    }
+
+    .founder-copy::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:96px;
+      height:1px;
+      background:linear-gradient(90deg, rgba(255,255,255,.72), transparent);
     }
 
     .founder-title{
@@ -533,7 +547,7 @@
 
     .standard{
       font-size:.98rem;
-      line-height:1.9;
+      line-height:1.95;
       color:var(--white-soft);
       margin-bottom:18px;
     }
@@ -550,12 +564,20 @@
 
     /* ===== METHOD ===== */
     .method-step{
+      position:relative;
       height:100%;
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-      padding:26px 18px 20px;
-      text-align:center;
-      background:rgba(255,255,255,.012);
+      padding-top:22px;
+      text-align:left;
+    }
+
+    .method-step::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:70px;
+      height:1px;
+      background:linear-gradient(90deg, rgba(255,255,255,.72), transparent);
     }
 
     .method-label{
@@ -580,20 +602,11 @@
     .method-text{
       margin:0;
       font-size:.90rem;
-      line-height:1.8;
+      line-height:1.85;
       color:var(--white-soft);
     }
 
-    /* ===== SEO TEXT ===== */
-    .seo-block{
-      max-width:1080px;
-      margin:0 auto;
-      padding:44px 34px;
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.012));
-      text-align:center;
-    }
-
+    /* ===== SEO ===== */
     .seo-text{
       max-width:980px;
       margin:0 auto;
@@ -608,14 +621,11 @@
       font-weight:700;
     }
 
-    /* ===== FINAL CTA ===== */
+    /* ===== CTA ===== */
     .final-cta{
       max-width:860px;
       margin:0 auto;
       text-align:center;
-      padding:46px 34px;
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.012));
     }
 
     .final-cta-title{
@@ -634,6 +644,30 @@
       color:var(--white-soft);
     }
 
+    /* ===== EMPHASIS ANIMATIONS ===== */
+    .reveal-up{
+      opacity:0;
+      transform:translateY(24px);
+      transition:opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal-up.in-view{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .emphasis{
+      color:rgba(255,255,255,.72);
+      transition:color .75s ease, text-shadow .75s ease;
+    }
+
+    .emphasis.in-view{
+      color:var(--white);
+      text-shadow:
+        0 0 10px rgba(255,255,255,.08),
+        0 0 20px var(--glow-a);
+    }
+
     /* ===== FOOTER ===== */
     .footer{
       border-top:1px solid var(--line);
@@ -641,8 +675,7 @@
       margin-top:10px;
       position:relative;
       z-index:2;
-      background:rgba(0,0,0,.22);
-      backdrop-filter:blur(3px);
+      background:transparent;
     }
 
     .footer-top{
@@ -780,7 +813,7 @@
       white-space:nowrap;
     }
 
-    /* ===== ACCESSIBILITY / SEO ===== */
+    /* ===== ACCESSIBILITY ===== */
     .visually-hidden-focusable:not(:focus):not(:focus-within){
       position:absolute!important;
       width:1px!important;
@@ -793,7 +826,7 @@
       border:0!important;
     }
 
-    /* ===== ANIMATIONS ===== */
+    /* ===== FADE IN ===== */
     .fade-in{
       opacity:0;
       transform:translateY(22px);
@@ -808,7 +841,7 @@
     /* ===== RESPONSIVE ===== */
     @media(max-width:991.98px){
       .section-space{
-        padding:78px 0;
+        padding:82px 0;
       }
 
       .hero{
@@ -834,12 +867,6 @@
         text-align:left;
         white-space:normal;
       }
-
-      .founder-shell,
-      .seo-block,
-      .final-cta{
-        padding:28px 22px;
-      }
     }
 
     @media(max-width:767.98px){
@@ -854,7 +881,7 @@
 
       .section-title,
       .final-cta-title{
-        font-size:1.6rem;
+        font-size:1.72rem;
       }
 
       .manifesto{
@@ -865,6 +892,7 @@
       .glow-line-soft,
       .hero-text,
       .section-copy,
+      .force-lead,
       .seo-text,
       .final-cta-text{
         font-size:.96rem;
@@ -905,7 +933,7 @@
     "@type":"ProfessionalService",
     "name":"Abyss Lab",
     "url":"https://abyss-lab.com/",
-    "description":"Agence de stratégie de marque, direction artistique, brand content et création de sites internet premium à Bordeaux.",
+    "description":"Studio de stratégie de marque, direction artistique, brand content et création de sites internet premium à Bordeaux.",
     "areaServed":"FR",
     "address":{
       "@type":"PostalAddress",
@@ -925,7 +953,6 @@
 
   <a href="#main-content" class="visually-hidden-focusable">Aller au contenu principal</a>
 
-  <!-- BACKGROUND VIDEO -->
   <div class="video-background" aria-hidden="true">
     <video autoplay muted loop playsinline webkit-playsinline id="bg-video" preload="metadata">
       <source src="assets/video/abyss-lab.mp4" type="video/mp4">
@@ -942,18 +969,10 @@
 
       <div class="collapse navbar-collapse justify-content-end" id="navmenu">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" href="index.html">A PROPOS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="services.html">SERVICES</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="references.html">REFERENCES</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">CONTACT</a>
-          </li>
+          <li class="nav-item"><a class="nav-link active" href="index.html">A PROPOS</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">SERVICES</a></li>
+          <li class="nav-item"><a class="nav-link" href="references.html">REFERENCES</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
         </ul>
       </div>
     </div>
@@ -967,9 +986,8 @@
         <h1 class="hero-title">ABYSS LAB.</h1>
         <p class="header">FROM DEPTH, DISTINCTION EMERGES</p>
         <p class="hero-text">
-          Conseil en image, stratégie de marque et direction créative pour les marques,
-          lieux et maisons qui veulent dépasser la simple présence pour construire
-          une empreinte forte, cohérente et désirable.
+          Abyss Lab accompagne les marques, lieux et maisons qui veulent dépasser le simple “beau”
+          pour construire une présence plus juste, plus désirable et <span class="hero-strong">véritablement distinctive</span>.
         </p>
 
         <div class="hero-actions">
@@ -980,9 +998,9 @@
     </section>
 
     <!-- MANIFESTO -->
-    <section class="section-space fade-in section-band" id="approche">
+    <section class="section-space section-separator fade-in" id="approche">
       <div class="container">
-        <div class="manifesto manifesto-glow">
+        <div class="manifesto" id="manifesto-glow">
           <p class="glow-line">
             <span>Au-delà de l’image,</span>
             <span class="glow-word">révéler une direction.</span>
@@ -1002,80 +1020,89 @@
       </div>
     </section>
 
-    <!-- WHAT CHANGES -->
-    <section class="section-space fade-in">
+    <!-- FORCE -->
+    <section class="section-space section-separator fade-in">
       <div class="container">
         <div class="section-intro">
-          <span class="section-label">Ce qui change</span>
-          <h2 class="section-title">Ce qu’une marque gagne quand sa profondeur devient lisible</h2>
+          <span class="section-label">Votre force devient lisible</span>
+          <h2 class="section-title">Je ne rends pas une marque seulement plus visible. Je la rends plus évidente.</h2>
           <p class="section-copy">
-            Avant les supports, les contenus ou les campagnes, l’enjeu est de faire émerger
-            ce qui donne à une marque plus de justesse, plus d’impact et une présence plus distincte.
+            Là où beaucoup produisent des contenus ou empilent des actions, Abyss Lab travaille ce qui change réellement la perception :
+            <span class="emphasis">la justesse du positionnement</span>,
+            <span class="emphasis">la cohérence de l’image</span>
+            et
+            <span class="emphasis">la capacité d’une marque à laisser une empreinte.</span>
           </p>
         </div>
 
-        <div class="row g-4">
+        <p class="force-lead reveal-up">
+          Ma valeur n’est pas d’ajouter du bruit.  
+          <strong>Elle est de révéler ce qui mérite d’émerger</strong>, puis de lui donner une traduction forte,
+          désirable et cohérente sur l’ensemble des points de contact.
+        </p>
+
+        <div class="row force-points">
           <div class="col-12 col-md-6 col-lg-3">
-            <article class="elevated-card">
-              <div class="value-icon"><i class="bi bi-stars"></i></div>
-              <h3 class="value-title">Une image plus désirable</h3>
-              <p class="value-text">
-                Un univers visuel plus affirmé, plus premium et plus aligné avec l’ambition réelle de la marque.
+            <div class="force-item reveal-up">
+              <span class="force-number">01</span>
+              <h3 class="force-title">Lire au-delà de la surface</h3>
+              <p class="force-text">
+                Identifier ce qu’une marque exprime déjà, ce qu’elle brouille et ce qu’elle devrait affirmer avec plus de force.
               </p>
-            </article>
+            </div>
           </div>
 
           <div class="col-12 col-md-6 col-lg-3">
-            <article class="elevated-card">
-              <div class="value-icon"><i class="bi bi-compass"></i></div>
-              <h3 class="value-title">Un positionnement plus clair</h3>
-              <p class="value-text">
-                Une lecture plus nette de l’ADN, du territoire de marque et de la singularité à faire émerger.
+            <div class="force-item reveal-up">
+              <span class="force-number">02</span>
+              <h3 class="force-title">Faire émerger sa singularité</h3>
+              <p class="force-text">
+                Clarifier un territoire, un ton, une intention et une posture capables de la distinguer durablement.
               </p>
-            </article>
+            </div>
           </div>
 
           <div class="col-12 col-md-6 col-lg-3">
-            <article class="elevated-card">
-              <div class="value-icon"><i class="bi bi-grid-1x2"></i></div>
-              <h3 class="value-title">Une cohérence plus forte</h3>
-              <p class="value-text">
-                Une marque pensée comme un tout, où image, discours, expérience et perception avancent ensemble.
+            <div class="force-item reveal-up">
+              <span class="force-number">03</span>
+              <h3 class="force-title">Traduire sans diluer</h3>
+              <p class="force-text">
+                Donner forme à cette vision à travers l’image, les mots, le contenu et les expériences digitales.
               </p>
-            </article>
+            </div>
           </div>
 
           <div class="col-12 col-md-6 col-lg-3">
-            <article class="elevated-card">
-              <div class="value-icon"><i class="bi bi-gem"></i></div>
-              <h3 class="value-title">Une présence plus premium</h3>
-              <p class="value-text">
-                Une marque qui ne se contente plus d’exister, mais qui s’impose avec plus d’évidence.
+            <div class="force-item reveal-up">
+              <span class="force-number">04</span>
+              <h3 class="force-title">Élever la perception</h3>
+              <p class="force-text">
+                Faire en sorte qu’une marque ne soit pas seulement vue, mais ressentie comme plus juste, plus forte et plus premium.
               </p>
-            </article>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- EXPERTISE -->
-    <section class="section-space fade-in section-panel">
+    <section class="section-space section-separator fade-in">
       <div class="container">
         <div class="section-intro">
-          <span class="section-label">Expertise</span>
-          <h2 class="section-title">Une approche structurée pour révéler, traduire et déployer</h2>
+          <span class="section-label">Là où Abyss Lab agit vraiment</span>
+          <h2 class="section-title">Une approche qui aligne le fond, la forme et la présence</h2>
           <p class="section-copy">
-            Abyss Lab accompagne les marques avec une logique claire : travailler le fond, façonner la forme
-            et déployer une présence à la hauteur de ce qu’elles portent réellement.
+            Chaque intervention part d’un même principe : une image forte n’a de valeur que si elle repose sur une direction claire
+            et si elle se déploie avec cohérence.
           </p>
         </div>
 
-        <div class="row g-4">
+        <div class="row g-5">
           <div class="col-12 col-lg-4">
-            <article class="pillar-card">
+            <article class="pillar-card reveal-up">
               <h3 class="pillar-title">Positionnement &amp; narration</h3>
               <p class="pillar-text">
-                Clarifier l’ADN, affirmer le territoire de marque et définir une ligne de récit capable de guider chaque prise de parole.
+                Définir ce que la marque est, ce qu’elle doit exprimer et la manière dont elle doit être perçue.
               </p>
               <ul class="pillar-list">
                 <li>Plateforme de marque</li>
@@ -1087,10 +1114,10 @@
           </div>
 
           <div class="col-12 col-lg-4">
-            <article class="pillar-card">
+            <article class="pillar-card reveal-up">
               <h3 class="pillar-title">Image &amp; contenus</h3>
               <p class="pillar-text">
-                Traduire cette direction en présence visuelle forte, désirable et immédiatement reconnaissable sur les bons points de contact.
+                Traduire cette direction en présence visuelle forte, désirable et immédiatement reconnaissable.
               </p>
               <ul class="pillar-list">
                 <li>Direction artistique</li>
@@ -1102,10 +1129,10 @@
           </div>
 
           <div class="col-12 col-lg-4">
-            <article class="pillar-card">
+            <article class="pillar-card reveal-up">
               <h3 class="pillar-title">Expérience &amp; déploiement</h3>
               <p class="pillar-text">
-                Déployer la marque sur le digital, les réseaux, les collaborations et les supports qui renforcent sa valeur perçue.
+                Déployer la marque sur les supports qui renforcent réellement sa perception et sa valeur.
               </p>
               <ul class="pillar-list">
                 <li>Réseaux sociaux</li>
@@ -1119,15 +1146,15 @@
       </div>
     </section>
 
-    <!-- UNIVERSES -->
-    <section class="section-space fade-in">
+    <!-- UNIVERS -->
+    <section class="section-space section-separator fade-in">
       <div class="container">
         <div class="section-intro">
-          <span class="section-label">Univers</span>
-          <h2 class="section-title">Des secteurs où l’image ne suffit pas : elle doit faire ressentir</h2>
+          <span class="section-label">Univers de prédilection</span>
+          <h2 class="section-title">Des secteurs où la perception fait la valeur</h2>
           <p class="section-copy">
-            Hôtellerie de luxe, restauration, art de vivre, projets lifestyle ou lancements de marque :
-            des univers où la perception, le détail et la cohérence font toute la différence.
+            Hôtellerie de luxe, restauration, lifestyle, lieux de destination ou lancements de marque :
+            des univers où l’atmosphère, le détail et la cohérence transforment l’intérêt en désir.
           </p>
         </div>
 
@@ -1136,6 +1163,7 @@
             <article class="universe-card">
               <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773415496/guest_app_hotellerie_agence_bordeaux_gldvjc.jpg" alt="Hôtellerie de luxe - stratégie de marque et expérience client">
               <div class="universe-content">
+                <span class="universe-kicker">Hospitality</span>
                 <h3 class="universe-title">Hôtellerie de luxe</h3>
                 <p class="universe-text">
                   Construire des univers désirables et cohérents, pensés pour l’expérience, l’image et la conversion.
@@ -1148,6 +1176,7 @@
             <article class="universe-card">
               <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773412647/brand_content_mathilde_ranchon_ucmesi.jpg" alt="Restauration et art de vivre - direction artistique et brand content">
               <div class="universe-content">
+                <span class="universe-kicker">Lifestyle</span>
                 <h3 class="universe-title">Restauration &amp; art de vivre</h3>
                 <p class="universe-text">
                   Révéler l’atmosphère, le détail et la singularité qui transforment un lieu en destination.
@@ -1160,9 +1189,10 @@
             <article class="universe-card">
               <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Lancement de marque et site internet premium">
               <div class="universe-content">
+                <span class="universe-kicker">Digital presence</span>
                 <h3 class="universe-title">Lancements &amp; présence digitale</h3>
                 <p class="universe-text">
-                  Donner à une marque naissante ou en évolution une présence plus affirmée, plus crédible et plus premium.
+                  Donner à une marque une présence plus affirmée, plus crédible et plus premium dès ses premiers points de contact.
                 </p>
               </div>
             </article>
@@ -1172,17 +1202,17 @@
     </section>
 
     <!-- FOUNDER -->
-    <section class="section-space fade-in section-panel">
+    <section class="section-space section-separator fade-in">
       <div class="container">
-        <div class="founder-shell">
-          <div class="row align-items-center gy-5">
-            <div class="col-12 col-md-5 col-lg-5">
-              <div class="founder-image-wrap">
-                <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773329727/agence_mathilde_ranchon_jtx26v.jpg" alt="Mathilde Ranchon, fondatrice d’Abyss Lab">
-              </div>
+        <div class="row align-items-center gy-5">
+          <div class="col-12 col-md-5 col-lg-5">
+            <div class="founder-image-wrap">
+              <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773329727/agence_mathilde_ranchon_jtx26v.jpg" alt="Mathilde Ranchon, fondatrice d’Abyss Lab">
             </div>
+          </div>
 
-            <div class="col-12 col-md-6 col-lg-6 offset-lg-1">
+          <div class="col-12 col-md-6 col-lg-6 offset-lg-1">
+            <div class="founder-copy">
               <h2 class="founder-title">MATHILDE RANCHON</h2>
               <p class="founder-subtitle">Fondatrice Abyss Lab.</p>
 
@@ -1209,19 +1239,19 @@
     </section>
 
     <!-- METHOD -->
-    <section class="section-space fade-in">
+    <section class="section-space section-separator fade-in">
       <div class="container">
         <div class="section-intro">
           <span class="section-label">Méthode</span>
-          <h2 class="section-title">Une approche en profondeur, pensée pour durer</h2>
+          <h2 class="section-title">Une progression claire, pensée pour faire émerger l’essentiel</h2>
           <p class="section-copy">
-            Chaque accompagnement suit une progression simple et lisible : comprendre, révéler, traduire, déployer.
+            Observer, révéler, traduire, déployer : une méthode qui évite le superficiel et construit une présence durable.
           </p>
         </div>
 
-        <div class="row g-4">
+        <div class="row g-5">
           <div class="col-12 col-md-6 col-lg-3">
-            <article class="method-step">
+            <article class="method-step reveal-up">
               <span class="method-label">01</span>
               <h3 class="method-title">Observer</h3>
               <p class="method-text">
@@ -1231,7 +1261,7 @@
           </div>
 
           <div class="col-12 col-md-6 col-lg-3">
-            <article class="method-step">
+            <article class="method-step reveal-up">
               <span class="method-label">02</span>
               <h3 class="method-title">Révéler</h3>
               <p class="method-text">
@@ -1241,7 +1271,7 @@
           </div>
 
           <div class="col-12 col-md-6 col-lg-3">
-            <article class="method-step">
+            <article class="method-step reveal-up">
               <span class="method-label">03</span>
               <h3 class="method-title">Traduire</h3>
               <p class="method-text">
@@ -1251,7 +1281,7 @@
           </div>
 
           <div class="col-12 col-md-6 col-lg-3">
-            <article class="method-step">
+            <article class="method-step reveal-up">
               <span class="method-label">04</span>
               <h3 class="method-title">Déployer</h3>
               <p class="method-text">
@@ -1264,33 +1294,31 @@
     </section>
 
     <!-- SEO BLOCK -->
-    <section class="section-space fade-in section-band">
+    <section class="section-space section-separator fade-in">
       <div class="container">
-        <div class="seo-block">
-          <div class="section-intro mb-0">
-            <span class="section-label">Positionnement</span>
-            <h2 class="section-title">Agence de branding, direction artistique et stratégie de marque à Bordeaux</h2>
-          </div>
-
-          <p class="seo-text mt-4">
-            <strong>Abyss Lab</strong> accompagne les marques, hôtels, restaurants, lieux de vie et projets lifestyle
-            qui souhaitent renforcer leur image, clarifier leur positionnement et développer une présence plus désirable.
-            De la <strong>stratégie marketing & communication</strong> à la <strong>direction artistique</strong>,
-            du <strong>brand content</strong> à la <strong>création de site internet vitrine premium</strong>,
-            l’agence conçoit des expériences de marque plus fortes, plus cohérentes et pensées pour durer.
-          </p>
+        <div class="section-intro">
+          <span class="section-label">Positionnement</span>
+          <h2 class="section-title">Un studio de stratégie de marque, direction artistique et image premium à Bordeaux</h2>
         </div>
+
+        <p class="seo-text">
+          <strong>Abyss Lab</strong> accompagne les marques, hôtels, restaurants, lieux de vie et projets lifestyle
+          qui souhaitent renforcer leur image, clarifier leur positionnement et développer une présence plus désirable.
+          De la <strong>stratégie marketing & communication</strong> à la <strong>direction artistique</strong>,
+          du <strong>brand content</strong> à la <strong>création de site internet vitrine premium</strong>,
+          le studio conçoit des expériences de marque plus fortes, plus cohérentes et pensées pour durer.
+        </p>
       </div>
     </section>
 
-    <!-- FINAL CTA -->
-    <section class="section-space fade-in">
+    <!-- CTA -->
+    <section class="section-space section-separator fade-in">
       <div class="container">
         <div class="final-cta">
           <h2 class="final-cta-title">Construisons une marque qui ne reste pas en surface.</h2>
           <p class="final-cta-text">
-            Basée à Bordeaux, Abyss Lab accompagne des projets en France et à l’étranger avec une approche
-            sensible, stratégique et résolument orientée image.
+            Basée à Bordeaux, Abyss Lab accompagne des projets en France et à l’étranger avec une approche sensible,
+            stratégique et résolument orientée image.
           </p>
           <a href="contact.html" class="btn btn-outline-light">Parler de votre projet</a>
         </div>
@@ -1410,7 +1438,6 @@
     });
 
     const faders = document.querySelectorAll(".fade-in");
-
     const appearOnScroll = new IntersectionObserver(function(entries, observer){
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
@@ -1425,8 +1452,7 @@
       appearOnScroll.observe(fader);
     });
 
-    const manifesto = document.querySelector(".manifesto-glow");
-
+    const manifesto = document.getElementById("manifesto-glow");
     if (manifesto) {
       const manifestoObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -1437,9 +1463,27 @@
       }, {
         threshold:0.45
       });
-
       manifestoObserver.observe(manifesto);
     }
+
+    const revealUps = document.querySelectorAll(".reveal-up, .emphasis");
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("in-view");
+        revealObserver.unobserve(entry.target);
+      });
+    }, {
+      threshold:0.24
+    });
+
+    revealUps.forEach(item => {
+      revealObserver.observe(item);
+    });
+  </script>
+
+</body>
+</html>
   </script>
 
 </body>
