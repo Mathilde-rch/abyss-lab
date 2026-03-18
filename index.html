@@ -27,30 +27,13 @@
       --bg:#000000;
     }
 
-    html{
-      scroll-behavior:smooth;
-    }
+    html{scroll-behavior:smooth;}
+    body{overflow-x:hidden;}
+    a{transition:all .3s ease;}
+    img{max-width:100%;display:block;}
 
-    body{
-      overflow-x:hidden;
-    }
-
-    a{
-      transition:all .3s ease;
-    }
-
-    img{
-      max-width:100%;
-      display:block;
-    }
-
-    .section-space{
-      padding:88px 0;
-    }
-
-    .section-space-tight{
-      padding:52px 0 88px;
-    }
+    .section-space{padding:88px 0;}
+    .section-space-tight{padding:42px 0 88px;}
 
     /* ===== VIDEO BACKGROUND ===== */
     .video-background{
@@ -89,9 +72,7 @@
       backdrop-filter:blur(14px);
     }
 
-    .navbar-brand{
-      letter-spacing:1px;
-    }
+    .navbar-brand{letter-spacing:1px;}
 
     .nav-link{
       font-family:'couture', sans-serif;
@@ -195,10 +176,42 @@
       border-color:var(--white);
     }
 
-    /* ===== METHOD ===== */
-    .method-grid{
-      margin-top:0;
+    /* ===== APPROACH INTRO ===== */
+    .approach-intro{
+      max-width:940px;
+      margin:0 auto;
+      text-align:center;
     }
+
+    .section-kicker{
+      margin:0 0 14px;
+      font-size:.76rem;
+      font-weight:700;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:var(--white-soft);
+    }
+
+    .approach-title{
+      font-family:'couture',sans-serif;
+      font-size:1.9rem;
+      line-height:1.25;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--white);
+      margin:0 0 18px;
+    }
+
+    .approach-text{
+      margin:0 auto;
+      max-width:860px;
+      font-size:1.04rem;
+      line-height:1.9;
+      color:var(--white-soft);
+    }
+
+    /* ===== METHOD ===== */
+    .method-grid{margin-top:0;}
 
     .method-card{
       height:100%;
@@ -271,20 +284,18 @@
       margin-bottom:18px;
     }
 
+    .founder-links{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+
     /* ===== VISUAL TERRITORIES ===== */
     .territories-intro{
       max-width:860px;
       margin:0 auto 34px;
       text-align:center;
-    }
-
-    .territories-kicker{
-      margin:0 0 14px;
-      font-size:.76rem;
-      font-weight:700;
-      letter-spacing:.22em;
-      text-transform:uppercase;
-      color:var(--white-soft);
     }
 
     .territories-title{
@@ -304,9 +315,7 @@
       color:var(--white-soft);
     }
 
-    .territories-grid{
-      margin-top:4px;
-    }
+    .territories-grid{margin-top:4px;}
 
     .territory-card{
       position:relative;
@@ -558,22 +567,11 @@
 
     /* ===== RESPONSIVE ===== */
     @media(max-width:991.98px){
-      .section-space{
-        padding:78px 0;
-      }
+      .section-space{padding:78px 0;}
+      .section-space-tight{padding:34px 0 78px;}
+      .hero{padding:100px 0 72px;}
 
-      .section-space-tight{
-        padding:40px 0 78px;
-      }
-
-      .hero{
-        padding:100px 0 72px;
-      }
-
-      .footer-social-block{
-        margin-top:6px;
-      }
-
+      .footer-social-block{margin-top:6px;}
       .footer-menu{
         grid-template-columns:repeat(2,1fr);
         gap:16px 24px;
@@ -591,9 +589,7 @@
     }
 
     @media(max-width:767.98px){
-      .hero-title{
-        font-size:2.45rem;
-      }
+      .hero-title{font-size:2.45rem;}
 
       .header{
         font-size:.80rem;
@@ -605,13 +601,14 @@
         line-height:1.8;
       }
 
-      .territory-card img{
-        height:380px;
-      }
-
+      .approach-title,
       .territories-title,
       .cta-title{
         font-size:1.45rem;
+      }
+
+      .territory-card img{
+        height:380px;
       }
 
       .footer{
@@ -703,6 +700,21 @@
     </div>
   </section>
 
+  <!-- APPROACH INTRO -->
+  <section class="section-space fade-in">
+    <div class="container">
+      <div class="approach-intro">
+        <p class="section-kicker">L'approche Abyss</p>
+        <h2 class="approach-title">Plonger plus profond pour faire emerger l’essentiel</h2>
+        <p class="approach-text">
+          Chez Abyss Lab, nous ne travaillons pas à la surface des marques. Nous révélons ce qui leur donne
+          du relief, de la tenue et de la distinction, puis nous donnons à cette profondeur
+          une forme lisible, désirable et durable.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- METHOD -->
   <section class="section-space-tight fade-in">
     <div class="container">
@@ -769,7 +781,10 @@
             en territoire clair, en présence juste et en rayonnement durable.
           </p>
 
-          <a href="contact.html" class="btn btn-outline-light mt-3">Parler de votre projet</a>
+          <div class="founder-links">
+            <a href="contact.html" class="btn btn-outline-light">Parler de votre projet</a>
+            <a href="references.html" class="btn-light-ghost">Voir les references</a>
+          </div>
         </div>
       </div>
     </div>
@@ -779,7 +794,7 @@
   <section class="section-space fade-in">
     <div class="container">
       <div class="territories-intro">
-        <p class="territories-kicker">Territoires d'expertise</p>
+        <p class="section-kicker">Territoires d'expertise</p>
         <h2 class="territories-title">Trois leviers pour faire emerger une marque</h2>
         <p class="territories-text">
           Une marque forte ne s’additionne pas. Elle se construit par cohérence :
