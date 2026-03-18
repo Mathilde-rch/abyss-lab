@@ -1,867 +1,694 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Abyss Lab, agence de strategie marketing, communication digitale, brand content, UGC, reseaux sociaux, direction artistique et image de marque pour hotels, restaurants et lieux lifestyle.">
-  <title>Services | ABYSS LAB</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.cdnfonts.com/css/couture" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-
-  <style>
-    /* ===== GLOBAL ===== */
-    :root{
-      --white:#ffffff;
-      --white-soft:rgba(255,255,255,.82);
-      --white-muted:rgba(255,255,255,.68);
-      --line:rgba(255,255,255,.14);
-      --line-soft:rgba(255,255,255,.10);
-      --navy:#001D51;
-      --glow-a:rgba(74,159,255,.20);
-      --glow-b:rgba(0,102,255,.12);
-      --bg:#000000;
-    }
-
-    /* ===== GLOBAL ===== */
-    html{
-      scroll-behavior:smooth;
-    }
-
-    a{
-      transition:all .3s ease;
-    }
-
-    img{
-      max-width:100%;
-      display:block;
-    }
-
-    .section-space{
-      padding:96px 0;
-    }
-
-    /* ===== VIDEO BACKGROUND ===== */
-    .video-background{
-      position:fixed;
-      inset:0;
-      z-index:-2;
-      overflow:hidden;
-    }
-
-    .video-background video{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-    .video-background::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(to bottom, rgba(0,0,0,0.42), rgba(0,0,0,0.72)),
-        rgba(0,0,0,0.25);
-      z-index:1;
-    }
-
-    /* ===== NAVBAR ===== */
-    .navbar{
-      position:relative;
-      z-index:30;
-      transition:background-color 0.3s ease, backdrop-filter 0.3s ease;
-    }
-
-    .navbar.scrolled{
-      background:rgba(0,0,0,0.68);
-      backdrop-filter:blur(14px);
-    }
-
-    .navbar-brand{
-      letter-spacing:1px;
-    }
-
-    .nav-link{
-      font-family: 'couture', sans-serif;
-      font-size:.80rem;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      font-weight:600;
-      color:var(--white-soft)!important;
-      padding-left:1rem!important;
-      padding-right:1rem!important;
-    }
-
-    .nav-link:hover,
-    .nav-link.active{
-      color:var(--white)!important;
-    }
-
-    /* ===== HERO ===== */
-    .services-hero{
-      position:relative;
-      z-index:2;
-      padding:140px 0 72px;
-    }
-
-    .hero-kicker{
-      font-family:"Montserrat", sans-serif;
-      font-size:12px;
-      letter-spacing:3px;
-      text-transform:uppercase;
-      color:var(--white-70);
-      margin-bottom:18px;
-    }
-
-    .hero-title{
-      font-size:4.4rem;
-      line-height:0.96;
-      letter-spacing:0.5px;
-      text-transform:uppercase;
-      max-width:1100px;
-      margin-bottom:18px;
-    }
-
-    .hero-subtitle{
-      font-family:"Montserrat", sans-serif;
-      color:var(--white-85);
-      font-size:1rem;
-      line-height:1.8;
-      max-width:540px;
-      margin-bottom:0;
-    }
-
-    /* ===== APPLE-LIKE SERVICE STRIP ===== */
-    .services-strip{
-      position:relative;
-      z-index:2;
-      padding:18px 0 56px;
-    }
-
-    .services-strip-wrap{
-      display:flex;
-      gap:18px;
-      overflow-x:auto;
-      padding-bottom:12px;
-      scrollbar-width:none;
-      -ms-overflow-style:none;
-    }
-
-    .services-strip-wrap::-webkit-scrollbar{
-      display:none;
-    }
-
-    .service-chip{
-      flex:0 0 210px;
-      text-decoration:none;
-      color:#fff;
-      transition:transform 0.35s ease, opacity 0.35s ease, border-color 0.35s ease;
-    }
-
-    .service-chip:hover{
-      transform:translateY(-6px);
-      color:#fff;
-    }
-
-    .service-chip-media{
-      position:relative;
-      height:220px;
-      border:1px solid var(--white-12);
-      background:rgba(255,255,255,0.04);
-      overflow:hidden;
-      margin-bottom:14px;
-    }
-
-    .service-chip-media img,
-    .service-chip-media video{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-      transition:transform 0.55s ease;
-    }
-
-    .service-chip:hover .service-chip-media img,
-    .service-chip:hover .service-chip-media video{
-      transform:scale(1.04);
-    }
-
-    .service-chip-label{
-      font-size:1rem;
-      line-height:1.15;
-      margin-bottom:6px;
-      text-transform:uppercase;
-    }
-
-    .service-chip-meta{
-      font-family:"Montserrat", sans-serif;
-      font-size:0.76rem;
-      letter-spacing:1.8px;
-      text-transform:uppercase;
-      color:var(--white-55);
-    }
-
-    /* ===== INTRO STATEMENT ===== */
-    .services-intro{
-      position:relative;
-      z-index:2;
-      padding:8px 0 30px;
-    }
-
-    .services-intro-box{
-      border-top:1px solid var(--white-12);
-      padding-top:28px;
-    }
-
-    .services-intro-text{
-      font-family:"Montserrat", sans-serif;
-      max-width:760px;
-      font-size:1rem;
-      line-height:1.85;
-      color:var(--white-85);
-      margin:0;
-    }
-
-    /* ===== DETAIL SECTIONS ===== */
-    .services-wrapper{
-      position:relative;
-      z-index:2;
-      padding:10px 0 40px;
-    }
-
-    .service-section{
-      border-top:1px solid var(--white-12);
-      padding:76px 0;
-    }
-
-    .service-section:first-child{
-      margin-top:0;
-    }
-
-    .service-section-media{
-      position:relative;
-      overflow:hidden;
-      border:1px solid var(--white-12);
-      background:rgba(255,255,255,0.03);
-    }
-
-    .service-section-media img,
-    .service-section-media video{
-      display:block;
-      width:100%;
-      height:620px;
-      object-fit:cover;
-    }
-
-    .service-section-text{
-      padding-right:40px;
-    }
-
-    .service-section-index{
-      font-family:"Montserrat", sans-serif;
-      font-size:0.72rem;
-      letter-spacing:2.5px;
-      text-transform:uppercase;
-      color:var(--white-55);
-      margin-bottom:14px;
-    }
-
-    .service-section-title{
-      font-size:2.7rem;
-      line-height:0.95;
-      text-transform:uppercase;
-      margin-bottom:10px;
-    }
-
-    .service-section-subtitle{
-      font-family:"Montserrat", sans-serif;
-      font-size:0.8rem;
-      letter-spacing:2.2px;
-      text-transform:uppercase;
-      color:var(--white-55);
-      margin-bottom:24px;
-    }
-
-    .service-section-hook{
-      font-family:"Montserrat", sans-serif;
-      font-size:1rem;
-      line-height:1.85;
-      color:var(--white);
-      margin-bottom:16px;
-    }
-
-    .service-section-hook strong{
-      font-weight:700;
-      font-style:italic;
-    }
-
-    .service-section-text p{
-      font-family:"Montserrat", sans-serif;
-      font-size:1rem;
-      line-height:1.9;
-      color:var(--white-85);
-      margin-bottom:0;
-    }
-
-    .service-section-grid{
-      display:grid;
-      grid-template-columns:repeat(2, minmax(0,1fr));
-      gap:14px;
-      margin:28px 0 32px;
-    }
-
-    .service-card{
-      border:1px solid var(--white-12);
-      background:rgba(255,255,255,0.03);
-      padding:16px 18px;
-      min-height:92px;
-    }
-
-    .service-card-title{
-      font-family:"Montserrat", sans-serif;
-      font-size:0.7rem;
-      letter-spacing:2px;
-      text-transform:uppercase;
-      color:var(--white-55);
-      margin-bottom:7px;
-    }
-
-    .service-card-text{
-      font-family:"Montserrat", sans-serif;
-      font-size:0.95rem;
-      line-height:1.55;
-      color:var(--white-85);
-      margin:0;
-    }
-
-    .btn-outline-light{
-      border-radius:999px;
-      padding:10px 24px;
-      font-family:"Montserrat", sans-serif;
-      font-size:0.86rem;
-      letter-spacing:0.8px;
-      text-transform:uppercase;
-    }
-
-    /* ===== CTA ===== */
-    .services-cta{
-      position:relative;
-      z-index:2;
-      padding:20px 0 110px;
-    }
-
-    .services-cta-box{
-      border-top:1px solid var(--white-12);
-      border-bottom:1px solid var(--white-12);
-      padding:56px 0;
-    }
-
-    .services-cta-title{
-      font-size:2.15rem;
-      line-height:1;
-      text-transform:uppercase;
-      margin-bottom:16px;
-    }
-
-    .services-cta-text{
-      font-family:"Montserrat", sans-serif;
-      max-width:760px;
-      color:var(--white-85);
-      line-height:1.9;
-      margin-bottom:28px;
-    }
-
-    /* ===== FOOTER ===== */
-    footer{
-      border-top:1px solid var(--white-12);
-      padding:60px 0;
-      font-size:0.9rem;
-      position:relative;
-      z-index:2;
-    }
-
-    footer a{
-      text-decoration:none;
-    }
-
-    footer a:hover{
-      opacity:0.8;
-    }
-
-    /* ===== FADE IN ===== */
-    .fade-in{
-      opacity:0;
-      transform:translateY(26px);
-      transition:opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .fade-in.visible{
-      opacity:1;
-      transform:translateY(0);
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 1199px){
-      .hero-title{
-        font-size:3.6rem;
-      }
-    }
-
-    @media (max-width: 991px){
-      .services-hero{
-        padding:118px 0 58px;
-      }
-
-      .hero-title{
-        font-size:2.55rem;
-      }
-
-      .service-section-text{
-        padding-right:0;
-      }
-
-      .service-section-title{
-        font-size:2rem;
-      }
-
-      .service-section-media img,
-      .service-section-media video{
-        height:auto;
-      }
-
-      .service-section{
-        padding:58px 0;
-      }
-    }
-
-    @media (max-width: 768px){
-      .hero-title{
-        font-size:2rem;
-      }
-
-      .hero-subtitle,
-      .services-intro-text,
-      .service-section-hook,
-      .service-section-text p,
-      .services-cta-text{
-        font-size:0.96rem;
-      }
-
-      .service-chip{
-        flex:0 0 170px;
-      }
-
-      .service-chip-media{
-        height:180px;
-      }
-
-      .service-section-title{
-        font-size:1.55rem;
-      }
-
-      .service-section-subtitle{
-        font-size:0.74rem;
-      }
-
-      .service-section-grid{
-        grid-template-columns:1fr;
-      }
-
-      .services-cta-title{
-        font-size:1.45rem;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- VIDEO BACKGROUND -->
-  <div class="video-background">
-    <video autoplay muted loop playsinline preload="auto">
-      <source src="assets/video/abyss-lab.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark py-3">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">ABYSS LAB.</a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Ouvrir le menu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse justify-content-end" id="navmenu">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">A PROPOS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="services.html">SERVICES</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="references.html">REFERENCES</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">CONTACT</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<main id="main-content">
 
   <!-- HERO -->
-  <section class="services-hero fade-in">
+  <section class="services-hero section-space-xl">
     <div class="container">
-      <p class="hero-kicker">ABYSS LAB — SERVICES</p>
-      <h1 class="hero-title">
-        STRATEGIE, IMAGE<br>
-        ET CONTENU POUR<br>
-        FAIRE EMERGER<br>
-        LES MARQUES
-      </h1>
-      <p class="hero-subtitle">
-        agence de strategie marketing et communication digitale pour hotellerie, restauration et lifestyle
-      </p>
+      <div class="row justify-content-center text-center">
+        <div class="col-12 col-lg-10">
+          <span class="eyebrow fade-in">SERVICES</span>
+          <h1 class="display-1 fade-in">
+            De la profondeur de marque à une présence qui s’impose.
+          </h1>
+          <p class="hero-intro fade-in">
+            Abyss Lab accompagne les marques premium, luxe, hospitality et art de vivre qui veulent clarifier leur positionnement, affirmer leur image et déployer une présence digitale plus juste, plus forte et plus cohérente.
+          </p>
+          <div class="hero-cta fade-in">
+            <a href="#accompagnements" class="btn btn-dark">Découvrir les accompagnements</a>
+            <a href="/contact" class="btn btn-outline-dark">Parler de votre projet</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- VISUAL SERVICE NAV -->
-  <section class="services-strip fade-in">
+  <!-- WHAT CHANGES -->
+  <section class="services-impact section-space">
     <div class="container">
-      <div class="services-strip-wrap">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-12 col-lg-8">
+          <span class="eyebrow fade-in">CE QUI CHANGE</span>
+          <h2 class="section-title fade-in">Quand la marque est alignée, tout devient plus lisible.</h2>
+        </div>
+      </div>
 
-        <a href="#brand-content" class="service-chip">
-          <div class="service-chip-media">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944261/1_u4uw1i.jpg" alt="Brand content et UGC">
-          </div>
-          <h2 class="service-chip-label">BRAND CONTENT</h2>
-          <p class="service-chip-meta">and ugc</p>
-        </a>
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <article class="impact-card fade-in">
+            <span class="impact-number">01</span>
+            <h3>Une image qui impose</h3>
+            <p>
+              Une direction plus nette, plus désirable, plus crédible.
+            </p>
+          </article>
+        </div>
 
-        <a href="#reseaux-sociaux" class="service-chip">
-          <div class="service-chip-media">
-            <video autoplay muted loop playsinline>
-              <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/15_bfvtos.mp4" type="video/mp4">
-            </video>
-          </div>
-          <h2 class="service-chip-label">RESEAUX SOCIAUX</h2>
-          <p class="service-chip-meta">community and ads</p>
-        </a>
+        <div class="col-12 col-md-4">
+          <article class="impact-card fade-in">
+            <span class="impact-number">02</span>
+            <h3>Une présence qui convertit</h3>
+            <p>
+              Un site, des contenus et des points de contact pensés pour soutenir la croissance.
+            </p>
+          </article>
+        </div>
 
-        <a href="#inbound-marketing" class="service-chip">
-          <div class="service-chip-media">
-            <video autoplay muted loop playsinline>
-              <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/16_phtw8d.mp4" type="video/mp4">
-            </video>
-          </div>
-          <h2 class="service-chip-label">INBOUND</h2>
-          <p class="service-chip-meta">content and acquisition</p>
-        </a>
+        <div class="col-12 col-md-4">
+          <article class="impact-card fade-in">
+            <span class="impact-number">03</span>
+            <h3>Une stratégie qui tient</h3>
+            <p>
+              Des fondations solides pour avancer avec plus de cohérence et moins de dispersion.
+            </p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <a href="#strategie-360" class="service-chip">
-          <div class="service-chip-media">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Conseil et strategie 360">
+  <!-- APPROACH -->
+  <section class="services-approach section-space bg-soft">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-12 col-lg-5">
+          <span class="eyebrow fade-in">L’APPROCHE ABYSS LAB</span>
+          <h2 class="section-title fade-in">
+            Une approche hybride, entre regard stratégique et mise en œuvre concrète.
+          </h2>
+        </div>
+
+        <div class="col-12 col-lg-7">
+          <div class="approach-copy fade-in">
+            <p class="lead-text">
+              Penser la marque ne suffit plus. Il faut aussi savoir lui donner forme, la déployer avec cohérence et la faire vivre dans le détail.
+            </p>
+            <p>
+              C’est là qu’Abyss Lab se distingue : une vision à 360° qui relie positionnement, identité, contenus, digital et activation, avec une vraie capacité d’exécution.
+            </p>
           </div>
-          <h2 class="service-chip-label">STRATEGIE 360</h2>
-          <p class="service-chip-meta">marketing and communication</p>
-        </a>
+
+          <div class="row g-4 mt-2">
+            <div class="col-12 col-md-4">
+              <div class="mini-card fade-in">
+                <h3>Comprendre</h3>
+                <p>Faire émerger ce qui distingue profondément la marque.</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="mini-card fade-in">
+                <h3>Structurer</h3>
+                <p>Donner une direction claire, cohérente et durable.</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="mini-card fade-in">
+                <h3>Déployer</h3>
+                <p>Transformer la stratégie en présence visible, concrète et performante.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="accompagnements" class="services-offers section-space-xl">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-12 col-lg-8">
+          <span class="eyebrow fade-in">LES ACCOMPAGNEMENTS</span>
+          <h2 class="section-title fade-in">Quatre façons d’accompagner votre marque.</h2>
+          <p class="section-intro fade-in">
+            Chaque accompagnement peut être pensé seul ou combiné dans une approche plus globale, selon la maturité de votre marque, vos enjeux et votre rythme.
+          </p>
+        </div>
+      </div>
+
+      <div class="offers-stack">
+
+        <!-- OFFER 1 -->
+        <article class="offer-block fade-in">
+          <div class="row align-items-start gy-4">
+            <div class="col-12 col-lg-4">
+              <div class="offer-heading">
+                <span class="offer-kicker">01</span>
+                <h3>Fondations</h3>
+                <p class="offer-subtitle">Poser des bases claires, solides et distinctives.</p>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-8">
+              <div class="offer-content">
+                <p>
+                  Pour les marques qui ont besoin de clarifier leur cap, affiner leur positionnement ou construire un socle plus cohérent avant d’aller plus loin.
+                </p>
+
+                <div class="offer-list-grid">
+                  <div class="offer-list-item">Positionnement de marque</div>
+                  <div class="offer-list-item">Plateforme de marque</div>
+                  <div class="offer-list-item">Territoire éditorial</div>
+                  <div class="offer-list-item">Architecture des messages</div>
+                  <div class="offer-list-item">Direction créative</div>
+                  <div class="offer-list-item">Recommandations stratégiques</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- OFFER 2 -->
+        <article class="offer-block fade-in">
+          <div class="row align-items-start gy-4">
+            <div class="col-12 col-lg-4">
+              <div class="offer-heading">
+                <span class="offer-kicker">02</span>
+                <h3>Image &amp; présence</h3>
+                <p class="offer-subtitle">Donner une forme juste à la marque.</p>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-8">
+              <div class="offer-content">
+                <p>
+                  Pour traduire la singularité de la marque dans son univers visuel, sa vitrine web et l’ensemble de ses points de contact.
+                </p>
+
+                <div class="offer-list-grid">
+                  <div class="offer-list-item">Conception ou refonte de site web</div>
+                  <div class="offer-list-item">UX / UI et arborescence</div>
+                  <div class="offer-list-item">Copywriting web</div>
+                  <div class="offer-list-item">Optimisation SEO</div>
+                  <div class="offer-list-item">Brand content photo &amp; vidéo</div>
+                  <div class="offer-list-item">Supports de communication</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- OFFER 3 -->
+        <article class="offer-block fade-in">
+          <div class="row align-items-start gy-4">
+            <div class="col-12 col-lg-4">
+              <div class="offer-heading">
+                <span class="offer-kicker">03</span>
+                <h3>Activation</h3>
+                <p class="offer-subtitle">Faire exister la marque avec cohérence.</p>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-8">
+              <div class="offer-content">
+                <p>
+                  Pour activer la marque là où elle doit performer : réseaux sociaux, campagnes, visibilité digitale, influence ou lancement d’initiatives.
+                </p>
+
+                <div class="offer-list-grid">
+                  <div class="offer-list-item">Stratégie de contenus</div>
+                  <div class="offer-list-item">Social media</div>
+                  <div class="offer-list-item">Campagnes Meta Ads</div>
+                  <div class="offer-list-item">SEO / SEA</div>
+                  <div class="offer-list-item">RP &amp; influence</div>
+                  <div class="offer-list-item">Lancements &amp; activations de marque</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- OFFER 4 -->
+        <article class="offer-block fade-in">
+          <div class="row align-items-start gy-4">
+            <div class="col-12 col-lg-4">
+              <div class="offer-heading">
+                <span class="offer-kicker">04</span>
+                <h3>Accompagnement continu</h3>
+                <p class="offer-subtitle">Un partenaire de fond, pas une simple exécution ponctuelle.</p>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-8">
+              <div class="offer-content">
+                <p>
+                  Pour les marques qui veulent être accompagnées dans la durée, garder un cap créatif exigeant et avancer avec un interlocuteur capable de relier vision et opérationnel.
+                </p>
+
+                <div class="offer-list-grid">
+                  <div class="offer-list-item">Pilotage marketing &amp; communication</div>
+                  <div class="offer-list-item">Coordination créative</div>
+                  <div class="offer-list-item">Suivi éditorial et digital</div>
+                  <div class="offer-list-item">Optimisations continues</div>
+                  <div class="offer-list-item">Renfort stratégique externalisé</div>
+                  <div class="offer-list-item">Accompagnement sur-mesure</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
 
       </div>
     </div>
   </section>
 
-  <!-- SHORT INTRO -->
-  <section class="services-intro fade-in">
+  <!-- DIFFERENCE -->
+  <section class="services-difference section-space bg-soft">
     <div class="container">
-      <div class="services-intro-box">
-        <p class="services-intro-text">
-          Abyss Lab conçoit des expertises pensées pour renforcer desirabilite, notoriete, presence digitale et croissance.
-        </p>
+      <div class="row align-items-center gy-5">
+        <div class="col-12 col-lg-5">
+          <span class="eyebrow fade-in">LA DIFFÉRENCE</span>
+          <h2 class="section-title fade-in">Pourquoi Abyss Lab ne ressemble pas à une agence classique.</h2>
+        </div>
+
+        <div class="col-12 col-lg-7">
+          <div class="difference-grid">
+            <div class="difference-item fade-in">
+              <h3>Une vision 360°</h3>
+              <p>
+                Branding, contenu, digital, acquisition, image : chaque levier est pensé dans un même mouvement.
+              </p>
+            </div>
+
+            <div class="difference-item fade-in">
+              <h3>Un profil hybride</h3>
+              <p>
+                Une vraie capacité à relier réflexion stratégique, exigence créative et exécution terrain.
+              </p>
+            </div>
+
+            <div class="difference-item fade-in">
+              <h3>Une culture hospitality &amp; premium</h3>
+              <p>
+                Une compréhension fine des univers luxe, lifestyle, hôtellerie, restauration et expériences de marque.
+              </p>
+            </div>
+
+            <div class="difference-item fade-in">
+              <h3>Du sur-mesure</h3>
+              <p>
+                Pas de recette préfabriquée. Chaque projet est construit à partir de ce que la marque a réellement à révéler.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- DETAILED SERVICES -->
-  <section class="services-wrapper" id="services">
+  <!-- AUDIENCE -->
+  <section class="services-audience section-space">
     <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-12 col-lg-8">
+          <span class="eyebrow fade-in">POUR QUI</span>
+          <h2 class="section-title fade-in">Pensé pour les marques qui veulent élever leur présence sans perdre leur singularité.</h2>
+        </div>
+      </div>
 
-      <!-- BRAND CONTENT -->
-      <section class="service-section fade-in" id="brand-content">
-        <div class="row align-items-center gy-5">
-          <div class="col-12 col-lg-6">
-            <div class="service-section-text">
-              <p class="service-section-index">01 / Expertise</p>
-              <h2 class="service-section-title">BRAND CONTENT</h2>
-              <p class="service-section-subtitle">and ugc</p>
-
-              <p class="service-section-hook">
-                <strong>Nous concevons et deployons des strategies de brand content et de direction artistique a 360 pour les marques hotellerie, restaurants et lieux lifestyle.</strong>
-              </p>
-
-              <p>
-                De la creation de contenus lifestyle a la coherence visuelle globale, nous accompagnons les marques dans la valorisation de leur image, la production de contenus photo et video et l’activation editoriale pour renforcer leur presence digitale.
-              </p>
-
-              <div class="service-section-grid">
-                <div class="service-card">
-                  <div class="service-card-title">Contenu</div>
-                  <p class="service-card-text">Production photo, video et contenus lifestyle premium.</p>
-                </div>
-                <div class="service-card">
-                  <div class="service-card-title">Direction</div>
-                  <p class="service-card-text">Direction artistique et coherence visuelle globale.</p>
-                </div>
-                <div class="service-card">
-                  <div class="service-card-title">UGC</div>
-                  <p class="service-card-text">Contenus incarnes et formats premium adaptes aux usages sociaux.</p>
-                </div>
-                <div class="service-card">
-                  <div class="service-card-title">Diffusion</div>
-                  <p class="service-card-text">Declinaisons pour site web, reseaux sociaux et campagnes digitales.</p>
-                </div>
-              </div>
-
-              <a href="contact.html" class="btn btn-outline-light">PARLER DE VOTRE PROJET</a>
-            </div>
-          </div>
-
-          <div class="col-12 col-lg-6">
-            <div class="service-section-media">
-              <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944261/1_u4uw1i.jpg" alt="Agence brand content et UGC pour hotels restaurants et lieux lifestyle">
-            </div>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="audience-card fade-in">
+            <h3>Hospitality</h3>
+            <p>Hôtels, maisons, expériences, lieux de destination.</p>
           </div>
         </div>
-      </section>
 
-      <!-- RESEAUX SOCIAUX -->
-      <section class="service-section fade-in" id="reseaux-sociaux">
-        <div class="row align-items-center gy-5">
-          <div class="col-12 col-lg-6 order-lg-2">
-            <div class="service-section-text">
-              <p class="service-section-index">02 / Expertise</p>
-              <h2 class="service-section-title">RESEAUX SOCIAUX</h2>
-              <p class="service-section-subtitle">community management and social ads</p>
-
-              <p class="service-section-hook">
-                <strong>Renforcer la presence digitale en creant de l’engagement authentique avec les communautes et en valorisant l’image par des contenus visuels impactants.</strong>
-              </p>
-
-              <p>
-                De la creation de contenus visuels au pilotage de la strategie de community management, en passant par les publications et les campagnes social ads, nous accompagnons les marques pour developper visibilite, engagement et notoriete sur les reseaux sociaux.
-              </p>
-
-              <div class="service-section-grid">
-                <div class="service-card">
-                  <div class="service-card-title">Strategie</div>
-                  <p class="service-card-text">Ligne editoriale et plan de contenu social media.</p>
-                </div>
-                <div class="service-card">
-                  <div class="service-card-title">Animation</div>
-                  <p class="service-card-text">Community management et gestion des interactions.</p>
-                </div>
-                <div class="service-card">
-                  <div class="service-card-title">Creation</div>
-                  <p class="service-card-text">Reels, stories, contenus fixes et declinaisons visuelles.</p>
-                </div>
-                <div class="service-card">
-                  <div class="service-card-title">Amplification</div>
-                  <p class="service-card-text">Campagnes sponsorisees et social ads.</p>
-                </div>
-              </div>
-
-              <a href="contact.html" class="btn btn-outline-light">PARLER DE VOTRE PROJET</a>
-            </div>
-          </div>
-
-          <div class="col-12 col-lg-6 order-lg-1">
-            <div class="service-section-media">
-              <video autoplay muted loop playsinline>
-                <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/15_bfvtos.mp4" type="video/mp4">
-              </video>
-            </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="audience-card fade-in">
+            <h3>Food &amp; Beverage</h3>
+            <p>Restaurants, bars, concepts, marques gastronomiques.</p>
           </div>
         </div>
-      </section>
 
-      <!-- INBOUND -->
-      <section class="service-section fade-in" id="inbound-marketing">
-        <div class="row align-items-center gy-5">
-          <div class="col-12 col-lg-6">
-            <div class="service-section-text">
-              <p class="service-section-index">03 / Expertise</p>
-              <h2 class="service-section-title">INBOUND MARKETING</h2>
-              <p class="service-section-subtitle">content, visibilite and acquisition</p>
-
-              <p class="service-section-hook">
-                <strong>Nous structurons des prises de parole et des parcours de contenu capables de renforcer la presence digitale et de soutenir l’acquisition.</strong>
-              </p>
-
-              <p>
-                L’inbound marketing permet de developper une visibilite durable, d’attirer les bons publics et de consolider la credibilite d’une marque. Nous travaillons contenus, messages et parcours pour rendre votre presence en ligne plus strategique et performante.
-              </p>
-
-              <div class="service-section-grid">
-                <div class="service-card">
-                  <div class="service-card-title">Visibilite</div>
-                  <p class="service-card-text">Contenus strategiques pour acquisition et presence digitale.</p>
-                </div>
-                <div class="service-card">
-                  <div class="service-card-title">Messages</div>
-                  <p class="service-card-text">Storytelling et structuration des prises de parole.</p>
-                </div>
-                <div class="service-card">
-                  <div class="service-card-title">Parcours</div>
-                  <p class="service-card-text">Optimisation des pages et mecanismes de conversion.</p>
-                </div>
-                <div class="service-card">
-                  <div class="service-card-title">SEO</div>
-                  <p class="service-card-text">Renforcement du contenu pour la recherche organique.</p>
-                </div>
-              </div>
-
-              <a href="contact.html" class="btn btn-outline-light">PARLER DE VOTRE PROJET</a>
-            </div>
-          </div>
-
-          <div class="col-12 col-lg-6">
-            <div class="service-section-media">
-              <video autoplay muted loop playsinline>
-                <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/16_phtw8d.mp4" type="video/mp4">
-              </video>
-            </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="audience-card fade-in">
+            <h3>Premium &amp; lifestyle</h3>
+            <p>Marques sensibles à l’image, au détail et à la désirabilité.</p>
           </div>
         </div>
-      </section>
 
-      <!-- STRATEGIE -->
-      <section class="service-section fade-in" id="strategie-360">
-        <div class="row align-items-center gy-5">
-          <div class="col-12 col-lg-6 order-lg-2">
-            <div class="service-section-text">
-              <p class="service-section-index">04 / Expertise</p>
-              <h2 class="service-section-title">CONSEIL ET STRATEGIE</h2>
-              <p class="service-section-subtitle">marketing and communication 360</p>
-
-              <p class="service-section-hook">
-                <strong>Nous accompagnons les marques dans la structuration globale de leur communication afin d’aligner positionnement, image, contenu et activation.</strong>
-              </p>
-
-              <p>
-                Avant de produire, il faut clarifier. Cette expertise permet d’identifier les bons axes de communication, les priorites marketing et les leviers de developpement les plus pertinents pour faire rayonner une marque avec coherence et ambition.
-              </p>
-
-              <div class="service-section-grid">
-                <div class="service-card">
-                  <div class="service-card-title">Audit</div>
-                  <p class="service-card-text">Analyse d’image, de positionnement et de presence digitale.</p>
-                </div>
-                <div class="service-card">
-                  <div class="service-card-title">Vision</div>
-                  <p class="service-card-text">Recommandations marketing et communication 360.</p>
-                </div>
-                <div class="service-card">
-                  <div class="service-card-title">Plan</div>
-                  <p class="service-card-text">Priorisation des actions et feuille de route claire.</p>
-                </div>
-                <div class="service-card">
-                  <div class="service-card-title">Accompagnement</div>
-                  <p class="service-card-text">Suivi strategique et pilotage du deploiement.</p>
-                </div>
-              </div>
-
-              <a href="contact.html" class="btn btn-outline-light">PARLER DE VOTRE PROJET</a>
-            </div>
-          </div>
-
-          <div class="col-12 col-lg-6 order-lg-1">
-            <div class="service-section-media">
-              <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Agence de strategie marketing et communication digitale a Bordeaux">
-            </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="audience-card fade-in">
+            <h3>Repositionnement</h3>
+            <p>Marques en lancement, en transition ou en phase de montée en gamme.</p>
           </div>
         </div>
-      </section>
-
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="services-cta fade-in">
-    <div class="container">
-      <div class="services-cta-box">
-        <h2 class="services-cta-title">UN BESOIN PONCTUEL OU UN ACCOMPAGNEMENT GLOBAL ?</h2>
-        <p class="services-cta-text">
-          Abyss Lab construit des accompagnements sur mesure en strategie marketing, communication digitale, brand content, direction artistique, reseaux sociaux et image de marque pour hotels, restaurants et lieux lifestyle.
-        </p>
-        <a href="contact.html" class="btn btn-outline-light">PARLER DE VOTRE PROJET</a>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
+  <!-- PROCESS -->
+  <section class="services-process section-space-xl">
     <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <strong>ABYSS LAB.</strong><br>
-          Agence basée Bordeaux. Déplacement partout en France.
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-12 col-lg-8">
+          <span class="eyebrow fade-in">MÉTHODE</span>
+          <h2 class="section-title fade-in">Une méthode simple, exigeante, orientée résultat.</h2>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="process-card fade-in">
+            <span>01</span>
+            <h3>Immersion</h3>
+            <p>Comprendre l’ADN, les enjeux, l’écosystème et les ambitions de la marque.</p>
+          </div>
         </div>
 
-        <div class="col-12 col-md-6 text-md-end mt-4 mt-md-0">
-          <a href="mentions-legales.html" class="text-white me-3">Mentions légales</a>
-          <a href="cgu.html" class="text-white me-3">CGU</a>
-          <a href="cgv.html" class="text-white me-3">CGV</a>
-          <a href="politique-confidentialite.html" class="text-white">Politique de confidentialité</a>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="process-card fade-in">
+            <span>02</span>
+            <h3>Direction</h3>
+            <p>Définir un cap clair, une structure cohérente et les bons leviers à activer.</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="process-card fade-in">
+            <span>03</span>
+            <h3>Déploiement</h3>
+            <p>Donner corps à la marque à travers les contenus, le site et les activations.</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="process-card fade-in">
+            <span>04</span>
+            <h3>Évolution</h3>
+            <p>Ajuster, faire grandir, maintenir le niveau d’exigence dans le temps.</p>
+          </div>
         </div>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- FINAL CTA -->
+  <section class="services-cta section-space-xl bg-soft">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-12 col-lg-8">
+          <span class="eyebrow fade-in">PARLONS DE VOTRE MARQUE</span>
+          <h2 class="section-title fade-in">Construire une présence forte commence par une direction juste.</h2>
+          <p class="section-intro fade-in">
+            Vous avez besoin de clarifier votre positionnement, de faire évoluer votre image ou de déployer une présence plus cohérente ? Commençons par une conversation.
+          </p>
+          <div class="hero-cta fade-in">
+            <a href="/contact" class="btn btn-dark">Prendre contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function(){
-      const currentLocation = location.pathname.split("/").pop();
-      const menuItems = document.querySelectorAll(".nav-link");
+</main>
 
-      menuItems.forEach(link => {
-        if(link.getAttribute("href") === currentLocation){
-          link.classList.add("active");
-        }
-      });
-    });
-  </script>
+<style>
+  :root{
+    --abyss-text:#111111;
+    --abyss-muted:#5f5f5f;
+    --abyss-line:rgba(17,17,17,.10);
+    --abyss-soft:#f6f4f1;
+    --abyss-white:#ffffff;
+    --abyss-radius:26px;
+    --abyss-radius-sm:18px;
+    --abyss-shadow:0 10px 40px rgba(0,0,0,.04);
+  }
 
-  <script>
-    window.addEventListener("scroll", function(){
-      const navbar = document.querySelector(".navbar");
-      navbar.classList.toggle("scrolled", window.scrollY > 50);
-    });
+  .section-space{
+    padding: 110px 0;
+  }
 
-    const faders = document.querySelectorAll(".fade-in");
+  .section-space-xl{
+    padding: 150px 0;
+  }
 
-    const appearOptions = {
-      threshold: 0.15
-    };
+  .bg-soft{
+    background: var(--abyss-soft);
+  }
 
-    const appearOnScroll = new IntersectionObserver(function(entries, observer){
-      entries.forEach(entry => {
-        if(!entry.isIntersecting) return;
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      });
-    }, appearOptions);
+  .eyebrow{
+    display:inline-block;
+    margin-bottom:18px;
+    font-size:.78rem;
+    letter-spacing:.20em;
+    text-transform:uppercase;
+    color:var(--abyss-muted);
+  }
 
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
-    });
-  </script>
+  .display-1{
+    font-size: clamp(2.6rem, 6vw, 5.8rem);
+    line-height: .95;
+    letter-spacing: -.04em;
+    margin-bottom: 28px;
+    color: var(--abyss-text);
+  }
+
+  .section-title{
+    font-size: clamp(2rem, 4vw, 4rem);
+    line-height: 1.02;
+    letter-spacing: -.035em;
+    margin-bottom: 0;
+    color: var(--abyss-text);
+  }
+
+  .hero-intro,
+  .section-intro,
+  .lead-text,
+  .offer-content p,
+  .difference-item p,
+  .audience-card p,
+  .process-card p,
+  .impact-card p,
+  .mini-card p{
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--abyss-muted);
+    margin-bottom: 0;
+  }
+
+  .hero-intro,
+  .section-intro{
+    max-width: 860px;
+    margin: 24px auto 0;
+  }
+
+  .hero-cta{
+    margin-top: 34px;
+    display:flex;
+    gap:14px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:54px;
+    padding:0 26px;
+    border-radius:999px;
+    font-size:.98rem;
+    text-decoration:none;
+    transition:all .25s ease;
+  }
+
+  .btn-dark{
+    background:#111111;
+    color:#ffffff;
+    border:1px solid #111111;
+  }
+
+  .btn-dark:hover{
+    background:#000000;
+    color:#ffffff;
+    transform:translateY(-1px);
+  }
+
+  .btn-outline-dark{
+    background:transparent;
+    color:#111111;
+    border:1px solid rgba(17,17,17,.18);
+  }
+
+  .btn-outline-dark:hover{
+    border-color:#111111;
+    color:#111111;
+    transform:translateY(-1px);
+  }
+
+  .impact-card,
+  .mini-card,
+  .audience-card,
+  .process-card,
+  .difference-item{
+    height:100%;
+    padding:34px 28px;
+    background:var(--abyss-white);
+    border:1px solid var(--abyss-line);
+    border-radius:var(--abyss-radius-sm);
+  }
+
+  .impact-number,
+  .process-card span,
+  .offer-kicker{
+    display:inline-block;
+    font-size:.85rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--abyss-muted);
+    margin-bottom:14px;
+  }
+
+  .impact-card h3,
+  .mini-card h3,
+  .audience-card h3,
+  .process-card h3,
+  .difference-item h3{
+    font-size:1.25rem;
+    line-height:1.2;
+    letter-spacing:-.02em;
+    margin-bottom:12px;
+    color:var(--abyss-text);
+  }
+
+  .approach-copy{
+    margin-bottom: 22px;
+  }
+
+  .approach-copy .lead-text{
+    font-size:1.18rem;
+    color:var(--abyss-text);
+    margin-bottom:18px;
+  }
+
+  .offers-stack{
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+    margin-top:14px;
+  }
+
+  .offer-block{
+    padding:42px 36px;
+    background:var(--abyss-white);
+    border:1px solid var(--abyss-line);
+    border-radius:var(--abyss-radius);
+    box-shadow: var(--abyss-shadow);
+  }
+
+  .offer-heading h3{
+    font-size: clamp(1.7rem, 2vw, 2.3rem);
+    letter-spacing:-.03em;
+    margin-bottom:10px;
+    color:var(--abyss-text);
+  }
+
+  .offer-subtitle{
+    font-size:1rem;
+    line-height:1.6;
+    color:var(--abyss-muted);
+    margin:0;
+    max-width: 280px;
+  }
+
+  .offer-content p{
+    margin-bottom:24px;
+  }
+
+  .offer-list-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+  }
+
+  .offer-list-item{
+    padding:15px 18px;
+    border-radius:14px;
+    background:var(--abyss-soft);
+    border:1px solid rgba(17,17,17,.06);
+    font-size:.98rem;
+    line-height:1.45;
+    color:var(--abyss-text);
+  }
+
+  .difference-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:18px;
+  }
+
+  .services-hero{
+    padding-top: 120px;
+    padding-bottom: 110px;
+  }
+
+  @media (max-width: 991.98px){
+    .section-space{
+      padding: 84px 0;
+    }
+
+    .section-space-xl{
+      padding: 105px 0;
+    }
+
+    .services-hero{
+      padding-top: 90px;
+      padding-bottom: 72px;
+    }
+
+    .offer-block{
+      padding:30px 24px;
+    }
+
+    .difference-grid{
+      grid-template-columns:1fr;
+    }
+  }
+
+  @media (max-width: 767.98px){
+    .display-1{
+      line-height:1;
+      margin-bottom:20px;
+    }
+
+    .section-title{
+      line-height:1.05;
+    }
+
+    .hero-intro,
+    .section-intro,
+    .lead-text,
+    .offer-content p,
+    .difference-item p,
+    .audience-card p,
+    .process-card p,
+    .impact-card p,
+    .mini-card p{
+      font-size: .98rem;
+      line-height: 1.7;
+    }
+
+    .offer-list-grid{
+      grid-template-columns:1fr;
+    }
+
+    .impact-card,
+    .mini-card,
+    .audience-card,
+    .process-card,
+    .difference-item{
+      padding:26px 22px;
+    }
+
+    .hero-cta{
+      gap:10px;
+    }
+
+    .btn{
+      width:100%;
+    }
+  }
+</style>
 
 </body>
 </html>
