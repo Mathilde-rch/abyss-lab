@@ -27,11 +27,22 @@
       --bg:#000000;
     }
 
-    html{scroll-behavior:smooth;}
-    a{transition:all .3s ease;}
-    img{max-width:100%;display:block;}
+    html{
+      scroll-behavior:smooth;
+    }
 
-    .section-space{padding:96px 0;}
+    a{
+      transition:all .3s ease;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .section-space{
+      padding:96px 0;
+    }
 
     /* ===== VIDEO BACKGROUND ===== */
     .video-background{
@@ -53,8 +64,8 @@
       position:absolute;
       inset:0;
       background:
-        linear-gradient(to bottom, rgba(0,0,0,0.38), rgba(0,0,0,0.76)),
-        rgba(0,0,0,0.18);
+        linear-gradient(to bottom, rgba(0,0,0,0.40), rgba(0,0,0,0.74)),
+        rgba(0,0,0,0.22);
       z-index:1;
     }
 
@@ -62,7 +73,7 @@
     .navbar{
       position:relative;
       z-index:30;
-      transition:background-color .3s ease, backdrop-filter .3s ease;
+      transition:background-color 0.3s ease, backdrop-filter 0.3s ease;
     }
 
     .navbar.scrolled{
@@ -92,7 +103,7 @@
 
     /* ===== HERO ===== */
     .hero{
-      padding:124px 0 86px;
+      padding:120px 0 82px;
     }
 
     .hero-title{
@@ -117,7 +128,7 @@
     }
 
     .hero-intro{
-      max-width:860px;
+      max-width:840px;
       margin:24px auto 0;
       text-align:center;
       font-size:1rem;
@@ -134,9 +145,17 @@
     }
 
     @media(min-width:992px){
-      .hero-title{font-size:5rem;}
-      .header{font-size:1rem;}
-      .hero-intro{font-size:1.06rem;}
+      .hero-title{
+        font-size:5rem;
+      }
+
+      .header{
+        font-size:1rem;
+      }
+
+      .hero-intro{
+        font-size:1.06rem;
+      }
     }
 
     /* ===== BUTTONS ===== */
@@ -225,7 +244,7 @@
 
     /* ===== STATEMENT ===== */
     .statement{
-      max-width:1080px;
+      max-width:1040px;
       margin:0 auto;
       text-align:center;
       font-size:1.18rem;
@@ -236,12 +255,12 @@
 
     @media(min-width:992px){
       .statement{
-        font-size:1.58rem;
+        font-size:1.52rem;
         line-height:1.55;
       }
     }
 
-    /* ===== METHOD / VALUE ===== */
+    /* ===== METHOD ===== */
     .method-grid{
       margin-top:4px;
     }
@@ -278,59 +297,6 @@
       font-size:.96rem;
       line-height:1.9;
       color:var(--white-soft);
-    }
-
-    /* ===== PROOF ===== */
-    .proof-wrap{
-      max-width:1080px;
-      margin:0 auto;
-      text-align:center;
-    }
-
-    .proof-kicker{
-      margin:0 0 18px;
-      font-size:.78rem;
-      font-weight:700;
-      letter-spacing:.22em;
-      text-transform:uppercase;
-      color:var(--white-soft);
-    }
-
-    .proof-title{
-      font-family:'couture',sans-serif;
-      font-size:1.7rem;
-      line-height:1.25;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      color:var(--white);
-      margin:0 0 22px;
-    }
-
-    .proof-text{
-      max-width:900px;
-      margin:0 auto;
-      font-size:1rem;
-      line-height:1.9;
-      color:var(--white-soft);
-    }
-
-    .proof-list{
-      margin:28px auto 0;
-      display:flex;
-      justify-content:center;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-
-    .proof-pill{
-      border:1px solid rgba(255,255,255,.16);
-      background:rgba(255,255,255,.04);
-      padding:12px 18px;
-      font-size:.78rem;
-      font-weight:700;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      color:var(--white);
     }
 
     /* ===== FOUNDER ===== */
@@ -370,52 +336,108 @@
       margin-bottom:18px;
     }
 
-    /* ===== SELECTED EXPERTISE ===== */
-    .expertise-grid{
+    /* ===== VISUAL TERRITORIES ===== */
+    .territories-intro{
+      max-width:860px;
+      margin:0 auto 34px;
+      text-align:center;
+    }
+
+    .territories-kicker{
+      margin:0 0 14px;
+      font-size:.76rem;
+      font-weight:700;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:var(--white-soft);
+    }
+
+    .territories-title{
+      font-family:'couture',sans-serif;
+      font-size:1.8rem;
+      line-height:1.25;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--white);
+      margin:0 0 16px;
+    }
+
+    .territories-text{
+      margin:0;
+      font-size:1rem;
+      line-height:1.9;
+      color:var(--white-soft);
+    }
+
+    .territories-grid{
       margin-top:4px;
     }
 
-    .expertise-card{
+    .territory-card{
       position:relative;
       overflow:hidden;
       background:#0a0a0a;
       isolation:isolate;
+      height:100%;
     }
 
-    .expertise-card::after{
+    .territory-card::after{
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(180deg, rgba(0,0,0,.05) 0%, rgba(0,0,0,.38) 100%);
+      background:linear-gradient(180deg, rgba(0,0,0,.04) 0%, rgba(0,0,0,.42) 100%);
       z-index:1;
       pointer-events:none;
     }
 
-    .expertise-card img{
+    .territory-card img{
       width:100%;
       height:460px;
       object-fit:cover;
       transition:transform .55s ease, opacity .55s ease;
     }
 
-    .expertise-card:hover img{
+    .territory-card:hover img{
       transform:scale(1.05);
       opacity:.78;
     }
 
-    .expertise-label{
+    .territory-content{
       position:absolute;
-      top:20px;
-      left:20px;
+      inset:auto 0 0 0;
       z-index:2;
-      font-size:.74rem;
+      padding:24px 22px 22px;
+    }
+
+    .territory-label{
+      display:block;
+      font-size:.72rem;
       font-weight:700;
       letter-spacing:.16em;
       text-transform:uppercase;
-      color:var(--white);
+      color:var(--white-soft);
+      margin-bottom:10px;
     }
 
-    .expertise-link{
+    .territory-title{
+      font-family:'couture',sans-serif;
+      font-size:1rem;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      color:var(--white);
+      margin:0 0 10px;
+      line-height:1.4;
+    }
+
+    .territory-text{
+      margin:0;
+      font-size:.90rem;
+      line-height:1.8;
+      color:var(--white-soft);
+      max-width:95%;
+    }
+
+    .territory-link{
       position:absolute;
       inset:0;
       z-index:3;
@@ -601,10 +623,18 @@
 
     /* ===== RESPONSIVE ===== */
     @media(max-width:991.98px){
-      .section-space{padding:78px 0;}
-      .hero{padding:100px 0 76px;}
+      .section-space{
+        padding:78px 0;
+      }
 
-      .footer-social-block{margin-top:6px;}
+      .hero{
+        padding:100px 0 76px;
+      }
+
+      .footer-social-block{
+        margin-top:6px;
+      }
+
       .footer-menu{
         grid-template-columns:repeat(2,1fr);
         gap:16px 24px;
@@ -622,7 +652,10 @@
     }
 
     @media(max-width:767.98px){
-      .hero-title{font-size:2.45rem;}
+      .hero-title{
+        font-size:2.45rem;
+      }
+
       .header{
         font-size:.80rem;
         letter-spacing:.18em;
@@ -643,10 +676,11 @@
         font-size:.66rem;
       }
 
-      .expertise-card img{
+      .territory-card img{
         height:380px;
       }
 
+      .territories-title,
       .cta-title{
         font-size:1.45rem;
       }
@@ -729,9 +763,8 @@
       <h1 class="hero-title">ABYSS LAB.</h1>
       <p class="header">FROM DEPTH, DISTINCTION EMERGES</p>
       <p class="hero-intro">
-        Abyss Lab révèle ce qui distingue les marques premium, luxe, lifestyle et hospitality,
-        puis transforme cette profondeur en image, en désir, en présence digitale
-        et en trajectoire de marque plus nette, plus cohérente, plus mémorable.
+        Abyss Lab révèle la singularité profonde des marques premium, luxe, lifestyle et hospitality,
+        puis la transforme en direction claire, en image désirable et en présence digitale cohérente.
       </p>
 
       <div class="hero-cta">
@@ -755,9 +788,8 @@
   <section class="section-space fade-in">
     <div class="container">
       <p class="statement">
-        Nous plongeons sous la surface des marques pour faire émerger leur singularité profonde
-        — celle qui ne s’invente pas, mais se révèle — puis nous la traduisons en territoire,
-        en récit, en image et en déploiement digital avec exigence.
+        Nous plongeons sous la surface des marques pour faire émerger ce qui les rend réellement singulières,
+        puis nous le traduisons en territoire, en récit, en image et en rayonnement.
       </p>
     </div>
   </section>
@@ -771,9 +803,8 @@
             <span class="method-step">01</span>
             <h3 class="method-title">Reveler</h3>
             <p class="method-text">
-              Identifier ce qui rend une marque véritablement singulière,
-              clarifier sa position, affiner sa lecture et faire émerger
-              une direction plus juste, plus lisible, plus forte.
+              Clarifier ce qui distingue votre marque en profondeur, affiner son positionnement
+              et faire émerger une direction plus juste, plus lisible, plus forte.
             </p>
           </div>
         </div>
@@ -783,9 +814,8 @@
             <span class="method-step">02</span>
             <h3 class="method-title">Incarner</h3>
             <p class="method-text">
-              Traduire cette profondeur en univers de marque,
-              en direction artistique, en contenu, en langage et en expérience
-              pour créer de la désirabilité sans perdre la justesse.
+              Transformer cette singularité en univers de marque, en direction visuelle,
+              en contenu et en langage pour construire une image désirable et cohérente.
             </p>
           </div>
         </div>
@@ -795,35 +825,10 @@
             <span class="method-step">03</span>
             <h3 class="method-title">Deployer</h3>
             <p class="method-text">
-              Activer la marque sur les bons leviers — site internet,
-              référencement, réseaux sociaux, campagnes, collaborations,
-              contenus — pour lui donner une présence durable et cohérente.
+              Activer la marque sur les bons leviers — site internet, visibilité digitale,
+              contenus, collaborations et référencement — avec exigence et cohérence.
             </p>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROOF -->
-  <section class="section-space fade-in">
-    <div class="container">
-      <div class="proof-wrap">
-        <p class="proof-kicker">Experience</p>
-        <h2 class="proof-title">Une expertise nourrie par des univers exigeants</h2>
-        <p class="proof-text">
-          Abyss Lab s’inscrit dans une trajectoire construite au contact de marques,
-          d’établissements et d’expériences où l’image, le détail, la cohérence
-          et la perception ne laissent aucune place à l’approximation.
-        </p>
-
-        <div class="proof-list">
-          <div class="proof-pill">Luxe</div>
-          <div class="proof-pill">Hospitality</div>
-          <div class="proof-pill">Lifestyle</div>
-          <div class="proof-pill">Brand Content</div>
-          <div class="proof-pill">Web & SEO</div>
-          <div class="proof-pill">Communication 360</div>
         </div>
       </div>
     </div>
@@ -844,15 +849,15 @@
           <p class="founder-subtitle">Fondatrice Abyss Lab.</p>
 
           <p class="standard">
-            J’accompagne les marques qui souhaitent aller au-delà de la visibilité.
-            Celles qui veulent être perçues avec plus de justesse, plus de cohérence
-            et plus de distinction dans leur image, leur présence et leur manière d’exister.
+            J’accompagne les marques qui veulent aller au-delà de la visibilité :
+            celles qui cherchent à être perçues avec plus de cohérence, plus de distinction
+            et plus de justesse dans leur image comme dans leur présence.
           </p>
 
           <p class="standard">
-            Mon approche conjugue vision de marque, direction éditoriale, contenu,
+            Mon approche réunit vision de marque, direction éditoriale, contenu,
             stratégie digitale et exigence d’exécution pour transformer une intuition profonde
-            en territoire clair, en désir tangible et en déploiement maîtrisé.
+            en univers clair, désirable et durable.
           </p>
 
           <a href="contact.html" class="btn btn-outline-light mt-3">Parler de votre projet</a>
@@ -861,35 +866,61 @@
     </div>
   </section>
 
-  <!-- SELECTED EXPERTISE -->
+  <!-- 3 VISUAL TERRITORIES -->
   <section class="section-space fade-in">
-    <div class="container expertise-grid">
-      <div class="row g-4">
+    <div class="container">
+      <div class="territories-intro">
+        <p class="territories-kicker">Territoires d'expertise</p>
+        <h2 class="territories-title">Trois leviers pour faire emerger une marque</h2>
+        <p class="territories-text">
+          Une marque forte ne se résume pas à une suite de prestations.
+          Elle se construit à travers une direction claire, une image incarnée
+          et une présence pensée pour durer.
+        </p>
+      </div>
 
+      <div class="row g-4 territories-grid">
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="expertise-card">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413429/graphisme_sud_ouest_abyss_lab_cy4dir.jpg" alt="Positionnement et direction artistique">
-            <div class="expertise-label">POSITIONNEMENT & DIRECTION</div>
-            <a href="services.html" class="expertise-link" aria-label="Découvrir le service Positionnement et direction"></a>
+          <div class="territory-card">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413429/graphisme_sud_ouest_abyss_lab_cy4dir.jpg" alt="Positionnement et direction de marque">
+            <div class="territory-content">
+              <span class="territory-label">01</span>
+              <h3 class="territory-title">Positionnement & Direction</h3>
+              <p class="territory-text">
+                Clarifier l’ADN, affiner la posture et donner à la marque une direction plus nette, plus cohérente, plus distinctive.
+              </p>
+            </div>
+            <a href="services.html" class="territory-link" aria-label="Découvrir Positionnement et Direction"></a>
           </div>
         </div>
 
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="expertise-card">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773412647/brand_content_mathilde_ranchon_ucmesi.jpg" alt="Brand content et image de marque">
-            <div class="expertise-label">BRAND CONTENT & IMAGE</div>
-            <a href="services.html" class="expertise-link" aria-label="Découvrir le service Brand content et image"></a>
+          <div class="territory-card">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773412647/brand_content_mathilde_ranchon_ucmesi.jpg" alt="Image de marque et brand content">
+            <div class="territory-content">
+              <span class="territory-label">02</span>
+              <h3 class="territory-title">Image & Brand Content</h3>
+              <p class="territory-text">
+                Traduire la singularité de la marque en contenu, en esthétique, en récit et en désirabilité.
+              </p>
+            </div>
+            <a href="services.html" class="territory-link" aria-label="Découvrir Image et Brand Content"></a>
           </div>
         </div>
 
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="expertise-card">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Site internet, visibilité digitale et référencement">
-            <div class="expertise-label">WEB, VISIBILITE & SEO</div>
-            <a href="services.html" class="expertise-link" aria-label="Découvrir le service Web, visibilité et SEO"></a>
+          <div class="territory-card">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Site internet, SEO et visibilité digitale">
+            <div class="territory-content">
+              <span class="territory-label">03</span>
+              <h3 class="territory-title">Web, Visibilite & Rayonnement</h3>
+              <p class="territory-text">
+                Déployer la marque à travers un site, une présence digitale et des leviers pensés pour soutenir sa croissance.
+              </p>
+            </div>
+            <a href="services.html" class="territory-link" aria-label="Découvrir Web, Visibilité et Rayonnement"></a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -901,8 +932,7 @@
         <h2 class="cta-title">FAIRE EMERGER CE QUI VOUS DISTINGUE</h2>
         <p class="cta-text">
           Abyss Lab accompagne les marques qui veulent révéler leur singularité profonde,
-          affiner leur image et construire une présence plus désirable, plus cohérente
-          et plus durable.
+          affiner leur image et construire une présence plus claire, plus désirable et plus durable.
         </p>
         <a href="contact.html" class="btn btn-outline-light">Demarrer un projet</a>
       </div>
