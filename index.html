@@ -31,6 +31,10 @@
       scroll-behavior:smooth;
     }
 
+    body{
+      overflow-x:hidden;
+    }
+
     a{
       transition:all .3s ease;
     }
@@ -41,7 +45,11 @@
     }
 
     .section-space{
-      padding:96px 0;
+      padding:88px 0;
+    }
+
+    .section-space-tight{
+      padding:44px 0 88px;
     }
 
     /* ===== VIDEO BACKGROUND ===== */
@@ -64,8 +72,8 @@
       position:absolute;
       inset:0;
       background:
-        linear-gradient(to bottom, rgba(0,0,0,0.40), rgba(0,0,0,0.74)),
-        rgba(0,0,0,0.22);
+        linear-gradient(to bottom, rgba(0,0,0,0.38), rgba(0,0,0,0.76)),
+        rgba(0,0,0,0.18);
       z-index:1;
     }
 
@@ -73,7 +81,7 @@
     .navbar{
       position:relative;
       z-index:30;
-      transition:background-color 0.3s ease, backdrop-filter 0.3s ease;
+      transition:background-color .3s ease, backdrop-filter .3s ease;
     }
 
     .navbar.scrolled{
@@ -103,7 +111,7 @@
 
     /* ===== HERO ===== */
     .hero{
-      padding:120px 0 82px;
+      padding:118px 0 80px;
     }
 
     .hero-title{
@@ -128,7 +136,7 @@
     }
 
     .hero-intro{
-      max-width:840px;
+      max-width:860px;
       margin:24px auto 0;
       text-align:center;
       font-size:1rem;
@@ -145,17 +153,9 @@
     }
 
     @media(min-width:992px){
-      .hero-title{
-        font-size:5rem;
-      }
-
-      .header{
-        font-size:1rem;
-      }
-
-      .hero-intro{
-        font-size:1.06rem;
-      }
+      .hero-title{font-size:5rem;}
+      .header{font-size:1rem;}
+      .hero-intro{font-size:1.06rem;}
     }
 
     /* ===== BUTTONS ===== */
@@ -195,53 +195,6 @@
       border-color:var(--white);
     }
 
-    /* ===== SUBMENU ===== */
-    .submenu{
-      border-top:1px solid var(--navy);
-      border-bottom:1px solid var(--navy);
-      text-align:center;
-      font-size:.73rem;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      background:transparent;
-    }
-
-    .submenu a{
-      position:relative;
-      color:rgba(255,255,255,.74);
-      text-decoration:none;
-      padding:16px 18px;
-      display:inline-block;
-      font-weight:600;
-      text-shadow:
-        0 0 8px var(--glow-a),
-        0 0 18px var(--glow-b);
-    }
-
-    .submenu a::after{
-      content:"";
-      position:absolute;
-      left:18px;
-      right:18px;
-      bottom:10px;
-      height:1px;
-      background:linear-gradient(90deg, transparent, rgba(150,214,255,.82), transparent);
-      transform:scaleX(0);
-      transform-origin:center;
-      transition:transform .3s ease;
-    }
-
-    .submenu a:hover{
-      color:var(--white);
-      text-shadow:
-        0 0 10px rgba(0,190,255,.38),
-        0 0 18px rgba(0,110,255,.28);
-    }
-
-    .submenu a:hover::after{
-      transform:scaleX(1);
-    }
-
     /* ===== STATEMENT ===== */
     .statement{
       max-width:1040px;
@@ -262,7 +215,7 @@
 
     /* ===== METHOD ===== */
     .method-grid{
-      margin-top:4px;
+      margin-top:0;
     }
 
     .method-card{
@@ -627,6 +580,10 @@
         padding:78px 0;
       }
 
+      .section-space-tight{
+        padding:36px 0 78px;
+      }
+
       .hero{
         padding:100px 0 76px;
       }
@@ -669,11 +626,6 @@
       .statement{
         font-size:1.08rem;
         line-height:1.75;
-      }
-
-      .submenu a{
-        padding:12px 10px;
-        font-size:.66rem;
       }
 
       .territory-card img{
@@ -769,20 +721,10 @@
 
       <div class="hero-cta">
         <a href="contact.html" class="btn btn-outline-light">Demarrer un projet</a>
-        <a href="references.html" class="btn-light-ghost">Voir les references</a>
+        <a href="services.html" class="btn-light-ghost">Voir les services</a>
       </div>
     </div>
   </section>
-
-  <!-- HORIZONTAL MENU -->
-  <div class="submenu text-center">
-    <a href="services.html">POSITIONNEMENT</a>
-    <a href="services.html">DIRECTION ARTISTIQUE</a>
-    <a href="services.html">BRAND CONTENT</a>
-    <a href="services.html">VISIBILITE DIGITALE</a>
-    <a href="services.html">COLLABORATIONS</a>
-    <a href="services.html">SITES INTERNET</a>
-  </div>
 
   <!-- STATEMENT -->
   <section class="section-space fade-in">
@@ -795,7 +737,7 @@
   </section>
 
   <!-- METHOD -->
-  <section class="section-space fade-in">
+  <section class="section-space-tight fade-in">
     <div class="container">
       <div class="row g-4 method-grid">
         <div class="col-12 col-md-4">
