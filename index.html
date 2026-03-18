@@ -1,203 +1,921 @@
-<!-- =========================
-HOMEPAGE ABYSS LAB
-Structure recommandée
-========================= -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Abyss Lab révèle l’essence des marques premium et transforme leur ADN en image, contenu, visibilité et désirabilité. Stratégie, brand content, site internet, réseaux sociaux et direction artistique.">
+  <title>ABYSS LAB</title>
 
-<main>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/couture" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
-  <!-- HERO VIDEO : à conserver dans ton design actuel -->
-  <section class="hero-home">
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-      <span class="eyebrow">Luxury marketing & communication agency</span>
-      <h1>From depth, distinction emerges.</h1>
-      <p class="hero-text">
-        Abyss Lab révèle ce qui rend une marque singulière, désirable et impossible à confondre.
-        Positionnement, image, contenu, activation : nous faisons émerger des marques pensées pour marquer.
+  <style>
+    :root{
+      --white:#ffffff;
+      --white-soft:rgba(255,255,255,.82);
+      --white-muted:rgba(255,255,255,.68);
+      --line:rgba(255,255,255,.14);
+      --line-soft:rgba(255,255,255,.10);
+      --navy:#001D51;
+      --glow-a:rgba(74,159,255,.20);
+      --glow-b:rgba(0,102,255,.12);
+      --bg:#000000;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    a{
+      transition:all .3s ease;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .section-space{
+      padding:96px 0;
+    }
+
+    .video-background{
+      position:fixed;
+      inset:0;
+      z-index:-2;
+      overflow:hidden;
+    }
+
+    .video-background video{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .video-background::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.42), rgba(0,0,0,0.72)),
+        rgba(0,0,0,0.25);
+      z-index:1;
+    }
+
+    .navbar{
+      position:relative;
+      z-index:30;
+      transition:background-color 0.3s ease, backdrop-filter 0.3s ease;
+    }
+
+    .navbar.scrolled{
+      background:rgba(0,0,0,0.68);
+      backdrop-filter:blur(14px);
+    }
+
+    .navbar-brand{
+      letter-spacing:1px;
+    }
+
+    .nav-link{
+      font-family: 'couture', sans-serif;
+      font-size:.80rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      font-weight:600;
+      color:var(--white-soft)!important;
+      padding-left:1rem!important;
+      padding-right:1rem!important;
+    }
+
+    .nav-link:hover,
+    .nav-link.active{
+      color:var(--white)!important;
+    }
+
+    .hero{
+      padding:120px 0 90px;
+    }
+
+    .hero-title{
+      font-family:'couture',sans-serif;
+      font-size:3.15rem;
+      line-height:1;
+      text-align:center;
+      letter-spacing:.10em;
+      margin:0 0 16px;
+      text-transform:uppercase;
+    }
+
+    .header{
+      margin:0;
+      text-align:center;
+      font-weight:600;
+      font-size:.92rem;
+      letter-spacing:.26em;
+      text-transform:uppercase;
+      color:var(--white-soft);
+    }
+
+    .hero-intro{
+      max-width:840px;
+      margin:22px auto 0;
+      text-align:center;
+      font-size:1rem;
+      line-height:1.9;
+      color:var(--white-soft);
+    }
+
+    @media(min-width:992px){
+      .hero-title{
+        font-size:5rem;
+      }
+
+      .header{
+        font-size:1rem;
+      }
+
+      .hero-intro{
+        font-size:1.06rem;
+      }
+    }
+
+    .submenu{
+      border-top:1px solid var(--navy);
+      border-bottom:1px solid var(--navy);
+      text-align:center;
+      font-size:.73rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      background:transparent;
+    }
+
+    .submenu a{
+      position:relative;
+      color:rgba(255,255,255,.74);
+      text-decoration:none;
+      padding:16px 18px;
+      display:inline-block;
+      font-weight:600;
+      text-shadow:
+        0 0 8px var(--glow-a),
+        0 0 18px var(--glow-b);
+    }
+
+    .submenu a::after{
+      content:"";
+      position:absolute;
+      left:18px;
+      right:18px;
+      bottom:10px;
+      height:1px;
+      background:linear-gradient(90deg, transparent, rgba(150,214,255,.82), transparent);
+      transform:scaleX(0);
+      transform-origin:center;
+      transition:transform .3s ease;
+    }
+
+    .submenu a:hover{
+      color:var(--white);
+      text-shadow:
+        0 0 10px rgba(0,190,255,.38),
+        0 0 18px rgba(0,110,255,.28);
+    }
+
+    .submenu a:hover::after{
+      transform:scaleX(1);
+    }
+
+    .statement{
+      max-width:1020px;
+      margin:0 auto;
+      text-align:center;
+      font-size:1.18rem;
+      line-height:1.8;
+      font-weight:500;
+      color:var(--white);
+    }
+
+    @media(min-width:992px){
+      .statement{
+        font-size:1.55rem;
+        line-height:1.55;
+      }
+    }
+
+    .insight-grid{
+      margin-top:10px;
+    }
+
+    .insight-card{
+      height:100%;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.03);
+      padding:32px 28px;
+    }
+
+    .insight-title{
+      font-family:'couture',sans-serif;
+      font-size:1rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--white);
+      margin-bottom:14px;
+    }
+
+    .insight-text{
+      margin:0;
+      font-size:.96rem;
+      line-height:1.9;
+      color:var(--white-soft);
+    }
+
+    .founder-image-wrap{
+      overflow:hidden;
+      background:rgba(255,255,255,.03);
+    }
+
+    .founder-image-wrap img{
+      width:100%;
+      height:auto;
+      object-fit:cover;
+    }
+
+    .founder-title{
+      font-size:1.45rem;
+      font-weight:700;
+      letter-spacing:.04em;
+      margin-bottom:8px;
+      text-transform:uppercase;
+    }
+
+    .founder-subtitle{
+      font-size:.82rem;
+      font-weight:600;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--white-soft);
+      margin-bottom:22px;
+    }
+
+    .standard{
+      font-size:.98rem;
+      line-height:1.9;
+      color:var(--white-soft);
+      margin-bottom:18px;
+    }
+
+    .btn-outline-light{
+      border-radius:999px;
+      padding:11px 26px;
+      font-size:.78rem;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      border-color:rgba(255,255,255,.55);
+    }
+
+    .btn-outline-light:hover{
+      background:var(--white);
+      color:#000;
+      border-color:var(--white);
+    }
+
+    .services-grid{
+      margin-top:4px;
+    }
+
+    .service-card{
+      position:relative;
+      overflow:hidden;
+      background:#0a0a0a;
+      isolation:isolate;
+    }
+
+    .service-card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,.04) 0%, rgba(0,0,0,.34) 100%);
+      z-index:1;
+      pointer-events:none;
+    }
+
+    .service-card img{
+      width:100%;
+      height:450px;
+      object-fit:cover;
+      transition:transform .55s ease, opacity .55s ease;
+    }
+
+    .service-card:hover img{
+      transform:scale(1.06);
+      opacity:.76;
+    }
+
+    .service-label{
+      position:absolute;
+      top:20px;
+      left:20px;
+      z-index:2;
+      font-size:.74rem;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--white);
+    }
+
+    .service-link{
+      position:absolute;
+      inset:0;
+      z-index:3;
+    }
+
+    .cta-block{
+      max-width:760px;
+      margin:0 auto;
+      text-align:center;
+    }
+
+    .cta-title{
+      font-family:'couture',sans-serif;
+      font-size:2rem;
+      line-height:1.2;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:18px;
+      color:var(--white);
+    }
+
+    .cta-text{
+      font-size:1rem;
+      line-height:1.9;
+      color:var(--white-soft);
+      margin-bottom:26px;
+    }
+
+    .footer{
+      border-top:1px solid var(--line);
+      padding:34px 0 14px;
+      margin-top:10px;
+    }
+
+    .footer-top{
+      padding-bottom:24px;
+      margin-bottom:24px;
+      border-bottom:1px solid rgba(255,255,255,.18);
+    }
+
+    .footer-brand{
+      font-size:.98rem;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:12px;
+      color:var(--white);
+    }
+
+    .footer-tagline{
+      margin:0;
+      max-width:640px;
+      font-size:.96rem;
+      line-height:1.7;
+      font-weight:600;
+      text-transform:uppercase;
+      color:var(--white);
+    }
+
+    .footer-location{
+      margin-top:14px;
+      font-size:.94rem;
+      line-height:1.75;
+      color:var(--white-soft);
+    }
+
+    .footer-social-block{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+    }
+
+    .footer-social-title{
+      font-size:.94rem;
+      line-height:1.5;
+      font-weight:600;
+      color:var(--white);
+      margin-bottom:12px;
+    }
+
+    .footer-socials{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .footer-social{
+      width:44px;
+      height:44px;
+      border:1.5px solid rgba(255,255,255,.78);
+      border-radius:50%;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--white);
+      text-decoration:none;
+      font-size:1rem;
+      background:rgba(255,255,255,.01);
+    }
+
+    .footer-social:hover{
+      color:var(--white);
+      border-color:var(--white);
+      transform:translateY(-2px);
+      background:rgba(255,255,255,.04);
+    }
+
+    .footer-menu-row{
+      padding:0 0 22px;
+    }
+
+    .footer-menu{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+      width:100%;
+    }
+
+    .footer-menu a{
+      color:var(--white);
+      text-decoration:none;
+      font-size:.96rem;
+      font-weight:600;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      text-align:left;
+    }
+
+    .footer-menu a:hover{
+      opacity:.72;
+    }
+
+    .footer-bottom{
+      border-top:1px solid var(--line-soft);
+      padding-top:14px;
+    }
+
+    .footer-bottom-inner{
+      display:grid;
+      grid-template-columns:1fr auto;
+      align-items:center;
+      gap:20px;
+    }
+
+    .footer-legal{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px 34px;
+    }
+
+    .footer-legal a{
+      color:var(--white-muted);
+      text-decoration:none;
+      font-size:.84rem;
+      line-height:1.5;
+    }
+
+    .footer-legal a:hover{
+      color:var(--white);
+    }
+
+    .footer-copy{
+      color:var(--white-muted);
+      font-size:.84rem;
+      line-height:1.5;
+      text-align:right;
+      white-space:nowrap;
+    }
+
+    .fade-in{
+      opacity:0;
+      transform:translateY(22px);
+      transition:opacity .75s ease, transform .75s ease;
+    }
+
+    .fade-in.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @media(max-width:991.98px){
+      .section-space{
+        padding:78px 0;
+      }
+
+      .hero{
+        padding:100px 0 76px;
+      }
+
+      .footer-social-block{
+        margin-top:6px;
+      }
+
+      .footer-menu{
+        grid-template-columns:repeat(2,1fr);
+        gap:16px 24px;
+      }
+
+      .footer-bottom-inner{
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+
+      .footer-copy{
+        text-align:left;
+        white-space:normal;
+      }
+    }
+
+    @media(max-width:767.98px){
+      .hero-title{
+        font-size:2.45rem;
+      }
+
+      .header{
+        font-size:.80rem;
+        letter-spacing:.18em;
+      }
+
+      .hero-intro{
+        font-size:.95rem;
+        line-height:1.8;
+      }
+
+      .statement{
+        font-size:1.08rem;
+        line-height:1.75;
+      }
+
+      .submenu a{
+        padding:12px 10px;
+        font-size:.66rem;
+      }
+
+      .service-card img{
+        height:380px;
+      }
+
+      .cta-title{
+        font-size:1.45rem;
+      }
+
+      .footer{
+        padding:28px 0 14px;
+      }
+
+      .footer-menu{
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+
+      .footer-menu a{
+        font-size:.90rem;
+      }
+
+      .footer-legal{
+        gap:10px 20px;
+      }
+
+      .footer-legal a,
+      .footer-copy{
+        font-size:.80rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- BACKGROUND VIDEO -->
+  <div class="video-background">
+    <video autoplay muted loop playsinline webkit-playsinline id="bg-video">
+      <source src="assets/video/abyss-lab.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark py-3">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">ABYSS LAB.</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Ouvrir le menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navmenu">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">A PROPOS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">SERVICES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="references.html">REFERENCES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero fade-in">
+    <div class="container">
+      <h1 class="hero-title">ABYSS LAB.</h1>
+      <p class="header">FROM DEPTH, DISTINCTION EMERGES</p>
+      <p class="hero-intro">
+        Conseil, direction de marque et déploiement digital pour les acteurs premium,
+        luxe, lifestyle et hospitality qui veulent clarifier leur positionnement,
+        renforcer leur désirabilité et faire rayonner leur image.
       </p>
-      <div class="hero-cta">
-        <a href="/contact" class="btn btn-primary">Start a project</a>
-        <a href="/services" class="btn btn-secondary">Explore our services</a>
-      </div>
     </div>
   </section>
 
-  <!-- MANIFESTO -->
-  <section class="section manifesto-section">
-    <div class="container narrow">
-      <p class="section-kicker">Abyss Lab</p>
-      <h2>Nous ne faisons pas “plus de communication”. Nous révélons ce qui distingue vraiment une marque.</h2>
-      <p>
-        Dans un marché saturé d’images, de discours lisses et de stratégies interchangeables,
-        les marques les plus désirables sont celles qui expriment une identité claire, incarnée et cohérente.
-        Abyss Lab accompagne les acteurs du luxe, de l’hospitality et des univers premium à faire émerger
-        cette profondeur — pour la transformer en image, en désir et en performance.
+  <!-- HORIZONTAL MENU -->
+  <div class="submenu text-center">
+    <a href="services.html">POSITIONNEMENT</a>
+    <a href="services.html">DIRECTION ARTISTIQUE</a>
+    <a href="services.html">BRAND CONTENT</a>
+    <a href="services.html">VISIBILITE DIGITALE</a>
+    <a href="services.html">COLLABORATIONS</a>
+    <a href="services.html">SITES INTERNET</a>
+  </div>
+
+  <!-- STATEMENT -->
+  <section class="section-space fade-in">
+    <div class="container">
+      <p class="statement">
+        Nous plongeons au cœur des marques pour révéler ce qui les rend singulières,
+        puis le traduire en image, en contenu, en présence digitale et en stratégie de croissance.
       </p>
     </div>
   </section>
 
-  <!-- WHAT WE MAKE EMERGE -->
-  <section class="section value-section">
+  <!-- DIFFERENCIATION -->
+  <section class="section-space fade-in">
     <div class="container">
-      <div class="section-heading">
-        <p class="section-kicker">What we make emerge</p>
-        <h2>Ce qu’une marque gagne quand son ADN est enfin clair.</h2>
-      </div>
-
-      <div class="value-grid">
-        <article class="value-card">
-          <h3>Un positionnement plus juste</h3>
-          <p>
-            Une marque plus lisible, plus cohérente, plus forte dans ce qu’elle exprime et dans la manière dont elle se raconte.
-          </p>
-        </article>
-
-        <article class="value-card">
-          <h3>Une image plus désirable</h3>
-          <p>
-            Une direction plus incarnée, plus premium et plus mémorable sur le web, les réseaux, les contenus et les activations.
-          </p>
-        </article>
-
-        <article class="value-card">
-          <h3>Une présence qui convertit</h3>
-          <p>
-            Une stratégie pensée pour faire rayonner la marque, attirer les bonnes audiences et soutenir le développement business.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABYSS METHOD -->
-  <section class="section method-section">
-    <div class="container">
-      <div class="section-heading">
-        <p class="section-kicker">Our approach</p>
-        <h2>La méthode Abyss : révéler, incarner, déployer.</h2>
-      </div>
-
-      <div class="method-grid">
-        <article class="method-card">
-          <span class="method-number">01</span>
-          <h3>Reveal</h3>
-          <p>
-            Nous identifions ce qui fait la singularité profonde de votre marque :
-            son ADN, sa vision, sa valeur perçue, sa différence réelle.
-          </p>
-        </article>
-
-        <article class="method-card">
-          <span class="method-number">02</span>
-          <h3>Shape</h3>
-          <p>
-            Nous traduisons cette profondeur en territoire de marque, en image,
-            en discours, en contenu et en expérience cohérente.
-          </p>
-        </article>
-
-        <article class="method-card">
-          <span class="method-number">03</span>
-          <h3>Activate</h3>
-          <p>
-            Nous déployons cette vision à travers les bons leviers :
-            site web, brand content, social media, campagnes, visibilité et activation.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERTISE SNAPSHOT -->
-  <section class="section expertise-section">
-    <div class="container">
-      <div class="section-heading">
-        <p class="section-kicker">Expertise</p>
-        <h2>Une approche hybride entre direction de marque, contenu et performance.</h2>
-      </div>
-
-      <div class="expertise-grid">
-        <div class="expertise-item">
-          <h3>Brand positioning</h3>
-          <p>Positionnement, plateforme de marque, clarification de l’offre, storytelling, architecture des messages.</p>
+      <div class="row g-4 insight-grid">
+        <div class="col-12 col-md-4">
+          <div class="insight-card">
+            <h3 class="insight-title">Clarifier</h3>
+            <p class="insight-text">
+              Donner une direction juste à votre marque, affiner votre positionnement et faire émerger une identité plus lisible, plus forte, plus cohérente.
+            </p>
+          </div>
         </div>
 
-        <div class="expertise-item">
-          <h3>Creative direction</h3>
-          <p>Direction artistique, identité éditoriale, contenus premium, image de marque, univers visuel et tonalité.</p>
+        <div class="col-12 col-md-4">
+          <div class="insight-card">
+            <h3 class="insight-title">Incarner</h3>
+            <p class="insight-text">
+              Transformer votre ADN en univers désirable à travers les bons mots, les bons visuels, les bons contenus et une image pensée pour marquer.
+            </p>
+          </div>
         </div>
 
-        <div class="expertise-item">
-          <h3>Website & digital presence</h3>
-          <p>Sites vitrines premium, UX/UI, SEO, cohérence éditoriale, optimisation de la désirabilité et de la conversion.</p>
+        <div class="col-12 col-md-4">
+          <div class="insight-card">
+            <h3 class="insight-title">Déployer</h3>
+            <p class="insight-text">
+              Activer votre marque sur les bons leviers : site internet, réseaux sociaux, référencement, campagnes, collaborations et dispositifs sur mesure.
+            </p>
+          </div>
         </div>
-
-        <div class="expertise-item">
-          <h3>Visibility & activation</h3>
-          <p>Social media, campagnes, influence, lancements, dispositifs marketing et communication pensés à 360°.</p>
-        </div>
-      </div>
-
-      <div class="section-link">
-        <a href="/services" class="text-link">View all services</a>
       </div>
     </div>
   </section>
 
-  <!-- PROOF -->
-  <section class="section proof-section">
+  <!-- FONDATRICE -->
+  <section class="section-space fade-in">
     <div class="container">
-      <div class="section-heading">
-        <p class="section-kicker">Selected experience</p>
-        <h2>Une expertise forgée au contact de marques exigeantes.</h2>
-      </div>
+      <div class="row align-items-center gy-5">
+        <div class="col-12 col-md-5 col-lg-5">
+          <div class="founder-image-wrap">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773329727/agence_mathilde_ranchon_jtx26v.jpg" alt="Mathilde Ranchon - Fondatrice Abyss Lab">
+          </div>
+        </div>
 
-      <div class="proof-grid">
-        <article class="proof-card">
-          <h3>Mondrian Bordeaux Les Carmes</h3>
-          <p>
-            Marketing & communication 360°, brand content, campagnes, influence,
-            digitalisation, community management, SEO/SEA.
+        <div class="col-12 col-md-5 col-lg-5 offset-lg-1">
+          <h3 class="founder-title">MATHILDE RANCHON</h3>
+          <p class="founder-subtitle">Fondatrice Abyss Lab.</p>
+
+          <p class="standard">
+            Avec une expertise construite entre stratégie marketing, communication, brand content,
+            web et visibilité digitale, j’accompagne les marques qui veulent plus qu’être visibles :
+            elles veulent être immédiatement reconnaissables, désirables et cohérentes.
           </p>
-        </article>
 
-        <article class="proof-card">
-          <h3>Morimoto Bordeaux</h3>
-          <p>
-            Mise en récit, activations, valorisation de l’expérience,
-            amplification de la désirabilité dans un univers lifestyle & luxe.
+          <p class="standard">
+            Abyss Lab est né de cette conviction : les marques les plus fortes ne sont pas celles qui parlent le plus,
+            mais celles qui révèlent avec justesse ce qu’elles ont d’unique — puis le déploient avec exigence.
           </p>
-        </article>
 
-        <article class="proof-card">
-          <h3>Millésime Collection</h3>
-          <p>
-            Vision multi-établissements, stratégie digitale, contenu, acquisition,
-            web management et rayonnement de marque.
-          </p>
-        </article>
-      </div>
-
-      <div class="section-link">
-        <a href="/about" class="text-link">Discover the founder</a>
+          <a href="contact.html" class="btn btn-outline-light mt-3">Parler de votre projet</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FINAL CTA -->
-  <section class="section final-cta-section">
-    <div class="container narrow center">
-      <p class="section-kicker">Let’s make your brand emerge</p>
-      <h2>Vous avez une marque à révéler, repositionner ou faire rayonner ?</h2>
-      <p>
-        Abyss Lab accompagne les marques premium, lifestyle, hospitality et luxe
-        qui veulent gagner en clarté, en désirabilité et en impact.
-      </p>
-      <a href="/contact" class="btn btn-primary">Start your project</a>
+  <!-- SERVICES GRID -->
+  <section class="section-space fade-in">
+    <div class="container services-grid">
+      <div class="row g-4">
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="service-card">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773412647/brand_content_mathilde_ranchon_ucmesi.jpg" alt="Brand content et direction éditoriale">
+            <div class="service-label">BRAND CONTENT</div>
+            <a href="services.html" class="service-link" aria-label="Découvrir le service Brand Content"></a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="service-card">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773412647/community_management_bordeaux_fhbp1e.jpg" alt="Réseaux sociaux et visibilité digitale">
+            <div class="service-label">RESEAUX SOCIAUX & VISIBILITE</div>
+            <a href="services.html" class="service-link" aria-label="Découvrir le service Réseaux sociaux et visibilité"></a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="service-card">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773415404/collaboration_et_influence_agence_abyss_lab_copyright_lilylovesfashion_qiwfai.jpg" alt="Collaborations, influence et image de marque">
+            <div class="service-label">COLLABORATIONS & INFLUENCE</div>
+            <a href="services.html" class="service-link" aria-label="Découvrir le service Collaborations et influence"></a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="service-card">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Site internet premium et référencement">
+            <div class="service-label">SITES INTERNET & SEO</div>
+            <a href="services.html" class="service-link" aria-label="Découvrir le service Sites internet et SEO"></a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="service-card">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413429/graphisme_sud_ouest_abyss_lab_cy4dir.jpg" alt="Direction artistique et identité visuelle">
+            <div class="service-label">DIRECTION ARTISTIQUE</div>
+            <a href="services.html" class="service-link" aria-label="Découvrir le service Direction artistique"></a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="service-card">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773415496/guest_app_hotellerie_agence_bordeaux_gldvjc.jpg" alt="Expérience digitale et outils de marque">
+            <div class="service-label">EXPERIENCE DIGITALE</div>
+            <a href="services.html" class="service-link" aria-label="Découvrir le service Expérience digitale"></a>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
-</main>
+  <!-- CTA FINAL -->
+  <section class="section-space fade-in">
+    <div class="container">
+      <div class="cta-block">
+        <h2 class="cta-title">FAIRE EMERGER CE QUI VOUS DISTINGUE</h2>
+        <p class="cta-text">
+          Positionnement, image, contenu, visibilité, site internet :
+          Abyss Lab accompagne les marques qui veulent construire une présence plus juste,
+          plus premium et plus impactante.
+        </p>
+        <a href="contact.html" class="btn btn-outline-light">Demarrer un projet</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-top">
+        <div class="row align-items-start gy-4">
+          <div class="col-12 col-lg-6">
+            <div class="footer-brand">ABYSS LAB.</div>
+
+            <p class="footer-tagline">
+              NOUS REVELONS LA PROFONDEUR DES MARQUES POUR FAIRE EMERGER DES UNIVERS FORTS ET DURABLES.
+            </p>
+
+            <div class="footer-location">
+              Basée à Bordeaux, disponible partout en France et à l'étranger.
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6 d-lg-flex justify-content-lg-end">
+            <div class="footer-social-block">
+              <div class="footer-social-title">Suivez-nous sur les réseaux :</div>
+
+              <div class="footer-socials">
+                <a class="footer-social" href="https://www.instagram.com/abyss.lab_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Abyss Lab">
+                  <i class="bi bi-instagram"></i>
+                </a>
+
+                <a class="footer-social" href="https://www.linkedin.com/company/abyss-lab/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Abyss Lab">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+
+                <a class="footer-social" href="https://www.tiktok.com/@abyss.lab" target="_blank" rel="noopener noreferrer" aria-label="TikTok Abyss Lab">
+                  <i class="bi bi-tiktok"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-menu-row">
+        <nav class="footer-menu" aria-label="Menu footer">
+          <a href="index.html">A propos</a>
+          <a href="services.html">Services</a>
+          <a href="references.html">Références</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+          <div class="footer-legal">
+            <a href="mentions-legales.html">Mentions légales</a>
+            <a href="cgu.html">CGU</a>
+            <a href="cgv.html">CGV</a>
+            <a href="politique-confidentialite.html">Politique de confidentialité</a>
+          </div>
+
+          <div class="footer-copy">
+            © 2026 Abyss Lab. Tous droits réservés.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const video = document.getElementById("bg-video");
+
+      video.muted = true;
+      video.play().catch(() => {
+        console.log("Autoplay bloqué");
+      });
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const currentLocation = location.pathname.split("/").pop() || "index.html";
+      const menuItems = document.querySelectorAll(".nav-link");
+
+      menuItems.forEach(link => {
+        if (link.getAttribute("href") === currentLocation) {
+          link.classList.add("active");
+        }
+      });
+    });
+
+    window.addEventListener("scroll", function () {
+      const navbar = document.querySelector(".navbar");
+      navbar.classList.toggle("scrolled", window.scrollY > 50);
+    });
+
+    const faders = document.querySelectorAll(".fade-in");
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer){
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      });
+    }, {
+      threshold:0.18
+    });
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
 
 </body>
 </html>
