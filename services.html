@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Abyss Lab, agence de direction de marque, marketing et communication luxe à Bordeaux. Stratégie de marque, image, brand content, site internet premium, SEO et rayonnement digital pour les univers luxe, lifestyle, hospitality et art de vivre.">
+  <meta name="description" content="Abyss Lab, agence de direction de marque, marketing et communication luxe à Bordeaux. Stratégie de marque, image, brand content, site internet premium, SEO et visibilité digitale pour les univers luxe, lifestyle, hospitality et art de vivre.">
   <title>Services | Abyss Lab. Direction de marque, image & rayonnement digital</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +19,7 @@
       --white:#ffffff;
       --white-soft:rgba(255,255,255,.84);
       --white-muted:rgba(255,255,255,.66);
-      --white-faint:rgba(255,255,255,.50);
+      --white-faint:rgba(255,255,255,.52);
       --line:rgba(255,255,255,.14);
       --line-soft:rgba(255,255,255,.10);
       --glass:rgba(255,255,255,.035);
@@ -39,9 +39,9 @@
     a{transition:all .3s ease;}
     img,video{max-width:100%;display:block;}
 
-    .section-space{padding:72px 0;}
-    .section-space-tight{padding:18px 0 60px;}
-    .section-space-compact{padding:52px 0;}
+    .section-space{padding:64px 0;}
+    .section-space-tight{padding:14px 0 54px;}
+    .section-space-compact{padding:42px 0;}
 
     .video-background{
       position:fixed;
@@ -62,7 +62,7 @@
       position:absolute;
       inset:0;
       background:
-        linear-gradient(to bottom, rgba(0,0,0,.42), rgba(0,0,0,.82) 40%, rgba(0,0,0,.94) 100%),
+        linear-gradient(to bottom, rgba(0,0,0,.42), rgba(0,0,0,.80) 42%, rgba(0,0,0,.94) 100%),
         rgba(0,0,0,.18);
       z-index:1;
     }
@@ -102,7 +102,7 @@
     .btn-outline-light,
     .btn-light-ghost{
       border-radius:999px;
-      padding:12px 24px;
+      padding:11px 24px;
       font-size:.78rem;
       font-weight:700;
       letter-spacing:.18em;
@@ -136,8 +136,8 @@
     }
 
     .section-kicker{
-      margin:0 0 12px;
-      font-size:.76rem;
+      margin:0 0 10px;
+      font-size:.74rem;
       font-weight:700;
       letter-spacing:.22em;
       text-transform:uppercase;
@@ -146,8 +146,8 @@
 
     .section-title{
       font-family:'couture',sans-serif;
-      font-size:1.9rem;
-      line-height:1.2;
+      font-size:1.74rem;
+      line-height:1.22;
       letter-spacing:.08em;
       text-transform:uppercase;
       color:var(--white);
@@ -157,8 +157,8 @@
     .section-text{
       margin:0 auto;
       max-width:820px;
-      font-size:1rem;
-      line-height:1.82;
+      font-size:.98rem;
+      line-height:1.8;
       color:var(--white-soft);
     }
 
@@ -176,187 +176,137 @@
 
     /* HERO */
     .services-hero{
-      padding:108px 0 54px;
+      padding:102px 0 34px;
       position:relative;
       z-index:2;
     }
 
     .services-hero-inner{
-      max-width:1120px;
+      max-width:1080px;
       margin:0 auto;
       text-align:center;
     }
 
     .services-title{
       font-family:'couture',sans-serif;
-      font-size:3rem;
-      line-height:1.02;
-      letter-spacing:.12em;
+      font-size:2.95rem;
+      line-height:1.01;
+      letter-spacing:.10em;
       text-transform:uppercase;
-      margin:0 0 16px;
+      margin:0 0 14px;
       color:var(--white);
     }
 
     .services-baseline{
-      margin:0 auto 18px;
-      max-width:980px;
+      margin:0 auto 16px;
+      max-width:960px;
       text-align:center;
       font-weight:700;
       font-size:.84rem;
-      letter-spacing:.24em;
+      letter-spacing:.22em;
       text-transform:uppercase;
       color:var(--white-soft);
     }
 
     .services-intro{
-      max-width:760px;
+      max-width:720px;
       margin:0 auto;
       text-align:center;
-      font-size:.98rem;
-      line-height:1.82;
+      font-size:.97rem;
+      line-height:1.78;
       color:var(--white-soft);
     }
 
     .services-hero-cta{
-      margin-top:24px;
+      margin-top:22px;
       display:flex;
       justify-content:center;
       gap:12px;
       flex-wrap:wrap;
     }
 
-    /* HERO STATEMENT */
-    .statement{
+    /* SERVICE CHIPS */
+    .services-nav{
       position:relative;
       z-index:2;
-      padding:6px 0 26px;
+      padding:8px 0 22px;
     }
 
-    .statement-box{
-      max-width:980px;
-      margin:0 auto;
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-      padding:26px 0;
-      text-align:center;
+    .services-nav-wrap{
+      display:flex;
+      gap:16px;
+      overflow-x:auto;
+      padding-bottom:8px;
+      scrollbar-width:none;
+      -ms-overflow-style:none;
     }
 
-    .statement-text{
-      margin:0 auto;
-      max-width:860px;
-      font-size:1.02rem;
-      line-height:1.88;
-      color:var(--white-soft);
+    .services-nav-wrap::-webkit-scrollbar{display:none;}
+
+    .service-chip{
+      flex:0 0 210px;
+      text-decoration:none;
+      color:#fff;
+      transition:transform .35s ease;
     }
 
-    .statement-text strong{
-      color:var(--white);
-      font-weight:700;
+    .service-chip:hover{
+      color:#fff;
+      transform:translateY(-5px);
     }
 
-    /* SERVICE INTRO CARDS */
-    .services-entry{
+    .service-chip-media{
       position:relative;
-      z-index:2;
-      padding:8px 0 8px;
-    }
-
-    .entry-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:18px;
-    }
-
-    .entry-card{
-      position:relative;
+      height:215px;
       overflow:hidden;
-      min-height:520px;
-      background:#050505;
       border:1px solid rgba(255,255,255,.14);
-      isolation:isolate;
+      background:rgba(255,255,255,.03);
+      margin-bottom:12px;
     }
 
-    .entry-card::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(180deg, rgba(0,0,0,.08) 0%, rgba(0,0,0,.44) 48%, rgba(0,0,0,.78) 100%);
-      z-index:1;
-      pointer-events:none;
-    }
-
-    .entry-card img,
-    .entry-card video{
+    .service-chip-media img,
+    .service-chip-media video{
       width:100%;
       height:100%;
       object-fit:cover;
-      transition:transform .65s ease, opacity .65s ease;
+      transition:transform .55s ease, opacity .55s ease;
     }
 
-    .entry-card:hover img,
-    .entry-card:hover video{
-      transform:scale(1.05);
-      opacity:.82;
+    .service-chip:hover .service-chip-media img,
+    .service-chip:hover .service-chip-media video{
+      transform:scale(1.04);
+      opacity:.86;
     }
 
-    .entry-content{
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:0;
-      z-index:2;
-      padding:28px 24px 24px;
-    }
-
-    .entry-index{
-      display:block;
-      margin-bottom:8px;
-      font-size:.72rem;
-      font-weight:700;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:var(--white-soft);
-    }
-
-    .entry-title{
+    .service-chip-label{
       font-family:'couture',sans-serif;
-      font-size:1.2rem;
-      line-height:1.35;
+      font-size:.92rem;
       letter-spacing:.10em;
       text-transform:uppercase;
+      margin:0 0 4px;
+      line-height:1.34;
       color:var(--white);
-      margin:0 0 8px;
     }
 
-    .entry-text{
-      margin:0 0 16px;
-      max-width:460px;
-      font-size:.93rem;
-      line-height:1.72;
-      color:var(--white-soft);
-    }
-
-    .entry-link{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      color:var(--white);
-      text-decoration:none;
-      font-size:.76rem;
+    .service-chip-meta{
+      margin:0;
+      font-size:.72rem;
       font-weight:700;
-      letter-spacing:.18em;
+      letter-spacing:.16em;
       text-transform:uppercase;
-    }
-
-    .entry-link:hover{
-      color:var(--white-soft);
+      color:var(--white-faint);
     }
 
     /* IMPACT */
     .services-impact{
       position:relative;
       z-index:2;
-      padding:22px 0 10px;
+      padding:10px 0 18px;
+    }
+
+    .impact-wrap{
+      border-top:1px solid var(--line);
+      padding-top:22px;
     }
 
     .impact-grid{
@@ -368,9 +318,9 @@
     .impact-card{
       border:1px solid rgba(255,255,255,.14);
       background:var(--glass);
-      padding:24px 22px;
+      padding:22px 20px;
       backdrop-filter:blur(8px);
-      min-height:154px;
+      min-height:145px;
     }
 
     .impact-number{
@@ -385,18 +335,18 @@
 
     .impact-title{
       font-family:'couture',sans-serif;
-      font-size:1rem;
+      font-size:.94rem;
       letter-spacing:.10em;
       text-transform:uppercase;
       color:var(--white);
       margin-bottom:10px;
-      line-height:1.38;
+      line-height:1.4;
     }
 
     .impact-text{
       margin:0;
-      font-size:.93rem;
-      line-height:1.74;
+      font-size:.91rem;
+      line-height:1.7;
       color:var(--white-soft);
     }
 
@@ -404,17 +354,17 @@
     .difference{
       position:relative;
       z-index:2;
-      padding:24px 0 20px;
+      padding:10px 0 18px;
     }
 
     .difference-box{
-      max-width:980px;
+      max-width:920px;
       margin:0 auto;
       text-align:center;
     }
 
     .difference-points{
-      margin-top:24px;
+      margin-top:18px;
       display:grid;
       grid-template-columns:repeat(4,1fr);
       gap:12px;
@@ -423,9 +373,9 @@
     .difference-item{
       border:1px solid rgba(255,255,255,.14);
       background:var(--glass);
-      padding:18px 16px;
-      font-size:.85rem;
-      line-height:1.65;
+      padding:16px 14px;
+      font-size:.82rem;
+      line-height:1.6;
       color:var(--white);
       text-transform:uppercase;
       font-weight:700;
@@ -433,16 +383,16 @@
       backdrop-filter:blur(8px);
     }
 
-    /* SERVICE SECTIONS */
+    /* SERVICES */
     .services-wrapper{
       position:relative;
       z-index:2;
-      padding:10px 0 28px;
+      padding:6px 0 26px;
     }
 
     .service-section{
       border-top:1px solid var(--line);
-      padding:78px 0;
+      padding:72px 0;
     }
 
     .service-section-media{
@@ -454,17 +404,17 @@
     .service-section-media img,
     .service-section-media video{
       width:100%;
-      height:700px;
+      height:660px;
       object-fit:cover;
     }
 
     .service-section-text{
-      padding-right:54px;
+      padding-right:48px;
     }
 
     .service-index{
       display:inline-block;
-      margin-bottom:14px;
+      margin-bottom:12px;
       font-size:.72rem;
       font-weight:700;
       letter-spacing:.18em;
@@ -474,7 +424,7 @@
 
     .service-title{
       font-family:'couture',sans-serif;
-      font-size:2.25rem;
+      font-size:2rem;
       line-height:1.06;
       letter-spacing:.08em;
       text-transform:uppercase;
@@ -483,8 +433,8 @@
     }
 
     .service-subtitle{
-      margin:0 0 18px;
-      font-size:.78rem;
+      margin:0 0 16px;
+      font-size:.76rem;
       font-weight:700;
       letter-spacing:.18em;
       text-transform:uppercase;
@@ -493,42 +443,40 @@
 
     .service-hook{
       margin:0 0 12px;
-      font-size:1rem;
-      line-height:1.82;
+      font-size:.98rem;
+      line-height:1.78;
       color:var(--white);
       font-weight:700;
-      max-width:640px;
-      text-transform:uppercase;
-      letter-spacing:.03em;
+      max-width:620px;
     }
 
     .service-text{
       margin:0;
-      font-size:.97rem;
-      line-height:1.8;
+      font-size:.96rem;
+      line-height:1.76;
       color:var(--white-soft);
-      max-width:650px;
+      max-width:640px;
     }
 
     .service-grid{
       display:grid;
       grid-template-columns:repeat(2,1fr);
       gap:12px;
-      margin:24px 0 24px;
+      margin:22px 0 22px;
     }
 
     .service-card{
       border:1px solid rgba(255,255,255,.14);
       background:var(--glass);
-      padding:18px 16px;
-      min-height:104px;
+      padding:16px 15px;
+      min-height:96px;
       backdrop-filter:blur(8px);
     }
 
     .service-card-title{
       display:block;
-      margin-bottom:8px;
-      font-size:.7rem;
+      margin-bottom:7px;
+      font-size:.68rem;
       font-weight:700;
       letter-spacing:.18em;
       text-transform:uppercase;
@@ -537,8 +485,8 @@
 
     .service-card-text{
       margin:0;
-      font-size:.92rem;
-      line-height:1.66;
+      font-size:.9rem;
+      line-height:1.62;
       color:var(--white-soft);
     }
 
@@ -546,18 +494,18 @@
     .services-method{
       position:relative;
       z-index:2;
-      padding:8px 0 58px;
+      padding:8px 0 54px;
     }
 
     .services-method-box{
       border-top:1px solid var(--line);
       border-bottom:1px solid var(--line);
-      padding:36px 0;
+      padding:34px 0;
     }
 
     .method-head{
-      max-width:900px;
-      margin:0 auto 26px;
+      max-width:860px;
+      margin:0 auto 24px;
       text-align:center;
     }
 
@@ -565,7 +513,7 @@
       height:100%;
       border:1px solid rgba(255,255,255,.14);
       background:var(--glass);
-      padding:26px 22px;
+      padding:24px 20px;
       backdrop-filter:blur(8px);
     }
 
@@ -581,7 +529,7 @@
 
     .method-title{
       font-family:'couture',sans-serif;
-      font-size:1rem;
+      font-size:.96rem;
       letter-spacing:.12em;
       text-transform:uppercase;
       color:var(--white);
@@ -590,8 +538,8 @@
 
     .method-text{
       margin:0;
-      font-size:.93rem;
-      line-height:1.74;
+      font-size:.91rem;
+      line-height:1.7;
       color:var(--white-soft);
     }
 
@@ -599,7 +547,7 @@
     .services-cta{
       position:relative;
       z-index:2;
-      padding:10px 0 66px;
+      padding:10px 0 64px;
     }
 
     .cta-block{
@@ -607,12 +555,12 @@
       margin:0 auto;
       text-align:center;
       border-top:1px solid var(--line);
-      padding-top:40px;
+      padding-top:38px;
     }
 
     .cta-title{
       font-family:'couture',sans-serif;
-      font-size:1.95rem;
+      font-size:1.82rem;
       line-height:1.18;
       letter-spacing:.08em;
       text-transform:uppercase;
@@ -621,8 +569,8 @@
     }
 
     .cta-text{
-      font-size:1rem;
-      line-height:1.82;
+      font-size:.98rem;
+      line-height:1.8;
       color:var(--white-soft);
       margin-bottom:22px;
     }
@@ -779,16 +727,15 @@
     }
 
     @media(min-width:992px){
-      .services-title{font-size:5.15rem;}
+      .services-title{font-size:4.75rem;}
     }
 
     @media(max-width:991.98px){
-      .section-space{padding:48px 0;}
-      .section-space-tight{padding:12px 0 42px;}
-      .section-space-compact{padding:38px 0;}
+      .section-space{padding:46px 0;}
+      .section-space-tight{padding:10px 0 42px;}
+      .section-space-compact{padding:34px 0;}
 
-      .services-hero{padding:92px 0 44px;}
-      .entry-grid{grid-template-columns:1fr;}
+      .services-hero{padding:90px 0 28px;}
       .impact-grid,
       .difference-points{grid-template-columns:repeat(2,1fr);}
       .service-section-text{padding-right:0;}
@@ -814,31 +761,37 @@
 
     @media(max-width:767.98px){
       .services-title{
-        font-size:2.45rem;
+        font-size:2.24rem;
         margin-bottom:12px;
       }
 
       .services-baseline{
-        font-size:.75rem;
+        font-size:.74rem;
         letter-spacing:.15em;
       }
 
       .services-intro,
-      .statement-text,
       .section-text,
       .impact-text,
       .service-text,
       .method-text,
       .cta-text{
-        font-size:.93rem;
-        line-height:1.74;
+        font-size:.92rem;
+        line-height:1.72;
       }
 
-      .section-space{padding:38px 0;}
+      .section-space{padding:36px 0;}
       .section-space-tight{padding:8px 0 34px;}
-      .section-space-compact{padding:30px 0;}
+      .section-space-compact{padding:28px 0;}
 
-      .statement-box{padding:20px 0;}
+      .service-chip{
+        flex:0 0 170px;
+      }
+
+      .service-chip-media{
+        height:180px;
+      }
+
       .impact-grid,
       .difference-points,
       .service-grid{
@@ -848,11 +801,8 @@
       .service-title,
       .section-title,
       .cta-title{
-        font-size:1.36rem;
+        font-size:1.32rem;
       }
-
-      .entry-card{min-height:410px;}
-      .entry-content{padding:22px 18px 18px;}
 
       .services-hero-cta{
         gap:10px;
@@ -941,10 +891,10 @@
     <section class="services-hero fade-in">
       <div class="container">
         <div class="services-hero-inner">
-          <p class="services-title">FAIRE TENIR<br>LA MARQUE<br>A SON PLUS HAUT NIVEAU</p>
-          <p class="services-baseline">STRATEGIE DE MARQUE — IMAGE — BRAND CONTENT — SITE INTERNET — SEO — VISIBILITE DIGITALE</p>
+          <p class="services-title">STRUCTURER LE FOND.<br>ASSEOIR LA PRESENCE.</p>
+          <p class="services-baseline">DIRECTION DE MARQUE, IMAGE, CONTENU ET RAYONNEMENT DIGITAL</p>
           <p class="services-intro">
-            Abyss Lab accompagne les marques premium, luxe, hospitality et art de vivre qui veulent gagner en clarté, en désirabilité et en force de présence.
+            Abyss Lab accompagne les marques premium, luxe, hospitality et art de vivre qui veulent gagner en netteté, en désirabilité et en tenue.
           </p>
 
           <div class="services-hero-cta">
@@ -955,66 +905,45 @@
       </div>
     </section>
 
-    <!-- STATEMENT -->
-    <section class="statement fade-in">
+    <!-- SERVICE NAV -->
+    <section class="services-nav fade-in">
       <div class="container">
-        <div class="statement-box">
-          <p class="statement-text">
-            <strong>Une marque forte ne se résume pas à une belle image.</strong> Elle tient par la justesse de son positionnement, la force de son univers et la cohérence de tout ce qu’elle donne à voir.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ENTRY CARDS -->
-    <section class="services-entry fade-in">
-      <div class="container">
-        <div class="entry-grid">
-
-          <article class="entry-card">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Direction de marque et stratégie">
-            <div class="entry-content">
-              <span class="entry-index">01 / Fondations</span>
-              <h2 class="entry-title">RENDRE LA MARQUE PLUS NETTE</h2>
-              <p class="entry-text">Positionnement, direction, messages, cap. Ce qui donne à la marque sa vraie tenue.</p>
-              <a href="#fondations" class="entry-link">Explorer <i class="bi bi-arrow-right"></i></a>
+        <div class="services-nav-wrap">
+          <a href="#fondations" class="service-chip" aria-label="Aller à Fondations">
+            <div class="service-chip-media">
+              <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Stratégie de marque et positionnement">
             </div>
-          </article>
+            <h2 class="service-chip-label">Fondations</h2>
+            <p class="service-chip-meta">positionnement</p>
+          </a>
 
-          <article class="entry-card">
-            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944261/1_u4uw1i.jpg" alt="Image de marque, site premium et brand content">
-            <div class="entry-content">
-              <span class="entry-index">02 / Image & présence</span>
-              <h2 class="entry-title">DONNER FORME A CE QUI DISTINGUE</h2>
-              <p class="entry-text">Image, contenus, site internet, direction artistique. Une présence plus juste, plus forte, plus désirable.</p>
-              <a href="#image-presence" class="entry-link">Explorer <i class="bi bi-arrow-right"></i></a>
+          <a href="#image-presence" class="service-chip" aria-label="Aller à Image et présence">
+            <div class="service-chip-media">
+              <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944261/1_u4uw1i.jpg" alt="Image de marque et brand content">
             </div>
-          </article>
+            <h2 class="service-chip-label">Image & présence</h2>
+            <p class="service-chip-meta">contenu & site</p>
+          </a>
 
-          <article class="entry-card">
-            <video autoplay muted loop playsinline>
-              <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/15_bfvtos.mp4" type="video/mp4">
-            </video>
-            <div class="entry-content">
-              <span class="entry-index">03 / Activation</span>
-              <h2 class="entry-title">FAIRE PRENDRE PLACE A LA MARQUE</h2>
-              <p class="entry-text">Social media, campagnes, acquisition, influence. Les bons leviers pour faire rayonner sans diluer.</p>
-              <a href="#activation" class="entry-link">Explorer <i class="bi bi-arrow-right"></i></a>
+          <a href="#activation" class="service-chip" aria-label="Aller à Activation">
+            <div class="service-chip-media">
+              <video autoplay muted loop playsinline>
+                <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/15_bfvtos.mp4" type="video/mp4">
+              </video>
             </div>
-          </article>
+            <h2 class="service-chip-label">Activation</h2>
+            <p class="service-chip-meta">visibilité</p>
+          </a>
 
-          <article class="entry-card">
-            <video autoplay muted loop playsinline>
-              <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/16_phtw8d.mp4" type="video/mp4">
-            </video>
-            <div class="entry-content">
-              <span class="entry-index">04 / Pilotage</span>
-              <h2 class="entry-title">GARDER LE CAP DANS LE TEMPS</h2>
-              <p class="entry-text">Un accompagnement continu pour faire évoluer la marque sans perdre sa cohérence.</p>
-              <a href="#pilotage" class="entry-link">Explorer <i class="bi bi-arrow-right"></i></a>
+          <a href="#pilotage" class="service-chip" aria-label="Aller à Pilotage">
+            <div class="service-chip-media">
+              <video autoplay muted loop playsinline>
+                <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/16_phtw8d.mp4" type="video/mp4">
+              </video>
             </div>
-          </article>
-
+            <h2 class="service-chip-label">Pilotage</h2>
+            <p class="service-chip-meta">accompagnement</p>
+          </a>
         </div>
       </div>
     </section>
@@ -1022,24 +951,26 @@
     <!-- IMPACT -->
     <section class="services-impact fade-in">
       <div class="container">
-        <div class="impact-grid">
-          <article class="impact-card">
-            <span class="impact-number">01</span>
-            <h2 class="impact-title">PLUS DE CLARTE</h2>
-            <p class="impact-text">Un positionnement plus net, une direction plus lisible, une marque plus crédible.</p>
-          </article>
+        <div class="impact-wrap">
+          <div class="impact-grid">
+            <article class="impact-card">
+              <span class="impact-number">01</span>
+              <h2 class="impact-title">PLUS DE NETTETE</h2>
+              <p class="impact-text">Un positionnement plus clair, une direction plus lisible, une marque plus juste.</p>
+            </article>
 
-          <article class="impact-card">
-            <span class="impact-number">02</span>
-            <h2 class="impact-title">PLUS DE DESIRABILITE</h2>
-            <p class="impact-text">Une image, un site et des contenus capables de hausser la perception de la marque.</p>
-          </article>
+            <article class="impact-card">
+              <span class="impact-number">02</span>
+              <h2 class="impact-title">PLUS DE DESIRABILITE</h2>
+              <p class="impact-text">Une image, un site et des contenus capables de hausser la perception de la marque.</p>
+            </article>
 
-          <article class="impact-card">
-            <span class="impact-number">03</span>
-            <h2 class="impact-title">PLUS DE TENUE</h2>
-            <p class="impact-text">Une cohérence réelle entre ce que la marque est, ce qu’elle dit et ce qu’elle déploie.</p>
-          </article>
+            <article class="impact-card">
+              <span class="impact-number">03</span>
+              <h2 class="impact-title">PLUS DE TENUE</h2>
+              <p class="impact-text">Une cohérence réelle entre le fond, la forme et la manière dont la marque prend place.</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -1049,16 +980,16 @@
       <div class="container">
         <div class="difference-box">
           <p class="section-kicker">Pourquoi Abyss Lab.</p>
-          <h2 class="section-title">NI AGENCE GENERALISTE, NI SIMPLE EXECUTION.<br>UN REGARD, UNE DIRECTION, UNE EXIGENCE.</h2>
+          <h2 class="section-title">UN REGARD STRATEGIQUE. UN SENS DE L’IMAGE. UNE EXECUTION QUI TIENT.</h2>
           <p class="section-text">
-            Abyss Lab relie lecture de marque, sens de l’image et déploiement concret pour construire des univers plus singuliers, plus cohérents, plus puissants.
+            Abyss Lab ne juxtapose pas des prestations. Nous travaillons ce qui donne à la marque sa densité, son allure et sa capacité à durer.
           </p>
 
           <div class="difference-points">
             <div class="difference-item">VISION 360</div>
             <div class="difference-item">CULTURE PREMIUM & HOSPITALITY</div>
-            <div class="difference-item">SENS DE L’IMAGE</div>
-            <div class="difference-item">EXECUTION REELLE</div>
+            <div class="difference-item">EXIGENCE CREATIVE</div>
+            <div class="difference-item">EXECUTION CONCRETE</div>
           </div>
         </div>
       </div>
@@ -1075,10 +1006,10 @@
               <div class="service-section-text">
                 <span class="service-index">01 / Accompagnement</span>
                 <h2 class="service-title">FONDATIONS</h2>
-                <p class="service-subtitle">Positionnement — direction — stratégie</p>
+                <p class="service-subtitle">Positionnement, direction, stratégie</p>
                 <p class="service-hook">Rendre la marque plus nette avant de la rendre visible.</p>
                 <p class="service-text">
-                  Clarifier ce qui la distingue, poser un cap plus juste, structurer les messages et hiérarchiser les bons leviers.
+                  Clarifier ce qui la distingue, poser une ligne plus juste, structurer les messages et hiérarchiser les bons leviers.
                 </p>
 
                 <div class="service-grid">
@@ -1088,7 +1019,7 @@
                   </div>
                   <div class="service-card">
                     <span class="service-card-title">Messages</span>
-                    <p class="service-card-text">Structurer un discours plus net et plus cohérent.</p>
+                    <p class="service-card-text">Donner au discours plus de netteté et de tenue.</p>
                   </div>
                   <div class="service-card">
                     <span class="service-card-title">Vision</span>
@@ -1096,7 +1027,7 @@
                   </div>
                   <div class="service-card">
                     <span class="service-card-title">Feuille de route</span>
-                    <p class="service-card-text">Prioriser pour avancer avec plus de tenue.</p>
+                    <p class="service-card-text">Prioriser pour avancer sans dispersion.</p>
                   </div>
                 </div>
 
@@ -1106,7 +1037,7 @@
 
             <div class="col-12 col-lg-6">
               <div class="service-section-media">
-                <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Stratégie de marque, positionnement et direction pour marque premium">
+                <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Stratégie de marque, positionnement et direction marketing pour marque premium">
               </div>
             </div>
           </div>
@@ -1119,28 +1050,28 @@
               <div class="service-section-text">
                 <span class="service-index">02 / Accompagnement</span>
                 <h2 class="service-title">IMAGE & PRESENCE</h2>
-                <p class="service-subtitle">Site internet — brand content — image de marque</p>
-                <p class="service-hook">Donner à la marque une forme qui impose davantage.</p>
+                <p class="service-subtitle">Site web, brand content, image de marque</p>
+                <p class="service-hook">Donner au fond une forme qui se voit immédiatement.</p>
                 <p class="service-text">
-                  Construire une présence plus désirable à travers le site, la direction artistique, les contenus et une structuration SEO plus intelligente.
+                  Site, direction artistique, contenus et SEO : une présence plus premium, plus cohérente, plus convaincante.
                 </p>
 
                 <div class="service-grid">
                   <div class="service-card">
-                    <span class="service-card-title">Site premium</span>
-                    <p class="service-card-text">Une vitrine digitale pensée pour l’image et la conversion.</p>
+                    <span class="service-card-title">Site web</span>
+                    <p class="service-card-text">Une vitrine pensée pour l’image et la conversion.</p>
                   </div>
                   <div class="service-card">
                     <span class="service-card-title">Brand content</span>
-                    <p class="service-card-text">Photos, vidéos et récits conçus pour élever la perception.</p>
+                    <p class="service-card-text">Photos, vidéos et contenus qui élèvent la perception.</p>
                   </div>
                   <div class="service-card">
                     <span class="service-card-title">Direction artistique</span>
-                    <p class="service-card-text">Une cohérence visuelle sur l’ensemble des points de contact.</p>
+                    <p class="service-card-text">Une cohérence visuelle sur tous les points de contact.</p>
                   </div>
                   <div class="service-card">
                     <span class="service-card-title">SEO</span>
-                    <p class="service-card-text">Des pages plus stratégiques pour mieux émerger.</p>
+                    <p class="service-card-text">Des pages mieux structurées pour mieux émerger.</p>
                   </div>
                 </div>
 
@@ -1150,7 +1081,7 @@
 
             <div class="col-12 col-lg-6 order-lg-1">
               <div class="service-section-media">
-                <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944261/1_u4uw1i.jpg" alt="Image de marque, site internet premium et brand content">
+                <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944261/1_u4uw1i.jpg" alt="Image de marque, brand content et site internet premium">
               </div>
             </div>
           </div>
@@ -1163,16 +1094,16 @@
               <div class="service-section-text">
                 <span class="service-index">03 / Accompagnement</span>
                 <h2 class="service-title">ACTIVATION</h2>
-                <p class="service-subtitle">Social media — visibilité — acquisition</p>
-                <p class="service-hook">Faire prendre place à la marque sans la diluer.</p>
+                <p class="service-subtitle">Social media, acquisition, visibilité</p>
+                <p class="service-hook">Faire prendre place à la marque sans l’affaiblir.</p>
                 <p class="service-text">
-                  Réseaux sociaux, contenus, campagnes, amplification : les bons leviers pour renforcer visibilité, désirabilité et engagement.
+                  Réseaux sociaux, contenus, campagnes et amplification : les bons leviers pour renforcer visibilité, désirabilité et engagement.
                 </p>
 
                 <div class="service-grid">
                   <div class="service-card">
                     <span class="service-card-title">Social media</span>
-                    <p class="service-card-text">Rythme éditorial, contenus et animation des communautés.</p>
+                    <p class="service-card-text">Rythme éditorial, contenus et animation.</p>
                   </div>
                   <div class="service-card">
                     <span class="service-card-title">Ads</span>
@@ -1180,7 +1111,7 @@
                   </div>
                   <div class="service-card">
                     <span class="service-card-title">Acquisition</span>
-                    <p class="service-card-text">Des leviers digitaux pensés pour soutenir la croissance.</p>
+                    <p class="service-card-text">Des leviers pensés pour soutenir la croissance.</p>
                   </div>
                   <div class="service-card">
                     <span class="service-card-title">Influence</span>
@@ -1212,7 +1143,7 @@
                 <p class="service-subtitle">Accompagnement continu</p>
                 <p class="service-hook">Garder le cap pendant que la marque change d’échelle.</p>
                 <p class="service-text">
-                  Coordination, ajustements, suivi stratégique et vision d’ensemble pour faire évoluer sans perdre la cohérence du fond.
+                  Coordination, suivi, arbitrages et vision d’ensemble pour faire évoluer la marque sans perdre sa cohérence profonde.
                 </p>
 
                 <div class="service-grid">
@@ -1257,9 +1188,9 @@
         <div class="services-method-box">
           <div class="method-head">
             <p class="section-kicker">Méthode Abyss Lab.</p>
-            <h2 class="section-title">LIRE. CLARIFIER. INCARNER. DEPLOYER.</h2>
+            <h2 class="section-title">COMPRENDRE. STRUCTURER. INCARNER. DEPLOYER.</h2>
             <p class="section-text">
-              Une méthode pensée pour donner à la marque plus de netteté, plus de force et plus de tenue.
+              Une approche hybride entre lecture stratégique, sens de l’image et exécution concrète.
             </p>
           </div>
 
@@ -1267,16 +1198,16 @@
             <div class="col-12 col-md-6 col-lg-3">
               <div class="method-card">
                 <span class="method-step">01</span>
-                <h3 class="method-title">Lire</h3>
-                <p class="method-text">Comprendre ce qui fonde la singularité réelle de la marque.</p>
+                <h3 class="method-title">Comprendre</h3>
+                <p class="method-text">Lire la marque en profondeur, ses forces, ses tensions et son potentiel.</p>
               </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-3">
               <div class="method-card">
                 <span class="method-step">02</span>
-                <h3 class="method-title">Clarifier</h3>
-                <p class="method-text">Donner une direction, un discours et des priorités plus nettes.</p>
+                <h3 class="method-title">Structurer</h3>
+                <p class="method-text">Donner une ligne, des messages et des priorités plus nettes.</p>
               </div>
             </div>
 
@@ -1304,9 +1235,9 @@
     <section class="services-cta fade-in">
       <div class="container">
         <div class="cta-block">
-          <h2 class="cta-title">ELEVER L’IMAGE. ASSEOIR LA MARQUE. FAIRE MONTER LA PRESENCE.</h2>
+          <h2 class="cta-title">PLUS DE FORCE POUR LA MARQUE. PLUS DE TENUE POUR SA PRESENCE.</h2>
           <p class="cta-text">
-            Abyss Lab accompagne les marques qui veulent gagner en clarté, en désirabilité et en force de présence.
+            Abyss Lab accompagne les marques qui veulent gagner en netteté, en désirabilité et en force de présence.
           </p>
           <a href="contact.html" class="btn btn-outline-light">DEMARRER UN PROJET</a>
         </div>
