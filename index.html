@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Abyss Lab révèle l’essence des marques premium et transforme leur ADN en image, contenu, visibilité et désirabilité. Stratégie, brand content, site internet, réseaux sociaux et direction artistique.">
-  <title>ABYSS LAB</title>
+  <meta name="description" content="Abyss Lab révèle la singularité profonde des marques premium, luxe, lifestyle et hospitality à travers le positionnement, la direction artistique, le brand content, les sites internet et la visibilité digitale.">
+  <title>Abyss Lab | Faire émerger votre singularité</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,11 +44,13 @@
       padding:96px 0;
     }
 
+    /* ===== VIDEO BACKGROUND ===== */
     .video-background{
       position:fixed;
       inset:0;
       z-index:-2;
       overflow:hidden;
+      background:#000;
     }
 
     .video-background video{
@@ -67,6 +69,7 @@
       z-index:1;
     }
 
+    /* ===== NAVBAR ===== */
     .navbar{
       position:relative;
       z-index:30;
@@ -83,7 +86,7 @@
     }
 
     .nav-link{
-      font-family: 'couture', sans-serif;
+      font-family:'couture', sans-serif;
       font-size:.80rem;
       letter-spacing:.16em;
       text-transform:uppercase;
@@ -98,8 +101,9 @@
       color:var(--white)!important;
     }
 
+    /* ===== HERO ===== */
     .hero{
-      padding:120px 0 90px;
+      padding:120px 0 82px;
     }
 
     .hero-title{
@@ -123,12 +127,20 @@
     }
 
     .hero-intro{
-      max-width:840px;
-      margin:22px auto 0;
+      max-width:860px;
+      margin:24px auto 0;
       text-align:center;
       font-size:1rem;
       line-height:1.9;
       color:var(--white-soft);
+    }
+
+    .hero-cta{
+      margin-top:30px;
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      flex-wrap:wrap;
     }
 
     @media(min-width:992px){
@@ -145,6 +157,44 @@
       }
     }
 
+    /* ===== BUTTONS ===== */
+    .btn-outline-light,
+    .btn-light-ghost{
+      border-radius:999px;
+      padding:11px 26px;
+      font-size:.78rem;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+
+    .btn-outline-light{
+      border-color:rgba(255,255,255,.55);
+    }
+
+    .btn-outline-light:hover{
+      background:var(--white);
+      color:#000;
+      border-color:var(--white);
+    }
+
+    .btn-light-ghost{
+      border:1px solid rgba(255,255,255,.16);
+      color:var(--white);
+      background:rgba(255,255,255,.05);
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .btn-light-ghost:hover{
+      color:#000;
+      background:var(--white);
+      border-color:var(--white);
+    }
+
+    /* ===== SUBMENU ===== */
     .submenu{
       border-top:1px solid var(--navy);
       border-bottom:1px solid var(--navy);
@@ -191,8 +241,9 @@
       transform:scaleX(1);
     }
 
+    /* ===== STATEMENT ===== */
     .statement{
-      max-width:1020px;
+      max-width:1060px;
       margin:0 auto;
       text-align:center;
       font-size:1.18rem;
@@ -208,15 +259,17 @@
       }
     }
 
+    /* ===== DIFFERENCIATION ===== */
     .insight-grid{
-      margin-top:10px;
+      margin-top:4px;
     }
 
     .insight-card{
       height:100%;
       border:1px solid rgba(255,255,255,.14);
       background:rgba(255,255,255,.03);
-      padding:32px 28px;
+      padding:34px 28px;
+      backdrop-filter:blur(6px);
     }
 
     .insight-title{
@@ -225,7 +278,7 @@
       letter-spacing:.12em;
       text-transform:uppercase;
       color:var(--white);
-      margin-bottom:14px;
+      margin-bottom:16px;
     }
 
     .insight-text{
@@ -235,6 +288,7 @@
       color:var(--white-soft);
     }
 
+    /* ===== FOUNDER ===== */
     .founder-image-wrap{
       overflow:hidden;
       background:rgba(255,255,255,.03);
@@ -270,22 +324,7 @@
       margin-bottom:18px;
     }
 
-    .btn-outline-light{
-      border-radius:999px;
-      padding:11px 26px;
-      font-size:.78rem;
-      font-weight:700;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      border-color:rgba(255,255,255,.55);
-    }
-
-    .btn-outline-light:hover{
-      background:var(--white);
-      color:#000;
-      border-color:var(--white);
-    }
-
+    /* ===== SERVICES GRID ===== */
     .services-grid{
       margin-top:4px;
     }
@@ -336,6 +375,7 @@
       z-index:3;
     }
 
+    /* ===== CTA FINAL ===== */
     .cta-block{
       max-width:760px;
       margin:0 auto;
@@ -359,6 +399,7 @@
       margin-bottom:26px;
     }
 
+    /* ===== FOOTER ===== */
     .footer{
       border-top:1px solid var(--line);
       padding:34px 0 14px;
@@ -500,6 +541,7 @@
       white-space:nowrap;
     }
 
+    /* ===== ANIMATIONS ===== */
     .fade-in{
       opacity:0;
       transform:translateY(22px);
@@ -511,6 +553,7 @@
       transform:translateY(0);
     }
 
+    /* ===== RESPONSIVE ===== */
     @media(max-width:991.98px){
       .section-space{
         padding:78px 0;
@@ -602,7 +645,18 @@
 
   <!-- BACKGROUND VIDEO -->
   <div class="video-background">
-    <video autoplay muted loop playsinline webkit-playsinline id="bg-video">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      webkit-playsinline
+      preload="auto"
+      poster="assets/img/poster.jpg"
+      disablepictureinpicture
+      controlslist="nodownload nofullscreen noremoteplayback"
+      id="bg-video"
+    >
       <source src="assets/video/abyss-lab.mp4" type="video/mp4">
     </video>
   </div>
@@ -640,10 +694,15 @@
       <h1 class="hero-title">ABYSS LAB.</h1>
       <p class="header">FROM DEPTH, DISTINCTION EMERGES</p>
       <p class="hero-intro">
-        Conseil, direction de marque et déploiement digital pour les acteurs premium,
-        luxe, lifestyle et hospitality qui veulent clarifier leur positionnement,
-        renforcer leur désirabilité et faire rayonner leur image.
+        Abyss Lab accompagne les marques premium, luxe, lifestyle et hospitality
+        qui veulent faire émerger leur singularité profonde, affiner leur image
+        et déployer une présence plus juste, plus désirable, plus mémorable.
       </p>
+
+      <div class="hero-cta">
+        <a href="contact.html" class="btn btn-outline-light">Demarrer un projet</a>
+        <a href="services.html" class="btn-light-ghost">Explorer nos services</a>
+      </div>
     </div>
   </section>
 
@@ -661,8 +720,9 @@
   <section class="section-space fade-in">
     <div class="container">
       <p class="statement">
-        Nous plongeons au cœur des marques pour révéler ce qui les rend singulières,
-        puis le traduire en image, en contenu, en présence digitale et en stratégie de croissance.
+        Nous plongeons sous la surface des marques pour révéler ce qui les rend
+        réellement singulières, puis le traduire en territoire de marque, en image,
+        en contenu, en expérience digitale et en stratégie de rayonnement.
       </p>
     </div>
   </section>
@@ -673,9 +733,10 @@
       <div class="row g-4 insight-grid">
         <div class="col-12 col-md-4">
           <div class="insight-card">
-            <h3 class="insight-title">Clarifier</h3>
+            <h3 class="insight-title">Reveler</h3>
             <p class="insight-text">
-              Donner une direction juste à votre marque, affiner votre positionnement et faire émerger une identité plus lisible, plus forte, plus cohérente.
+              Mettre au jour la profondeur d’une marque, clarifier sa position,
+              faire émerger son identité véritable et lui redonner une direction nette.
             </p>
           </div>
         </div>
@@ -684,16 +745,18 @@
           <div class="insight-card">
             <h3 class="insight-title">Incarner</h3>
             <p class="insight-text">
-              Transformer votre ADN en univers désirable à travers les bons mots, les bons visuels, les bons contenus et une image pensée pour marquer.
+              Traduire cette singularité en langage visuel, éditorial et relationnel
+              pour construire un univers cohérent, désirable et immédiatement reconnaissable.
             </p>
           </div>
         </div>
 
         <div class="col-12 col-md-4">
           <div class="insight-card">
-            <h3 class="insight-title">Déployer</h3>
+            <h3 class="insight-title">Deployer</h3>
             <p class="insight-text">
-              Activer votre marque sur les bons leviers : site internet, réseaux sociaux, référencement, campagnes, collaborations et dispositifs sur mesure.
+              Activer la marque sur les bons leviers — site internet, contenus,
+              réseaux sociaux, référencement, campagnes et collaborations — avec justesse et exigence.
             </p>
           </div>
         </div>
@@ -716,14 +779,15 @@
           <p class="founder-subtitle">Fondatrice Abyss Lab.</p>
 
           <p class="standard">
-            Avec une expertise construite entre stratégie marketing, communication, brand content,
-            web et visibilité digitale, j’accompagne les marques qui veulent plus qu’être visibles :
-            elles veulent être immédiatement reconnaissables, désirables et cohérentes.
+            À la croisée du marketing, de la communication, du brand content, du web
+            et de la visibilité digitale, j’accompagne les marques qui ne veulent pas seulement
+            être vues, mais être perçues avec plus de clarté, plus de cohérence et plus de distinction.
           </p>
 
           <p class="standard">
-            Abyss Lab est né de cette conviction : les marques les plus fortes ne sont pas celles qui parlent le plus,
-            mais celles qui révèlent avec justesse ce qu’elles ont d’unique — puis le déploient avec exigence.
+            Abyss Lab est né de cette conviction : une marque forte ne se construit pas à la surface.
+            Elle se révèle en profondeur, puis se déploie avec une vision précise, un récit juste
+            et une exécution pensée pour durer.
           </p>
 
           <a href="contact.html" class="btn btn-outline-light mt-3">Parler de votre projet</a>
@@ -796,8 +860,8 @@
         <h2 class="cta-title">FAIRE EMERGER CE QUI VOUS DISTINGUE</h2>
         <p class="cta-text">
           Positionnement, image, contenu, visibilité, site internet :
-          Abyss Lab accompagne les marques qui veulent construire une présence plus juste,
-          plus premium et plus impactante.
+          Abyss Lab accompagne les marques qui veulent révéler leur singularité profonde
+          et construire une présence plus claire, plus désirable et plus durable.
         </p>
         <a href="contact.html" class="btn btn-outline-light">Demarrer un projet</a>
       </div>
@@ -872,13 +936,36 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
       const video = document.getElementById("bg-video");
+      if (!video) return;
 
       video.muted = true;
-      video.play().catch(() => {
-        console.log("Autoplay bloqué");
+      video.defaultMuted = true;
+      video.setAttribute("muted", "");
+      video.setAttribute("playsinline", "");
+      video.setAttribute("webkit-playsinline", "");
+      video.setAttribute("autoplay", "");
+      video.setAttribute("loop", "");
+
+      const startVideo = () => {
+        const promise = video.play();
+        if (promise !== undefined) {
+          promise.catch(() => {
+            console.log("Autoplay bloqué");
+          });
+        }
+      };
+
+      video.load();
+      startVideo();
+
+      document.addEventListener("touchstart", startVideo, { once: true, passive: true });
+      document.addEventListener("click", startVideo, { once: true });
+      document.addEventListener("visibilitychange", function () {
+        if (!document.hidden) startVideo();
       });
     });
   </script>
