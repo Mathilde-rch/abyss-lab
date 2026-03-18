@@ -3,189 +3,1016 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Abyss Lab accompagne les marques premium, luxe et lifestyle en révélant leur profondeur pour construire une direction, une image et un rayonnement distinctifs.">
-  <title>Abyss Lab | Direction de marque & singularité</title>
+  <meta name="description" content="Abyss Lab révèle la profondeur des marques premium, luxe, lifestyle et hospitality pour construire une direction claire, une image désirable et un rayonnement durable.">
+  <title>Abyss Lab | From depth, distinction emerges</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/couture" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
-<style>
-:root{
---white:#fff;
---soft:rgba(255,255,255,.75);
---line:rgba(255,255,255,.12);
-}
+  <style>
+    :root{
+      --white:#ffffff;
+      --white-soft:rgba(255,255,255,.82);
+      --white-muted:rgba(255,255,255,.68);
+      --line:rgba(255,255,255,.14);
+      --line-soft:rgba(255,255,255,.10);
+      --navy:#001D51;
+      --glow-a:rgba(74,159,255,.20);
+      --glow-b:rgba(0,102,255,.12);
+      --bg:#000000;
+    }
 
-body{margin:0;background:#000;color:#fff;font-family:Montserrat, sans-serif;}
-.section{padding:90px 0;}
-.section-tight{padding:60px 0;}
+    html{
+      scroll-behavior:smooth;
+    }
 
-.video-background{position:fixed;inset:0;z-index:-1;}
-.video-background video{width:100%;height:100%;object-fit:cover;}
+    body{
+      overflow-x:hidden;
+      color:var(--white);
+      font-family:'Montserrat',sans-serif;
+      background:#000;
+    }
 
-.hero{text-align:center;padding:120px 0 80px;}
-.hero h1{font-family:couture;font-size:4rem;letter-spacing:.1em;}
-.hero p{max-width:700px;margin:20px auto;color:var(--soft);line-height:1.8;}
+    a{
+      transition:all .3s ease;
+    }
 
-.btn-custom{
-border:1px solid rgba(255,255,255,.5);
-padding:10px 22px;
-text-transform:uppercase;
-letter-spacing:.15em;
-font-size:.75rem;
-border-radius:999px;
-color:#fff;
-text-decoration:none;
-}
-.btn-custom:hover{background:#fff;color:#000;}
+    img{
+      max-width:100%;
+      display:block;
+    }
 
-.kicker{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);}
-.title{font-family:couture;font-size:1.8rem;letter-spacing:.08em;margin:10px 0;}
+    .section-space{
+      padding:88px 0;
+    }
 
-.card{
-border:1px solid var(--line);
-padding:30px;
-background:rgba(255,255,255,.03);
-}
+    .section-space-tight{
+      padding:42px 0 88px;
+    }
 
-img{width:100%;}
-</style>
+    /* ===== VIDEO BACKGROUND ===== */
+    .video-background{
+      position:fixed;
+      inset:0;
+      z-index:-2;
+      overflow:hidden;
+      background:#000;
+    }
+
+    .video-background video{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .video-background::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.42), rgba(0,0,0,0.76)),
+        rgba(0,0,0,0.24);
+      z-index:1;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar{
+      position:relative;
+      z-index:30;
+      transition:background-color .3s ease, backdrop-filter .3s ease;
+    }
+
+    .navbar.scrolled{
+      background:rgba(0,0,0,0.68);
+      backdrop-filter:blur(14px);
+    }
+
+    .navbar-brand{
+      letter-spacing:1px;
+      color:var(--white)!important;
+    }
+
+    .nav-link{
+      font-family:'couture',sans-serif;
+      font-size:.80rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      font-weight:600;
+      color:var(--white-soft)!important;
+      padding-left:1rem!important;
+      padding-right:1rem!important;
+    }
+
+    .nav-link:hover,
+    .nav-link.active{
+      color:var(--white)!important;
+    }
+
+    /* ===== HERO ===== */
+    .hero{
+      padding:118px 0 72px;
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-title{
+      font-family:'couture',sans-serif;
+      font-size:3.15rem;
+      line-height:1;
+      text-align:center;
+      letter-spacing:.10em;
+      margin:0 0 16px;
+      text-transform:uppercase;
+      color:var(--white);
+    }
+
+    .header{
+      margin:0;
+      text-align:center;
+      font-weight:600;
+      font-size:.92rem;
+      letter-spacing:.26em;
+      text-transform:uppercase;
+      color:var(--white-soft);
+    }
+
+    .hero-intro{
+      max-width:860px;
+      margin:24px auto 0;
+      text-align:center;
+      font-size:1rem;
+      line-height:1.9;
+      color:var(--white-soft);
+    }
+
+    .hero-cta{
+      margin-top:30px;
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    @media(min-width:992px){
+      .hero-title{font-size:5rem;}
+      .header{font-size:1rem;}
+      .hero-intro{font-size:1.06rem;}
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn-outline-light,
+    .btn-light-ghost{
+      border-radius:999px;
+      padding:11px 26px;
+      font-size:.78rem;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+
+    .btn-outline-light{
+      border-color:rgba(255,255,255,.55);
+    }
+
+    .btn-outline-light:hover{
+      background:var(--white);
+      color:#000;
+      border-color:var(--white);
+    }
+
+    .btn-light-ghost{
+      border:1px solid rgba(255,255,255,.16);
+      color:var(--white);
+      background:rgba(255,255,255,.05);
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .btn-light-ghost:hover{
+      color:#000;
+      background:var(--white);
+      border-color:var(--white);
+    }
+
+    /* ===== SECTION HEADINGS ===== */
+    .section-kicker{
+      margin:0 0 14px;
+      font-size:.76rem;
+      font-weight:700;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:var(--white-soft);
+    }
+
+    .section-title{
+      font-family:'couture',sans-serif;
+      font-size:1.9rem;
+      line-height:1.25;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--white);
+      margin:0 0 18px;
+    }
+
+    .section-text{
+      margin:0 auto;
+      max-width:860px;
+      font-size:1.02rem;
+      line-height:1.9;
+      color:var(--white-soft);
+    }
+
+    /* ===== APPROACH INTRO ===== */
+    .approach-intro{
+      max-width:940px;
+      margin:0 auto;
+      text-align:center;
+    }
+
+    /* ===== METHOD ===== */
+    .method-grid{
+      margin-top:0;
+    }
+
+    .method-card{
+      height:100%;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.03);
+      padding:34px 28px;
+      backdrop-filter:blur(6px);
+    }
+
+    .method-step{
+      display:inline-block;
+      margin-bottom:14px;
+      font-size:.74rem;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--white-soft);
+    }
+
+    .method-title{
+      font-family:'couture',sans-serif;
+      font-size:1rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--white);
+      margin-bottom:16px;
+    }
+
+    .method-text{
+      margin:0;
+      font-size:.96rem;
+      line-height:1.9;
+      color:var(--white-soft);
+    }
+
+    /* ===== FOUNDER ===== */
+    .founder-image-wrap{
+      overflow:hidden;
+      background:rgba(255,255,255,.03);
+    }
+
+    .founder-image-wrap img{
+      width:100%;
+      height:auto;
+      object-fit:cover;
+    }
+
+    .founder-title{
+      font-size:1.45rem;
+      font-weight:700;
+      letter-spacing:.04em;
+      margin-bottom:8px;
+      text-transform:uppercase;
+      color:var(--white);
+    }
+
+    .founder-subtitle{
+      font-size:.82rem;
+      font-weight:600;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--white-soft);
+      margin-bottom:22px;
+    }
+
+    .standard{
+      font-size:.98rem;
+      line-height:1.9;
+      color:var(--white-soft);
+      margin-bottom:18px;
+    }
+
+    .founder-links{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+
+    /* ===== VISUAL TERRITORIES ===== */
+    .territories-intro{
+      max-width:860px;
+      margin:0 auto 34px;
+      text-align:center;
+    }
+
+    .territories-grid{
+      margin-top:4px;
+    }
+
+    .territory-card{
+      position:relative;
+      overflow:hidden;
+      background:#0a0a0a;
+      isolation:isolate;
+      height:100%;
+    }
+
+    .territory-card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,.04) 0%, rgba(0,0,0,.42) 100%);
+      z-index:1;
+      pointer-events:none;
+    }
+
+    .territory-card img{
+      width:100%;
+      height:460px;
+      object-fit:cover;
+      transition:transform .55s ease, opacity .55s ease;
+    }
+
+    .territory-card:hover img{
+      transform:scale(1.05);
+      opacity:.78;
+    }
+
+    .territory-content{
+      position:absolute;
+      inset:auto 0 0 0;
+      z-index:2;
+      padding:24px 22px 22px;
+    }
+
+    .territory-label{
+      display:block;
+      font-size:.72rem;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--white-soft);
+      margin-bottom:10px;
+    }
+
+    .territory-title{
+      font-family:'couture',sans-serif;
+      font-size:1rem;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      color:var(--white);
+      margin:0 0 10px;
+      line-height:1.4;
+    }
+
+    .territory-text{
+      margin:0;
+      font-size:.90rem;
+      line-height:1.8;
+      color:var(--white-soft);
+      max-width:95%;
+    }
+
+    .territory-link{
+      position:absolute;
+      inset:0;
+      z-index:3;
+    }
+
+    /* ===== CTA FINAL ===== */
+    .cta-block{
+      max-width:760px;
+      margin:0 auto;
+      text-align:center;
+    }
+
+    .cta-title{
+      font-family:'couture',sans-serif;
+      font-size:2rem;
+      line-height:1.2;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:18px;
+      color:var(--white);
+    }
+
+    .cta-text{
+      font-size:1rem;
+      line-height:1.9;
+      color:var(--white-soft);
+      margin-bottom:26px;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer{
+      border-top:1px solid var(--line);
+      padding:34px 0 14px;
+      margin-top:10px;
+      position:relative;
+      z-index:2;
+    }
+
+    .footer-top{
+      padding-bottom:24px;
+      margin-bottom:24px;
+      border-bottom:1px solid rgba(255,255,255,.18);
+    }
+
+    .footer-brand{
+      font-size:.98rem;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:12px;
+      color:var(--white);
+    }
+
+    .footer-tagline{
+      margin:0;
+      max-width:640px;
+      font-size:.96rem;
+      line-height:1.7;
+      font-weight:600;
+      text-transform:uppercase;
+      color:var(--white);
+    }
+
+    .footer-location{
+      margin-top:14px;
+      font-size:.94rem;
+      line-height:1.75;
+      color:var(--white-soft);
+    }
+
+    .footer-social-block{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+    }
+
+    .footer-social-title{
+      font-size:.94rem;
+      line-height:1.5;
+      font-weight:600;
+      color:var(--white);
+      margin-bottom:12px;
+    }
+
+    .footer-socials{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .footer-social{
+      width:44px;
+      height:44px;
+      border:1.5px solid rgba(255,255,255,.78);
+      border-radius:50%;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--white);
+      text-decoration:none;
+      font-size:1rem;
+      background:rgba(255,255,255,.01);
+    }
+
+    .footer-social:hover{
+      color:var(--white);
+      border-color:var(--white);
+      transform:translateY(-2px);
+      background:rgba(255,255,255,.04);
+    }
+
+    .footer-menu-row{
+      padding:0 0 22px;
+    }
+
+    .footer-menu{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+      width:100%;
+    }
+
+    .footer-menu a{
+      color:var(--white);
+      text-decoration:none;
+      font-size:.96rem;
+      font-weight:600;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      text-align:left;
+    }
+
+    .footer-menu a:hover{
+      opacity:.72;
+    }
+
+    .footer-bottom{
+      border-top:1px solid var(--line-soft);
+      padding-top:14px;
+    }
+
+    .footer-bottom-inner{
+      display:grid;
+      grid-template-columns:1fr auto;
+      align-items:center;
+      gap:20px;
+    }
+
+    .footer-legal{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px 34px;
+    }
+
+    .footer-legal a{
+      color:var(--white-muted);
+      text-decoration:none;
+      font-size:.84rem;
+      line-height:1.5;
+    }
+
+    .footer-legal a:hover{
+      color:var(--white);
+    }
+
+    .footer-copy{
+      color:var(--white-muted);
+      font-size:.84rem;
+      line-height:1.5;
+      text-align:right;
+      white-space:nowrap;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-in{
+      opacity:0;
+      transform:translateY(22px);
+      transition:opacity .75s ease, transform .75s ease;
+    }
+
+    .fade-in.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:991.98px){
+      .section-space{padding:78px 0;}
+      .section-space-tight{padding:34px 0 78px;}
+      .hero{padding:100px 0 72px;}
+
+      .footer-social-block{margin-top:6px;}
+      .footer-menu{
+        grid-template-columns:repeat(2,1fr);
+        gap:16px 24px;
+      }
+
+      .footer-bottom-inner{
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+
+      .footer-copy{
+        text-align:left;
+        white-space:normal;
+      }
+    }
+
+    @media(max-width:767.98px){
+      .hero-title{font-size:2.45rem;}
+
+      .header{
+        font-size:.80rem;
+        letter-spacing:.18em;
+      }
+
+      .hero-intro{
+        font-size:.95rem;
+        line-height:1.8;
+      }
+
+      .section-title,
+      .cta-title{
+        font-size:1.45rem;
+      }
+
+      .territory-card img{
+        height:380px;
+      }
+
+      .footer{
+        padding:28px 0 14px;
+      }
+
+      .footer-menu{
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+
+      .footer-menu a{
+        font-size:.90rem;
+      }
+
+      .footer-legal{
+        gap:10px 20px;
+      }
+
+      .footer-legal a,
+      .footer-copy{
+        font-size:.80rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="video-background">
-<video autoplay muted loop playsinline webkit-playsinline>
-<source src="assets/video/abyss-lab.mp4" type="video/mp4">
-</video>
-</div>
+  <!-- BACKGROUND VIDEO -->
+  <div class="video-background">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      webkit-playsinline
+      preload="auto"
+      poster="assets/img/poster.jpg"
+      disablepictureinpicture
+      controlslist="nodownload nofullscreen noremoteplayback"
+      id="bg-video"
+    >
+      <source src="assets/video/abyss-lab.mp4" type="video/mp4">
+    </video>
+  </div>
 
-<!-- HERO -->
-<section class="hero">
-<h1>ABYSS LAB.</h1>
-<p style="letter-spacing:.25em;font-size:.9rem;">FROM DEPTH, DISTINCTION EMERGES</p>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-3">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">ABYSS LAB.</a>
 
-<p>
-Nous explorons ce qui se joue en profondeur pour faire émerger une ligne claire,
-une image juste et une présence qui tient dans le temps.
-</p>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Ouvrir le menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-<div>
-<a href="contact.html" class="btn-custom">Demarrer un projet</a>
-<a href="services.html" class="btn-custom">Services</a>
-</div>
-</section>
+      <div class="collapse navbar-collapse justify-content-end" id="navmenu">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">ACCUEIL</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">SERVICES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="references.html">REFERENCES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-<!-- APPROCHE -->
-<section class="section text-center">
-<p class="kicker">Approche</p>
-<h2 class="title">Rien de distinct ne se construit en surface</h2>
-<p style="max-width:750px;margin:auto;color:var(--soft);line-height:1.9;">
-Chaque marque possède une profondeur souvent sous-exploitée.
-Nous la mettons au jour, puis nous lui donnons une forme lisible,
-désirable et durable.
-</p>
-</section>
+  <!-- HERO -->
+  <section class="hero fade-in">
+    <div class="container">
+      <h1 class="hero-title">ABYSS LAB.</h1>
+      <p class="header">FROM DEPTH, DISTINCTION EMERGES</p>
+      <p class="hero-intro">
+        Nous révélons ce qui distingue profondément les marques premium, luxe, lifestyle et hospitality,
+        puis nous lui donnons une direction, une image et une présence cohérente.
+      </p>
 
-<!-- METHOD -->
-<section class="section-tight">
-<div class="container">
-<div class="row g-4">
+      <div class="hero-cta">
+        <a href="contact.html" class="btn btn-outline-light">Demarrer un projet</a>
+        <a href="services.html" class="btn-light-ghost">Voir les services</a>
+      </div>
+    </div>
+  </section>
 
-<div class="col-md-4">
-<div class="card">
-<p class="kicker">01</p>
-<h3>Reveler</h3>
-<p>Faire apparaître ce qui distingue réellement la marque et affirmer une direction.</p>
-</div>
-</div>
+  <!-- APPROACH INTRO -->
+  <section class="section-space fade-in">
+    <div class="container">
+      <div class="approach-intro">
+        <p class="section-kicker">L'approche Abyss</p>
+        <h2 class="section-title">Plonger plus profond pour faire emerger une ligne claire</h2>
+        <p class="section-text">
+          Chez Abyss Lab, rien d’essentiel ne se joue en surface. Nous allons chercher ce qui donne
+          à une marque sa tenue, son relief et sa distinction, puis nous transformons cette profondeur
+          en territoire lisible, en image juste et en rayonnement durable.
+        </p>
+      </div>
+    </div>
+  </section>
 
-<div class="col-md-4">
-<div class="card">
-<p class="kicker">02</p>
-<h3>Incarner</h3>
-<p>Traduire cette profondeur en image, en contenu et en langage.</p>
-</div>
-</div>
+  <!-- METHOD -->
+  <section class="section-space-tight fade-in">
+    <div class="container">
+      <div class="row g-4 method-grid">
+        <div class="col-12 col-md-4">
+          <div class="method-card">
+            <span class="method-step">01</span>
+            <h3 class="method-title">Reveler</h3>
+            <p class="method-text">
+              Mettre au jour ce qui fonde la singularité d’une marque, clarifier sa posture
+              et lui donner une direction plus nette, plus juste, plus lisible.
+            </p>
+          </div>
+        </div>
 
-<div class="col-md-4">
-<div class="card">
-<p class="kicker">03</p>
-<h3>Deployer</h3>
-<p>Inscrire cette direction sur les bons supports avec précision.</p>
-</div>
-</div>
+        <div class="col-12 col-md-4">
+          <div class="method-card">
+            <span class="method-step">02</span>
+            <h3 class="method-title">Incarner</h3>
+            <p class="method-text">
+              Traduire cette profondeur en territoire, en langage, en contenu et en image
+              pour construire une présence désirable, cohérente et immédiatement identifiable.
+            </p>
+          </div>
+        </div>
 
-</div>
-</div>
-</section>
+        <div class="col-12 col-md-4">
+          <div class="method-card">
+            <span class="method-step">03</span>
+            <h3 class="method-title">Deployer</h3>
+            <p class="method-text">
+              Inscrire cette direction sur les bons leviers — site internet, contenus,
+              visibilité digitale, collaborations, référencement — avec exigence et précision.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- FONDATRICE -->
-<section class="section">
-<div class="container">
-<div class="row align-items-center">
+  <!-- FOUNDER -->
+  <section class="section-space fade-in">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-12 col-md-5 col-lg-5">
+          <div class="founder-image-wrap">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773329727/agence_mathilde_ranchon_jtx26v.jpg" alt="Mathilde Ranchon - Fondatrice Abyss Lab">
+          </div>
+        </div>
 
-<div class="col-md-5">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773329727/agence_mathilde_ranchon_jtx26v.jpg">
-</div>
+        <div class="col-12 col-md-5 col-lg-5 offset-lg-1">
+          <h3 class="founder-title">MATHILDE RANCHON</h3>
+          <p class="founder-subtitle">Fondatrice Abyss Lab.</p>
 
-<div class="col-md-6 offset-md-1">
-<h3 style="font-family:couture;">Mathilde Ranchon</h3>
+          <p class="standard">
+            J’accompagne les marques qui refusent les constructions superficielles,
+            les discours interchangeables et les déploiements sans vision.
+            Celles qui attendent d’un regard extérieur plus qu’une exécution :
+            une lecture, une direction, une exigence réelle.
+          </p>
 
-<p class="text-light">
-J’accompagne les marques qui refusent les constructions superficielles.
-Celles qui attendent un regard, une direction et une exigence réelle.
-</p>
+          <p class="standard">
+            Mon approche articule stratégie de marque, direction éditoriale, sens du détail
+            et maîtrise des leviers digitaux pour transformer une intuition profonde
+            en territoire clair, en présence juste et en rayonnement durable.
+          </p>
 
-<p class="text-light">
-Chaque projet est abordé comme un travail de fond :
-comprendre, structurer, puis faire émerger une présence juste et durable.
-</p>
+          <div class="founder-links">
+            <a href="contact.html" class="btn btn-outline-light">Parler de votre projet</a>
+            <a href="references.html" class="btn-light-ghost">Voir les references</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<a href="contact.html" class="btn-custom">Parler de votre projet</a>
-<a href="references.html" class="btn-custom">References</a>
+  <!-- TERRITORIES -->
+  <section class="section-space fade-in">
+    <div class="container">
+      <div class="territories-intro">
+        <p class="section-kicker">Territoires d'expertise</p>
+        <h2 class="section-title">Trois leviers pour faire emerger une marque</h2>
+        <p class="section-text">
+          Une marque forte ne s’additionne pas. Elle se construit par cohérence :
+          dans sa direction, dans son image et dans la manière dont elle prend place.
+        </p>
+      </div>
 
-</div>
-</div>
-</div>
-</section>
+      <div class="row g-4 territories-grid">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="territory-card">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413429/graphisme_sud_ouest_abyss_lab_cy4dir.jpg" alt="Direction de marque et positionnement">
+            <div class="territory-content">
+              <span class="territory-label">01</span>
+              <h3 class="territory-title">Direction de marque</h3>
+              <p class="territory-text">
+                Clarifier l’ADN, affiner la posture et donner à la marque une ligne plus nette, plus cohérente, plus distinctive.
+              </p>
+            </div>
+            <a href="services.html" class="territory-link" aria-label="Découvrir Direction de marque"></a>
+          </div>
+        </div>
 
-<!-- VISUELS -->
-<section class="section">
-<div class="container">
-<div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="territory-card">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773412647/brand_content_mathilde_ranchon_ucmesi.jpg" alt="Image de marque et brand content">
+            <div class="territory-content">
+              <span class="territory-label">02</span>
+              <h3 class="territory-title">Image & Desirabilite</h3>
+              <p class="territory-text">
+                Traduire la singularité de la marque en contenu, en esthétique, en récit et en présence désirable.
+              </p>
+            </div>
+            <a href="services.html" class="territory-link" aria-label="Découvrir Image et désirabilité"></a>
+          </div>
+        </div>
 
-<div class="col-md-4">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413429/graphisme_sud_ouest_abyss_lab_cy4dir.jpg">
-<h4>Direction de marque</h4>
-</div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="territory-card">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Rayonnement digital et site internet">
+            <div class="territory-content">
+              <span class="territory-label">03</span>
+              <h3 class="territory-title">Rayonnement Digital</h3>
+              <p class="territory-text">
+                Déployer la marque à travers un site, une présence digitale et des leviers pensés pour soutenir sa croissance.
+              </p>
+            </div>
+            <a href="services.html" class="territory-link" aria-label="Découvrir Rayonnement digital"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="col-md-4">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773412647/brand_content_mathilde_ranchon_ucmesi.jpg">
-<h4>Image & desirabilite</h4>
-</div>
+  <!-- FINAL CTA -->
+  <section class="section-space fade-in">
+    <div class="container">
+      <div class="cta-block">
+        <h2 class="cta-title">FAIRE EMERGER CE QUI VOUS DISTINGUE VRAIMENT</h2>
+        <p class="cta-text">
+          Abyss Lab accompagne les marques qui veulent affirmer leur ligne,
+          élever leur image et construire une présence plus juste, plus désirable et plus durable.
+        </p>
+        <a href="contact.html" class="btn btn-outline-light">Demarrer un projet</a>
+      </div>
+    </div>
+  </section>
 
-<div class="col-md-4">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg">
-<h4>Rayonnement digital</h4>
-</div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
 
-</div>
-</div>
-</section>
+      <div class="footer-top">
+        <div class="row align-items-start gy-4">
+          <div class="col-12 col-lg-6">
+            <div class="footer-brand">ABYSS LAB.</div>
 
-<!-- CTA -->
-<section class="section text-center">
-<h2 class="title">Faire emerger ce qui vous distingue</h2>
-<p style="color:var(--soft);max-width:600px;margin:auto;">
-Construire une marque claire, exigeante et mémorable.
-</p>
-<a href="contact.html" class="btn-custom">Demarrer un projet</a>
-</section>
+            <p class="footer-tagline">
+              NOUS REVELONS LA PROFONDEUR DES MARQUES POUR FAIRE EMERGER DES UNIVERS FORTS ET DURABLES.
+            </p>
 
-</body>
-</html>
+            <div class="footer-location">
+              Basée à Bordeaux, disponible partout en France et à l'étranger.
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6 d-lg-flex justify-content-lg-end">
+            <div class="footer-social-block">
+              <div class="footer-social-title">Suivez-nous sur les réseaux :</div>
+
+              <div class="footer-socials">
+                <a class="footer-social" href="https://www.instagram.com/abyss.lab_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Abyss Lab">
+                  <i class="bi bi-instagram"></i>
+                </a>
+
+                <a class="footer-social" href="https://www.linkedin.com/company/abyss-lab/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Abyss Lab">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+
+                <a class="footer-social" href="https://www.tiktok.com/@abyss.lab" target="_blank" rel="noopener noreferrer" aria-label="TikTok Abyss Lab">
+                  <i class="bi bi-tiktok"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-menu-row">
+        <nav class="footer-menu" aria-label="Menu footer">
+          <a href="index.html">Accueil</a>
+          <a href="services.html">Services</a>
+          <a href="references.html">Références</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+          <div class="footer-legal">
+            <a href="mentions-legales.html">Mentions légales</a>
+            <a href="cgu.html">CGU</a>
+            <a href="cgv.html">CGV</a>
+            <a href="politique-confidentialite.html">Politique de confidentialité</a>
+          </div>
+
+          <div class="footer-copy">
+            © 2026 Abyss Lab. Tous droits réservés.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const video = document.getElementById("bg-video");
+      if (!video) return;
+
+      video.muted = true;
+      video.defaultMuted = true;
+      video.setAttribute("muted", "");
+      video.setAttribute("playsinline", "");
+      video.setAttribute("webkit-playsinline", "");
+      video.setAttribute("autoplay", "");
+      video.setAttribute("loop", "");
+
+      const startVideo = () => {
+        const promise = video.play();
+        if (promise !== undefined) {
+          promise.catch(() => {
+            console.log("Autoplay bloqué");
+          });
+        }
+      };
+
+      video.load();
+      startVideo();
+
+      document.addEventListener("touchstart", startVideo, { once: true, passive: true });
+      document.addEventListener("click", startVideo, { once: true });
+      document.addEventListener("visibilitychange", function () {
+        if (!document.hidden) startVideo();
+      });
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const currentLocation = location.pathname.split("/").pop() || "index.html";
+      const menuItems = document.querySelectorAll(".nav-link");
+
+      menuItems.forEach(link => {
+        if (link.getAttribute("href") === currentLocation) {
+          link.classList.add("active");
+        }
+      });
+    });
+
+    window.addEventListener("scroll", function () {
+      const navbar = document.querySelector(".navbar");
+      navbar.classList.toggle("scrolled", window.scrollY > 50);
+    });
+
+    const faders = document.querySelectorAll(".fade-in");
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer){
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      });
+    }, {
+      threshold:0.18
+    });
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
 
 </body>
 </html>
