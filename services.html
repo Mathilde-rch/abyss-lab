@@ -224,11 +224,51 @@
       flex-wrap:wrap;
     }
 
-    /* NAV CHIPS */
+    /* SERVICES NAV */
     .services-nav{
       position:relative;
       z-index:2;
       padding:8px 0 20px;
+    }
+
+    .services-nav-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:12px;
+      gap:12px;
+    }
+
+    .services-nav-title{
+      margin:0;
+      font-size:.74rem;
+      font-weight:700;
+      letter-spacing:.20em;
+      text-transform:uppercase;
+      color:var(--white-soft);
+    }
+
+    .services-nav-hint{
+      display:none;
+      align-items:center;
+      gap:8px;
+      font-size:.68rem;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--white-faint);
+      white-space:nowrap;
+      animation:arrowPulse 1.8s ease-in-out infinite;
+    }
+
+    .services-nav-hint i{
+      font-size:.92rem;
+      line-height:1;
+    }
+
+    @keyframes arrowPulse{
+      0%,100%{transform:translateX(0);opacity:.8;}
+      50%{transform:translateX(4px);opacity:1;}
     }
 
     .services-nav-wrap{
@@ -240,7 +280,9 @@
       -ms-overflow-style:none;
     }
 
-    .services-nav-wrap::-webkit-scrollbar{display:none;}
+    .services-nav-wrap::-webkit-scrollbar{
+      display:none;
+    }
 
     .service-chip{
       flex:0 0 210px;
@@ -740,6 +782,11 @@
     @media (min-width: 992px){
       .services-title{font-size:4.75rem;}
 
+      .services-nav-wrap{
+        justify-content:center;
+        overflow:visible;
+      }
+
       .service-row.reverse-desktop .service-text-col{
         order:2;
       }
@@ -823,6 +870,14 @@
       .services-hero-cta .btn-outline-light,
       .services-hero-cta .btn-light-ghost{
         width:100%;
+      }
+
+      .services-nav-header{
+        align-items:flex-end;
+      }
+
+      .services-nav-hint{
+        display:inline-flex;
       }
 
       .service-chip{
@@ -962,6 +1017,14 @@
     <!-- SERVICE NAV -->
     <section class="services-nav fade-in">
       <div class="container">
+        <div class="services-nav-header">
+          <p class="services-nav-title">Explorer les accompagnements</p>
+          <div class="services-nav-hint">
+            <span>Glisser</span>
+            <i class="bi bi-arrow-right"></i>
+          </div>
+        </div>
+
         <div class="services-nav-wrap">
           <a href="#fondations" class="service-chip" aria-label="Aller à Fondations">
             <div class="service-chip-media">
@@ -1435,4 +1498,5 @@
   </script>
 
 </body>
+</html>
 </html>
