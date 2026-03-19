@@ -141,7 +141,7 @@
 
     .section-title{
       font-family:'couture',sans-serif;
-      font-size:1.82rem;
+      font-size:1.78rem;
       line-height:1.18;
       letter-spacing:.08em;
       text-transform:uppercase;
@@ -151,7 +151,7 @@
 
     .section-text{
       margin:0 auto;
-      max-width:840px;
+      max-width:820px;
       font-size:.98rem;
       line-height:1.8;
       color:var(--white-soft);
@@ -171,42 +171,31 @@
 
     /* HERO */
     .services-hero{
-      padding:94px 0 22px;
+      padding:94px 0 18px;
       position:relative;
       z-index:2;
     }
 
     .services-hero-inner{
-      max-width:880px;
+      max-width:760px;
       margin:0 auto;
       text-align:center;
     }
 
     .services-seo-title{
-      margin:0 0 12px;
-      font-size:.80rem;
+      margin:0 0 10px;
+      font-size:.78rem;
       font-weight:700;
       letter-spacing:.22em;
       text-transform:uppercase;
       color:var(--white-soft);
     }
 
-    .services-title{
-      font-family:'couture',sans-serif;
-      font-size:2.25rem;
-      line-height:1.04;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      margin:0 auto 12px;
-      max-width:540px;
-      color:var(--white);
-    }
-
     .services-intro{
       max-width:620px;
       margin:0 auto;
       text-align:center;
-      font-size:.95rem;
+      font-size:.96rem;
       line-height:1.74;
       color:var(--white-soft);
     }
@@ -223,7 +212,7 @@
     .services-nav{
       position:relative;
       z-index:2;
-      padding:14px 0 24px;
+      padding:16px 0 26px;
     }
 
     .services-nav-head{
@@ -322,13 +311,12 @@
     .services-method{
       position:relative;
       z-index:2;
-      padding:6px 0 24px;
+      padding:6px 0 18px;
     }
 
     .services-method-box{
       border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-      padding:30px 0;
+      padding:28px 0 0;
     }
 
     .method-head{
@@ -375,12 +363,19 @@
     .services-wrapper{
       position:relative;
       z-index:2;
-      padding:6px 0 26px;
+      padding:0 0 26px;
+      border-top:1px solid var(--line);
+      margin-top:24px;
     }
 
     .service-section{
-      border-top:1px solid var(--line);
       padding:74px 0;
+      border-top:1px solid var(--line);
+    }
+
+    .service-section:first-child{
+      border-top:none;
+      padding-top:58px;
     }
 
     .service-row{
@@ -520,6 +515,13 @@
       line-height:1.8;
       color:var(--white-soft);
       margin-bottom:22px;
+    }
+
+    .cta-actions{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
     }
 
     /* FOOTER */
@@ -693,10 +695,6 @@
     }
 
     @media(max-width:991.98px){
-      .section-space{padding:46px 0;}
-      .section-space-tight{padding:10px 0 42px;}
-      .section-space-compact{padding:34px 0;}
-
       .services-hero{padding:88px 0 24px;}
 
       .service-section-text{
@@ -733,8 +731,7 @@
         margin-bottom:10px;
       }
 
-      .services-seo-title,
-      .services-baseline{
+      .services-seo-title{
         font-size:.70rem;
         letter-spacing:.14em;
       }
@@ -757,7 +754,9 @@
       }
 
       .services-hero-cta .btn-outline-light,
-      .services-hero-cta .btn-light-ghost{
+      .services-hero-cta .btn-light-ghost,
+      .cta-actions .btn-outline-light,
+      .cta-actions .btn-light-ghost{
         width:100%;
       }
 
@@ -818,6 +817,10 @@
 
       .service-section{
         padding:50px 0;
+      }
+
+      .service-section:first-child{
+        padding-top:42px;
       }
 
       .service-section-media{
@@ -917,15 +920,13 @@
       <div class="container">
         <div class="services-hero-inner">
           <p class="services-seo-title">SERVICES ABYSS LAB</p>
-          <h2 class="services-title">PLUS JUSTE</h2>
-          <p class="services-baseline">Strategie, image, contenu et rayonnement digital</p>
           <p class="services-intro">
-            Abyss Lab accompagne les marques premium, luxe, hospitality et art de vivre qui veulent gagner en netteté, en désirabilité et en tenue.
+            Stratégie, image, contenu et rayonnement digital pour les marques premium, luxe, hospitality et art de vivre.
           </p>
 
           <div class="services-hero-cta">
             <a href="#accompagnements" class="btn btn-outline-light">DECOUVRIR LES ACCOMPAGNEMENTS</a>
-            <a href="contact.html" class="btn-light-ghost">DEMARRER UN PROJET</a>
+            <a href="references.html" class="btn-light-ghost">VOIR LES REFERENCES</a>
           </div>
         </div>
       </div>
@@ -1017,7 +1018,7 @@
               <div class="method-card">
                 <span class="method-step">03</span>
                 <h3 class="method-title">Incarner</h3>
-                <p class="method-text">Transformer cette matière en image, contenu et présence crédible.</p>
+                <p class="method-text">Traduire la marque en image, en contenu et en présence crédible.</p>
               </div>
             </div>
 
@@ -1220,7 +1221,10 @@
           <p class="cta-text">
             Abyss Lab accompagne les marques qui veulent gagner en netteté, en désirabilité et en force de présence.
           </p>
-          <a href="contact.html" class="btn btn-outline-light">DEMARRER UN PROJET</a>
+          <div class="cta-actions">
+            <a href="contact.html" class="btn btn-outline-light">DEMARRER UN PROJET</a>
+            <a href="references.html" class="btn-light-ghost">VOIR LES REFERENCES</a>
+          </div>
         </div>
       </div>
     </section>
