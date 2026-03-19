@@ -23,7 +23,6 @@
       --line:rgba(255,255,255,.14);
       --line-soft:rgba(255,255,255,.10);
       --glass:rgba(255,255,255,.035);
-      --glass-strong:rgba(255,255,255,.05);
       --bg:#000000;
     }
 
@@ -39,9 +38,9 @@
     a{transition:all .3s ease;}
     img,video{max-width:100%;display:block;}
 
-    .section-space{padding:68px 0;}
-    .section-space-compact{padding:38px 0;}
-    .section-space-tight{padding:10px 0 52px;}
+    .section-space{padding:64px 0;}
+    .section-space-compact{padding:34px 0;}
+    .section-space-tight{padding:10px 0 48px;}
 
     .video-background{
       position:fixed;
@@ -176,7 +175,7 @@
 
     /* HERO */
     .services-hero{
-      padding:96px 0 28px;
+      padding:92px 0 24px;
       position:relative;
       z-index:2;
     }
@@ -226,17 +225,70 @@
       flex-wrap:wrap;
     }
 
+    /* METHOD FIRST */
+    .services-method{
+      position:relative;
+      z-index:2;
+      padding:10px 0 26px;
+    }
+
+    .services-method-box{
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      padding:30px 0;
+    }
+
+    .method-head{
+      max-width:860px;
+      margin:0 auto 22px;
+      text-align:center;
+    }
+
+    .method-card{
+      height:100%;
+      border:1px solid rgba(255,255,255,.14);
+      background:var(--glass);
+      padding:24px 20px;
+      backdrop-filter:blur(8px);
+    }
+
+    .method-step{
+      display:inline-block;
+      margin-bottom:10px;
+      font-size:.74rem;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--white-soft);
+    }
+
+    .method-title{
+      font-family:'couture',sans-serif;
+      font-size:.96rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--white);
+      margin-bottom:10px;
+    }
+
+    .method-text{
+      margin:0;
+      font-size:.91rem;
+      line-height:1.7;
+      color:var(--white-soft);
+    }
+
     /* SERVICES TOP NAV */
     .services-nav{
       position:relative;
       z-index:2;
-      padding:12px 0 24px;
+      padding:10px 0 20px;
     }
 
     .services-nav-head{
       position:relative;
       margin:0 auto 14px;
-      max-width:1120px;
+      max-width:1160px;
       min-height:20px;
       display:flex;
       align-items:center;
@@ -282,7 +334,7 @@
 
     .services-nav-outer{
       position:relative;
-      max-width:1120px;
+      max-width:1160px;
       margin:0 auto;
     }
 
@@ -295,12 +347,10 @@
       -ms-overflow-style:none;
     }
 
-    .services-nav-wrap::-webkit-scrollbar{
-      display:none;
-    }
+    .services-nav-wrap::-webkit-scrollbar{display:none;}
 
     .service-chip{
-      flex:0 0 245px;
+      flex:0 0 255px;
       text-decoration:none;
       color:#fff;
       transition:transform .35s ease;
@@ -313,7 +363,7 @@
 
     .service-chip-media{
       position:relative;
-      height:270px;
+      height:285px;
       overflow:hidden;
       border:1px solid rgba(255,255,255,.14);
       background:rgba(255,255,255,.03);
@@ -336,7 +386,7 @@
 
     .service-chip-label{
       font-family:'couture',sans-serif;
-      font-size:.98rem;
+      font-size:1rem;
       letter-spacing:.10em;
       text-transform:uppercase;
       margin:0 0 4px;
@@ -353,75 +403,21 @@
       color:var(--white-faint);
     }
 
-    /* IMPACT */
-    .services-impact{
-      position:relative;
-      z-index:2;
-      padding:6px 0 16px;
-    }
-
-    .impact-wrap{
-      border-top:1px solid var(--line);
-      padding-top:22px;
-    }
-
-    .impact-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:14px;
-    }
-
-    .impact-card{
-      border:1px solid rgba(255,255,255,.14);
-      background:var(--glass);
-      padding:22px 20px;
-      backdrop-filter:blur(8px);
-      min-height:145px;
-    }
-
-    .impact-number{
-      display:inline-block;
-      margin-bottom:10px;
-      font-size:.72rem;
-      font-weight:700;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:var(--white-soft);
-    }
-
-    .impact-title{
-      font-family:'couture',sans-serif;
-      font-size:.94rem;
-      letter-spacing:.10em;
-      text-transform:uppercase;
-      color:var(--white);
-      margin-bottom:10px;
-      line-height:1.4;
-    }
-
-    .impact-text{
-      margin:0;
-      font-size:.91rem;
-      line-height:1.7;
-      color:var(--white-soft);
-    }
-
-    /* DIFFERENCE - more editorial */
+    /* DIFFERENCE / IMPACT */
     .difference{
       position:relative;
       z-index:2;
-      padding:18px 0 18px;
+      padding:12px 0 18px;
     }
 
     .difference-wrap{
       border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-      padding:28px 0;
+      padding-top:24px;
     }
 
     .difference-grid{
       display:grid;
-      grid-template-columns:1.1fr .9fr;
+      grid-template-columns:1.05fr .95fr;
       gap:28px;
       align-items:start;
     }
@@ -445,26 +441,22 @@
       color:var(--white-soft);
     }
 
-    .difference-list{
-      display:flex;
-      flex-direction:column;
-      gap:16px;
-      padding-top:4px;
+    .difference-points{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
     }
 
-    .difference-line{
-      padding-bottom:14px;
-      border-bottom:1px solid rgba(255,255,255,.12);
+    .difference-point{
+      border:1px solid rgba(255,255,255,.14);
+      background:var(--glass);
+      padding:18px 18px;
+      backdrop-filter:blur(8px);
     }
 
-    .difference-line:last-child{
-      border-bottom:none;
-      padding-bottom:0;
-    }
-
-    .difference-line strong{
+    .difference-point strong{
       display:block;
-      margin-bottom:4px;
+      margin-bottom:6px;
       font-size:.78rem;
       font-weight:700;
       letter-spacing:.18em;
@@ -472,7 +464,7 @@
       color:var(--white);
     }
 
-    .difference-line span{
+    .difference-point span{
       display:block;
       font-size:.92rem;
       line-height:1.68;
@@ -496,11 +488,11 @@
     }
 
     .service-text-col{
-      order:1;
+      order:2;
     }
 
     .service-media-col{
-      order:2;
+      order:1;
     }
 
     .service-section-text{
@@ -596,59 +588,6 @@
       width:100%;
       height:690px;
       object-fit:cover;
-    }
-
-    /* METHOD */
-    .services-method{
-      position:relative;
-      z-index:2;
-      padding:8px 0 54px;
-    }
-
-    .services-method-box{
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-      padding:34px 0;
-    }
-
-    .method-head{
-      max-width:860px;
-      margin:0 auto 24px;
-      text-align:center;
-    }
-
-    .method-card{
-      height:100%;
-      border:1px solid rgba(255,255,255,.14);
-      background:var(--glass);
-      padding:24px 20px;
-      backdrop-filter:blur(8px);
-    }
-
-    .method-step{
-      display:inline-block;
-      margin-bottom:10px;
-      font-size:.74rem;
-      font-weight:700;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:var(--white-soft);
-    }
-
-    .method-title{
-      font-family:'couture',sans-serif;
-      font-size:.96rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:var(--white);
-      margin-bottom:10px;
-    }
-
-    .method-text{
-      margin:0;
-      font-size:.91rem;
-      line-height:1.7;
-      color:var(--white-soft);
     }
 
     /* CTA */
@@ -844,11 +783,11 @@
         overflow:visible;
       }
 
-      .service-row.reverse-desktop .service-text-col{
+      .service-row.reverse-desktop .service-media-col{
         order:2;
       }
 
-      .service-row.reverse-desktop .service-media-col{
+      .service-row.reverse-desktop .service-text-col{
         order:1;
       }
     }
@@ -858,11 +797,7 @@
       .section-space-tight{padding:10px 0 42px;}
       .section-space-compact{padding:34px 0;}
 
-      .services-hero{padding:90px 0 28px;}
-
-      .impact-grid{
-        grid-template-columns:1fr;
-      }
+      .services-hero{padding:88px 0 24px;}
 
       .difference-grid{
         grid-template-columns:1fr;
@@ -911,12 +846,11 @@
 
       .services-intro,
       .section-text,
-      .impact-text,
-      .service-text,
       .method-text,
-      .cta-text,
       .difference-copy,
-      .difference-line span{
+      .difference-point span,
+      .service-text,
+      .cta-text{
         font-size:.92rem;
         line-height:1.72;
       }
@@ -926,7 +860,7 @@
       .section-space-compact{padding:28px 0;}
 
       .services-hero{
-        padding:84px 0 24px;
+        padding:82px 0 22px;
       }
 
       .services-hero-cta{
@@ -953,11 +887,11 @@
       }
 
       .service-chip{
-        flex:0 0 190px;
+        flex:0 0 205px;
       }
 
       .service-chip-media{
-        height:205px;
+        height:220px;
       }
 
       .service-title,
@@ -976,7 +910,7 @@
       }
 
       .service-section-media{
-        margin-top:18px;
+        margin-bottom:18px;
       }
 
       .service-section-media img,
@@ -1085,305 +1019,6 @@
       </div>
     </section>
 
-    <!-- SERVICE NAV -->
-    <section class="services-nav fade-in">
-      <div class="container">
-        <div class="services-nav-head">
-          <p class="services-nav-title">Explorer les accompagnements</p>
-          <div class="services-nav-hint">
-            <span>Glisser</span>
-            <i class="bi bi-arrow-right"></i>
-          </div>
-        </div>
-
-        <div class="services-nav-outer">
-          <div class="services-nav-wrap">
-            <a href="#fondations" class="service-chip" aria-label="Aller à Fondations">
-              <div class="service-chip-media">
-                <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Stratégie de marque et positionnement">
-              </div>
-              <h2 class="service-chip-label">Fondations</h2>
-              <p class="service-chip-meta">positionnement</p>
-            </a>
-
-            <a href="#image-presence" class="service-chip" aria-label="Aller à Image et présence">
-              <div class="service-chip-media">
-                <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944261/1_u4uw1i.jpg" alt="Image de marque et brand content">
-              </div>
-              <h2 class="service-chip-label">Image & presence</h2>
-              <p class="service-chip-meta">contenu & site</p>
-            </a>
-
-            <a href="#activation" class="service-chip" aria-label="Aller à Activation">
-              <div class="service-chip-media">
-                <video autoplay muted loop playsinline>
-                  <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/15_bfvtos.mp4" type="video/mp4">
-                </video>
-              </div>
-              <h2 class="service-chip-label">Activation</h2>
-              <p class="service-chip-meta">visibilité</p>
-            </a>
-
-            <a href="#pilotage" class="service-chip" aria-label="Aller à Pilotage">
-              <div class="service-chip-media">
-                <video autoplay muted loop playsinline>
-                  <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/16_phtw8d.mp4" type="video/mp4">
-                </video>
-              </div>
-              <h2 class="service-chip-label">Pilotage</h2>
-              <p class="service-chip-meta">accompagnement</p>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- IMPACT -->
-    <section class="services-impact fade-in">
-      <div class="container">
-        <div class="impact-wrap">
-          <div class="impact-grid">
-            <article class="impact-card">
-              <span class="impact-number">01</span>
-              <h2 class="impact-title">PLUS DE NETTETE</h2>
-              <p class="impact-text">Un positionnement plus clair, une direction plus lisible, une marque plus juste.</p>
-            </article>
-
-            <article class="impact-card">
-              <span class="impact-number">02</span>
-              <h2 class="impact-title">PLUS DE DESIRABILITE</h2>
-              <p class="impact-text">Une image, un site et des contenus capables de hausser la perception de la marque.</p>
-            </article>
-
-            <article class="impact-card">
-              <span class="impact-number">03</span>
-              <h2 class="impact-title">PLUS DE TENUE</h2>
-              <p class="impact-text">Une cohérence réelle entre le fond, la forme et la manière dont la marque prend place.</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- DIFFERENCE -->
-    <section class="difference fade-in">
-      <div class="container">
-        <div class="difference-wrap">
-          <div class="difference-grid">
-            <div>
-              <p class="section-kicker">Pourquoi Abyss Lab.</p>
-              <h2 class="difference-lead">UNE MARQUE FORTE NE SE DECORE PAS. ELLE SE TIENT.</h2>
-              <p class="difference-copy">
-                Abyss Lab travaille ce qui donne à une marque sa densité, sa précision et sa capacité à durer : le fond, la forme, puis la manière dont elle prend réellement place.
-              </p>
-            </div>
-
-            <div class="difference-list">
-              <div class="difference-line">
-                <strong>Lire juste</strong>
-                <span>Comprendre ce qui distingue réellement la marque avant d’en produire l’image.</span>
-              </div>
-              <div class="difference-line">
-                <strong>Élever sans surjouer</strong>
-                <span>Construire une présence premium avec plus de tension, plus de précision, plus de cohérence.</span>
-              </div>
-              <div class="difference-line">
-                <strong>Déployer pour de vrai</strong>
-                <span>Site, contenus, visibilité, activation : une direction qui se traduit dans l’exécution.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="services-wrapper" id="accompagnements">
-      <div class="container">
-
-        <!-- FONDATIONS -->
-        <section class="service-section fade-in" id="fondations">
-          <div class="row gy-4 gy-lg-5 service-row">
-            <div class="col-12 col-lg-6 service-text-col">
-              <div class="service-section-text">
-                <span class="service-index">01 / Accompagnement</span>
-                <h2 class="service-title">FONDATIONS</h2>
-                <p class="service-subtitle">Positionnement, direction, stratégie</p>
-                <p class="service-hook">Rendre la marque plus nette avant de la rendre visible.</p>
-                <p class="service-text">
-                  Clarifier ce qui la distingue, poser une ligne plus juste, structurer les messages et hiérarchiser les bons leviers.
-                </p>
-
-                <div class="service-grid">
-                  <div class="service-card">
-                    <span class="service-card-title">Positionnement</span>
-                    <p class="service-card-text">Faire émerger ce qui rend la marque singulière.</p>
-                  </div>
-                  <div class="service-card">
-                    <span class="service-card-title">Messages</span>
-                    <p class="service-card-text">Donner au discours plus de netteté et de tenue.</p>
-                  </div>
-                  <div class="service-card">
-                    <span class="service-card-title">Vision</span>
-                    <p class="service-card-text">Identifier les bons axes marketing et communication.</p>
-                  </div>
-                  <div class="service-card">
-                    <span class="service-card-title">Feuille de route</span>
-                    <p class="service-card-text">Prioriser pour avancer sans dispersion.</p>
-                  </div>
-                </div>
-
-                <a href="contact.html" class="btn btn-outline-light">PARLER DE VOTRE PROJET</a>
-              </div>
-            </div>
-
-            <div class="col-12 col-lg-6 service-media-col">
-              <div class="service-section-media">
-                <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Stratégie de marque, positionnement et direction marketing pour marque premium">
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- IMAGE -->
-        <section class="service-section fade-in" id="image-presence">
-          <div class="row gy-4 gy-lg-5 service-row reverse-desktop">
-            <div class="col-12 col-lg-6 service-text-col">
-              <div class="service-section-text">
-                <span class="service-index">02 / Accompagnement</span>
-                <h2 class="service-title">IMAGE & PRESENCE</h2>
-                <p class="service-subtitle">Site web, brand content, image de marque</p>
-                <p class="service-hook">Donner au fond une forme qui se voit immédiatement.</p>
-                <p class="service-text">
-                  Site, direction artistique, contenus et SEO : une présence plus premium, plus cohérente, plus convaincante.
-                </p>
-
-                <div class="service-grid">
-                  <div class="service-card">
-                    <span class="service-card-title">Site web</span>
-                    <p class="service-card-text">Une vitrine pensée pour l’image et la conversion.</p>
-                  </div>
-                  <div class="service-card">
-                    <span class="service-card-title">Brand content</span>
-                    <p class="service-card-text">Photos, vidéos et contenus qui élèvent la perception.</p>
-                  </div>
-                  <div class="service-card">
-                    <span class="service-card-title">Direction artistique</span>
-                    <p class="service-card-text">Une cohérence visuelle sur tous les points de contact.</p>
-                  </div>
-                  <div class="service-card">
-                    <span class="service-card-title">SEO</span>
-                    <p class="service-card-text">Des pages mieux structurées pour mieux émerger.</p>
-                  </div>
-                </div>
-
-                <a href="contact.html" class="btn btn-outline-light">PARLER DE VOTRE PROJET</a>
-              </div>
-            </div>
-
-            <div class="col-12 col-lg-6 service-media-col">
-              <div class="service-section-media">
-                <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944261/1_u4uw1i.jpg" alt="Image de marque, brand content et site internet premium">
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- ACTIVATION -->
-        <section class="service-section fade-in" id="activation">
-          <div class="row gy-4 gy-lg-5 service-row">
-            <div class="col-12 col-lg-6 service-text-col">
-              <div class="service-section-text">
-                <span class="service-index">03 / Accompagnement</span>
-                <h2 class="service-title">ACTIVATION</h2>
-                <p class="service-subtitle">Social media, acquisition, visibilité</p>
-                <p class="service-hook">Faire prendre place à la marque sans l’affaiblir.</p>
-                <p class="service-text">
-                  Réseaux sociaux, contenus, campagnes et amplification : les bons leviers pour renforcer visibilité, désirabilité et engagement.
-                </p>
-
-                <div class="service-grid">
-                  <div class="service-card">
-                    <span class="service-card-title">Social media</span>
-                    <p class="service-card-text">Rythme éditorial, contenus et animation.</p>
-                  </div>
-                  <div class="service-card">
-                    <span class="service-card-title">Ads</span>
-                    <p class="service-card-text">Campagnes ciblées au service de la visibilité.</p>
-                  </div>
-                  <div class="service-card">
-                    <span class="service-card-title">Acquisition</span>
-                    <p class="service-card-text">Des leviers pensés pour soutenir la croissance.</p>
-                  </div>
-                  <div class="service-card">
-                    <span class="service-card-title">Influence</span>
-                    <p class="service-card-text">Des activations choisies pour faire rayonner juste.</p>
-                  </div>
-                </div>
-
-                <a href="contact.html" class="btn btn-outline-light">PARLER DE VOTRE PROJET</a>
-              </div>
-            </div>
-
-            <div class="col-12 col-lg-6 service-media-col">
-              <div class="service-section-media">
-                <video autoplay muted loop playsinline>
-                  <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/15_bfvtos.mp4" type="video/mp4">
-                </video>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- PILOTAGE -->
-        <section class="service-section fade-in" id="pilotage">
-          <div class="row gy-4 gy-lg-5 service-row reverse-desktop">
-            <div class="col-12 col-lg-6 service-text-col">
-              <div class="service-section-text">
-                <span class="service-index">04 / Accompagnement</span>
-                <h2 class="service-title">PILOTAGE</h2>
-                <p class="service-subtitle">Accompagnement continu</p>
-                <p class="service-hook">Garder le cap pendant que la marque change d’échelle.</p>
-                <p class="service-text">
-                  Coordination, suivi, arbitrages et vision d’ensemble pour faire évoluer la marque sans perdre sa cohérence profonde.
-                </p>
-
-                <div class="service-grid">
-                  <div class="service-card">
-                    <span class="service-card-title">Pilotage</span>
-                    <p class="service-card-text">Suivi stratégique et priorisation continue.</p>
-                  </div>
-                  <div class="service-card">
-                    <span class="service-card-title">Coordination</span>
-                    <p class="service-card-text">Lien entre contenus, supports, campagnes et prestataires.</p>
-                  </div>
-                  <div class="service-card">
-                    <span class="service-card-title">Evolution</span>
-                    <p class="service-card-text">Optimiser sans perdre la cohérence d’ensemble.</p>
-                  </div>
-                  <div class="service-card">
-                    <span class="service-card-title">Souplesse</span>
-                    <p class="service-card-text">Un accompagnement ajusté au vrai rythme de la marque.</p>
-                  </div>
-                </div>
-
-                <a href="contact.html" class="btn btn-outline-light">PARLER DE VOTRE PROJET</a>
-              </div>
-            </div>
-
-            <div class="col-12 col-lg-6 service-media-col">
-              <div class="service-section-media">
-                <video autoplay muted loop playsinline>
-                  <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/16_phtw8d.mp4" type="video/mp4">
-                </video>
-              </div>
-            </div>
-          </div>
-        </section>
-
-      </div>
-    </section>
-
     <!-- METHOD -->
     <section class="services-method fade-in">
       <div class="container">
@@ -1430,6 +1065,274 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- SERVICE NAV -->
+    <section class="services-nav fade-in">
+      <div class="container">
+        <div class="services-nav-head">
+          <p class="services-nav-title">Explorer les accompagnements</p>
+          <div class="services-nav-hint">
+            <span>Glisser</span>
+            <i class="bi bi-arrow-right"></i>
+          </div>
+        </div>
+
+        <div class="services-nav-outer">
+          <div class="services-nav-wrap">
+            <a href="#fondations" class="service-chip" aria-label="Aller à Fondations">
+              <div class="service-chip-media">
+                <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Stratégie de marque et positionnement">
+              </div>
+              <h2 class="service-chip-label">Fondations</h2>
+              <p class="service-chip-meta">positionnement</p>
+            </a>
+
+            <a href="#image-presence" class="service-chip" aria-label="Aller à Image et présence">
+              <div class="service-chip-media">
+                <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944261/1_u4uw1i.jpg" alt="Image de marque et brand content">
+              </div>
+              <h2 class="service-chip-label">Image & présence</h2>
+              <p class="service-chip-meta">contenu & site</p>
+            </a>
+
+            <a href="#activation" class="service-chip" aria-label="Aller à Activation">
+              <div class="service-chip-media">
+                <video autoplay muted loop playsinline>
+                  <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/15_bfvtos.mp4" type="video/mp4">
+                </video>
+              </div>
+              <h2 class="service-chip-label">Activation</h2>
+              <p class="service-chip-meta">visibilité</p>
+            </a>
+
+            <a href="#pilotage" class="service-chip" aria-label="Aller à Pilotage">
+              <div class="service-chip-media">
+                <video autoplay muted loop playsinline>
+                  <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/16_phtw8d.mp4" type="video/mp4">
+                </video>
+              </div>
+              <h2 class="service-chip-label">Pilotage</h2>
+              <p class="service-chip-meta">accompagnement</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFFERENCE -->
+    <section class="difference fade-in">
+      <div class="container">
+        <div class="difference-wrap">
+          <div class="difference-grid">
+            <div>
+              <p class="section-kicker">Pourquoi Abyss Lab.</p>
+              <h2 class="difference-lead">UNE MARQUE FORTE NE SE DECORE PAS. ELLE SE TIENT.</h2>
+              <p class="difference-copy">
+                Abyss Lab travaille ce qui donne à une marque sa densité, sa précision et sa capacité à durer : le fond, la forme, puis la manière dont elle prend réellement place.
+              </p>
+            </div>
+
+            <div class="difference-points">
+              <div class="difference-point">
+                <strong>Lire juste</strong>
+                <span>Comprendre ce qui distingue réellement la marque avant d’en produire l’image.</span>
+              </div>
+              <div class="difference-point">
+                <strong>Élever sans surjouer</strong>
+                <span>Construire une présence premium avec plus de tension, plus de précision, plus de cohérence.</span>
+              </div>
+              <div class="difference-point">
+                <strong>Déployer pour de vrai</strong>
+                <span>Site, contenus, visibilité, activation : une direction qui se traduit dans l’exécution.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services-wrapper" id="accompagnements">
+      <div class="container">
+
+        <!-- FONDATIONS -->
+        <section class="service-section fade-in" id="fondations">
+          <div class="row gy-4 gy-lg-5 service-row">
+            <div class="col-12 col-lg-6 service-media-col">
+              <div class="service-section-media">
+                <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Stratégie de marque, positionnement et direction marketing pour marque premium">
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 service-text-col">
+              <div class="service-section-text">
+                <span class="service-index">01 / Accompagnement</span>
+                <h2 class="service-title">FONDATIONS</h2>
+                <p class="service-subtitle">Positionnement, direction, stratégie</p>
+                <p class="service-hook">Rendre la marque plus nette avant de la rendre visible.</p>
+                <p class="service-text">
+                  Clarifier ce qui la distingue, poser une ligne plus juste, structurer les messages et hiérarchiser les bons leviers.
+                </p>
+
+                <div class="service-grid">
+                  <div class="service-card">
+                    <span class="service-card-title">Positionnement</span>
+                    <p class="service-card-text">Faire émerger ce qui rend la marque singulière.</p>
+                  </div>
+                  <div class="service-card">
+                    <span class="service-card-title">Messages</span>
+                    <p class="service-card-text">Donner au discours plus de netteté et de tenue.</p>
+                  </div>
+                  <div class="service-card">
+                    <span class="service-card-title">Vision</span>
+                    <p class="service-card-text">Identifier les bons axes marketing et communication.</p>
+                  </div>
+                  <div class="service-card">
+                    <span class="service-card-title">Feuille de route</span>
+                    <p class="service-card-text">Prioriser pour avancer sans dispersion.</p>
+                  </div>
+                </div>
+
+                <a href="contact.html" class="btn btn-outline-light">PARLER DE VOTRE PROJET</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- IMAGE -->
+        <section class="service-section fade-in" id="image-presence">
+          <div class="row gy-4 gy-lg-5 service-row reverse-desktop">
+            <div class="col-12 col-lg-6 service-media-col">
+              <div class="service-section-media">
+                <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944261/1_u4uw1i.jpg" alt="Image de marque, brand content et site internet premium">
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 service-text-col">
+              <div class="service-section-text">
+                <span class="service-index">02 / Accompagnement</span>
+                <h2 class="service-title">IMAGE & PRESENCE</h2>
+                <p class="service-subtitle">Site web, brand content, image de marque</p>
+                <p class="service-hook">Donner au fond une forme qui se voit immédiatement.</p>
+                <p class="service-text">
+                  Site, direction artistique, contenus et SEO : une présence plus premium, plus cohérente, plus convaincante.
+                </p>
+
+                <div class="service-grid">
+                  <div class="service-card">
+                    <span class="service-card-title">Site web</span>
+                    <p class="service-card-text">Une vitrine pensée pour l’image et la conversion.</p>
+                  </div>
+                  <div class="service-card">
+                    <span class="service-card-title">Brand content</span>
+                    <p class="service-card-text">Photos, vidéos et contenus qui élèvent la perception.</p>
+                  </div>
+                  <div class="service-card">
+                    <span class="service-card-title">Direction artistique</span>
+                    <p class="service-card-text">Une cohérence visuelle sur tous les points de contact.</p>
+                  </div>
+                  <div class="service-card">
+                    <span class="service-card-title">SEO</span>
+                    <p class="service-card-text">Des pages mieux structurées pour mieux émerger.</p>
+                  </div>
+                </div>
+
+                <a href="contact.html" class="btn btn-outline-light">PARLER DE VOTRE PROJET</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ACTIVATION -->
+        <section class="service-section fade-in" id="activation">
+          <div class="row gy-4 gy-lg-5 service-row">
+            <div class="col-12 col-lg-6 service-media-col">
+              <div class="service-section-media">
+                <video autoplay muted loop playsinline>
+                  <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/15_bfvtos.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 service-text-col">
+              <div class="service-section-text">
+                <span class="service-index">03 / Accompagnement</span>
+                <h2 class="service-title">ACTIVATION</h2>
+                <p class="service-subtitle">Social media, acquisition, visibilité</p>
+                <p class="service-hook">Faire prendre place à la marque sans l’affaiblir.</p>
+                <p class="service-text">
+                  Réseaux sociaux, contenus, campagnes et amplification : les bons leviers pour renforcer visibilité, désirabilité et engagement.
+                </p>
+
+                <div class="service-grid">
+                  <div class="service-card">
+                    <span class="service-card-title">Social media</span>
+                    <p class="service-card-text">Rythme éditorial, contenus et animation.</p>
+                  </div>
+                  <div class="service-card">
+                    <span class="service-card-title">Ads</span>
+                    <p class="service-card-text">Campagnes ciblées au service de la visibilité.</p>
+                  </div>
+                  <div class="service-card">
+                    <span class="service-card-title">Acquisition</span>
+                    <p class="service-card-text">Des leviers pensés pour soutenir la croissance.</p>
+                  </div>
+                  <div class="service-card">
+                    <span class="service-card-title">Influence</span>
+                    <p class="service-card-text">Des activations choisies pour faire rayonner juste.</p>
+                  </div>
+                </div>
+
+                <a href="contact.html" class="btn btn-outline-light">PARLER DE VOTRE PROJET</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PILOTAGE -->
+        <section class="service-section fade-in" id="pilotage">
+          <div class="row gy-4 gy-lg-5 service-row reverse-desktop">
+            <div class="col-12 col-lg-6 service-media-col">
+              <div class="service-section-media">
+                <video autoplay muted loop playsinline>
+                  <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/16_phtw8d.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 service-text-col">
+              <div class="service-section-text">
+                <span class="service-index">04 / Accompagnement</span>
+                <h2 class="service-title">PILOTAGE</h2>
+                <p class="service-subtitle">Accompagnement continu</p>
+                <p class="service-hook">Garder le cap pendant que la marque change d’échelle.</p>
+                <p class="service-text">
+                  Coordination, suivi, arbitrages et vision d’ensemble pour faire évoluer la marque sans perdre sa cohérence profonde.
+                </p>
+
+                <div class="service-grid">
+                  <div class="service-card">
+                    <span class="service-card-title">Pilotage</span>
+                    <p class="service-card-text">Suivi stratégique et priorisation continue.</p>
+                  </div>
+                  <div class="service-card">
+                    <span class="service-card-title">Coordination</span>
+                    <p class="service-card-text">Lien entre contenus, supports, campagnes et prestataires.</p>
+                  </div>
+                  <div class="service-card">
+                    <span class="service-card-title">Evolution</span>
+                    <p class="service-card-text">Optimiser sans perdre la cohérence d’ensemble.</p>
+                  </div>
+                  <div class="service-card">
+                    <span class="service-card-title">Souplesse</span>
+                    <p class="service-card-text">Un accompagnement ajusté au vrai rythme de la marque.</p>
+                  </div>
+                </div>
+
+                <a href="contact.html" class="btn btn-outline-light">PARLER DE VOTRE PROJET</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
       </div>
     </section>
 
@@ -1531,9 +1434,7 @@
       const startVideo = () => {
         const promise = video.play();
         if (promise !== undefined) {
-          promise.catch(() => {
-            console.log("Autoplay bloqué");
-          });
+          promise.catch(() => {});
         }
       };
 
@@ -1581,6 +1482,9 @@
       });
     });
   </script>
+
+</body>
+</html>
 
 </body>
 </html>
