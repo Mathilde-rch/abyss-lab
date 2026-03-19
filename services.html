@@ -38,9 +38,9 @@
     a{transition:all .3s ease;}
     img,video{max-width:100%;display:block;}
 
-    .section-space{padding:64px 0;}
-    .section-space-compact{padding:34px 0;}
-    .section-space-tight{padding:10px 0 48px;}
+    .section-space{padding:68px 0;}
+    .section-space-compact{padding:36px 0;}
+    .section-space-tight{padding:8px 0 44px;}
 
     .video-background{
       position:fixed;
@@ -61,8 +61,8 @@
       position:absolute;
       inset:0;
       background:
-        linear-gradient(to bottom, rgba(0,0,0,.40), rgba(0,0,0,.78) 40%, rgba(0,0,0,.94) 100%),
-        rgba(0,0,0,.18);
+        linear-gradient(to bottom, rgba(0,0,0,.40), rgba(0,0,0,.78) 40%, rgba(0,0,0,.95) 100%),
+        rgba(0,0,0,.16);
       z-index:1;
     }
 
@@ -193,13 +193,13 @@
       letter-spacing:.08em;
       text-transform:uppercase;
       margin:0 auto 14px;
-      max-width:820px;
+      max-width:760px;
       color:var(--white);
     }
 
     .services-baseline{
       margin:0 auto 14px;
-      max-width:820px;
+      max-width:760px;
       text-align:center;
       font-weight:700;
       font-size:.78rem;
@@ -225,79 +225,21 @@
       flex-wrap:wrap;
     }
 
-    /* METHOD FIRST */
-    .services-method{
-      position:relative;
-      z-index:2;
-      padding:10px 0 26px;
-    }
-
-    .services-method-box{
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-      padding:30px 0;
-    }
-
-    .method-head{
-      max-width:860px;
-      margin:0 auto 22px;
-      text-align:center;
-    }
-
-    .method-card{
-      height:100%;
-      border:1px solid rgba(255,255,255,.14);
-      background:var(--glass);
-      padding:24px 20px;
-      backdrop-filter:blur(8px);
-    }
-
-    .method-step{
-      display:inline-block;
-      margin-bottom:10px;
-      font-size:.74rem;
-      font-weight:700;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:var(--white-soft);
-    }
-
-    .method-title{
-      font-family:'couture',sans-serif;
-      font-size:.96rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:var(--white);
-      margin-bottom:10px;
-    }
-
-    .method-text{
-      margin:0;
-      font-size:.91rem;
-      line-height:1.7;
-      color:var(--white-soft);
-    }
-
-    /* SERVICES TOP NAV */
+    /* TOP NAV */
     .services-nav{
       position:relative;
       z-index:2;
-      padding:10px 0 20px;
+      padding:14px 0 26px;
     }
 
     .services-nav-head{
-      position:relative;
       margin:0 auto 14px;
-      max-width:1160px;
-      min-height:20px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      max-width:1180px;
+      text-align:center;
     }
 
     .services-nav-title{
       margin:0;
-      text-align:center;
       font-size:.74rem;
       font-weight:700;
       letter-spacing:.22em;
@@ -305,42 +247,15 @@
       color:var(--white-soft);
     }
 
-    .services-nav-hint{
-      display:none;
-      position:absolute;
-      right:0;
-      top:50%;
-      transform:translateY(-50%);
-      align-items:center;
-      gap:8px;
-      font-size:.66rem;
-      font-weight:700;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      color:var(--white-faint);
-      white-space:nowrap;
-      animation:arrowPulse 1.8s ease-in-out infinite;
-    }
-
-    .services-nav-hint i{
-      font-size:.95rem;
-      line-height:1;
-    }
-
-    @keyframes arrowPulse{
-      0%,100%{transform:translateY(-50%) translateX(0);opacity:.8;}
-      50%{transform:translateY(-50%) translateX(4px);opacity:1;}
-    }
-
     .services-nav-outer{
       position:relative;
-      max-width:1160px;
+      max-width:1180px;
       margin:0 auto;
     }
 
     .services-nav-wrap{
       display:flex;
-      gap:20px;
+      gap:22px;
       overflow-x:auto;
       padding:4px 0 8px;
       scrollbar-width:none;
@@ -350,7 +265,7 @@
     .services-nav-wrap::-webkit-scrollbar{display:none;}
 
     .service-chip{
-      flex:0 0 255px;
+      flex:0 0 265px;
       text-decoration:none;
       color:#fff;
       transition:transform .35s ease;
@@ -403,71 +318,60 @@
       color:var(--white-faint);
     }
 
-    /* DIFFERENCE / IMPACT */
-    .difference{
+    .slider-swipe-hint{
+      display:none;
+    }
+
+    /* METHOD */
+    .services-method{
       position:relative;
       z-index:2;
-      padding:12px 0 18px;
+      padding:6px 0 24px;
     }
 
-    .difference-wrap{
+    .services-method-box{
       border-top:1px solid var(--line);
-      padding-top:24px;
+      border-bottom:1px solid var(--line);
+      padding:30px 0;
     }
 
-    .difference-grid{
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:28px;
-      align-items:start;
+    .method-head{
+      max-width:860px;
+      margin:0 auto 22px;
+      text-align:center;
     }
 
-    .difference-lead{
-      font-family:'couture',sans-serif;
-      font-size:1.72rem;
-      line-height:1.18;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      margin:0 0 12px;
-      color:var(--white);
-      max-width:620px;
-    }
-
-    .difference-copy{
-      margin:0;
-      max-width:620px;
-      font-size:.97rem;
-      line-height:1.8;
-      color:var(--white-soft);
-    }
-
-    .difference-points{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:14px;
-    }
-
-    .difference-point{
+    .method-card{
+      height:100%;
       border:1px solid rgba(255,255,255,.14);
       background:var(--glass);
-      padding:18px 18px;
+      padding:24px 20px;
       backdrop-filter:blur(8px);
     }
 
-    .difference-point strong{
-      display:block;
-      margin-bottom:6px;
-      font-size:.78rem;
+    .method-step{
+      display:inline-block;
+      margin-bottom:10px;
+      font-size:.74rem;
       font-weight:700;
       letter-spacing:.18em;
       text-transform:uppercase;
-      color:var(--white);
+      color:var(--white-soft);
     }
 
-    .difference-point span{
-      display:block;
-      font-size:.92rem;
-      line-height:1.68;
+    .method-title{
+      font-family:'couture',sans-serif;
+      font-size:.96rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--white);
+      margin-bottom:10px;
+    }
+
+    .method-text{
+      margin:0;
+      font-size:.91rem;
+      line-height:1.7;
       color:var(--white-soft);
     }
 
@@ -799,11 +703,6 @@
 
       .services-hero{padding:88px 0 24px;}
 
-      .difference-grid{
-        grid-template-columns:1fr;
-        gap:20px;
-      }
-
       .service-section-text{
         padding-right:0;
       }
@@ -847,8 +746,6 @@
       .services-intro,
       .section-text,
       .method-text,
-      .difference-copy,
-      .difference-point span,
       .service-text,
       .cta-text{
         font-size:.92rem;
@@ -873,17 +770,42 @@
       }
 
       .services-nav-head{
-        justify-content:flex-start;
-        min-height:auto;
-        margin-bottom:12px;
+        display:none;
       }
 
-      .services-nav-title{
-        text-align:left;
+      .services-nav-outer{
+        position:relative;
       }
 
-      .services-nav-hint{
-        display:inline-flex;
+      .slider-swipe-hint{
+        display:flex;
+        position:absolute;
+        right:10px;
+        top:14px;
+        z-index:4;
+        align-items:center;
+        gap:6px;
+        padding:8px 10px;
+        border-radius:999px;
+        background:rgba(0,0,0,.44);
+        backdrop-filter:blur(8px);
+        border:1px solid rgba(255,255,255,.14);
+        font-size:.62rem;
+        font-weight:700;
+        letter-spacing:.14em;
+        text-transform:uppercase;
+        color:var(--white);
+        pointer-events:none;
+        animation:swipePulse 1.8s ease-in-out infinite;
+      }
+
+      .slider-swipe-hint i{
+        font-size:.85rem;
+      }
+
+      @keyframes swipePulse{
+        0%,100%{transform:translateX(0);opacity:.82;}
+        50%{transform:translateX(4px);opacity:1;}
       }
 
       .service-chip{
@@ -896,8 +818,7 @@
 
       .service-title,
       .section-title,
-      .cta-title,
-      .difference-lead{
+      .cta-title{
         font-size:1.34rem;
       }
 
@@ -1019,6 +940,60 @@
       </div>
     </section>
 
+    <!-- TOP NAV -->
+    <section class="services-nav fade-in">
+      <div class="container">
+        <div class="services-nav-head">
+          <p class="services-nav-title">Explorer les accompagnements</p>
+        </div>
+
+        <div class="services-nav-outer">
+          <div class="slider-swipe-hint">
+            <span>Glisser</span>
+            <i class="bi bi-arrow-right"></i>
+          </div>
+
+          <div class="services-nav-wrap">
+            <a href="#fondations" class="service-chip" aria-label="Aller à Fondations">
+              <div class="service-chip-media">
+                <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Stratégie de marque et positionnement">
+              </div>
+              <h2 class="service-chip-label">Fondations</h2>
+              <p class="service-chip-meta">positionnement</p>
+            </a>
+
+            <a href="#image-presence" class="service-chip" aria-label="Aller à Image et présence">
+              <div class="service-chip-media">
+                <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944261/1_u4uw1i.jpg" alt="Image de marque et brand content">
+              </div>
+              <h2 class="service-chip-label">Image & présence</h2>
+              <p class="service-chip-meta">contenu & site</p>
+            </a>
+
+            <a href="#activation" class="service-chip" aria-label="Aller à Activation">
+              <div class="service-chip-media">
+                <video autoplay muted loop playsinline>
+                  <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/15_bfvtos.mp4" type="video/mp4">
+                </video>
+              </div>
+              <h2 class="service-chip-label">Activation</h2>
+              <p class="service-chip-meta">visibilité</p>
+            </a>
+
+            <a href="#pilotage" class="service-chip" aria-label="Aller à Pilotage">
+              <div class="service-chip-media">
+                <video autoplay muted loop playsinline>
+                  <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/16_phtw8d.mp4" type="video/mp4">
+                </video>
+              </div>
+              <h2 class="service-chip-label">Pilotage</h2>
+              <p class="service-chip-meta">accompagnement</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- METHOD -->
     <section class="services-method fade-in">
       <div class="container">
@@ -1068,96 +1043,10 @@
       </div>
     </section>
 
-    <!-- SERVICE NAV -->
-    <section class="services-nav fade-in">
-      <div class="container">
-        <div class="services-nav-head">
-          <p class="services-nav-title">Explorer les accompagnements</p>
-          <div class="services-nav-hint">
-            <span>Glisser</span>
-            <i class="bi bi-arrow-right"></i>
-          </div>
-        </div>
-
-        <div class="services-nav-outer">
-          <div class="services-nav-wrap">
-            <a href="#fondations" class="service-chip" aria-label="Aller à Fondations">
-              <div class="service-chip-media">
-                <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Stratégie de marque et positionnement">
-              </div>
-              <h2 class="service-chip-label">Fondations</h2>
-              <p class="service-chip-meta">positionnement</p>
-            </a>
-
-            <a href="#image-presence" class="service-chip" aria-label="Aller à Image et présence">
-              <div class="service-chip-media">
-                <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944261/1_u4uw1i.jpg" alt="Image de marque et brand content">
-              </div>
-              <h2 class="service-chip-label">Image & présence</h2>
-              <p class="service-chip-meta">contenu & site</p>
-            </a>
-
-            <a href="#activation" class="service-chip" aria-label="Aller à Activation">
-              <div class="service-chip-media">
-                <video autoplay muted loop playsinline>
-                  <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/15_bfvtos.mp4" type="video/mp4">
-                </video>
-              </div>
-              <h2 class="service-chip-label">Activation</h2>
-              <p class="service-chip-meta">visibilité</p>
-            </a>
-
-            <a href="#pilotage" class="service-chip" aria-label="Aller à Pilotage">
-              <div class="service-chip-media">
-                <video autoplay muted loop playsinline>
-                  <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/16_phtw8d.mp4" type="video/mp4">
-                </video>
-              </div>
-              <h2 class="service-chip-label">Pilotage</h2>
-              <p class="service-chip-meta">accompagnement</p>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- DIFFERENCE -->
-    <section class="difference fade-in">
-      <div class="container">
-        <div class="difference-wrap">
-          <div class="difference-grid">
-            <div>
-              <p class="section-kicker">Pourquoi Abyss Lab.</p>
-              <h2 class="difference-lead">UNE MARQUE FORTE NE SE DECORE PAS. ELLE SE TIENT.</h2>
-              <p class="difference-copy">
-                Abyss Lab travaille ce qui donne à une marque sa densité, sa précision et sa capacité à durer : le fond, la forme, puis la manière dont elle prend réellement place.
-              </p>
-            </div>
-
-            <div class="difference-points">
-              <div class="difference-point">
-                <strong>Lire juste</strong>
-                <span>Comprendre ce qui distingue réellement la marque avant d’en produire l’image.</span>
-              </div>
-              <div class="difference-point">
-                <strong>Élever sans surjouer</strong>
-                <span>Construire une présence premium avec plus de tension, plus de précision, plus de cohérence.</span>
-              </div>
-              <div class="difference-point">
-                <strong>Déployer pour de vrai</strong>
-                <span>Site, contenus, visibilité, activation : une direction qui se traduit dans l’exécution.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- SERVICES -->
     <section class="services-wrapper" id="accompagnements">
       <div class="container">
 
-        <!-- FONDATIONS -->
         <section class="service-section fade-in" id="fondations">
           <div class="row gy-4 gy-lg-5 service-row">
             <div class="col-12 col-lg-6 service-media-col">
@@ -1200,7 +1089,6 @@
           </div>
         </section>
 
-        <!-- IMAGE -->
         <section class="service-section fade-in" id="image-presence">
           <div class="row gy-4 gy-lg-5 service-row reverse-desktop">
             <div class="col-12 col-lg-6 service-media-col">
@@ -1243,7 +1131,6 @@
           </div>
         </section>
 
-        <!-- ACTIVATION -->
         <section class="service-section fade-in" id="activation">
           <div class="row gy-4 gy-lg-5 service-row">
             <div class="col-12 col-lg-6 service-media-col">
@@ -1288,7 +1175,6 @@
           </div>
         </section>
 
-        <!-- PILOTAGE -->
         <section class="service-section fade-in" id="pilotage">
           <div class="row gy-4 gy-lg-5 service-row reverse-desktop">
             <div class="col-12 col-lg-6 service-media-col">
@@ -1482,9 +1368,6 @@
       });
     });
   </script>
-
-</body>
-</html>
 
 </body>
 </html>
