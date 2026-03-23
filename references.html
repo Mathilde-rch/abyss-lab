@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Références Abyss Lab : univers accompagnés, direction marketing et communication 360°, image de marque, brand content, site internet, SEO, visibilité digitale et rayonnement pour les univers premium, hospitality, lifestyle et art de vivre.">
-  <title>Références Abyss Lab | Univers accompagnés & direction 360°</title>
+  <meta name="description" content="Références Abyss Lab : hôtels, restaurants, maisons premium et lieux de vie accompagnés à la croisée du marketing, de l’image, du digital et du rayonnement de marque.">
+  <title>Références Abyss Lab | Univers accompagnés</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,8 +23,8 @@
       --line:rgba(255,255,255,.14);
       --line-soft:rgba(255,255,255,.10);
       --glass:rgba(255,255,255,.035);
-      --panel:rgba(7,10,14,.58);
-      --panel-strong:rgba(8,11,16,.78);
+      --panel:rgba(8,10,14,.72);
+      --panel-soft:rgba(255,255,255,.03);
     }
 
     html{scroll-behavior:smooth;}
@@ -54,8 +54,8 @@
       position:absolute;
       inset:0;
       background:
-        linear-gradient(to bottom, rgba(0,0,0,.34), rgba(0,0,0,.76) 42%, rgba(0,0,0,.94) 100%),
-        rgba(0,0,0,.16);
+        linear-gradient(to bottom, rgba(0,0,0,.30), rgba(0,0,0,.72) 42%, rgba(0,0,0,.94) 100%),
+        rgba(0,0,0,.14);
       z-index:1;
     }
 
@@ -133,7 +133,7 @@
 
     /* HERO */
     .references-hero{
-      padding:98px 0 22px;
+      padding:106px 0 20px;
       position:relative;
       z-index:2;
     }
@@ -144,74 +144,84 @@
     }
     .references-title{
       font-family:'couture',sans-serif;
-      font-size:2.22rem;
-      line-height:1.06;
+      font-size:2.36rem;
+      line-height:1.05;
       letter-spacing:.10em;
       text-transform:uppercase;
       color:var(--white);
-      margin:0 0 14px;
+      margin:0 0 12px;
     }
     .references-intro{
-      max-width:700px;
+      max-width:680px;
       margin:0 auto;
       text-align:center;
-      font-size:.95rem;
+      font-size:.94rem;
       line-height:1.72;
       color:var(--white-soft);
     }
     .references-hero-cta{
-      margin-top:20px;
+      margin-top:18px;
       display:flex;
       justify-content:center;
       gap:12px;
       flex-wrap:wrap;
     }
 
-    /* LOGO WALL */
-    .logo-wall{
+    /* LOGO STRIP */
+    .logo-strip{
       position:relative;
       z-index:3;
-      padding:18px 0 8px;
+      padding:22px 0 8px;
     }
-    .logo-wall-box{
+    .logo-strip-shell{
       border-top:1px solid var(--line);
       border-bottom:1px solid var(--line);
-      background:rgba(7,10,14,.62);
+      background:rgba(8,10,14,.78);
       backdrop-filter:blur(10px);
-      padding:16px 18px 18px;
+      padding:14px 0;
+      overflow:hidden;
     }
-    .logo-wall-title{
-      margin:0 0 14px;
+    .logo-strip-title{
+      margin:0 0 12px;
       text-align:center;
-      font-size:.72rem;
+      font-size:.70rem;
       font-weight:700;
       letter-spacing:.20em;
       text-transform:uppercase;
       color:var(--white-soft);
     }
-    .logo-grid{
-      display:grid;
-      grid-template-columns:repeat(5,1fr);
+    .logo-strip-track{
+      display:flex;
+      align-items:center;
       gap:14px;
+      width:max-content;
+      padding:0 18px;
+      animation:logoScroll 34s linear infinite;
     }
-    .logo-card{
-      min-height:88px;
+    .logo-strip-shell:hover .logo-strip-track{
+      animation-play-state:paused;
+    }
+    .logo-pill{
+      flex:0 0 auto;
+      width:260px;
+      height:94px;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:16px 18px;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.04);
+      padding:18px 24px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.05);
       text-decoration:none;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.02);
     }
-    .logo-card:hover{
+    .logo-pill:hover{
       transform:translateY(-2px);
-      border-color:rgba(255,255,255,.30);
+      border-color:rgba(255,255,255,.32);
       background:rgba(255,255,255,.08);
     }
-    .logo-card img{
+    .logo-pill img{
       max-width:100%;
-      max-height:36px;
+      max-height:42px;
       width:auto;
       height:auto;
       object-fit:contain;
@@ -219,31 +229,36 @@
       opacity:1;
     }
 
-    /* SHORT INTRO */
-    .references-intro-strip{
-      position:relative;
-      z-index:2;
-      padding:18px 0 8px;
-    }
-    .references-intro-box{
-      max-width:880px;
-      margin:0 auto;
-      text-align:center;
-      padding:12px 0 24px;
-    }
-    .references-intro-box p{
-      margin:0 auto;
-      max-width:820px;
-      font-size:.95rem;
-      line-height:1.74;
-      color:var(--white-soft);
+    @keyframes logoScroll{
+      0%{transform:translateX(0);}
+      100%{transform:translateX(-50%);}
     }
 
-    /* VISUAL NAV */
+    /* MANIFESTO */
+    .references-manifesto{
+      position:relative;
+      z-index:2;
+      padding:18px 0 10px;
+    }
+    .references-manifesto-box{
+      max-width:760px;
+      margin:0 auto;
+      text-align:center;
+      padding:6px 0 18px;
+    }
+    .references-manifesto-text{
+      margin:0;
+      font-size:1rem;
+      line-height:1.7;
+      color:var(--white);
+      font-weight:600;
+    }
+
+    /* VISUAL INTRO NAV */
     .references-nav{
       position:relative;
       z-index:2;
-      padding:8px 0 20px;
+      padding:8px 0 22px;
     }
     .references-nav-wrap{
       display:flex;
@@ -254,6 +269,7 @@
       -ms-overflow-style:none;
     }
     .references-nav-wrap::-webkit-scrollbar{display:none;}
+
     .reference-chip{
       flex:0 0 245px;
       text-decoration:none;
@@ -306,12 +322,12 @@
     .references-wrapper{
       position:relative;
       z-index:2;
-      padding:0 0 24px;
+      padding:0 0 22px;
       border-top:1px solid var(--line);
       margin-top:10px;
     }
     .reference-section{
-      padding:74px 0;
+      padding:78px 0;
       border-top:1px solid var(--line);
     }
     .reference-section:first-child{
@@ -321,15 +337,12 @@
     .reference-row{
       align-items:center;
     }
-    .reference-text-col{
-      order:2;
-    }
-    .reference-media-col{
-      order:1;
-    }
+    .reference-text-col{order:2;}
+    .reference-media-col{order:1;}
+
     .reference-section-text{
-      padding-right:48px;
-      max-width:600px;
+      padding-right:46px;
+      max-width:590px;
     }
     .reference-index{
       display:inline-block;
@@ -342,7 +355,7 @@
     }
     .reference-title{
       font-family:'couture',sans-serif;
-      font-size:1.92rem;
+      font-size:1.86rem;
       line-height:1.06;
       letter-spacing:.08em;
       text-transform:uppercase;
@@ -359,18 +372,18 @@
     }
     .reference-hook{
       margin:0 0 12px;
-      font-size:.99rem;
-      line-height:1.66;
+      font-size:.98rem;
+      line-height:1.64;
       color:var(--white);
       font-weight:700;
-      max-width:560px;
+      max-width:530px;
     }
     .reference-text{
-      margin:0 0 22px;
-      font-size:.93rem;
-      line-height:1.72;
+      margin:0 0 20px;
+      font-size:.92rem;
+      line-height:1.7;
       color:var(--white-soft);
-      max-width:560px;
+      max-width:540px;
     }
     .reference-points{
       display:grid;
@@ -407,18 +420,18 @@
     .reference-section-media img,
     .reference-section-media video{
       width:100%;
-      height:690px;
+      height:680px;
       object-fit:cover;
     }
 
-    /* CTA STRIP */
+    /* CTA */
     .references-cta{
       position:relative;
       z-index:2;
       padding:8px 0 64px;
     }
     .cta-block{
-      max-width:780px;
+      max-width:760px;
       margin:0 auto;
       text-align:center;
       border-top:1px solid var(--line);
@@ -426,7 +439,7 @@
     }
     .cta-title{
       font-family:'couture',sans-serif;
-      font-size:1.72rem;
+      font-size:1.68rem;
       line-height:1.18;
       letter-spacing:.08em;
       text-transform:uppercase;
@@ -434,11 +447,11 @@
       color:var(--white);
     }
     .cta-text{
-      font-size:.96rem;
-      line-height:1.74;
+      font-size:.95rem;
+      line-height:1.72;
       color:var(--white-soft);
       margin-bottom:22px;
-      max-width:620px;
+      max-width:580px;
       margin-left:auto;
       margin-right:auto;
     }
@@ -580,7 +593,7 @@
     }
 
     @media (min-width: 992px){
-      .references-title{font-size:2.68rem;}
+      .references-title{font-size:2.78rem;}
       .references-nav-wrap{
         justify-content:center;
         overflow:visible;
@@ -590,13 +603,17 @@
     }
 
     @media(max-width:991.98px){
-      .references-hero{padding:90px 0 22px;}
-      .logo-grid{
-        grid-template-columns:repeat(3,1fr);
-      }
+      .references-hero{padding:92px 0 18px;}
       .reference-section-text{padding-right:0;max-width:none;}
       .reference-section-media img,
       .reference-section-media video{height:440px;}
+      .logo-pill{
+        width:220px;
+        height:84px;
+      }
+      .logo-pill img{
+        max-height:34px;
+      }
       .footer-social-block{margin-top:4px;}
       .footer-menu{
         grid-template-columns:repeat(2,1fr);
@@ -622,7 +639,7 @@
         text-align:left;
       }
       .references-intro,
-      .references-intro-box p,
+      .references-manifesto-text,
       .reference-text,
       .reference-point-text,
       .cta-text{
@@ -630,7 +647,7 @@
         line-height:1.7;
       }
       .references-hero{
-        padding:82px 0 18px;
+        padding:82px 0 16px;
       }
       .references-hero-inner{
         text-align:left;
@@ -650,27 +667,27 @@
       .cta-actions .btn-light-ghost{
         width:100%;
       }
-      .logo-wall{
-        padding:14px 0 6px;
+
+      .logo-strip{
+        padding:16px 0 6px;
       }
-      .logo-wall-box{
-        padding:14px 12px;
-      }
-      .logo-wall-title{
+      .logo-strip-title{
         text-align:left;
-        margin-bottom:12px;
+        padding:0 14px;
       }
-      .logo-grid{
-        grid-template-columns:repeat(2,1fr);
+      .logo-strip-track{
         gap:10px;
+        padding:0 12px;
       }
-      .logo-card{
-        min-height:72px;
-        padding:12px 14px;
+      .logo-pill{
+        width:180px;
+        height:72px;
+        padding:12px 16px;
       }
-      .logo-card img{
-        max-height:24px;
+      .logo-pill img{
+        max-height:28px;
       }
+
       .reference-chip{
         flex:0 0 205px;
       }
@@ -712,7 +729,7 @@
 <body>
 
   <h1 class="visually-hidden-seo">
-    Références Abyss Lab : direction marketing et communication 360, image de marque, brand content, visibilité digitale, référencement naturel, acquisition, UX, site internet premium, hospitality, lifestyle, restauration et univers premium
+    Références Abyss Lab : hôtels, restaurants, maisons premium, marketing et communication 360, image de marque, brand content, visibilité digitale, référencement, expérience et présence de marque
   </h1>
 
   <div class="video-background">
@@ -744,9 +761,9 @@
     <section class="references-hero fade-in">
       <div class="container">
         <div class="references-hero-inner">
-          <h1 class="references-title">UNIVERS ACCOMPAGNES, NIVEAU D’EXIGENCE ASSUME</h1>
+          <h1 class="references-title">UNIVERS ACCOMPAGNES, PRESENCES AFFUTEES</h1>
           <p class="references-intro">
-            Hôtels, restaurants, lieux de vie et marques premium : des univers où l’image, le fond et l’expérience doivent parler d’une seule voix.
+            Des lieux et des marques où l’image, le contenu, le digital et l’expérience doivent avancer avec la même exigence.
           </p>
 
           <div class="references-hero-cta">
@@ -757,40 +774,71 @@
       </div>
     </section>
 
-    <section class="logo-wall fade-in" aria-label="Références Abyss Lab">
-      <div class="container">
-        <div class="logo-wall-box">
-          <p class="logo-wall-title">Maisons, hôtels, restaurants & lieux accompagnés</p>
+    <section class="logo-strip fade-in" aria-label="Références Abyss Lab">
+      <div class="logo-strip-shell">
+        <div class="container-fluid px-0">
+          <p class="logo-strip-title">Maisons, hôtels, restaurants & lieux accompagnés</p>
 
-          <div class="logo-grid">
-            <a class="logo-card" href="https://mondrianhotels.com/fr/bordeaux-les-carmes/" target="_blank" rel="noopener noreferrer" aria-label="Mondrian Bordeaux Les Carmes">
+          <div class="logo-strip-track">
+            <a class="logo-pill" href="https://mondrianhotels.com/fr/bordeaux-les-carmes/" target="_blank" rel="noopener noreferrer" aria-label="Mondrian Bordeaux Les Carmes">
               <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_mondrian_bordeaux_klvfkk.png" alt="Mondrian Bordeaux Les Carmes">
             </a>
-            <a class="logo-card" href="https://morimotobordeaux.com/" target="_blank" rel="noopener noreferrer" aria-label="Morimoto Bordeaux">
+            <a class="logo-pill" href="https://morimotobordeaux.com/" target="_blank" rel="noopener noreferrer" aria-label="Morimoto Bordeaux">
               <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_morimoto_bordeaux_vgb8ns.png" alt="Morimoto Bordeaux">
             </a>
-            <a class="logo-card" href="https://brindos-cotebasque.com/" target="_blank" rel="noopener noreferrer" aria-label="Brindos Lac & Château">
+            <a class="logo-pill" href="https://brindos-cotebasque.com/" target="_blank" rel="noopener noreferrer" aria-label="Brindos Lac & Château">
               <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271199/marketing_communication_brindos_anglet_ogtgnq.png" alt="Brindos Lac & Château">
             </a>
-            <a class="logo-card" href="https://cafebonart.com/" target="_blank" rel="noopener noreferrer" aria-label="Café Bonart">
+            <a class="logo-pill" href="https://cafebonart.com/" target="_blank" rel="noopener noreferrer" aria-label="Café Bonart">
               <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271224/marketing_communication_cafe_bonart_vn4enk.png" alt="Café Bonart">
             </a>
-            <a class="logo-card" href="https://www.chateaudesacy.com/" target="_blank" rel="noopener noreferrer" aria-label="Château de Sacy">
+            <a class="logo-pill" href="https://www.chateaudesacy.com/" target="_blank" rel="noopener noreferrer" aria-label="Château de Sacy">
               <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_chateau_sacy_reims_ov4rcf.png" alt="Château de Sacy">
             </a>
-            <a class="logo-card" href="https://www.maisons-particulieres.com/maison-la-course" target="_blank" rel="noopener noreferrer" aria-label="Maison La Course">
+            <a class="logo-pill" href="https://www.maisons-particulieres.com/maison-la-course" target="_blank" rel="noopener noreferrer" aria-label="Maison La Course">
               <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_maison_la_course_bordeaux_pe6vu9.png" alt="Maison La Course">
             </a>
-            <a class="logo-card" href="https://www.chateaudetheoule.com/" target="_blank" rel="noopener noreferrer" aria-label="Château de Théoule-sur-Mer">
+            <a class="logo-pill" href="https://www.chateaudetheoule.com/" target="_blank" rel="noopener noreferrer" aria-label="Château de Théoule-sur-Mer">
               <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271353/marketing_communication_chateau_theoule_sur_mer_qtecgf.png" alt="Château de Théoule-sur-Mer">
             </a>
-            <a class="logo-card" href="https://www.lapalmeraielabaule.com/" target="_blank" rel="noopener noreferrer" aria-label="La Palmeraie La Baule">
+            <a class="logo-pill" href="https://www.lapalmeraielabaule.com/" target="_blank" rel="noopener noreferrer" aria-label="La Palmeraie La Baule">
               <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_palmeraie_la_baule_erb4df.png" alt="La Palmeraie La Baule">
             </a>
-            <a class="logo-card" href="https://www.grandhotelmegve.com/" target="_blank" rel="noopener noreferrer" aria-label="Grand Hôtel Soleil d'Or Megève">
+            <a class="logo-pill" href="https://www.grandhotelmegve.com/" target="_blank" rel="noopener noreferrer" aria-label="Grand Hôtel Soleil d'Or Megève">
               <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_grand_hotel_soleil_d_or_megeve_jic4on.png" alt="Grand Hôtel Soleil d'Or Megève">
             </a>
-            <a class="logo-card" href="https://www.domainederaba.com/" target="_blank" rel="noopener noreferrer" aria-label="Domaine de Raba">
+            <a class="logo-pill" href="https://www.domainederaba.com/" target="_blank" rel="noopener noreferrer" aria-label="Domaine de Raba">
+              <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_domaine_de_raba_zsu3ao.png" alt="Domaine de Raba">
+            </a>
+
+            <a class="logo-pill" href="https://mondrianhotels.com/fr/bordeaux-les-carmes/" target="_blank" rel="noopener noreferrer" aria-label="Mondrian Bordeaux Les Carmes">
+              <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_mondrian_bordeaux_klvfkk.png" alt="Mondrian Bordeaux Les Carmes">
+            </a>
+            <a class="logo-pill" href="https://morimotobordeaux.com/" target="_blank" rel="noopener noreferrer" aria-label="Morimoto Bordeaux">
+              <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_morimoto_bordeaux_vgb8ns.png" alt="Morimoto Bordeaux">
+            </a>
+            <a class="logo-pill" href="https://brindos-cotebasque.com/" target="_blank" rel="noopener noreferrer" aria-label="Brindos Lac & Château">
+              <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271199/marketing_communication_brindos_anglet_ogtgnq.png" alt="Brindos Lac & Château">
+            </a>
+            <a class="logo-pill" href="https://cafebonart.com/" target="_blank" rel="noopener noreferrer" aria-label="Café Bonart">
+              <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271224/marketing_communication_cafe_bonart_vn4enk.png" alt="Café Bonart">
+            </a>
+            <a class="logo-pill" href="https://www.chateaudesacy.com/" target="_blank" rel="noopener noreferrer" aria-label="Château de Sacy">
+              <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_chateau_sacy_reims_ov4rcf.png" alt="Château de Sacy">
+            </a>
+            <a class="logo-pill" href="https://www.maisons-particulieres.com/maison-la-course" target="_blank" rel="noopener noreferrer" aria-label="Maison La Course">
+              <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_maison_la_course_bordeaux_pe6vu9.png" alt="Maison La Course">
+            </a>
+            <a class="logo-pill" href="https://www.chateaudetheoule.com/" target="_blank" rel="noopener noreferrer" aria-label="Château de Théoule-sur-Mer">
+              <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271353/marketing_communication_chateau_theoule_sur_mer_qtecgf.png" alt="Château de Théoule-sur-Mer">
+            </a>
+            <a class="logo-pill" href="https://www.lapalmeraielabaule.com/" target="_blank" rel="noopener noreferrer" aria-label="La Palmeraie La Baule">
+              <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_palmeraie_la_baule_erb4df.png" alt="La Palmeraie La Baule">
+            </a>
+            <a class="logo-pill" href="https://www.grandhotelmegve.com/" target="_blank" rel="noopener noreferrer" aria-label="Grand Hôtel Soleil d'Or Megève">
+              <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_grand_hotel_soleil_d_or_megeve_jic4on.png" alt="Grand Hôtel Soleil d'Or Megève">
+            </a>
+            <a class="logo-pill" href="https://www.domainederaba.com/" target="_blank" rel="noopener noreferrer" aria-label="Domaine de Raba">
               <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_domaine_de_raba_zsu3ao.png" alt="Domaine de Raba">
             </a>
           </div>
@@ -798,11 +846,11 @@
       </div>
     </section>
 
-    <section class="references-intro-strip fade-in">
+    <section class="references-manifesto fade-in">
       <div class="container">
-        <div class="references-intro-box">
-          <p>
-            Une même attente derrière chaque projet : plus de netteté, plus de tenue, plus d’impact.
+        <div class="references-manifesto-box">
+          <p class="references-manifesto-text">
+            Plus de netteté. Plus de tenue. Plus d’impact.
           </p>
         </div>
       </div>
@@ -811,20 +859,20 @@
     <section class="references-nav fade-in" id="references-story">
       <div class="container">
         <div class="references-nav-wrap">
-          <a href="#positionnement" class="reference-chip" aria-label="Aller à Positionnement">
+          <a href="#univers" class="reference-chip" aria-label="Aller à Univers">
             <div class="reference-chip-media">
-              <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Positionnement et direction de marque">
+              <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944261/1_u4uw1i.jpg" alt="Univers premium accompagnés">
             </div>
-            <h2 class="reference-chip-label">Positionnement</h2>
-            <p class="reference-chip-meta">vision & direction</p>
+            <h2 class="reference-chip-label">Univers</h2>
+            <p class="reference-chip-meta">hospitality & art de vivre</p>
           </a>
 
-          <a href="#image-presence" class="reference-chip" aria-label="Aller à Image & présence">
+          <a href="#image" class="reference-chip" aria-label="Aller à Image">
             <div class="reference-chip-media">
-              <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944261/1_u4uw1i.jpg" alt="Image de marque et présence premium">
+              <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Image de marque et direction">
             </div>
-            <h2 class="reference-chip-label">Image & présence</h2>
-            <p class="reference-chip-meta">contenu, desir & perception</p>
+            <h2 class="reference-chip-label">Image</h2>
+            <p class="reference-chip-meta">presence & desirabilite</p>
           </a>
 
           <a href="#rayonnement" class="reference-chip" aria-label="Aller à Rayonnement">
@@ -834,17 +882,17 @@
               </video>
             </div>
             <h2 class="reference-chip-label">Rayonnement</h2>
-            <p class="reference-chip-meta">visibilite & activation</p>
+            <p class="reference-chip-meta">activation & visibilite</p>
           </a>
 
-          <a href="#digital-experience" class="reference-chip" aria-label="Aller à Digital & expérience">
+          <a href="#digital" class="reference-chip" aria-label="Aller à Digital">
             <div class="reference-chip-media">
               <video autoplay muted loop playsinline>
                 <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/16_phtw8d.mp4" type="video/mp4">
               </video>
             </div>
-            <h2 class="reference-chip-label">Digital & experience</h2>
-            <p class="reference-chip-meta">web, seo & parcours</p>
+            <h2 class="reference-chip-label">Digital</h2>
+            <p class="reference-chip-meta">web, seo & experience</p>
           </a>
         </div>
       </div>
@@ -853,35 +901,35 @@
     <section class="references-wrapper">
       <div class="container">
 
-        <section class="reference-section fade-in" id="positionnement">
+        <section class="reference-section fade-in" id="univers">
           <div class="row gy-4 gy-lg-5 reference-row">
             <div class="col-12 col-lg-6 reference-media-col">
               <div class="reference-section-media">
-                <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Direction de marque et positionnement premium">
+                <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944261/1_u4uw1i.jpg" alt="Hôtels, restaurants et univers premium">
               </div>
             </div>
             <div class="col-12 col-lg-6 reference-text-col">
               <div class="reference-section-text">
-                <span class="reference-index">01 / Lecture</span>
-                <h2 class="reference-title">UNE MEME EXIGENCE DERRIERE DES CONTEXTES DIFFERENTS</h2>
-                <p class="reference-subtitle">Vision, cohérence, arbitrage</p>
-                <p class="reference-hook">Faire émerger une présence plus juste, plus lisible, plus forte.</p>
+                <span class="reference-index">01 / Univers</span>
+                <h2 class="reference-title">DES LIEUX OU LE DETAIL N’EST JAMAIS ACCESSOIRE</h2>
+                <p class="reference-subtitle">Hospitality, restauration, lieux de vie</p>
+                <p class="reference-hook">Des marques qui doivent faire ressentir leur niveau avant même d’être vécues.</p>
                 <p class="reference-text">
-                  Derrière ces références, il y a une même manière d’accompagner : clarifier, aligner, puis déployer sans dilution.
+                  Hôtels, restaurants, maisons premium, lieux lifestyle : des contextes où l’image, le cadre et l’expérience doivent parler d’une seule voix.
                 </p>
 
                 <div class="reference-points">
                   <div class="reference-point">
-                    <span class="reference-point-title">Positionnement</span>
-                    <p class="reference-point-text">Donner une ligne plus nette à la marque.</p>
+                    <span class="reference-point-title">Cadre</span>
+                    <p class="reference-point-text">Des univers où la perception se joue dans chaque détail.</p>
                   </div>
                   <div class="reference-point">
-                    <span class="reference-point-title">Cohérence</span>
-                    <p class="reference-point-text">Faire tenir ensemble image, message et expérience.</p>
+                    <span class="reference-point-title">Lecture</span>
+                    <p class="reference-point-text">Une compréhension fine des enjeux d’image et de désirabilité.</p>
                   </div>
                   <div class="reference-point">
-                    <span class="reference-point-title">Direction</span>
-                    <p class="reference-point-text">Arbitrer les bons leviers, au bon niveau.</p>
+                    <span class="reference-point-title">Niveau</span>
+                    <p class="reference-point-text">Une exigence pensée pour des marques qui ne peuvent pas être génériques.</p>
                   </div>
                 </div>
 
@@ -891,39 +939,39 @@
           </div>
         </section>
 
-        <section class="reference-section fade-in" id="image-presence">
+        <section class="reference-section fade-in" id="image">
           <div class="row gy-4 gy-lg-5 reference-row reverse-desktop">
             <div class="col-12 col-lg-6 reference-media-col">
               <div class="reference-section-media">
-                <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944261/1_u4uw1i.jpg" alt="Image de marque, brand content et présence premium">
+                <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Image de marque et direction marketing">
               </div>
             </div>
             <div class="col-12 col-lg-6 reference-text-col">
               <div class="reference-section-text">
-                <span class="reference-index">02 / Univers</span>
-                <h2 class="reference-title">DES LIEUX QUI DOIVENT FAIRE PLUS QUE SE MONTRER</h2>
-                <p class="reference-subtitle">Hospitality, restauration, art de vivre</p>
-                <p class="reference-hook">Quand l’image doit déjà faire ressentir le niveau de l’expérience.</p>
+                <span class="reference-index">02 / Image</span>
+                <h2 class="reference-title">UNE PRESENCE PLUS NETTE, PLUS TENUE, PLUS JUSTE</h2>
+                <p class="reference-subtitle">Image, contenu, cohérence</p>
+                <p class="reference-hook">Quand la marque gagne en relief, tout le reste se tient mieux.</p>
                 <p class="reference-text">
-                  Hôtels, restaurants, maisons premium, lieux lifestyle : ici, le détail n’est jamais accessoire. Il construit la perception.
+                  Donner de la clarté à la ligne, de la cohérence aux supports et davantage de tenue à l’ensemble des points de contact.
                 </p>
 
                 <div class="reference-points">
                   <div class="reference-point">
                     <span class="reference-point-title">Image</span>
-                    <p class="reference-point-text">Installer une présence plus tenue et plus désirable.</p>
+                    <p class="reference-point-text">Installer une présence plus lisible et plus désirable.</p>
                   </div>
                   <div class="reference-point">
                     <span class="reference-point-title">Contenu</span>
-                    <p class="reference-point-text">Donner du relief au lieu, au service et au récit.</p>
+                    <p class="reference-point-text">Créer des prises de parole qui soutiennent réellement la perception.</p>
                   </div>
                   <div class="reference-point">
-                    <span class="reference-point-title">Perception</span>
-                    <p class="reference-point-text">Renforcer la valeur perçue sur tous les points de contact.</p>
+                    <span class="reference-point-title">Cohérence</span>
+                    <p class="reference-point-text">Faire tenir ensemble la forme, le fond et l’intention.</p>
                   </div>
                 </div>
 
-                <a href="services.html" class="btn btn-outline-light">VOIR LES ACCOMPAGNEMENTS</a>
+                <a href="services.html" class="btn btn-outline-light">VOIR LES SERVICES</a>
               </div>
             </div>
           </div>
@@ -941,25 +989,25 @@
             <div class="col-12 col-lg-6 reference-text-col">
               <div class="reference-section-text">
                 <span class="reference-index">03 / Rayonnement</span>
-                <h2 class="reference-title">FAIRE EMERGER LA MARQUE SANS BROUILLER SA LIGNE</h2>
-                <p class="reference-subtitle">Visibilité, influence, activation</p>
-                <p class="reference-hook">Rayonner, oui. Se disperser, non.</p>
+                <h2 class="reference-title">RAYONNER SANS DILUER LA MARQUE</h2>
+                <p class="reference-subtitle">Activation, visibilité, désir</p>
+                <p class="reference-hook">Faire émerger la marque avec les bons relais, au bon niveau.</p>
                 <p class="reference-text">
-                  Le bon enjeu n’est pas d’en faire plus, mais d’activer plus juste : contenus, relais, campagnes, prises de parole.
+                  Le bon enjeu n’est pas d’en faire plus, mais d’activer plus juste : visibilité, prise de parole, amplification, rayonnement.
                 </p>
 
                 <div class="reference-points">
                   <div class="reference-point">
                     <span class="reference-point-title">Visibilité</span>
-                    <p class="reference-point-text">Accroître la présence avec cohérence.</p>
+                    <p class="reference-point-text">Accroître la présence sans brouiller la ligne.</p>
                   </div>
                   <div class="reference-point">
-                    <span class="reference-point-title">Influence</span>
-                    <p class="reference-point-text">Choisir les bons relais et les bonnes activations.</p>
+                    <span class="reference-point-title">Activation</span>
+                    <p class="reference-point-text">Choisir les bons leviers, les bons temps, les bons relais.</p>
                   </div>
                   <div class="reference-point">
                     <span class="reference-point-title">Impact</span>
-                    <p class="reference-point-text">Soutenir le désir, le trafic et l’attractivité.</p>
+                    <p class="reference-point-text">Soutenir l’attractivité, le désir et la mémorisation.</p>
                   </div>
                 </div>
 
@@ -969,7 +1017,7 @@
           </div>
         </section>
 
-        <section class="reference-section fade-in" id="digital-experience">
+        <section class="reference-section fade-in" id="digital">
           <div class="row gy-4 gy-lg-5 reference-row reverse-desktop">
             <div class="col-12 col-lg-6 reference-media-col">
               <div class="reference-section-media">
@@ -981,24 +1029,24 @@
             <div class="col-12 col-lg-6 reference-text-col">
               <div class="reference-section-text">
                 <span class="reference-index">04 / Digital</span>
-                <h2 class="reference-title">UNE PRESENCE QUI TIENT AUSSI EN LIGNE</h2>
+                <h2 class="reference-title">UNE EXPERIENCE QUI SE JOUE AUSSI EN LIGNE</h2>
                 <p class="reference-subtitle">Web, SEO, UX, parcours</p>
-                <p class="reference-hook">Le digital comme prolongement du niveau réel de la marque.</p>
+                <p class="reference-hook">Le digital comme prolongement naturel du niveau de la marque.</p>
                 <p class="reference-text">
-                  Site internet, référencement, expérience, lisibilité, conversion : le fond et la forme doivent avancer ensemble.
+                  Site, référencement, lisibilité, expérience, conversion : le fond et la forme doivent avancer ensemble.
                 </p>
 
                 <div class="reference-points">
                   <div class="reference-point">
                     <span class="reference-point-title">Site & UX</span>
-                    <p class="reference-point-text">Rendre la marque plus claire, plus fluide, plus crédible.</p>
+                    <p class="reference-point-text">Rendre la présence plus fluide, plus claire, plus crédible.</p>
                   </div>
                   <div class="reference-point">
-                    <span class="reference-point-title">SEO & visibilité</span>
-                    <p class="reference-point-text">Soutenir le trafic qualifié sans dégrader la perception.</p>
+                    <span class="reference-point-title">SEO</span>
+                    <p class="reference-point-text">Soutenir la visibilité sans sacrifier la perception.</p>
                   </div>
                   <div class="reference-point">
-                    <span class="reference-point-title">Expérience</span>
+                    <span class="reference-point-title">Parcours</span>
                     <p class="reference-point-text">Faire du digital un vrai point de contact de marque.</p>
                   </div>
                 </div>
@@ -1015,7 +1063,7 @@
     <section class="references-cta fade-in">
       <div class="container">
         <div class="cta-block">
-          <h2 class="cta-title">UNE DIRECTION PLUS JUSTE, PLUS NETTE, PLUS DESIRABLE</h2>
+          <h2 class="cta-title">UNE DIRECTION PLUS JUSTE, PLUS AFFUTEE, PLUS DESIRABLE</h2>
           <p class="cta-text">
             Abyss Lab accompagne les marques qui veulent gagner en cohérence, en relief et en impact.
           </p>
