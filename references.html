@@ -5,12 +5,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta name="description" content="Références Abyss Lab : stratégie marketing & communication, contenus, activations, web design et direction de marque pour hôtels, restaurants, lieux lifestyle et maisons premium.">
+<meta name="description" content="Références Abyss Lab : expériences fondatrices en marketing, communication et digital dans l’hospitality, la restauration et les lieux premium. Direction marketing & communication 360, brand content, influence, SEO, web design et expérience digitale.">
 <title>Références | ABYSS LAB</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link href="https://fonts.cdnfonts.com/css/couture" rel="stylesheet">
@@ -23,15 +22,19 @@
 --white-soft:rgba(255,255,255,.82);
 --white-muted:rgba(255,255,255,.68);
 --line:rgba(255,255,255,.14);
---bg:#000;
+--line-strong:rgba(255,255,255,.24);
+--bg:#000000;
 }
 
 html{scroll-behavior:smooth;}
-body{background:#000;color:#fff;}
+body{
+background:#000;
+color:#fff;
+overflow-x:hidden;
+}
 img{max-width:100%;display:block;}
-.section-space{padding:96px 0;}
 
-/* VIDEO BACKGROUND */
+/* VIDEO */
 .video-background{
 position:fixed;
 inset:0;
@@ -47,17 +50,19 @@ object-fit:cover;
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(to bottom, rgba(0,0,0,0.42), rgba(0,0,0,0.78));
+background:
+linear-gradient(to bottom, rgba(0,0,0,.42), rgba(0,0,0,.80)),
+radial-gradient(circle at 20% 20%, rgba(255,255,255,.04), transparent 35%);
 }
 
 /* NAVBAR */
 .navbar{
 position:relative;
-z-index:20;
+z-index:40;
 transition:.3s;
 }
 .navbar.scrolled{
-background:rgba(0,0,0,.7);
+background:rgba(0,0,0,.72);
 backdrop-filter:blur(14px);
 }
 .nav-link{
@@ -74,11 +79,70 @@ padding-right:1rem!important;
 color:#fff!important;
 }
 
-/* HERO */
-.references-hero{
-padding:140px 0 64px;
+/* RIGHT LOGO RAIL */
+.references-rail{
+position:fixed;
+right:18px;
+top:50%;
+transform:translateY(-50%);
+z-index:24;
+width:108px;
+height:72vh;
+max-height:760px;
+border:1px solid rgba(255,255,255,.14);
+background:rgba(0,0,0,.42);
+backdrop-filter:blur(10px);
+overflow:hidden;
+}
+.references-rail-track{
+display:flex;
+flex-direction:column;
+gap:14px;
+padding:16px 12px;
+animation:scrollLogos 24s linear infinite;
+}
+.references-rail:hover .references-rail-track{
+animation-play-state:paused;
+}
+.logo-link{
+display:flex;
+align-items:center;
+justify-content:center;
+min-height:72px;
+padding:12px;
+border:1px solid rgba(255,255,255,.08);
+background:rgba(255,255,255,.03);
+transition:.3s ease;
+}
+.logo-link:hover{
+transform:translateX(-4px);
+border-color:rgba(255,255,255,.24);
+background:rgba(255,255,255,.06);
+}
+.logo-link img{
+max-width:100%;
+max-height:42px;
+width:auto;
+height:auto;
+object-fit:contain;
+filter:brightness(0) invert(1);
+opacity:.92;
+}
+@keyframes scrollLogos{
+0%{transform:translateY(0);}
+100%{transform:translateY(-50%);}
+}
+
+/* PAGE OFFSET */
+.references-page{
 position:relative;
 z-index:2;
+padding-right:130px;
+}
+
+/* HERO */
+.references-hero{
+padding:140px 0 54px;
 }
 .hero-kicker{
 font-family:"Montserrat",sans-serif;
@@ -93,33 +157,31 @@ font-size:4rem;
 line-height:.95;
 text-transform:uppercase;
 margin-bottom:18px;
-max-width:960px;
+max-width:980px;
 }
 .hero-subtitle{
 font-family:"Montserrat",sans-serif;
-max-width:620px;
-line-height:1.8;
+max-width:820px;
+line-height:1.9;
 color:var(--white-soft);
 margin-bottom:0;
 }
 
-/* INTRO STRIP */
+/* INTRO */
 .references-intro{
-position:relative;
-z-index:2;
-padding:0 0 34px;
+padding:0 0 40px;
 }
 .references-intro-box{
 border-top:1px solid var(--line);
 border-bottom:1px solid var(--line);
-padding:26px 0;
+padding:28px 0;
 }
 .references-intro-text{
 font-family:"Montserrat",sans-serif;
 font-size:1rem;
-line-height:1.9;
+line-height:1.95;
 color:var(--white-soft);
-max-width:980px;
+max-width:1050px;
 margin:0;
 }
 .references-tags{
@@ -139,54 +201,12 @@ color:var(--white-soft);
 background:rgba(255,255,255,.03);
 }
 
-/* LOGO / NAME GRID */
-.references-grid{
-position:relative;
-z-index:2;
-padding:36px 0 16px;
-}
-.reference-card{
-height:100%;
-border:1px solid rgba(255,255,255,.14);
-background:rgba(255,255,255,.03);
-padding:24px;
-transition:.35s ease;
-}
-.reference-card:hover{
-transform:translateY(-4px);
-border-color:rgba(255,255,255,.3);
-background:rgba(255,255,255,.05);
-}
-.reference-card-label{
-font-family:"Montserrat",sans-serif;
-font-size:.72rem;
-letter-spacing:.18em;
-text-transform:uppercase;
-color:var(--white-muted);
-margin-bottom:14px;
-}
-.reference-card-title{
-font-size:1.25rem;
-line-height:1.1;
-text-transform:uppercase;
-margin-bottom:14px;
-}
-.reference-card-text{
-font-family:"Montserrat",sans-serif;
-font-size:.95rem;
-line-height:1.8;
-color:var(--white-soft);
-margin-bottom:0;
-}
-
-/* CASE STUDIES */
-.case-section{
+/* SECTION */
+.section-block{
 border-top:1px solid rgba(255,255,255,.15);
 padding:84px 0;
-position:relative;
-z-index:2;
 }
-.case-index{
+.section-index{
 font-family:"Montserrat",sans-serif;
 font-size:.75rem;
 letter-spacing:2px;
@@ -194,97 +214,127 @@ text-transform:uppercase;
 color:var(--white-muted);
 margin-bottom:12px;
 }
-.case-title{
-font-size:2.2rem;
+.section-title{
+font-size:2.35rem;
 line-height:1;
 text-transform:uppercase;
 margin-bottom:18px;
 }
-.case-hook{
+.section-hook{
 font-family:"Montserrat",sans-serif;
 font-size:1rem;
-line-height:1.8;
+line-height:1.85;
 color:#fff;
 margin-bottom:16px;
 }
-.case-text{
+.section-text{
 font-family:"Montserrat",sans-serif;
-line-height:1.9;
+line-height:1.95;
 color:var(--white-soft);
 margin-bottom:18px;
 }
-.case-list{
+.section-list{
 padding-left:0;
 margin:0;
 list-style:none;
 }
-.case-list li{
+.section-list li{
 font-family:"Montserrat",sans-serif;
+line-height:1.85;
 color:var(--white-soft);
-line-height:1.8;
-padding:0 0 10px 0;
+padding:0 0 11px;
+margin-bottom:11px;
 border-bottom:1px solid rgba(255,255,255,.08);
-margin-bottom:10px;
 }
-.case-list li:last-child{
+.section-list li:last-child{
 margin-bottom:0;
 }
-.case-list strong{
+.section-list strong{
 color:#fff;
 font-weight:600;
 }
-.reference-media{
-overflow:hidden;
-border:1px solid rgba(255,255,255,.15);
-background:rgba(255,255,255,.03);
-height:100%;
-}
-.reference-media img,
-.reference-media video{
-width:100%;
-height:100%;
-object-fit:cover;
-}
 
-/* METHOD BLOCK */
-.method-section{
-border-top:1px solid rgba(255,255,255,.15);
-padding:84px 0;
+/* VISUAL PLACEHOLDERS */
+.reference-visual{
+height:100%;
+min-height:520px;
+border:1px solid rgba(255,255,255,.15);
+background:
+linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)),
+radial-gradient(circle at top left, rgba(255,255,255,.10), transparent 32%);
+display:flex;
+align-items:flex-end;
+padding:26px;
+position:relative;
+overflow:hidden;
+}
+.reference-visual::before{
+content:"";
+position:absolute;
+inset:22px;
+border:1px solid rgba(255,255,255,.12);
+pointer-events:none;
+}
+.reference-visual-label{
 position:relative;
 z-index:2;
-}
-.method-title{
-font-size:2rem;
-text-transform:uppercase;
-margin-bottom:18px;
-}
-.method-text{
 font-family:"Montserrat",sans-serif;
-line-height:1.9;
-color:var(--white-soft);
-max-width:760px;
+font-size:.76rem;
+letter-spacing:.16em;
+text-transform:uppercase;
+color:var(--white-muted);
+}
+.reference-visual-title{
+position:relative;
+z-index:2;
+font-size:1.45rem;
+line-height:1.05;
+text-transform:uppercase;
+margin-top:8px;
 margin-bottom:0;
+max-width:320px;
 }
-.method-grid{
-margin-top:34px;
+.reference-visual-number{
+position:absolute;
+top:22px;
+right:22px;
+font-family:"Montserrat",sans-serif;
+font-size:.8rem;
+letter-spacing:.18em;
+text-transform:uppercase;
+color:rgba(255,255,255,.38);
 }
-.method-card{
+
+/* EXPERTISE GRID */
+.expertise-grid{
+margin-top:36px;
+}
+.expertise-card{
 height:100%;
 border:1px solid rgba(255,255,255,.14);
 background:rgba(255,255,255,.03);
-padding:24px;
+padding:22px;
 }
-.method-card h3{
-font-size:1.05rem;
-line-height:1.2;
+.expertise-card h3{
+font-size:1rem;
 text-transform:uppercase;
-margin-bottom:12px;
+margin-bottom:10px;
 }
-.method-card p{
+.expertise-card p{
 font-family:"Montserrat",sans-serif;
-font-size:.95rem;
+font-size:.94rem;
 line-height:1.8;
 color:var(--white-soft);
+margin-bottom:0;
+}
+
+/* METHODO BLOCK */
+.metho-box{
+border:1px solid rgba(255,255,255,.14);
+background:rgba(255,255,255,.03);
+padding:30px;
+}
+.metho-box p:last-child{
 margin-bottom:0;
 }
 
@@ -292,8 +342,6 @@ margin-bottom:0;
 .references-cta{
 padding:84px 0;
 border-top:1px solid rgba(255,255,255,.15);
-position:relative;
-z-index:2;
 }
 .references-cta-title{
 font-size:2rem;
@@ -302,8 +350,8 @@ margin-bottom:18px;
 }
 .references-cta-text{
 font-family:"Montserrat",sans-serif;
-max-width:760px;
-line-height:1.9;
+max-width:780px;
+line-height:1.95;
 color:var(--white-soft);
 margin-bottom:24px;
 }
@@ -329,49 +377,40 @@ transform:translateY(0);
 }
 
 /* RESPONSIVE */
+@media (max-width:1199px){
+.references-page{padding-right:0;}
+.references-rail{display:none;}
+}
+
 @media (max-width:991px){
-.references-hero{
-padding:120px 0 48px;
-}
-.hero-title{
-font-size:2.4rem;
-max-width:100%;
-}
-.hero-subtitle{
-max-width:100%;
-}
-.case-title{
-font-size:1.8rem;
-}
-.method-title,
-.references-cta-title{
-font-size:1.7rem;
-}
+.references-hero{padding:120px 0 42px;}
+.hero-title{font-size:2.45rem;}
+.section-title{font-size:1.9rem;}
+.references-cta-title{font-size:1.7rem;}
+.reference-visual{min-height:360px;}
 }
 
 @media (max-width:767px){
-.hero-title{
-font-size:2rem;
-line-height:1;
-}
+.hero-title{font-size:2rem;line-height:1;}
+.hero-subtitle,
 .references-intro-text,
-.case-text,
-.case-hook,
-.method-text,
-.method-card p,
-.reference-card-text,
+.section-hook,
+.section-text,
 .references-cta-text{
 font-size:.96rem;
-line-height:1.8;
+line-height:1.85;
 }
-.reference-card,
-.method-card{
-padding:20px;
-}
-.case-section,
-.method-section,
+.section-block,
 .references-cta{
 padding:68px 0;
+}
+.reference-visual{
+min-height:280px;
+padding:20px;
+}
+.reference-visual-title{
+font-size:1.15rem;
+max-width:220px;
 }
 }
 </style>
@@ -391,28 +430,110 @@ padding:68px 0;
 <div class="container">
 <a class="navbar-brand fw-bold" href="index.html">ABYSS LAB.</a>
 
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Navigation">
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
 <span class="navbar-toggler-icon"></span>
 </button>
 
 <div class="collapse navbar-collapse justify-content-end" id="navmenu">
 <ul class="navbar-nav">
-<li class="nav-item">
-<a class="nav-link" href="index.html">A PROPOS</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="services.html">SERVICES</a>
-</li>
-<li class="nav-item">
-<a class="nav-link active" href="references.html">REFERENCES</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="contact.html">CONTACT</a>
-</li>
+<li class="nav-item"><a class="nav-link" href="index.html">A PROPOS</a></li>
+<li class="nav-item"><a class="nav-link" href="services.html">SERVICES</a></li>
+<li class="nav-item"><a class="nav-link active" href="references.html">REFERENCES</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
 </ul>
 </div>
 </div>
 </nav>
+
+<!-- RIGHT LOGO RAIL -->
+<aside class="references-rail" aria-label="Établissements référencés">
+<div class="references-rail-track">
+
+<a class="logo-link" href="https://mondrianhotels.com/fr/bordeaux-les-carmes/" target="_blank" rel="noopener">
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_mondrian_bordeaux_klvfkk.png" alt="Mondrian Bordeaux Les Carmes">
+</a>
+
+<a class="logo-link" href="https://morimotobordeaux.com/" target="_blank" rel="noopener">
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_morimoto_bordeaux_vgb8ns.png" alt="Morimoto Bordeaux">
+</a>
+
+<a class="logo-link" href="https://brindos-cotebasque.com/" target="_blank" rel="noopener">
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271199/marketing_communication_brindos_anglet_ogtgnq.png" alt="Brindos Lac & Château">
+</a>
+
+<a class="logo-link" href="https://cafebonart.com/" target="_blank" rel="noopener">
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271224/marketing_communication_cafe_bonart_vn4enk.png" alt="Café Bonart">
+</a>
+
+<a class="logo-link" href="https://www.chateaudesacy.com/" target="_blank" rel="noopener">
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_chateau_sacy_reims_ov4rcf.png" alt="Château de Sacy">
+</a>
+
+<a class="logo-link" href="https://www.maisons-particulieres.com/maison-la-course" target="_blank" rel="noopener">
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_maison_la_course_bordeaux_pe6vu9.png" alt="Maison La Course">
+</a>
+
+<a class="logo-link" href="https://www.chateaudetheoule.com/" target="_blank" rel="noopener">
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271353/marketing_communication_chateau_theoule_sur_mer_qtecgf.png" alt="Château de Théoule-sur-Mer">
+</a>
+
+<a class="logo-link" href="https://www.lapalmeraielabaule.com/" target="_blank" rel="noopener">
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_palmeraie_la_baule_erb4df.png" alt="La Palmeraie La Baule">
+</a>
+
+<a class="logo-link" href="https://www.grandhotelmegve.com/" target="_blank" rel="noopener">
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_grand_hotel_soleil_d_or_megeve_jic4on.png" alt="Grand Hôtel Soleil d'Or Megève">
+</a>
+
+<a class="logo-link" href="https://www.domainederaba.com/" target="_blank" rel="noopener">
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_domaine_de_raba_zsu3ao.png" alt="Domaine de Raba">
+</a>
+
+<!-- duplicate for infinite loop -->
+<a class="logo-link" href="https://mondrianhotels.com/fr/bordeaux-les-carmes/" target="_blank" rel="noopener">
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_mondrian_bordeaux_klvfkk.png" alt="Mondrian Bordeaux Les Carmes">
+</a>
+
+<a class="logo-link" href="https://morimotobordeaux.com/" target="_blank" rel="noopener">
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_morimoto_bordeaux_vgb8ns.png" alt="Morimoto Bordeaux">
+</a>
+
+<a class="logo-link" href="https://brindos-cotebasque.com/" target="_blank" rel="noopener">
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271199/marketing_communication_brindos_anglet_ogtgnq.png" alt="Brindos Lac & Château">
+</a>
+
+<a class="logo-link" href="https://cafebonart.com/" target="_blank" rel="noopener">
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271224/marketing_communication_cafe_bonart_vn4enk.png" alt="Café Bonart">
+</a>
+
+<a class="logo-link" href="https://www.chateaudesacy.com/" target="_blank" rel="noopener">
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_chateau_sacy_reims_ov4rcf.png" alt="Château de Sacy">
+</a>
+
+<a class="logo-link" href="https://www.maisons-particulieres.com/maison-la-course" target="_blank" rel="noopener">
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_maison_la_course_bordeaux_pe6vu9.png" alt="Maison La Course">
+</a>
+
+<a class="logo-link" href="https://www.chateaudetheoule.com/" target="_blank" rel="noopener">
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271353/marketing_communication_chateau_theoule_sur_mer_qtecgf.png" alt="Château de Théoule-sur-Mer">
+</a>
+
+<a class="logo-link" href="https://www.lapalmeraielabaule.com/" target="_blank" rel="noopener">
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_palmeraie_la_baule_erb4df.png" alt="La Palmeraie La Baule">
+</a>
+
+<a class="logo-link" href="https://www.grandhotelmegve.com/" target="_blank" rel="noopener">
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_grand_hotel_soleil_d_or_megeve_jic4on.png" alt="Grand Hôtel Soleil d'Or Megève">
+</a>
+
+<a class="logo-link" href="https://www.domainederaba.com/" target="_blank" rel="noopener">
+<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_domaine_de_raba_zsu3ao.png" alt="Domaine de Raba">
+</a>
+
+</div>
+</aside>
+
+<div class="references-page">
 
 <!-- HERO -->
 <section class="references-hero fade-in">
@@ -420,12 +541,12 @@ padding:68px 0;
 <p class="hero-kicker">ABYSS LAB — REFERENCES</p>
 
 <h1 class="hero-title">
-REFERENCES<br>
-& REALISATIONS
+EXPERIENCES<br>
+FONDATRICES & REFERENCES
 </h1>
 
 <p class="hero-subtitle">
-Des projets menés à la croisée du marketing, du contenu, du digital et de l’expérience de marque pour des hôtels, restaurants, maisons premium et lieux lifestyle.
+Avant Abyss Lab, ces établissements ont constitué le terrain d’expression et d’exigence à partir duquel s’est construite l’expertise actuelle du studio. Des fonctions menées en marketing, communication et digital, avec une responsabilité 360° sur l’image, la visibilité, les activations, les contenus et les outils de marque.
 </p>
 </div>
 </section>
@@ -435,144 +556,50 @@ Des projets menés à la croisée du marketing, du contenu, du digital et de l�
 <div class="container">
 <div class="references-intro-box">
 <p class="references-intro-text">
-Abyss Lab accompagne des marques qui veulent gagner en cohérence, en visibilité et en désirabilité. Chaque collaboration est pensée comme un dispositif global : positionnement, narration, activation, contenu, image, expérience digitale et rayonnement.
+Cette page ne présente pas seulement des collaborations visuelles. Elle rassemble les expériences qui ont structuré une méthode de travail aujourd’hui portée par Abyss Lab : comprendre rapidement l’ADN d’un lieu, clarifier son positionnement, traduire sa singularité en récit, puis la déployer à travers une communication cohérente, exigeante et opérationnelle. Ces références ont été construites avant Abyss Lab, mais elles en constituent directement le socle d’expertise.
 </p>
 
 <div class="references-tags">
+<span class="references-tag">Marketing & communication 360</span>
 <span class="references-tag">Hospitality</span>
 <span class="references-tag">Restaurants</span>
-<span class="references-tag">Lifestyle</span>
-<span class="references-tag">Premium</span>
-<span class="references-tag">Wine & Spirits</span>
-<span class="references-tag">Digital</span>
-<span class="references-tag">Brand Content</span>
-<span class="references-tag">Web Design</span>
+<span class="references-tag">Brand content</span>
+<span class="references-tag">RP & influence</span>
+<span class="references-tag">SEO / SEA</span>
+<span class="references-tag">Web design</span>
+<span class="references-tag">UX / UI</span>
 </div>
 </div>
 </div>
 </section>
 
-<!-- GRID REFERENCES -->
-<section class="references-grid fade-in">
-<div class="container">
-<div class="row g-4">
-
-<div class="col-md-6 col-xl-4">
-<div class="reference-card">
-<p class="reference-card-label">Reference</p>
-<h2 class="reference-card-title">Mondrian Bordeaux<br>Les Carmes</h2>
-<p class="reference-card-text">
-Accompagnement marketing & communication, activations, contenus, valorisation des temps forts et mise en lumière de l’univers de marque.
-</p>
-</div>
-</div>
-
-<div class="col-md-6 col-xl-4">
-<div class="reference-card">
-<p class="reference-card-label">Reference</p>
-<h2 class="reference-card-title">Morimoto<br>Bordeaux</h2>
-<p class="reference-card-text">
-Direction éditoriale, rayonnement du restaurant, storytelling, opérations spéciales et contenu premium dans un environnement hospitality haut de gamme.
-</p>
-</div>
-</div>
-
-<div class="col-md-6 col-xl-4">
-<div class="reference-card">
-<p class="reference-card-label">Reference</p>
-<h2 class="reference-card-title">Chateau<br>Leognan</h2>
-<p class="reference-card-text">
-Valorisation d’expériences, prises de parole, activations et mise en avant d’un art de vivre ancré dans le vin, l’hospitalité et le territoire.
-</p>
-</div>
-</div>
-
-<div class="col-md-6 col-xl-4">
-<div class="reference-card">
-<p class="reference-card-label">Reference</p>
-<h2 class="reference-card-title">Chateau de<br>Brindos</h2>
-<p class="reference-card-text">
-Création d’univers narratifs, événements, collaborations et dispositifs de communication pensés pour renforcer l’attractivité du lieu.
-</p>
-</div>
-</div>
-
-<div class="col-md-6 col-xl-4">
-<div class="reference-card">
-<p class="reference-card-label">Reference</p>
-<h2 class="reference-card-title">Domaine<br>de Raba</h2>
-<p class="reference-card-text">
-Brand content, expériences, mise en désir de l’offre et valorisation d’un positionnement premium à travers différents formats de communication.
-</p>
-</div>
-</div>
-
-<div class="col-md-6 col-xl-4">
-<div class="reference-card">
-<p class="reference-card-label">Reference</p>
-<h2 class="reference-card-title">Chateau de<br>Theoule-sur-Mer</h2>
-<p class="reference-card-text">
-Dispositifs de visibilité, contenus de marque et accompagnement d’univers où l’image, le cadre et le détail font la différence.
-</p>
-</div>
-</div>
-
-</div>
-</div>
-</section>
-
-<!-- CASE 01 -->
-<section class="case-section fade-in">
+<!-- EXPERIENCE 01 -->
+<section class="section-block fade-in">
 <div class="container">
 <div class="row align-items-center gy-5">
 <div class="col-lg-5">
-<p class="case-index">01 / Hospitality & art de vivre</p>
-<h2 class="case-title">DES LIEUX QUI DOIVENT FAIRE PLUS QUE SE MONTRER</h2>
-<p class="case-hook">
-<strong>Créer une présence qui reflète le niveau réel de l’expérience.</strong>
+<p class="section-index">01 / Mondrian Bordeaux Les Carmes</p>
+<h2 class="section-title">RESPONSABLE MARKETING & COMMUNICATION</h2>
+<p class="section-hook">
+<strong>Une fonction pensée à 360° pour faire rayonner un lieu, ses temps forts, ses prises de parole et son niveau d’expérience.</strong>
 </p>
-<p class="case-text">
-Dans l’hôtellerie, la restauration et les lieux lifestyle, l’image seule ne suffit pas. Il faut une ligne claire, des contenus justes, des activations cohérentes et une exécution capable de faire exister la marque sur l’ensemble de ses points de contact.
+<p class="section-text">
+Au sein du Mondrian Bordeaux Les Carmes, l’enjeu n’était pas uniquement de communiquer, mais d’orchestrer l’ensemble de la présence marketing et communication du lieu avec cohérence. Cette expérience a consolidé une approche transversale, capable d’articuler stratégie, image, contenus, influence, performance et expérience client.
 </p>
 
-<ul class="case-list">
-<li><strong>Interventions :</strong> stratégie marketing & communication, direction éditoriale, brand content, campagnes, activations, accompagnement 360.</li>
-<li><strong>Univers :</strong> hôtels, restaurants, bars, maisons premium, lieux d’expérience.</li>
-<li><strong>Références associées :</strong> Mondrian Bordeaux Les Carmes, Morimoto Bordeaux, Domaine de Raba.</li>
+<ul class="section-list">
+<li><strong>Périmètre :</strong> campagnes marketing, création de supports, RP & influence, communication 360, digitalisation Guest App.</li>
+<li><strong>Déploiement :</strong> community management, ads, brand content photo / vidéo, gestion campagnes SEO / SEA.</li>
+<li><strong>Ce que cela dit aujourd’hui :</strong> une capacité à piloter une marque premium dans toutes ses dimensions visibles et opérationnelles.</li>
 </ul>
 </div>
 
 <div class="col-lg-7">
-<div class="row g-3">
-<div class="col-6 col-md-4">
-<div class="reference-media">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944484/7_etntek.jpg" alt="Référence hospitality Abyss Lab">
-</div>
-</div>
-<div class="col-6 col-md-4">
-<div class="reference-media">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944485/8_tdlijm.jpg" alt="Référence restaurant Abyss Lab">
-</div>
-</div>
-<div class="col-6 col-md-4">
-<div class="reference-media">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771943973/2_kildtp.jpg" alt="Projet lifestyle Abyss Lab">
-</div>
-</div>
-<div class="col-6 col-md-4">
-<div class="reference-media">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944486/9_hb4u5m.jpg" alt="Activation de marque Abyss Lab">
-</div>
-</div>
-<div class="col-6 col-md-4">
-<div class="reference-media">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944496/11_snjoba.jpg" alt="Brand content Abyss Lab">
-</div>
-</div>
-<div class="col-6 col-md-4">
-<div class="reference-media">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944497/12_mjlqal.jpg" alt="Communication premium Abyss Lab">
-</div>
+<div class="reference-visual">
+<span class="reference-visual-number">01</span>
+<div>
+<p class="reference-visual-label">Bloc visuel à remplacer</p>
+<h3 class="reference-visual-title">Hospitality premium<br>Direction 360</h3>
 </div>
 </div>
 </div>
@@ -580,110 +607,161 @@ Dans l’hôtellerie, la restauration et les lieux lifestyle, l’image seule ne
 </div>
 </section>
 
-<!-- CASE 02 -->
-<section class="case-section fade-in">
+<!-- EXPERIENCE 02 -->
+<section class="section-block fade-in">
 <div class="container">
 <div class="row align-items-center gy-5 flex-lg-row-reverse">
 <div class="col-lg-5">
-<p class="case-index">02 / Activations & collaborations</p>
-<h2 class="case-title">FAIRE RAYONNER UNE MARQUE AU BON ENDROIT</h2>
-<p class="case-hook">
-<strong>Imaginer des collaborations qui renforcent vraiment la perception de marque.</strong>
+<p class="section-index">02 / Millésime Collection</p>
+<h2 class="section-title">RESPONSABLE MARKETING DIGITAL — 11 ETABLISSEMENTS</h2>
+<p class="section-hook">
+<strong>Une vision multi-sites pour piloter la visibilité, la cohérence et la performance d’un portefeuille d’établissements.</strong>
 </p>
-<p class="case-text">
-Une collaboration réussie ne se limite pas à une mise en relation. Elle repose sur le choix des bons profils, le bon angle créatif, le bon timing et une coordination capable d’aligner image, désirabilité et retombées.
+<p class="section-text">
+Travailler à l’échelle d’une collection impose une autre lecture du marketing : harmoniser sans lisser, déployer sans dénaturer, structurer les outils tout en respectant les spécificités de chaque maison. Cette expérience nourrit directement la capacité d’Abyss Lab à intervenir avec hauteur sur des environnements complexes.
 </p>
 
-<ul class="case-list">
-<li><strong>Interventions :</strong> sourcing, influence, partenariats, guest experiences, coordination opérationnelle, scénarisation de campagnes.</li>
-<li><strong>Objectif :</strong> augmenter la visibilité tout en préservant la cohérence de marque.</li>
-<li><strong>Approche :</strong> chaque activation est pensée comme une extension naturelle de l’univers du lieu.</li>
+<ul class="section-list">
+<li><strong>Périmètre :</strong> community management, ads, webmastering, e-commerce, RP & influence.</li>
+<li><strong>Déploiement :</strong> web management, SEO / SEA, brand content photo / vidéo, stratégie à 360°.</li>
+<li><strong>Ce que cela dit aujourd’hui :</strong> une expertise solide sur les enjeux de marque, de trafic, de conversion et de cohérence multi-établissements.</li>
 </ul>
 </div>
 
 <div class="col-lg-7">
-<div class="reference-media">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771947024/17_gmnxl2.jpg" alt="Activations et collaborations Abyss Lab">
+<div class="reference-visual">
+<span class="reference-visual-number">02</span>
+<div>
+<p class="reference-visual-label">Bloc visuel à remplacer</p>
+<h3 class="reference-visual-title">Collection hôtelière<br>Vision multi-sites</h3>
+</div>
 </div>
 </div>
 </div>
 </div>
 </section>
 
-<!-- CASE 03 -->
-<section class="case-section fade-in">
+<!-- EXPERIENCE 03 -->
+<section class="section-block fade-in">
 <div class="container">
 <div class="row align-items-center gy-5">
 <div class="col-lg-5">
-<p class="case-index">03 / Web & experience digitale</p>
-<h2 class="case-title">DES INTERFACES QUI PORTENT LA MARQUE AUTANT QUE LE FOND</h2>
-<p class="case-hook">
-<strong>Concevoir des présences digitales plus lisibles, plus désirables et plus efficaces.</strong>
+<p class="section-index">03 / Eklo Hotels</p>
+<h2 class="section-title">CHEFFE DE PROJET DIGITAL — 5 ETABLISSEMENTS</h2>
+<p class="section-hook">
+<strong>Relier le digital, l’expérience client et la perception de marque à travers des dispositifs concrets et activables.</strong>
 </p>
-<p class="case-text">
-Site vitrine, architecture de contenu, UX, hiérarchie de l’information, direction visuelle : le digital n’est pas un simple support, c’est une vitrine stratégique. Il doit traduire le niveau de la marque et soutenir sa conversion.
+<p class="section-text">
+Cette expérience a renforcé une culture du terrain et de l’efficacité : faire en sorte que la communication ne soit pas un décor, mais un levier utile pour l’expérience vécue, l’e-réputation, la lisibilité de l’offre et la dynamique commerciale.
 </p>
 
-<ul class="case-list">
-<li><strong>Interventions :</strong> web design, UX/UI, structuration éditoriale, optimisation SEO, cohérence globale de la présence digitale.</li>
-<li><strong>Enjeu :</strong> clarifier l’offre, renforcer la perception premium et mieux convertir.</li>
-<li><strong>Usage :</strong> sites de marque, pages services, pages références, parcours de contact.</li>
+<ul class="section-list">
+<li><strong>Périmètre :</strong> community management, e-distribution, RP, expérience client, e-réputation.</li>
+<li><strong>Déploiement :</strong> branding 360, outils de communication, marketing opérationnel, rédaction web, intégration.</li>
+<li><strong>Ce que cela dit aujourd’hui :</strong> une capacité à aligner marque, parcours client et exécution digitale dans des contextes exigeants.</li>
 </ul>
 </div>
 
 <div class="col-lg-7">
-<div class="reference-media">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771947242/Design_sans_titre_3_xtitbt.png" alt="Web design et direction digitale Abyss Lab">
+<div class="reference-visual">
+<span class="reference-visual-number">03</span>
+<div>
+<p class="reference-visual-label">Bloc visuel à remplacer</p>
+<h3 class="reference-visual-title">Expérience client<br>Digital opérationnel</h3>
+</div>
 </div>
 </div>
 </div>
 </div>
 </section>
 
-<!-- METHOD -->
-<section class="method-section fade-in">
+<!-- EXPERIENCE 04 -->
+<section class="section-block fade-in">
 <div class="container">
-<h2 class="method-title">CE QUE CES PROJETS DISENT DE NOTRE FACON D’ACCOMPAGNER</h2>
-<p class="method-text">
-Au-delà des secteurs ou des formats, les projets présentés ici reflètent une même manière de travailler : prendre de la hauteur, comprendre ce qui distingue réellement une marque, puis traduire cette singularité en direction claire, en contenu, en image et en expérience cohérente.
+<div class="row align-items-center gy-5 flex-lg-row-reverse">
+<div class="col-lg-5">
+<p class="section-index">04 / Constance Hôtels & Resorts</p>
+<h2 class="section-title">ASSISTANTE RESPONSABLE MARKETING & COMMUNICATION DIGITALE — 7 ETABLISSEMENTS</h2>
+<p class="section-hook">
+<strong>Un socle structurant autour du rebranding, du digital, des outils de marque et de l’amélioration de l’expérience en ligne.</strong>
+</p>
+<p class="section-text">
+Cette expérience a posé les bases d’une lecture plus stratégique du marketing hôtelier : articulation entre image de marque, outils de communication, présence digitale, acquisition et qualité d’expérience sur les interfaces.
 </p>
 
-<div class="row g-4 method-grid">
-<div class="col-md-6 col-xl-3">
-<div class="method-card">
-<h3>Vision 360</h3>
-<p>
-Stratégie, contenu, image, expérience et digital sont pensés ensemble pour éviter les prises de parole fragmentées.
+<ul class="section-list">
+<li><strong>Périmètre :</strong> outils de communication, stratégie de rebranding, RP internationales & influence.</li>
+<li><strong>Déploiement :</strong> e-business, SEO / SEA, conciergerie online, audit & améliorations UX / UI, refonte site web.</li>
+<li><strong>Ce que cela dit aujourd’hui :</strong> une sensibilité forte aux enjeux de détail, d’image, d’ergonomie et de performance digitale.</li>
+</ul>
+</div>
+
+<div class="col-lg-7">
+<div class="reference-visual">
+<span class="reference-visual-number">04</span>
+<div>
+<p class="reference-visual-label">Bloc visuel à remplacer</p>
+<h3 class="reference-visual-title">Rebranding<br>UX / UI & web</h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- EXPERTISES -->
+<section class="section-block fade-in">
+<div class="container">
+<p class="section-index">05 / Ce que ces références couvrent</p>
+<h2 class="section-title">UNE EXPERTISE QUI DEPASSE LE SIMPLE PORTFOLIO</h2>
+<p class="section-text">
+Ces expériences fondatrices montrent une même constante : une approche capable d’embrasser l’ensemble des points de contact d’une marque. C’est cette lecture transversale qui nourrit aujourd’hui Abyss Lab, avec un accompagnement pensé comme une direction marketing & communication externalisée.
 </p>
+
+<div class="row g-4 expertise-grid">
+<div class="col-md-6 col-xl-3">
+<div class="expertise-card">
+<h3>Stratégie 360</h3>
+<p>Positionnement, cohérence globale, campagnes, plan d’actions et déploiement marketing & communication.</p>
 </div>
 </div>
 
 <div class="col-md-6 col-xl-3">
-<div class="method-card">
-<h3>Exigence premium</h3>
-<p>
-Chaque détail compte : ton, rythme, cohérence visuelle, perception de marque et qualité d’exécution.
-</p>
+<div class="expertise-card">
+<h3>Brand content</h3>
+<p>Storytelling, direction éditoriale, contenus photo / vidéo, valorisation d’expériences et rayonnement de marque.</p>
 </div>
 </div>
 
 <div class="col-md-6 col-xl-3">
-<div class="method-card">
-<h3>Approche sur-mesure</h3>
-<p>
-Pas de formule figée : le dispositif s’adapte au lieu, à l’ambition, aux enjeux et au niveau de maturité de la marque.
-</p>
+<div class="expertise-card">
+<h3>Influence & visibilité</h3>
+<p>RP, influence, activations, community management, ads, e-réputation et amplification des prises de parole.</p>
 </div>
 </div>
 
 <div class="col-md-6 col-xl-3">
-<div class="method-card">
-<h3>Direction externalisée</h3>
-<p>
-Abyss Lab agit comme une direction marketing & communication externe, capable de cadrer, piloter et faire avancer.
+<div class="expertise-card">
+<h3>Digital & expérience</h3>
+<p>SEO / SEA, web management, UX / UI, refonte site web, guest apps, outils digitaux et parcours en ligne.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TRANSITION -->
+<section class="section-block fade-in">
+<div class="container">
+<div class="metho-box">
+<p class="section-index">06 / Continuité</p>
+<h2 class="section-title">AVANT ABYSS LAB, LE TERRAIN. AUJOURD’HUI, LA SYNTHÈSE.</h2>
+<p class="section-text">
+Abyss Lab prolonge naturellement ce parcours. Ce qui a été construit au sein de ces établissements ne relève pas d’un passé annexe, mais d’un socle d’expertise concret : comprendre les marques de l’intérieur, conjuguer storytelling stratégique et mise en œuvre opérationnelle, puis transformer cette exigence en accompagnement sur-mesure pour d’autres lieux, maisons et acteurs premium.
 </p>
-</div>
-</div>
+<p class="section-text">
+Autrement dit : ces références précèdent Abyss Lab dans le temps, mais elles en constituent pleinement la profondeur, la méthode et la légitimité.
+</p>
 </div>
 </div>
 </section>
@@ -691,13 +769,15 @@ Abyss Lab agit comme une direction marketing & communication externe, capable de
 <!-- CTA -->
 <section class="references-cta fade-in">
 <div class="container">
-<h2 class="references-cta-title">ENVIE DE DONNER PLUS DE RELIEF A VOTRE MARQUE ?</h2>
+<h2 class="references-cta-title">DONNER PLUS DE RELIEF A VOTRE MARQUE</h2>
 <p class="references-cta-text">
-Abyss Lab accompagne les marques premium, lifestyle, hospitality et art de vivre qui veulent structurer leur image, renforcer leur présence et activer leur développement avec plus de cohérence.
+Abyss Lab accompagne les hôtels, restaurants, lieux lifestyle et maisons premium qui veulent structurer leur image, clarifier leur présence et activer leur développement avec une vision plus juste, plus cohérente et plus désirable.
 </p>
 <a href="contact.html" class="btn btn-outline-light">PARLER DE VOTRE PROJET</a>
 </div>
 </section>
+
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -720,22 +800,22 @@ Agence basée Bordeaux.
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-window.addEventListener("scroll",function(){
-const navbar=document.querySelector(".navbar");
-navbar.classList.toggle("scrolled",window.scrollY>50);
+window.addEventListener("scroll", function(){
+const navbar = document.querySelector(".navbar");
+navbar.classList.toggle("scrolled", window.scrollY > 50);
 });
 
-const faders=document.querySelectorAll(".fade-in");
+const faders = document.querySelectorAll(".fade-in");
 
-const appearOnScroll=new IntersectionObserver(function(entries,observer){
-entries.forEach(entry=>{
-if(!entry.isIntersecting)return;
+const appearOnScroll = new IntersectionObserver(function(entries, observer){
+entries.forEach(entry => {
+if(!entry.isIntersecting) return;
 entry.target.classList.add("visible");
 observer.unobserve(entry.target);
 });
-},{threshold:.15});
+}, { threshold: .15 });
 
-faders.forEach(fader=>{
+faders.forEach(fader => {
 appearOnScroll.observe(fader);
 });
 </script>
