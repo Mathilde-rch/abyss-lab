@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Références Abyss Lab : marketing et communication 360°, image de marque, brand content, rayonnement, SEO, web design, UX et expérience digitale pour hôtels, restaurants, groupes hospitality et marques premium.">
-  <title>Références Abyss Lab | Univers accompagnés & expertise 360°</title>
+  <meta name="description" content="Références Abyss Lab : marketing et communication 360°, image de marque, brand content, visibilité, SEO, web design, UX et expérience digitale pour hôtels, restaurants, groupes hospitality et marques premium.">
+  <title>Références Abyss Lab | Expertise 360° & univers accompagnés</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,8 +22,8 @@
       --white-faint:rgba(255,255,255,.50);
       --line:rgba(255,255,255,.14);
       --line-soft:rgba(255,255,255,.10);
-      --glass:rgba(255,255,255,.035);
-      --panel:rgba(10,12,16,.78);
+      --glass:rgba(255,255,255,.045);
+      --glass-strong:rgba(255,255,255,.07);
     }
 
     html{scroll-behavior:smooth;}
@@ -54,7 +54,7 @@
       inset:0;
       background:
         linear-gradient(to bottom, rgba(0,0,0,.34), rgba(0,0,0,.76) 42%, rgba(0,0,0,.94) 100%),
-        rgba(0,0,0,.15);
+        rgba(0,0,0,.14);
       z-index:1;
     }
 
@@ -170,13 +170,14 @@
     .logo-strip{
       position:relative;
       z-index:3;
-      padding:18px 0 8px;
+      padding:18px 0 10px;
     }
     .logo-strip-shell{
       border-top:1px solid var(--line);
       border-bottom:1px solid var(--line);
-      background:rgba(10,12,16,.84);
-      backdrop-filter:blur(10px);
+      background:rgba(255,255,255,.05);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
       padding:14px 0;
       overflow:hidden;
     }
@@ -192,7 +193,7 @@
     .logo-strip-track{
       display:flex;
       align-items:center;
-      gap:14px;
+      gap:16px;
       width:max-content;
       padding:0 18px;
       animation:logoScroll 34s linear infinite;
@@ -202,21 +203,23 @@
     }
     .logo-pill{
       flex:0 0 auto;
-      width:270px;
-      height:96px;
+      width:320px;
+      height:110px;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:8px 10px;
-      border:1px solid rgba(255,255,255,.16);
-      background:rgba(255,255,255,.06);
+      padding:6px 8px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.05);
       text-decoration:none;
       overflow:hidden;
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
     }
     .logo-pill:hover{
       transform:translateY(-2px);
-      border-color:rgba(255,255,255,.32);
-      background:rgba(255,255,255,.10);
+      border-color:rgba(255,255,255,.30);
+      background:rgba(255,255,255,.09);
     }
     .logo-pill img{
       width:100%;
@@ -231,17 +234,17 @@
       100%{transform:translateX(-50%);}
     }
 
-    /* SHORT MANIFESTO */
+    /* MANIFESTO */
     .references-manifesto{
       position:relative;
       z-index:2;
-      padding:18px 0 8px;
+      padding:18px 0 10px;
     }
     .references-manifesto-box{
       max-width:760px;
       margin:0 auto;
       text-align:center;
-      padding:6px 0 12px;
+      padding:6px 0 10px;
     }
     .references-manifesto-text{
       margin:0;
@@ -249,6 +252,53 @@
       line-height:1.68;
       color:var(--white);
       font-weight:600;
+    }
+
+    /* STATS */
+    .references-stats{
+      position:relative;
+      z-index:2;
+      padding:8px 0 16px;
+    }
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+    .stat-card{
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      padding:22px 18px;
+      text-align:center;
+      min-height:160px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .stat-number{
+      font-family:'couture',sans-serif;
+      font-size:2.1rem;
+      line-height:1;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:10px;
+      color:var(--white);
+    }
+    .stat-label{
+      font-size:.72rem;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--white-soft);
+      margin-bottom:10px;
+    }
+    .stat-text{
+      margin:0;
+      font-size:.88rem;
+      line-height:1.58;
+      color:var(--white-soft);
     }
 
     /* THEMES */
@@ -270,12 +320,8 @@
     .theme-row{
       align-items:center;
     }
-    .theme-text-col{
-      order:2;
-    }
-    .theme-media-col{
-      order:1;
-    }
+    .theme-text-col{order:2;}
+    .theme-media-col{order:1;}
     .theme-text-wrap{
       padding-right:46px;
       max-width:610px;
@@ -331,13 +377,15 @@
     }
     .theme-places li{
       border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.03);
+      background:rgba(255,255,255,.04);
       padding:10px 12px;
       font-size:.72rem;
       font-weight:700;
       letter-spacing:.12em;
       text-transform:uppercase;
       color:var(--white-soft);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
     }
     .theme-points{
       display:grid;
@@ -346,9 +394,10 @@
     }
     .theme-point{
       border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.025);
+      background:rgba(255,255,255,.03);
       padding:14px 14px 13px;
-      backdrop-filter:blur(6px);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
     }
     .theme-point-title{
       display:block;
@@ -554,12 +603,15 @@
 
     @media(max-width:991.98px){
       .references-hero{padding:90px 0 18px;}
+      .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
       .theme-text-wrap{padding-right:0;max-width:none;}
       .theme-media img,
       .theme-media video{height:440px;}
       .logo-pill{
-        width:230px;
-        height:84px;
+        width:250px;
+        height:90px;
       }
       .footer-social-block{margin-top:4px;}
       .footer-menu{
@@ -589,7 +641,8 @@
       .references-manifesto-text,
       .theme-text,
       .theme-point-text,
-      .cta-text{
+      .cta-text,
+      .stat-text{
         font-size:.91rem;
         line-height:1.7;
       }
@@ -627,9 +680,16 @@
         padding:0 12px;
       }
       .logo-pill{
-        width:180px;
-        height:72px;
-        padding:8px 10px;
+        width:210px;
+        height:78px;
+        padding:6px 8px;
+      }
+
+      .stats-grid{
+        grid-template-columns:1fr;
+      }
+      .stat-card{
+        min-height:auto;
       }
 
       .theme-title,
@@ -664,7 +724,7 @@
 <body>
 
   <h1 class="visually-hidden-seo">
-    Références Abyss Lab : marketing et communication 360, brand content, RP et influence, SEO, SEA, UX, guest app, web design, expérience client et direction marketing pour hôtels, restaurants, hospitality et marques premium
+    Références Abyss Lab : marketing et communication 360, stratégie de marque, brand content, SEO, SEA, UX, web design, expérience client, direction marketing et communication pour hôtels, restaurants et univers premium
   </h1>
 
   <div class="video-background">
@@ -696,9 +756,9 @@
     <section class="references-hero fade-in">
       <div class="container">
         <div class="references-hero-inner">
-          <h1 class="references-title">REFERENCES, IMPACTS, UNIVERS</h1>
+          <h1 class="references-title">REFERENCES, CHIFFRES CLES, IMPACTS</h1>
           <p class="references-intro">
-            Hôtels, restaurants, groupes hospitality et maisons premium : des environnements où l’image, le rayonnement, le digital et l’expérience doivent être tenus avec précision.
+            Des environnements où l’image, le contenu, le rayonnement et l’expérience doivent avancer avec la même exigence.
           </p>
 
           <div class="references-hero-cta">
@@ -745,8 +805,35 @@
       <div class="container">
         <div class="references-manifesto-box">
           <p class="references-manifesto-text">
-            Une même attente derrière chaque sujet : plus de cohérence, plus de tenue, plus d’impact.
+            De la stratégie 360 au digital, une même ligne : clarifier, élever, déployer.
           </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="references-stats fade-in">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">24</div>
+            <div class="stat-label">Établissements</div>
+            <p class="stat-text">Pilotés ou accompagnés à travers l’hospitality, la restauration et les univers premium.</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">360°</div>
+            <div class="stat-label">Stratégie</div>
+            <p class="stat-text">Image, contenu, visibilité, digital, expérience et coordination globale.</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">4</div>
+            <div class="stat-label">Univers clés</div>
+            <p class="stat-text">Image, rayonnement, digital et pilotage tenus avec la même exigence.</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">SEO</div>
+            <div class="stat-label">+ UX / Ads</div>
+            <p class="stat-text">Des leviers de visibilité et d’expérience traités comme des enjeux de marque.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -768,7 +855,7 @@
                 <p class="theme-subtitle">Image, contenu, perception</p>
                 <p class="theme-hook">Quand l’univers doit être ressenti avant même d’être expliqué.</p>
                 <p class="theme-text">
-                  Construire une présence plus juste, plus désirable, plus tenue à travers le brand content, l’image et la cohérence globale.
+                  Brand content, image de marque, supports et cohérence visuelle pensés pour renforcer la désirabilité.
                 </p>
 
                 <ul class="theme-places">
@@ -780,16 +867,12 @@
 
                 <div class="theme-points">
                   <div class="theme-point">
-                    <span class="theme-point-title">Brand content</span>
-                    <p class="theme-point-text">Photos, vidéos, narration et mise en valeur des temps forts. </p>
+                    <span class="theme-point-title">Contenu</span>
+                    <p class="theme-point-text">Photos, vidéos, narration, mise en valeur des temps forts.</p>
                   </div>
                   <div class="theme-point">
-                    <span class="theme-point-title">Image de marque</span>
-                    <p class="theme-point-text">Une présence plus cohérente sur les supports visibles et éditoriaux.</p>
-                  </div>
-                  <div class="theme-point">
-                    <span class="theme-point-title">Perception</span>
-                    <p class="theme-point-text">Renforcer la valeur perçue par le fond autant que par la forme.</p>
+                    <span class="theme-point-title">Image</span>
+                    <p class="theme-point-text">Une présence plus cohérente sur l’ensemble des points visibles.</p>
                   </div>
                 </div>
 
@@ -815,7 +898,7 @@
                 <p class="theme-subtitle">Visibilité, RP, influence, amplification</p>
                 <p class="theme-hook">Activer les bons relais au bon niveau, sans brouiller la ligne.</p>
                 <p class="theme-text">
-                  Déployer des prises de parole, activations, RP, influence et campagnes qui servent la marque au lieu de la disperser.
+                  RP, influence, community management, ads et activations conçus pour servir la marque avec justesse.
                 </p>
 
                 <ul class="theme-places">
@@ -827,16 +910,12 @@
 
                 <div class="theme-points">
                   <div class="theme-point">
-                    <span class="theme-point-title">RP & influence</span>
-                    <p class="theme-point-text">Sélectionner les bons relais et penser des activations cohérentes. </p>
+                    <span class="theme-point-title">Influence</span>
+                    <p class="theme-point-text">Choisir les bons relais et les bons temps d’activation.</p>
                   </div>
                   <div class="theme-point">
-                    <span class="theme-point-title">Community & ads</span>
-                    <p class="theme-point-text">Renforcer la présence et l’attractivité avec des leviers ciblés.</p>
-                  </div>
-                  <div class="theme-point">
-                    <span class="theme-point-title">Rayonnement</span>
-                    <p class="theme-point-text">Soutenir le désir, la visibilité et la mémorisation de la marque.</p>
+                    <span class="theme-point-title">Visibilité</span>
+                    <p class="theme-point-text">Accroître la présence et l’attractivité avec cohérence.</p>
                   </div>
                 </div>
 
@@ -862,7 +941,7 @@
                 <p class="theme-subtitle">Web, SEO, UX, guest apps, parcours</p>
                 <p class="theme-hook">Le digital comme prolongement naturel du niveau réel de la marque.</p>
                 <p class="theme-text">
-                  Site, SEO/SEA, web design, UX/UI, guest apps et parcours digitaux pensés comme de vrais points de contact de marque. 
+                  Site, SEO/SEA, web design, UX/UI, guest apps et parcours digitaux pensés comme des points de contact de marque.
                 </p>
 
                 <ul class="theme-places">
@@ -875,15 +954,11 @@
                 <div class="theme-points">
                   <div class="theme-point">
                     <span class="theme-point-title">SEO / SEA</span>
-                    <p class="theme-point-text">Soutenir la visibilité qualifiée sans sacrifier la perception. </p>
+                    <p class="theme-point-text">Soutenir la visibilité qualifiée sans dégrader la perception.</p>
                   </div>
                   <div class="theme-point">
                     <span class="theme-point-title">UX / UI</span>
-                    <p class="theme-point-text">Rendre l’expérience plus fluide, claire et crédible.</p>
-                  </div>
-                  <div class="theme-point">
-                    <span class="theme-point-title">Guest apps / web</span>
-                    <p class="theme-point-text">Faire du digital un levier d’expérience et non un simple support.</p>
+                    <p class="theme-point-text">Rendre l’expérience plus fluide, plus claire, plus crédible.</p>
                   </div>
                 </div>
 
@@ -920,15 +995,11 @@
                 <div class="theme-points">
                   <div class="theme-point">
                     <span class="theme-point-title">Strategie 360</span>
-                    <p class="theme-point-text">Relier image, contenu, visibilité, digital et expérience. </p>
+                    <p class="theme-point-text">Relier image, contenu, visibilité, digital et expérience.</p>
                   </div>
                   <div class="theme-point">
                     <span class="theme-point-title">Coordination</span>
                     <p class="theme-point-text">Faire le lien entre supports, prestataires, campagnes et enjeux de marque.</p>
-                  </div>
-                  <div class="theme-point">
-                    <span class="theme-point-title">Continuite</span>
-                    <p class="theme-point-text">Assurer une direction cohérente, même dans des contextes mouvants.</p>
                   </div>
                 </div>
 
