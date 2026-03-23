@@ -1,824 +1,1344 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Références Abyss Lab : expériences fondatrices en marketing, communication et digital pour hôtels, restaurants, groupes hospitality et lieux premium. Direction marketing et communication 360°, brand content, influence, SEO, web design, UX et expérience de marque.">
+  <title>Références Abyss Lab | Marketing, communication & direction 360°</title>
 
-<meta name="description" content="Références Abyss Lab : expériences fondatrices en marketing, communication et digital dans l’hospitality, la restauration et les lieux premium. Direction marketing & communication 360, brand content, influence, SEO, web design et expérience digitale.">
-<title>Références | ABYSS LAB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/couture" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/couture" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-<link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    :root{
+      --white:#ffffff;
+      --white-soft:rgba(255,255,255,.84);
+      --white-muted:rgba(255,255,255,.66);
+      --white-faint:rgba(255,255,255,.50);
+      --line:rgba(255,255,255,.14);
+      --line-soft:rgba(255,255,255,.10);
+      --glass:rgba(255,255,255,.035);
+    }
 
-<style>
-:root{
---white:#ffffff;
---white-soft:rgba(255,255,255,.82);
---white-muted:rgba(255,255,255,.68);
---line:rgba(255,255,255,.14);
---line-strong:rgba(255,255,255,.24);
---bg:#000000;
-}
+    html{scroll-behavior:smooth;}
+    body{
+      overflow-x:hidden;
+      color:var(--white);
+      font-family:'Montserrat',sans-serif;
+      background:#000;
+    }
+    a{transition:all .3s ease;}
+    img,video{max-width:100%;display:block;}
 
-html{scroll-behavior:smooth;}
-body{
-background:#000;
-color:#fff;
-overflow-x:hidden;
-}
-img{max-width:100%;display:block;}
+    .video-background{
+      position:fixed;
+      inset:0;
+      z-index:-2;
+      overflow:hidden;
+      background:#000;
+    }
+    .video-background video{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .video-background::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,.42), rgba(0,0,0,.80) 42%, rgba(0,0,0,.95) 100%),
+        rgba(0,0,0,.16);
+      z-index:1;
+    }
 
-/* VIDEO */
-.video-background{
-position:fixed;
-inset:0;
-z-index:-2;
-overflow:hidden;
-}
-.video-background video{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-.video-background::after{
-content:"";
-position:absolute;
-inset:0;
-background:
-linear-gradient(to bottom, rgba(0,0,0,.42), rgba(0,0,0,.80)),
-radial-gradient(circle at 20% 20%, rgba(255,255,255,.04), transparent 35%);
-}
+    .navbar{
+      position:relative;
+      z-index:30;
+      transition:background-color .3s ease, backdrop-filter .3s ease;
+    }
+    .navbar.scrolled{
+      background:rgba(0,0,0,.68);
+      backdrop-filter:blur(14px);
+    }
+    .navbar-brand{
+      letter-spacing:1px;
+      color:var(--white)!important;
+    }
+    .nav-link{
+      font-family:'couture',sans-serif;
+      font-size:.80rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      font-weight:600;
+      color:var(--white-soft)!important;
+      padding-left:1rem!important;
+      padding-right:1rem!important;
+    }
+    .nav-link:hover,
+    .nav-link.active{
+      color:var(--white)!important;
+    }
 
-/* NAVBAR */
-.navbar{
-position:relative;
-z-index:40;
-transition:.3s;
-}
-.navbar.scrolled{
-background:rgba(0,0,0,.72);
-backdrop-filter:blur(14px);
-}
-.nav-link{
-font-family:'couture',sans-serif;
-font-size:.80rem;
-letter-spacing:.16em;
-text-transform:uppercase;
-color:var(--white-soft)!important;
-padding-left:1rem!important;
-padding-right:1rem!important;
-}
-.nav-link.active,
-.nav-link:hover{
-color:#fff!important;
-}
+    .btn-outline-light,
+    .btn-light-ghost{
+      border-radius:999px;
+      padding:11px 24px;
+      font-size:.78rem;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+    .btn-outline-light{
+      border-color:rgba(255,255,255,.55);
+    }
+    .btn-outline-light:hover{
+      background:var(--white);
+      color:#000;
+      border-color:var(--white);
+    }
+    .btn-light-ghost{
+      border:1px solid rgba(255,255,255,.16);
+      color:var(--white);
+      background:rgba(255,255,255,.05);
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .btn-light-ghost:hover{
+      color:#000;
+      background:var(--white);
+      border-color:var(--white);
+    }
 
-/* RIGHT LOGO RAIL */
-.references-rail{
-position:fixed;
-right:18px;
-top:50%;
-transform:translateY(-50%);
-z-index:24;
-width:108px;
-height:72vh;
-max-height:760px;
-border:1px solid rgba(255,255,255,.14);
-background:rgba(0,0,0,.42);
-backdrop-filter:blur(10px);
-overflow:hidden;
-}
-.references-rail-track{
-display:flex;
-flex-direction:column;
-gap:14px;
-padding:16px 12px;
-animation:scrollLogos 24s linear infinite;
-}
-.references-rail:hover .references-rail-track{
-animation-play-state:paused;
-}
-.logo-link{
-display:flex;
-align-items:center;
-justify-content:center;
-min-height:72px;
-padding:12px;
-border:1px solid rgba(255,255,255,.08);
-background:rgba(255,255,255,.03);
-transition:.3s ease;
-}
-.logo-link:hover{
-transform:translateX(-4px);
-border-color:rgba(255,255,255,.24);
-background:rgba(255,255,255,.06);
-}
-.logo-link img{
-max-width:100%;
-max-height:42px;
-width:auto;
-height:auto;
-object-fit:contain;
-filter:brightness(0) invert(1);
-opacity:.92;
-}
-@keyframes scrollLogos{
-0%{transform:translateY(0);}
-100%{transform:translateY(-50%);}
-}
+    .visually-hidden-seo{
+      position:absolute!important;
+      width:1px!important;
+      height:1px!important;
+      padding:0!important;
+      margin:-1px!important;
+      overflow:hidden!important;
+      clip:rect(0,0,0,0)!important;
+      white-space:nowrap!important;
+      border:0!important;
+    }
 
-/* PAGE OFFSET */
-.references-page{
-position:relative;
-z-index:2;
-padding-right:130px;
-}
+    .section-kicker{
+      margin:0 0 10px;
+      font-size:.74rem;
+      font-weight:700;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:var(--white-soft);
+    }
 
-/* HERO */
-.references-hero{
-padding:140px 0 54px;
-}
-.hero-kicker{
-font-family:"Montserrat",sans-serif;
-font-size:12px;
-letter-spacing:3px;
-text-transform:uppercase;
-color:var(--white-muted);
-margin-bottom:18px;
-}
-.hero-title{
-font-size:4rem;
-line-height:.95;
-text-transform:uppercase;
-margin-bottom:18px;
-max-width:980px;
-}
-.hero-subtitle{
-font-family:"Montserrat",sans-serif;
-max-width:820px;
-line-height:1.9;
-color:var(--white-soft);
-margin-bottom:0;
-}
+    /* HERO */
+    .references-hero{
+      padding:98px 0 26px;
+      position:relative;
+      z-index:2;
+    }
+    .references-hero-inner{
+      max-width:900px;
+      margin:0 auto;
+      text-align:center;
+    }
+    .references-title{
+      font-family:'couture',sans-serif;
+      font-size:2.18rem;
+      line-height:1.06;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      color:var(--white);
+      margin:0 0 14px;
+    }
+    .references-intro{
+      max-width:760px;
+      margin:0 auto;
+      text-align:center;
+      font-size:.96rem;
+      line-height:1.74;
+      color:var(--white-soft);
+    }
+    .references-hero-cta{
+      margin-top:20px;
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
 
-/* INTRO */
-.references-intro{
-padding:0 0 40px;
-}
-.references-intro-box{
-border-top:1px solid var(--line);
-border-bottom:1px solid var(--line);
-padding:28px 0;
-}
-.references-intro-text{
-font-family:"Montserrat",sans-serif;
-font-size:1rem;
-line-height:1.95;
-color:var(--white-soft);
-max-width:1050px;
-margin:0;
-}
-.references-tags{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-margin-top:22px;
-}
-.references-tag{
-border:1px solid rgba(255,255,255,.18);
-padding:10px 14px;
-font-family:"Montserrat",sans-serif;
-font-size:.78rem;
-letter-spacing:.08em;
-text-transform:uppercase;
-color:var(--white-soft);
-background:rgba(255,255,255,.03);
-}
+    /* LOGO BAND */
+    .logo-band{
+      position:relative;
+      z-index:2;
+      padding:8px 0 18px;
+    }
+    .logo-band-head{
+      margin:0 auto 10px;
+      max-width:1180px;
+      text-align:center;
+    }
+    .logo-band-title{
+      margin:0;
+      font-size:.72rem;
+      font-weight:700;
+      letter-spacing:.20em;
+      text-transform:uppercase;
+      color:var(--white-soft);
+    }
+    .logo-band-outer{
+      position:relative;
+      max-width:100%;
+      overflow:hidden;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+    }
+    .logo-band-track{
+      display:flex;
+      gap:18px;
+      width:max-content;
+      padding:18px 22px;
+      animation:logoMarquee 34s linear infinite;
+    }
+    .logo-band-outer:hover .logo-band-track{
+      animation-play-state:paused;
+    }
+    .logo-card{
+      flex:0 0 230px;
+      height:88px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:16px 22px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.03);
+      text-decoration:none;
+    }
+    .logo-card:hover{
+      transform:translateY(-3px);
+      border-color:rgba(255,255,255,.30);
+      background:rgba(255,255,255,.06);
+    }
+    .logo-card img{
+      max-width:100%;
+      max-height:34px;
+      width:auto;
+      height:auto;
+      object-fit:contain;
+      filter:brightness(0) invert(1);
+      opacity:.96;
+    }
+    @keyframes logoMarquee{
+      0%{transform:translateX(0);}
+      100%{transform:translateX(-50%);}
+    }
 
-/* SECTION */
-.section-block{
-border-top:1px solid rgba(255,255,255,.15);
-padding:84px 0;
-}
-.section-index{
-font-family:"Montserrat",sans-serif;
-font-size:.75rem;
-letter-spacing:2px;
-text-transform:uppercase;
-color:var(--white-muted);
-margin-bottom:12px;
-}
-.section-title{
-font-size:2.35rem;
-line-height:1;
-text-transform:uppercase;
-margin-bottom:18px;
-}
-.section-hook{
-font-family:"Montserrat",sans-serif;
-font-size:1rem;
-line-height:1.85;
-color:#fff;
-margin-bottom:16px;
-}
-.section-text{
-font-family:"Montserrat",sans-serif;
-line-height:1.95;
-color:var(--white-soft);
-margin-bottom:18px;
-}
-.section-list{
-padding-left:0;
-margin:0;
-list-style:none;
-}
-.section-list li{
-font-family:"Montserrat",sans-serif;
-line-height:1.85;
-color:var(--white-soft);
-padding:0 0 11px;
-margin-bottom:11px;
-border-bottom:1px solid rgba(255,255,255,.08);
-}
-.section-list li:last-child{
-margin-bottom:0;
-}
-.section-list strong{
-color:#fff;
-font-weight:600;
-}
+    /* INTRO PANEL */
+    .references-panel{
+      position:relative;
+      z-index:2;
+      padding:18px 0 10px;
+    }
+    .references-panel-box{
+      max-width:980px;
+      margin:0 auto;
+      text-align:center;
+      border-bottom:1px solid var(--line);
+      padding-bottom:28px;
+    }
+    .references-panel-text{
+      margin:0 auto;
+      max-width:900px;
+      font-size:.96rem;
+      line-height:1.78;
+      color:var(--white-soft);
+    }
+    .references-tags{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+    .references-tag{
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.03);
+      color:var(--white-soft);
+      padding:10px 14px;
+      font-size:.70rem;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
 
-/* VISUAL PLACEHOLDERS */
-.reference-visual{
-height:100%;
-min-height:520px;
-border:1px solid rgba(255,255,255,.15);
-background:
-linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)),
-radial-gradient(circle at top left, rgba(255,255,255,.10), transparent 32%);
-display:flex;
-align-items:flex-end;
-padding:26px;
-position:relative;
-overflow:hidden;
-}
-.reference-visual::before{
-content:"";
-position:absolute;
-inset:22px;
-border:1px solid rgba(255,255,255,.12);
-pointer-events:none;
-}
-.reference-visual-label{
-position:relative;
-z-index:2;
-font-family:"Montserrat",sans-serif;
-font-size:.76rem;
-letter-spacing:.16em;
-text-transform:uppercase;
-color:var(--white-muted);
-}
-.reference-visual-title{
-position:relative;
-z-index:2;
-font-size:1.45rem;
-line-height:1.05;
-text-transform:uppercase;
-margin-top:8px;
-margin-bottom:0;
-max-width:320px;
-}
-.reference-visual-number{
-position:absolute;
-top:22px;
-right:22px;
-font-family:"Montserrat",sans-serif;
-font-size:.8rem;
-letter-spacing:.18em;
-text-transform:uppercase;
-color:rgba(255,255,255,.38);
-}
+    /* STORY NAV */
+    .references-nav{
+      position:relative;
+      z-index:2;
+      padding:18px 0 22px;
+    }
+    .references-nav-wrap{
+      display:flex;
+      gap:18px;
+      overflow-x:auto;
+      padding:4px 0 8px;
+      scrollbar-width:none;
+      -ms-overflow-style:none;
+    }
+    .references-nav-wrap::-webkit-scrollbar{display:none;}
+    .reference-chip{
+      flex:0 0 245px;
+      text-decoration:none;
+      color:#fff;
+      transition:transform .35s ease;
+    }
+    .reference-chip:hover{
+      color:#fff;
+      transform:translateY(-4px);
+    }
+    .reference-chip-media{
+      position:relative;
+      height:228px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.14);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)),
+        radial-gradient(circle at top left, rgba(255,255,255,.09), transparent 34%);
+      margin-bottom:12px;
+    }
+    .reference-chip-media::after{
+      content:"";
+      position:absolute;
+      inset:14px;
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .reference-chip-content{
+      position:absolute;
+      inset:auto 16px 16px 16px;
+      z-index:2;
+    }
+    .reference-chip-index{
+      display:block;
+      margin-bottom:6px;
+      font-size:.66rem;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--white-faint);
+    }
+    .reference-chip-label{
+      font-family:'couture',sans-serif;
+      font-size:.92rem;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      margin:0 0 4px;
+      line-height:1.34;
+      color:var(--white);
+    }
+    .reference-chip-meta{
+      margin:0;
+      font-size:.70rem;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--white-faint);
+    }
 
-/* EXPERTISE GRID */
-.expertise-grid{
-margin-top:36px;
-}
-.expertise-card{
-height:100%;
-border:1px solid rgba(255,255,255,.14);
-background:rgba(255,255,255,.03);
-padding:22px;
-}
-.expertise-card h3{
-font-size:1rem;
-text-transform:uppercase;
-margin-bottom:10px;
-}
-.expertise-card p{
-font-family:"Montserrat",sans-serif;
-font-size:.94rem;
-line-height:1.8;
-color:var(--white-soft);
-margin-bottom:0;
-}
+    /* MAIN STRUCTURE */
+    .references-wrapper{
+      position:relative;
+      z-index:2;
+      padding:0 0 26px;
+      border-top:1px solid var(--line);
+      margin-top:12px;
+    }
+    .reference-section{
+      padding:78px 0;
+      border-top:1px solid var(--line);
+    }
+    .reference-section:first-child{
+      border-top:none;
+      padding-top:58px;
+    }
+    .reference-row{
+      align-items:center;
+    }
+    .reference-text-col{order:2;}
+    .reference-media-col{order:1;}
+    .reference-section-text{
+      padding-right:48px;
+      max-width:620px;
+    }
+    .reference-index{
+      display:inline-block;
+      margin-bottom:12px;
+      font-size:.72rem;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--white-soft);
+    }
+    .reference-title{
+      font-family:'couture',sans-serif;
+      font-size:1.92rem;
+      line-height:1.06;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin:0 0 10px;
+      color:var(--white);
+    }
+    .reference-subtitle{
+      margin:0 0 14px;
+      font-size:.74rem;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--white-faint);
+    }
+    .reference-hook{
+      margin:0 0 12px;
+      font-size:.97rem;
+      line-height:1.72;
+      color:var(--white);
+      font-weight:700;
+      max-width:560px;
+    }
+    .reference-text{
+      margin:0 0 22px;
+      font-size:.94rem;
+      line-height:1.76;
+      color:var(--white-soft);
+      max-width:580px;
+    }
+    .reference-points{
+      display:grid;
+      gap:12px;
+      margin:0 0 24px;
+    }
+    .reference-point{
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.025);
+      padding:14px 14px 13px;
+      backdrop-filter:blur(6px);
+    }
+    .reference-point-title{
+      display:block;
+      margin-bottom:6px;
+      font-size:.68rem;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--white-soft);
+    }
+    .reference-point-text{
+      margin:0;
+      font-size:.89rem;
+      line-height:1.6;
+      color:var(--white-soft);
+    }
+    .reference-section-media{
+      overflow:hidden;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)),
+        radial-gradient(circle at top left, rgba(255,255,255,.10), transparent 34%);
+      border:1px solid rgba(255,255,255,.14);
+      position:relative;
+    }
+    .reference-section-media::after{
+      content:"";
+      position:absolute;
+      inset:20px;
+      border:1px solid rgba(255,255,255,.10);
+      pointer-events:none;
+    }
+    .reference-visual-content{
+      height:690px;
+      display:flex;
+      align-items:flex-end;
+      padding:28px;
+      position:relative;
+      z-index:2;
+    }
+    .reference-visual-inner{
+      max-width:340px;
+    }
+    .reference-visual-kicker{
+      display:block;
+      margin-bottom:8px;
+      font-size:.70rem;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--white-faint);
+    }
+    .reference-visual-title{
+      font-family:'couture',sans-serif;
+      font-size:1.28rem;
+      line-height:1.18;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--white);
+      margin:0 0 8px;
+    }
+    .reference-visual-text{
+      margin:0;
+      font-size:.88rem;
+      line-height:1.64;
+      color:var(--white-soft);
+    }
 
-/* METHODO BLOCK */
-.metho-box{
-border:1px solid rgba(255,255,255,.14);
-background:rgba(255,255,255,.03);
-padding:30px;
-}
-.metho-box p:last-child{
-margin-bottom:0;
-}
+    /* CREDIBILITY STRIP */
+    .credibility-section{
+      position:relative;
+      z-index:2;
+      padding:10px 0 64px;
+    }
+    .credibility-block{
+      max-width:1180px;
+      margin:0 auto;
+      border-top:1px solid var(--line);
+      padding-top:38px;
+    }
+    .credibility-top{
+      max-width:760px;
+      margin:0 auto 26px;
+      text-align:center;
+    }
+    .credibility-title{
+      font-family:'couture',sans-serif;
+      font-size:1.72rem;
+      line-height:1.18;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:14px;
+      color:var(--white);
+    }
+    .credibility-text{
+      font-size:.96rem;
+      line-height:1.76;
+      color:var(--white-soft);
+      margin-bottom:0;
+      max-width:660px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    .credibility-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+    .credibility-card{
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.025);
+      padding:20px 18px;
+      min-height:168px;
+    }
+    .credibility-card-title{
+      display:block;
+      margin-bottom:8px;
+      font-size:.70rem;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--white-soft);
+    }
+    .credibility-card p{
+      margin:0;
+      font-size:.90rem;
+      line-height:1.68;
+      color:var(--white-soft);
+    }
 
-/* CTA */
-.references-cta{
-padding:84px 0;
-border-top:1px solid rgba(255,255,255,.15);
-}
-.references-cta-title{
-font-size:2rem;
-text-transform:uppercase;
-margin-bottom:18px;
-}
-.references-cta-text{
-font-family:"Montserrat",sans-serif;
-max-width:780px;
-line-height:1.95;
-color:var(--white-soft);
-margin-bottom:24px;
-}
+    .footer{
+      border-top:1px solid var(--line);
+      padding:28px 0 14px;
+      margin-top:0;
+      position:relative;
+      z-index:2;
+    }
+    .footer-top{
+      padding-bottom:20px;
+      margin-bottom:20px;
+      border-bottom:1px solid rgba(255,255,255,.18);
+    }
+    .footer-brand{
+      font-size:.98rem;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:10px;
+      color:var(--white);
+    }
+    .footer-tagline{
+      margin:0;
+      max-width:640px;
+      font-size:.93rem;
+      line-height:1.66;
+      font-weight:600;
+      text-transform:uppercase;
+      color:var(--white);
+    }
+    .footer-location{
+      margin-top:10px;
+      font-size:.92rem;
+      line-height:1.68;
+      color:var(--white-soft);
+    }
+    .footer-social-block{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+    }
+    .footer-social-title{
+      font-size:.92rem;
+      line-height:1.5;
+      font-weight:600;
+      color:var(--white);
+      margin-bottom:10px;
+    }
+    .footer-socials{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    .footer-social{
+      width:42px;
+      height:42px;
+      border:1.5px solid rgba(255,255,255,.78);
+      border-radius:50%;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--white);
+      text-decoration:none;
+      font-size:1rem;
+      background:rgba(255,255,255,.01);
+    }
+    .footer-social:hover{
+      color:var(--white);
+      border-color:var(--white);
+      transform:translateY(-2px);
+      background:rgba(255,255,255,.04);
+    }
+    .footer-menu-row{
+      padding:0 0 18px;
+    }
+    .footer-menu{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+      width:100%;
+    }
+    .footer-menu a{
+      color:var(--white);
+      text-decoration:none;
+      font-size:.93rem;
+      font-weight:600;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      text-align:left;
+    }
+    .footer-menu a:hover{opacity:.72;}
+    .footer-bottom{
+      border-top:1px solid var(--line-soft);
+      padding-top:12px;
+    }
+    .footer-bottom-inner{
+      display:grid;
+      grid-template-columns:1fr auto;
+      align-items:center;
+      gap:18px;
+    }
+    .footer-legal{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px 30px;
+    }
+    .footer-legal a{
+      color:var(--white-muted);
+      text-decoration:none;
+      font-size:.82rem;
+      line-height:1.5;
+    }
+    .footer-legal a:hover{color:var(--white);}
+    .footer-copy{
+      color:var(--white-muted);
+      font-size:.82rem;
+      line-height:1.5;
+      text-align:right;
+      white-space:nowrap;
+    }
 
-/* FOOTER */
-footer{
-border-top:1px solid rgba(255,255,255,.15);
-padding:60px 0;
-font-size:.9rem;
-position:relative;
-z-index:2;
-}
+    .fade-in{
+      opacity:0;
+      transform:translateY(18px);
+      transition:opacity .7s ease, transform .7s ease;
+    }
+    .fade-in.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
 
-/* FADE */
-.fade-in{
-opacity:0;
-transform:translateY(26px);
-transition:.8s;
-}
-.fade-in.visible{
-opacity:1;
-transform:translateY(0);
-}
+    @media (min-width: 992px){
+      .references-title{font-size:2.72rem;}
+      .references-nav-wrap{
+        justify-content:center;
+        overflow:visible;
+      }
+      .reference-row.reverse-desktop .reference-media-col{order:2;}
+      .reference-row.reverse-desktop .reference-text-col{order:1;}
+    }
 
-/* RESPONSIVE */
-@media (max-width:1199px){
-.references-page{padding-right:0;}
-.references-rail{display:none;}
-}
+    @media(max-width:991.98px){
+      .references-hero{padding:90px 0 24px;}
+      .reference-section-text{padding-right:0;max-width:none;}
+      .reference-visual-content{height:440px;}
+      .credibility-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+      .footer-social-block{margin-top:4px;}
+      .footer-menu{
+        grid-template-columns:repeat(2,1fr);
+        gap:14px 22px;
+      }
+      .footer-bottom-inner{
+        grid-template-columns:1fr;
+        gap:10px;
+      }
+      .footer-copy{
+        text-align:left;
+        white-space:normal;
+      }
+      .logo-card{
+        flex:0 0 190px;
+        height:78px;
+      }
+      .logo-card img{
+        max-height:28px;
+      }
+    }
 
-@media (max-width:991px){
-.references-hero{padding:120px 0 42px;}
-.hero-title{font-size:2.45rem;}
-.section-title{font-size:1.9rem;}
-.references-cta-title{font-size:1.7rem;}
-.reference-visual{min-height:360px;}
-}
-
-@media (max-width:767px){
-.hero-title{font-size:2rem;line-height:1;}
-.hero-subtitle,
-.references-intro-text,
-.section-hook,
-.section-text,
-.references-cta-text{
-font-size:.96rem;
-line-height:1.85;
-}
-.section-block,
-.references-cta{
-padding:68px 0;
-}
-.reference-visual{
-min-height:280px;
-padding:20px;
-}
-.reference-visual-title{
-font-size:1.15rem;
-max-width:220px;
-}
-}
-</style>
+    @media(max-width:767.98px){
+      .references-title{
+        font-size:1.34rem;
+        letter-spacing:.08em;
+        line-height:1.12;
+        max-width:320px;
+        margin:0 0 10px;
+        text-align:left;
+      }
+      .references-intro,
+      .references-panel-text,
+      .reference-text,
+      .reference-point-text,
+      .credibility-text,
+      .credibility-card p{
+        font-size:.91rem;
+        line-height:1.7;
+      }
+      .references-hero{
+        padding:82px 0 20px;
+      }
+      .references-hero-inner{
+        text-align:left;
+      }
+      .references-intro{
+        max-width:none;
+        margin:0;
+        text-align:left;
+      }
+      .references-hero-cta{
+        gap:10px;
+        justify-content:flex-start;
+      }
+      .references-hero-cta .btn-outline-light,
+      .references-hero-cta .btn-light-ghost{
+        width:100%;
+      }
+      .logo-band-head{display:none;}
+      .logo-band-track{
+        padding:14px 12px;
+        gap:12px;
+      }
+      .logo-card{
+        flex:0 0 150px;
+        height:68px;
+        padding:12px 14px;
+      }
+      .logo-card img{
+        max-height:22px;
+      }
+      .reference-chip{
+        flex:0 0 205px;
+      }
+      .reference-chip-media{
+        height:168px;
+        margin-bottom:10px;
+      }
+      .reference-chip-label{
+        font-size:.88rem;
+        line-height:1.28;
+      }
+      .reference-chip-meta{
+        font-size:.66rem;
+      }
+      .reference-title,
+      .credibility-title{
+        font-size:1.30rem;
+      }
+      .reference-section{padding:52px 0;}
+      .reference-section:first-child{padding-top:42px;}
+      .reference-section-media{margin-bottom:18px;}
+      .reference-visual-content{
+        height:250px;
+        padding:20px;
+      }
+      .reference-visual-title{
+        font-size:1.05rem;
+      }
+      .credibility-grid{
+        grid-template-columns:1fr;
+      }
+      .footer{
+        padding:24px 0 12px;
+      }
+      .footer-menu{
+        grid-template-columns:1fr;
+        gap:10px;
+      }
+      .footer-menu a{font-size:.88rem;}
+      .footer-legal{gap:8px 18px;}
+      .footer-legal a,
+      .footer-copy{font-size:.79rem;}
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- VIDEO -->
-<div class="video-background">
-<video autoplay muted loop playsinline preload="auto">
-<source src="assets/video/abyss-lab.mp4" type="video/mp4">
-</video>
-</div>
+  <h1 class="visually-hidden-seo">
+    Références Abyss Lab : marketing et communication 360, brand content, RP et influence, SEO, SEA, web design, UX, guest app, expérience client, direction marketing externalisée pour hôtels, restaurants, hospitality, lifestyle et marques premium
+  </h1>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark py-3">
-<div class="container">
-<a class="navbar-brand fw-bold" href="index.html">ABYSS LAB.</a>
+  <div class="video-background">
+    <video autoplay muted loop playsinline webkit-playsinline preload="auto" poster="assets/img/poster.jpg" disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback" id="bg-video">
+      <source src="assets/video/abyss-lab.mp4" type="video/mp4">
+    </video>
+  </div>
 
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-<span class="navbar-toggler-icon"></span>
-</button>
+  <nav class="navbar navbar-expand-lg navbar-dark py-3">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html" aria-label="Abyss Lab - Retour à l'accueil">ABYSS LAB.</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Ouvrir le menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-<div class="collapse navbar-collapse justify-content-end" id="navmenu">
-<ul class="navbar-nav">
-<li class="nav-item"><a class="nav-link" href="index.html">A PROPOS</a></li>
-<li class="nav-item"><a class="nav-link" href="services.html">SERVICES</a></li>
-<li class="nav-item"><a class="nav-link active" href="references.html">REFERENCES</a></li>
-<li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
-</ul>
-</div>
-</div>
-</nav>
+      <div class="collapse navbar-collapse justify-content-end" id="navmenu">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">ACCUEIL</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">SERVICES</a></li>
+          <li class="nav-item"><a class="nav-link active" href="references.html">REFERENCES</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-<!-- RIGHT LOGO RAIL -->
-<aside class="references-rail" aria-label="Établissements référencés">
-<div class="references-rail-track">
+  <main>
 
-<a class="logo-link" href="https://mondrianhotels.com/fr/bordeaux-les-carmes/" target="_blank" rel="noopener">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_mondrian_bordeaux_klvfkk.png" alt="Mondrian Bordeaux Les Carmes">
-</a>
+    <section class="references-hero fade-in">
+      <div class="container">
+        <div class="references-hero-inner">
+          <h1 class="references-title">REFERENCES, UNIVERS ET NIVEAU D’EXIGENCE</h1>
+          <p class="references-intro">
+            Abyss Lab s’appuie sur des expériences fondatrices menées au cœur de l’hospitality, de la restauration et des univers premium. Plus qu’un parcours, ces références dessinent une même manière d’accompagner les marques : avec hauteur, précision et vision 360.
+          </p>
 
-<a class="logo-link" href="https://morimotobordeaux.com/" target="_blank" rel="noopener">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_morimoto_bordeaux_vgb8ns.png" alt="Morimoto Bordeaux">
-</a>
+          <div class="references-hero-cta">
+            <a href="contact.html" class="btn btn-outline-light">PARLER DE VOTRE PROJET</a>
+            <a href="#references-story" class="btn-light-ghost">VOIR LES REFERENCES</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<a class="logo-link" href="https://brindos-cotebasque.com/" target="_blank" rel="noopener">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271199/marketing_communication_brindos_anglet_ogtgnq.png" alt="Brindos Lac & Château">
-</a>
+    <section class="logo-band fade-in" aria-label="Références Abyss Lab">
+      <div class="logo-band-head">
+        <p class="logo-band-title">Maisons, hôtels, restaurants et lieux accompagnés</p>
+      </div>
 
-<a class="logo-link" href="https://cafebonart.com/" target="_blank" rel="noopener">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271224/marketing_communication_cafe_bonart_vn4enk.png" alt="Café Bonart">
-</a>
+      <div class="logo-band-outer">
+        <div class="logo-band-track">
+          <a class="logo-card" href="https://mondrianhotels.com/fr/bordeaux-les-carmes/" target="_blank" rel="noopener noreferrer" aria-label="Mondrian Bordeaux Les Carmes">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_mondrian_bordeaux_klvfkk.png" alt="Mondrian Bordeaux Les Carmes">
+          </a>
+          <a class="logo-card" href="https://morimotobordeaux.com/" target="_blank" rel="noopener noreferrer" aria-label="Morimoto Bordeaux">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_morimoto_bordeaux_vgb8ns.png" alt="Morimoto Bordeaux">
+          </a>
+          <a class="logo-card" href="https://brindos-cotebasque.com/" target="_blank" rel="noopener noreferrer" aria-label="Brindos Lac & Château">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271199/marketing_communication_brindos_anglet_ogtgnq.png" alt="Brindos Lac & Château">
+          </a>
+          <a class="logo-card" href="https://cafebonart.com/" target="_blank" rel="noopener noreferrer" aria-label="Café Bonart">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271224/marketing_communication_cafe_bonart_vn4enk.png" alt="Café Bonart">
+          </a>
+          <a class="logo-card" href="https://www.chateaudesacy.com/" target="_blank" rel="noopener noreferrer" aria-label="Château de Sacy">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_chateau_sacy_reims_ov4rcf.png" alt="Château de Sacy">
+          </a>
+          <a class="logo-card" href="https://www.maisons-particulieres.com/maison-la-course" target="_blank" rel="noopener noreferrer" aria-label="Maison La Course">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_maison_la_course_bordeaux_pe6vu9.png" alt="Maison La Course">
+          </a>
+          <a class="logo-card" href="https://www.chateaudetheoule.com/" target="_blank" rel="noopener noreferrer" aria-label="Château de Théoule-sur-Mer">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271353/marketing_communication_chateau_theoule_sur_mer_qtecgf.png" alt="Château de Théoule-sur-Mer">
+          </a>
+          <a class="logo-card" href="https://www.lapalmeraielabaule.com/" target="_blank" rel="noopener noreferrer" aria-label="La Palmeraie La Baule">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_palmeraie_la_baule_erb4df.png" alt="La Palmeraie La Baule">
+          </a>
+          <a class="logo-card" href="https://www.grandhotelmegve.com/" target="_blank" rel="noopener noreferrer" aria-label="Grand Hôtel Soleil d'Or Megève">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_grand_hotel_soleil_d_or_megeve_jic4on.png" alt="Grand Hôtel Soleil d'Or Megève">
+          </a>
+          <a class="logo-card" href="https://www.domainederaba.com/" target="_blank" rel="noopener noreferrer" aria-label="Domaine de Raba">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_domaine_de_raba_zsu3ao.png" alt="Domaine de Raba">
+          </a>
 
-<a class="logo-link" href="https://www.chateaudesacy.com/" target="_blank" rel="noopener">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_chateau_sacy_reims_ov4rcf.png" alt="Château de Sacy">
-</a>
+          <a class="logo-card" href="https://mondrianhotels.com/fr/bordeaux-les-carmes/" target="_blank" rel="noopener noreferrer" aria-label="Mondrian Bordeaux Les Carmes">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_mondrian_bordeaux_klvfkk.png" alt="Mondrian Bordeaux Les Carmes">
+          </a>
+          <a class="logo-card" href="https://morimotobordeaux.com/" target="_blank" rel="noopener noreferrer" aria-label="Morimoto Bordeaux">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_morimoto_bordeaux_vgb8ns.png" alt="Morimoto Bordeaux">
+          </a>
+          <a class="logo-card" href="https://brindos-cotebasque.com/" target="_blank" rel="noopener noreferrer" aria-label="Brindos Lac & Château">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271199/marketing_communication_brindos_anglet_ogtgnq.png" alt="Brindos Lac & Château">
+          </a>
+          <a class="logo-card" href="https://cafebonart.com/" target="_blank" rel="noopener noreferrer" aria-label="Café Bonart">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271224/marketing_communication_cafe_bonart_vn4enk.png" alt="Café Bonart">
+          </a>
+          <a class="logo-card" href="https://www.chateaudesacy.com/" target="_blank" rel="noopener noreferrer" aria-label="Château de Sacy">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_chateau_sacy_reims_ov4rcf.png" alt="Château de Sacy">
+          </a>
+          <a class="logo-card" href="https://www.maisons-particulieres.com/maison-la-course" target="_blank" rel="noopener noreferrer" aria-label="Maison La Course">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_maison_la_course_bordeaux_pe6vu9.png" alt="Maison La Course">
+          </a>
+          <a class="logo-card" href="https://www.chateaudetheoule.com/" target="_blank" rel="noopener noreferrer" aria-label="Château de Théoule-sur-Mer">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271353/marketing_communication_chateau_theoule_sur_mer_qtecgf.png" alt="Château de Théoule-sur-Mer">
+          </a>
+          <a class="logo-card" href="https://www.lapalmeraielabaule.com/" target="_blank" rel="noopener noreferrer" aria-label="La Palmeraie La Baule">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_palmeraie_la_baule_erb4df.png" alt="La Palmeraie La Baule">
+          </a>
+          <a class="logo-card" href="https://www.grandhotelmegve.com/" target="_blank" rel="noopener noreferrer" aria-label="Grand Hôtel Soleil d'Or Megève">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_grand_hotel_soleil_d_or_megeve_jic4on.png" alt="Grand Hôtel Soleil d'Or Megève">
+          </a>
+          <a class="logo-card" href="https://www.domainederaba.com/" target="_blank" rel="noopener noreferrer" aria-label="Domaine de Raba">
+            <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_domaine_de_raba_zsu3ao.png" alt="Domaine de Raba">
+          </a>
+        </div>
+      </div>
+    </section>
 
-<a class="logo-link" href="https://www.maisons-particulieres.com/maison-la-course" target="_blank" rel="noopener">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_maison_la_course_bordeaux_pe6vu9.png" alt="Maison La Course">
-</a>
+    <section class="references-panel fade-in">
+      <div class="container">
+        <div class="references-panel-box">
+          <p class="references-panel-text">
+            Ces références ne sont pas présentées ici comme une suite de postes, mais comme le socle vivant d’une expertise. Elles ont nourri une même lecture du marketing et de la communication : comprendre l’ADN d’un lieu, en révéler la singularité, puis déployer une présence cohérente à travers l’image, le contenu, le digital, l’activation et l’expérience globale.
+          </p>
 
-<a class="logo-link" href="https://www.chateaudetheoule.com/" target="_blank" rel="noopener">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271353/marketing_communication_chateau_theoule_sur_mer_qtecgf.png" alt="Château de Théoule-sur-Mer">
-</a>
+          <div class="references-tags">
+            <span class="references-tag">Hospitality</span>
+            <span class="references-tag">Restaurants</span>
+            <span class="references-tag">Brand content</span>
+            <span class="references-tag">RP & influence</span>
+            <span class="references-tag">SEO / SEA</span>
+            <span class="references-tag">Web design</span>
+            <span class="references-tag">UX / UI</span>
+            <span class="references-tag">Direction 360</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<a class="logo-link" href="https://www.lapalmeraielabaule.com/" target="_blank" rel="noopener">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_palmeraie_la_baule_erb4df.png" alt="La Palmeraie La Baule">
-</a>
+    <section class="references-nav fade-in" id="references-story">
+      <div class="container">
+        <div class="references-nav-wrap">
+          <a href="#signature" class="reference-chip" aria-label="Aller à Signature">
+            <div class="reference-chip-media">
+              <div class="reference-chip-content">
+                <span class="reference-chip-index">01 / Lecture</span>
+                <h2 class="reference-chip-label">Signature</h2>
+                <p class="reference-chip-meta">vision & exigence</p>
+              </div>
+            </div>
+          </a>
 
-<a class="logo-link" href="https://www.grandhotelmegve.com/" target="_blank" rel="noopener">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_grand_hotel_soleil_d_or_megeve_jic4on.png" alt="Grand Hôtel Soleil d'Or Megève">
-</a>
+          <a href="#hospitality" class="reference-chip" aria-label="Aller à Hospitality">
+            <div class="reference-chip-media">
+              <div class="reference-chip-content">
+                <span class="reference-chip-index">02 / Univers</span>
+                <h2 class="reference-chip-label">Hospitality</h2>
+                <p class="reference-chip-meta">lieux, experiences & desir</p>
+              </div>
+            </div>
+          </a>
 
-<a class="logo-link" href="https://www.domainederaba.com/" target="_blank" rel="noopener">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_domaine_de_raba_zsu3ao.png" alt="Domaine de Raba">
-</a>
+          <a href="#digital" class="reference-chip" aria-label="Aller à Digital & expérience">
+            <div class="reference-chip-media">
+              <div class="reference-chip-content">
+                <span class="reference-chip-index">03 / Leviers</span>
+                <h2 class="reference-chip-label">Digital & experience</h2>
+                <p class="reference-chip-meta">web, seo, ux & parcours</p>
+              </div>
+            </div>
+          </a>
 
-<!-- duplicate for infinite loop -->
-<a class="logo-link" href="https://mondrianhotels.com/fr/bordeaux-les-carmes/" target="_blank" rel="noopener">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_mondrian_bordeaux_klvfkk.png" alt="Mondrian Bordeaux Les Carmes">
-</a>
+          <a href="#continuite" class="reference-chip" aria-label="Aller à Continuité">
+            <div class="reference-chip-media">
+              <div class="reference-chip-content">
+                <span class="reference-chip-index">04 / Abyss Lab</span>
+                <h2 class="reference-chip-label">Continuite</h2>
+                <p class="reference-chip-meta">socle & prolongement</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
 
-<a class="logo-link" href="https://morimotobordeaux.com/" target="_blank" rel="noopener">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_morimoto_bordeaux_vgb8ns.png" alt="Morimoto Bordeaux">
-</a>
+    <section class="references-wrapper">
+      <div class="container">
 
-<a class="logo-link" href="https://brindos-cotebasque.com/" target="_blank" rel="noopener">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271199/marketing_communication_brindos_anglet_ogtgnq.png" alt="Brindos Lac & Château">
-</a>
+        <section class="reference-section fade-in" id="signature">
+          <div class="row gy-4 gy-lg-5 reference-row">
+            <div class="col-12 col-lg-6 reference-media-col">
+              <div class="reference-section-media">
+                <div class="reference-visual-content">
+                  <div class="reference-visual-inner">
+                    <span class="reference-visual-kicker">Bloc visuel à personnaliser</span>
+                    <h3 class="reference-visual-title">Une meme signature derrière des contextes variés</h3>
+                    <p class="reference-visual-text">
+                      Une lecture transversale de la marque, de son image, de ses contenus et de ses points de contact.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<a class="logo-link" href="https://cafebonart.com/" target="_blank" rel="noopener">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271224/marketing_communication_cafe_bonart_vn4enk.png" alt="Café Bonart">
-</a>
+            <div class="col-12 col-lg-6 reference-text-col">
+              <div class="reference-section-text">
+                <span class="reference-index">01 / Ce que racontent ces références</span>
+                <h2 class="reference-title">PLUS QU’UN PARCOURS, UNE MANIERE D’ACCOMPAGNER</h2>
+                <p class="reference-subtitle">Vision de marque, cohérence, exigence</p>
+                <p class="reference-hook">
+                  Derrière ces maisons, ces hôtels, ces restaurants et ces groupes, il y a une même constante : faire émerger une présence plus juste, plus lisible et plus désirable.
+                </p>
+                <p class="reference-text">
+                  La valeur de ces références ne tient pas à l’accumulation de noms, mais à la nature des enjeux adressés. Clarifier une identité, piloter une communication, donner du relief à un lieu, coordonner les bons leviers, faire tenir ensemble image, contenu, digital et visibilité : c’est cette cohérence qui constitue aujourd’hui la force d’Abyss Lab.
+                </p>
 
-<a class="logo-link" href="https://www.chateaudesacy.com/" target="_blank" rel="noopener">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_chateau_sacy_reims_ov4rcf.png" alt="Château de Sacy">
-</a>
+                <div class="reference-points">
+                  <div class="reference-point">
+                    <span class="reference-point-title">Positionnement</span>
+                    <p class="reference-point-text">Comprendre rapidement ce qui distingue un lieu ou une marque pour éviter les prises de parole génériques.</p>
+                  </div>
+                  <div class="reference-point">
+                    <span class="reference-point-title">Déploiement</span>
+                    <p class="reference-point-text">Transformer cette singularité en contenus, supports, activations et expériences cohérentes.</p>
+                  </div>
+                  <div class="reference-point">
+                    <span class="reference-point-title">Niveau d’exigence</span>
+                    <p class="reference-point-text">Intervenir avec la même attention au détail sur l’image, le fond, le rythme et la perception globale.</p>
+                  </div>
+                </div>
 
-<a class="logo-link" href="https://www.maisons-particulieres.com/maison-la-course" target="_blank" rel="noopener">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_maison_la_course_bordeaux_pe6vu9.png" alt="Maison La Course">
-</a>
+                <a href="contact.html" class="btn btn-outline-light">PARLER DE VOTRE MARQUE</a>
+              </div>
+            </div>
+          </div>
+        </section>
 
-<a class="logo-link" href="https://www.chateaudetheoule.com/" target="_blank" rel="noopener">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271353/marketing_communication_chateau_theoule_sur_mer_qtecgf.png" alt="Château de Théoule-sur-Mer">
-</a>
+        <section class="reference-section fade-in" id="hospitality">
+          <div class="row gy-4 gy-lg-5 reference-row reverse-desktop">
+            <div class="col-12 col-lg-6 reference-media-col">
+              <div class="reference-section-media">
+                <div class="reference-visual-content">
+                  <div class="reference-visual-inner">
+                    <span class="reference-visual-kicker">Bloc visuel à personnaliser</span>
+                    <h3 class="reference-visual-title">Hospitality, restauration, lieux de vie</h3>
+                    <p class="reference-visual-text">
+                      Des univers où l’expérience doit se ressentir avant même d’être vécue.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<a class="logo-link" href="https://www.lapalmeraielabaule.com/" target="_blank" rel="noopener">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_palmeraie_la_baule_erb4df.png" alt="La Palmeraie La Baule">
-</a>
+            <div class="col-12 col-lg-6 reference-text-col">
+              <div class="reference-section-text">
+                <span class="reference-index">02 / Univers d’intervention</span>
+                <h2 class="reference-title">DES MARQUES QUI DOIVENT FAIRE PLUS QUE SE MONTRER</h2>
+                <p class="reference-subtitle">Hospitality, restaurants, maisons premium</p>
+                <p class="reference-hook">
+                  Dans ces secteurs, la communication ne peut pas être décorative : elle doit prolonger l’expérience, soutenir le désir et renforcer la perception de valeur.
+                </p>
+                <p class="reference-text">
+                  Les références rassemblées ici s’inscrivent dans des environnements où chaque détail compte. Hôtels, restaurants, groupes hospitality, lieux lifestyle ou maisons premium : tous demandent une compréhension fine de l’image, du service, du cadre et du niveau d’attente du public.
+                </p>
 
-<a class="logo-link" href="https://www.grandhotelmegve.com/" target="_blank" rel="noopener">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_grand_hotel_soleil_d_or_megeve_jic4on.png" alt="Grand Hôtel Soleil d'Or Megève">
-</a>
+                <div class="reference-points">
+                  <div class="reference-point">
+                    <span class="reference-point-title">Image de marque</span>
+                    <p class="reference-point-text">Installer une présence plus forte et plus cohérente sur l’ensemble des supports visibles.</p>
+                  </div>
+                  <div class="reference-point">
+                    <span class="reference-point-title">Brand content</span>
+                    <p class="reference-point-text">Créer des contenus qui donnent plus de relief au lieu, à l’expérience et au récit de marque.</p>
+                  </div>
+                  <div class="reference-point">
+                    <span class="reference-point-title">Activation</span>
+                    <p class="reference-point-text">Faire rayonner la marque par les bons relais, la bonne mise en scène et le bon niveau d’exposition.</p>
+                  </div>
+                </div>
 
-<a class="logo-link" href="https://www.domainederaba.com/" target="_blank" rel="noopener">
-<img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_domaine_de_raba_zsu3ao.png" alt="Domaine de Raba">
-</a>
+                <a href="services.html" class="btn btn-outline-light">VOIR LES ACCOMPAGNEMENTS</a>
+              </div>
+            </div>
+          </div>
+        </section>
 
-</div>
-</aside>
+        <section class="reference-section fade-in" id="digital">
+          <div class="row gy-4 gy-lg-5 reference-row">
+            <div class="col-12 col-lg-6 reference-media-col">
+              <div class="reference-section-media">
+                <div class="reference-visual-content">
+                  <div class="reference-visual-inner">
+                    <span class="reference-visual-kicker">Bloc visuel à personnaliser</span>
+                    <h3 class="reference-visual-title">Digital, visibilité et expérience</h3>
+                    <p class="reference-visual-text">
+                      Quand le web, le contenu et l’expérience travaillent enfin dans le même sens.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<div class="references-page">
+            <div class="col-12 col-lg-6 reference-text-col">
+              <div class="reference-section-text">
+                <span class="reference-index">03 / Ce qui nourrit l’expertise actuelle</span>
+                <h2 class="reference-title">UNE LECTURE 360 ENTRE IMAGE, WEB, SEO ET PARCOURS</h2>
+                <p class="reference-subtitle">Présence digitale, visibilité, UX</p>
+                <p class="reference-hook">
+                  Ce qui fait la différence n’est pas seulement de bien communiquer, mais de relier la marque à ses usages concrets : site, visibilité, contenu, expérience en ligne, conversion.
+                </p>
+                <p class="reference-text">
+                  C’est aussi dans cette capacité à faire dialoguer brand content, référencement, social media, campagnes, UX, web design et expérience client que ces références ont construit le socle d’Abyss Lab. Le digital n’y est jamais traité comme un simple support, mais comme une extension directe du niveau de la marque.
+                </p>
 
-<!-- HERO -->
-<section class="references-hero fade-in">
-<div class="container">
-<p class="hero-kicker">ABYSS LAB — REFERENCES</p>
+                <div class="reference-points">
+                  <div class="reference-point">
+                    <span class="reference-point-title">Visibilité</span>
+                    <p class="reference-point-text">SEO, SEA, ads, social media et leviers d’amplification pensés avec cohérence.</p>
+                  </div>
+                  <div class="reference-point">
+                    <span class="reference-point-title">Interfaces</span>
+                    <p class="reference-point-text">Web design, UX, guest apps et parcours digitaux au service de la lisibilité et de l’expérience.</p>
+                  </div>
+                  <div class="reference-point">
+                    <span class="reference-point-title">Pilotage</span>
+                    <p class="reference-point-text">Une vision capable d’articuler stratégie, exécution, prestataires et continuité de marque.</p>
+                  </div>
+                </div>
 
-<h1 class="hero-title">
-EXPERIENCES<br>
-FONDATRICES & REFERENCES
-</h1>
+                <a href="contact.html" class="btn btn-outline-light">RENFORCER MA PRESENCE</a>
+              </div>
+            </div>
+          </div>
+        </section>
 
-<p class="hero-subtitle">
-Avant Abyss Lab, ces établissements ont constitué le terrain d’expression et d’exigence à partir duquel s’est construite l’expertise actuelle du studio. Des fonctions menées en marketing, communication et digital, avec une responsabilité 360° sur l’image, la visibilité, les activations, les contenus et les outils de marque.
-</p>
-</div>
-</section>
+        <section class="reference-section fade-in" id="continuite">
+          <div class="row gy-4 gy-lg-5 reference-row reverse-desktop">
+            <div class="col-12 col-lg-6 reference-media-col">
+              <div class="reference-section-media">
+                <div class="reference-visual-content">
+                  <div class="reference-visual-inner">
+                    <span class="reference-visual-kicker">Bloc visuel à personnaliser</span>
+                    <h3 class="reference-visual-title">Avant Abyss Lab, le terrain. Aujourd’hui, la synthèse.</h3>
+                    <p class="reference-visual-text">
+                      Une continuité naturelle entre expériences fondatrices et direction externalisée.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<!-- INTRO -->
-<section class="references-intro fade-in">
-<div class="container">
-<div class="references-intro-box">
-<p class="references-intro-text">
-Cette page ne présente pas seulement des collaborations visuelles. Elle rassemble les expériences qui ont structuré une méthode de travail aujourd’hui portée par Abyss Lab : comprendre rapidement l’ADN d’un lieu, clarifier son positionnement, traduire sa singularité en récit, puis la déployer à travers une communication cohérente, exigeante et opérationnelle. Ces références ont été construites avant Abyss Lab, mais elles en constituent directement le socle d’expertise.
-</p>
+            <div class="col-12 col-lg-6 reference-text-col">
+              <div class="reference-section-text">
+                <span class="reference-index">04 / Continuité</span>
+                <h2 class="reference-title">CES REFERENCES PRECEDENT ABYSS LAB, MAIS EN CONSTITUENT LE SOCLE</h2>
+                <p class="reference-subtitle">Expertise actuelle, légitimité, prolongement</p>
+                <p class="reference-hook">
+                  Abyss Lab n’efface pas ces expériences : il les prolonge, les synthétise et les met au service d’autres marques exigeantes.
+                </p>
+                <p class="reference-text">
+                  C’est précisément parce que cette expertise s’est construite de l’intérieur, au contact d’univers complexes, de rythmes opérationnels réels et d’attentes élevées, qu’elle peut aujourd’hui s’exprimer avec davantage de recul, de précision et de liberté. La page Références ne montre donc pas un passé à part : elle révèle la profondeur qui soutient Abyss Lab aujourd’hui.
+                </p>
 
-<div class="references-tags">
-<span class="references-tag">Marketing & communication 360</span>
-<span class="references-tag">Hospitality</span>
-<span class="references-tag">Restaurants</span>
-<span class="references-tag">Brand content</span>
-<span class="references-tag">RP & influence</span>
-<span class="references-tag">SEO / SEA</span>
-<span class="references-tag">Web design</span>
-<span class="references-tag">UX / UI</span>
-</div>
-</div>
-</div>
-</section>
+                <div class="reference-points">
+                  <div class="reference-point">
+                    <span class="reference-point-title">Socle</span>
+                    <p class="reference-point-text">Des expériences fondatrices qui donnent à l’accompagnement sa densité réelle.</p>
+                  </div>
+                  <div class="reference-point">
+                    <span class="reference-point-title">Méthode</span>
+                    <p class="reference-point-text">Une même exigence appliquée à la stratégie, à l’image, au contenu, au digital et au pilotage.</p>
+                  </div>
+                  <div class="reference-point">
+                    <span class="reference-point-title">Projection</span>
+                    <p class="reference-point-text">Une direction marketing et communication externalisée pensée pour les marques qui veulent grandir avec cohérence.</p>
+                  </div>
+                </div>
 
-<!-- EXPERIENCE 01 -->
-<section class="section-block fade-in">
-<div class="container">
-<div class="row align-items-center gy-5">
-<div class="col-lg-5">
-<p class="section-index">01 / Mondrian Bordeaux Les Carmes</p>
-<h2 class="section-title">RESPONSABLE MARKETING & COMMUNICATION</h2>
-<p class="section-hook">
-<strong>Une fonction pensée à 360° pour faire rayonner un lieu, ses temps forts, ses prises de parole et son niveau d’expérience.</strong>
-</p>
-<p class="section-text">
-Au sein du Mondrian Bordeaux Les Carmes, l’enjeu n’était pas uniquement de communiquer, mais d’orchestrer l’ensemble de la présence marketing et communication du lieu avec cohérence. Cette expérience a consolidé une approche transversale, capable d’articuler stratégie, image, contenus, influence, performance et expérience client.
-</p>
+                <a href="contact.html" class="btn btn-outline-light">DEMARRER UN PROJET</a>
+              </div>
+            </div>
+          </div>
+        </section>
 
-<ul class="section-list">
-<li><strong>Périmètre :</strong> campagnes marketing, création de supports, RP & influence, communication 360, digitalisation Guest App.</li>
-<li><strong>Déploiement :</strong> community management, ads, brand content photo / vidéo, gestion campagnes SEO / SEA.</li>
-<li><strong>Ce que cela dit aujourd’hui :</strong> une capacité à piloter une marque premium dans toutes ses dimensions visibles et opérationnelles.</li>
-</ul>
-</div>
+      </div>
+    </section>
 
-<div class="col-lg-7">
-<div class="reference-visual">
-<span class="reference-visual-number">01</span>
-<div>
-<p class="reference-visual-label">Bloc visuel à remplacer</p>
-<h3 class="reference-visual-title">Hospitality premium<br>Direction 360</h3>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+    <section class="credibility-section fade-in">
+      <div class="container">
+        <div class="credibility-block">
+          <div class="credibility-top">
+            <h2 class="credibility-title">CE QUE CES REFERENCES PERMETTENT D’ACTIVER</h2>
+            <p class="credibility-text">
+              Une approche à la croisée de la stratégie, du contenu, du digital et de la visibilité pour faire émerger des marques plus lisibles, plus désirables et plus cohérentes.
+            </p>
+          </div>
 
-<!-- EXPERIENCE 02 -->
-<section class="section-block fade-in">
-<div class="container">
-<div class="row align-items-center gy-5 flex-lg-row-reverse">
-<div class="col-lg-5">
-<p class="section-index">02 / Millésime Collection</p>
-<h2 class="section-title">RESPONSABLE MARKETING DIGITAL — 11 ETABLISSEMENTS</h2>
-<p class="section-hook">
-<strong>Une vision multi-sites pour piloter la visibilité, la cohérence et la performance d’un portefeuille d’établissements.</strong>
-</p>
-<p class="section-text">
-Travailler à l’échelle d’une collection impose une autre lecture du marketing : harmoniser sans lisser, déployer sans dénaturer, structurer les outils tout en respectant les spécificités de chaque maison. Cette expérience nourrit directement la capacité d’Abyss Lab à intervenir avec hauteur sur des environnements complexes.
-</p>
+          <div class="credibility-grid">
+            <div class="credibility-card">
+              <span class="credibility-card-title">Direction 360</span>
+              <p>Stratégie marketing, communication, arbitrage, cohérence globale et pilotage des priorités.</p>
+            </div>
+            <div class="credibility-card">
+              <span class="credibility-card-title">Contenu & image</span>
+              <p>Brand content, direction éditoriale, récit de marque, univers visuel et mise en désir.</p>
+            </div>
+            <div class="credibility-card">
+              <span class="credibility-card-title">Digital</span>
+              <p>Site internet, SEO, SEA, UX, visibilité, parcours en ligne et expérience de marque digitale.</p>
+            </div>
+            <div class="credibility-card">
+              <span class="credibility-card-title">Rayonnement</span>
+              <p>RP, influence, activations, campagnes, social media et amplification cohérente de la présence.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<ul class="section-list">
-<li><strong>Périmètre :</strong> community management, ads, webmastering, e-commerce, RP & influence.</li>
-<li><strong>Déploiement :</strong> web management, SEO / SEA, brand content photo / vidéo, stratégie à 360°.</li>
-<li><strong>Ce que cela dit aujourd’hui :</strong> une expertise solide sur les enjeux de marque, de trafic, de conversion et de cohérence multi-établissements.</li>
-</ul>
-</div>
+  </main>
 
-<div class="col-lg-7">
-<div class="reference-visual">
-<span class="reference-visual-number">02</span>
-<div>
-<p class="reference-visual-label">Bloc visuel à remplacer</p>
-<h3 class="reference-visual-title">Collection hôtelière<br>Vision multi-sites</h3>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="row align-items-start gy-4">
+          <div class="col-12 col-lg-6">
+            <div class="footer-brand">ABYSS LAB.</div>
+            <p class="footer-tagline">
+              NOUS REVELONS LA PROFONDEUR DES MARQUES POUR FAIRE EMERGER DES UNIVERS FORTS ET DURABLES.
+            </p>
+            <div class="footer-location">
+              Basée à Bordeaux, disponible partout en France et à l'étranger.
+            </div>
+          </div>
 
-<!-- EXPERIENCE 03 -->
-<section class="section-block fade-in">
-<div class="container">
-<div class="row align-items-center gy-5">
-<div class="col-lg-5">
-<p class="section-index">03 / Eklo Hotels</p>
-<h2 class="section-title">CHEFFE DE PROJET DIGITAL — 5 ETABLISSEMENTS</h2>
-<p class="section-hook">
-<strong>Relier le digital, l’expérience client et la perception de marque à travers des dispositifs concrets et activables.</strong>
-</p>
-<p class="section-text">
-Cette expérience a renforcé une culture du terrain et de l’efficacité : faire en sorte que la communication ne soit pas un décor, mais un levier utile pour l’expérience vécue, l’e-réputation, la lisibilité de l’offre et la dynamique commerciale.
-</p>
+          <div class="col-12 col-lg-6 d-lg-flex justify-content-lg-end">
+            <div class="footer-social-block">
+              <div class="footer-social-title">Suivez-nous sur les réseaux sociaux :</div>
+              <div class="footer-socials">
+                <a class="footer-social" href="https://www.instagram.com/abyss.lab_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Abyss Lab"><i class="bi bi-instagram"></i></a>
+                <a class="footer-social" href="https://www.linkedin.com/company/abyss-lab/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Abyss Lab"><i class="bi bi-linkedin"></i></a>
+                <a class="footer-social" href="https://www.tiktok.com/@abyss.lab" target="_blank" rel="noopener noreferrer" aria-label="TikTok Abyss Lab"><i class="bi bi-tiktok"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<ul class="section-list">
-<li><strong>Périmètre :</strong> community management, e-distribution, RP, expérience client, e-réputation.</li>
-<li><strong>Déploiement :</strong> branding 360, outils de communication, marketing opérationnel, rédaction web, intégration.</li>
-<li><strong>Ce que cela dit aujourd’hui :</strong> une capacité à aligner marque, parcours client et exécution digitale dans des contextes exigeants.</li>
-</ul>
-</div>
+      <div class="footer-menu-row">
+        <nav class="footer-menu" aria-label="Menu footer">
+          <a href="index.html">Accueil</a>
+          <a href="services.html">Services</a>
+          <a href="references.html">Références</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
 
-<div class="col-lg-7">
-<div class="reference-visual">
-<span class="reference-visual-number">03</span>
-<div>
-<p class="reference-visual-label">Bloc visuel à remplacer</p>
-<h3 class="reference-visual-title">Expérience client<br>Digital opérationnel</h3>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+          <div class="footer-legal">
+            <a href="mentions-legales.html">Mentions légales</a>
+            <a href="cgu.html">CGU</a>
+            <a href="cgv.html">CGV</a>
+            <a href="politique-confidentialite.html">Politique de confidentialité</a>
+          </div>
+          <div class="footer-copy">© 2026 Abyss Lab. Tous droits réservés.</div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-<!-- EXPERIENCE 04 -->
-<section class="section-block fade-in">
-<div class="container">
-<div class="row align-items-center gy-5 flex-lg-row-reverse">
-<div class="col-lg-5">
-<p class="section-index">04 / Constance Hôtels & Resorts</p>
-<h2 class="section-title">ASSISTANTE RESPONSABLE MARKETING & COMMUNICATION DIGITALE — 7 ETABLISSEMENTS</h2>
-<p class="section-hook">
-<strong>Un socle structurant autour du rebranding, du digital, des outils de marque et de l’amélioration de l’expérience en ligne.</strong>
-</p>
-<p class="section-text">
-Cette expérience a posé les bases d’une lecture plus stratégique du marketing hôtelier : articulation entre image de marque, outils de communication, présence digitale, acquisition et qualité d’expérience sur les interfaces.
-</p>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<ul class="section-list">
-<li><strong>Périmètre :</strong> outils de communication, stratégie de rebranding, RP internationales & influence.</li>
-<li><strong>Déploiement :</strong> e-business, SEO / SEA, conciergerie online, audit & améliorations UX / UI, refonte site web.</li>
-<li><strong>Ce que cela dit aujourd’hui :</strong> une sensibilité forte aux enjeux de détail, d’image, d’ergonomie et de performance digitale.</li>
-</ul>
-</div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const video = document.getElementById("bg-video");
+      if (video) {
+        video.muted = true;
+        video.defaultMuted = true;
+        const startVideo = () => {
+          const promise = video.play();
+          if (promise !== undefined) promise.catch(() => {});
+        };
+        video.load();
+        startVideo();
+        document.addEventListener("touchstart", startVideo, { once: true, passive: true });
+        document.addEventListener("click", startVideo, { once: true });
+        document.addEventListener("visibilitychange", function () {
+          if (!document.hidden) startVideo();
+        });
+      }
 
-<div class="col-lg-7">
-<div class="reference-visual">
-<span class="reference-visual-number">04</span>
-<div>
-<p class="reference-visual-label">Bloc visuel à remplacer</p>
-<h3 class="reference-visual-title">Rebranding<br>UX / UI & web</h3>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+      const currentLocation = location.pathname.split("/").pop() || "references.html";
+      document.querySelectorAll(".nav-link").forEach(link => {
+        if (link.getAttribute("href") === currentLocation) link.classList.add("active");
+      });
 
-<!-- EXPERTISES -->
-<section class="section-block fade-in">
-<div class="container">
-<p class="section-index">05 / Ce que ces références couvrent</p>
-<h2 class="section-title">UNE EXPERTISE QUI DEPASSE LE SIMPLE PORTFOLIO</h2>
-<p class="section-text">
-Ces expériences fondatrices montrent une même constante : une approche capable d’embrasser l’ensemble des points de contact d’une marque. C’est cette lecture transversale qui nourrit aujourd’hui Abyss Lab, avec un accompagnement pensé comme une direction marketing & communication externalisée.
-</p>
+      const navbar = document.querySelector(".navbar");
+      const faders = document.querySelectorAll(".fade-in");
 
-<div class="row g-4 expertise-grid">
-<div class="col-md-6 col-xl-3">
-<div class="expertise-card">
-<h3>Stratégie 360</h3>
-<p>Positionnement, cohérence globale, campagnes, plan d’actions et déploiement marketing & communication.</p>
-</div>
-</div>
+      window.addEventListener("scroll", function () {
+        navbar.classList.toggle("scrolled", window.scrollY > 50);
+      });
 
-<div class="col-md-6 col-xl-3">
-<div class="expertise-card">
-<h3>Brand content</h3>
-<p>Storytelling, direction éditoriale, contenus photo / vidéo, valorisation d’expériences et rayonnement de marque.</p>
-</div>
-</div>
+      const appearOnScroll = new IntersectionObserver(function(entries, observer){
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.16 });
 
-<div class="col-md-6 col-xl-3">
-<div class="expertise-card">
-<h3>Influence & visibilité</h3>
-<p>RP, influence, activations, community management, ads, e-réputation et amplification des prises de parole.</p>
-</div>
-</div>
-
-<div class="col-md-6 col-xl-3">
-<div class="expertise-card">
-<h3>Digital & expérience</h3>
-<p>SEO / SEA, web management, UX / UI, refonte site web, guest apps, outils digitaux et parcours en ligne.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- TRANSITION -->
-<section class="section-block fade-in">
-<div class="container">
-<div class="metho-box">
-<p class="section-index">06 / Continuité</p>
-<h2 class="section-title">AVANT ABYSS LAB, LE TERRAIN. AUJOURD’HUI, LA SYNTHÈSE.</h2>
-<p class="section-text">
-Abyss Lab prolonge naturellement ce parcours. Ce qui a été construit au sein de ces établissements ne relève pas d’un passé annexe, mais d’un socle d’expertise concret : comprendre les marques de l’intérieur, conjuguer storytelling stratégique et mise en œuvre opérationnelle, puis transformer cette exigence en accompagnement sur-mesure pour d’autres lieux, maisons et acteurs premium.
-</p>
-<p class="section-text">
-Autrement dit : ces références précèdent Abyss Lab dans le temps, mais elles en constituent pleinement la profondeur, la méthode et la légitimité.
-</p>
-</div>
-</div>
-</section>
-
-<!-- CTA -->
-<section class="references-cta fade-in">
-<div class="container">
-<h2 class="references-cta-title">DONNER PLUS DE RELIEF A VOTRE MARQUE</h2>
-<p class="references-cta-text">
-Abyss Lab accompagne les hôtels, restaurants, lieux lifestyle et maisons premium qui veulent structurer leur image, clarifier leur présence et activer leur développement avec une vision plus juste, plus cohérente et plus désirable.
-</p>
-<a href="contact.html" class="btn btn-outline-light">PARLER DE VOTRE PROJET</a>
-</div>
-</section>
-
-</div>
-
-<!-- FOOTER -->
-<footer>
-<div class="container">
-<div class="row">
-<div class="col-md-6">
-<strong>ABYSS LAB.</strong><br>
-Agence basée Bordeaux.
-</div>
-
-<div class="col-md-6 text-md-end mt-4 mt-md-0">
-<a href="mentions-legales.html" class="text-white me-3">Mentions légales</a>
-<a href="cgu.html" class="text-white me-3">CGU</a>
-<a href="politique-confidentialite.html" class="text-white">Politique de confidentialité</a>
-</div>
-</div>
-</div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-window.addEventListener("scroll", function(){
-const navbar = document.querySelector(".navbar");
-navbar.classList.toggle("scrolled", window.scrollY > 50);
-});
-
-const faders = document.querySelectorAll(".fade-in");
-
-const appearOnScroll = new IntersectionObserver(function(entries, observer){
-entries.forEach(entry => {
-if(!entry.isIntersecting) return;
-entry.target.classList.add("visible");
-observer.unobserve(entry.target);
-});
-}, { threshold: .15 });
-
-faders.forEach(fader => {
-appearOnScroll.observe(fader);
-});
-</script>
+      faders.forEach(fader => appearOnScroll.observe(fader));
+    });
+  </script>
 
 </body>
 </html>
