@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Services Abyss Lab : stratégie de marque, positionnement, image de marque, brand content, site internet premium, SEO, social media et accompagnement marketing pour les marques luxe, lifestyle, hospitality et art de vivre.">
-  <title>Services Abyss Lab | Stratégie, image & visibilité</title>
+  <meta name="description" content="Services Abyss Lab : direction marketing et communication externalisée, stratégie de marque, image premium, brand content, site internet, SEO, social media, acquisition et accompagnement 360° pour les marques luxe, lifestyle, hospitality et art de vivre.">
+  <title>Services Abyss Lab | Direction marketing & communication 360°</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -129,19 +129,28 @@
       border:0!important;
     }
 
+    .section-kicker{
+      margin:0 0 10px;
+      font-size:.74rem;
+      font-weight:700;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:var(--white-soft);
+    }
+
     .services-hero{
-      padding:104px 0 42px;
+      padding:98px 0 24px;
       position:relative;
       z-index:2;
     }
     .services-hero-inner{
-      max-width:720px;
+      max-width:860px;
       margin:0 auto;
       text-align:center;
     }
     .services-title{
       font-family:'couture',sans-serif;
-      font-size:2.2rem;
+      font-size:2.18rem;
       line-height:1.06;
       letter-spacing:.10em;
       text-transform:uppercase;
@@ -149,19 +158,104 @@
       margin:0 0 14px;
     }
     .services-intro{
-      max-width:560px;
+      max-width:720px;
       margin:0 auto;
       text-align:center;
-      font-size:.95rem;
-      line-height:1.72;
+      font-size:.96rem;
+      line-height:1.74;
       color:var(--white-soft);
     }
     .services-hero-cta{
-      margin-top:22px;
+      margin-top:20px;
       display:flex;
       justify-content:center;
       gap:12px;
       flex-wrap:wrap;
+    }
+
+    .services-nav{
+      position:relative;
+      z-index:2;
+      padding:8px 0 22px;
+    }
+    .services-nav-head{
+      margin:0 auto 12px;
+      max-width:1180px;
+      text-align:center;
+    }
+    .services-nav-title{
+      margin:0;
+      font-size:.72rem;
+      font-weight:700;
+      letter-spacing:.20em;
+      text-transform:uppercase;
+      color:var(--white-soft);
+    }
+    .services-nav-outer{
+      position:relative;
+      max-width:1180px;
+      margin:0 auto;
+    }
+    .services-nav-wrap{
+      display:flex;
+      gap:18px;
+      overflow-x:auto;
+      padding:4px 0 8px;
+      scrollbar-width:none;
+      -ms-overflow-style:none;
+    }
+    .services-nav-wrap::-webkit-scrollbar{display:none;}
+
+    .service-chip{
+      flex:0 0 245px;
+      text-decoration:none;
+      color:#fff;
+      transition:transform .35s ease;
+    }
+    .service-chip:hover{
+      color:#fff;
+      transform:translateY(-4px);
+    }
+    .service-chip-media{
+      position:relative;
+      height:228px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.03);
+      margin-bottom:12px;
+    }
+    .service-chip-media img,
+    .service-chip-media video{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .55s ease, opacity .55s ease;
+    }
+    .service-chip:hover .service-chip-media img,
+    .service-chip:hover .service-chip-media video{
+      transform:scale(1.04);
+      opacity:.86;
+    }
+    .service-chip-label{
+      font-family:'couture',sans-serif;
+      font-size:.96rem;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      margin:0 0 4px;
+      line-height:1.32;
+      color:var(--white);
+    }
+    .service-chip-meta{
+      margin:0;
+      font-size:.70rem;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--white-faint);
+    }
+
+    .slider-swipe-arrow{
+      display:none;
     }
 
     .services-wrapper{
@@ -169,15 +263,15 @@
       z-index:2;
       padding:0 0 26px;
       border-top:1px solid var(--line);
-      margin-top:10px;
+      margin-top:12px;
     }
     .service-section{
-      padding:88px 0;
+      padding:78px 0;
       border-top:1px solid var(--line);
     }
     .service-section:first-child{
       border-top:none;
-      padding-top:68px;
+      padding-top:58px;
     }
     .service-row{
       align-items:center;
@@ -189,12 +283,12 @@
       order:1;
     }
     .service-section-text{
-      padding-right:56px;
-      max-width:560px;
+      padding-right:48px;
+      max-width:620px;
     }
     .service-index{
       display:inline-block;
-      margin-bottom:14px;
+      margin-bottom:12px;
       font-size:.72rem;
       font-weight:700;
       letter-spacing:.18em;
@@ -203,7 +297,7 @@
     }
     .service-title{
       font-family:'couture',sans-serif;
-      font-size:1.82rem;
+      font-size:1.92rem;
       line-height:1.06;
       letter-spacing:.08em;
       text-transform:uppercase;
@@ -220,18 +314,18 @@
     }
     .service-hook{
       margin:0 0 12px;
-      font-size:.98rem;
-      line-height:1.7;
+      font-size:.97rem;
+      line-height:1.72;
       color:var(--white);
       font-weight:700;
-      max-width:520px;
+      max-width:560px;
     }
     .service-text{
-      margin:0 0 20px;
-      font-size:.93rem;
-      line-height:1.74;
+      margin:0 0 22px;
+      font-size:.94rem;
+      line-height:1.76;
       color:var(--white-soft);
-      max-width:520px;
+      max-width:580px;
     }
     .service-points{
       display:grid;
@@ -239,12 +333,14 @@
       margin:0 0 24px;
     }
     .service-point{
-      border-left:1px solid rgba(255,255,255,.18);
-      padding-left:16px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.025);
+      padding:14px 14px 13px;
+      backdrop-filter:blur(6px);
     }
     .service-point-title{
       display:block;
-      margin-bottom:5px;
+      margin-bottom:6px;
       font-size:.68rem;
       font-weight:700;
       letter-spacing:.18em;
@@ -254,7 +350,7 @@
     .service-point-text{
       margin:0;
       font-size:.89rem;
-      line-height:1.62;
+      line-height:1.6;
       color:var(--white-soft);
     }
     .service-section-media{
@@ -265,7 +361,7 @@
     .service-section-media img,
     .service-section-media video{
       width:100%;
-      height:700px;
+      height:690px;
       object-fit:cover;
     }
 
@@ -275,15 +371,15 @@
       padding:10px 0 64px;
     }
     .cta-block{
-      max-width:700px;
+      max-width:780px;
       margin:0 auto;
       text-align:center;
       border-top:1px solid var(--line);
-      padding-top:40px;
+      padding-top:38px;
     }
     .cta-title{
       font-family:'couture',sans-serif;
-      font-size:1.64rem;
+      font-size:1.72rem;
       line-height:1.18;
       letter-spacing:.08em;
       text-transform:uppercase;
@@ -291,11 +387,11 @@
       color:var(--white);
     }
     .cta-text{
-      font-size:.95rem;
-      line-height:1.74;
+      font-size:.96rem;
+      line-height:1.76;
       color:var(--white-soft);
       margin-bottom:22px;
-      max-width:560px;
+      max-width:620px;
       margin-left:auto;
       margin-right:auto;
     }
@@ -437,16 +533,20 @@
     }
 
     @media (min-width: 992px){
-      .services-title{font-size:2.8rem;}
+      .services-title{font-size:2.78rem;}
+      .services-nav-wrap{
+        justify-content:center;
+        overflow:visible;
+      }
       .service-row.reverse-desktop .service-media-col{order:2;}
       .service-row.reverse-desktop .service-text-col{order:1;}
     }
 
     @media(max-width:991.98px){
-      .services-hero{padding:92px 0 30px;}
+      .services-hero{padding:90px 0 24px;}
       .service-section-text{padding-right:0;max-width:none;}
       .service-section-media img,
-      .service-section-media video{height:460px;}
+      .service-section-media video{height:440px;}
       .footer-social-block{margin-top:4px;}
       .footer-menu{
         grid-template-columns:repeat(2,1fr);
@@ -464,10 +564,10 @@
 
     @media(max-width:767.98px){
       .services-title{
-        font-size:1.48rem;
+        font-size:1.50rem;
         letter-spacing:.10em;
         line-height:1.14;
-        max-width:320px;
+        max-width:330px;
         margin-bottom:10px;
       }
       .services-intro,
@@ -478,7 +578,7 @@
         line-height:1.7;
       }
       .services-hero{
-        padding:84px 0 24px;
+        padding:82px 0 20px;
       }
       .services-hero-cta{
         gap:10px;
@@ -489,23 +589,41 @@
       .cta-actions .btn-light-ghost{
         width:100%;
       }
+      .services-nav-head{display:none;}
+      .services-nav-outer{position:relative;}
+      .slider-swipe-arrow{
+        display:flex;
+        position:absolute;
+        top:50%;
+        right:8px;
+        transform:translateY(-50%);
+        z-index:4;
+        width:38px;
+        height:38px;
+        border-radius:50%;
+        align-items:center;
+        justify-content:center;
+        background:rgba(0,0,0,.46);
+        backdrop-filter:blur(8px);
+        border:1px solid rgba(255,255,255,.16);
+        color:var(--white);
+        pointer-events:none;
+        animation:arrowFloat 1.8s ease-in-out infinite;
+      }
+      .slider-swipe-arrow i{font-size:1rem;}
+      @keyframes arrowFloat{
+        0%,100%{transform:translateY(-50%) translateX(0);opacity:.8;}
+        50%{transform:translateY(-50%) translateX(4px);opacity:1;}
+      }
+      .service-chip{flex:0 0 205px;}
+      .service-chip-media{height:200px;}
       .service-title,
-      .cta-title{
-        font-size:1.28rem;
-      }
-      .service-section{
-        padding:54px 0;
-      }
-      .service-section:first-child{
-        padding-top:44px;
-      }
-      .service-section-media{
-        margin-bottom:18px;
-      }
+      .cta-title{font-size:1.30rem;}
+      .service-section{padding:52px 0;}
+      .service-section:first-child{padding-top:42px;}
+      .service-section-media{margin-bottom:18px;}
       .service-section-media img,
-      .service-section-media video{
-        height:260px;
-      }
+      .service-section-media video{height:250px;}
       .footer{
         padding:24px 0 12px;
       }
@@ -524,7 +642,7 @@
 <body>
 
   <h1 class="visually-hidden-seo">
-    Services Abyss Lab : stratégie de marque, direction artistique, positionnement, image de marque, brand content, site internet premium, SEO, social media, visibilité digitale et accompagnement marketing pour les univers luxe, lifestyle, hospitality et art de vivre
+    Services Abyss Lab : direction marketing et communication externalisée, stratégie de marque, positionnement, image de marque, brand content, site internet premium, SEO, social media, acquisition, visibilité digitale et accompagnement 360° pour les univers luxe, lifestyle, hospitality et art de vivre
   </h1>
 
   <div class="video-background">
@@ -556,14 +674,66 @@
     <section class="services-hero fade-in">
       <div class="container">
         <div class="services-hero-inner">
-          <h1 class="services-title">STRUCTURER. ELEVER. FAIRE RAYONNER.</h1>
+          <h1 class="services-title">DIRECTION MARKETING & COMMUNICATION 360°</h1>
           <p class="services-intro">
-            Abyss Lab accompagne les marques premium qui veulent clarifier leur positionnement, renforcer leur image et gagner en impact.
+            Abyss Lab accompagne les marques premium comme une direction marketing et communication externalisée, pour clarifier leur positionnement, élever leur image et déployer les bons leviers de visibilité, de contenu et de conversion.
           </p>
 
           <div class="services-hero-cta">
             <a href="contact.html" class="btn btn-outline-light">PARLER DE VOTRE PROJET</a>
-            <a href="#accompagnements" class="btn-light-ghost">VOIR LES SERVICES</a>
+            <a href="#accompagnements" class="btn-light-ghost">VOIR LES ACCOMPAGNEMENTS</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-nav fade-in">
+      <div class="container">
+        <div class="services-nav-head">
+          <p class="services-nav-title">4 piliers pour structurer, incarner et déployer la marque</p>
+        </div>
+
+        <div class="services-nav-outer">
+          <div class="slider-swipe-arrow">
+            <i class="bi bi-arrow-right"></i>
+          </div>
+
+          <div class="services-nav-wrap">
+            <a href="#fondations" class="service-chip" aria-label="Aller à Fondations">
+              <div class="service-chip-media">
+                <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Stratégie de marque et positionnement">
+              </div>
+              <h2 class="service-chip-label">Fondations</h2>
+              <p class="service-chip-meta">stratégie & positionnement</p>
+            </a>
+
+            <a href="#image-presence" class="service-chip" aria-label="Aller à Image et présence">
+              <div class="service-chip-media">
+                <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944261/1_u4uw1i.jpg" alt="Image de marque, contenu et site internet premium">
+              </div>
+              <h2 class="service-chip-label">Image & présence</h2>
+              <p class="service-chip-meta">site, contenu & image</p>
+            </a>
+
+            <a href="#activation" class="service-chip" aria-label="Aller à Activation">
+              <div class="service-chip-media">
+                <video autoplay muted loop playsinline>
+                  <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/15_bfvtos.mp4" type="video/mp4">
+                </video>
+              </div>
+              <h2 class="service-chip-label">Activation</h2>
+              <p class="service-chip-meta">visibilité & acquisition</p>
+            </a>
+
+            <a href="#pilotage" class="service-chip" aria-label="Aller à Pilotage">
+              <div class="service-chip-media">
+                <video autoplay muted loop playsinline>
+                  <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/16_phtw8d.mp4" type="video/mp4">
+                </video>
+              </div>
+              <h2 class="service-chip-label">Pilotage</h2>
+              <p class="service-chip-meta">coordination & direction</p>
+            </a>
           </div>
         </div>
       </div>
@@ -583,20 +753,24 @@
               <div class="service-section-text">
                 <span class="service-index">01 / Accompagnement</span>
                 <h2 class="service-title">FONDATIONS</h2>
-                <p class="service-subtitle">Positionnement, stratégie</p>
-                <p class="service-hook">Clarifier la marque avant de l’exposer davantage.</p>
+                <p class="service-subtitle">Stratégie, positionnement, direction</p>
+                <p class="service-hook">Clarifier la marque avant de déployer sa communication.</p>
                 <p class="service-text">
-                  Une base stratégique nette pour aligner vision, messages et priorités.
+                  Nous posons une base stratégique solide pour aligner vision, discours, offre et priorités. C’est le socle qui permet ensuite de communiquer plus juste, plus fort et plus durablement.
                 </p>
 
                 <div class="service-points">
                   <div class="service-point">
                     <span class="service-point-title">Positionnement</span>
-                    <p class="service-point-text">Faire émerger ce qui distingue réellement la marque.</p>
+                    <p class="service-point-text">Faire émerger ce qui distingue réellement la marque sur son marché et dans son univers concurrentiel.</p>
+                  </div>
+                  <div class="service-point">
+                    <span class="service-point-title">Messages</span>
+                    <p class="service-point-text">Structurer un discours plus net, plus cohérent et plus convaincant sur tous les points de contact.</p>
                   </div>
                   <div class="service-point">
                     <span class="service-point-title">Feuille de route</span>
-                    <p class="service-point-text">Prioriser avec cohérence, méthode et vision d’ensemble.</p>
+                    <p class="service-point-text">Hiérarchiser les bons leviers marketing et communication pour avancer sans dispersion.</p>
                   </div>
                 </div>
 
@@ -617,20 +791,24 @@
               <div class="service-section-text">
                 <span class="service-index">02 / Accompagnement</span>
                 <h2 class="service-title">IMAGE & PRESENCE</h2>
-                <p class="service-subtitle">Site, contenu, image</p>
-                <p class="service-hook">Donner à la marque une présence à la hauteur de son ambition.</p>
+                <p class="service-subtitle">Site web, contenu, image de marque</p>
+                <p class="service-hook">Donner à la marque une présence à la hauteur de ce qu’elle promet.</p>
                 <p class="service-text">
-                  Des supports pensés pour renforcer perception, crédibilité et conversion.
+                  Nous transformons la stratégie en expression concrète : identité visuelle, direction artistique, site internet premium et contenus capables de renforcer désirabilité, crédibilité et conversion.
                 </p>
 
                 <div class="service-points">
                   <div class="service-point">
                     <span class="service-point-title">Site web</span>
-                    <p class="service-point-text">Une expérience pensée pour l’image, la lisibilité et la conversion.</p>
+                    <p class="service-point-text">Concevoir une vitrine premium pensée pour l’expérience, la lisibilité, la conversion et le référencement naturel.</p>
                   </div>
                   <div class="service-point">
                     <span class="service-point-title">Brand content</span>
-                    <p class="service-point-text">Des contenus qui élèvent la désirabilité et la cohérence de la marque.</p>
+                    <p class="service-point-text">Créer des contenus photo, vidéo et éditoriaux qui donnent plus de relief, de cohérence et de tenue à la marque.</p>
+                  </div>
+                  <div class="service-point">
+                    <span class="service-point-title">Direction artistique</span>
+                    <p class="service-point-text">Installer un univers visuel plus fort sur l’ensemble des supports pour mieux soutenir la perception de valeur.</p>
                   </div>
                 </div>
 
@@ -653,20 +831,24 @@
               <div class="service-section-text">
                 <span class="service-index">03 / Accompagnement</span>
                 <h2 class="service-title">ACTIVATION</h2>
-                <p class="service-subtitle">Visibilité, acquisition</p>
-                <p class="service-hook">Faire rayonner la marque sans l’affaiblir.</p>
+                <p class="service-subtitle">Visibilité, social media, acquisition</p>
+                <p class="service-hook">Faire rayonner la marque avec les bons leviers, au bon niveau.</p>
                 <p class="service-text">
-                  Les bons leviers pour renforcer visibilité, désirabilité et engagement.
+                  Une présence digitale efficace ne repose pas sur le volume, mais sur la justesse. Nous activons les canaux utiles pour accroître la visibilité, attirer une audience qualifiée et soutenir la croissance.
                 </p>
 
                 <div class="service-points">
                   <div class="service-point">
-                    <span class="service-point-title">Visibilité</span>
-                    <p class="service-point-text">Activer les canaux les plus justes pour accroître la présence de la marque.</p>
+                    <span class="service-point-title">Social media</span>
+                    <p class="service-point-text">Définir une ligne éditoriale, un rythme et des contenus capables d’installer une présence cohérente et désirable.</p>
                   </div>
                   <div class="service-point">
                     <span class="service-point-title">Acquisition</span>
-                    <p class="service-point-text">Attirer plus juste, avec une logique alignée à vos objectifs réels.</p>
+                    <p class="service-point-text">Déployer des campagnes et des actions ciblées pour soutenir notoriété, trafic qualifié et développement commercial.</p>
+                  </div>
+                  <div class="service-point">
+                    <span class="service-point-title">Visibilité digitale</span>
+                    <p class="service-point-text">Sélectionner les bons leviers d’amplification pour faire émerger la marque sans brouiller son positionnement.</p>
                   </div>
                 </div>
 
@@ -689,20 +871,24 @@
               <div class="service-section-text">
                 <span class="service-index">04 / Accompagnement</span>
                 <h2 class="service-title">PILOTAGE</h2>
-                <p class="service-subtitle">Accompagnement continu</p>
-                <p class="service-hook">Garder le cap pendant que la marque évolue.</p>
+                <p class="service-subtitle">Direction externalisée, coordination continue</p>
+                <p class="service-hook">Assurer une direction marketing et communication dans la durée.</p>
                 <p class="service-text">
-                  Recul, coordination et direction pour faire avancer la marque sans dispersion.
+                  Abyss Lab peut intervenir comme un partenaire de pilotage externalisé pour coordonner les actions, arbitrer les priorités et garder une ligne claire quand la marque évolue, lance, grandit ou se restructure.
                 </p>
 
                 <div class="service-points">
                   <div class="service-point">
                     <span class="service-point-title">Coordination</span>
-                    <p class="service-point-text">Relier supports, contenus, campagnes et décisions dans une même ligne.</p>
+                    <p class="service-point-text">Faire le lien entre contenus, supports, prestataires, campagnes et décisions pour conserver une cohérence globale.</p>
                   </div>
                   <div class="service-point">
-                    <span class="service-point-title">Evolution</span>
-                    <p class="service-point-text">Faire grandir la marque sans brouiller sa perception ni perdre sa cohérence.</p>
+                    <span class="service-point-title">Suivi stratégique</span>
+                    <p class="service-point-text">Apporter recul, arbitrage et continuité pour que chaque action serve une trajectoire plus large.</p>
+                  </div>
+                  <div class="service-point">
+                    <span class="service-point-title">Accompagnement 360°</span>
+                    <p class="service-point-text">Intervenir à la croisée de la stratégie, de l’image, du contenu, du digital et de la visibilité selon les besoins réels de la marque.</p>
                   </div>
                 </div>
 
@@ -718,9 +904,9 @@
     <section class="services-cta fade-in">
       <div class="container">
         <div class="cta-block">
-          <h2 class="cta-title">UNE MARQUE PLUS CLAIRE, PLUS FORTE, PLUS DESIRABLE</h2>
+          <h2 class="cta-title">UNE DIRECTION EXTERNALISEE POUR FAIRE GRANDIR LA MARQUE AVEC COHERENCE</h2>
           <p class="cta-text">
-            Abyss Lab accompagne les marques qui veulent gagner en netteté, en présence et en impact.
+            Abyss Lab accompagne les marques qui veulent gagner en netteté, en désirabilité et en impact, avec une approche 360° entre stratégie, image, contenu, digital et pilotage marketing.
           </p>
           <div class="cta-actions">
             <a href="contact.html" class="btn btn-outline-light">DEMARRER UN PROJET</a>
