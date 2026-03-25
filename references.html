@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Références Abyss Lab : marketing et communication 360°, image de marque, brand content, visibilité, SEO, web design, UX et expérience digitale pour hôtels, restaurants, groupes hospitality et marques premium.">
-  <title>Références Abyss Lab | Expertise 360° & univers accompagnés</title>
+  <meta name="description" content="Références Abyss Lab : 24 établissements, rebrandings, ouvertures d’hôtels, restaurants, bars et spas. Marketing & communication 360°, image, brand content, digital, rayonnement et expérience pour les univers premium, hospitality et art de vivre.">
+  <title>Références Abyss Lab | Chiffres clés, univers & impact</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,8 +22,8 @@
       --white-faint:rgba(255,255,255,.50);
       --line:rgba(255,255,255,.14);
       --line-soft:rgba(255,255,255,.10);
-      --glass:rgba(255,255,255,.045);
-      --glass-strong:rgba(255,255,255,.07);
+      --glass:rgba(255,255,255,.05);
+      --glass-strong:rgba(255,255,255,.08);
     }
 
     html{scroll-behavior:smooth;}
@@ -53,8 +53,8 @@
       position:absolute;
       inset:0;
       background:
-        linear-gradient(to bottom, rgba(0,0,0,.34), rgba(0,0,0,.76) 42%, rgba(0,0,0,.94) 100%),
-        rgba(0,0,0,.14);
+        linear-gradient(to bottom, rgba(0,0,0,.40), rgba(0,0,0,.80) 44%, rgba(0,0,0,.95) 100%),
+        rgba(0,0,0,.16);
       z-index:1;
     }
 
@@ -132,18 +132,18 @@
 
     /* HERO */
     .references-hero{
-      padding:98px 0 18px;
+      padding:96px 0 18px;
       position:relative;
       z-index:2;
     }
     .references-hero-inner{
-      max-width:820px;
+      max-width:860px;
       margin:0 auto;
       text-align:center;
     }
     .references-title{
       font-family:'couture',sans-serif;
-      font-size:2.24rem;
+      font-size:2.18rem;
       line-height:1.06;
       letter-spacing:.10em;
       text-transform:uppercase;
@@ -151,11 +151,11 @@
       margin:0 0 12px;
     }
     .references-intro{
-      max-width:660px;
+      max-width:700px;
       margin:0 auto;
       text-align:center;
-      font-size:.94rem;
-      line-height:1.7;
+      font-size:.95rem;
+      line-height:1.72;
       color:var(--white-soft);
     }
     .references-hero-cta{
@@ -166,7 +166,7 @@
       flex-wrap:wrap;
     }
 
-    /* LOGO STRIP */
+    /* LOGO STRIP XXL */
     .logo-strip{
       position:relative;
       z-index:3;
@@ -179,7 +179,6 @@
       backdrop-filter:blur(16px);
       -webkit-backdrop-filter:blur(16px);
       padding:14px 0;
-      overflow:hidden;
     }
     .logo-strip-title{
       margin:0 0 12px;
@@ -190,31 +189,38 @@
       text-transform:uppercase;
       color:var(--white-soft);
     }
+    .logo-strip-scroll{
+      overflow-x:auto;
+      overflow-y:hidden;
+      scrollbar-width:none;
+      -ms-overflow-style:none;
+      scroll-snap-type:x proximity;
+      padding:0 18px 2px;
+    }
+    .logo-strip-scroll::-webkit-scrollbar{
+      display:none;
+    }
     .logo-strip-track{
       display:flex;
       align-items:center;
       gap:16px;
       width:max-content;
-      padding:0 18px;
-      animation:logoScroll 34s linear infinite;
-    }
-    .logo-strip-shell:hover .logo-strip-track{
-      animation-play-state:paused;
     }
     .logo-pill{
       flex:0 0 auto;
-      width:320px;
-      height:110px;
+      width:340px;
+      height:118px;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:6px 8px;
+      padding:6px;
       border:1px solid rgba(255,255,255,.14);
       background:rgba(255,255,255,.05);
       text-decoration:none;
       overflow:hidden;
-      backdrop-filter:blur(8px);
-      -webkit-backdrop-filter:blur(8px);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      scroll-snap-align:start;
     }
     .logo-pill:hover{
       transform:translateY(-2px);
@@ -227,29 +233,25 @@
       object-fit:contain;
       filter:brightness(0) invert(1);
       opacity:1;
-    }
-
-    @keyframes logoScroll{
-      0%{transform:translateX(0);}
-      100%{transform:translateX(-50%);}
+      transform:scale(1.06);
     }
 
     /* MANIFESTO */
     .references-manifesto{
       position:relative;
       z-index:2;
-      padding:18px 0 10px;
+      padding:18px 0 12px;
     }
     .references-manifesto-box{
       max-width:760px;
       margin:0 auto;
       text-align:center;
-      padding:6px 0 10px;
+      padding:4px 0 8px;
     }
     .references-manifesto-text{
       margin:0;
       font-size:1rem;
-      line-height:1.68;
+      line-height:1.66;
       color:var(--white);
       font-weight:600;
     }
@@ -258,11 +260,11 @@
     .references-stats{
       position:relative;
       z-index:2;
-      padding:8px 0 16px;
+      padding:6px 0 18px;
     }
     .stats-grid{
       display:grid;
-      grid-template-columns:repeat(4,1fr);
+      grid-template-columns:repeat(6,1fr);
       gap:14px;
     }
     .stat-card{
@@ -270,34 +272,34 @@
       background:rgba(255,255,255,.04);
       backdrop-filter:blur(12px);
       -webkit-backdrop-filter:blur(12px);
-      padding:22px 18px;
+      padding:20px 16px;
       text-align:center;
-      min-height:160px;
+      min-height:154px;
       display:flex;
       flex-direction:column;
       justify-content:center;
     }
     .stat-number{
       font-family:'couture',sans-serif;
-      font-size:2.1rem;
+      font-size:1.78rem;
       line-height:1;
-      letter-spacing:.08em;
+      letter-spacing:.06em;
       text-transform:uppercase;
       margin-bottom:10px;
       color:var(--white);
     }
     .stat-label{
-      font-size:.72rem;
+      font-size:.70rem;
       font-weight:700;
       letter-spacing:.18em;
       text-transform:uppercase;
       color:var(--white-soft);
-      margin-bottom:10px;
+      margin-bottom:8px;
     }
     .stat-text{
       margin:0;
-      font-size:.88rem;
-      line-height:1.58;
+      font-size:.84rem;
+      line-height:1.52;
       color:var(--white-soft);
     }
 
@@ -305,17 +307,17 @@
     .themes-wrapper{
       position:relative;
       z-index:2;
-      padding:4px 0 24px;
+      padding:2px 0 24px;
       border-top:1px solid var(--line);
-      margin-top:10px;
+      margin-top:8px;
     }
     .theme-section{
-      padding:74px 0;
+      padding:76px 0;
       border-top:1px solid var(--line);
     }
     .theme-section:first-child{
       border-top:none;
-      padding-top:52px;
+      padding-top:50px;
     }
     .theme-row{
       align-items:center;
@@ -337,7 +339,7 @@
     }
     .theme-title{
       font-family:'couture',sans-serif;
-      font-size:1.88rem;
+      font-size:1.84rem;
       line-height:1.06;
       letter-spacing:.08em;
       text-transform:uppercase;
@@ -355,7 +357,7 @@
     .theme-hook{
       margin:0 0 12px;
       font-size:.98rem;
-      line-height:1.66;
+      line-height:1.64;
       color:var(--white);
       font-weight:700;
       max-width:530px;
@@ -389,6 +391,7 @@
     }
     .theme-points{
       display:grid;
+      grid-template-columns:repeat(2,1fr);
       gap:12px;
       margin:0 0 24px;
     }
@@ -442,7 +445,7 @@
     }
     .cta-title{
       font-family:'couture',sans-serif;
-      font-size:1.68rem;
+      font-size:1.66rem;
       line-height:1.18;
       letter-spacing:.08em;
       text-transform:uppercase;
@@ -596,9 +599,15 @@
     }
 
     @media (min-width: 992px){
-      .references-title{font-size:2.76rem;}
+      .references-title{font-size:2.72rem;}
       .theme-row.reverse-desktop .theme-media-col{order:2;}
       .theme-row.reverse-desktop .theme-text-col{order:1;}
+    }
+
+    @media(max-width:1199.98px){
+      .stats-grid{
+        grid-template-columns:repeat(3,1fr);
+      }
     }
 
     @media(max-width:991.98px){
@@ -609,9 +618,12 @@
       .theme-text-wrap{padding-right:0;max-width:none;}
       .theme-media img,
       .theme-media video{height:440px;}
+      .theme-points{
+        grid-template-columns:1fr;
+      }
       .logo-pill{
-        width:250px;
-        height:90px;
+        width:270px;
+        height:96px;
       }
       .footer-social-block{margin-top:4px;}
       .footer-menu{
@@ -675,14 +687,12 @@
         text-align:left;
         padding:0 14px;
       }
-      .logo-strip-track{
-        gap:10px;
-        padding:0 12px;
+      .logo-strip-scroll{
+        padding:0 12px 2px;
       }
       .logo-pill{
-        width:210px;
-        height:78px;
-        padding:6px 8px;
+        width:220px;
+        height:82px;
       }
 
       .stats-grid{
@@ -724,7 +734,7 @@
 <body>
 
   <h1 class="visually-hidden-seo">
-    Références Abyss Lab : marketing et communication 360, stratégie de marque, brand content, SEO, SEA, UX, web design, expérience client, direction marketing et communication pour hôtels, restaurants et univers premium
+    Références Abyss Lab : 24 établissements, rebrandings, ouvertures d’hôtels, restaurants, bars et spas, marketing et communication 360, image de marque, brand content, SEO, SEA, UX, web design et expérience
   </h1>
 
   <div class="video-background">
@@ -773,29 +783,19 @@
       <div class="logo-strip-shell">
         <div class="container-fluid px-0">
           <p class="logo-strip-title">Maisons, hôtels, restaurants & lieux accompagnés</p>
-
-          <div class="logo-strip-track">
-            <a class="logo-pill" href="https://mondrianhotels.com/fr/bordeaux-les-carmes/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_mondrian_bordeaux_klvfkk.png" alt="Mondrian Bordeaux Les Carmes"></a>
-            <a class="logo-pill" href="https://morimotobordeaux.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_morimoto_bordeaux_vgb8ns.png" alt="Morimoto Bordeaux"></a>
-            <a class="logo-pill" href="https://brindos-cotebasque.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271199/marketing_communication_brindos_anglet_ogtgnq.png" alt="Brindos Lac & Château"></a>
-            <a class="logo-pill" href="https://cafebonart.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271224/marketing_communication_cafe_bonart_vn4enk.png" alt="Café Bonart"></a>
-            <a class="logo-pill" href="https://www.chateaudesacy.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_chateau_sacy_reims_ov4rcf.png" alt="Château de Sacy"></a>
-            <a class="logo-pill" href="https://www.maisons-particulieres.com/maison-la-course" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_maison_la_course_bordeaux_pe6vu9.png" alt="Maison La Course"></a>
-            <a class="logo-pill" href="https://www.chateaudetheoule.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271353/marketing_communication_chateau_theoule_sur_mer_qtecgf.png" alt="Château de Théoule-sur-Mer"></a>
-            <a class="logo-pill" href="https://www.lapalmeraielabaule.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_palmeraie_la_baule_erb4df.png" alt="La Palmeraie La Baule"></a>
-            <a class="logo-pill" href="https://www.grandhotelmegve.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_grand_hotel_soleil_d_or_megeve_jic4on.png" alt="Grand Hôtel Soleil d'Or Megève"></a>
-            <a class="logo-pill" href="https://www.domainederaba.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_domaine_de_raba_zsu3ao.png" alt="Domaine de Raba"></a>
-
-            <a class="logo-pill" href="https://mondrianhotels.com/fr/bordeaux-les-carmes/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_mondrian_bordeaux_klvfkk.png" alt="Mondrian Bordeaux Les Carmes"></a>
-            <a class="logo-pill" href="https://morimotobordeaux.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_morimoto_bordeaux_vgb8ns.png" alt="Morimoto Bordeaux"></a>
-            <a class="logo-pill" href="https://brindos-cotebasque.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271199/marketing_communication_brindos_anglet_ogtgnq.png" alt="Brindos Lac & Château"></a>
-            <a class="logo-pill" href="https://cafebonart.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271224/marketing_communication_cafe_bonart_vn4enk.png" alt="Café Bonart"></a>
-            <a class="logo-pill" href="https://www.chateaudesacy.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_chateau_sacy_reims_ov4rcf.png" alt="Château de Sacy"></a>
-            <a class="logo-pill" href="https://www.maisons-particulieres.com/maison-la-course" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_maison_la_course_bordeaux_pe6vu9.png" alt="Maison La Course"></a>
-            <a class="logo-pill" href="https://www.chateaudetheoule.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271353/marketing_communication_chateau_theoule_sur_mer_qtecgf.png" alt="Château de Théoule-sur-Mer"></a>
-            <a class="logo-pill" href="https://www.lapalmeraielabaule.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_palmeraie_la_baule_erb4df.png" alt="La Palmeraie La Baule"></a>
-            <a class="logo-pill" href="https://www.grandhotelmegve.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_grand_hotel_soleil_d_or_megeve_jic4on.png" alt="Grand Hôtel Soleil d'Or Megève"></a>
-            <a class="logo-pill" href="https://www.domainederaba.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_domaine_de_raba_zsu3ao.png" alt="Domaine de Raba"></a>
+          <div class="logo-strip-scroll">
+            <div class="logo-strip-track">
+              <a class="logo-pill" href="https://mondrianhotels.com/fr/bordeaux-les-carmes/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_mondrian_bordeaux_klvfkk.png" alt="Mondrian Bordeaux Les Carmes"></a>
+              <a class="logo-pill" href="https://morimotobordeaux.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_morimoto_bordeaux_vgb8ns.png" alt="Morimoto Bordeaux"></a>
+              <a class="logo-pill" href="https://brindos-cotebasque.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271199/marketing_communication_brindos_anglet_ogtgnq.png" alt="Brindos Lac & Château"></a>
+              <a class="logo-pill" href="https://cafebonart.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271224/marketing_communication_cafe_bonart_vn4enk.png" alt="Café Bonart"></a>
+              <a class="logo-pill" href="https://www.chateaudesacy.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_chateau_sacy_reims_ov4rcf.png" alt="Château de Sacy"></a>
+              <a class="logo-pill" href="https://www.maisons-particulieres.com/maison-la-course" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_maison_la_course_bordeaux_pe6vu9.png" alt="Maison La Course"></a>
+              <a class="logo-pill" href="https://www.chateaudetheoule.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271353/marketing_communication_chateau_theoule_sur_mer_qtecgf.png" alt="Château de Théoule-sur-Mer"></a>
+              <a class="logo-pill" href="https://www.lapalmeraielabaule.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_palmeraie_la_baule_erb4df.png" alt="La Palmeraie La Baule"></a>
+              <a class="logo-pill" href="https://www.grandhotelmegve.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_grand_hotel_soleil_d_or_megeve_jic4on.png" alt="Grand Hôtel Soleil d'Or Megève"></a>
+              <a class="logo-pill" href="https://www.domainederaba.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_domaine_de_raba_zsu3ao.png" alt="Domaine de Raba"></a>
+            </div>
           </div>
         </div>
       </div>
@@ -816,23 +816,33 @@
         <div class="stats-grid">
           <div class="stat-card">
             <div class="stat-number">24</div>
-            <div class="stat-label">Établissements</div>
-            <p class="stat-text">Pilotés ou accompagnés à travers l’hospitality, la restauration et les univers premium.</p>
+            <div class="stat-label">Etablissements</div>
+            <p class="stat-text">Hôtellerie, restauration, groupes hospitality et univers premium. </p>
           </div>
           <div class="stat-card">
-            <div class="stat-number">360°</div>
-            <div class="stat-label">Stratégie</div>
-            <p class="stat-text">Image, contenu, visibilité, digital, expérience et coordination globale.</p>
+            <div class="stat-number">6</div>
+            <div class="stat-label">Ouvertures hôtels</div>
+            <p class="stat-text">Brindos, GHSO, Château Léognan, Théoule, Mondrian, Villa des Orangers.</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">8</div>
+            <div class="stat-label">Ouvertures restaurants</div>
+            <p class="stat-text">Refuge, Taqueria, Cabane 45, Izakaya, Brindos, Plage Blanche, Morimoto, GHSO.</p>
           </div>
           <div class="stat-card">
             <div class="stat-number">4</div>
-            <div class="stat-label">Univers clés</div>
-            <p class="stat-text">Image, rayonnement, digital et pilotage tenus avec la même exigence.</p>
+            <div class="stat-label">Ouvertures bars</div>
+            <p class="stat-text">Brindos, GHSO, Théoule, Morimoto.</p>
           </div>
           <div class="stat-card">
-            <div class="stat-number">SEO</div>
-            <div class="stat-label">+ UX / Ads</div>
-            <p class="stat-text">Des leviers de visibilité et d’expérience traités comme des enjeux de marque.</p>
+            <div class="stat-number">5</div>
+            <div class="stat-label">Ouvertures spas</div>
+            <p class="stat-text">Brindos, Château Léognan, Théoule, Mondrian, GHSO.</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Rebrandings</div>
+            <p class="stat-text">Villa des Orangers, Mondrian, Constance.</p>
           </div>
         </div>
       </div>
@@ -863,6 +873,7 @@
                   <li>Morimoto Bordeaux</li>
                   <li>Brindos Lac & Château</li>
                   <li>Domaine de Raba</li>
+                  <li>Villa des Orangers</li>
                 </ul>
 
                 <div class="theme-points">
@@ -893,29 +904,31 @@
             </div>
             <div class="col-12 col-lg-6 theme-text-col">
               <div class="theme-text-wrap">
-                <span class="theme-index">02 / Rayonnement & activation</span>
-                <h2 class="theme-title">FAIRE RAYONNER SANS DILUER</h2>
-                <p class="theme-subtitle">Visibilité, RP, influence, amplification</p>
+                <span class="theme-index">02 / Ouvertures & rayonnement</span>
+                <h2 class="theme-title">LANCER, FAIRE RAYONNER, DONNER LE TON</h2>
+                <p class="theme-subtitle">Ouvertures, visibilité, RP, influence</p>
                 <p class="theme-hook">Activer les bons relais au bon niveau, sans brouiller la ligne.</p>
                 <p class="theme-text">
-                  RP, influence, community management, ads et activations conçus pour servir la marque avec justesse.
+                  Ouvertures d’hôtels, restaurants, bars et spas ; RP, influence, community management, ads et activations conçus pour servir la marque avec justesse.
                 </p>
 
                 <ul class="theme-places">
                   <li>Mondrian Bordeaux Les Carmes</li>
-                  <li>Millésime Collection</li>
-                  <li>Eklo Hotels</li>
-                  <li>Constance Hôtels & Resorts</li>
+                  <li>Brindos Lac & Château</li>
+                  <li>Morimoto Bordeaux</li>
+                  <li>Grand Hôtel Soleil d’Or</li>
+                  <li>Château de Théoule</li>
+                  <li>Château Léognan</li>
                 </ul>
 
                 <div class="theme-points">
                   <div class="theme-point">
-                    <span class="theme-point-title">Influence</span>
-                    <p class="theme-point-text">Choisir les bons relais et les bons temps d’activation.</p>
+                    <span class="theme-point-title">Ouvertures</span>
+                    <p class="theme-point-text">Hôtels, restaurants, bars et spas lancés dans des univers premium et hospitality.</p>
                   </div>
                   <div class="theme-point">
-                    <span class="theme-point-title">Visibilité</span>
-                    <p class="theme-point-text">Accroître la présence et l’attractivité avec cohérence.</p>
+                    <span class="theme-point-title">Rayonnement</span>
+                    <p class="theme-point-text">RP, influence et visibilité pensés comme un prolongement de la marque.</p>
                   </div>
                 </div>
 
@@ -963,47 +976,6 @@
                 </div>
 
                 <a href="contact.html" class="btn btn-outline-light">ELEVER MA PRESENCE</a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="theme-section fade-in">
-          <div class="row gy-4 gy-lg-5 theme-row reverse-desktop">
-            <div class="col-12 col-lg-6 theme-media-col">
-              <div class="theme-media">
-                <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773413021/site_web_referencement_abyss_lab_agence_w7o2te.jpg" alt="Pilotage marketing et communication 360">
-              </div>
-            </div>
-            <div class="col-12 col-lg-6 theme-text-col">
-              <div class="theme-text-wrap">
-                <span class="theme-index">04 / Pilotage & coherence</span>
-                <h2 class="theme-title">GARDER UNE LIGNE CLAIRE QUAND TOUT BOUGE</h2>
-                <p class="theme-subtitle">Direction 360, arbitrage, cohérence</p>
-                <p class="theme-hook">Faire tenir ensemble stratégie, contenus, visibilité, digital et exécution.</p>
-                <p class="theme-text">
-                  Une lecture transversale capable de coordonner les sujets, arbitrer les priorités et maintenir une cohérence de marque dans la durée.
-                </p>
-
-                <ul class="theme-places">
-                  <li>Mondrian Bordeaux Les Carmes</li>
-                  <li>Millésime Collection</li>
-                  <li>Eklo Hotels</li>
-                  <li>Constance Hôtels & Resorts</li>
-                </ul>
-
-                <div class="theme-points">
-                  <div class="theme-point">
-                    <span class="theme-point-title">Strategie 360</span>
-                    <p class="theme-point-text">Relier image, contenu, visibilité, digital et expérience.</p>
-                  </div>
-                  <div class="theme-point">
-                    <span class="theme-point-title">Coordination</span>
-                    <p class="theme-point-text">Faire le lien entre supports, prestataires, campagnes et enjeux de marque.</p>
-                  </div>
-                </div>
-
-                <a href="services.html" class="btn btn-outline-light">VOIR LES SERVICES</a>
               </div>
             </div>
           </div>
