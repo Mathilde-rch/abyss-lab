@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Références Abyss Lab : 24 établissements, rebrandings, ouvertures d’hôtels, restaurants, bars et spas. Marketing & communication 360°, image, brand content, digital, rayonnement et expérience pour les univers premium, hospitality et art de vivre.">
+  <meta name="description" content="Références Abyss Lab : 24 établissements, ouvertures d’hôtels 5 étoiles et direction marketing & communication 360°. Image de marque, brand content, digital, rayonnement et expérience pour les univers premium, hospitality et art de vivre.">
   <title>Références Abyss Lab | Chiffres clés, univers & impact</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -130,6 +130,7 @@
       border:0!important;
     }
 
+    /* HERO */
     .references-hero{
       padding:96px 0 18px;
       position:relative;
@@ -165,7 +166,7 @@
       flex-wrap:wrap;
     }
 
-    /* LOGOS XXL + ARROW */
+    /* LOGOS */
     .logo-strip{
       position:relative;
       z-index:3;
@@ -197,7 +198,7 @@
       overflow-y:hidden;
       scrollbar-width:none;
       -ms-overflow-style:none;
-      padding:0 86px 2px 18px;
+      padding:0 78px 2px 18px;
       scroll-behavior:smooth;
     }
     .logo-strip-scroll::-webkit-scrollbar{
@@ -206,17 +207,20 @@
     .logo-strip-track{
       display:flex;
       align-items:center;
-      gap:18px;
+      gap:14px;
       width:max-content;
     }
+
+    /* blocs homogènes en hauteur / largeur adaptée au logo */
     .logo-pill{
       flex:0 0 auto;
-      width:680px;
-      height:160px;
+      height:150px;
+      min-width:260px;
+      max-width:520px;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:2px;
+      padding:6px 12px;
       border:1px solid rgba(255,255,255,.14);
       background:rgba(255,255,255,.05);
       text-decoration:none;
@@ -229,14 +233,22 @@
       border-color:rgba(255,255,255,.30);
       background:rgba(255,255,255,.09);
     }
+
+    /* tailles ajustées par logo pour limiter le vide */
+    .logo-pill.logo-xl{ width:500px; }
+    .logo-pill.logo-lg{ width:430px; }
+    .logo-pill.logo-md{ width:360px; }
+    .logo-pill.logo-sm{ width:300px; }
+
     .logo-pill img{
       width:100%;
       height:100%;
       object-fit:contain;
       filter:brightness(0) invert(1);
       opacity:1;
-      transform:scale(1.18);
+      transform:scale(1.22);
     }
+
     .logo-strip-arrow{
       position:absolute;
       right:18px;
@@ -284,6 +296,7 @@
       font-weight:600;
     }
 
+    /* 3 stats only */
     .references-stats{
       position:relative;
       z-index:2;
@@ -291,7 +304,7 @@
     }
     .stats-grid{
       display:grid;
-      grid-template-columns:repeat(6,1fr);
+      grid-template-columns:repeat(3,1fr);
       gap:14px;
     }
     .stat-card{
@@ -299,16 +312,16 @@
       background:rgba(255,255,255,.04);
       backdrop-filter:blur(12px);
       -webkit-backdrop-filter:blur(12px);
-      padding:20px 16px;
+      padding:22px 18px;
       text-align:center;
-      min-height:154px;
+      min-height:168px;
       display:flex;
       flex-direction:column;
       justify-content:center;
     }
     .stat-number{
       font-family:'couture',sans-serif;
-      font-size:1.78rem;
+      font-size:2rem;
       line-height:1;
       letter-spacing:.06em;
       text-transform:uppercase;
@@ -316,7 +329,7 @@
       color:var(--white);
     }
     .stat-label{
-      font-size:.70rem;
+      font-size:.72rem;
       font-weight:700;
       letter-spacing:.18em;
       text-transform:uppercase;
@@ -325,8 +338,8 @@
     }
     .stat-text{
       margin:0;
-      font-size:.84rem;
-      line-height:1.52;
+      font-size:.86rem;
+      line-height:1.56;
       color:var(--white-soft);
     }
 
@@ -627,21 +640,11 @@
       .theme-row.reverse-desktop .theme-text-col{order:1;}
     }
 
-    @media(max-width:1399.98px){
-      .logo-pill{
-        width:560px;
-        height:148px;
-      }
-    }
-
     @media(max-width:1199.98px){
-      .stats-grid{
-        grid-template-columns:repeat(3,1fr);
-      }
-      .logo-pill{
-        width:460px;
-        height:136px;
-      }
+      .logo-pill.logo-xl{ width:430px; }
+      .logo-pill.logo-lg{ width:390px; }
+      .logo-pill.logo-md{ width:340px; }
+      .logo-pill.logo-sm{ width:280px; }
       .theme-points{
         grid-template-columns:1fr;
       }
@@ -650,7 +653,7 @@
     @media(max-width:991.98px){
       .references-hero{padding:90px 0 18px;}
       .stats-grid{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:1fr;
       }
       .theme-text-wrap{padding-right:0;max-width:none;}
       .theme-media img,
@@ -659,12 +662,12 @@
         padding:0 74px 2px 14px;
       }
       .logo-pill{
-        width:340px;
-        height:112px;
+        height:124px;
       }
-      .logo-pill img{
-        transform:scale(1.12);
-      }
+      .logo-pill.logo-xl{ width:360px; }
+      .logo-pill.logo-lg{ width:320px; }
+      .logo-pill.logo-md{ width:290px; }
+      .logo-pill.logo-sm{ width:250px; }
       .logo-strip-arrow{
         width:52px;
         height:52px;
@@ -737,23 +740,19 @@
         padding:0 66px 2px 12px;
       }
       .logo-pill{
-        width:300px;
-        height:98px;
+        height:108px;
       }
+      .logo-pill.logo-xl{ width:310px; }
+      .logo-pill.logo-lg{ width:280px; }
+      .logo-pill.logo-md{ width:250px; }
+      .logo-pill.logo-sm{ width:220px; }
       .logo-pill img{
-        transform:scale(1.14);
+        transform:scale(1.18);
       }
       .logo-strip-arrow{
         width:48px;
         height:48px;
         right:10px;
-      }
-
-      .stats-grid{
-        grid-template-columns:1fr;
-      }
-      .stat-card{
-        min-height:auto;
       }
 
       .theme-title,
@@ -837,16 +836,16 @@
           <div class="logo-strip-wrap">
             <div class="logo-strip-scroll" id="logoStripScroll">
               <div class="logo-strip-track">
-                <a class="logo-pill" href="https://mondrianhotels.com/fr/bordeaux-les-carmes/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_mondrian_bordeaux_klvfkk.png" alt="Mondrian Bordeaux Les Carmes"></a>
-                <a class="logo-pill" href="https://morimotobordeaux.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_morimoto_bordeaux_vgb8ns.png" alt="Morimoto Bordeaux"></a>
-                <a class="logo-pill" href="https://brindos-cotebasque.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271199/marketing_communication_brindos_anglet_ogtgnq.png" alt="Brindos Lac & Château"></a>
-                <a class="logo-pill" href="https://cafebonart.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271224/marketing_communication_cafe_bonart_vn4enk.png" alt="Café Bonart"></a>
-                <a class="logo-pill" href="https://www.chateaudesacy.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_chateau_sacy_reims_ov4rcf.png" alt="Château de Sacy"></a>
-                <a class="logo-pill" href="https://www.maisons-particulieres.com/maison-la-course" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_maison_la_course_bordeaux_pe6vu9.png" alt="Maison La Course"></a>
-                <a class="logo-pill" href="https://www.chateaudetheoule.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271353/marketing_communication_chateau_theoule_sur_mer_qtecgf.png" alt="Château de Théoule-sur-Mer"></a>
-                <a class="logo-pill" href="https://www.lapalmeraielabaule.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_palmeraie_la_baule_erb4df.png" alt="La Palmeraie La Baule"></a>
-                <a class="logo-pill" href="https://www.grandhotelmegve.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_grand_hotel_soleil_d_or_megeve_jic4on.png" alt="Grand Hôtel Soleil d'Or Megève"></a>
-                <a class="logo-pill" href="https://www.domainederaba.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_domaine_de_raba_zsu3ao.png" alt="Domaine de Raba"></a>
+                <a class="logo-pill logo-lg" href="https://mondrianhotels.com/fr/bordeaux-les-carmes/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_mondrian_bordeaux_klvfkk.png" alt="Mondrian Bordeaux Les Carmes"></a>
+                <a class="logo-pill logo-md" href="https://morimotobordeaux.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_morimoto_bordeaux_vgb8ns.png" alt="Morimoto Bordeaux"></a>
+                <a class="logo-pill logo-lg" href="https://brindos-cotebasque.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271199/marketing_communication_brindos_anglet_ogtgnq.png" alt="Brindos Lac & Château"></a>
+                <a class="logo-pill logo-md" href="https://cafebonart.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271224/marketing_communication_cafe_bonart_vn4enk.png" alt="Café Bonart"></a>
+                <a class="logo-pill logo-md" href="https://www.chateaudesacy.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_chateau_sacy_reims_ov4rcf.png" alt="Château de Sacy"></a>
+                <a class="logo-pill logo-lg" href="https://www.maisons-particulieres.com/maison-la-course" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_maison_la_course_bordeaux_pe6vu9.png" alt="Maison La Course"></a>
+                <a class="logo-pill logo-xl" href="https://www.chateaudetheoule.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271353/marketing_communication_chateau_theoule_sur_mer_qtecgf.png" alt="Château de Théoule-sur-Mer"></a>
+                <a class="logo-pill logo-lg" href="https://www.lapalmeraielabaule.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_palmeraie_la_baule_erb4df.png" alt="La Palmeraie La Baule"></a>
+                <a class="logo-pill logo-xl" href="https://www.grandhotelmegve.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_grand_hotel_soleil_d_or_megeve_jic4on.png" alt="Grand Hôtel Soleil d'Or Megève"></a>
+                <a class="logo-pill logo-md" href="https://www.domainederaba.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_domaine_de_raba_zsu3ao.png" alt="Domaine de Raba"></a>
               </div>
             </div>
 
@@ -878,28 +877,13 @@
           </div>
           <div class="stat-card">
             <div class="stat-number">6</div>
-            <div class="stat-label">Ouvertures hôtels</div>
-            <p class="stat-text">Lancements d’hôtels 5 étoiles et repositionnements d’univers.</p>
+            <div class="stat-label">Ouvertures hôtels 5*</div>
+            <p class="stat-text">Lancements d’hôtels premium, positionnement et mise sur le marché.</p>
           </div>
           <div class="stat-card">
-            <div class="stat-number">8</div>
-            <div class="stat-label">Ouvertures restaurants</div>
-            <p class="stat-text">Concepts, lieux signatures et expériences food & beverage.</p>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">4</div>
-            <div class="stat-label">Ouvertures bars</div>
-            <p class="stat-text">Bars de destination, univers lifestyle et prises de parole associées.</p>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">5</div>
-            <div class="stat-label">Ouvertures spas</div>
-            <p class="stat-text">Espaces bien-être premium pensés comme extensions de marque.</p>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">3</div>
-            <div class="stat-label">Rebrandings</div>
-            <p class="stat-text">Villa des Orangers, Mondrian, Constance.</p>
+            <div class="stat-number">360°</div>
+            <div class="stat-label">Marketing & communication</div>
+            <p class="stat-text">Image de marque, déploiement stratégique 360° et digital & expérience.</p>
           </div>
         </div>
       </div>
@@ -1155,7 +1139,7 @@
         const showScrollHint = () => {
           if (autoHintDone) return;
           autoHintDone = true;
-          logoStrip.scrollLeft = 120;
+          logoStrip.scrollLeft = 150;
           setTimeout(() => {
             logoStrip.scrollLeft = 0;
           }, 700);
