@@ -151,7 +151,7 @@
       margin:0 0 12px;
     }
     .references-intro{
-      max-width:700px;
+      max-width:720px;
       margin:0 auto;
       text-align:center;
       font-size:.95rem;
@@ -166,7 +166,7 @@
       flex-wrap:wrap;
     }
 
-    /* LOGO STRIP XXL */
+    /* LOGOS XXL */
     .logo-strip{
       position:relative;
       z-index:3;
@@ -194,7 +194,6 @@
       overflow-y:hidden;
       scrollbar-width:none;
       -ms-overflow-style:none;
-      scroll-snap-type:x proximity;
       padding:0 18px 2px;
     }
     .logo-strip-scroll::-webkit-scrollbar{
@@ -213,14 +212,13 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:6px;
+      padding:4px;
       border:1px solid rgba(255,255,255,.14);
       background:rgba(255,255,255,.05);
       text-decoration:none;
       overflow:hidden;
       backdrop-filter:blur(10px);
       -webkit-backdrop-filter:blur(10px);
-      scroll-snap-align:start;
     }
     .logo-pill:hover{
       transform:translateY(-2px);
@@ -233,7 +231,7 @@
       object-fit:contain;
       filter:brightness(0) invert(1);
       opacity:1;
-      transform:scale(1.06);
+      transform:scale(1.10);
     }
 
     /* MANIFESTO */
@@ -243,7 +241,7 @@
       padding:18px 0 12px;
     }
     .references-manifesto-box{
-      max-width:760px;
+      max-width:780px;
       margin:0 auto;
       text-align:center;
       padding:4px 0 8px;
@@ -300,6 +298,25 @@
       margin:0;
       font-size:.84rem;
       line-height:1.52;
+      color:var(--white-soft);
+    }
+
+    /* TRANSITION */
+    .references-transition{
+      position:relative;
+      z-index:2;
+      padding:0 0 8px;
+    }
+    .references-transition-box{
+      max-width:900px;
+      margin:0 auto;
+      text-align:center;
+      padding:12px 0 8px;
+    }
+    .references-transition-text{
+      margin:0;
+      font-size:.96rem;
+      line-height:1.72;
       color:var(--white-soft);
     }
 
@@ -368,26 +385,6 @@
       line-height:1.7;
       color:var(--white-soft);
       max-width:540px;
-    }
-    .theme-places{
-      margin:0 0 22px;
-      padding:0;
-      list-style:none;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-    .theme-places li{
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);
-      padding:10px 12px;
-      font-size:.72rem;
-      font-weight:700;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:var(--white-soft);
-      backdrop-filter:blur(10px);
-      -webkit-backdrop-filter:blur(10px);
     }
     .theme-points{
       display:grid;
@@ -651,6 +648,7 @@
       }
       .references-intro,
       .references-manifesto-text,
+      .references-transition-text,
       .theme-text,
       .theme-point-text,
       .cta-text,
@@ -711,10 +709,6 @@
       .theme-media{margin-bottom:18px;}
       .theme-media img,
       .theme-media video{height:250px;}
-      .theme-places li{
-        font-size:.68rem;
-        letter-spacing:.10em;
-      }
 
       .footer{
         padding:24px 0 12px;
@@ -805,7 +799,7 @@
       <div class="container">
         <div class="references-manifesto-box">
           <p class="references-manifesto-text">
-            De la stratégie 360 au digital, une même ligne : clarifier, élever, déployer.
+            De la création des outils de marque à leur déploiement stratégique, une même ligne : clarifier, élever, déployer.
           </p>
         </div>
       </div>
@@ -817,33 +811,43 @@
           <div class="stat-card">
             <div class="stat-number">24</div>
             <div class="stat-label">Etablissements</div>
-            <p class="stat-text">Hôtellerie, restauration, groupes hospitality et univers premium. </p>
+            <p class="stat-text">Hôtellerie, restauration, groupes hospitality et univers premium.</p>
           </div>
           <div class="stat-card">
             <div class="stat-number">6</div>
             <div class="stat-label">Ouvertures hôtels</div>
-            <p class="stat-text">Brindos, GHSO, Château Léognan, Théoule, Mondrian, Villa des Orangers.</p>
+            <p class="stat-text">Lancements d’hôtels 5 étoiles et repositionnements d’univers.</p>
           </div>
           <div class="stat-card">
             <div class="stat-number">8</div>
             <div class="stat-label">Ouvertures restaurants</div>
-            <p class="stat-text">Refuge, Taqueria, Cabane 45, Izakaya, Brindos, Plage Blanche, Morimoto, GHSO.</p>
+            <p class="stat-text">Concepts, lieux signatures et expériences food & beverage.</p>
           </div>
           <div class="stat-card">
             <div class="stat-number">4</div>
             <div class="stat-label">Ouvertures bars</div>
-            <p class="stat-text">Brindos, GHSO, Théoule, Morimoto.</p>
+            <p class="stat-text">Bars de destination, univers lifestyle et prises de parole associées.</p>
           </div>
           <div class="stat-card">
             <div class="stat-number">5</div>
             <div class="stat-label">Ouvertures spas</div>
-            <p class="stat-text">Brindos, Château Léognan, Théoule, Mondrian, GHSO.</p>
+            <p class="stat-text">Espaces bien-être premium pensés comme extensions de marque.</p>
           </div>
           <div class="stat-card">
             <div class="stat-number">3</div>
             <div class="stat-label">Rebrandings</div>
             <p class="stat-text">Villa des Orangers, Mondrian, Constance.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="references-transition fade-in">
+      <div class="container">
+        <div class="references-transition-box">
+          <p class="references-transition-text">
+            Une approche 360 pensée pour faire émerger une marque dans toutes ses dimensions : image, outils, contenu, visibilité, digital et expérience.
+          </p>
         </div>
       </div>
     </section>
@@ -861,29 +865,21 @@
             <div class="col-12 col-lg-6 theme-text-col">
               <div class="theme-text-wrap">
                 <span class="theme-index">01 / Image & desirabilite</span>
-                <h2 class="theme-title">DONNER PLUS DE RELIEF A LA MARQUE</h2>
-                <p class="theme-subtitle">Image, contenu, perception</p>
-                <p class="theme-hook">Quand l’univers doit être ressenti avant même d’être expliqué.</p>
+                <h2 class="theme-title">DONNER UNE FORME CLAIRE A L’UNIVERS DE MARQUE</h2>
+                <p class="theme-subtitle">Image, outils, contenu, perception</p>
+                <p class="theme-hook">De l’identité visible aux outils de marque, chaque élément doit traduire une même exigence.</p>
                 <p class="theme-text">
-                  Brand content, image de marque, supports et cohérence visuelle pensés pour renforcer la désirabilité.
+                  Création et structuration des supports de marque, direction de l’image, contenus, narration et cohérence visuelle : un travail pensé pour donner à la marque plus de relief, plus d’unicité et une présence immédiatement identifiable.
                 </p>
-
-                <ul class="theme-places">
-                  <li>Mondrian Bordeaux Les Carmes</li>
-                  <li>Morimoto Bordeaux</li>
-                  <li>Brindos Lac & Château</li>
-                  <li>Domaine de Raba</li>
-                  <li>Villa des Orangers</li>
-                </ul>
 
                 <div class="theme-points">
                   <div class="theme-point">
-                    <span class="theme-point-title">Contenu</span>
-                    <p class="theme-point-text">Photos, vidéos, narration, mise en valeur des temps forts.</p>
+                    <span class="theme-point-title">Outils de marque</span>
+                    <p class="theme-point-text">Supports, univers visible, cadres d’expression et fondations de marque.</p>
                   </div>
                   <div class="theme-point">
-                    <span class="theme-point-title">Image</span>
-                    <p class="theme-point-text">Une présence plus cohérente sur l’ensemble des points visibles.</p>
+                    <span class="theme-point-title">Brand content</span>
+                    <p class="theme-point-text">Contenus photo, vidéo et éditoriaux pensés pour renforcer la désirabilité.</p>
                   </div>
                 </div>
 
@@ -904,31 +900,22 @@
             </div>
             <div class="col-12 col-lg-6 theme-text-col">
               <div class="theme-text-wrap">
-                <span class="theme-index">02 / Ouvertures & rayonnement</span>
-                <h2 class="theme-title">LANCER, FAIRE RAYONNER, DONNER LE TON</h2>
-                <p class="theme-subtitle">Ouvertures, visibilité, RP, influence</p>
-                <p class="theme-hook">Activer les bons relais au bon niveau, sans brouiller la ligne.</p>
+                <span class="theme-index">02 / Déploiement & rayonnement</span>
+                <h2 class="theme-title">DEPLOYER LA MARQUE AVEC JUSTESSE</h2>
+                <p class="theme-subtitle">Stratégie, visibilité, activations, lancement</p>
+                <p class="theme-hook">Une marque forte ne se contente pas d’exister : elle se déploie avec méthode.</p>
                 <p class="theme-text">
-                  Ouvertures d’hôtels, restaurants, bars et spas ; RP, influence, community management, ads et activations conçus pour servir la marque avec justesse.
+                  Stratégie marketing et communication, activations, visibilité, influence, campagnes, prises de parole et déploiement opérationnel : l’enjeu est de faire rayonner la marque sans jamais diluer sa singularité.
                 </p>
-
-                <ul class="theme-places">
-                  <li>Mondrian Bordeaux Les Carmes</li>
-                  <li>Brindos Lac & Château</li>
-                  <li>Morimoto Bordeaux</li>
-                  <li>Grand Hôtel Soleil d’Or</li>
-                  <li>Château de Théoule</li>
-                  <li>Château Léognan</li>
-                </ul>
 
                 <div class="theme-points">
                   <div class="theme-point">
-                    <span class="theme-point-title">Ouvertures</span>
-                    <p class="theme-point-text">Hôtels, restaurants, bars et spas lancés dans des univers premium et hospitality.</p>
+                    <span class="theme-point-title">Strategie 360</span>
+                    <p class="theme-point-text">Une vision d’ensemble pour hiérarchiser, arbitrer et coordonner les bons leviers.</p>
                   </div>
                   <div class="theme-point">
                     <span class="theme-point-title">Rayonnement</span>
-                    <p class="theme-point-text">RP, influence et visibilité pensés comme un prolongement de la marque.</p>
+                    <p class="theme-point-text">Ouvertures, activations, influence, visibilité et amplification cohérentes.</p>
                   </div>
                 </div>
 
@@ -950,28 +937,21 @@
             <div class="col-12 col-lg-6 theme-text-col">
               <div class="theme-text-wrap">
                 <span class="theme-index">03 / Digital & experience</span>
-                <h2 class="theme-title">TENIR LE NIVEAU AUSSI EN LIGNE</h2>
-                <p class="theme-subtitle">Web, SEO, UX, guest apps, parcours</p>
-                <p class="theme-hook">Le digital comme prolongement naturel du niveau réel de la marque.</p>
+                <h2 class="theme-title">PROLONGER L’EXIGENCE SUR TOUS LES POINTS DE CONTACT</h2>
+                <p class="theme-subtitle">Site, SEO, UX, parcours, expérience</p>
+                <p class="theme-hook">Le digital doit être à la hauteur de l’expérience et de l’image portées par la marque.</p>
                 <p class="theme-text">
-                  Site, SEO/SEA, web design, UX/UI, guest apps et parcours digitaux pensés comme des points de contact de marque.
+                  Sites, SEO, UX, parcours, outils digitaux et expérience en ligne : chaque support est pensé comme une continuité naturelle de la marque, au service de sa lisibilité, de sa crédibilité et de sa performance.
                 </p>
-
-                <ul class="theme-places">
-                  <li>Mondrian Bordeaux Les Carmes</li>
-                  <li>Constance Hôtels & Resorts</li>
-                  <li>Eklo Hotels</li>
-                  <li>Millésime Collection</li>
-                </ul>
 
                 <div class="theme-points">
                   <div class="theme-point">
-                    <span class="theme-point-title">SEO / SEA</span>
-                    <p class="theme-point-text">Soutenir la visibilité qualifiée sans dégrader la perception.</p>
+                    <span class="theme-point-title">Site & visibilité</span>
+                    <p class="theme-point-text">Web, référencement et présence digitale pensés comme de vrais leviers de marque.</p>
                   </div>
                   <div class="theme-point">
-                    <span class="theme-point-title">UX / UI</span>
-                    <p class="theme-point-text">Rendre l’expérience plus fluide, plus claire, plus crédible.</p>
+                    <span class="theme-point-title">Experience</span>
+                    <p class="theme-point-text">UX, parcours et cohérence digitale 360 pour prolonger le niveau d’exigence.</p>
                   </div>
                 </div>
 
