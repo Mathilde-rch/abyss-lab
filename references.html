@@ -130,7 +130,6 @@
       border:0!important;
     }
 
-    /* HERO */
     .references-hero{
       padding:96px 0 18px;
       position:relative;
@@ -166,7 +165,7 @@
       flex-wrap:wrap;
     }
 
-    /* LOGOS XXL */
+    /* LOGOS XXL + ARROW */
     .logo-strip{
       position:relative;
       z-index:3;
@@ -179,6 +178,7 @@
       backdrop-filter:blur(16px);
       -webkit-backdrop-filter:blur(16px);
       padding:14px 0;
+      position:relative;
     }
     .logo-strip-title{
       margin:0 0 12px;
@@ -189,12 +189,16 @@
       text-transform:uppercase;
       color:var(--white-soft);
     }
+    .logo-strip-wrap{
+      position:relative;
+    }
     .logo-strip-scroll{
       overflow-x:auto;
       overflow-y:hidden;
       scrollbar-width:none;
       -ms-overflow-style:none;
-      padding:0 18px 2px;
+      padding:0 86px 2px 18px;
+      scroll-behavior:smooth;
     }
     .logo-strip-scroll::-webkit-scrollbar{
       display:none;
@@ -202,17 +206,17 @@
     .logo-strip-track{
       display:flex;
       align-items:center;
-      gap:16px;
+      gap:18px;
       width:max-content;
     }
     .logo-pill{
       flex:0 0 auto;
-      width:340px;
-      height:118px;
+      width:680px;
+      height:160px;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:4px;
+      padding:2px;
       border:1px solid rgba(255,255,255,.14);
       background:rgba(255,255,255,.05);
       text-decoration:none;
@@ -231,10 +235,36 @@
       object-fit:contain;
       filter:brightness(0) invert(1);
       opacity:1;
-      transform:scale(1.10);
+      transform:scale(1.18);
+    }
+    .logo-strip-arrow{
+      position:absolute;
+      right:18px;
+      top:50%;
+      transform:translateY(-50%);
+      width:58px;
+      height:58px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(0,0,0,.34);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,.16);
+      color:var(--white);
+      pointer-events:none;
+      z-index:2;
+      animation:arrowFloat 1.8s ease-in-out infinite;
+    }
+    .logo-strip-arrow i{
+      font-size:1.15rem;
+    }
+    @keyframes arrowFloat{
+      0%,100%{transform:translateY(-50%) translateX(0);opacity:.78;}
+      50%{transform:translateY(-50%) translateX(6px);opacity:1;}
     }
 
-    /* MANIFESTO */
     .references-manifesto{
       position:relative;
       z-index:2;
@@ -254,7 +284,6 @@
       font-weight:600;
     }
 
-    /* STATS */
     .references-stats{
       position:relative;
       z-index:2;
@@ -301,7 +330,6 @@
       color:var(--white-soft);
     }
 
-    /* TRANSITION */
     .references-transition{
       position:relative;
       z-index:2;
@@ -320,7 +348,6 @@
       color:var(--white-soft);
     }
 
-    /* THEMES */
     .themes-wrapper{
       position:relative;
       z-index:2;
@@ -388,7 +415,7 @@
     }
     .theme-points{
       display:grid;
-      grid-template-columns:repeat(2,1fr);
+      grid-template-columns:repeat(3,1fr);
       gap:12px;
       margin:0 0 24px;
     }
@@ -427,7 +454,6 @@
       object-fit:cover;
     }
 
-    /* CTA */
     .references-cta{
       position:relative;
       z-index:2;
@@ -601,9 +627,23 @@
       .theme-row.reverse-desktop .theme-text-col{order:1;}
     }
 
+    @media(max-width:1399.98px){
+      .logo-pill{
+        width:560px;
+        height:148px;
+      }
+    }
+
     @media(max-width:1199.98px){
       .stats-grid{
         grid-template-columns:repeat(3,1fr);
+      }
+      .logo-pill{
+        width:460px;
+        height:136px;
+      }
+      .theme-points{
+        grid-template-columns:1fr;
       }
     }
 
@@ -615,12 +655,20 @@
       .theme-text-wrap{padding-right:0;max-width:none;}
       .theme-media img,
       .theme-media video{height:440px;}
-      .theme-points{
-        grid-template-columns:1fr;
+      .logo-strip-scroll{
+        padding:0 74px 2px 14px;
       }
       .logo-pill{
-        width:270px;
-        height:96px;
+        width:340px;
+        height:112px;
+      }
+      .logo-pill img{
+        transform:scale(1.12);
+      }
+      .logo-strip-arrow{
+        width:52px;
+        height:52px;
+        right:12px;
       }
       .footer-social-block{margin-top:4px;}
       .footer-menu{
@@ -686,11 +734,19 @@
         padding:0 14px;
       }
       .logo-strip-scroll{
-        padding:0 12px 2px;
+        padding:0 66px 2px 12px;
       }
       .logo-pill{
-        width:220px;
-        height:82px;
+        width:300px;
+        height:98px;
+      }
+      .logo-pill img{
+        transform:scale(1.14);
+      }
+      .logo-strip-arrow{
+        width:48px;
+        height:48px;
+        right:10px;
       }
 
       .stats-grid{
@@ -777,18 +833,25 @@
       <div class="logo-strip-shell">
         <div class="container-fluid px-0">
           <p class="logo-strip-title">Maisons, hôtels, restaurants & lieux accompagnés</p>
-          <div class="logo-strip-scroll">
-            <div class="logo-strip-track">
-              <a class="logo-pill" href="https://mondrianhotels.com/fr/bordeaux-les-carmes/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_mondrian_bordeaux_klvfkk.png" alt="Mondrian Bordeaux Les Carmes"></a>
-              <a class="logo-pill" href="https://morimotobordeaux.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_morimoto_bordeaux_vgb8ns.png" alt="Morimoto Bordeaux"></a>
-              <a class="logo-pill" href="https://brindos-cotebasque.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271199/marketing_communication_brindos_anglet_ogtgnq.png" alt="Brindos Lac & Château"></a>
-              <a class="logo-pill" href="https://cafebonart.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271224/marketing_communication_cafe_bonart_vn4enk.png" alt="Café Bonart"></a>
-              <a class="logo-pill" href="https://www.chateaudesacy.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_chateau_sacy_reims_ov4rcf.png" alt="Château de Sacy"></a>
-              <a class="logo-pill" href="https://www.maisons-particulieres.com/maison-la-course" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_maison_la_course_bordeaux_pe6vu9.png" alt="Maison La Course"></a>
-              <a class="logo-pill" href="https://www.chateaudetheoule.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271353/marketing_communication_chateau_theoule_sur_mer_qtecgf.png" alt="Château de Théoule-sur-Mer"></a>
-              <a class="logo-pill" href="https://www.lapalmeraielabaule.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_palmeraie_la_baule_erb4df.png" alt="La Palmeraie La Baule"></a>
-              <a class="logo-pill" href="https://www.grandhotelmegve.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_grand_hotel_soleil_d_or_megeve_jic4on.png" alt="Grand Hôtel Soleil d'Or Megève"></a>
-              <a class="logo-pill" href="https://www.domainederaba.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_domaine_de_raba_zsu3ao.png" alt="Domaine de Raba"></a>
+
+          <div class="logo-strip-wrap">
+            <div class="logo-strip-scroll" id="logoStripScroll">
+              <div class="logo-strip-track">
+                <a class="logo-pill" href="https://mondrianhotels.com/fr/bordeaux-les-carmes/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_mondrian_bordeaux_klvfkk.png" alt="Mondrian Bordeaux Les Carmes"></a>
+                <a class="logo-pill" href="https://morimotobordeaux.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_morimoto_bordeaux_vgb8ns.png" alt="Morimoto Bordeaux"></a>
+                <a class="logo-pill" href="https://brindos-cotebasque.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271199/marketing_communication_brindos_anglet_ogtgnq.png" alt="Brindos Lac & Château"></a>
+                <a class="logo-pill" href="https://cafebonart.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271224/marketing_communication_cafe_bonart_vn4enk.png" alt="Café Bonart"></a>
+                <a class="logo-pill" href="https://www.chateaudesacy.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_chateau_sacy_reims_ov4rcf.png" alt="Château de Sacy"></a>
+                <a class="logo-pill" href="https://www.maisons-particulieres.com/maison-la-course" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_maison_la_course_bordeaux_pe6vu9.png" alt="Maison La Course"></a>
+                <a class="logo-pill" href="https://www.chateaudetheoule.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271353/marketing_communication_chateau_theoule_sur_mer_qtecgf.png" alt="Château de Théoule-sur-Mer"></a>
+                <a class="logo-pill" href="https://www.lapalmeraielabaule.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_palmeraie_la_baule_erb4df.png" alt="La Palmeraie La Baule"></a>
+                <a class="logo-pill" href="https://www.grandhotelmegve.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_grand_hotel_soleil_d_or_megeve_jic4on.png" alt="Grand Hôtel Soleil d'Or Megève"></a>
+                <a class="logo-pill" href="https://www.domainederaba.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_domaine_de_raba_zsu3ao.png" alt="Domaine de Raba"></a>
+              </div>
+            </div>
+
+            <div class="logo-strip-arrow">
+              <i class="bi bi-arrow-right"></i>
             </div>
           </div>
         </div>
@@ -846,7 +909,7 @@
       <div class="container">
         <div class="references-transition-box">
           <p class="references-transition-text">
-            Une approche 360 pensée pour faire émerger une marque dans toutes ses dimensions : image, outils, contenu, visibilité, digital et expérience.
+            Une approche 360 pensée pour faire émerger une marque dans toutes ses dimensions : image de marque, déploiement stratégique 360° et digital & expérience.
           </p>
         </div>
       </div>
@@ -864,9 +927,9 @@
             </div>
             <div class="col-12 col-lg-6 theme-text-col">
               <div class="theme-text-wrap">
-                <span class="theme-index">01 / Image & desirabilite</span>
+                <span class="theme-index">01 / Image de marque</span>
                 <h2 class="theme-title">DONNER UNE FORME CLAIRE A L’UNIVERS DE MARQUE</h2>
-                <p class="theme-subtitle">Image, outils, contenu, perception</p>
+                <p class="theme-subtitle">Image, outils, contenu</p>
                 <p class="theme-hook">De l’identité visible aux outils de marque, chaque élément doit traduire une même exigence.</p>
                 <p class="theme-text">
                   Création et structuration des supports de marque, direction de l’image, contenus, narration et cohérence visuelle : un travail pensé pour donner à la marque plus de relief, plus d’unicité et une présence immédiatement identifiable.
@@ -875,11 +938,15 @@
                 <div class="theme-points">
                   <div class="theme-point">
                     <span class="theme-point-title">Outils de marque</span>
-                    <p class="theme-point-text">Supports, univers visible, cadres d’expression et fondations de marque.</p>
+                    <p class="theme-point-text">Supports, univers visible et fondations de marque.</p>
                   </div>
                   <div class="theme-point">
                     <span class="theme-point-title">Brand content</span>
-                    <p class="theme-point-text">Contenus photo, vidéo et éditoriaux pensés pour renforcer la désirabilité.</p>
+                    <p class="theme-point-text">Contenus pensés pour renforcer la désirabilité.</p>
+                  </div>
+                  <div class="theme-point">
+                    <span class="theme-point-title">Cohérence visuelle</span>
+                    <p class="theme-point-text">Une présence identifiable sur tous les points visibles.</p>
                   </div>
                 </div>
 
@@ -900,9 +967,9 @@
             </div>
             <div class="col-12 col-lg-6 theme-text-col">
               <div class="theme-text-wrap">
-                <span class="theme-index">02 / Déploiement & rayonnement</span>
+                <span class="theme-index">02 / Déploiement stratégique 360°</span>
                 <h2 class="theme-title">DEPLOYER LA MARQUE AVEC JUSTESSE</h2>
-                <p class="theme-subtitle">Stratégie, visibilité, activations, lancement</p>
+                <p class="theme-subtitle">Stratégie, visibilité, lancement</p>
                 <p class="theme-hook">Une marque forte ne se contente pas d’exister : elle se déploie avec méthode.</p>
                 <p class="theme-text">
                   Stratégie marketing et communication, activations, visibilité, influence, campagnes, prises de parole et déploiement opérationnel : l’enjeu est de faire rayonner la marque sans jamais diluer sa singularité.
@@ -911,11 +978,15 @@
                 <div class="theme-points">
                   <div class="theme-point">
                     <span class="theme-point-title">Strategie 360</span>
-                    <p class="theme-point-text">Une vision d’ensemble pour hiérarchiser, arbitrer et coordonner les bons leviers.</p>
+                    <p class="theme-point-text">Hiérarchiser, arbitrer et coordonner les bons leviers.</p>
                   </div>
                   <div class="theme-point">
                     <span class="theme-point-title">Rayonnement</span>
-                    <p class="theme-point-text">Ouvertures, activations, influence, visibilité et amplification cohérentes.</p>
+                    <p class="theme-point-text">Ouvertures, activations et visibilité cohérentes.</p>
+                  </div>
+                  <div class="theme-point">
+                    <span class="theme-point-title">Déploiement</span>
+                    <p class="theme-point-text">Faire vivre la marque avec méthode et continuité.</p>
                   </div>
                 </div>
 
@@ -938,7 +1009,7 @@
               <div class="theme-text-wrap">
                 <span class="theme-index">03 / Digital & experience</span>
                 <h2 class="theme-title">PROLONGER L’EXIGENCE SUR TOUS LES POINTS DE CONTACT</h2>
-                <p class="theme-subtitle">Site, SEO, UX, parcours, expérience</p>
+                <p class="theme-subtitle">Site, SEO, UX, parcours</p>
                 <p class="theme-hook">Le digital doit être à la hauteur de l’expérience et de l’image portées par la marque.</p>
                 <p class="theme-text">
                   Sites, SEO, UX, parcours, outils digitaux et expérience en ligne : chaque support est pensé comme une continuité naturelle de la marque, au service de sa lisibilité, de sa crédibilité et de sa performance.
@@ -947,11 +1018,15 @@
                 <div class="theme-points">
                   <div class="theme-point">
                     <span class="theme-point-title">Site & visibilité</span>
-                    <p class="theme-point-text">Web, référencement et présence digitale pensés comme de vrais leviers de marque.</p>
+                    <p class="theme-point-text">Web et référencement comme leviers de marque.</p>
                   </div>
                   <div class="theme-point">
-                    <span class="theme-point-title">Experience</span>
-                    <p class="theme-point-text">UX, parcours et cohérence digitale 360 pour prolonger le niveau d’exigence.</p>
+                    <span class="theme-point-title">UX & parcours</span>
+                    <p class="theme-point-text">Une expérience plus fluide, plus claire, plus crédible.</p>
+                  </div>
+                  <div class="theme-point">
+                    <span class="theme-point-title">Cohérence digitale</span>
+                    <p class="theme-point-text">Prolonger le même niveau d’exigence en ligne.</p>
                   </div>
                 </div>
 
@@ -1059,6 +1134,7 @@
 
       const navbar = document.querySelector(".navbar");
       const faders = document.querySelectorAll(".fade-in");
+      const logoStrip = document.getElementById("logoStripScroll");
 
       window.addEventListener("scroll", function () {
         navbar.classList.toggle("scrolled", window.scrollY > 50);
@@ -1073,6 +1149,19 @@
       }, { threshold: 0.16 });
 
       faders.forEach(fader => appearOnScroll.observe(fader));
+
+      if (logoStrip) {
+        let autoHintDone = false;
+        const showScrollHint = () => {
+          if (autoHintDone) return;
+          autoHintDone = true;
+          logoStrip.scrollLeft = 120;
+          setTimeout(() => {
+            logoStrip.scrollLeft = 0;
+          }, 700);
+        };
+        setTimeout(showScrollHint, 700);
+      }
     });
   </script>
 
