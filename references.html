@@ -1,464 +1,495 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>REFERENCES | ABYSS LAB</title>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>REFERENCES | ABYSS LAB</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.cdnfonts.com/css/couture" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/couture" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
-  <style>
-    html, body {
-      margin: 0;
-      min-height: 100%;
-      background: #000;
-      color: #fff;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .video-background {
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      overflow: hidden;
-    }
-
-    .video-background video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .video-background::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at center, rgba(0,35,55,.12), rgba(0,0,0,.72) 70%),
-        rgba(0,0,0,.45);
-      z-index: 1;
-    }
-
-    .page-wrapper {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      z-index: 1;
-    }
-
-    main {
-      flex: 1;
-    }
-
-    .references-hero {
-      min-height: 74vh;
-      display: flex;
-      align-items: flex-end;
-      padding: 120px 0 70px;
-    }
-
-    .eyebrow {
-      font-size: 11px;
-      letter-spacing: .34em;
-      text-transform: uppercase;
-      opacity: .7;
-      margin-bottom: 20px;
-    }
-
-    .references-title {
-      font-family: 'Couture', sans-serif;
-      font-size: clamp(58px, 12vw, 160px);
-      line-height: .82;
-      letter-spacing: .03em;
-      text-transform: uppercase;
-      margin-bottom: 28px;
-    }
-
-    .references-intro {
-      max-width: 720px;
-      font-size: 15px;
-      line-height: 1.8;
-      opacity: .78;
-    }
-
-    .reference-row {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1.1fr 1.6fr;
-      gap: 42px;
-      align-items: center;
-      padding: 70px 0;
-      border-top: 1px solid rgba(255,255,255,.12);
-    }
-
-    .reference-row:nth-child(even) {
-      grid-template-columns: 1.6fr 1.1fr;
-    }
-
-    .reference-row:nth-child(even) .reference-visual {
-      order: -1;
-    }
-
-    .reference-number {
-      font-size: 12px;
-      letter-spacing: .22em;
-      opacity: .55;
-      margin-bottom: 25px;
-    }
-
-    .reference-category {
-      font-size: 11px;
-      letter-spacing: .28em;
-      text-transform: uppercase;
-      opacity: .68;
-      margin-bottom: 18px;
-    }
-
-    .reference-title {
-      font-family: 'Couture', sans-serif;
-      font-size: clamp(38px, 5vw, 72px);
-      line-height: .88;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-      margin-bottom: 22px;
-    }
-
-    .reference-text {
-      max-width: 460px;
-      font-size: 14px;
-      line-height: 1.8;
-      opacity: .76;
-      margin-bottom: 25px;
-    }
-
-    .reference-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .reference-tags span {
-      font-size: 10px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      padding: 7px 12px;
-      border: 1px solid rgba(255,255,255,.22);
-      border-radius: 999px;
-      background: rgba(255,255,255,.04);
-      backdrop-filter: blur(8px);
-    }
-
-    .reference-visual {
-      position: relative;
-      overflow: hidden;
-      height: 560px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.04);
-    }
-
-    .reference-visual img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: grayscale(.15) contrast(1.05) brightness(.85);
-      transition: transform .9s ease, filter .9s ease;
-    }
-
-    .reference-row:hover .reference-visual img {
-      transform: scale(1.06);
-      filter: grayscale(0) contrast(1.08) brightness(1);
-    }
-
-    .reference-visual::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent, rgba(0,0,0,.28));
-      pointer-events: none;
-    }
-
-    .references-manifesto {
-      padding: 120px 0 90px;
-      border-top: 1px solid rgba(255,255,255,.12);
-      text-align: center;
-    }
-
-    .references-manifesto h2 {
-      font-family: 'Couture', sans-serif;
-      font-size: clamp(42px, 7vw, 95px);
-      line-height: .9;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-      margin-bottom: 28px;
-    }
-
-    .references-manifesto p {
-      max-width: 760px;
-      margin: 0 auto;
-      font-size: 15px;
-      line-height: 1.8;
-      opacity: .78;
-    }
-
-    footer {
-      position: relative;
-      z-index: 2;
-      padding: 42px 0;
-      font-size: 13px;
-      background: rgba(0,0,0,.35);
-      backdrop-filter: blur(12px);
-      border-top: 1px solid rgba(255,255,255,.08);
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity .8s ease, transform .8s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 991px) {
-      .references-hero {
-        min-height: auto;
-        padding: 100px 0 60px;
+    <style>
+      html, body {
+        min-height: 100%;
+        margin: 0;
+        background: #000;
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
       }
 
-      .reference-row,
-      .reference-row:nth-child(even) {
-        grid-template-columns: 1fr;
-        gap: 28px;
-        padding: 55px 0;
+      .video-background {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        overflow: hidden;
       }
 
-      .reference-row:nth-child(even) .reference-visual {
-        order: initial;
+      .video-background video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
 
-      .reference-visual {
+      .video-background::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,.55);
+        z-index: 1;
+      }
+
+      .page-wrapper {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 1;
+      }
+
+      main {
+        flex: 1;
+      }
+
+      .portfolio-page {
+        padding: 110px 0 90px;
+      }
+
+      .portfolio-top {
+        min-height: 42vh;
+        display: flex;
+        align-items: flex-end;
+        padding-bottom: 55px;
+      }
+
+      .portfolio-kicker {
+        font-size: 11px;
+        letter-spacing: .32em;
+        text-transform: uppercase;
+        opacity: .7;
+        margin-bottom: 18px;
+      }
+
+      .portfolio-title {
+        font-family: 'Couture', sans-serif;
+        font-size: clamp(58px, 11vw, 150px);
+        line-height: .82;
+        letter-spacing: .04em;
+        text-transform: uppercase;
+        margin: 0;
+      }
+
+      .portfolio-intro {
+        max-width: 650px;
+        font-size: 15px;
+        line-height: 1.8;
+        opacity: .75;
+        margin-top: 28px;
+      }
+
+      .portfolio-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 45px;
+        border-top: 1px solid rgba(255,255,255,.14);
+        padding-top: 28px;
+      }
+
+      .portfolio-filter {
+        border: 1px solid rgba(255,255,255,.28);
+        background: rgba(255,255,255,.04);
+        color: #fff;
+        padding: 9px 18px;
+        border-radius: 999px;
+        font-size: 10px;
+        letter-spacing: .18em;
+        text-transform: uppercase;
+        transition: all .3s ease;
+      }
+
+      .portfolio-filter:hover,
+      .portfolio-filter.active {
+        background: #fff;
+        color: #000;
+      }
+
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+
+      .card-projet {
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card-projet img {
+        width: 100%;
         height: 420px;
-      }
-    }
-
-    @media (max-width: 575px) {
-      .references-title {
-        font-size: 56px;
-      }
-
-      .reference-title {
-        font-size: 38px;
+        object-fit: cover;
+        border-radius: .3rem;
+        margin-bottom: .6rem;
+        filter: brightness(.82) contrast(1.05);
+        transition: transform .7s ease, filter .7s ease;
       }
 
-      .reference-visual {
-        height: 340px;
+      .card-projet:hover img {
+        transform: scale(1.04);
+        filter: brightness(1) contrast(1.08);
       }
 
-      footer a {
-        display: inline-block;
-        margin-top: 8px;
+      .project-infos {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        align-items: flex-start;
+        padding: 4px 0 20px;
+        border-bottom: 1px solid rgba(255,255,255,.12);
       }
-    }
-  </style>
-</head>
 
-<body>
+      .project-title {
+        font-family: 'Couture', sans-serif;
+        font-size: 28px;
+        line-height: .9;
+        letter-spacing: .04em;
+        text-transform: uppercase;
+      }
 
-  <div class="video-background">
-    <video autoplay muted loop playsinline preload="auto">
-      <source src="assets/video/abyss-lab.mp4" type="video/mp4">
-    </video>
-  </div>
+      .project-category {
+        font-size: 10px;
+        letter-spacing: .18em;
+        text-transform: uppercase;
+        opacity: .65;
+        text-align: right;
+        white-space: nowrap;
+      }
 
-  <div class="page-wrapper">
+      .portfolio-end {
+        padding: 100px 0 20px;
+        text-align: center;
+      }
 
-    <nav class="navbar navbar-expand-lg navbar-dark py-3">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">ABYSS LAB.</a>
+      .portfolio-end h2 {
+        font-family: 'Couture', sans-serif;
+        font-size: clamp(38px, 6vw, 82px);
+        line-height: .9;
+        letter-spacing: .04em;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+      }
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-label="Ouvrir le menu">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      .portfolio-end p {
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 15px;
+        line-height: 1.8;
+        opacity: .75;
+      }
 
-        <div class="collapse navbar-collapse justify-content-end" id="navmenu">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="index.html">A PROPOS</a></li>
-            <li class="nav-item"><a class="nav-link" href="services.html">SERVICES</a></li>
-            <li class="nav-item"><a class="nav-link" href="references.html">REFERENCES</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+      footer {
+        position: relative;
+        z-index: 2;
+      }
 
-    <main>
+      .fade-in {
+        opacity: 0;
+        transform: translateY(25px);
+        transition: opacity .8s ease, transform .8s ease;
+      }
 
-      <section class="references-hero">
-        <div class="container fade-in">
-          <p class="eyebrow">SELECTED WORKS</p>
-          <h1 class="references-title">REFERENCES</h1>
-          <p class="references-intro">
-            Une selection de marques, lieux et concepts accompagnes avec une approche strategique,
-            creative et sensible. Chaque projet est pense comme une immersion : comprendre l'identite,
-            structurer l'image et faire emerger une presence singuliere.
-          </p>
-        </div>
-      </section>
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-      <section class="container references-list">
+      .card-projet.hidden {
+        display: none;
+      }
 
-        <article class="reference-row fade-in">
-          <div>
-            <div class="reference-number">01</div>
-            <p class="reference-category">Luxury hospitality</p>
-            <h2 class="reference-title">MONDRIAN BORDEAUX</h2>
-            <p class="reference-text">
-              Marketing, communication, activations, storytelling et coordination 360 pour un hotel lifestyle 5 etoiles.
-            </p>
-            <div class="reference-tags">
-              <span>Strategie</span>
-              <span>Hospitality</span>
-              <span>Brand content</span>
-            </div>
-          </div>
-          <div class="reference-visual">
-            <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1600&auto=format&fit=crop" alt="">
-          </div>
-        </article>
-
-        <article class="reference-row fade-in">
-          <div>
-            <div class="reference-number">02</div>
-            <p class="reference-category">Restaurant signature</p>
-            <h2 class="reference-title">MORIMOTO</h2>
-            <p class="reference-text">
-              Communication et valorisation d'une experience culinaire premium, entre art de vivre, image et desir.
-            </p>
-            <div class="reference-tags">
-              <span>Food</span>
-              <span>Storytelling</span>
-              <span>Image</span>
-            </div>
-          </div>
-          <div class="reference-visual">
-            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1600&auto=format&fit=crop" alt="">
-          </div>
-        </article>
-
-        <article class="reference-row fade-in">
-          <div>
-            <div class="reference-number">03</div>
-            <p class="reference-category">Delicatessen bar bistrot</p>
-            <h2 class="reference-title">CAFE BONART</h2>
-            <p class="reference-text">
-              Repositionnement, tonalite editoriale, social media et creation d'un univers arty, vivant et distinctif.
-            </p>
-            <div class="reference-tags">
-              <span>Branding</span>
-              <span>Social media</span>
-              <span>Concept</span>
-            </div>
-          </div>
-          <div class="reference-visual">
-            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1600&auto=format&fit=crop" alt="">
-          </div>
-        </article>
-
-        <article class="reference-row fade-in">
-          <div>
-            <div class="reference-number">04</div>
-            <p class="reference-category">Cap Ferret lifestyle</p>
-            <h2 class="reference-title">JAVA</h2>
-            <p class="reference-text">
-              Creation d'un territoire solaire et convivial autour des contenus, activations, rendez-vous et prises de parole.
-            </p>
-            <div class="reference-tags">
-              <span>Lifestyle</span>
-              <span>Content</span>
-              <span>Social</span>
-            </div>
-          </div>
-          <div class="reference-visual">
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop" alt="">
-          </div>
-        </article>
-
-      </section>
-
-      <section class="references-manifesto fade-in">
-        <div class="container">
-          <h2>FROM DEPTH TO DISTINCTION.</h2>
-          <p>
-            ABYSS LAB accompagne les marques qui veulent depasser la simple presence digitale :
-            construire une image juste, une direction claire et une narration capable de creer du desir,
-            de la coherence et de l'impact.
-          </p>
-        </div>
-      </section>
-
-    </main>
-
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-6">
-            <strong>ABYSS LAB.</strong><br>
-            Agence basee Bordeaux. Deplacement partout en France et a l'etranger.
-          </div>
-
-          <div class="col-12 col-md-6 text-md-end mt-4 mt-md-0">
-            <a href="mentions-legales.html" class="text-white me-3">Mentions legales</a>
-            <a href="cgu.html" class="text-white me-3">CGU</a>
-            <a href="politique-confidentialite.html" class="text-white">Politique de confidentialite</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function(){
-      const currentLocation = location.pathname.split("/").pop();
-      const menuItems = document.querySelectorAll(".nav-link");
-
-      menuItems.forEach(link => {
-        if(link.getAttribute("href") === currentLocation){
-          link.classList.add("active");
+      @media (max-width: 991px) {
+        .portfolio-grid {
+          grid-template-columns: repeat(2, 1fr);
         }
+
+        .card-projet img {
+          height: 360px;
+        }
+      }
+
+      @media (max-width: 575px) {
+        .portfolio-page {
+          padding-top: 80px;
+        }
+
+        .portfolio-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .portfolio-title {
+          font-size: 58px;
+        }
+
+        .project-infos {
+          display: block;
+        }
+
+        .project-category {
+          text-align: left;
+          margin-top: 8px;
+        }
+
+        .card-projet img {
+          height: 330px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- BACKGROUND VIDEO -->
+    <div class="video-background">
+      <video autoplay muted loop playsinline preload="auto">
+        <source src="assets/video/abyss-lab.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="page-wrapper">
+
+      <!-- NAVBAR -->
+      <nav class="navbar navbar-expand-lg navbar-dark py-3">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">ABYSS LAB.</a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-label="Ouvrir le menu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navmenu">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">A PROPOS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="services.html">SERVICES</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="references.html">REFERENCES</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">CONTACT</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- PAGE REFERENCES -->
+      <main class="portfolio-page">
+
+        <section class="portfolio-top">
+          <div class="container fade-in">
+            <p class="portfolio-kicker">SELECTED WORKS</p>
+            <h1 class="portfolio-title">REFERENCES</h1>
+            <p class="portfolio-intro">
+              Une selection de projets, marques et lieux accompagnes par ABYSS LAB.
+              Strategie, direction artistique, contenu, social media et communication 360.
+            </p>
+          </div>
+        </section>
+
+        <section class="container">
+
+          <div class="portfolio-filters fade-in">
+            <button class="portfolio-filter active" data-filter="all">TOUS</button>
+            <button class="portfolio-filter" data-filter="hospitality">HOTELLERIE</button>
+            <button class="portfolio-filter" data-filter="food">FOOD</button>
+            <button class="portfolio-filter" data-filter="lifestyle">LIFESTYLE</button>
+            <button class="portfolio-filter" data-filter="brand">BRANDING</button>
+          </div>
+
+          <div class="portfolio-grid fade-in">
+
+            <a class="card-projet" data-category="hospitality brand" href="#">
+              <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1200&auto=format&fit=crop" alt="Hotel luxury">
+              <div class="project-infos">
+                <div class="project-title">MONDRIAN</div>
+                <div class="project-category">HOTELLERIE</div>
+              </div>
+            </a>
+
+            <a class="card-projet" data-category="food hospitality" href="#">
+              <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1200&auto=format&fit=crop" alt="Restaurant">
+              <div class="project-infos">
+                <div class="project-title">MORIMOTO</div>
+                <div class="project-category">FOOD</div>
+              </div>
+            </a>
+
+            <a class="card-projet" data-category="food brand" href="#">
+              <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1200&auto=format&fit=crop" alt="Cafe">
+              <div class="project-infos">
+                <div class="project-title">CAFE BONART</div>
+                <div class="project-category">BRANDING</div>
+              </div>
+            </a>
+
+            <a class="card-projet" data-category="lifestyle food" href="#">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop" alt="Beach lifestyle">
+              <div class="project-infos">
+                <div class="project-title">JAVA</div>
+                <div class="project-category">LIFESTYLE</div>
+              </div>
+            </a>
+
+            <a class="card-projet" data-category="brand lifestyle" href="#">
+              <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop" alt="Brand office">
+              <div class="project-infos">
+                <div class="project-title">ROLE MODELE</div>
+                <div class="project-category">BRANDING</div>
+              </div>
+            </a>
+
+            <a class="card-projet" data-category="hospitality lifestyle" href="#">
+              <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200&auto=format&fit=crop" alt="Hotel pool">
+              <div class="project-infos">
+                <div class="project-title">CONSTANCE</div>
+                <div class="project-category">HOTELLERIE</div>
+              </div>
+            </a>
+
+            <a class="card-projet" data-category="hospitality brand" href="#">
+              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop" alt="Hotel room">
+              <div class="project-infos">
+                <div class="project-title">MILLESIME</div>
+                <div class="project-category">HOTELLERIE</div>
+              </div>
+            </a>
+
+            <a class="card-projet" data-category="lifestyle brand" href="#">
+              <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop" alt="Bar restaurant">
+              <div class="project-infos">
+                <div class="project-title">VINTAGE GROUP</div>
+                <div class="project-category">LIFESTYLE</div>
+              </div>
+            </a>
+
+            <a class="card-projet" data-category="food lifestyle" href="#">
+              <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop" alt="Food content">
+              <div class="project-infos">
+                <div class="project-title">CONTENT STUDIO</div>
+                <div class="project-category">FOOD</div>
+              </div>
+            </a>
+
+          </div>
+
+        </section>
+
+        <section class="portfolio-end fade-in">
+          <div class="container">
+            <h2>FROM DEPTH TO DISTINCTION.</h2>
+            <p>
+              Chaque projet est pense comme une immersion : comprendre l'identite profonde,
+              faire emerger une direction claire et construire une presence singuliere.
+            </p>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- FOOTER -->
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <strong>ABYSS LAB.</strong><br>
+              Agence basee Bordeaux. Deplacement partout en France et a l'etranger.
+            </div>
+
+            <div class="col-12 col-md-6 text-md-end mt-4 mt-md-0">
+              <a href="mentions-legales.html" class="text-white me-3">Mentions legales</a>
+              <a href="cgu.html" class="text-white me-3">CGU</a>
+              <a href="politique-confidentialite.html" class="text-white">Politique de confidentialite</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function(){
+        const currentLocation = location.pathname.split("/").pop();
+        const menuItems = document.querySelectorAll(".nav-link");
+
+        menuItems.forEach(link => {
+          if(link.getAttribute("href") === currentLocation){
+            link.classList.add("active");
+          }
+        });
       });
-    });
+    </script>
 
-    window.addEventListener("scroll", function(){
-      const navbar = document.querySelector(".navbar");
-      navbar.classList.toggle("scrolled", window.scrollY > 50);
-    });
-
-    const faders = document.querySelectorAll(".fade-in");
-
-    const appearOnScroll = new IntersectionObserver(function(entries, observer){
-      entries.forEach(entry => {
-        if(!entry.isIntersecting) return;
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
+    <script>
+      window.addEventListener("scroll", function(){
+        const navbar = document.querySelector(".navbar");
+        navbar.classList.toggle("scrolled", window.scrollY > 50);
       });
-    }, { threshold: 0.2 });
 
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
-    });
-  </script>
+      const faders = document.querySelectorAll(".fade-in");
 
-</body>
+      const appearOptions = {
+        threshold: 0.2
+      };
+
+      const appearOnScroll = new IntersectionObserver(function(entries, observer){
+        entries.forEach(entry => {
+          if(!entry.isIntersecting) return;
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        });
+      }, appearOptions);
+
+      faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+      });
+
+      const filterButtons = document.querySelectorAll(".portfolio-filter");
+      const projectCards = document.querySelectorAll(".card-projet");
+
+      filterButtons.forEach(button => {
+        button.addEventListener("click", function(){
+          const filter = this.getAttribute("data-filter");
+
+          filterButtons.forEach(btn => btn.classList.remove("active"));
+          this.classList.add("active");
+
+          projectCards.forEach(card => {
+            const categories = card.getAttribute("data-category");
+
+            if(filter === "all" || categories.includes(filter)) {
+              card.classList.remove("hidden");
+            } else {
+              card.classList.add("hidden");
+            }
+          });
+        });
+      });
+    </script>
+
+  </body>
 </html>
