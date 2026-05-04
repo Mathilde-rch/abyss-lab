@@ -15,337 +15,281 @@
 
   <style>
     body {
-      background:#000;
-      color:#fff;
-      overflow-x:hidden;
+      color: #fff;
+      background: #000;
+      overflow-x: hidden;
     }
 
     .video-background {
-      position:fixed;
-      inset:0;
-      width:100%;
-      height:100%;
-      z-index:-2;
-      overflow:hidden;
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      overflow: hidden;
     }
 
     .video-background video {
-      width:100%;
-      height:100%;
-      object-fit:cover;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .video-background::after {
-      content:"";
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,.62);
-      z-index:1;
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,.58);
+      z-index: 1;
     }
 
     .navbar,
     main,
     footer {
-      position:relative;
-      z-index:2;
+      position: relative;
+      z-index: 2;
     }
 
     .references-page {
-      padding:120px 0 80px;
+      padding: 120px 0 80px;
     }
 
     .references-hero {
-      min-height:62vh;
-      display:flex;
-      align-items:flex-end;
-      padding-bottom:70px;
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 64px;
     }
 
     .references-kicker {
-      font-size:11px;
-      letter-spacing:.34em;
-      text-transform:uppercase;
-      opacity:.65;
-      margin-bottom:18px;
+      font-size: 11px;
+      letter-spacing: .34em;
+      text-transform: uppercase;
+      opacity: .65;
+      margin-bottom: 16px;
     }
 
     .references-title {
-      font-family:'Couture', sans-serif;
-      font-size:clamp(58px, 11vw, 155px);
-      line-height:.82;
-      letter-spacing:.05em;
-      text-transform:uppercase;
-      margin-bottom:26px;
+      font-family: 'Couture', sans-serif;
+      font-size: clamp(54px, 8vw, 112px);
+      line-height: .9;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
     }
 
     .references-intro {
-      max-width:680px;
-      font-size:14px;
-      line-height:1.8;
-      opacity:.76;
+      max-width: 640px;
+      margin: 0 auto;
+      font-size: 14px;
+      line-height: 1.8;
+      opacity: .76;
     }
 
-    .horizontal-section {
-      position:relative;
-      padding:20px 0 90px;
-    }
-
-    .horizontal-track {
-      display:flex;
-      gap:32px;
-      overflow-x:auto;
-      overflow-y:hidden;
-      scroll-snap-type:x mandatory;
-      padding:0 7vw 28px;
-      scrollbar-width:none;
-    }
-
-    .horizontal-track::-webkit-scrollbar {
-      display:none;
+    .references-grid {
+      width: min(100%, 1180px);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
     }
 
     .reference-card {
-      position:relative;
-      flex:0 0 min(62vw, 620px);
-      aspect-ratio:1 / 1;
-      overflow:hidden;
-      border-radius:6px;
-      color:#fff;
-      cursor:pointer;
-      scroll-snap-align:center;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);
-      transform:translateY(40px);
-      opacity:0;
-      transition:opacity .9s ease, transform .9s ease;
-    }
-
-    .reference-card.visible {
-      transform:translateY(0);
-      opacity:1;
+      position: relative;
+      display: block;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border-radius: .3rem;
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      cursor: pointer;
     }
 
     .reference-card img {
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      object-position:center;
-      display:block;
-      transition:transform 1s ease, filter 1s ease;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform .75s ease, filter .75s ease;
     }
 
     .reference-card::after {
-      content:"";
-      position:absolute;
-      inset:0;
-      opacity:0;
-      z-index:1;
-      background:rgba(0,0,0,.30);
-      backdrop-filter:blur(9px);
-      transition:opacity .55s ease;
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      opacity: 0;
+      background: rgba(0,0,0,.28);
+      backdrop-filter: blur(8px);
+      transition: opacity .45s ease;
     }
 
     .reference-overlay {
-      position:absolute;
-      inset:0;
-      z-index:2;
-      padding:34px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      opacity:0;
-      transform:translateY(20px);
-      transition:opacity .55s ease, transform .55s ease;
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .45s ease, transform .45s ease;
     }
 
     .reference-card:hover img,
     .reference-card.active img {
-      transform:scale(1.07);
-      filter:brightness(.56) contrast(1.08);
+      transform: scale(1.07);
+      filter: brightness(.55) contrast(1.08);
     }
 
     .reference-card:hover::after,
     .reference-card.active::after {
-      opacity:1;
+      opacity: 1;
     }
 
     .reference-card:hover .reference-overlay,
     .reference-card.active .reference-overlay {
-      opacity:1;
-      transform:translateY(0);
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .reference-number {
-      font-size:10px;
-      letter-spacing:.24em;
-      text-transform:uppercase;
-      opacity:.65;
+      font-size: 10px;
+      letter-spacing: .22em;
+      opacity: .65;
     }
 
     .reference-name {
-      font-family:'Montserrat', sans-serif;
-      font-size:clamp(24px, 3vw, 40px);
-      line-height:1;
-      font-weight:800;
-      text-transform:uppercase;
-      margin-bottom:16px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(20px, 1.9vw, 27px);
+      line-height: 1;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 13px;
     }
 
     .reference-missions {
-      max-width:440px;
-      font-size:11px;
-      line-height:1.65;
-      letter-spacing:.09em;
-      text-transform:uppercase;
-      opacity:.84;
-      margin-bottom:18px;
+      font-size: 10px;
+      line-height: 1.55;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      opacity: .84;
+      margin-bottom: 15px;
     }
 
     .reference-stats {
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
     }
 
     .reference-stats span {
-      font-size:9px;
-      letter-spacing:.11em;
-      text-transform:uppercase;
-      border:1px solid rgba(255,255,255,.32);
-      border-radius:999px;
-      padding:7px 10px;
-      background:rgba(255,255,255,.08);
-    }
-
-    .scroll-hint {
-      text-align:center;
-      font-size:10px;
-      letter-spacing:.24em;
-      text-transform:uppercase;
-      opacity:.55;
-      margin-top:22px;
+      font-size: 8px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 999px;
+      padding: 6px 9px;
+      background: rgba(255,255,255,.08);
     }
 
     .references-cta {
-      text-align:center;
-      padding:90px 0 20px;
+      text-align: center;
+      padding: 95px 0 20px;
     }
 
     .references-cta h2 {
-      font-family:'Couture', sans-serif;
-      font-size:clamp(38px, 6vw, 84px);
-      line-height:.9;
-      letter-spacing:.04em;
-      text-transform:uppercase;
-      margin-bottom:26px;
+      font-family: 'Couture', sans-serif;
+      font-size: clamp(36px, 5vw, 72px);
+      line-height: .9;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
     }
 
     .references-cta p {
-      max-width:690px;
-      margin:0 auto 34px;
-      font-size:14px;
-      line-height:1.8;
-      opacity:.74;
+      max-width: 650px;
+      margin: 0 auto 34px;
+      font-size: 13px;
+      line-height: 1.8;
+      opacity: .72;
     }
 
     .cta-buttons {
-      display:flex;
-      justify-content:center;
-      flex-wrap:wrap;
-      gap:14px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
     }
 
     .cta-btn {
-      display:inline-block;
-      padding:13px 25px;
-      border:1px solid rgba(255,255,255,.38);
-      border-radius:999px;
-      color:#fff;
-      text-decoration:none;
-      font-size:11px;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      background:rgba(255,255,255,.04);
-      backdrop-filter:blur(10px);
-      transition:all .35s ease;
+      display: inline-block;
+      padding: 13px 24px;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 999px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      transition: all .35s ease;
+      background: rgba(255,255,255,.04);
+      backdrop-filter: blur(10px);
     }
 
     .cta-btn:hover {
-      background:#fff;
-      color:#000;
+      background: #fff;
+      color: #000;
     }
 
     footer {
-      padding:40px 0;
+      padding: 40px 0;
     }
 
     .fade-in {
-      opacity:0;
-      transform:translateY(25px);
-      transition:opacity .8s ease, transform .8s ease;
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .8s ease, transform .8s ease;
     }
 
     .fade-in.visible {
-      opacity:1;
-      transform:translateY(0);
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    @media(max-width:991px) {
-      .references-hero {
-        min-height:auto;
-        padding:90px 0 55px;
-      }
-
-      .horizontal-track {
-        display:grid;
-        grid-template-columns:repeat(2, 1fr);
-        gap:18px;
-        overflow:visible;
-        padding:0;
-      }
-
-      .reference-card {
-        flex:none;
-        width:100%;
-      }
-
-      .scroll-hint {
-        display:none;
+    @media (max-width: 991px) {
+      .references-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
       }
     }
 
-    @media(max-width:575px) {
+    @media (max-width: 575px) {
       .references-page {
-        padding:80px 0 70px;
+        padding: 90px 0 70px;
       }
 
-      .horizontal-track {
-        grid-template-columns:1fr;
-        gap:20px;
-      }
-
-      .reference-overlay {
-        padding:24px;
+      .references-grid {
+        grid-template-columns: 1fr;
       }
 
       .reference-card.in-view img {
-        transform:scale(1.035);
-        filter:brightness(.72) contrast(1.04);
+        transform: scale(1.035);
+        filter: brightness(.72) contrast(1.04);
       }
 
       .reference-card.in-view::after {
-        opacity:1;
-        background:rgba(0,0,0,.22);
-        backdrop-filter:blur(5px);
+        opacity: 1;
+        background: rgba(0,0,0,.22);
+        backdrop-filter: blur(5px);
       }
 
       .reference-card.in-view .reference-overlay {
-        opacity:1;
-        transform:translateY(0);
-      }
-
-      .reference-name {
-        font-size:24px;
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   </style>
@@ -379,125 +323,71 @@
   </nav>
 
   <main class="references-page">
+    <div class="container">
 
-    <section class="references-hero">
-      <div class="container fade-in">
+      <section class="references-hero fade-in">
         <p class="references-kicker">SELECTED WORKS</p>
         <h1 class="references-title">REFERENCES</h1>
         <p class="references-intro">
           Une selection de projets accompagnes en strategie, direction artistique,
           communication, brand content et developpement de marque.
         </p>
-      </div>
-    </section>
+      </section>
 
-    <section class="horizontal-section">
-      <div class="horizontal-track">
+      <section class="references-grid fade-in">
 
-        <div class="reference-card">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/mondrian_bordeaux_les_carmes_mathilde_ranchon_cu2zhi.webp" alt="Mondrian Bordeaux">
-          <div class="reference-overlay"><div class="reference-number">01</div><div><h2 class="reference-name">Mondrian Bordeaux</h2><p class="reference-missions">Marketing & communication 360 / activations / brand content / coordination hotel & restaurant</p><div class="reference-stats"><span>Hotel 5 etoiles</span><span>Lancement</span><span>Experience luxe</span></div></div></div>
-        </div>
+        <div class="reference-card"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/mondrian_bordeaux_les_carmes_mathilde_ranchon_cu2zhi.webp" alt=""><div class="reference-overlay"><div class="reference-number">01</div><div><h2 class="reference-name">Mondrian Bordeaux</h2><p class="reference-missions">Marketing & communication 360 / activations / brand content</p><div class="reference-stats"><span>Hotel 5 etoiles</span><span>Lancement</span></div></div></div></div>
 
-        <div class="reference-card">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896773/marketing_communication_morimoto_bordeaux_cxgmcj.jpg" alt="Morimoto Bordeaux">
-          <div class="reference-overlay"><div class="reference-number">02</div><div><h2 class="reference-name">Morimoto</h2><p class="reference-missions">Storytelling / communication restaurant / visibilite locale / contenus gastronomie premium</p><div class="reference-stats"><span>Chef signature</span><span>RP & social</span><span>Food content</span></div></div></div>
-        </div>
+        <div class="reference-card"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896773/marketing_communication_morimoto_bordeaux_cxgmcj.jpg" alt=""><div class="reference-overlay"><div class="reference-number">02</div><div><h2 class="reference-name">Morimoto</h2><p class="reference-missions">Storytelling / communication restaurant / contenus premium</p><div class="reference-stats"><span>Chef signature</span><span>Food content</span></div></div></div></div>
 
-        <div class="reference-card">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896953/chateau_de_sacy_reims_mathilde_ranchon_ow2xel.webp" alt="Chateau de Sacy">
-          <div class="reference-overlay"><div class="reference-number">03</div><div><h2 class="reference-name">Chateau de Sacy</h2><p class="reference-missions">Image de marque / valorisation experience / communication hospitality / contenus lifestyle</p><div class="reference-stats"><span>Champagne</span><span>Art de vivre</span><span>Maison premium</span></div></div></div>
-        </div>
+        <div class="reference-card"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896953/chateau_de_sacy_reims_mathilde_ranchon_ow2xel.webp" alt=""><div class="reference-overlay"><div class="reference-number">03</div><div><h2 class="reference-name">Chateau de Sacy</h2><p class="reference-missions">Image de marque / hospitality / contenus lifestyle</p><div class="reference-stats"><span>Champagne</span><span>Art de vivre</span></div></div></div></div>
 
-        <div class="reference-card">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896955/villa_des_orangers_mathilde_ranchon_z1tplg.webp" alt="Villa des Orangers">
-          <div class="reference-overlay"><div class="reference-number">04</div><div><h2 class="reference-name">Villa des Orangers</h2><p class="reference-missions">Communication luxe / storytelling maison / image hospitality / experience client</p><div class="reference-stats"><span>Marrakech</span><span>Luxury</span><span>Maison iconique</span></div></div></div>
-        </div>
+        <div class="reference-card"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896955/villa_des_orangers_mathilde_ranchon_z1tplg.webp" alt=""><div class="reference-overlay"><div class="reference-number">04</div><div><h2 class="reference-name">Villa des Orangers</h2><p class="reference-missions">Communication luxe / storytelling / experience client</p><div class="reference-stats"><span>Marrakech</span><span>Luxury</span></div></div></div></div>
 
-        <div class="reference-card">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896953/chateau_brindos_mathilde_ranchon_gohf3g.webp" alt="Chateau Brindos">
-          <div class="reference-overlay"><div class="reference-number">05</div><div><h2 class="reference-name">Chateau Brindos</h2><p class="reference-missions">Communication hotel / contenus experience / image de marque / valorisation lieu</p><div class="reference-stats"><span>Pays Basque</span><span>Hotel & spa</span><span>Premium</span></div></div></div>
-        </div>
+        <div class="reference-card"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896953/chateau_brindos_mathilde_ranchon_gohf3g.webp" alt=""><div class="reference-overlay"><div class="reference-number">05</div><div><h2 class="reference-name">Chateau Brindos</h2><p class="reference-missions">Communication hotel / contenus experience / image</p><div class="reference-stats"><span>Pays Basque</span><span>Hotel & spa</span></div></div></div></div>
 
-        <div class="reference-card">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896953/chateau_leognan_bordeaux_mathilde_ranchon_qdvwlx.webp" alt="Chateau Leognan">
-          <div class="reference-overlay"><div class="reference-number">06</div><div><h2 class="reference-name">Chateau Leognan</h2><p class="reference-missions">Brand content / communication lieu / valorisation restaurant & domaine / storytelling</p><div class="reference-stats"><span>Bordeaux</span><span>Domaine</span><span>Hospitality</span></div></div></div>
-        </div>
+        <div class="reference-card"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896953/chateau_leognan_bordeaux_mathilde_ranchon_qdvwlx.webp" alt=""><div class="reference-overlay"><div class="reference-number">06</div><div><h2 class="reference-name">Chateau Leognan</h2><p class="reference-missions">Brand content / domaine / restaurant / storytelling</p><div class="reference-stats"><span>Bordeaux</span><span>Domaine</span></div></div></div></div>
 
-        <div class="reference-card">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896953/chateau_theoule_sur_mer_mathilde_ranchon_perbfl.webp" alt="Chateau Theoule">
-          <div class="reference-overlay"><div class="reference-number">07</div><div><h2 class="reference-name">Chateau Theoule</h2><p class="reference-missions">Image lifestyle / communication destination / contenus hospitality / valorisation experience</p><div class="reference-stats"><span>Cote d'Azur</span><span>Mer</span><span>Luxury stay</span></div></div></div>
-        </div>
+        <div class="reference-card"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896953/chateau_theoule_sur_mer_mathilde_ranchon_perbfl.webp" alt=""><div class="reference-overlay"><div class="reference-number">07</div><div><h2 class="reference-name">Chateau Theoule</h2><p class="reference-missions">Image lifestyle / destination / hospitality</p><div class="reference-stats"><span>Cote d'Azur</span><span>Luxury stay</span></div></div></div></div>
 
-        <div class="reference-card">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/grand_hotel_soleil_or_megeve_mathilde_ranchon_sk2avw.webp" alt="Grand Hotel Soleil Or">
-          <div class="reference-overlay"><div class="reference-number">08</div><div><h2 class="reference-name">Soleil d'Or</h2><p class="reference-missions">Communication hospitality / experience alpine / contenus saisonniers / image premium</p><div class="reference-stats"><span>Megeve</span><span>Hotel luxe</span><span>Montagne</span></div></div></div>
-        </div>
+        <div class="reference-card"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/grand_hotel_soleil_or_megeve_mathilde_ranchon_sk2avw.webp" alt=""><div class="reference-overlay"><div class="reference-number">08</div><div><h2 class="reference-name">Soleil d'Or</h2><p class="reference-missions">Communication hospitality / contenus saisonniers</p><div class="reference-stats"><span>Megeve</span><span>Montagne</span></div></div></div></div>
 
-        <div class="reference-card">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/domaine_de_raba_bordeaux_mathilde_ranchon_x5bvou.webp" alt="Domaine de Raba">
-          <div class="reference-overlay"><div class="reference-number">09</div><div><h2 class="reference-name">Domaine de Raba</h2><p class="reference-missions">Communication lieu de vie / storytelling / contenus lifestyle / activations locales</p><div class="reference-stats"><span>Bordeaux</span><span>Lieu hybride</span><span>Experience</span></div></div></div>
-        </div>
+        <div class="reference-card"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/domaine_de_raba_bordeaux_mathilde_ranchon_x5bvou.webp" alt=""><div class="reference-overlay"><div class="reference-number">09</div><div><h2 class="reference-name">Domaine de Raba</h2><p class="reference-missions">Communication lieu de vie / storytelling / activations</p><div class="reference-stats"><span>Bordeaux</span><span>Experience</span></div></div></div></div>
 
-        <div class="reference-card">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/cocorico_porto_hotel_mathilde_ranchon_si8qn9.webp" alt="Cocorico Porto">
-          <div class="reference-overlay"><div class="reference-number">10</div><div><h2 class="reference-name">Cocorico Porto</h2><p class="reference-missions">Brand storytelling / communication hotel / image lifestyle / valorisation destination</p><div class="reference-stats"><span>Porto</span><span>Boutique hotel</span><span>Hospitality</span></div></div></div>
-        </div>
+        <div class="reference-card"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/cocorico_porto_hotel_mathilde_ranchon_si8qn9.webp" alt=""><div class="reference-overlay"><div class="reference-number">10</div><div><h2 class="reference-name">Cocorico Porto</h2><p class="reference-missions">Brand storytelling / hotel / destination</p><div class="reference-stats"><span>Porto</span><span>Boutique hotel</span></div></div></div></div>
 
-        <div class="reference-card">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/constance_hotels_resort_mathilde_ranchon_y8drpp.webp" alt="Constance Hotels">
-          <div class="reference-overlay"><div class="reference-number">11</div><div><h2 class="reference-name">Constance</h2><p class="reference-missions">Communication groupe / standards de marque / contenus hospitality / experience luxe</p><div class="reference-stats"><span>International</span><span>Luxury resorts</span><span>Brand standards</span></div></div></div>
-        </div>
+        <div class="reference-card"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/constance_hotels_resort_mathilde_ranchon_y8drpp.webp" alt=""><div class="reference-overlay"><div class="reference-number">11</div><div><h2 class="reference-name">Constance</h2><p class="reference-missions">Communication groupe / standards de marque</p><div class="reference-stats"><span>International</span><span>Luxury resorts</span></div></div></div></div>
 
-        <div class="reference-card">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896773/rebranding_cafe_bonart_bordeaux_tv2wsf.jpg" alt="Cafe Bonart">
-          <div class="reference-overlay"><div class="reference-number">12</div><div><h2 class="reference-name">Cafe Bonart</h2><p class="reference-missions">Rebranding / concept social media / direction editoriale / communication lancement</p><div class="reference-stats"><span>Bordeaux</span><span>Concept launch</span><span>Social media</span></div></div></div>
-        </div>
+        <div class="reference-card"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896773/rebranding_cafe_bonart_bordeaux_tv2wsf.jpg" alt=""><div class="reference-overlay"><div class="reference-number">12</div><div><h2 class="reference-name">Cafe Bonart</h2><p class="reference-missions">Rebranding / social media / direction editoriale</p><div class="reference-stats"><span>Bordeaux</span><span>Concept launch</span></div></div></div></div>
 
-        <div class="reference-card">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896773/communication_marketing_cap_ferret_kiay1d.jpg" alt="Java Cap Ferret">
-          <div class="reference-overlay"><div class="reference-number">13</div><div><h2 class="reference-name">Java</h2><p class="reference-missions">Content creation / social media / activations / communication lifestyle Cap Ferret</p><div class="reference-stats"><span>Cap Ferret</span><span>Food lifestyle</span><span>Territoire social</span></div></div></div>
-        </div>
+        <div class="reference-card"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896773/communication_marketing_cap_ferret_kiay1d.jpg" alt=""><div class="reference-overlay"><div class="reference-number">13</div><div><h2 class="reference-name">Java</h2><p class="reference-missions">Content creation / social media / activations</p><div class="reference-stats"><span>Cap Ferret</span><span>Lifestyle</span></div></div></div></div>
 
-        <div class="reference-card">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/palmeraie_la_baule_mathilde_ranchon_k1k1nk.webp" alt="Palmeraie La Baule">
-          <div class="reference-overlay"><div class="reference-number">14</div><div><h2 class="reference-name">Palmeraie</h2><p class="reference-missions">Communication lieu / image lifestyle / contenus / valorisation experience client</p><div class="reference-stats"><span>La Baule</span><span>Lifestyle</span><span>Hospitality</span></div></div></div>
-        </div>
+        <div class="reference-card"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/palmeraie_la_baule_mathilde_ranchon_k1k1nk.webp" alt=""><div class="reference-overlay"><div class="reference-number">14</div><div><h2 class="reference-name">Palmeraie</h2><p class="reference-missions">Communication lieu / image lifestyle / contenus</p><div class="reference-stats"><span>La Baule</span><span>Hospitality</span></div></div></div></div>
 
-        <div class="reference-card">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896955/restaurant_le_manege_leognan_mathilde_ranchon_epzset.webp" alt="Le Manege">
-          <div class="reference-overlay"><div class="reference-number">15</div><div><h2 class="reference-name">Le Manege</h2><p class="reference-missions">Communication restaurant / contenus food / storytelling / valorisation experience</p><div class="reference-stats"><span>Restaurant</span><span>Leognan</span><span>Food content</span></div></div></div>
-        </div>
+        <div class="reference-card"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896955/restaurant_le_manege_leognan_mathilde_ranchon_epzset.webp" alt=""><div class="reference-overlay"><div class="reference-number">15</div><div><h2 class="reference-name">Le Manege</h2><p class="reference-missions">Communication restaurant / food content / storytelling</p><div class="reference-stats"><span>Leognan</span><span>Restaurant</span></div></div></div></div>
 
-        <div class="reference-card">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/eklo_hotels_mathilde_ranchon_off5rn.webp" alt="Eklo Hotels">
-          <div class="reference-overlay"><div class="reference-number">16</div><div><h2 class="reference-name">Eklo Hotels</h2><p class="reference-missions">Communication groupe / marque hoteliere / contenus / developpement visibilite</p><div class="reference-stats"><span>France</span><span>Lifestyle</span><span>Groupe hotelier</span></div></div></div>
-        </div>
+        <div class="reference-card"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/eklo_hotels_mathilde_ranchon_off5rn.webp" alt=""><div class="reference-overlay"><div class="reference-number">16</div><div><h2 class="reference-name">Eklo Hotels</h2><p class="reference-missions">Communication groupe / marque hoteliere / visibilite</p><div class="reference-stats"><span>France</span><span>Lifestyle</span></div></div></div></div>
 
-        <div class="reference-card">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/la_course_bordeaux_mathilde_ranchon_lezuzt.webp" alt="La Course Bordeaux">
-          <div class="reference-overlay"><div class="reference-number">17</div><div><h2 class="reference-name">La Course</h2><p class="reference-missions">Communication / image de marque / valorisation experience / brand content</p><div class="reference-stats"><span>Bordeaux</span><span>Brand content</span><span>Experience</span></div></div></div>
-        </div>
+        <div class="reference-card"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/la_course_bordeaux_mathilde_ranchon_lezuzt.webp" alt=""><div class="reference-overlay"><div class="reference-number">17</div><div><h2 class="reference-name">La Course</h2><p class="reference-missions">Communication / image de marque / valorisation experience</p><div class="reference-stats"><span>Bordeaux</span><span>Brand content</span></div></div></div></div>
 
-      </div>
+        <div class="reference-card"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777902728/logos_references_site_web_q2azfx.jpg" alt=""><div class="reference-overlay"><div class="reference-number">18</div><div><h2 class="reference-name">References</h2><p class="reference-missions">Identites / collaborations / marques accompagnees / univers de reference</p><div class="reference-stats"><span>Brand universe</span><span>Portfolio</span></div></div></div></div>
 
-      <div class="scroll-hint">Scroll horizontal</div>
-    </section>
+      </section>
 
-    <section class="references-cta fade-in">
-      <div class="container">
+      <section class="references-cta fade-in">
         <h2>FROM DEPTH TO DISTINCTION.</h2>
         <p>
           Chaque reference revele une facon d'accompagner les marques :
           strategie, image, contenu et coherence pour faire emerger leur singularite.
         </p>
+
         <div class="cta-buttons">
           <a class="cta-btn" href="contact.html">Me contacter</a>
           <a class="cta-btn" href="https://canva.link/z7lu89p62mca8qa" target="_blank" rel="noopener">Voir le portfolio</a>
         </div>
-      </div>
-    </section>
+      </section>
 
+    </div>
   </main>
 
   <footer>
@@ -533,6 +423,7 @@ document.addEventListener("DOMContentLoaded", function(){
   });
 
   const faders = document.querySelectorAll(".fade-in");
+
   const appearOnScroll = new IntersectionObserver(function(entries, observer){
     entries.forEach(entry=>{
       if(!entry.isIntersecting) return;
@@ -541,23 +432,16 @@ document.addEventListener("DOMContentLoaded", function(){
     });
   }, { threshold:0.2 });
 
-  faders.forEach(fader=> appearOnScroll.observe(fader));
+  faders.forEach(fader=>{
+    appearOnScroll.observe(fader);
+  });
 
   const cards = document.querySelectorAll(".reference-card");
 
-  const revealCards = new IntersectionObserver(function(entries){
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add("visible");
-      }
-    });
-  }, { threshold:0.18 });
-
-  cards.forEach(card=>{
-    revealCards.observe(card);
-
-    card.addEventListener("click", function(){
-      cards.forEach(other=>{
+  cards.forEach(card => {
+    card.addEventListener("click", function(e){
+      e.preventDefault();
+      cards.forEach(other => {
         if(other !== card) other.classList.remove("active");
       });
       card.classList.toggle("active");
@@ -565,20 +449,24 @@ document.addEventListener("DOMContentLoaded", function(){
   });
 
   const mobileObserver = new IntersectionObserver(function(entries){
-    entries.forEach(entry=>{
-      if(window.innerWidth <= 575){
-        if(entry.intersectionRatio >= .88){
-          setTimeout(()=>{
+    entries.forEach(entry => {
+      if(window.innerWidth <= 575) {
+        if(entry.intersectionRatio >= 0.85) {
+          setTimeout(() => {
             entry.target.classList.add("in-view");
-          }, 750);
+          }, 650);
         } else {
           entry.target.classList.remove("in-view");
         }
       }
     });
-  }, { threshold:[0, .5, .88, 1] });
+  }, { 
+    threshold: [0, 0.5, 0.85, 1]
+  });
 
-  cards.forEach(card=> mobileObserver.observe(card));
+  cards.forEach(card => {
+    mobileObserver.observe(card);
+  });
 });
 
 window.addEventListener("scroll", function(){
