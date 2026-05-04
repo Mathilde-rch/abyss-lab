@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Références Abyss Lab : 24 établissements, ouvertures d’hôtels 5 étoiles et direction marketing & communication 360°. Image de marque, brand content, digital, rayonnement et expérience pour les univers premium, hospitality et art de vivre.">
-  <title>Références Abyss Lab | Chiffres clés, univers & impact</title>
+  <title>Références | ABYSS LAB</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,1076 +14,488 @@
   <link rel="stylesheet" href="assets/css/style.css">
 
   <style>
-    :root{
-      --white:#ffffff;
-      --white-soft:rgba(255,255,255,.84);
-      --white-muted:rgba(255,255,255,.66);
-      --white-faint:rgba(255,255,255,.50);
-      --line:rgba(255,255,255,.14);
-      --line-soft:rgba(255,255,255,.10);
-      --glass:rgba(255,255,255,.05);
-      --glass-strong:rgba(255,255,255,.08);
+    .references-page {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      padding: 120px 0 90px;
+      min-height: 100vh;
     }
 
-    html{scroll-behavior:smooth;}
-    body{
-      overflow-x:hidden;
-      color:var(--white);
-      font-family:'Montserrat',sans-serif;
-      background:#000;
-    }
-    a{transition:all .3s ease;}
-    img,video{max-width:100%;display:block;}
-
-    .video-background{
-      position:fixed;
-      inset:0;
-      z-index:-2;
-      overflow:hidden;
-      background:#000;
-    }
-    .video-background video{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-    .video-background::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(to bottom, rgba(0,0,0,.40), rgba(0,0,0,.80) 44%, rgba(0,0,0,.95) 100%),
-        rgba(0,0,0,.16);
-      z-index:1;
+    .references-hero {
+      max-width: 980px;
+      margin: 0 auto 70px;
+      text-align: center;
     }
 
-    .navbar{
-      position:relative;
-      z-index:30;
-      transition:background-color .3s ease, backdrop-filter .3s ease;
-    }
-    .navbar.scrolled{
-      background:rgba(0,0,0,.68);
-      backdrop-filter:blur(14px);
-    }
-    .navbar-brand{
-      letter-spacing:1px;
-      color:var(--white)!important;
-    }
-    .nav-link{
-      font-family:'couture',sans-serif;
-      font-size:.80rem;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      font-weight:600;
-      color:var(--white-soft)!important;
-      padding-left:1rem!important;
-      padding-right:1rem!important;
-    }
-    .nav-link:hover,
-    .nav-link.active{
-      color:var(--white)!important;
+    .references-kicker {
+      font-size: 12px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      opacity: .75;
+      margin-bottom: 18px;
     }
 
-    .btn-outline-light,
-    .btn-light-ghost{
-      border-radius:999px;
-      padding:11px 24px;
-      font-size:.78rem;
-      font-weight:700;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-    }
-    .btn-outline-light{
-      border-color:rgba(255,255,255,.55);
-    }
-    .btn-outline-light:hover{
-      background:var(--white);
-      color:#000;
-      border-color:var(--white);
-    }
-    .btn-light-ghost{
-      border:1px solid rgba(255,255,255,.16);
-      color:var(--white);
-      background:rgba(255,255,255,.05);
-      text-decoration:none;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-    }
-    .btn-light-ghost:hover{
-      color:#000;
-      background:var(--white);
-      border-color:var(--white);
+    .references-title {
+      font-family: 'Couture', sans-serif;
+      font-size: clamp(42px, 8vw, 105px);
+      line-height: .9;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
     }
 
-    .visually-hidden-seo{
-      position:absolute!important;
-      width:1px!important;
-      height:1px!important;
-      padding:0!important;
-      margin:-1px!important;
-      overflow:hidden!important;
-      clip:rect(0,0,0,0)!important;
-      white-space:nowrap!important;
-      border:0!important;
+    .references-intro {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 16px;
+      line-height: 1.8;
+      opacity: .82;
     }
 
-    /* HERO */
-    .references-hero{
-      padding:96px 0 18px;
-      position:relative;
-      z-index:2;
-    }
-    .references-hero-inner{
-      max-width:860px;
-      margin:0 auto;
-      text-align:center;
-    }
-    .references-title{
-      font-family:'couture',sans-serif;
-      font-size:2.18rem;
-      line-height:1.06;
-      letter-spacing:.10em;
-      text-transform:uppercase;
-      color:var(--white);
-      margin:0 0 12px;
-    }
-    .references-intro{
-      max-width:720px;
-      margin:0 auto;
-      text-align:center;
-      font-size:.95rem;
-      line-height:1.72;
-      color:var(--white-soft);
-    }
-    .references-hero-cta{
-      margin-top:18px;
-      display:flex;
-      justify-content:center;
-      gap:12px;
-      flex-wrap:wrap;
+    .references-filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 55px;
     }
 
-    /* LOGOS */
-    .logo-strip{
-      position:relative;
-      z-index:3;
-      padding:18px 0 10px;
-    }
-    .logo-strip-shell{
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-      background:rgba(255,255,255,.05);
-      backdrop-filter:blur(16px);
-      -webkit-backdrop-filter:blur(16px);
-      padding:14px 0;
-      position:relative;
-    }
-    .logo-strip-title{
-      margin:0 0 12px;
-      text-align:center;
-      font-size:.70rem;
-      font-weight:700;
-      letter-spacing:.20em;
-      text-transform:uppercase;
-      color:var(--white-soft);
-    }
-    .logo-strip-wrap{
-      position:relative;
-    }
-    .logo-strip-scroll{
-      overflow-x:auto;
-      overflow-y:hidden;
-      scrollbar-width:none;
-      -ms-overflow-style:none;
-      padding:0 78px 2px 18px;
-      scroll-behavior:smooth;
-    }
-    .logo-strip-scroll::-webkit-scrollbar{
-      display:none;
-    }
-    .logo-strip-track{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      width:max-content;
+    .filter-btn {
+      border: 1px solid rgba(255,255,255,.28);
+      background: rgba(255,255,255,.04);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      transition: all .35s ease;
+      backdrop-filter: blur(10px);
     }
 
-    /* blocs homogènes en hauteur / largeur adaptée au logo */
-    .logo-pill{
-      flex:0 0 auto;
-      height:150px;
-      min-width:260px;
-      max-width:520px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:6px 12px;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.05);
-      text-decoration:none;
-      overflow:hidden;
-      backdrop-filter:blur(10px);
-      -webkit-backdrop-filter:blur(10px);
-    }
-    .logo-pill:hover{
-      transform:translateY(-2px);
-      border-color:rgba(255,255,255,.30);
-      background:rgba(255,255,255,.09);
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: #fff;
+      color: #050505;
+      border-color: #fff;
     }
 
-    /* tailles ajustées par logo pour limiter le vide */
-    .logo-pill.logo-xl{ width:500px; }
-    .logo-pill.logo-lg{ width:430px; }
-    .logo-pill.logo-md{ width:360px; }
-    .logo-pill.logo-sm{ width:300px; }
-
-    .logo-pill img{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      filter:brightness(0) invert(1);
-      opacity:1;
-      transform:scale(1.22);
+    .references-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 22px;
     }
 
-    .logo-strip-arrow{
-      position:absolute;
-      right:18px;
-      top:50%;
-      transform:translateY(-50%);
-      width:58px;
-      height:58px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:rgba(0,0,0,.34);
-      backdrop-filter:blur(10px);
-      -webkit-backdrop-filter:blur(10px);
-      border:1px solid rgba(255,255,255,.16);
-      color:var(--white);
-      pointer-events:none;
-      z-index:2;
-      animation:arrowFloat 1.8s ease-in-out infinite;
-    }
-    .logo-strip-arrow i{
-      font-size:1.15rem;
-    }
-    @keyframes arrowFloat{
-      0%,100%{transform:translateY(-50%) translateX(0);opacity:.78;}
-      50%{transform:translateY(-50%) translateX(6px);opacity:1;}
+    .reference-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 2px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.08);
+      min-height: 430px;
+      grid-column: span 4;
+      cursor: pointer;
+      transition: transform .45s ease, border-color .45s ease;
     }
 
-    .references-manifesto{
-      position:relative;
-      z-index:2;
-      padding:18px 0 12px;
-    }
-    .references-manifesto-box{
-      max-width:780px;
-      margin:0 auto;
-      text-align:center;
-      padding:4px 0 8px;
-    }
-    .references-manifesto-text{
-      margin:0;
-      font-size:1rem;
-      line-height:1.66;
-      color:var(--white);
-      font-weight:600;
+    .reference-card.large {
+      grid-column: span 8;
     }
 
-    /* 3 stats only */
-    .references-stats{
-      position:relative;
-      z-index:2;
-      padding:6px 0 18px;
-    }
-    .stats-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:14px;
-    }
-    .stat-card{
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);
-      backdrop-filter:blur(12px);
-      -webkit-backdrop-filter:blur(12px);
-      padding:22px 18px;
-      text-align:center;
-      min-height:168px;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-    }
-    .stat-number{
-      font-family:'couture',sans-serif;
-      font-size:2rem;
-      line-height:1;
-      letter-spacing:.06em;
-      text-transform:uppercase;
-      margin-bottom:10px;
-      color:var(--white);
-    }
-    .stat-label{
-      font-size:.72rem;
-      font-weight:700;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:var(--white-soft);
-      margin-bottom:8px;
-    }
-    .stat-text{
-      margin:0;
-      font-size:.86rem;
-      line-height:1.56;
-      color:var(--white-soft);
+    .reference-card.tall {
+      min-height: 560px;
     }
 
-    .references-transition{
-      position:relative;
-      z-index:2;
-      padding:0 0 8px;
-    }
-    .references-transition-box{
-      max-width:900px;
-      margin:0 auto;
-      text-align:center;
-      padding:12px 0 8px;
-    }
-    .references-transition-text{
-      margin:0;
-      font-size:.96rem;
-      line-height:1.72;
-      color:var(--white-soft);
+    .reference-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255,255,255,.35);
     }
 
-    .themes-wrapper{
-      position:relative;
-      z-index:2;
-      padding:2px 0 24px;
-      border-top:1px solid var(--line);
-      margin-top:8px;
-    }
-    .theme-section{
-      padding:76px 0;
-      border-top:1px solid var(--line);
-    }
-    .theme-section:first-child{
-      border-top:none;
-      padding-top:50px;
-    }
-    .theme-row{
-      align-items:center;
-    }
-    .theme-text-col{order:2;}
-    .theme-media-col{order:1;}
-    .theme-text-wrap{
-      padding-right:46px;
-      max-width:610px;
-    }
-    .theme-index{
-      display:inline-block;
-      margin-bottom:12px;
-      font-size:.72rem;
-      font-weight:700;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:var(--white-soft);
-    }
-    .theme-title{
-      font-family:'couture',sans-serif;
-      font-size:1.84rem;
-      line-height:1.06;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      margin:0 0 10px;
-      color:var(--white);
-    }
-    .theme-subtitle{
-      margin:0 0 14px;
-      font-size:.74rem;
-      font-weight:700;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:var(--white-faint);
-    }
-    .theme-hook{
-      margin:0 0 12px;
-      font-size:.98rem;
-      line-height:1.64;
-      color:var(--white);
-      font-weight:700;
-      max-width:530px;
-    }
-    .theme-text{
-      margin:0 0 18px;
-      font-size:.92rem;
-      line-height:1.7;
-      color:var(--white-soft);
-      max-width:540px;
-    }
-    .theme-points{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:12px;
-      margin:0 0 24px;
-    }
-    .theme-point{
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.03);
-      padding:14px 14px 13px;
-      backdrop-filter:blur(10px);
-      -webkit-backdrop-filter:blur(10px);
-    }
-    .theme-point-title{
-      display:block;
-      margin-bottom:6px;
-      font-size:.68rem;
-      font-weight:700;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:var(--white-soft);
-    }
-    .theme-point-text{
-      margin:0;
-      font-size:.89rem;
-      line-height:1.56;
-      color:var(--white-soft);
+    .reference-card img {
+      width: 100%;
+      height: 100%;
+      min-height: inherit;
+      object-fit: cover;
+      display: block;
+      filter: saturate(.92) contrast(1.05);
+      transition: transform .8s ease, filter .8s ease;
     }
 
-    .theme-media{
-      overflow:hidden;
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(255,255,255,.14);
-    }
-    .theme-media img,
-    .theme-media video{
-      width:100%;
-      height:690px;
-      object-fit:cover;
+    .reference-card:hover img {
+      transform: scale(1.06);
+      filter: saturate(1.08) contrast(1.08);
     }
 
-    .references-cta{
-      position:relative;
-      z-index:2;
-      padding:8px 0 64px;
-    }
-    .cta-block{
-      max-width:760px;
-      margin:0 auto;
-      text-align:center;
-      border-top:1px solid var(--line);
-      padding-top:38px;
-    }
-    .cta-title{
-      font-family:'couture',sans-serif;
-      font-size:1.66rem;
-      line-height:1.18;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      margin-bottom:14px;
-      color:var(--white);
-    }
-    .cta-text{
-      font-size:.95rem;
-      line-height:1.72;
-      color:var(--white-soft);
-      margin-bottom:22px;
-      max-width:580px;
-      margin-left:auto;
-      margin-right:auto;
-    }
-    .cta-actions{
-      display:flex;
-      justify-content:center;
-      gap:12px;
-      flex-wrap:wrap;
+    .reference-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px;
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0) 20%,
+        rgba(0,0,0,.35) 58%,
+        rgba(0,0,0,.82) 100%
+      );
     }
 
-    .footer{
-      border-top:1px solid var(--line);
-      padding:28px 0 14px;
-      margin-top:0;
-      position:relative;
-      z-index:2;
-    }
-    .footer-top{
-      padding-bottom:20px;
-      margin-bottom:20px;
-      border-bottom:1px solid rgba(255,255,255,.18);
-    }
-    .footer-brand{
-      font-size:.98rem;
-      font-weight:700;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      margin-bottom:10px;
-      color:var(--white);
-    }
-    .footer-tagline{
-      margin:0;
-      max-width:640px;
-      font-size:.93rem;
-      line-height:1.66;
-      font-weight:600;
-      text-transform:uppercase;
-      color:var(--white);
-    }
-    .footer-location{
-      margin-top:10px;
-      font-size:.92rem;
-      line-height:1.68;
-      color:var(--white-soft);
-    }
-    .footer-social-block{
-      display:flex;
-      flex-direction:column;
-      align-items:flex-start;
-    }
-    .footer-social-title{
-      font-size:.92rem;
-      line-height:1.5;
-      font-weight:600;
-      color:var(--white);
-      margin-bottom:10px;
-    }
-    .footer-socials{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-    }
-    .footer-social{
-      width:42px;
-      height:42px;
-      border:1.5px solid rgba(255,255,255,.78);
-      border-radius:50%;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      color:var(--white);
-      text-decoration:none;
-      font-size:1rem;
-      background:rgba(255,255,255,.01);
-    }
-    .footer-social:hover{
-      color:var(--white);
-      border-color:var(--white);
-      transform:translateY(-2px);
-      background:rgba(255,255,255,.04);
-    }
-    .footer-menu-row{
-      padding:0 0 18px;
-    }
-    .footer-menu{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:18px;
-      width:100%;
-    }
-    .footer-menu a{
-      color:var(--white);
-      text-decoration:none;
-      font-size:.93rem;
-      font-weight:600;
-      letter-spacing:.10em;
-      text-transform:uppercase;
-      text-align:left;
-    }
-    .footer-menu a:hover{opacity:.72;}
-    .footer-bottom{
-      border-top:1px solid var(--line-soft);
-      padding-top:12px;
-    }
-    .footer-bottom-inner{
-      display:grid;
-      grid-template-columns:1fr auto;
-      align-items:center;
-      gap:18px;
-    }
-    .footer-legal{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px 30px;
-    }
-    .footer-legal a{
-      color:var(--white-muted);
-      text-decoration:none;
-      font-size:.82rem;
-      line-height:1.5;
-    }
-    .footer-legal a:hover{color:var(--white);}
-    .footer-copy{
-      color:var(--white-muted);
-      font-size:.82rem;
-      line-height:1.5;
-      text-align:right;
-      white-space:nowrap;
+    .reference-sector {
+      font-size: 10px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      opacity: .72;
+      margin-bottom: 10px;
     }
 
-    .fade-in{
-      opacity:0;
-      transform:translateY(18px);
-      transition:opacity .7s ease, transform .7s ease;
-    }
-    .fade-in.visible{
-      opacity:1;
-      transform:translateY(0);
+    .reference-name {
+      font-size: clamp(24px, 3vw, 42px);
+      line-height: 1;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 12px;
     }
 
-    @media (min-width: 992px){
-      .references-title{font-size:2.72rem;}
-      .theme-row.reverse-desktop .theme-media-col{order:2;}
-      .theme-row.reverse-desktop .theme-text-col{order:1;}
+    .reference-description {
+      font-size: 13px;
+      line-height: 1.6;
+      max-width: 460px;
+      opacity: .82;
+      margin-bottom: 0;
     }
 
-    @media(max-width:1199.98px){
-      .logo-pill.logo-xl{ width:430px; }
-      .logo-pill.logo-lg{ width:390px; }
-      .logo-pill.logo-md{ width:340px; }
-      .logo-pill.logo-sm{ width:280px; }
-      .theme-points{
-        grid-template-columns:1fr;
+    .reference-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .reference-tags span {
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,.24);
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+    }
+
+    .references-statement {
+      margin-top: 90px;
+      padding: 60px 0 20px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      text-align: center;
+    }
+
+    .references-statement h2 {
+      font-family: 'Couture', sans-serif;
+      font-size: clamp(32px, 5vw, 70px);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 22px;
+    }
+
+    .references-statement p {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 15px;
+      line-height: 1.8;
+      opacity: .78;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reference-card.hidden {
+      display: none;
+    }
+
+    @media (max-width: 991px) {
+      .references-page {
+        padding-top: 90px;
+      }
+
+      .references-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .reference-card,
+      .reference-card.large {
+        grid-column: span 1;
+        min-height: 380px;
       }
     }
 
-    @media(max-width:991.98px){
-      .references-hero{padding:90px 0 18px;}
-      .stats-grid{
-        grid-template-columns:1fr;
-      }
-      .theme-text-wrap{padding-right:0;max-width:none;}
-      .theme-media img,
-      .theme-media video{height:440px;}
-      .logo-strip-scroll{
-        padding:0 74px 2px 14px;
-      }
-      .logo-pill{
-        height:124px;
-      }
-      .logo-pill.logo-xl{ width:360px; }
-      .logo-pill.logo-lg{ width:320px; }
-      .logo-pill.logo-md{ width:290px; }
-      .logo-pill.logo-sm{ width:250px; }
-      .logo-strip-arrow{
-        width:52px;
-        height:52px;
-        right:12px;
-      }
-      .footer-social-block{margin-top:4px;}
-      .footer-menu{
-        grid-template-columns:repeat(2,1fr);
-        gap:14px 22px;
-      }
-      .footer-bottom-inner{
-        grid-template-columns:1fr;
-        gap:10px;
-      }
-      .footer-copy{
-        text-align:left;
-        white-space:normal;
-      }
-    }
-
-    @media(max-width:767.98px){
-      .references-title{
-        font-size:1.34rem;
-        letter-spacing:.08em;
-        line-height:1.12;
-        max-width:320px;
-        margin:0 0 10px;
-        text-align:left;
-      }
-      .references-intro,
-      .references-manifesto-text,
-      .references-transition-text,
-      .theme-text,
-      .theme-point-text,
-      .cta-text,
-      .stat-text{
-        font-size:.91rem;
-        line-height:1.7;
-      }
-      .references-hero{
-        padding:82px 0 16px;
-      }
-      .references-hero-inner{
-        text-align:left;
-      }
-      .references-intro{
-        max-width:none;
-        margin:0;
-        text-align:left;
-      }
-      .references-hero-cta{
-        gap:10px;
-        justify-content:flex-start;
-      }
-      .references-hero-cta .btn-outline-light,
-      .references-hero-cta .btn-light-ghost,
-      .cta-actions .btn-outline-light,
-      .cta-actions .btn-light-ghost{
-        width:100%;
+    @media (max-width: 575px) {
+      .references-grid {
+        grid-template-columns: 1fr;
       }
 
-      .logo-strip{
-        padding:14px 0 6px;
-      }
-      .logo-strip-title{
-        text-align:left;
-        padding:0 14px;
-      }
-      .logo-strip-scroll{
-        padding:0 66px 2px 12px;
-      }
-      .logo-pill{
-        height:108px;
-      }
-      .logo-pill.logo-xl{ width:310px; }
-      .logo-pill.logo-lg{ width:280px; }
-      .logo-pill.logo-md{ width:250px; }
-      .logo-pill.logo-sm{ width:220px; }
-      .logo-pill img{
-        transform:scale(1.18);
-      }
-      .logo-strip-arrow{
-        width:48px;
-        height:48px;
-        right:10px;
+      .reference-card,
+      .reference-card.large,
+      .reference-card.tall {
+        grid-column: span 1;
+        min-height: 390px;
       }
 
-      .theme-title,
-      .cta-title{
-        font-size:1.30rem;
+      .reference-overlay {
+        padding: 22px;
       }
-      .theme-section{padding:52px 0;}
-      .theme-section:first-child{padding-top:42px;}
-      .theme-media{margin-bottom:18px;}
-      .theme-media img,
-      .theme-media video{height:250px;}
 
-      .footer{
-        padding:24px 0 12px;
+      .references-filters {
+        justify-content: flex-start;
       }
-      .footer-menu{
-        grid-template-columns:1fr;
-        gap:10px;
-      }
-      .footer-menu a{font-size:.88rem;}
-      .footer-legal{gap:8px 18px;}
-      .footer-legal a,
-      .footer-copy{font-size:.79rem;}
     }
   </style>
 </head>
 
 <body>
 
-  <h1 class="visually-hidden-seo">
-    Références Abyss Lab : 24 établissements, rebrandings, ouvertures d’hôtels, restaurants, bars et spas, marketing et communication 360, image de marque, brand content, SEO, SEA, UX, web design et expérience
-  </h1>
-
+  <!-- BACKGROUND VIDEO -->
   <div class="video-background">
-    <video autoplay muted loop playsinline webkit-playsinline preload="auto" poster="assets/img/poster.jpg" disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback" id="bg-video">
+    <video autoplay muted loop playsinline preload="auto">
       <source src="assets/video/abyss-lab.mp4" type="video/mp4">
     </video>
   </div>
 
+  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark py-3">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html" aria-label="Abyss Lab - Retour à l'accueil">ABYSS LAB.</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Ouvrir le menu">
+      <a class="navbar-brand" href="index.html">ABYSS LAB.</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-label="Ouvrir le menu">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse justify-content-end" id="navmenu">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">ACCUEIL</a></li>
-          <li class="nav-item"><a class="nav-link" href="services.html">SERVICES</a></li>
-          <li class="nav-item"><a class="nav-link active" href="references.html">REFERENCES</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">A PROPOS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">SERVICES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="references.html">REFERENCES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">CONTACT</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <main>
+  <!-- REFERENCES -->
+  <main class="references-page">
+    <div class="container">
 
-    <section class="references-hero fade-in">
-      <div class="container">
-        <div class="references-hero-inner">
-          <h1 class="references-title">REFERENCES, CHIFFRES CLES, IMPACTS</h1>
-          <p class="references-intro">
-            Des environnements où l’image, le contenu, le rayonnement et l’expérience doivent avancer avec la même exigence.
-          </p>
+      <section class="references-hero fade-in">
+        <div class="references-kicker">Selected works</div>
+        <h1 class="references-title">Références</h1>
+        <p class="references-intro">
+          Des marques, lieux et concepts accompagnés avec une approche stratégique, créative et incarnée.
+          Chaque projet est pensé comme une immersion : révéler une identité, structurer une image,
+          créer du contenu et faire émerger une présence singulière.
+        </p>
+      </section>
 
-          <div class="references-hero-cta">
-            <a href="contact.html" class="btn btn-outline-light">PARLER DE VOTRE PROJET</a>
-            <a href="#thematiques" class="btn-light-ghost">VOIR LES THEMATIQUES</a>
-          </div>
-        </div>
+      <div class="references-filters fade-in">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="hospitality">Hospitality</button>
+        <button class="filter-btn" data-filter="food">Food & Beverage</button>
+        <button class="filter-btn" data-filter="lifestyle">Lifestyle</button>
+        <button class="filter-btn" data-filter="brand">Branding</button>
+        <button class="filter-btn" data-filter="content">Content</button>
       </div>
-    </section>
 
-    <section class="logo-strip fade-in" aria-label="Références Abyss Lab">
-      <div class="logo-strip-shell">
-        <div class="container-fluid px-0">
-          <p class="logo-strip-title">Maisons, hôtels, restaurants & lieux accompagnés</p>
+      <section class="references-grid fade-in">
 
-          <div class="logo-strip-wrap">
-            <div class="logo-strip-scroll" id="logoStripScroll">
-              <div class="logo-strip-track">
-                <a class="logo-pill logo-lg" href="https://mondrianhotels.com/fr/bordeaux-les-carmes/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_mondrian_bordeaux_klvfkk.png" alt="Mondrian Bordeaux Les Carmes"></a>
-                <a class="logo-pill logo-md" href="https://morimotobordeaux.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_morimoto_bordeaux_vgb8ns.png" alt="Morimoto Bordeaux"></a>
-                <a class="logo-pill logo-lg" href="https://brindos-cotebasque.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271199/marketing_communication_brindos_anglet_ogtgnq.png" alt="Brindos Lac & Château"></a>
-                <a class="logo-pill logo-md" href="https://cafebonart.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271224/marketing_communication_cafe_bonart_vn4enk.png" alt="Café Bonart"></a>
-                <a class="logo-pill logo-md" href="https://www.chateaudesacy.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_chateau_sacy_reims_ov4rcf.png" alt="Château de Sacy"></a>
-                <a class="logo-pill logo-lg" href="https://www.maisons-particulieres.com/maison-la-course" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_maison_la_course_bordeaux_pe6vu9.png" alt="Maison La Course"></a>
-                <a class="logo-pill logo-xl" href="https://www.chateaudetheoule.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271353/marketing_communication_chateau_theoule_sur_mer_qtecgf.png" alt="Château de Théoule-sur-Mer"></a>
-                <a class="logo-pill logo-lg" href="https://www.lapalmeraielabaule.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_palmeraie_la_baule_erb4df.png" alt="La Palmeraie La Baule"></a>
-                <a class="logo-pill logo-xl" href="https://www.grandhotelmegve.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271231/marketing_communication_grand_hotel_soleil_d_or_megeve_jic4on.png" alt="Grand Hôtel Soleil d'Or Megève"></a>
-                <a class="logo-pill logo-md" href="https://www.domainederaba.com/" target="_blank" rel="noopener noreferrer"><img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1774271230/marketing_communication_domaine_de_raba_zsu3ao.png" alt="Domaine de Raba"></a>
-              </div>
-            </div>
-
-            <div class="logo-strip-arrow">
-              <i class="bi bi-arrow-right"></i>
+        <article class="reference-card large tall" data-category="hospitality content">
+          <img src="assets/img/references/mondrian-bordeaux.jpg" alt="Mondrian Bordeaux Les Carmes">
+          <div class="reference-overlay">
+            <div class="reference-sector">Luxury Hospitality</div>
+            <h2 class="reference-name">Mondrian Bordeaux</h2>
+            <p class="reference-description">
+              Déploiement marketing & communication pour un hôtel lifestyle 5 étoiles :
+              image de marque, activations, contenus et coordination 360°.
+            </p>
+            <div class="reference-tags">
+              <span>Stratégie 360°</span>
+              <span>Brand Content</span>
+              <span>Hospitality</span>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </article>
 
-    <section class="references-manifesto fade-in">
-      <div class="container">
-        <div class="references-manifesto-box">
-          <p class="references-manifesto-text">
-            De la création des outils de marque à leur déploiement stratégique, une même ligne : clarifier, élever, déployer.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="references-stats fade-in">
-      <div class="container">
-        <div class="stats-grid">
-          <div class="stat-card">
-            <div class="stat-number">24</div>
-            <div class="stat-label">Etablissements</div>
-            <p class="stat-text">Hôtellerie, restauration, groupes hospitality et univers premium.</p>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">6</div>
-            <div class="stat-label">Ouvertures hôtels 5*</div>
-            <p class="stat-text">Lancements d’hôtels premium, positionnement et mise sur le marché.</p>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">360°</div>
-            <div class="stat-label">Marketing & communication</div>
-            <p class="stat-text">Image de marque, déploiement stratégique 360° et digital & expérience.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="references-transition fade-in">
-      <div class="container">
-        <div class="references-transition-box">
-          <p class="references-transition-text">
-            Une approche 360 pensée pour faire émerger une marque dans toutes ses dimensions : image de marque, déploiement stratégique 360° et digital & expérience.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="themes-wrapper" id="thematiques">
-      <div class="container">
-
-        <section class="theme-section fade-in">
-          <div class="row gy-4 gy-lg-5 theme-row">
-            <div class="col-12 col-lg-6 theme-media-col">
-              <div class="theme-media">
-                <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1771944261/1_u4uw1i.jpg" alt="Image de marque et désirabilité premium">
-              </div>
-            </div>
-            <div class="col-12 col-lg-6 theme-text-col">
-              <div class="theme-text-wrap">
-                <span class="theme-index">01 / Image de marque</span>
-                <h2 class="theme-title">DONNER UNE FORME CLAIRE A L’UNIVERS DE MARQUE</h2>
-                <p class="theme-subtitle">Image, outils, contenu</p>
-                <p class="theme-hook">De l’identité visible aux outils de marque, chaque élément doit traduire une même exigence.</p>
-                <p class="theme-text">
-                  Création et structuration des supports de marque, direction de l’image, contenus, narration et cohérence visuelle : un travail pensé pour donner à la marque plus de relief, plus d’unicité et une présence immédiatement identifiable.
-                </p>
-
-                <div class="theme-points">
-                  <div class="theme-point">
-                    <span class="theme-point-title">Outils de marque</span>
-                    <p class="theme-point-text">Supports, univers visible et fondations de marque.</p>
-                  </div>
-                  <div class="theme-point">
-                    <span class="theme-point-title">Brand content</span>
-                    <p class="theme-point-text">Contenus pensés pour renforcer la désirabilité.</p>
-                  </div>
-                  <div class="theme-point">
-                    <span class="theme-point-title">Cohérence visuelle</span>
-                    <p class="theme-point-text">Une présence identifiable sur tous les points visibles.</p>
-                  </div>
-                </div>
-
-                <a href="contact.html" class="btn btn-outline-light">ELEVER MON IMAGE</a>
-              </div>
+        <article class="reference-card" data-category="food hospitality content">
+          <img src="assets/img/references/morimoto-bordeaux.jpg" alt="Morimoto Bordeaux">
+          <div class="reference-overlay">
+            <div class="reference-sector">Restaurant Signature</div>
+            <h2 class="reference-name">Morimoto</h2>
+            <p class="reference-description">
+              Communication, storytelling et visibilité autour d’une expérience culinaire premium
+              entre codes japonais, art de vivre et gastronomie contemporaine.
+            </p>
+            <div class="reference-tags">
+              <span>Restaurant</span>
+              <span>Storytelling</span>
             </div>
           </div>
-        </section>
+        </article>
 
-        <section class="theme-section fade-in">
-          <div class="row gy-4 gy-lg-5 theme-row reverse-desktop">
-            <div class="col-12 col-lg-6 theme-media-col">
-              <div class="theme-media">
-                <video autoplay muted loop playsinline>
-                  <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/15_bfvtos.mp4" type="video/mp4">
-                </video>
-              </div>
-            </div>
-            <div class="col-12 col-lg-6 theme-text-col">
-              <div class="theme-text-wrap">
-                <span class="theme-index">02 / Déploiement stratégique 360°</span>
-                <h2 class="theme-title">DEPLOYER LA MARQUE AVEC JUSTESSE</h2>
-                <p class="theme-subtitle">Stratégie, visibilité, lancement</p>
-                <p class="theme-hook">Une marque forte ne se contente pas d’exister : elle se déploie avec méthode.</p>
-                <p class="theme-text">
-                  Stratégie marketing et communication, activations, visibilité, influence, campagnes, prises de parole et déploiement opérationnel : l’enjeu est de faire rayonner la marque sans jamais diluer sa singularité.
-                </p>
-
-                <div class="theme-points">
-                  <div class="theme-point">
-                    <span class="theme-point-title">Strategie 360</span>
-                    <p class="theme-point-text">Hiérarchiser, arbitrer et coordonner les bons leviers.</p>
-                  </div>
-                  <div class="theme-point">
-                    <span class="theme-point-title">Rayonnement</span>
-                    <p class="theme-point-text">Ouvertures, activations et visibilité cohérentes.</p>
-                  </div>
-                  <div class="theme-point">
-                    <span class="theme-point-title">Déploiement</span>
-                    <p class="theme-point-text">Faire vivre la marque avec méthode et continuité.</p>
-                  </div>
-                </div>
-
-                <a href="contact.html" class="btn btn-outline-light">RENFORCER MA VISIBILITE</a>
-              </div>
+        <article class="reference-card" data-category="food lifestyle brand">
+          <img src="assets/img/references/cafe-bonart.jpg" alt="Café Bonart Bordeaux">
+          <div class="reference-overlay">
+            <div class="reference-sector">Delicatessen Bar Bistrot</div>
+            <h2 class="reference-name">Café Bonart</h2>
+            <p class="reference-description">
+              Repositionnement d’un lieu de vie bordelais : univers arty, social media,
+              tonalité éditoriale et lancement de concept.
+            </p>
+            <div class="reference-tags">
+              <span>Branding</span>
+              <span>Social Media</span>
             </div>
           </div>
-        </section>
+        </article>
 
-        <section class="theme-section fade-in">
-          <div class="row gy-4 gy-lg-5 theme-row">
-            <div class="col-12 col-lg-6 theme-media-col">
-              <div class="theme-media">
-                <video autoplay muted loop playsinline>
-                  <source src="https://res.cloudinary.com/dycdc9tku/video/upload/v1771946601/16_phtw8d.mp4" type="video/mp4">
-                </video>
-              </div>
-            </div>
-            <div class="col-12 col-lg-6 theme-text-col">
-              <div class="theme-text-wrap">
-                <span class="theme-index">03 / Digital & experience</span>
-                <h2 class="theme-title">PROLONGER L’EXIGENCE SUR TOUS LES POINTS DE CONTACT</h2>
-                <p class="theme-subtitle">Site, SEO, UX, parcours</p>
-                <p class="theme-hook">Le digital doit être à la hauteur de l’expérience et de l’image portées par la marque.</p>
-                <p class="theme-text">
-                  Sites, SEO, UX, parcours, outils digitaux et expérience en ligne : chaque support est pensé comme une continuité naturelle de la marque, au service de sa lisibilité, de sa crédibilité et de sa performance.
-                </p>
-
-                <div class="theme-points">
-                  <div class="theme-point">
-                    <span class="theme-point-title">Site & visibilité</span>
-                    <p class="theme-point-text">Web et référencement comme leviers de marque.</p>
-                  </div>
-                  <div class="theme-point">
-                    <span class="theme-point-title">UX & parcours</span>
-                    <p class="theme-point-text">Une expérience plus fluide, plus claire, plus crédible.</p>
-                  </div>
-                  <div class="theme-point">
-                    <span class="theme-point-title">Cohérence digitale</span>
-                    <p class="theme-point-text">Prolonger le même niveau d’exigence en ligne.</p>
-                  </div>
-                </div>
-
-                <a href="contact.html" class="btn btn-outline-light">ELEVER MA PRESENCE</a>
-              </div>
+        <article class="reference-card" data-category="lifestyle content">
+          <img src="assets/img/references/java-cap-ferret.jpg" alt="Java Cap Ferret">
+          <div class="reference-overlay">
+            <div class="reference-sector">Cap Ferret Lifestyle</div>
+            <h2 class="reference-name">Java</h2>
+            <p class="reference-description">
+              Création d’un univers de communication solaire et convivial :
+              contenus, captions, activations et rendez-vous hebdomadaires.
+            </p>
+            <div class="reference-tags">
+              <span>Content</span>
+              <span>Art de vivre</span>
             </div>
           </div>
-        </section>
+        </article>
 
-      </div>
-    </section>
-
-    <section class="references-cta fade-in">
-      <div class="container">
-        <div class="cta-block">
-          <h2 class="cta-title">UNE DIRECTION PLUS NETTE, PLUS TENUE, PLUS IMPACTANTE</h2>
-          <p class="cta-text">
-            Abyss Lab accompagne les marques qui veulent gagner en cohérence, en relief et en impact sur l’ensemble de leurs points de contact.
-          </p>
-          <div class="cta-actions">
-            <a href="contact.html" class="btn btn-outline-light">DEMARRER UN PROJET</a>
-            <a href="services.html" class="btn-light-ghost">VOIR LES SERVICES</a>
+        <article class="reference-card large" data-category="brand lifestyle">
+          <img src="assets/img/references/role-modele.jpg" alt="Rôle Modèle">
+          <div class="reference-overlay">
+            <div class="reference-sector">Personal Brand & Média</div>
+            <h2 class="reference-name">Rôle Modèle</h2>
+            <p class="reference-description">
+              Construction de contenus éditoriaux, posts cas client et prises de parole
+              pour une marque à forte dimension humaine et inspirationnelle.
+            </p>
+            <div class="reference-tags">
+              <span>Editorial</span>
+              <span>LinkedIn</span>
+              <span>Instagram</span>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </article>
 
+        <article class="reference-card" data-category="hospitality brand content">
+          <img src="assets/img/references/constance-hotels.jpg" alt="Constance Hotels">
+          <div class="reference-overlay">
+            <div class="reference-sector">Hospitality Group</div>
+            <h2 class="reference-name">Constance</h2>
+            <p class="reference-description">
+              Expérience groupe autour de la communication hôtelière premium,
+              des standards de marque et de la valorisation d’expériences.
+            </p>
+            <div class="reference-tags">
+              <span>Hospitality</span>
+              <span>Luxury</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="reference-card tall" data-category="hospitality lifestyle">
+          <img src="assets/img/references/millesime-collection.jpg" alt="Millésime Collection">
+          <div class="reference-overlay">
+            <div class="reference-sector">Collection Hôtelière</div>
+            <h2 class="reference-name">Millésime</h2>
+            <p class="reference-description">
+              Sensibilité maison, art de vivre, expériences et lieux de caractère
+              au service d’une communication premium.
+            </p>
+            <div class="reference-tags">
+              <span>Art de vivre</span>
+              <span>Image</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="reference-card" data-category="brand content">
+          <img src="assets/img/references/vintage-group.jpg" alt="Vintage Group Bordeaux">
+          <div class="reference-overlay">
+            <div class="reference-sector">Groupe Bars & Média</div>
+            <h2 class="reference-name">Vintage Group</h2>
+            <p class="reference-description">
+              Réflexion stratégique autour d’une architecture de marque cohérente,
+              tout en préservant l’ADN singulier de chaque lieu.
+            </p>
+            <div class="reference-tags">
+              <span>Stratégie</span>
+              <span>Marque</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="reference-card" data-category="food content lifestyle">
+          <img src="assets/img/references/food-content.jpg" alt="Création de contenu food">
+          <div class="reference-overlay">
+            <div class="reference-sector">Food Content</div>
+            <h2 class="reference-name">Content Studio</h2>
+            <p class="reference-description">
+              Création d’images, contenus sociaux, storytelling produit et mise en scène
+              pour restaurants, bars, hôtels et lieux lifestyle.
+            </p>
+            <div class="reference-tags">
+              <span>Photo</span>
+              <span>UGC</span>
+              <span>Social</span>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+      <section class="references-statement fade-in">
+        <h2>Depth creates distinction.</h2>
+        <p>
+          ABYSS LAB accompagne les marques qui veulent dépasser la simple présence digitale :
+          construire une image juste, une direction claire et une narration capable de créer du désir,
+          de la cohérence et de l’impact.
+        </p>
+      </section>
+
+    </div>
   </main>
 
-  <footer class="footer">
+  <!-- FOOTER -->
+  <footer>
     <div class="container">
-      <div class="footer-top">
-        <div class="row align-items-start gy-4">
-          <div class="col-12 col-lg-6">
-            <div class="footer-brand">ABYSS LAB.</div>
-            <p class="footer-tagline">
-              NOUS REVELONS LA PROFONDEUR DES MARQUES POUR FAIRE EMERGER DES UNIVERS FORTS ET DURABLES.
-            </p>
-            <div class="footer-location">
-              Basée à Bordeaux, disponible partout en France et à l'étranger.
-            </div>
-          </div>
-
-          <div class="col-12 col-lg-6 d-lg-flex justify-content-lg-end">
-            <div class="footer-social-block">
-              <div class="footer-social-title">Suivez-nous sur les réseaux sociaux :</div>
-              <div class="footer-socials">
-                <a class="footer-social" href="https://www.instagram.com/abyss.lab_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Abyss Lab"><i class="bi bi-instagram"></i></a>
-                <a class="footer-social" href="https://www.linkedin.com/company/abyss-lab/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Abyss Lab"><i class="bi bi-linkedin"></i></a>
-                <a class="footer-social" href="https://www.tiktok.com/@abyss.lab" target="_blank" rel="noopener noreferrer" aria-label="TikTok Abyss Lab"><i class="bi bi-tiktok"></i></a>
-              </div>
-            </div>
-          </div>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <strong>ABYSS LAB.</strong><br>
+          Agence basée Bordeaux. Déplacement partout en France et à l'étranger.
         </div>
-      </div>
 
-      <div class="footer-menu-row">
-        <nav class="footer-menu" aria-label="Menu footer">
-          <a href="index.html">Accueil</a>
-          <a href="services.html">Services</a>
-          <a href="references.html">Références</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-      </div>
-
-      <div class="footer-bottom">
-        <div class="footer-bottom-inner">
-          <div class="footer-legal">
-            <a href="mentions-legales.html">Mentions légales</a>
-            <a href="cgu.html">CGU</a>
-            <a href="cgv.html">CGV</a>
-            <a href="politique-confidentialite.html">Politique de confidentialité</a>
-          </div>
-          <div class="footer-copy">© 2026 Abyss Lab. Tous droits réservés.</div>
+        <div class="col-12 col-md-6 text-md-end mt-4 mt-md-0">
+          <a href="mentions-legales.html" class="text-white me-3">Mentions légales</a>
+          <a href="cgu.html" class="text-white me-3">CGU</a>
+          <a href="politique-confidentialite.html" class="text-white">Politique de confidentialité</a>
         </div>
       </div>
     </div>
@@ -1093,59 +504,65 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const video = document.getElementById("bg-video");
-      if (video) {
-        video.muted = true;
-        video.defaultMuted = true;
-        const startVideo = () => {
-          const promise = video.play();
-          if (promise !== undefined) promise.catch(() => {});
-        };
-        video.load();
-        startVideo();
-        document.addEventListener("touchstart", startVideo, { once: true, passive: true });
-        document.addEventListener("click", startVideo, { once: true });
-        document.addEventListener("visibilitychange", function () {
-          if (!document.hidden) startVideo();
-        });
-      }
+    document.addEventListener("DOMContentLoaded", function(){
+      const currentLocation = location.pathname.split("/").pop();
+      const menuItems = document.querySelectorAll(".nav-link");
 
-      const currentLocation = location.pathname.split("/").pop() || "references.html";
-      document.querySelectorAll(".nav-link").forEach(link => {
-        if (link.getAttribute("href") === currentLocation) link.classList.add("active");
+      menuItems.forEach(link => {
+        if(link.getAttribute("href") === currentLocation){
+          link.classList.add("active");
+        }
       });
+    });
+  </script>
 
+  <script>
+    /* Sticky navbar */
+    window.addEventListener("scroll", function(){
       const navbar = document.querySelector(".navbar");
-      const faders = document.querySelectorAll(".fade-in");
-      const logoStrip = document.getElementById("logoStripScroll");
+      navbar.classList.toggle("scrolled", window.scrollY > 50);
+    });
 
-      window.addEventListener("scroll", function () {
-        navbar.classList.toggle("scrolled", window.scrollY > 50);
+    /* Fade-in on scroll */
+    const faders = document.querySelectorAll(".fade-in");
+
+    const appearOptions = {
+      threshold: 0.2
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer){
+      entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
       });
+    }, appearOptions);
 
-      const appearOnScroll = new IntersectionObserver(function(entries, observer){
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+
+    /* Portfolio filters */
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const referenceCards = document.querySelectorAll(".reference-card");
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const filter = button.getAttribute("data-filter");
+
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        referenceCards.forEach(card => {
+          const categories = card.getAttribute("data-category");
+
+          if(filter === "all" || categories.includes(filter)) {
+            card.classList.remove("hidden");
+          } else {
+            card.classList.add("hidden");
+          }
         });
-      }, { threshold: 0.16 });
-
-      faders.forEach(fader => appearOnScroll.observe(fader));
-
-      if (logoStrip) {
-        let autoHintDone = false;
-        const showScrollHint = () => {
-          if (autoHintDone) return;
-          autoHintDone = true;
-          logoStrip.scrollLeft = 150;
-          setTimeout(() => {
-            logoStrip.scrollLeft = 0;
-          }, 700);
-        };
-        setTimeout(showScrollHint, 700);
-      }
+      });
     });
   </script>
 
