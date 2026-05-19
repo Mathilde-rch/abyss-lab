@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Politique de confidentialité du site Abyss Lab.">
-  <title>Politique de confidentialité | ABYSS LAB</title>
+  <meta name="description" content="Politique de confidentialite du site Abyss Lab.">
+  <title>POLITIQUE DE CONFIDENTIALITE | ABYSS LAB</title>
 
-  <<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,54 +15,29 @@
   <link rel="stylesheet" href="assets/css/style.css">
 
   <style>
-    /* ===== GLOBAL ===== */
+
+    :root{
+      --white:#ffffff;
+      --white-soft:rgba(255,255,255,.84);
+      --white-muted:rgba(255,255,255,.66);
+      --line:rgba(255,255,255,.14);
+      --line-soft:rgba(255,255,255,.10);
+    }
+
     body{
       background:#000;
       color:#fff;
-      font-family:'couture', sans-serif;
-      position:relative;
+      font-family:'Montserrat', sans-serif;
       min-height:100vh;
+      overflow-x:hidden;
     }
 
-    .section-space{
-      padding:100px 0;
-    }
-
-    .thin-border{
-      border-bottom:1px solid #222;
-    }
-
-    .privacy-policy p,
-    .privacy-policy li{
-      font-family:"Montserrat", sans-serif;
-    }
-
-    /* ===== NAVBAR ===== */
-    .navbar{
-      position:relative;
-      z-index:20;
-      transition:background-color 0.3s ease, backdrop-filter 0.3s ease;
-    }
-
-    .navbar.scrolled{
-      background:rgba(0,0,0,0.72);
-      backdrop-filter:blur(10px);
-    }
-
-    .nav-link.active{
-      color:#fff !important;
-      font-weight:700;
-    }
-
-    /* ===== VIDEO BACKGROUND ===== */
     .video-background{
       position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
+      inset:0;
       z-index:-2;
       overflow:hidden;
+      background:#000;
     }
 
     .video-background video{
@@ -75,36 +50,75 @@
       content:"";
       position:absolute;
       inset:0;
-      background:rgba(0,0,0,0.58);
+      background:rgba(0,0,0,.58);
       z-index:1;
     }
 
-    /* ===== PRIVACY PAGE ===== */
-    .privacy-wrapper{
+    .navbar{
+      position:relative;
+      z-index:30;
+      transition:background-color .3s ease, backdrop-filter .3s ease;
+    }
+
+    .navbar.scrolled{
+      background:rgba(0,0,0,.68);
+      backdrop-filter:blur(14px);
+    }
+
+    .navbar-brand{
+      letter-spacing:1px;
+      color:var(--white)!important;
+    }
+
+    .nav-link{
+      font-family:'couture', sans-serif;
+      font-size:.80rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      font-weight:600;
+      color:var(--white-soft)!important;
+      padding-left:1rem!important;
+      padding-right:1rem!important;
+    }
+
+    .nav-link:hover,
+    .nav-link.active{
+      color:var(--white)!important;
+    }
+
+    .section-space{
       position:relative;
       z-index:2;
+      padding:100px 0;
     }
 
     .privacy-policy{
       max-width:950px;
     }
 
-    .privacy-policy h1,
+    .page-header{
+      margin-bottom:70px;
+    }
+
+    .page-title{
+      font-family:'couture', sans-serif;
+      font-size:2.4rem;
+      line-height:1.05;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      color:#fff;
+      margin:0;
+    }
+
     .privacy-policy h2{
       font-family:'couture', sans-serif;
       font-size:1.35rem;
       margin-bottom:25px;
       color:#fff;
-      letter-spacing:0.5px;
+      letter-spacing:.5px;
       line-height:1.3;
-    }
-
-    .privacy-policy h1{
-      margin-top:0;
-    }
-
-    .privacy-policy h2{
       margin-top:50px;
+      text-transform:uppercase;
     }
 
     .privacy-policy p{
@@ -118,49 +132,162 @@
       color:#fff;
     }
 
-    /* ===== FOOTER ===== */
-    footer{
-      border-top:1px solid rgba(255,255,255,0.15);
-      padding:60px 0;
-      font-size:0.9rem;
+    .footer{
+      border-top:1px solid var(--line);
+      padding:28px 0 14px;
       position:relative;
       z-index:2;
     }
 
-    footer a{
+    .footer-top{
+      padding-bottom:20px;
+      margin-bottom:20px;
+      border-bottom:1px solid rgba(255,255,255,.18);
+    }
+
+    .footer-brand{
+      font-size:.98rem;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:10px;
+      color:var(--white);
+    }
+
+    .footer-tagline{
+      margin:0;
+      max-width:640px;
+      font-size:.93rem;
+      line-height:1.66;
+      font-weight:600;
+      text-transform:uppercase;
+      color:var(--white);
+    }
+
+    .footer-location{
+      margin-top:10px;
+      font-size:.92rem;
+      line-height:1.68;
+      color:var(--white-soft);
+    }
+
+    .footer-social-block{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+    }
+
+    .footer-social-title{
+      font-size:.92rem;
+      line-height:1.5;
+      font-weight:600;
+      color:var(--white);
+      margin-bottom:10px;
+    }
+
+    .footer-socials{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .footer-social{
+      width:42px;
+      height:42px;
+      border:1.5px solid rgba(255,255,255,.78);
+      border-radius:50%;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--white);
       text-decoration:none;
+      font-size:1rem;
+      background:rgba(255,255,255,.01);
     }
 
-    footer a:hover{
-      opacity:0.8;
+    .footer-menu-row{
+      padding:0 0 18px;
     }
 
-    /* ===== FADE IN ===== */
-    .fade-in{
-      opacity:0;
-      transform:translateY(30px);
-      transition:opacity 0.8s ease, transform 0.8s ease;
+    .footer-menu{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+      width:100%;
     }
 
-    .fade-in.visible{
-      opacity:1;
-      transform:translateY(0);
+    .footer-menu a{
+      color:var(--white);
+      text-decoration:none;
+      font-size:.93rem;
+      font-weight:600;
+      letter-spacing:.10em;
+      text-transform:uppercase;
     }
 
-    @media (max-width: 768px){
+    .footer-bottom{
+      border-top:1px solid var(--line-soft);
+      padding-top:12px;
+    }
+
+    .footer-bottom-inner{
+      display:grid;
+      grid-template-columns:1fr auto;
+      align-items:center;
+      gap:18px;
+    }
+
+    .footer-legal{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px 30px;
+    }
+
+    .footer-legal a{
+      color:var(--white-muted);
+      text-decoration:none;
+      font-size:.82rem;
+    }
+
+    .footer-copy{
+      color:var(--white-muted);
+      font-size:.82rem;
+      text-align:right;
+      white-space:nowrap;
+    }
+
+    @media(max-width:767.98px){
+
       .section-space{
         padding:70px 0;
       }
 
-      .privacy-policy h1,
+      .page-title{
+        font-size:1.55rem;
+        line-height:1.1;
+      }
+
       .privacy-policy h2{
-        font-size:1.2rem;
+        font-size:1.1rem;
       }
 
       .privacy-policy p{
-        font-size:0.96rem;
+        font-size:.96rem;
+      }
+
+      .footer-menu{
+        grid-template-columns:1fr;
+      }
+
+      .footer-bottom-inner{
+        grid-template-columns:1fr;
+      }
+
+      .footer-copy{
+        text-align:left;
       }
     }
+
   </style>
 </head>
 
@@ -168,7 +295,15 @@
 
   <!-- BACKGROUND VIDEO -->
   <div class="video-background">
-    <video autoplay muted loop playsinline preload="auto">
+    <video
+      id="bg-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      webkit-playsinline
+      preload="auto"
+    >
       <source src="assets/video/abyss-lab.mp4" type="video/mp4">
     </video>
   </div>
@@ -176,296 +311,295 @@
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark py-3">
     <div class="container">
+
       <a class="navbar-brand fw-bold" href="index.html">ABYSS LAB.</a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Ouvrir le menu">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse justify-content-end" id="navmenu">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">A PROPOS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="services.html">SERVICES</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="references.html">REFERENCES</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">CONTACT</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="index.html">ACCUEIL</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">SERVICES</a></li>
+          <li class="nav-item"><a class="nav-link" href="references.html">REFERENCES</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
         </ul>
       </div>
+
     </div>
   </nav>
 
   <!-- CONTENT -->
-  <section class="section-space privacy-wrapper fade-in">
-    <div class="container">
-      <section class="privacy-policy">
+  <main>
 
-        <h1>1. Responsable du traitement</h1>
+    <section class="section-space">
+      <div class="container">
 
-        <p>
-          La présente politique de confidentialité décrit la manière dont Abyss Lab collecte,
-          utilise et protège les données personnelles des utilisateurs du site.
-        </p>
+        <section class="privacy-policy">
 
-        <p>
-          Le responsable du traitement est :
-        </p>
+          <div class="page-header">
+            <h1 class="page-title">POLITIQUE DE CONFIDENTIALITE</h1>
+          </div>
 
-        <p>
-          <strong>Mathilde Ranchon – Abyss Lab</strong><br>
-          Micro-entreprise (Entreprise individuelle)<br>
-          Siège social : 43 Rue Marcelin Berthelot, 33270 Floirac, France<br>
-          SIREN : 101581593<br>
-          SIRET : 10158159300015<br>
-          Code APE : 7021Z<br>
-          Email : mathilde@abyss-lab.com
-        </p>
+          <h2>1. RESPONSABLE DU TRAITEMENT</h2>
 
-        <h2>2. Donnees collectees</h2>
+          <p>
+            La présente politique de confidentialité décrit la manière dont Abyss Lab collecte,
+            utilise et protège les données personnelles des utilisateurs du site.
+          </p>
 
-        <p>
-          Abyss Lab peut collecter les données personnelles suivantes via son site internet :
-        </p>
+          <p>
+            Le responsable du traitement est :
+          </p>
 
-        <p>
-          – nom et prénom<br>
-          – adresse email<br>
-          – numéro de téléphone<br>
-          – nom de société<br>
-          – toute information transmise volontairement par l’utilisateur via le formulaire de contact ou par email
-        </p>
+          <p>
+            <strong>Mathilde Ranchon – Abyss Lab</strong><br>
+            Micro-entreprise (Entreprise individuelle)<br>
+            Siège social : 43 Rue Marcelin Berthelot, 33270 Floirac, France<br>
+            SIREN : 101581593<br>
+            SIRET : 10158159300015<br>
+            Code APE : 7021Z<br>
+            Email : mathilde@abyss-lab.com
+          </p>
 
-        <h2>3. Finalites du traitement</h2>
+          <h2>2. DONNEES COLLECTEES</h2>
 
-        <p>
-          Les données personnelles collectées sur le site sont utilisées pour :
-        </p>
+          <p>
+            Abyss Lab peut collecter les données personnelles suivantes via son site internet :
+          </p>
 
-        <p>
-          – répondre aux demandes envoyées via le formulaire de contact ou par email<br>
-          – échanger avec les prospects, clients ou partenaires dans le cadre de l’activité de Abyss Lab<br>
-          – assurer le suivi des demandes et des échanges commerciaux<br>
-          – améliorer le site, son contenu et l’expérience utilisateur<br>
-          – établir des statistiques de fréquentation, sous réserve des réglages de consentement applicables
-        </p>
+          <p>
+            – nom et prénom<br>
+            – adresse email<br>
+            – numéro de téléphone<br>
+            – nom de société<br>
+            – toute information transmise volontairement par l’utilisateur via le formulaire de contact ou par email
+          </p>
 
-        <h2>4. Bases legales du traitement</h2>
+          <h2>3. FINALITES DU TRAITEMENT</h2>
 
-        <p>
-          Les traitements de données réalisés par Abyss Lab reposent sur les bases légales suivantes :
-        </p>
+          <p>
+            Les données personnelles collectées sur le site sont utilisées pour :
+          </p>
 
-        <p>
-          – le consentement de l’utilisateur, lorsqu’il contacte Abyss Lab via un formulaire ou accepte certains cookies<br>
-          – l’exécution de mesures précontractuelles ou contractuelles, lorsque la demande concerne une prestation ou une collaboration<br>
-          – l’intérêt légitime de Abyss Lab, notamment pour assurer la gestion du site, la sécurité, le traitement des demandes entrantes et l’amélioration de ses services<br>
-          – le respect d’obligations légales, lorsque la conservation de certaines données est imposée par la réglementation applicable
-        </p>
+          <p>
+            – répondre aux demandes envoyées via le formulaire de contact ou par email<br>
+            – échanger avec les prospects, clients ou partenaires dans le cadre de l’activité de Abyss Lab<br>
+            – assurer le suivi des demandes et des échanges commerciaux<br>
+            – améliorer le site, son contenu et l’expérience utilisateur<br>
+            – établir des statistiques de fréquentation, sous réserve des réglages de consentement applicables
+          </p>
 
-        <h2>5. Destinataires des donnees</h2>
+          <h2>4. BASES LEGALES DU TRAITEMENT</h2>
 
-        <p>
-          Les données personnelles collectées sont destinées exclusivement à Abyss Lab.
-          Elles peuvent toutefois être transmises, dans la stricte limite nécessaire,
-          à des prestataires techniques intervenant dans le fonctionnement du site,
-          notamment l’hébergeur, les outils de messagerie, les outils d’analyse d’audience
-          ou tout prestataire technique agissant pour le compte de Abyss Lab.
-        </p>
+          <p>
+            Les traitements de données réalisés par Abyss Lab reposent sur les bases légales suivantes :
+          </p>
 
-        <p>
-          Abyss Lab ne vend ni ne cède les données personnelles à des tiers à des fins commerciales.
-        </p>
+          <p>
+            – le consentement de l’utilisateur, lorsqu’il contacte Abyss Lab via un formulaire ou accepte certains cookies<br>
+            – l’exécution de mesures précontractuelles ou contractuelles, lorsque la demande concerne une prestation ou une collaboration<br>
+            – l’intérêt légitime de Abyss Lab, notamment pour assurer la gestion du site, la sécurité, le traitement des demandes entrantes et l’amélioration de ses services<br>
+            – le respect d’obligations légales, lorsque la conservation de certaines données est imposée par la réglementation applicable
+          </p>
 
-        <h2>6. Duree de conservation</h2>
+          <h2>5. DESTINATAIRES DES DONNEES</h2>
 
-        <p>
-          Les données personnelles sont conservées pendant une durée n’excédant pas celle
-          nécessaire aux finalités pour lesquelles elles sont collectées.
-        </p>
+          <p>
+            Les données personnelles collectées sont destinées exclusivement à Abyss Lab.
+            Elles peuvent toutefois être transmises, dans la stricte limite nécessaire,
+            à des prestataires techniques intervenant dans le fonctionnement du site.
+          </p>
 
-        <p>
-          À titre indicatif :
-        </p>
+          <h2>6. DUREE DE CONSERVATION</h2>
 
-        <p>
-          – les données transmises via le formulaire de contact ou par email sont conservées pendant une durée maximale de 3 ans à compter du dernier contact émanant de l’utilisateur, sauf relation contractuelle ou obligation légale contraire<br>
-          – les données liées à une relation commerciale ou contractuelle peuvent être archivées pendant la durée nécessaire à la gestion de la relation, puis pendant les délais légaux applicables<br>
-          – les cookies et traceurs sont conservés conformément à la réglementation en vigueur et aux paramétrages du site
-        </p>
+          <p>
+            Les données personnelles sont conservées pendant une durée n’excédant pas celle
+            nécessaire aux finalités pour lesquelles elles sont collectées.
+          </p>
 
-        <h2>7. Caractere obligatoire ou facultatif des donnees</h2>
+          <h2>7. CARACTERE OBLIGATOIRE OU FACULTATIF DES DONNEES</h2>
 
-        <p>
-          Lorsque certaines informations sont demandées dans les formulaires du site,
-          l’utilisateur est informé du caractère obligatoire ou facultatif des données.
-        </p>
+          <p>
+            Lorsque certaines informations sont demandées dans les formulaires du site,
+            l’utilisateur est informé du caractère obligatoire ou facultatif des données.
+          </p>
 
-        <p>
-          Le défaut de renseignement des champs obligatoires peut empêcher Abyss Lab
-          de traiter la demande de l’utilisateur.
-        </p>
+          <h2>8. SECURITE DES DONNEES</h2>
 
-        <h2>8. Sécurité des données</h2>
+          <p>
+            Abyss Lab met en œuvre des mesures techniques et organisationnelles appropriées
+            afin de protéger les données personnelles contre la destruction, la perte,
+            l’altération ou l’accès non autorisé.
+          </p>
 
-        <p>
-          Abyss Lab met en œuvre des mesures techniques et organisationnelles appropriées
-          afin de protéger les données personnelles contre la destruction, la perte,
-          l’altération, la divulgation non autorisée ou l’accès non autorisé,
-          dans la limite des moyens techniques raisonnablement disponibles.
-        </p>
+          <h2>9. DROITS DES UTILISATEURS</h2>
 
-        <h2>9. Droits des utilisateurs</h2>
+          <p>
+            Conformément au RGPD et à la loi Informatique et Libertés,
+            chaque utilisateur dispose de différents droits concernant ses données personnelles.
+          </p>
 
-        <p>
-          Conformément au Règlement Général sur la Protection des Données (RGPD)
-          et à la loi Informatique et Libertés, chaque utilisateur dispose des droits suivants :
-        </p>
+          <h2>10. COOKIES ET TRACEURS</h2>
 
-        <p>
-          – droit d’accès<br>
-          – droit de rectification<br>
-          – droit à l’effacement<br>
-          – droit à la limitation du traitement<br>
-          – droit d’opposition<br>
-          – droit à la portabilité, lorsque celui-ci est applicable<br>
-          – droit de retirer son consentement à tout moment, lorsque le traitement repose sur le consentement
-        </p>
+          <p>
+            Le site peut utiliser des cookies ou autres traceurs nécessaires à son fonctionnement,
+            à la mesure d’audience ou à l’amélioration de l’expérience utilisateur.
+          </p>
 
-        <p>
-          L’utilisateur peut exercer ses droits en adressant sa demande à :
-          mathilde@abyss-lab.com
-        </p>
+          <h2>11. TRANSFERTS HORS UNION EUROPEENNE</h2>
 
-        <p>
-          En cas de doute raisonnable sur l’identité du demandeur, un justificatif d’identité
-          pourra être demandé.
-        </p>
+          <p>
+            Dans le cadre de l’utilisation de certains outils techniques ou services tiers,
+            certaines données peuvent être hébergées ou traitées en dehors de l’Union européenne.
+          </p>
 
-        <p>
-          L’utilisateur dispose également du droit d’introduire une réclamation auprès de la CNIL.
-        </p>
+          <h2>12. MODIFICATION DE LA POLITIQUE DE CONFIDENTIALITE</h2>
 
-        <h2>10. Cookies et traceurs</h2>
+          <p>
+            Abyss Lab se réserve le droit de modifier la présente politique de confidentialité
+            à tout moment afin de garantir sa conformité avec la législation en vigueur.
+          </p>
 
-        <p>
-          Le site peut utiliser des cookies ou autres traceurs nécessaires à son fonctionnement,
-          à la mesure d’audience ou à l’amélioration de l’expérience utilisateur.
-        </p>
+          <h2>13. CONTACT</h2>
 
-        <p>
-          Lorsqu’ils ne sont pas strictement nécessaires au fonctionnement du site,
-          ces cookies ou traceurs sont déposés uniquement après recueil du consentement
-          de l’utilisateur, conformément à la réglementation applicable.
-        </p>
+          <p>
+            Pour toute question relative à la présente politique de confidentialité
+            ou au traitement des données personnelles effectué par Abyss Lab,
+            vous pouvez écrire à :
+          </p>
 
-        <p>
-          L’utilisateur peut à tout moment accepter, refuser ou modifier ses préférences
-          en matière de cookies via le bandeau ou l’outil de gestion du consentement
-          mis à sa disposition sur le site.
-        </p>
+          <p>
+            mathilde@abyss-lab.com
+          </p>
 
-        <h2>11. Transferts hors Union europeenne</h2>
+        </section>
 
-        <p>
-          Dans le cadre de l’utilisation de certains outils techniques ou services tiers,
-          certaines données peuvent être hébergées ou traitées en dehors de l’Union européenne.
-        </p>
+      </div>
+    </section>
 
-        <p>
-          Dans une telle hypothèse, Abyss Lab veille à ce que ces transferts soient encadrés
-          conformément à la réglementation applicable et assortis de garanties appropriées.
-        </p>
-
-        <h2>12. Modification de la politique de confidentialite</h2>
-
-        <p>
-          Abyss Lab se réserve le droit de modifier la présente politique de confidentialité
-          à tout moment afin de garantir sa conformité avec la législation en vigueur
-          ou de refléter une évolution de ses pratiques.
-        </p>
-
-        <p>
-          La version en ligne sur le site est celle en vigueur à la date de consultation.
-        </p>
-
-        <h2>13. Contact</h2>
-
-        <p>
-          Pour toute question relative à la présente politique de confidentialité
-          ou au traitement des données personnelles effectué par Abyss Lab,
-          vous pouvez écrire à :
-        </p>
-
-        <p>
-          mathilde@abyss-lab.com
-        </p>
-
-      </section>
-    </div>
-  </section>
+  </main>
 
   <!-- FOOTER -->
-  <footer>
+  <footer class="footer">
     <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <strong>ABYSS LAB.</strong><br>
-          Agence basée Bordeaux. Déplacement partout en France.
-        </div>
 
-        <div class="col-12 col-md-6 text-md-end mt-4 mt-md-0">
-          <a href="mentions-legales.html" class="text-white me-3">Mentions légales</a>
-          <a href="cgu.html" class="text-white me-3">CGU</a>
-          <a href="cgv.html" class="text-white me-3">CGV</a>
-          <a href="politique-confidentialite.html" class="text-white">Politique de confidentialité</a>
+      <div class="footer-top">
+        <div class="row align-items-start gy-4">
+
+          <div class="col-12 col-lg-6">
+            <div class="footer-brand">ABYSS LAB.</div>
+
+            <p class="footer-tagline">
+              NOUS REVELONS LA PROFONDEUR DES MARQUES POUR FAIRE EMERGER DES UNIVERS FORTS ET DURABLES.
+            </p>
+
+            <div class="footer-location">
+              Basée à Bordeaux, disponible partout en France et à l'étranger.
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6 d-lg-flex justify-content-lg-end">
+            <div class="footer-social-block">
+
+              <div class="footer-social-title">
+                Suivez-nous sur les réseaux sociaux :
+              </div>
+
+              <div class="footer-socials">
+                <a class="footer-social" href="https://www.instagram.com/abyss.lab_/" target="_blank">
+                  <i class="bi bi-instagram"></i>
+                </a>
+
+                <a class="footer-social" href="https://www.linkedin.com/company/abyss-lab/" target="_blank">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+
+                <a class="footer-social" href="https://www.tiktok.com/@abyss.lab" target="_blank">
+                  <i class="bi bi-tiktok"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
+
+      <div class="footer-menu-row">
+        <nav class="footer-menu">
+          <a href="index.html">Accueil</a>
+          <a href="services.html">Services</a>
+          <a href="references.html">Références</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+
+          <div class="footer-legal">
+            <a href="mentions-legales.html">Mentions légales</a>
+            <a href="cgu.html">CGU</a>
+            <a href="cgv.html">CGV</a>
+            <a href="politique-confidentialite.html">Politique de confidentialité</a>
+          </div>
+
+          <div class="footer-copy">
+            © 2026 Abyss Lab. Tous droits réservés.
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function(){
-      const currentLocation = location.pathname.split("/").pop();
-      const menuItems = document.querySelectorAll(".nav-link");
+    document.addEventListener("DOMContentLoaded", function () {
 
-      menuItems.forEach(link => {
-        if(link.getAttribute("href") === currentLocation){
-          link.classList.add("active");
-        }
+      const video = document.getElementById("bg-video");
+
+      if(video){
+
+        video.muted = true;
+        video.defaultMuted = true;
+        video.playsInline = true;
+
+        const playVideo = () => {
+          const promise = video.play();
+
+          if (promise !== undefined) {
+            promise.catch(() => {});
+          }
+        };
+
+        playVideo();
+
+        document.addEventListener("touchstart", playVideo, {
+          once:true,
+          passive:true
+        });
+
+        document.addEventListener("click", playVideo, {
+          once:true
+        });
+
+        document.addEventListener("visibilitychange", function () {
+          if (!document.hidden) {
+            playVideo();
+          }
+        });
+
+      }
+
+      window.addEventListener("scroll", function () {
+        document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 50);
       });
-    });
-  </script>
 
-  <script>
-    window.addEventListener("scroll", function(){
-      const navbar = document.querySelector(".navbar");
-      navbar.classList.toggle("scrolled", window.scrollY > 50);
-    });
-
-    const faders = document.querySelectorAll(".fade-in");
-
-    const appearOptions = {
-      threshold: 0.15
-    };
-
-    const appearOnScroll = new IntersectionObserver(function(entries, observer){
-      entries.forEach(entry => {
-        if(!entry.isIntersecting) return;
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      });
-    }, appearOptions);
-
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
     });
   </script>
 
