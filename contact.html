@@ -3,11 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Contactez Abyss Lab, studio créatif à Bordeaux spécialisé en branding, identité visuelle, stratégie digitale, social media et web design orientés performance.">
+
   <title>Contact | ABYSS LAB</title>
+
+  <meta name="description" content="Contactez Abyss Lab, studio créatif à Bordeaux : accompagnement 360, branding, stratégie digitale, réseaux sociaux, SEO, site vitrine, UGC, newsletter et brand content.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/couture" rel="stylesheet">
@@ -18,7 +21,7 @@
     :root{
       --white:#fff;
       --soft:rgba(255,255,255,.82);
-      --muted:rgba(255,255,255,.58);
+      --muted:rgba(255,255,255,.56);
       --line:rgba(255,255,255,.14);
     }
 
@@ -47,22 +50,23 @@
       content:"";
       position:absolute;
       inset:0;
-      background:rgba(0,0,0,.62);
+      background:linear-gradient(180deg, rgba(0,0,0,.52), rgba(0,0,0,.72));
     }
 
     .navbar{
       position:relative;
       z-index:30;
+      transition:.3s ease;
     }
 
     .navbar.scrolled{
-      background:rgba(0,0,0,.68);
+      background:rgba(0,0,0,.65);
       backdrop-filter:blur(14px);
     }
 
     .nav-link{
       font-family:'couture', sans-serif;
-      font-size:.8rem;
+      font-size:.78rem;
       letter-spacing:.16em;
       text-transform:uppercase;
       color:var(--soft)!important;
@@ -71,7 +75,7 @@
     .section-space{
       position:relative;
       z-index:2;
-      padding:70px 0 82px;
+      padding:72px 0 90px;
     }
 
     .eyebrow,
@@ -87,19 +91,19 @@
 
     .page-title{
       font-family:'couture', sans-serif;
-      font-size:clamp(1.55rem,3.2vw,2.8rem);
+      font-size:clamp(1.6rem,3.2vw,2.9rem);
       line-height:1.08;
       letter-spacing:.08em;
       text-transform:uppercase;
-      max-width:780px;
+      max-width:820px;
       margin:0 0 18px;
     }
 
     .hero-lead{
-      max-width:660px;
+      max-width:720px;
       color:var(--soft);
       font-size:.96rem;
-      line-height:1.65;
+      line-height:1.7;
       margin:0;
     }
 
@@ -107,8 +111,8 @@
       display:flex;
       flex-wrap:wrap;
       gap:10px;
-      margin-top:28px;
-      max-width:900px;
+      margin-top:30px;
+      max-width:980px;
     }
 
     .hero-keywords span{
@@ -119,9 +123,9 @@
       padding:9px 15px;
       border-radius:999px;
       border:1px solid rgba(255,255,255,.16);
-      background:rgba(0,0,0,.30);
+      background:rgba(0,0,0,.28);
       backdrop-filter:blur(12px);
-      color:rgba(255,255,255,.76);
+      color:rgba(255,255,255,.78);
       font-size:.62rem;
       letter-spacing:.09em;
       text-transform:uppercase;
@@ -131,53 +135,54 @@
 
     .hero-keywords span:hover{
       background:rgba(255,255,255,.18);
-      color:#fff;
       border-color:rgba(255,255,255,.62);
-      box-shadow:0 0 22px rgba(255,255,255,.20);
+      color:#fff;
+      box-shadow:0 0 22px rgba(255,255,255,.18);
       transform:translateY(-2px);
     }
 
     .contact-grid{
-      margin-top:48px;
+      margin-top:52px;
       display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:24px;
+      grid-template-columns:1fr;
+      max-width:880px;
     }
 
     .contact-card{
       border:1px solid var(--line);
-      background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.035));
+      background:linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.035));
       backdrop-filter:blur(16px);
-      border-radius:24px;
-      padding:28px;
+      border-radius:26px;
+      padding:34px;
     }
 
     .contact-card h2{
-      font-size:clamp(1.15rem,1.8vw,1.55rem);
-      line-height:1.15;
-      margin-bottom:14px;
+      font-size:clamp(1.2rem,2vw,1.7rem);
+      line-height:1.14;
+      margin-bottom:16px;
       font-weight:800;
       text-transform:uppercase;
     }
 
     .contact-text{
       color:var(--soft);
-      line-height:1.6;
-      font-size:.93rem;
+      line-height:1.65;
+      font-size:.95rem;
+      max-width:700px;
       margin:0;
     }
 
     .mail-box{
-      margin-top:22px;
-      padding:20px;
-      border-radius:20px;
-      border:1px solid rgba(255,255,255,.20);
-      background:rgba(255,255,255,.07);
+      margin-top:26px;
+      padding:22px;
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.06);
     }
 
     .mail-label{
       display:block;
-      margin-bottom:8px;
+      margin-bottom:10px;
       font-size:.66rem;
       letter-spacing:.16em;
       text-transform:uppercase;
@@ -192,15 +197,15 @@
       gap:14px;
       color:#fff;
       text-decoration:none;
-      font-size:clamp(1rem,2vw,1.35rem);
+      font-size:clamp(1rem,2vw,1.45rem);
       font-weight:800;
-      line-height:1.25;
+      line-height:1.2;
       word-break:break-word;
     }
 
     .mail-link:hover{
       color:#fff;
-      text-shadow:0 0 20px rgba(255,255,255,.35);
+      text-shadow:0 0 18px rgba(255,255,255,.38);
     }
 
     .btn-mail{
@@ -226,45 +231,51 @@
       color:#000;
     }
 
-    .brief-mini{
-      margin-top:20px;
-      display:grid;
-      gap:12px;
+    .social-zone{
+      margin-top:30px;
     }
 
-    .brief-mini p{
-      margin:0;
-      padding-bottom:12px;
-      border-bottom:1px solid rgba(255,255,255,.10);
-      color:#fff;
-      font-size:.95rem;
-      font-weight:500;
+    .social-title{
+      margin-bottom:10px;
+      font-size:.7rem;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--muted);
+      font-weight:700;
+    }
+
+    .social-intro{
+      color:var(--soft);
+      font-size:.92rem;
+      line-height:1.6;
+      max-width:620px;
+      margin-bottom:16px;
     }
 
     .social-links{
-      margin-top:20px;
       display:flex;
-      gap:10px;
       flex-wrap:wrap;
+      gap:12px;
     }
 
     .social-link{
       display:inline-flex;
       align-items:center;
-      gap:8px;
+      gap:9px;
       color:#fff;
       text-decoration:none;
-      border:1px solid var(--line);
+      border:1px solid rgba(255,255,255,.16);
       border-radius:999px;
-      padding:10px 14px;
-      background:rgba(255,255,255,.035);
-      font-size:.85rem;
+      padding:11px 16px;
+      background:rgba(255,255,255,.03);
+      font-size:.84rem;
       transition:.25s ease;
     }
 
     .social-link:hover{
       background:#fff;
       color:#000;
+      transform:translateY(-2px);
     }
 
     .footer{
@@ -286,7 +297,6 @@
       letter-spacing:.16em;
       text-transform:uppercase;
       margin-bottom:10px;
-      color:var(--white);
     }
 
     .footer-tagline{
@@ -296,7 +306,6 @@
       line-height:1.66;
       font-weight:600;
       text-transform:uppercase;
-      color:var(--white);
     }
 
     .footer-location{
@@ -304,20 +313,6 @@
       font-size:.92rem;
       line-height:1.68;
       color:var(--soft);
-    }
-
-    .footer-social-block{
-      display:flex;
-      flex-direction:column;
-      align-items:flex-start;
-    }
-
-    .footer-social-title{
-      font-size:.92rem;
-      line-height:1.5;
-      font-weight:600;
-      color:var(--white);
-      margin-bottom:10px;
     }
 
     .footer-socials{
@@ -334,13 +329,9 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      color:var(--white);
+      color:#fff;
       text-decoration:none;
       font-size:1rem;
-    }
-
-    .footer-menu-row{
-      padding:0 0 18px;
     }
 
     .footer-menu{
@@ -351,7 +342,7 @@
     }
 
     .footer-menu a{
-      color:var(--white);
+      color:#fff;
       text-decoration:none;
       font-size:.93rem;
       font-weight:600;
@@ -362,13 +353,14 @@
     .footer-bottom{
       border-top:1px solid rgba(255,255,255,.10);
       padding-top:12px;
+      margin-top:18px;
     }
 
     .footer-bottom-inner{
       display:grid;
       grid-template-columns:1fr auto;
-      align-items:center;
       gap:18px;
+      align-items:center;
     }
 
     .footer-legal{
@@ -384,24 +376,18 @@
       font-size:.82rem;
     }
 
-    @media(max-width:991.98px){
-      .contact-grid{
-        grid-template-columns:1fr;
-      }
-    }
-
-    @media(max-width:767.98px){
+    @media(max-width:767px){
       .section-space{
-        padding:58px 0 70px;
+        padding:58px 0 72px;
       }
 
       .contact-card{
-        padding:22px;
+        padding:24px;
       }
 
       .mail-link{
-        align-items:flex-start;
         flex-direction:column;
+        align-items:flex-start;
       }
 
       .footer-menu,
@@ -422,7 +408,10 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark py-3">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">ABYSS LAB.</a>
+
+      <a class="navbar-brand fw-bold" href="index.html">
+        ABYSS LAB.
+      </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
         <span class="navbar-toggler-icon"></span>
@@ -436,6 +425,7 @@
           <li class="nav-item"><a class="nav-link active" href="contact.html">CONTACT</a></li>
         </ul>
       </div>
+
     </div>
   </nav>
 
@@ -443,89 +433,106 @@
     <section class="section-space">
       <div class="container">
 
-        <span class="eyebrow">STUDIO CRÉATIF À BORDEAUX</span>
+        <span class="eyebrow">
+          STUDIO CRÉATIF À BORDEAUX
+        </span>
 
         <h1 class="page-title">
-          Une image plus forte. Un impact plus rentable.
+          Faisons rayonner votre marque en profondeur.
         </h1>
 
         <p class="hero-lead">
-          Abyss Lab aide les marques à renforcer leur image, clarifier leur positionnement
-          et transformer leur présence digitale en levier de croissance.
+          Abyss Lab révèle ce qui rend votre marque claire, désirable et rentable :
+          stratégie, image, contenu et leviers digitaux pensés pour générer un vrai impact.
         </p>
 
         <div class="hero-keywords">
-          <span>Branding</span>
-          <span>Identité visuelle</span>
-          <span>Direction artistique</span>
+          <span>Accompagnement 360°</span>
+          <span>Consultation</span>
+          <span>Réseaux sociaux</span>
+          <span>SEO</span>
+          <span>Newsletter</span>
           <span>Stratégie digitale</span>
-          <span>Création de contenu</span>
-          <span>Social media</span>
-          <span>Web design</span>
-          <span>Image de marque</span>
-          <span>Design graphique</span>
+          <span>Site vitrine</span>
+          <span>Branding</span>
+          <span>UGC</span>
+          <span>Brand content</span>
+          <span>Identité visuelle</span>
           <span>Communication digitale</span>
-          <span>Studio créatif Bordeaux</span>
-          <span>Positionnement de marque</span>
         </div>
 
         <div class="contact-grid">
 
           <div class="contact-card">
-            <span class="small-label">CONTACT DIRECT</span>
 
-            <h2>Parlons performance.</h2>
+            <span class="small-label">
+              CONTACT DIRECT
+            </span>
+
+            <h2>
+              Exprimez votre besoin.
+            </h2>
 
             <p class="contact-text">
-              Envoyez votre demande par mail. Simple, direct, efficace.
+              Projet, objectif, problématique ou envie de faire évoluer votre marque :
+              écrivez-nous simplement. Nous revenons vers vous avec une vision claire.
             </p>
 
             <div class="mail-box">
-              <span class="mail-label">Adresse email</span>
 
-              <a class="mail-link" href="mailto:mathilde@abyss-lab.com?subject=Demande%20de%20contact%20-%20Abyss%20Lab">
+              <span class="mail-label">
+                Écrivez-nous
+              </span>
+
+              <a
+                class="mail-link"
+                href="mailto:mathilde@abyss-lab.com?subject=Demande%20de%20contact%20-%20Abyss%20Lab"
+              >
                 mathilde@abyss-lab.com
                 <i class="bi bi-arrow-up-right"></i>
               </a>
 
-              <a class="btn-mail" href="mailto:mathilde@abyss-lab.com?subject=Demande%20de%20contact%20-%20Abyss%20Lab">
-                Contacter Abyss Lab
+              <a
+                class="btn-mail"
+                href="mailto:mathilde@abyss-lab.com?subject=Projet%20-%20Abyss%20Lab&body=Bonjour%20Abyss%20Lab,%0D%0A%0D%0AJe%20souhaite%20vous%20parler%20de%20mon%20besoin%20/%20projet.%0D%0A%0D%0AMarque%20/%20activité%20:%0D%0ABesoin%20:%0D%0AObjectif%20:%0D%0ATiming%20:%0D%0A%0D%0AMerci."
+              >
+                Envoyer un mail
               </a>
+
             </div>
 
-            <div class="social-links">
-              <a class="social-link" href="https://www.instagram.com/abyss.lab_/" target="_blank">
-                <i class="bi bi-instagram"></i> Instagram
-              </a>
+            <div class="social-zone">
 
-              <a class="social-link" href="https://www.linkedin.com/company/abyss-lab/" target="_blank">
-                <i class="bi bi-linkedin"></i> LinkedIn
-              </a>
+              <div class="social-title">
+                SUIVRE NOTRE ACTUALITÉ
+              </div>
 
-              <a class="social-link" href="https://www.tiktok.com/@abyss.lab" target="_blank">
-                <i class="bi bi-tiktok"></i> TikTok
-              </a>
+              <p class="social-intro">
+                Suivez Abyss Lab pour découvrir nos projets, idées, coulisses
+                et inspirations autour de la marque, du contenu et du digital.
+              </p>
+
+              <div class="social-links">
+
+                <a class="social-link" href="https://www.instagram.com/abyss.lab_/" target="_blank">
+                  <i class="bi bi-instagram"></i>
+                  Instagram
+                </a>
+
+                <a class="social-link" href="https://www.linkedin.com/company/abyss-lab/" target="_blank">
+                  <i class="bi bi-linkedin"></i>
+                  LinkedIn
+                </a>
+
+                <a class="social-link" href="https://www.tiktok.com/@abyss.lab" target="_blank">
+                  <i class="bi bi-tiktok"></i>
+                  TikTok
+                </a>
+
+              </div>
+
             </div>
-          </div>
 
-          <div class="contact-card">
-            <span class="small-label">BRIEF RAPIDE</span>
-
-            <h2>Dans votre mail.</h2>
-
-            <div class="brief-mini">
-              <p>Votre marque ou activité.</p>
-              <p>Votre objectif business.</p>
-              <p>Votre besoin prioritaire.</p>
-              <p>Votre timing.</p>
-            </div>
-
-            <a
-              class="btn-mail"
-              href="mailto:mathilde@abyss-lab.com?subject=Brief%20projet%20-%20Abyss%20Lab&body=Bonjour%20Abyss%20Lab,%0D%0A%0D%0AMarque%20/%20activité%20:%0D%0AObjectif%20business%20:%0D%0ABesoin%20prioritaire%20:%0D%0ATiming%20:%0D%0A%0D%0AMerci."
-            >
-              Envoyer un brief
-            </a>
           </div>
 
         </div>
@@ -535,60 +542,63 @@
   </main>
 
   <footer class="footer">
+
     <div class="container">
 
       <div class="footer-top">
+
         <div class="row align-items-start gy-4">
 
           <div class="col-12 col-lg-6">
-            <div class="footer-brand">ABYSS LAB.</div>
+
+            <div class="footer-brand">
+              ABYSS LAB.
+            </div>
 
             <p class="footer-tagline">
-              NOUS REVELONS LA PROFONDEUR DES MARQUES POUR FAIRE EMERGER DES UNIVERS FORTS ET DURABLES.
+              NOUS REVELONS LA PROFONDEUR DES MARQUES
+              POUR FAIRE EMERGER DES UNIVERS FORTS ET DURABLES.
             </p>
 
             <div class="footer-location">
               Basée à Bordeaux, disponible partout en France et à l'étranger.
             </div>
+
           </div>
 
           <div class="col-12 col-lg-6 d-lg-flex justify-content-lg-end">
-            <div class="footer-social-block">
 
-              <div class="footer-social-title">
-                Suivez-nous sur les réseaux sociaux :
-              </div>
+            <div class="footer-socials">
 
-              <div class="footer-socials">
-                <a class="footer-social" href="https://www.instagram.com/abyss.lab_/" target="_blank">
-                  <i class="bi bi-instagram"></i>
-                </a>
+              <a class="footer-social" href="https://www.instagram.com/abyss.lab_/" target="_blank">
+                <i class="bi bi-instagram"></i>
+              </a>
 
-                <a class="footer-social" href="https://www.linkedin.com/company/abyss-lab/" target="_blank">
-                  <i class="bi bi-linkedin"></i>
-                </a>
+              <a class="footer-social" href="https://www.linkedin.com/company/abyss-lab/" target="_blank">
+                <i class="bi bi-linkedin"></i>
+              </a>
 
-                <a class="footer-social" href="https://www.tiktok.com/@abyss.lab" target="_blank">
-                  <i class="bi bi-tiktok"></i>
-                </a>
-              </div>
+              <a class="footer-social" href="https://www.tiktok.com/@abyss.lab" target="_blank">
+                <i class="bi bi-tiktok"></i>
+              </a>
 
             </div>
+
           </div>
 
         </div>
+
       </div>
 
-      <div class="footer-menu-row">
-        <nav class="footer-menu">
-          <a href="index.html">Accueil</a>
-          <a href="services.html">Services</a>
-          <a href="references.html">Références</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-      </div>
+      <nav class="footer-menu">
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="references.html">Références</a>
+        <a href="contact.html">Contact</a>
+      </nav>
 
       <div class="footer-bottom">
+
         <div class="footer-bottom-inner">
 
           <div class="footer-legal">
@@ -603,9 +613,11 @@
           </div>
 
         </div>
+
       </div>
 
     </div>
+
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -620,6 +632,17 @@
         video.playsInline = true;
         video.play().catch(() => {});
       }
+
+      window.addEventListener("scroll", function () {
+        document
+          .querySelector(".navbar")
+          .classList.toggle("scrolled", window.scrollY > 50);
+      });
+    });
+  </script>
+
+</body>
+</html>
 
       window.addEventListener("scroll", function () {
         document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 50);
