@@ -50,7 +50,7 @@
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(180deg, rgba(0,0,0,.52), rgba(0,0,0,.72));
+      background:linear-gradient(180deg, rgba(0,0,0,.50), rgba(0,0,0,.74));
     }
 
     .navbar{
@@ -91,16 +91,16 @@
 
     .page-title{
       font-family:'couture', sans-serif;
-      font-size:clamp(1.6rem,3.2vw,2.9rem);
+      font-size:clamp(1.65rem,3.3vw,3rem);
       line-height:1.08;
       letter-spacing:.08em;
       text-transform:uppercase;
-      max-width:820px;
+      max-width:980px;
       margin:0 0 18px;
     }
 
     .hero-lead{
-      max-width:720px;
+      max-width:860px;
       color:var(--soft);
       font-size:.96rem;
       line-height:1.7;
@@ -108,28 +108,29 @@
     }
 
     .hero-keywords{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:30px;
-      max-width:980px;
+      display:grid;
+      grid-template-columns:repeat(6, 1fr);
+      gap:12px;
+      margin-top:32px;
+      width:100%;
     }
 
     .hero-keywords span{
-      display:inline-flex;
+      display:flex;
       align-items:center;
       justify-content:center;
-      min-height:38px;
-      padding:9px 15px;
+      min-height:42px;
+      padding:10px 14px;
       border-radius:999px;
       border:1px solid rgba(255,255,255,.16);
-      background:rgba(0,0,0,.28);
+      background:rgba(0,0,0,.30);
       backdrop-filter:blur(12px);
       color:rgba(255,255,255,.78);
       font-size:.62rem;
-      letter-spacing:.09em;
+      letter-spacing:.08em;
       text-transform:uppercase;
       font-weight:700;
+      text-align:center;
       transition:.3s ease;
     }
 
@@ -142,22 +143,23 @@
     }
 
     .contact-grid{
-      margin-top:52px;
+      margin-top:56px;
+      width:100%;
       display:grid;
       grid-template-columns:1fr;
-      max-width:880px;
     }
 
     .contact-card{
+      width:100%;
       border:1px solid var(--line);
       background:linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.035));
       backdrop-filter:blur(16px);
       border-radius:26px;
-      padding:34px;
+      padding:36px;
     }
 
     .contact-card h2{
-      font-size:clamp(1.2rem,2vw,1.7rem);
+      font-size:clamp(1.25rem,2vw,1.8rem);
       line-height:1.14;
       margin-bottom:16px;
       font-weight:800;
@@ -167,17 +169,18 @@
     .contact-text{
       color:var(--soft);
       line-height:1.65;
-      font-size:.95rem;
-      max-width:700px;
+      font-size:.96rem;
+      max-width:820px;
       margin:0;
     }
 
     .mail-box{
-      margin-top:26px;
+      margin-top:28px;
       padding:22px;
       border-radius:22px;
       border:1px solid rgba(255,255,255,.18);
       background:rgba(255,255,255,.06);
+      max-width:100%;
     }
 
     .mail-label{
@@ -197,7 +200,7 @@
       gap:14px;
       color:#fff;
       text-decoration:none;
-      font-size:clamp(1rem,2vw,1.45rem);
+      font-size:clamp(1.05rem,2.3vw,1.7rem);
       font-weight:800;
       line-height:1.2;
       word-break:break-word;
@@ -248,7 +251,7 @@
       color:var(--soft);
       font-size:.92rem;
       line-height:1.6;
-      max-width:620px;
+      max-width:760px;
       margin-bottom:16px;
     }
 
@@ -376,9 +379,25 @@
       font-size:.82rem;
     }
 
+    @media(max-width:1199px){
+      .hero-keywords{
+        grid-template-columns:repeat(4, 1fr);
+      }
+    }
+
+    @media(max-width:991px){
+      .hero-keywords{
+        grid-template-columns:repeat(3, 1fr);
+      }
+    }
+
     @media(max-width:767px){
       .section-space{
         padding:58px 0 72px;
+      }
+
+      .hero-keywords{
+        grid-template-columns:repeat(2, 1fr);
       }
 
       .contact-card{
@@ -392,6 +411,12 @@
 
       .footer-menu,
       .footer-bottom-inner{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media(max-width:420px){
+      .hero-keywords{
         grid-template-columns:1fr;
       }
     }
@@ -466,7 +491,7 @@
           <div class="contact-card">
 
             <span class="small-label">
-              CONTACT DIRECT
+              CONTACTEZ-NOUS
             </span>
 
             <h2>
@@ -474,8 +499,9 @@
             </h2>
 
             <p class="contact-text">
-              Projet, objectif, problématique ou envie de faire évoluer votre marque :
-              écrivez-nous simplement. Nous revenons vers vous avec une vision claire.
+              Vous avez un projet, une ambition ou un enjeu de croissance ?
+              Écrivez-nous ce que vous voulez faire évoluer : nous vous répondrons avec une approche claire,
+              stratégique et orientée résultats.
             </p>
 
             <div class="mail-box">
@@ -508,8 +534,8 @@
               </div>
 
               <p class="social-intro">
-                Suivez Abyss Lab pour découvrir nos projets, idées, coulisses
-                et inspirations autour de la marque, du contenu et du digital.
+                Projets, coulisses, idées de contenu et inspirations digitales :
+                suivez Abyss Lab pour rester connecté à notre univers.
               </p>
 
               <div class="social-links">
@@ -643,7 +669,6 @@
 
 </body>
 </html>
-
       window.addEventListener("scroll", function () {
         document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 50);
       });
