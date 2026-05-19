@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Mentions légales du site Abyss Lab.">
-  <title>Mentions légales | ABYSS LAB</title>
+  <meta name="description" content="Mentions legales du site Abyss Lab.">
+  <title>MENTIONS LEGALES | ABYSS LAB</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,55 +15,28 @@
   <link rel="stylesheet" href="assets/css/style.css">
 
   <style>
-    /* ===== GLOBAL ===== */
+    :root{
+      --white:#ffffff;
+      --white-soft:rgba(255,255,255,.84);
+      --white-muted:rgba(255,255,255,.66);
+      --line:rgba(255,255,255,.14);
+      --line-soft:rgba(255,255,255,.10);
+    }
+
     body{
       background:#000;
       color:#fff;
-      font-family:'couture', sans-serif;
-      position:relative;
+      font-family:'Montserrat', sans-serif;
       min-height:100vh;
+      overflow-x:hidden;
     }
 
-    .section-space{
-      padding:100px 0;
-    }
-
-    .thin-border{
-      border-bottom:1px solid #222;
-    }
-
-    .standard,
-    .legal-notice p,
-    .legal-notice li{
-      font-family:"Montserrat", sans-serif;
-    }
-
-    /* ===== NAVBAR ===== */
-    .navbar{
-      position:relative;
-      z-index:20;
-      transition:background-color 0.3s ease, backdrop-filter 0.3s ease;
-    }
-
-    .navbar.scrolled{
-      background:rgba(0,0,0,0.72);
-      backdrop-filter:blur(10px);
-    }
-
-    .nav-link.active{
-      color:#fff !important;
-      font-weight:700;
-    }
-
-    /* ===== VIDEO BACKGROUND ===== */
     .video-background{
       position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
+      inset:0;
       z-index:-2;
       overflow:hidden;
+      background:#000;
     }
 
     .video-background video{
@@ -76,36 +49,75 @@
       content:"";
       position:absolute;
       inset:0;
-      background:rgba(0,0,0,0.58);
+      background:rgba(0,0,0,.58);
       z-index:1;
     }
 
-    /* ===== LEGAL PAGE ===== */
-    .legal-wrapper{
+    .navbar{
+      position:relative;
+      z-index:30;
+      transition:background-color .3s ease, backdrop-filter .3s ease;
+    }
+
+    .navbar.scrolled{
+      background:rgba(0,0,0,.68);
+      backdrop-filter:blur(14px);
+    }
+
+    .navbar-brand{
+      letter-spacing:1px;
+      color:var(--white)!important;
+    }
+
+    .nav-link{
+      font-family:'couture', sans-serif;
+      font-size:.80rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      font-weight:600;
+      color:var(--white-soft)!important;
+      padding-left:1rem!important;
+      padding-right:1rem!important;
+    }
+
+    .nav-link:hover,
+    .nav-link.active{
+      color:var(--white)!important;
+    }
+
+    .section-space{
       position:relative;
       z-index:2;
+      padding:100px 0;
     }
 
     .legal-notice{
       max-width:950px;
     }
 
-    .legal-notice h1,
+    .page-header{
+      margin-bottom:70px;
+    }
+
+    .page-title{
+      font-family:'couture', sans-serif;
+      font-size:2.4rem;
+      line-height:1.05;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      color:#fff;
+      margin:0;
+    }
+
     .legal-notice h2{
       font-family:'couture', sans-serif;
-      margin-top:0;
+      font-size:1.35rem;
       margin-bottom:25px;
       color:#fff;
-      letter-spacing:0.5px;
-    }
-
-    .legal-notice h1{
-      font-size:2rem;
-    }
-
-    .legal-notice h2{
-      font-size:1.35rem;
+      letter-spacing:.5px;
+      line-height:1.3;
       margin-top:50px;
+      text-transform:uppercase;
     }
 
     .legal-notice p{
@@ -119,50 +131,165 @@
       color:#fff;
     }
 
-    /* ===== FOOTER ===== */
-    footer{
-      border-top:1px solid rgba(255,255,255,0.15);
-      padding:60px 0;
-      font-size:0.9rem;
+    .footer{
+      border-top:1px solid var(--line);
+      padding:28px 0 14px;
       position:relative;
       z-index:2;
     }
 
-    footer a{
+    .footer-top{
+      padding-bottom:20px;
+      margin-bottom:20px;
+      border-bottom:1px solid rgba(255,255,255,.18);
+    }
+
+    .footer-brand{
+      font-size:.98rem;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:10px;
+      color:var(--white);
+    }
+
+    .footer-tagline{
+      margin:0;
+      max-width:640px;
+      font-size:.93rem;
+      line-height:1.66;
+      font-weight:600;
+      text-transform:uppercase;
+      color:var(--white);
+    }
+
+    .footer-location{
+      margin-top:10px;
+      font-size:.92rem;
+      line-height:1.68;
+      color:var(--white-soft);
+    }
+
+    .footer-social-block{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+    }
+
+    .footer-social-title{
+      font-size:.92rem;
+      line-height:1.5;
+      font-weight:600;
+      color:var(--white);
+      margin-bottom:10px;
+    }
+
+    .footer-socials{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .footer-social{
+      width:42px;
+      height:42px;
+      border:1.5px solid rgba(255,255,255,.78);
+      border-radius:50%;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--white);
       text-decoration:none;
+      font-size:1rem;
+      background:rgba(255,255,255,.01);
     }
 
-    footer a:hover{
-      opacity:0.8;
+    .footer-social:hover{
+      color:var(--white);
+      border-color:var(--white);
+      transform:translateY(-2px);
+      background:rgba(255,255,255,.04);
     }
 
-    /* ===== FADE IN ===== */
-    .fade-in{
-      opacity:0;
-      transform:translateY(30px);
-      transition:opacity 0.8s ease, transform 0.8s ease;
+    .footer-menu-row{
+      padding:0 0 18px;
     }
 
-    .fade-in.visible{
-      opacity:1;
-      transform:translateY(0);
+    .footer-menu{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+      width:100%;
     }
 
-    @media (max-width: 768px){
+    .footer-menu a{
+      color:var(--white);
+      text-decoration:none;
+      font-size:.93rem;
+      font-weight:600;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+    }
+
+    .footer-bottom{
+      border-top:1px solid var(--line-soft);
+      padding-top:12px;
+    }
+
+    .footer-bottom-inner{
+      display:grid;
+      grid-template-columns:1fr auto;
+      align-items:center;
+      gap:18px;
+    }
+
+    .footer-legal{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px 30px;
+    }
+
+    .footer-legal a{
+      color:var(--white-muted);
+      text-decoration:none;
+      font-size:.82rem;
+    }
+
+    .footer-copy{
+      color:var(--white-muted);
+      font-size:.82rem;
+      text-align:right;
+      white-space:nowrap;
+    }
+
+    @media(max-width:767.98px){
       .section-space{
         padding:70px 0;
       }
 
-      .legal-notice h1{
-        font-size:1.6rem;
+      .page-title{
+        font-size:1.55rem;
+        line-height:1.1;
       }
 
       .legal-notice h2{
-        font-size:1.2rem;
+        font-size:1.1rem;
       }
 
       .legal-notice p{
-        font-size:0.96rem;
+        font-size:.96rem;
+      }
+
+      .footer-menu{
+        grid-template-columns:1fr;
+      }
+
+      .footer-bottom-inner{
+        grid-template-columns:1fr;
+      }
+
+      .footer-copy{
+        text-align:left;
       }
     }
   </style>
@@ -172,7 +299,15 @@
 
   <!-- BACKGROUND VIDEO -->
   <div class="video-background">
-    <video autoplay muted loop playsinline preload="auto">
+    <video
+      id="bg-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      webkit-playsinline
+      preload="auto"
+    >
       <source src="assets/video/abyss-lab.mp4" type="video/mp4">
     </video>
   </div>
@@ -182,219 +317,278 @@
     <div class="container">
       <a class="navbar-brand fw-bold" href="index.html">ABYSS LAB.</a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Ouvrir le menu">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse justify-content-end" id="navmenu">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">A PROPOS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="services.html">SERVICES</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="references.html">REFERENCES</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">CONTACT</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="index.html">ACCUEIL</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">SERVICES</a></li>
+          <li class="nav-item"><a class="nav-link" href="references.html">REFERENCES</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
   <!-- CONTENT -->
-  <section class="section-space legal-wrapper fade-in">
-    <div class="container">
-      <section class="legal-notice">
+  <main>
+    <section class="section-space">
+      <div class="container">
+        <section class="legal-notice">
 
-        <h1>1. Editeur du site</h1>
+          <div class="page-header">
+            <h1 class="page-title">MENTIONS LEGALES</h1>
+          </div>
 
-        <p>Le présent site est édité par :</p>
+          <h2>1. EDITEUR DU SITE</h2>
 
-        <p>
-          <strong>Mathilde Ranchon – Abyss Lab</strong><br>
-          Micro-entreprise (Entreprise individuelle)<br>
-          Siège social : 43 Rue Marcelin Berthelot, 33270 Floirac, France<br>
-          SIREN : 101581593<br>
-          SIRET : 10158159300015<br>
-          Code APE : 7021Z<br>
-          Email : mathilde@abyss-lab.com
-        </p>
+          <p>Le présent site est édité par :</p>
 
-        <p>
-          Directrice de la publication : <strong>Mathilde Ranchon</strong>
-        </p>
+          <p>
+            <strong>Mathilde Ranchon – Abyss Lab</strong><br>
+            Micro-entreprise (Entreprise individuelle)<br>
+            Siège social : 43 Rue Marcelin Berthelot, 33270 Floirac, France<br>
+            SIREN : 101581593<br>
+            SIRET : 10158159300015<br>
+            Code APE : 7021Z<br>
+            Email : mathilde@abyss-lab.com
+          </p>
 
-        <h2>2. Hebergement</h2>
+          <p>
+            Directrice de la publication : <strong>Mathilde Ranchon</strong>
+          </p>
 
-        <p>
-          Le site est hébergé par :<br><br>
-          <strong>OVHcloud</strong><br>
-          Adresse : 2 Rue Kellermann, 59100 Roubaix, France<br>
-          Téléphone : 1007<br>
-          Site web : www.ovhcloud.com
-        </p>
+          <h2>2. HEBERGEMENT</h2>
 
-        <h2>3. Propriete intellectuelle</h2>
+          <p>
+            Le site est hébergé par :<br><br>
+            <strong>OVHcloud</strong><br>
+            Adresse : 2 Rue Kellermann, 59100 Roubaix, France<br>
+            Téléphone : 1007<br>
+            Site web : www.ovhcloud.com
+          </p>
 
-        <p>
-          L’ensemble des éléments présents sur le site Abyss Lab, incluant notamment
-          les textes, images, graphismes, logos, vidéos, icônes, éléments visuels
-          et contenus éditoriaux, est protégé par les dispositions du Code de la
-          propriété intellectuelle et, sauf mention contraire, est la propriété
-          exclusive de <strong>Mathilde Ranchon – Abyss Lab</strong>.
-        </p>
+          <h2>3. PROPRIETE INTELLECTUELLE</h2>
 
-        <p>
-          Certains contenus présentés sur ce site peuvent être issus de projets
-          réalisés par Mathilde Ranchon dans le cadre de ses expériences professionnelles
-          antérieures ou de collaborations avec des clients, partenaires, influenceurs,
-          marques, photographes, vidéastes ou agences. Ces éléments sont présentés
-          uniquement à titre de référence professionnelle et de portfolio.
-        </p>
+          <p>
+            L’ensemble des éléments présents sur le site Abyss Lab, incluant notamment
+            les textes, images, graphismes, logos, vidéos, icônes, éléments visuels
+            et contenus éditoriaux, est protégé par les dispositions du Code de la
+            propriété intellectuelle et, sauf mention contraire, est la propriété
+            exclusive de <strong>Mathilde Ranchon – Abyss Lab</strong>.
+          </p>
 
-        <p>
-          Les droits de propriété intellectuelle relatifs à ces contenus demeurent,
-          le cas échéant, la propriété de leurs auteurs ou titulaires respectifs.
-          Toute mention de marque, visuel, création ou projet appartenant à un tiers
-          est utilisée uniquement dans un objectif de présentation de réalisations
-          professionnelles.
-        </p>
+          <p>
+            Certains contenus présentés sur ce site peuvent être issus de projets
+            réalisés par Mathilde Ranchon dans le cadre de ses expériences professionnelles
+            antérieures ou de collaborations avec des clients, partenaires, influenceurs,
+            marques, photographes, vidéastes ou agences. Ces éléments sont présentés
+            uniquement à titre de référence professionnelle et de portfolio.
+          </p>
 
-        <p>
-          Toute reproduction, représentation, modification, publication,
-          transmission ou adaptation de tout ou partie du site ou de son contenu,
-          quel que soit le moyen ou le procédé utilisé, est interdite sans
-          l’autorisation écrite préalable de l’éditeur ou des titulaires des droits
-          concernés.
-        </p>
+          <p>
+            Les droits de propriété intellectuelle relatifs à ces contenus demeurent,
+            le cas échéant, la propriété de leurs auteurs ou titulaires respectifs.
+            Toute mention de marque, visuel, création ou projet appartenant à un tiers
+            est utilisée uniquement dans un objectif de présentation de réalisations
+            professionnelles.
+          </p>
 
-        <p>
-          Toute utilisation non autorisée du site ou de l’un quelconque de ses éléments
-          pourra être considérée comme constitutive d’une contrefaçon et poursuivie
-          conformément aux dispositions du Code de la propriété intellectuelle.
-        </p>
+          <p>
+            Toute reproduction, représentation, modification, publication,
+            transmission ou adaptation de tout ou partie du site ou de son contenu,
+            quel que soit le moyen ou le procédé utilisé, est interdite sans
+            l’autorisation écrite préalable de l’éditeur ou des titulaires des droits
+            concernés.
+          </p>
 
-        <h2>4. Responsabilite</h2>
+          <p>
+            Toute utilisation non autorisée du site ou de l’un quelconque de ses éléments
+            pourra être considérée comme constitutive d’une contrefaçon et poursuivie
+            conformément aux dispositions du Code de la propriété intellectuelle.
+          </p>
 
-        <p>
-          L’éditeur s’efforce de fournir sur le site Abyss Lab des informations
-          aussi précises que possible. Toutefois, il ne pourra être tenu responsable
-          des omissions, des inexactitudes ou des carences dans la mise à jour.
-        </p>
+          <h2>4. RESPONSABILITE</h2>
 
-        <p>
-          L’utilisateur du site reconnaît utiliser ces informations sous sa
-          responsabilité exclusive.
-        </p>
+          <p>
+            L’éditeur s’efforce de fournir sur le site Abyss Lab des informations
+            aussi précises que possible. Toutefois, il ne pourra être tenu responsable
+            des omissions, des inexactitudes ou des carences dans la mise à jour.
+          </p>
 
-        <h2>5. Donnees personnelles</h2>
+          <p>
+            L’utilisateur du site reconnaît utiliser ces informations sous sa
+            responsabilité exclusive.
+          </p>
 
-        <p>
-          Les informations éventuellement collectées via les formulaires du site
-          sont destinées uniquement à Abyss Lab afin de répondre aux demandes
-          des utilisateurs.
-        </p>
+          <h2>5. DONNEES PERSONNELLES</h2>
 
-        <p>
-          Conformément au Règlement Général sur la Protection des Données (RGPD)
-          et à la loi Informatique et Libertés, vous disposez d’un droit d’accès,
-          de rectification et de suppression des données vous concernant.
-        </p>
+          <p>
+            Les informations éventuellement collectées via les formulaires du site
+            sont destinées uniquement à Abyss Lab afin de répondre aux demandes
+            des utilisateurs.
+          </p>
 
-        <p>
-          Pour exercer ce droit, vous pouvez contacter : mathilde@abyss-lab.com
-        </p>
+          <p>
+            Conformément au Règlement Général sur la Protection des Données (RGPD)
+            et à la loi Informatique et Libertés, vous disposez d’un droit d’accès,
+            de rectification et de suppression des données vous concernant.
+          </p>
 
-        <p>
-          Les données ne sont ni vendues ni cédées à des tiers.
-        </p>
+          <p>
+            Pour exercer ce droit, vous pouvez contacter : mathilde@abyss-lab.com
+          </p>
 
-        <h2>6. Cookies</h2>
+          <p>
+            Les données ne sont ni vendues ni cédées à des tiers.
+          </p>
 
-        <p>
-          Le site peut utiliser des cookies afin d’améliorer l’expérience utilisateur
-          et de réaliser des statistiques de visite.
-        </p>
+          <h2>6. COOKIES</h2>
 
-        <p>
-          L’utilisateur peut configurer son navigateur afin de refuser les cookies.
-        </p>
+          <p>
+            Le site peut utiliser des cookies afin d’améliorer l’expérience utilisateur
+            et de réaliser des statistiques de visite.
+          </p>
 
-        <h2>7. Droit applicable</h2>
+          <p>
+            L’utilisateur peut configurer son navigateur afin de refuser les cookies.
+          </p>
 
-        <p>
-          Les présentes mentions légales sont régies par le droit français.
-          En cas de litige, les tribunaux français seront seuls compétents.
-        </p>
+          <h2>7. DROIT APPLICABLE</h2>
 
-      </section>
-    </div>
-  </section>
+          <p>
+            Les présentes mentions légales sont régies par le droit français.
+            En cas de litige, les tribunaux français seront seuls compétents.
+          </p>
+
+        </section>
+      </div>
+    </section>
+  </main>
 
   <!-- FOOTER -->
-  <footer>
+  <footer class="footer">
     <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <strong>ABYSS LAB.</strong><br>
-          Agence basée Bordeaux. Déplacement partout en France.
-        </div>
 
-        <div class="col-12 col-md-6 text-md-end mt-4 mt-md-0">
-          <a href="mentions-legales.html" class="text-white me-3">Mentions légales</a>
-          <a href="cgu.html" class="text-white me-3">CGU</a>
-          <a href="cgv.html" class="text-white me-3">CGV</a>
-          <a href="politique-confidentialite.html" class="text-white">Politique de confidentialité</a>
+      <div class="footer-top">
+        <div class="row align-items-start gy-4">
+
+          <div class="col-12 col-lg-6">
+            <div class="footer-brand">ABYSS LAB.</div>
+
+            <p class="footer-tagline">
+              NOUS REVELONS LA PROFONDEUR DES MARQUES POUR FAIRE EMERGER DES UNIVERS FORTS ET DURABLES.
+            </p>
+
+            <div class="footer-location">
+              Basée à Bordeaux, disponible partout en France et à l'étranger.
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6 d-lg-flex justify-content-lg-end">
+            <div class="footer-social-block">
+
+              <div class="footer-social-title">
+                Suivez-nous sur les réseaux sociaux :
+              </div>
+
+              <div class="footer-socials">
+                <a class="footer-social" href="https://www.instagram.com/abyss.lab_/" target="_blank">
+                  <i class="bi bi-instagram"></i>
+                </a>
+
+                <a class="footer-social" href="https://www.linkedin.com/company/abyss-lab/" target="_blank">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+
+                <a class="footer-social" href="https://www.tiktok.com/@abyss.lab" target="_blank">
+                  <i class="bi bi-tiktok"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
+
+      <div class="footer-menu-row">
+        <nav class="footer-menu">
+          <a href="index.html">Accueil</a>
+          <a href="services.html">Services</a>
+          <a href="references.html">Références</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+
+          <div class="footer-legal">
+            <a href="mentions-legales.html">Mentions légales</a>
+            <a href="cgu.html">CGU</a>
+            <a href="cgv.html">CGV</a>
+            <a href="politique-confidentialite.html">Politique de confidentialité</a>
+          </div>
+
+          <div class="footer-copy">
+            © 2026 Abyss Lab. Tous droits réservés.
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function(){
-      const currentLocation = location.pathname.split("/").pop();
-      const menuItems = document.querySelectorAll(".nav-link");
+    document.addEventListener("DOMContentLoaded", function () {
 
-      menuItems.forEach(link => {
-        if(link.getAttribute("href") === currentLocation){
-          link.classList.add("active");
-        }
+      const video = document.getElementById("bg-video");
+
+      if(video){
+
+        video.muted = true;
+        video.defaultMuted = true;
+        video.playsInline = true;
+
+        const playVideo = () => {
+          const promise = video.play();
+
+          if (promise !== undefined) {
+            promise.catch(() => {});
+          }
+        };
+
+        playVideo();
+
+        document.addEventListener("touchstart", playVideo, {
+          once:true,
+          passive:true
+        });
+
+        document.addEventListener("click", playVideo, {
+          once:true
+        });
+
+        document.addEventListener("visibilitychange", function () {
+          if (!document.hidden) {
+            playVideo();
+          }
+        });
+
+      }
+
+      window.addEventListener("scroll", function () {
+        document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 50);
       });
-    });
-  </script>
 
-  <script>
-    /* Sticky navbar */
-    window.addEventListener("scroll", function(){
-      const navbar = document.querySelector(".navbar");
-      navbar.classList.toggle("scrolled", window.scrollY > 50);
-    });
-
-    /* Fade-in on scroll */
-    const faders = document.querySelectorAll(".fade-in");
-
-    const appearOptions = {
-      threshold: 0.15
-    };
-
-    const appearOnScroll = new IntersectionObserver(function(entries, observer){
-      entries.forEach(entry => {
-        if(!entry.isIntersecting) return;
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      });
-    }, appearOptions);
-
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
     });
   </script>
 
 </body>
-</html>
+</html> 
