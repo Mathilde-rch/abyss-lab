@@ -6,7 +6,10 @@
 
   <title>Contact | ABYSS LAB</title>
 
-  <meta name="description" content="Contactez Abyss Lab, studio créatif à Bordeaux : accompagnement 360, branding, direction artistique, stratégie digitale, réseaux sociaux, SEO, site vitrine, UGC, newsletter et brand content.">
+  <meta
+    name="description"
+    content="Contactez Abyss Lab, studio créatif à Bordeaux : branding, direction artistique, stratégie digitale, réseaux sociaux, SEO, UGC, site vitrine et communication digitale."
+  >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,7 +53,7 @@
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(180deg, rgba(0,0,0,.50), rgba(0,0,0,.74));
+      background:linear-gradient(180deg, rgba(0,0,0,.48), rgba(0,0,0,.76));
     }
 
     .navbar{
@@ -60,7 +63,7 @@
     }
 
     .navbar.scrolled{
-      background:rgba(0,0,0,.65);
+      background:rgba(0,0,0,.64);
       backdrop-filter:blur(14px);
     }
 
@@ -91,13 +94,12 @@
 
     .page-title{
       font-family:'couture', sans-serif;
-      font-size:clamp(1.55rem,3.25vw,3.05rem);
+      font-size:clamp(1.55rem,3.2vw,3rem);
       line-height:1.08;
       letter-spacing:.08em;
       text-transform:uppercase;
       max-width:100%;
       margin:0 0 18px;
-      white-space:normal;
     }
 
     .hero-lead{
@@ -163,7 +165,6 @@
       letter-spacing:.075em;
       text-transform:uppercase;
       font-weight:700;
-      text-align:center;
       transition:.3s ease;
     }
 
@@ -196,13 +197,19 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:14px;
+      gap:12px;
       color:#fff;
       text-decoration:none;
       font-size:clamp(.95rem,1.6vw,1.18rem);
       font-weight:800;
       line-height:1.25;
-      word-break:break-word;
+      word-break:normal;
+      overflow-wrap:anywhere;
+    }
+
+    .mail-link i{
+      flex:0 0 auto;
+      line-height:1;
     }
 
     .mail-link:hover{
@@ -398,13 +405,22 @@
       }
 
       .mail-link{
-        flex-direction:column;
-        align-items:flex-start;
+        flex-direction:row;
+        align-items:center;
+        justify-content:space-between;
+        gap:10px;
+        font-size:.94rem;
       }
 
       .footer-menu,
       .footer-bottom-inner{
         grid-template-columns:1fr;
+      }
+    }
+
+    @media(max-width:380px){
+      .mail-link{
+        font-size:.86rem;
       }
     }
   </style>
@@ -413,7 +429,16 @@
 <body>
 
   <div class="video-background">
-    <video id="bg-video" autoplay muted loop playsinline webkit-playsinline preload="auto">
+    <video
+      id="bg-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      webkit-playsinline
+      preload="auto"
+      disablepictureinpicture
+    >
       <source src="assets/video/abyss-lab.mp4" type="video/mp4">
     </video>
   </div>
@@ -507,7 +532,7 @@
                   class="mail-link"
                   href="mailto:mathilde@abyss-lab.com?subject=Demande%20de%20contact%20-%20Abyss%20Lab"
                 >
-                  mathilde@abyss-lab.com
+                  <span>mathilde@abyss-lab.com</span>
                   <i class="bi bi-arrow-up-right"></i>
                 </a>
 
@@ -527,7 +552,8 @@
                 </div>
 
                 <p class="social-intro">
-                  Projets, coulisses et inspirations digitales : suivez Abyss Lab pour rester connecté à notre univers.
+                  Projets, coulisses et inspirations digitales :
+                  suivez Abyss Lab pour rester connecté à notre univers.
                 </p>
 
                 <div class="social-links">
@@ -645,11 +671,27 @@
     document.addEventListener("DOMContentLoaded", function () {
       const video = document.getElementById("bg-video");
 
-      if(video){
+      if (video) {
         video.muted = true;
         video.defaultMuted = true;
+        video.autoplay = true;
+        video.loop = true;
         video.playsInline = true;
-        video.play().catch(() => {});
+
+        const forcePlay = () => {
+          video.play().catch(() => {});
+        };
+
+        forcePlay();
+
+        document.addEventListener("click", forcePlay, { once: true });
+        document.addEventListener("touchstart", forcePlay, { once: true, passive: true });
+
+        document.addEventListener("visibilitychange", function () {
+          if (!document.hidden) {
+            forcePlay();
+          }
+        });
       }
 
       window.addEventListener("scroll", function () {
