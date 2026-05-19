@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Contactez Abyss Lab, studio créatif à Bordeaux spécialisé en branding, identité visuelle, direction artistique, stratégie digitale, création de contenu, social media et web design.">
+  <meta name="description" content="Contactez Abyss Lab, studio créatif à Bordeaux spécialisé en branding, identité visuelle, stratégie digitale, social media et web design orientés performance.">
   <title>Contact | ABYSS LAB</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,18 +16,16 @@
 
   <style>
     :root{
-      --white:#ffffff;
-      --white-soft:rgba(255,255,255,.84);
-      --white-muted:rgba(255,255,255,.66);
+      --white:#fff;
+      --soft:rgba(255,255,255,.82);
+      --muted:rgba(255,255,255,.58);
       --line:rgba(255,255,255,.14);
-      --line-soft:rgba(255,255,255,.10);
     }
 
     body{
       background:#000;
       color:#fff;
       font-family:'Montserrat', sans-serif;
-      min-height:100vh;
       overflow-x:hidden;
     }
 
@@ -50,13 +48,11 @@
       position:absolute;
       inset:0;
       background:rgba(0,0,0,.62);
-      z-index:1;
     }
 
     .navbar{
       position:relative;
       z-index:30;
-      transition:background-color .3s ease, backdrop-filter .3s ease;
     }
 
     .navbar.scrolled{
@@ -64,144 +60,128 @@
       backdrop-filter:blur(14px);
     }
 
-    .navbar-brand{
-      letter-spacing:1px;
-      color:var(--white)!important;
-    }
-
     .nav-link{
       font-family:'couture', sans-serif;
-      font-size:.80rem;
+      font-size:.8rem;
       letter-spacing:.16em;
       text-transform:uppercase;
-      font-weight:600;
-      color:var(--white-soft)!important;
-      padding-left:1rem!important;
-      padding-right:1rem!important;
-    }
-
-    .nav-link:hover,
-    .nav-link.active{
-      color:var(--white)!important;
+      color:var(--soft)!important;
     }
 
     .section-space{
       position:relative;
       z-index:2;
-      padding:82px 0 95px;
+      padding:70px 0 82px;
     }
 
     .eyebrow,
     .small-label{
       display:inline-block;
-      margin-bottom:18px;
-      font-size:.72rem;
+      margin-bottom:16px;
+      font-size:.68rem;
       letter-spacing:.18em;
       text-transform:uppercase;
-      color:var(--white-muted);
+      color:var(--muted);
       font-weight:700;
     }
 
     .page-title{
       font-family:'couture', sans-serif;
-      font-size:clamp(1.75rem, 4vw, 3.45rem);
-      line-height:1.05;
-      letter-spacing:.09em;
+      font-size:clamp(1.55rem,3.2vw,2.8rem);
+      line-height:1.08;
+      letter-spacing:.08em;
       text-transform:uppercase;
-      color:#fff;
-      max-width:880px;
-      margin:0 0 24px;
+      max-width:780px;
+      margin:0 0 18px;
     }
 
     .hero-lead{
-      max-width:720px;
-      color:var(--white-soft);
-      font-size:1rem;
-      line-height:1.75;
+      max-width:660px;
+      color:var(--soft);
+      font-size:.96rem;
+      line-height:1.65;
       margin:0;
     }
 
     .hero-keywords{
       display:flex;
       flex-wrap:wrap;
-      gap:12px;
-      margin-top:36px;
-      max-width:1100px;
+      gap:10px;
+      margin-top:28px;
+      max-width:900px;
     }
 
     .hero-keywords span{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:44px;
-      border:1px solid rgba(255,255,255,.18);
-      background:rgba(0,0,0,.34);
-      backdrop-filter:blur(14px);
-      -webkit-backdrop-filter:blur(14px);
-      padding:10px 18px;
+      min-height:38px;
+      padding:9px 15px;
       border-radius:999px;
-      font-size:.68rem;
-      letter-spacing:.095em;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(0,0,0,.30);
+      backdrop-filter:blur(12px);
+      color:rgba(255,255,255,.76);
+      font-size:.62rem;
+      letter-spacing:.09em;
       text-transform:uppercase;
-      color:rgba(255,255,255,.78);
       font-weight:700;
-      transition:.35s ease;
+      transition:.3s ease;
     }
 
     .hero-keywords span:hover{
       background:rgba(255,255,255,.18);
       color:#fff;
-      border-color:rgba(255,255,255,.65);
-      box-shadow:0 0 24px rgba(255,255,255,.22), inset 0 0 18px rgba(255,255,255,.08);
+      border-color:rgba(255,255,255,.62);
+      box-shadow:0 0 22px rgba(255,255,255,.20);
       transform:translateY(-2px);
     }
 
     .contact-grid{
-      margin-top:60px;
+      margin-top:48px;
       display:grid;
-      grid-template-columns:.92fr 1.08fr;
-      gap:26px;
-      align-items:stretch;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
     }
 
     .contact-card{
       border:1px solid var(--line);
-      background:linear-gradient(145deg, rgba(255,255,255,.085), rgba(255,255,255,.04));
+      background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.035));
       backdrop-filter:blur(16px);
-      border-radius:26px;
-      padding:32px;
+      border-radius:24px;
+      padding:28px;
     }
 
     .contact-card h2{
-      font-size:clamp(1.25rem,2vw,1.85rem);
+      font-size:clamp(1.15rem,1.8vw,1.55rem);
       line-height:1.15;
-      margin-bottom:18px;
+      margin-bottom:14px;
       font-weight:800;
       text-transform:uppercase;
     }
 
     .contact-text{
-      color:var(--white-soft);
-      line-height:1.65;
-      font-size:.96rem;
+      color:var(--soft);
+      line-height:1.6;
+      font-size:.93rem;
       margin:0;
     }
 
     .mail-box{
-      margin-top:26px;
-      padding:24px;
-      border-radius:24px;
-      border:1px solid rgba(255,255,255,.22);
-      background:rgba(255,255,255,.08);
+      margin-top:22px;
+      padding:20px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,.20);
+      background:rgba(255,255,255,.07);
     }
 
     .mail-label{
       display:block;
-      margin-bottom:10px;
-      font-size:.7rem;
-      letter-spacing:.18em;
+      margin-bottom:8px;
+      font-size:.66rem;
+      letter-spacing:.16em;
       text-transform:uppercase;
-      color:var(--white-muted);
+      color:var(--muted);
       font-weight:700;
     }
 
@@ -209,37 +189,35 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:16px;
+      gap:14px;
       color:#fff;
       text-decoration:none;
-      font-size:clamp(1.2rem, 2.6vw, 2rem);
+      font-size:clamp(1rem,2vw,1.35rem);
       font-weight:800;
-      line-height:1.2;
+      line-height:1.25;
       word-break:break-word;
     }
 
     .mail-link:hover{
       color:#fff;
-      text-shadow:0 0 22px rgba(255,255,255,.45);
+      text-shadow:0 0 20px rgba(255,255,255,.35);
     }
 
     .btn-mail{
-      margin-top:22px;
+      margin-top:18px;
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap:10px;
       width:100%;
       border:1.5px solid rgba(255,255,255,.82);
       color:#fff;
-      background:transparent;
       text-decoration:none;
       border-radius:999px;
-      padding:14px 22px;
+      padding:13px 20px;
+      font-size:.72rem;
       font-weight:800;
       letter-spacing:.08em;
       text-transform:uppercase;
-      font-size:.76rem;
       transition:.25s ease;
     }
 
@@ -248,59 +226,39 @@
       color:#000;
     }
 
-    .brief-list{
-      margin-top:26px;
+    .brief-mini{
+      margin-top:20px;
       display:grid;
       gap:12px;
     }
 
-    .brief-item{
-      display:flex;
-      gap:14px;
-      padding:14px 0;
-      border-bottom:1px solid var(--line-soft);
-    }
-
-    .brief-item span{
-      font-size:.72rem;
-      font-weight:800;
-      color:var(--white-muted);
-      letter-spacing:.12em;
-    }
-
-    .brief-item p{
+    .brief-mini p{
       margin:0;
+      padding-bottom:12px;
+      border-bottom:1px solid rgba(255,255,255,.10);
       color:#fff;
+      font-size:.95rem;
       font-weight:500;
     }
 
-    .social-title{
-      margin-top:30px;
-      margin-bottom:12px;
-      font-size:.72rem;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:var(--white-muted);
-      font-weight:700;
-    }
-
     .social-links{
+      margin-top:20px;
       display:flex;
-      flex-direction:column;
-      gap:12px;
+      gap:10px;
+      flex-wrap:wrap;
     }
 
     .social-link{
-      display:flex;
+      display:inline-flex;
       align-items:center;
-      justify-content:space-between;
-      gap:12px;
+      gap:8px;
       color:#fff;
       text-decoration:none;
       border:1px solid var(--line);
-      border-radius:18px;
-      padding:13px 15px;
+      border-radius:999px;
+      padding:10px 14px;
       background:rgba(255,255,255,.035);
+      font-size:.85rem;
       transition:.25s ease;
     }
 
@@ -345,7 +303,7 @@
       margin-top:10px;
       font-size:.92rem;
       line-height:1.68;
-      color:var(--white-soft);
+      color:var(--soft);
     }
 
     .footer-social-block{
@@ -379,7 +337,6 @@
       color:var(--white);
       text-decoration:none;
       font-size:1rem;
-      background:rgba(255,255,255,.01);
     }
 
     .footer-menu-row{
@@ -403,7 +360,7 @@
     }
 
     .footer-bottom{
-      border-top:1px solid var(--line-soft);
+      border-top:1px solid rgba(255,255,255,.10);
       padding-top:12px;
     }
 
@@ -420,17 +377,11 @@
       gap:12px 30px;
     }
 
-    .footer-legal a{
-      color:var(--white-muted);
+    .footer-legal a,
+    .footer-copy{
+      color:var(--muted);
       text-decoration:none;
       font-size:.82rem;
-    }
-
-    .footer-copy{
-      color:var(--white-muted);
-      font-size:.82rem;
-      text-align:right;
-      white-space:nowrap;
     }
 
     @media(max-width:991.98px){
@@ -441,37 +392,21 @@
 
     @media(max-width:767.98px){
       .section-space{
-        padding:68px 0;
-      }
-
-      .page-title{
-        font-size:1.75rem;
-        line-height:1.12;
+        padding:58px 0 70px;
       }
 
       .contact-card{
-        padding:24px;
-      }
-
-      .mail-box{
-        padding:20px;
+        padding:22px;
       }
 
       .mail-link{
-        flex-direction:column;
         align-items:flex-start;
+        flex-direction:column;
       }
 
-      .footer-menu{
-        grid-template-columns:1fr;
-      }
-
+      .footer-menu,
       .footer-bottom-inner{
         grid-template-columns:1fr;
-      }
-
-      .footer-copy{
-        text-align:left;
       }
     }
   </style>
@@ -508,15 +443,15 @@
     <section class="section-space">
       <div class="container">
 
-        <span class="eyebrow">CONTACT • STUDIO CRÉATIF • BORDEAUX</span>
+        <span class="eyebrow">STUDIO CRÉATIF À BORDEAUX</span>
 
         <h1 class="page-title">
-          DONNEZ À VOTRE IMAGE UNE VRAIE DIMENSION.
+          Une image plus forte. Un impact plus rentable.
         </h1>
 
         <p class="hero-lead">
-          Abyss Lab accompagne les marques, artistes et projets ambitieux dans la création d’une identité forte,
-          d’un contenu impactant et d’une présence digitale mémorable.
+          Abyss Lab aide les marques à renforcer leur image, clarifier leur positionnement
+          et transformer leur présence digitale en levier de croissance.
         </p>
 
         <div class="hero-keywords">
@@ -527,11 +462,11 @@
           <span>Création de contenu</span>
           <span>Social media</span>
           <span>Web design</span>
-          <span>Studio créatif Bordeaux</span>
           <span>Image de marque</span>
           <span>Design graphique</span>
-          <span>Storytelling</span>
           <span>Communication digitale</span>
+          <span>Studio créatif Bordeaux</span>
+          <span>Positionnement de marque</span>
         </div>
 
         <div class="contact-grid">
@@ -539,11 +474,10 @@
           <div class="contact-card">
             <span class="small-label">CONTACT DIRECT</span>
 
-            <h2>Écrivez-nous.</h2>
+            <h2>Parlons performance.</h2>
 
             <p class="contact-text">
-              Une idée, une marque, une ambition ? Envoyez-nous votre demande par mail.
-              Nous vous répondrons avec une approche claire, créative et adaptée.
+              Envoyez votre demande par mail. Simple, direct, efficace.
             </p>
 
             <div class="mail-box">
@@ -559,62 +493,38 @@
               </a>
             </div>
 
-            <div class="social-title">SUIVRE ABYSS LAB</div>
-
             <div class="social-links">
               <a class="social-link" href="https://www.instagram.com/abyss.lab_/" target="_blank">
-                <span><i class="bi bi-instagram"></i> Instagram</span>
-                <i class="bi bi-arrow-right"></i>
+                <i class="bi bi-instagram"></i> Instagram
               </a>
 
               <a class="social-link" href="https://www.linkedin.com/company/abyss-lab/" target="_blank">
-                <span><i class="bi bi-linkedin"></i> LinkedIn</span>
-                <i class="bi bi-arrow-right"></i>
+                <i class="bi bi-linkedin"></i> LinkedIn
               </a>
 
               <a class="social-link" href="https://www.tiktok.com/@abyss.lab" target="_blank">
-                <span><i class="bi bi-tiktok"></i> TikTok</span>
-                <i class="bi bi-arrow-right"></i>
+                <i class="bi bi-tiktok"></i> TikTok
               </a>
             </div>
           </div>
 
           <div class="contact-card">
-            <span class="small-label">POUR ALLER PLUS VITE</span>
+            <span class="small-label">BRIEF RAPIDE</span>
 
-            <h2>À inclure dans votre mail.</h2>
+            <h2>Dans votre mail.</h2>
 
-            <p class="contact-text">
-              Pour une réponse plus précise, ajoutez quelques éléments clés à votre message.
-            </p>
-
-            <div class="brief-list">
-              <div class="brief-item">
-                <span>01</span>
-                <p>Votre marque, activité ou projet.</p>
-              </div>
-
-              <div class="brief-item">
-                <span>02</span>
-                <p>Votre besoin : branding, contenu, site, social media.</p>
-              </div>
-
-              <div class="brief-item">
-                <span>03</span>
-                <p>Votre objectif : lancer, repositionner, développer.</p>
-              </div>
-
-              <div class="brief-item">
-                <span>04</span>
-                <p>Votre timing et vos références visuelles.</p>
-              </div>
+            <div class="brief-mini">
+              <p>Votre marque ou activité.</p>
+              <p>Votre objectif business.</p>
+              <p>Votre besoin prioritaire.</p>
+              <p>Votre timing.</p>
             </div>
 
             <a
               class="btn-mail"
-              href="mailto:mathilde@abyss-lab.com?subject=Brief%20projet%20-%20Abyss%20Lab&body=Bonjour%20Abyss%20Lab,%0D%0A%0D%0AVoici%20mon%20projet%20:%0D%0A%0D%0ANom%20/%20marque%20:%0D%0ABesoin%20:%0D%0AObjectif%20:%0D%0ATiming%20:%0D%0ARéférences%20:%0D%0A%0D%0AMerci."
+              href="mailto:mathilde@abyss-lab.com?subject=Brief%20projet%20-%20Abyss%20Lab&body=Bonjour%20Abyss%20Lab,%0D%0A%0D%0AMarque%20/%20activité%20:%0D%0AObjectif%20business%20:%0D%0ABesoin%20prioritaire%20:%0D%0ATiming%20:%0D%0A%0D%0AMerci."
             >
-              Envoyer un brief par mail
+              Envoyer un brief
             </a>
           </div>
 
@@ -708,22 +618,7 @@
         video.muted = true;
         video.defaultMuted = true;
         video.playsInline = true;
-
-        const playVideo = () => {
-          const promise = video.play();
-          if (promise !== undefined) {
-            promise.catch(() => {});
-          }
-        };
-
-        playVideo();
-
-        document.addEventListener("touchstart", playVideo, { once:true, passive:true });
-        document.addEventListener("click", playVideo, { once:true });
-
-        document.addEventListener("visibilitychange", function () {
-          if (!document.hidden) playVideo();
-        });
+        video.play().catch(() => {});
       }
 
       window.addEventListener("scroll", function () {
