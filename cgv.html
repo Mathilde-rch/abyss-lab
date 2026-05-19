@@ -15,47 +15,28 @@
   <link rel="stylesheet" href="assets/css/style.css">
 
   <style>
+    :root{
+      --white:#ffffff;
+      --white-soft:rgba(255,255,255,.84);
+      --white-muted:rgba(255,255,255,.66);
+      --line:rgba(255,255,255,.14);
+      --line-soft:rgba(255,255,255,.10);
+    }
+
     body{
       background:#000;
       color:#fff;
-      font-family:'couture', sans-serif;
-      position:relative;
+      font-family:'Montserrat', sans-serif;
       min-height:100vh;
-    }
-
-    .section-space{
-      padding:100px 0;
-    }
-
-    .cgu p,
-    .cgu li{
-      font-family:"Montserrat", sans-serif;
-    }
-
-    .navbar{
-      position:relative;
-      z-index:20;
-      transition:background-color 0.3s ease, backdrop-filter 0.3s ease;
-    }
-
-    .navbar.scrolled{
-      background:rgba(0,0,0,0.72);
-      backdrop-filter:blur(10px);
-    }
-
-    .nav-link.active{
-      color:#fff !important;
-      font-weight:700;
+      overflow-x:hidden;
     }
 
     .video-background{
       position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
+      inset:0;
       z-index:-2;
       overflow:hidden;
+      background:#000;
     }
 
     .video-background video{
@@ -68,37 +49,82 @@
       content:"";
       position:absolute;
       inset:0;
-      background:rgba(0,0,0,0.58);
+      background:rgba(0,0,0,.58);
       z-index:1;
     }
 
-    .cgu-wrapper{
+    .navbar{
       position:relative;
-      z-index:10;
-      opacity:1 !important;
-      visibility:visible !important;
-      display:block !important;
+      z-index:30;
+      transition:background-color .3s ease, backdrop-filter .3s ease;
+    }
+
+    .navbar.scrolled{
+      background:rgba(0,0,0,.68);
+      backdrop-filter:blur(14px);
+    }
+
+    .navbar-brand{
+      letter-spacing:1px;
+      color:var(--white)!important;
+    }
+
+    .nav-link{
+      font-family:'couture', sans-serif;
+      font-size:.80rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      font-weight:600;
+      color:var(--white-soft)!important;
+      padding-left:1rem!important;
+      padding-right:1rem!important;
+    }
+
+    .nav-link:hover,
+    .nav-link.active{
+      color:var(--white)!important;
+    }
+
+    .section-space{
+      position:relative;
+      z-index:2;
+      padding:100px 0;
     }
 
     .cgu{
       max-width:950px;
     }
 
-    .cgu h1,
+    .page-kicker{
+      font-size:.72rem;
+      font-weight:700;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.72);
+      margin-bottom:14px;
+    }
+
+    .page-title{
+      font-family:'couture', sans-serif;
+      font-size:2.4rem;
+      line-height:1.05;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      color:#fff;
+      margin:0;
+    }
+
+    .page-header{
+      margin-bottom:70px;
+    }
+
     .cgu h2{
       font-family:'couture', sans-serif;
       font-size:1.35rem;
       margin-bottom:25px;
       color:#fff;
-      letter-spacing:0.5px;
+      letter-spacing:.5px;
       line-height:1.3;
-    }
-
-    .cgu h1{
-      margin-top:0;
-    }
-
-    .cgu h2{
       margin-top:50px;
     }
 
@@ -113,34 +139,204 @@
       color:#fff;
     }
 
-    footer{
-      border-top:1px solid rgba(255,255,255,0.15);
-      padding:60px 0;
-      font-size:0.9rem;
+    .footer{
+      border-top:1px solid var(--line);
+      padding:28px 0 14px;
       position:relative;
-      z-index:10;
+      z-index:2;
     }
 
-    footer a{
+    .footer-top{
+      padding-bottom:20px;
+      margin-bottom:20px;
+      border-bottom:1px solid rgba(255,255,255,.18);
+    }
+
+    .footer-brand{
+      font-size:.98rem;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:10px;
+      color:var(--white);
+    }
+
+    .footer-tagline{
+      margin:0;
+      max-width:640px;
+      font-size:.93rem;
+      line-height:1.66;
+      font-weight:600;
+      text-transform:uppercase;
+      color:var(--white);
+    }
+
+    .footer-location{
+      margin-top:10px;
+      font-size:.92rem;
+      line-height:1.68;
+      color:var(--white-soft);
+    }
+
+    .footer-social-block{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+    }
+
+    .footer-social-title{
+      font-size:.92rem;
+      line-height:1.5;
+      font-weight:600;
+      color:var(--white);
+      margin-bottom:10px;
+    }
+
+    .footer-socials{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .footer-social{
+      width:42px;
+      height:42px;
+      border:1.5px solid rgba(255,255,255,.78);
+      border-radius:50%;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--white);
       text-decoration:none;
+      font-size:1rem;
+      background:rgba(255,255,255,.01);
     }
 
-    footer a:hover{
-      opacity:0.8;
+    .footer-social:hover{
+      color:var(--white);
+      border-color:var(--white);
+      transform:translateY(-2px);
+      background:rgba(255,255,255,.04);
     }
 
-    @media (max-width: 768px){
+    .footer-menu-row{
+      padding:0 0 18px;
+    }
+
+    .footer-menu{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+      width:100%;
+    }
+
+    .footer-menu a{
+      color:var(--white);
+      text-decoration:none;
+      font-size:.93rem;
+      font-weight:600;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      text-align:left;
+    }
+
+    .footer-menu a:hover{
+      opacity:.72;
+    }
+
+    .footer-bottom{
+      border-top:1px solid var(--line-soft);
+      padding-top:12px;
+    }
+
+    .footer-bottom-inner{
+      display:grid;
+      grid-template-columns:1fr auto;
+      align-items:center;
+      gap:18px;
+    }
+
+    .footer-legal{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px 30px;
+    }
+
+    .footer-legal a{
+      color:var(--white-muted);
+      text-decoration:none;
+      font-size:.82rem;
+      line-height:1.5;
+    }
+
+    .footer-legal a:hover{
+      color:var(--white);
+    }
+
+    .footer-copy{
+      color:var(--white-muted);
+      font-size:.82rem;
+      line-height:1.5;
+      text-align:right;
+      white-space:nowrap;
+    }
+
+    @media(max-width:991.98px){
+      .footer-menu{
+        grid-template-columns:repeat(2,1fr);
+        gap:14px 22px;
+      }
+
+      .footer-bottom-inner{
+        grid-template-columns:1fr;
+        gap:10px;
+      }
+
+      .footer-copy{
+        text-align:left;
+        white-space:normal;
+      }
+    }
+
+    @media(max-width:767.98px){
+
       .section-space{
         padding:70px 0;
       }
 
-      .cgu h1,
+      .page-title{
+        font-size:1.55rem;
+        line-height:1.1;
+      }
+
       .cgu h2{
-        font-size:1.2rem;
+        font-size:1.1rem;
       }
 
       .cgu p{
-        font-size:0.96rem;
+        font-size:.96rem;
+      }
+
+      .footer{
+        padding:24px 0 12px;
+      }
+
+      .footer-menu{
+        grid-template-columns:1fr;
+        gap:10px;
+      }
+
+      .footer-menu a{
+        font-size:.88rem;
+      }
+
+      .footer-legal{
+        gap:8px 18px;
+      }
+
+      .footer-legal a,
+      .footer-copy{
+        font-size:.79rem;
       }
     }
   </style>
@@ -148,25 +344,23 @@
 
 <body>
 
-  <!-- BACKGROUND VIDEO -->
   <div class="video-background">
-    <video autoplay muted loop playsinline preload="auto">
+    <video autoplay muted loop playsinline webkit-playsinline preload="auto" poster="assets/img/poster.jpg">
       <source src="assets/video/abyss-lab.mp4" type="video/mp4">
     </video>
   </div>
 
-  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark py-3">
     <div class="container">
       <a class="navbar-brand fw-bold" href="index.html">ABYSS LAB.</a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Ouvrir le menu">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse justify-content-end" id="navmenu">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">A PROPOS</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">ACCUEIL</a></li>
           <li class="nav-item"><a class="nav-link" href="services.html">SERVICES</a></li>
           <li class="nav-item"><a class="nav-link" href="references.html">REFERENCES</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
@@ -175,336 +369,145 @@
     </div>
   </nav>
 
-  <!-- CONTENT -->
-  <section class="section-space cgu-wrapper">
+  <main>
+
+    <section class="section-space">
+      <div class="container">
+
+        <section class="cgu">
+
+          <div class="page-header">
+            <p class="page-kicker">DOCUMENT LEGAL</p>
+            <h1 class="page-title">CONDITIONS GENERALES DE VENTE</h1>
+          </div>
+
+          <h2>1. OBJET</h2>
+
+          <p>
+            Les presentes Conditions Generales de Vente definissent les modalites dans lesquelles Abyss Lab propose ses prestations de conseil, strategie, creation et accompagnement en communication, marketing et direction artistique.
+          </p>
+
+          <p>
+            Toute commande, validation de devis ou paiement d’acompte implique l’acceptation pleine et entiere des presentes Conditions Generales de Vente.
+          </p>
+
+          <h2>2. IDENTIFICATION DU PRESTATAIRE</h2>
+
+          <p>
+            <strong>Mathilde Ranchon – Abyss Lab</strong><br>
+            Micro-entreprise (Entreprise individuelle)<br>
+            Siege social : 43 Rue Marcelin Berthelot, 33270 Floirac, France<br>
+            SIREN : 101581593<br>
+            SIRET : 10158159300015<br>
+            Code APE : 7021Z<br>
+            Email : mathilde@abyss-lab.com
+          </p>
+
+          <h2>3. PRESTATIONS</h2>
+
+          <p>
+            Abyss Lab propose notamment des prestations de :
+          </p>
+
+          <p>
+            – strategie de marque et positionnement<br>
+            – conseil en communication et marketing<br>
+            – direction artistique<br>
+            – creation de contenus et storytelling<br>
+            – strategie digitale et reseaux sociaux<br>
+            – accompagnement creatif et coordination de projets
+          </p>
+
+          <p>
+            Les prestations sont detaillees dans le devis ou la proposition commerciale transmis au client.
+          </p>
+
+        </section>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
     <div class="container">
-      <section class="cgu">
 
-        <h1>1. OBJET</h1>
+      <div class="footer-top">
+        <div class="row align-items-start gy-4">
 
-        <p>
-          Les presentes Conditions Generales de Vente definissent les modalites
-          dans lesquelles Abyss Lab propose ses prestations de conseil, strategie,
-          creation et accompagnement en communication, marketing et direction artistique.
-        </p>
+          <div class="col-12 col-lg-6">
+            <div class="footer-brand">ABYSS LAB.</div>
 
-        <p>
-          Toute commande, validation de devis ou paiement d’acompte implique
-          l’acceptation pleine et entiere des presentes Conditions Generales de Vente.
-        </p>
+            <p class="footer-tagline">
+              NOUS REVELONS LA PROFONDEUR DES MARQUES POUR FAIRE EMERGER DES UNIVERS FORTS ET DURABLES.
+            </p>
 
-        <h2>2. IDENTIFICATION DU PRESTATAIRE</h2>
+            <div class="footer-location">
+              Basée à Bordeaux, disponible partout en France et à l'étranger.
+            </div>
+          </div>
 
-        <p>
-          <strong>Mathilde Ranchon – Abyss Lab</strong><br>
-          Micro-entreprise (Entreprise individuelle)<br>
-          Siege social : 43 Rue Marcelin Berthelot, 33270 Floirac, France<br>
-          SIREN : 101581593<br>
-          SIRET : 10158159300015<br>
-          Code APE : 7021Z<br>
-          Email : mathilde@abyss-lab.com
-        </p>
+          <div class="col-12 col-lg-6 d-lg-flex justify-content-lg-end">
+            <div class="footer-social-block">
 
-        <h2>3. PRESTATIONS</h2>
+              <div class="footer-social-title">
+                Suivez-nous sur les réseaux sociaux :
+              </div>
 
-        <p>
-          Abyss Lab propose notamment des prestations de :
-        </p>
+              <div class="footer-socials">
+                <a class="footer-social" href="https://www.instagram.com/abyss.lab_/" target="_blank">
+                  <i class="bi bi-instagram"></i>
+                </a>
 
-        <p>
-          – strategie de marque et positionnement<br>
-          – conseil en communication et marketing<br>
-          – direction artistique<br>
-          – creation de contenus et storytelling<br>
-          – strategie digitale et reseaux sociaux<br>
-          – accompagnement creatif et coordination de projets<br>
-          – creation de supports de communication<br>
-          – accompagnement web, branding et contenu
-        </p>
+                <a class="footer-social" href="https://www.linkedin.com/company/abyss-lab/" target="_blank">
+                  <i class="bi bi-linkedin"></i>
+                </a>
 
-        <p>
-          Les prestations sont detaillees dans le devis ou la proposition commerciale
-          transmis au client.
-        </p>
+                <a class="footer-social" href="https://www.tiktok.com/@abyss.lab" target="_blank">
+                  <i class="bi bi-tiktok"></i>
+                </a>
+              </div>
 
-        <h2>4. DEVIS ET COMMANDE</h2>
+            </div>
+          </div>
 
-        <p>
-          Toute prestation fait l’objet d’un devis detaille transmis au client.
-        </p>
-
-        <p>
-          La commande est consideree comme ferme et definitive a reception :
-        </p>
-
-        <p>
-          – du devis signe par le client<br>
-          – ou d’une validation ecrite par email<br>
-          – et, le cas echeant, du paiement de l’acompte mentionne sur le devis
-        </p>
-
-        <p>
-          Les devis sont valables pendant une duree de 30 jours a compter de leur emission,
-          sauf mention contraire.
-        </p>
-
-        <h2>5. TARIFS</h2>
-
-        <p>
-          Les prix des prestations sont exprimes en euros.
-        </p>
-
-        <p>
-          Abyss Lab etant une micro-entreprise, la TVA n’est pas applicable,
-          conformement a l’article 293 B du Code general des impots,
-          sauf evolution du statut fiscal.
-        </p>
-
-        <p>
-          Les tarifs applicables sont ceux indiques sur le devis accepte par le client.
-        </p>
-
-        <h2>6. FRAIS EXTERNES</h2>
-
-        <p>
-          Sauf mention contraire dans le devis, les frais externes ne sont pas inclus
-          dans le tarif de la prestation.
-        </p>
-
-        <p>
-          Cela concerne notamment les frais de deplacement, hebergement, restauration,
-          impressions, achats medias, licences, abonnements, outils, hebergement web,
-          noms de domaine, prestataires externes, photographes, videastes, developpeurs,
-          graphistes, influenceurs ou tout autre intervenant necessaire au projet.
-        </p>
-
-        <h2>7. MODALITES DE PAIEMENT</h2>
-
-        <p>
-          Les modalites de paiement sont precisees dans le devis.
-        </p>
-
-        <p>
-          Sauf indication contraire, un acompte est demande a la commande et le solde
-          est payable selon l’echeancier indique sur le devis ou a reception de facture.
-        </p>
-
-        <p>
-          Le reglement peut etre effectue par virement bancaire ou tout autre moyen
-          de paiement indique sur la facture.
-        </p>
-
-        <h2>8. RETARD DE PAIEMENT</h2>
-
-        <p>
-          Conformement a l’article L441-10 du Code de commerce, tout retard de paiement
-          entraine l’application de penalites de retard.
-        </p>
-
-        <p>
-          Une indemnite forfaitaire de 40 euros pour frais de recouvrement sera egalement due.
-        </p>
-
-        <p>
-          Abyss Lab se reserve le droit de suspendre toute prestation en cours
-          jusqu’au reglement complet des sommes dues.
-        </p>
-
-        <h2>9. DELAIS DE REALISATION</h2>
-
-        <p>
-          Les delais de realisation indiques sont donnes a titre indicatif.
-        </p>
-
-        <p>
-          Ils peuvent etre ajustes selon la complexite du projet, la reactivite du client,
-          les validations attendues ou tout evenement independant de la volonte de Abyss Lab.
-        </p>
-
-        <p>
-          Le client s’engage a fournir dans les delais convenus tous les elements
-          necessaires a la bonne realisation de la prestation.
-        </p>
-
-        <h2>10. MODIFICATIONS ET VALIDATIONS</h2>
-
-        <p>
-          Sauf mention contraire dans le devis, les prestations incluent jusqu’a
-          trois series d’allers-retours par livrable ou par phase de projet.
-        </p>
-
-        <p>
-          Toute demande supplementaire, modification importante, ajout de prestation,
-          changement de direction creative ou intervention hors perimetre initial
-          pourra faire l’objet d’une facturation complementaire.
-        </p>
-
-        <p>
-          Toute validation intermediaire par le client vaut acceptation de l’etape concernee.
-        </p>
-
-        <h2>11. OBLIGATIONS DU CLIENT</h2>
-
-        <p>
-          Le client s’engage a :
-        </p>
-
-        <p>
-          – fournir des informations exactes, completes et exploitables<br>
-          – transmettre les contenus, acces et elements necessaires a la realisation du projet<br>
-          – valider les etapes du projet dans des delais raisonnables<br>
-          – respecter les conditions de paiement definies dans le devis<br>
-          – garantir qu’il dispose des droits necessaires sur les contenus transmis
-        </p>
-
-        <h2>12. PROPRIETE INTELLECTUELLE</h2>
-
-        <p>
-          Les creations realisees par Abyss Lab demeurent la propriete de
-          Mathilde Ranchon jusqu’au paiement complet des prestations.
-        </p>
-
-        <p>
-          Apres reglement integral, les droits d’utilisation des creations sont cedes
-          au client dans les conditions precisees dans le devis ou la proposition commerciale.
-        </p>
-
-        <p>
-          Sauf mention contraire ecrite, la cession des droits est limitee aux supports,
-          usages, territoires et durees prevus dans le cadre de la mission.
-        </p>
-
-        <p>
-          Abyss Lab se reserve le droit de presenter les realisations dans son portfolio,
-          son site internet, ses reseaux sociaux ou ses supports de communication,
-          sauf demande ecrite contraire du client.
-        </p>
-
-        <h2>13. MARQUES ET SIGNES DISTINCTIFS</h2>
-
-        <p>
-          Le client reste seul responsable de la disponibilite juridique de son nom,
-          de sa marque, de ses slogans, logos, signes distinctifs et elements d’identite.
-        </p>
-
-        <p>
-          Sauf mission specifique prevue au devis, Abyss Lab ne realise pas de recherche
-          d’anteriorite juridique exhaustive ni de depot de marque.
-        </p>
-
-        <h2>14. PRESTATAIRES TIERS</h2>
-
-        <p>
-          Dans le cadre de certains projets, Abyss Lab peut etre amenee a collaborer
-          avec des prestataires externes tels que photographes, videastes, developpeurs,
-          graphistes, imprimeurs, influenceurs ou agences partenaires.
-        </p>
-
-        <h2>15. ANNULATION ET RESILIATION</h2>
-
-        <p>
-          En cas d’annulation par le client apres validation du devis,
-          l’acompte verse reste acquis a Abyss Lab.
-        </p>
-
-        <p>
-          Si la prestation a deja debute, les travaux realises seront factures
-          au prorata du travail effectue.
-        </p>
-
-        <h2>16. RESPONSABILITE</h2>
-
-        <p>
-          Abyss Lab s’engage a fournir ses prestations avec diligence,
-          professionnalisme et selon une obligation de moyens.
-        </p>
-
-        <p>
-          La responsabilite de Abyss Lab ne pourra etre engagee en cas de dommage indirect,
-          perte de chiffre d’affaires, baisse de visibilite, mauvais referencement,
-          suspension de compte social, changement d’algorithme, dysfonctionnement technique
-          tiers ou exploitation non conforme des livrables.
-        </p>
-
-        <h2>17. CONFIDENTIALITE</h2>
-
-        <p>
-          Les parties s’engagent a conserver confidentielles les informations,
-          documents, strategies, donnees commerciales ou elements sensibles echanges
-          dans le cadre de la mission.
-        </p>
-
-        <h2>18. FORCE MAJEURE</h2>
-
-        <p>
-          Abyss Lab ne pourra etre tenue responsable en cas de retard ou d’impossibilite
-          d’execution resultant d’un cas de force majeure au sens du droit francais.
-        </p>
-
-        <h2>19. DROIT APPLICABLE</h2>
-
-        <p>
-          Les presentes Conditions Generales de Vente sont regies par le droit francais.
-        </p>
-
-        <p>
-          En cas de litige, les parties s’efforceront de trouver une solution amiable
-          avant toute action judiciaire.
-        </p>
-
-        <h2>20. CONTACT</h2>
-
-        <p>
-          Pour toute question relative aux presentes Conditions Generales de Vente,
-          vous pouvez contacter Abyss Lab a l’adresse suivante :
-        </p>
-
-        <p>
-          mathilde@abyss-lab.com
-        </p>
-
-      </section>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <strong>ABYSS LAB.</strong><br>
-          Agence basee Bordeaux. Deplacement partout en France et a l'etranger.
-        </div>
-
-        <div class="col-12 col-md-6 text-md-end mt-4 mt-md-0">
-          <a href="mentions-legales.html" class="text-white me-3">Mentions legales</a>
-          <a href="cgu.html" class="text-white me-3">CGU</a>
-          <a href="cgv.html" class="text-white me-3">CGV</a>
-          <a href="politique-confidentialite.html" class="text-white">Politique de confidentialite</a>
         </div>
       </div>
+
+      <div class="footer-menu-row">
+        <nav class="footer-menu">
+          <a href="index.html">Accueil</a>
+          <a href="services.html">Services</a>
+          <a href="references.html">Références</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+
+          <div class="footer-legal">
+            <a href="mentions-legales.html">Mentions légales</a>
+            <a href="cgu.html">CGU</a>
+            <a href="cgv.html">CGV</a>
+            <a href="politique-confidentialite.html">Politique de confidentialité</a>
+          </div>
+
+          <div class="footer-copy">
+            © 2026 Abyss Lab. Tous droits réservés.
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function(){
-      const currentLocation = location.pathname.split("/").pop();
-      const menuItems = document.querySelectorAll(".nav-link");
-
-      menuItems.forEach(link => {
-        if(link.getAttribute("href") === currentLocation){
-          link.classList.add("active");
-        }
-      });
-    });
-  </script>
-
-  <script>
-    window.addEventListener("scroll", function(){
-      const navbar = document.querySelector(".navbar");
-      navbar.classList.toggle("scrolled", window.scrollY > 50);
+    window.addEventListener("scroll", function () {
+      document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 50);
     });
   </script>
 
