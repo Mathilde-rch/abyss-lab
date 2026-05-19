@@ -95,13 +95,8 @@
       max-width:950px;
     }
 
-    .page-kicker{
-      font-size:.72rem;
-      font-weight:700;
-      letter-spacing:.22em;
-      text-transform:uppercase;
-      color:rgba(255,255,255,.72);
-      margin-bottom:14px;
+    .page-header{
+      margin-bottom:70px;
     }
 
     .page-title{
@@ -112,10 +107,6 @@
       text-transform:uppercase;
       color:#fff;
       margin:0;
-    }
-
-    .page-header{
-      margin-bottom:70px;
     }
 
     .cgu h2{
@@ -240,10 +231,6 @@
       text-align:left;
     }
 
-    .footer-menu a:hover{
-      opacity:.72;
-    }
-
     .footer-bottom{
       border-top:1px solid var(--line-soft);
       padding-top:12px;
@@ -266,36 +253,13 @@
       color:var(--white-muted);
       text-decoration:none;
       font-size:.82rem;
-      line-height:1.5;
-    }
-
-    .footer-legal a:hover{
-      color:var(--white);
     }
 
     .footer-copy{
       color:var(--white-muted);
       font-size:.82rem;
-      line-height:1.5;
       text-align:right;
       white-space:nowrap;
-    }
-
-    @media(max-width:991.98px){
-      .footer-menu{
-        grid-template-columns:repeat(2,1fr);
-        gap:14px 22px;
-      }
-
-      .footer-bottom-inner{
-        grid-template-columns:1fr;
-        gap:10px;
-      }
-
-      .footer-copy{
-        text-align:left;
-        white-space:normal;
-      }
     }
 
     @media(max-width:767.98px){
@@ -317,26 +281,16 @@
         font-size:.96rem;
       }
 
-      .footer{
-        padding:24px 0 12px;
-      }
-
       .footer-menu{
         grid-template-columns:1fr;
-        gap:10px;
       }
 
-      .footer-menu a{
-        font-size:.88rem;
+      .footer-bottom-inner{
+        grid-template-columns:1fr;
       }
 
-      .footer-legal{
-        gap:8px 18px;
-      }
-
-      .footer-legal a,
       .footer-copy{
-        font-size:.79rem;
+        text-align:left;
       }
     }
   </style>
@@ -344,12 +298,22 @@
 
 <body>
 
+  <!-- BACKGROUND VIDEO -->
   <div class="video-background">
-    <video autoplay muted loop playsinline webkit-playsinline preload="auto" poster="assets/img/poster.jpg">
+    <video
+      id="bg-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      webkit-playsinline
+      preload="auto"
+    >
       <source src="assets/video/abyss-lab.mp4" type="video/mp4">
     </video>
   </div>
 
+  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark py-3">
     <div class="container">
       <a class="navbar-brand fw-bold" href="index.html">ABYSS LAB.</a>
@@ -377,7 +341,6 @@
         <section class="cgu">
 
           <div class="page-header">
-            <p class="page-kicker">DOCUMENT LEGAL</p>
             <h1 class="page-title">CONDITIONS GENERALES DE VENTE</h1>
           </div>
 
@@ -401,25 +364,6 @@
             SIRET : 10158159300015<br>
             Code APE : 7021Z<br>
             Email : mathilde@abyss-lab.com
-          </p>
-
-          <h2>3. PRESTATIONS</h2>
-
-          <p>
-            Abyss Lab propose notamment des prestations de :
-          </p>
-
-          <p>
-            – strategie de marque et positionnement<br>
-            – conseil en communication et marketing<br>
-            – direction artistique<br>
-            – creation de contenus et storytelling<br>
-            – strategie digitale et reseaux sociaux<br>
-            – accompagnement creatif et coordination de projets
-          </p>
-
-          <p>
-            Les prestations sont detaillees dans le devis ou la proposition commerciale transmis au client.
           </p>
 
         </section>
@@ -506,8 +450,47 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    window.addEventListener("scroll", function () {
-      document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 50);
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const video = document.getElementById("bg-video");
+
+      if(video){
+
+        video.muted = true;
+        video.defaultMuted = true;
+        video.playsInline = true;
+
+        const playVideo = () => {
+          const promise = video.play();
+
+          if (promise !== undefined) {
+            promise.catch(() => {});
+          }
+        };
+
+        playVideo();
+
+        document.addEventListener("touchstart", playVideo, {
+          once:true,
+          passive:true
+        });
+
+        document.addEventListener("click", playVideo, {
+          once:true
+        });
+
+        document.addEventListener("visibilitychange", function () {
+          if (!document.hidden) {
+            playVideo();
+          }
+        });
+
+      }
+
+      window.addEventListener("scroll", function () {
+        document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 50);
+      });
+
     });
   </script>
 
