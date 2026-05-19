@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CGV - ABYSS LAB</title>
+  <meta name="description" content="Conditions Generales de Vente de Abyss Lab.">
+  <title>CGV | ABYSS LAB</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +13,155 @@
   <link href="https://fonts.cdnfonts.com/css/couture" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    /* ===== GLOBAL ===== */
+    body{
+      background:#000;
+      color:#fff;
+      font-family:'couture', sans-serif;
+      position:relative;
+      min-height:100vh;
+    }
+
+    .section-space{
+      padding:100px 0;
+    }
+
+    .thin-border{
+      border-bottom:1px solid #222;
+    }
+
+    .cgu p,
+    .cgu li{
+      font-family:"Montserrat", sans-serif;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar{
+      position:relative;
+      z-index:20;
+      transition:background-color 0.3s ease, backdrop-filter 0.3s ease;
+    }
+
+    .navbar.scrolled{
+      background:rgba(0,0,0,0.72);
+      backdrop-filter:blur(10px);
+    }
+
+    .nav-link.active{
+      color:#fff !important;
+      font-weight:700;
+    }
+
+    /* ===== VIDEO BACKGROUND ===== */
+    .video-background{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      z-index:-2;
+      overflow:hidden;
+    }
+
+    .video-background video{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .video-background::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.58);
+      z-index:1;
+    }
+
+    /* ===== CGV PAGE ===== */
+    .cgu-wrapper{
+      position:relative;
+      z-index:2;
+    }
+
+    .cgu{
+      max-width:950px;
+    }
+
+    .cgu h1,
+    .cgu h2{
+      font-family:'couture', sans-serif;
+      font-size:1.35rem;
+      margin-bottom:25px;
+      color:#fff;
+      letter-spacing:0.5px;
+      line-height:1.3;
+    }
+
+    .cgu h1{
+      margin-top:0;
+    }
+
+    .cgu h2{
+      margin-top:50px;
+    }
+
+    .cgu p{
+      color:#f2f2f2;
+      line-height:1.8;
+      font-size:1rem;
+      margin-bottom:20px;
+    }
+
+    .cgu strong{
+      color:#fff;
+    }
+
+    /* ===== FOOTER ===== */
+    footer{
+      border-top:1px solid rgba(255,255,255,0.15);
+      padding:60px 0;
+      font-size:0.9rem;
+      position:relative;
+      z-index:2;
+    }
+
+    footer a{
+      text-decoration:none;
+    }
+
+    footer a:hover{
+      opacity:0.8;
+    }
+
+    /* ===== FADE IN ===== */
+    .fade-in{
+      opacity:0;
+      transform:translateY(30px);
+      transition:opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @media (max-width: 768px){
+      .section-space{
+        padding:70px 0;
+      }
+
+      .cgu h1,
+      .cgu h2{
+        font-size:1.2rem;
+      }
+
+      .cgu p{
+        font-size:0.96rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -26,9 +176,9 @@
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark py-3">
     <div class="container">
-      <a class="navbar-brand" href="index.html">ABYSS LAB.</a>
+      <a class="navbar-brand fw-bold" href="index.html">ABYSS LAB.</a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-label="Ouvrir le menu">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Ouvrir le menu">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -51,239 +201,319 @@
     </div>
   </nav>
 
-  <!-- CONTENU CGV -->
-  <main>
-    <section class="cgv">
+  <!-- CONTENT -->
+  <section class="section-space cgu-wrapper fade-in">
+    <div class="container">
+      <section class="cgu">
 
-      <h1>CONDITIONS GENERALES DE VENTE</h1>
+        <h1>1. OBJET</h1>
 
-      <h2>1. OBJET</h2>
+        <p>
+          Les presentes Conditions Generales de Vente definissent les modalites
+          dans lesquelles Abyss Lab propose ses prestations de conseil, strategie,
+          creation et accompagnement en communication, marketing et direction artistique.
+        </p>
 
-      <p>
-        Les presentes Conditions Generales de Vente (CGV) definissent les modalites
-        dans lesquelles Abyss Lab propose ses prestations de conseil, strategie,
-        creation et accompagnement en communication, marketing et direction artistique.
-      </p>
+        <p>
+          Toute commande, validation de devis ou paiement d’acompte implique
+          l’acceptation pleine et entiere des presentes Conditions Generales de Vente.
+        </p>
 
-      <p>
-        Toute commande ou signature de devis implique l’acceptation pleine et entiere
-        des presentes CGV par le client.
-      </p>
+        <h2>2. IDENTIFICATION DU PRESTATAIRE</h2>
 
-      <h2>2. IDENTIFICATION DU PRESTATAIRE</h2>
+        <p>
+          <strong>Mathilde Ranchon – Abyss Lab</strong><br>
+          Micro-entreprise (Entreprise individuelle)<br>
+          Siege social : 43 Rue Marcelin Berthelot, 33270 Floirac, France<br>
+          SIREN : 101581593<br>
+          SIRET : 10158159300015<br>
+          Code APE : 7021Z<br>
+          Email : mathilde@abyss-lab.com
+        </p>
 
-      <p>
-        <strong>Mathilde Ranchon – Abyss Lab</strong><br>
-        Micro-entreprise (Entreprise individuelle)<br>
-        Siege social : 43 Rue Marcelin Berthelot, 33270 Floirac, France<br>
-        SIREN : 101581593<br>
-        SIRET : 10158159300015<br>
-        Code APE : 7021Z<br>
-        Email : mathilde@abyss-lab.com
-      </p>
+        <h2>3. PRESTATIONS</h2>
 
-      <h2>3. PRESTATIONS</h2>
+        <p>
+          Abyss Lab propose notamment des prestations de :
+        </p>
 
-      <p>
-        Abyss Lab propose notamment des prestations de :
-      </p>
+        <p>
+          – strategie de marque et positionnement<br>
+          – conseil en communication et marketing<br>
+          – direction artistique<br>
+          – creation de contenus et storytelling<br>
+          – strategie digitale et reseaux sociaux<br>
+          – accompagnement creatif et coordination de projets<br>
+          – creation de supports de communication<br>
+          – accompagnement web, branding et contenu
+        </p>
 
-      <p>
-        – strategie de marque et positionnement<br>
-        – conseil en communication et marketing<br>
-        – direction artistique<br>
-        – creation de contenus et storytelling<br>
-        – strategie digitale et reseaux sociaux<br>
-        – accompagnement creatif et coordination de projets
-      </p>
+        <p>
+          Les prestations sont detaillees dans le devis ou la proposition commerciale
+          transmis au client.
+        </p>
 
-      <p>
-        Les prestations sont decrites dans le devis ou la proposition commerciale
-        remise au client.
-      </p>
+        <h2>4. DEVIS ET COMMANDE</h2>
 
-      <h2>4. DEVIS ET COMMANDE</h2>
+        <p>
+          Toute prestation fait l’objet d’un devis detaille transmis au client.
+        </p>
 
-      <p>
-        Toute prestation fait l’objet d’un devis detaille transmis au client.
-      </p>
+        <p>
+          La commande est consideree comme ferme et definitive a reception :
+        </p>
 
-      <p>
-        La commande est consideree comme ferme et definitive a reception :
-      </p>
+        <p>
+          – du devis signe par le client<br>
+          – ou d’une validation ecrite par email<br>
+          – et, le cas echeant, du paiement de l’acompte mentionne sur le devis
+        </p>
 
-      <p>
-        – du devis signe par le client<br>
-        – et, le cas echeant, du paiement de l’acompte mentionne sur le devis
-      </p>
+        <p>
+          Les devis sont valables pendant une duree de 30 jours a compter de leur emission,
+          sauf mention contraire.
+        </p>
 
-      <p>
-        Les devis sont valables pendant une duree de 30 jours a compter de leur emission.
-      </p>
+        <h2>5. TARIFS</h2>
 
-      <h2>5. TARIFS</h2>
+        <p>
+          Les prix des prestations sont exprimes en euros.
+        </p>
 
-      <p>
-        Les prix des prestations sont exprimes en euros.
-      </p>
+        <p>
+          Abyss Lab etant une micro-entreprise, la TVA n’est pas applicable,
+          conformement a l’article 293 B du Code general des impots,
+          sauf evolution du statut fiscal.
+        </p>
 
-      <p>
-        Abyss Lab etant une micro-entreprise, la TVA n’est pas applicable,
-        conformement a l’article 293B du Code general des impots,
-        sauf mention contraire.
-      </p>
+        <p>
+          Les tarifs applicables sont ceux indiques sur le devis accepte par le client.
+        </p>
 
-      <p>
-        Les tarifs applicables sont ceux mentionnes sur le devis accepte par le client.
-      </p>
+        <h2>6. FRAIS EXTERNES</h2>
 
-      <h2>6. MODALITES DE PAIEMENT</h2>
+        <p>
+          Sauf mention contraire dans le devis, les frais externes ne sont pas inclus
+          dans le tarif de la prestation.
+        </p>
 
-      <p>
-        Sauf mention contraire, les conditions de paiement sont les suivantes :
-      </p>
+        <p>
+          Cela concerne notamment les frais de deplacement, hebergement, restauration,
+          impressions, achats medias, licences, abonnements, outils, hebergement web,
+          noms de domaine, prestataires externes, photographes, videastes, developpeurs,
+          graphistes, influenceurs ou tout autre intervenant necessaire au projet.
+        </p>
 
-      <p>
-        – acompte de 30 % a la commande<br>
-        – solde payable a reception de facture
-      </p>
+        <p>
+          Ces frais peuvent faire l’objet d’une facturation separee ou etre integres
+          au devis apres validation du client.
+        </p>
 
-      <p>
-        Le reglement peut etre effectue par virement bancaire ou tout autre moyen
-        de paiement indique sur la facture.
-      </p>
+        <h2>7. MODALITES DE PAIEMENT</h2>
 
-      <h2>7. RETARD DE PAIEMENT</h2>
+        <p>
+          Les modalites de paiement sont precisees dans le devis.
+        </p>
 
-      <p>
-        Conformement a l’article L441-10 du Code de commerce,
-        tout retard de paiement entraine l’application de penalites de retard.
-      </p>
+        <p>
+          Sauf indication contraire, un acompte est demande a la commande et le solde
+          est payable selon l’echeancier indique sur le devis ou a reception de facture.
+        </p>
 
-      <p>
-        Une indemnite forfaitaire de 40 € pour frais de recouvrement
-        sera egalement due.
-      </p>
+        <p>
+          Le reglement peut etre effectue par virement bancaire ou tout autre moyen
+          de paiement indique sur la facture.
+        </p>
 
-      <h2>8. DELAIS DE REALISATION</h2>
+        <h2>8. RETARD DE PAIEMENT</h2>
 
-      <p>
-        Les delais de realisation sont donnes a titre indicatif
-        et peuvent etre ajustes selon la complexite du projet,
-        la reactivite du client ou tout evenement independant
-        de la volonte de Abyss Lab.
-      </p>
+        <p>
+          Conformement a l’article L441-10 du Code de commerce, tout retard de paiement
+          entraine l’application de penalites de retard.
+        </p>
 
-      <p>
-        Le client s’engage a fournir dans les delais convenus
-        les elements necessaires a la realisation de la prestation.
-      </p>
+        <p>
+          Une indemnite forfaitaire de 40 euros pour frais de recouvrement sera egalement due.
+        </p>
 
-      <h2>9. OBLIGATIONS DU CLIENT</h2>
+        <p>
+          Abyss Lab se reserve le droit de suspendre toute prestation en cours
+          jusqu’au reglement complet des sommes dues.
+        </p>
 
-      <p>
-        Le client s’engage a :
-      </p>
+        <h2>9. DELAIS DE REALISATION</h2>
 
-      <p>
-        – fournir des informations exactes et completes necessaires a la realisation du projet<br>
-        – valider les etapes du projet dans des delais raisonnables<br>
-        – respecter les conditions de paiement definies dans le devis
-      </p>
+        <p>
+          Les delais de realisation indiques sont donnes a titre indicatif.
+        </p>
 
-      <h2>10. PROPRIETE INTELLECTUELLE</h2>
+        <p>
+          Ils peuvent etre ajustes selon la complexite du projet, la reactivite du client,
+          les validations attendues ou tout evenement independant de la volonte de Abyss Lab.
+        </p>
 
-      <p>
-        Les creations realisees par Abyss Lab demeurent la propriete de
-        Mathilde Ranchon jusqu’au paiement complet des prestations.
-      </p>
+        <p>
+          Le client s’engage a fournir dans les delais convenus tous les elements
+          necessaires a la bonne realisation de la prestation.
+        </p>
 
-      <p>
-        Apres reglement integral, les droits d’utilisation des creations
-        sont cedes au client dans les conditions precisees dans le devis
-        ou la proposition commerciale.
-      </p>
+        <h2>10. MODIFICATIONS ET VALIDATIONS</h2>
 
-      <p>
-        Abyss Lab se reserve le droit de presenter les realisations
-        dans son portfolio, son site internet ou ses supports de communication,
-        sauf demande ecrite contraire du client.
-      </p>
+        <p>
+          Sauf mention contraire dans le devis, les prestations incluent jusqu’a
+          trois series d’allers-retours par livrable ou par phase de projet.
+        </p>
 
-      <h2>11. COLLABORATION AVEC DES PRESTATAIRES TIERS</h2>
+        <p>
+          Toute demande supplementaire, modification importante, ajout de prestation,
+          changement de direction creative ou intervention hors perimetre initial
+          pourra faire l’objet d’une facturation complementaire.
+        </p>
 
-      <p>
-        Dans le cadre de certains projets, Abyss Lab peut etre amenee
-        a collaborer avec des prestataires externes
-        (photographes, videastes, developpeurs, designers, etc.).
-      </p>
+        <p>
+          Toute validation intermediaire par le client vaut acceptation de l’etape concernee.
+        </p>
 
-      <p>
-        Les prestations realisees par ces partenaires peuvent faire l’objet
-        d’une facturation distincte ou etre integrees dans le devis global
-        selon les modalites convenues avec le client.
-      </p>
+        <h2>11. OBLIGATIONS DU CLIENT</h2>
 
-      <h2>12. ANNULATION</h2>
+        <p>
+          Le client s’engage a :
+        </p>
 
-      <p>
-        En cas d’annulation par le client apres validation du devis,
-        l’acompte verse reste acquis a Abyss Lab a titre d’indemnite.
-      </p>
+        <p>
+          – fournir des informations exactes, completes et exploitables<br>
+          – transmettre les contenus, acces et elements necessaires a la realisation du projet<br>
+          – valider les etapes du projet dans des delais raisonnables<br>
+          – respecter les conditions de paiement definies dans le devis<br>
+          – garantir qu’il dispose des droits necessaires sur les contenus transmis
+        </p>
 
-      <p>
-        Si la prestation a deja debute,
-        les travaux realises seront factures au prorata du travail effectue.
-      </p>
+        <h2>12. PROPRIETE INTELLECTUELLE</h2>
 
-      <h2>13. RESPONSABILITE</h2>
+        <p>
+          Les creations realisees par Abyss Lab demeurent la propriete de
+          Mathilde Ranchon jusqu’au paiement complet des prestations.
+        </p>
 
-      <p>
-        Abyss Lab s’engage a fournir ses prestations avec diligence
-        et professionnalisme.
-      </p>
+        <p>
+          Apres reglement integral, les droits d’utilisation des creations sont cedes
+          au client dans les conditions precisees dans le devis ou la proposition commerciale.
+        </p>
 
-      <p>
-        La responsabilite de Abyss Lab ne pourra etre engagee
-        en cas de dommages indirects lies a l’utilisation
-        des livrables ou a l’exploitation des creations.
-      </p>
+        <p>
+          Sauf mention contraire ecrite, la cession des droits est limitee aux supports,
+          usages, territoires et durees prevus dans le cadre de la mission.
+        </p>
 
-      <h2>14. FORCE MAJEURE</h2>
+        <p>
+          Abyss Lab se reserve le droit de presenter les realisations dans son portfolio,
+          son site internet, ses reseaux sociaux ou ses supports de communication,
+          sauf demande ecrite contraire du client.
+        </p>
 
-      <p>
-        Abyss Lab ne pourra etre tenue responsable
-        en cas de retard ou d’impossibilite d’execution
-        resultant d’un cas de force majeure
-        au sens du droit francais.
-      </p>
+        <h2>13. MARQUES ET SIGNES DISTINCTIFS</h2>
 
-      <h2>15. DROIT APPLICABLE</h2>
+        <p>
+          Le client reste seul responsable de la disponibilite juridique de son nom,
+          de sa marque, de ses slogans, logos, signes distinctifs et elements d’identite.
+        </p>
 
-      <p>
-        Les presentes Conditions Generales de Vente
-        sont regies par le droit francais.
-      </p>
+        <p>
+          Sauf mission specifique prevue au devis, Abyss Lab ne realise pas de recherche
+          d’anteriorite juridique exhaustive ni de depot de marque.
+        </p>
 
-      <p>
-        En cas de litige,
-        les parties s’efforceront de trouver
-        une solution amiable avant toute action judiciaire.
-      </p>
+        <p>
+          Il appartient au client de proceder aux verifications necessaires et, si besoin,
+          de consulter un avocat, un conseil en propriete industrielle ou l’INPI.
+        </p>
 
-      <h2>16. CONTACT</h2>
+        <h2>14. PRESTATAIRES TIERS</h2>
 
-      <p>
-        Pour toute question relative aux presentes CGV,
-        vous pouvez contacter Abyss Lab :
-      </p>
+        <p>
+          Dans le cadre de certains projets, Abyss Lab peut etre amenee a collaborer
+          avec des prestataires externes tels que photographes, videastes, developpeurs,
+          graphistes, imprimeurs, influenceurs ou agences partenaires.
+        </p>
 
-      <p>
-        mathilde@abyss-lab.com
-      </p>
+        <p>
+          Les prestations realisees par ces partenaires peuvent faire l’objet d’une
+          facturation distincte ou etre integrees dans le devis global selon les modalites
+          convenues avec le client.
+        </p>
 
-    </section>
-  </main>
+        <h2>15. ANNULATION ET RESILIATION</h2>
+
+        <p>
+          En cas d’annulation par le client apres validation du devis,
+          l’acompte verse reste acquis a Abyss Lab.
+        </p>
+
+        <p>
+          Si la prestation a deja debute, les travaux realises seront factures
+          au prorata du travail effectue.
+        </p>
+
+        <p>
+          Abyss Lab se reserve le droit de mettre fin a la prestation en cas de non-paiement,
+          de comportement abusif, de demandes contraires a la loi ou de non-respect
+          des obligations du client.
+        </p>
+
+        <h2>16. RESPONSABILITE</h2>
+
+        <p>
+          Abyss Lab s’engage a fournir ses prestations avec diligence,
+          professionnalisme et selon une obligation de moyens.
+        </p>
+
+        <p>
+          La responsabilite de Abyss Lab ne pourra etre engagee en cas de dommage indirect,
+          perte de chiffre d’affaires, baisse de visibilite, mauvais referencement,
+          suspension de compte social, changement d’algorithme, dysfonctionnement technique
+          tiers ou exploitation non conforme des livrables.
+        </p>
+
+        <h2>17. CONFIDENTIALITE</h2>
+
+        <p>
+          Les parties s’engagent a conserver confidentielles les informations,
+          documents, strategies, donnees commerciales ou elements sensibles echanges
+          dans le cadre de la mission.
+        </p>
+
+        <h2>18. FORCE MAJEURE</h2>
+
+        <p>
+          Abyss Lab ne pourra etre tenue responsable en cas de retard ou d’impossibilite
+          d’execution resultant d’un cas de force majeure au sens du droit francais.
+        </p>
+
+        <h2>19. DROIT APPLICABLE</h2>
+
+        <p>
+          Les presentes Conditions Generales de Vente sont regies par le droit francais.
+        </p>
+
+        <p>
+          En cas de litige, les parties s’efforceront de trouver une solution amiable
+          avant toute action judiciaire.
+        </p>
+
+        <h2>20. CONTACT</h2>
+
+        <p>
+          Pour toute question relative aux presentes Conditions Generales de Vente,
+          vous pouvez contacter Abyss Lab a l’adresse suivante :
+        </p>
+
+        <p>
+          mathilde@abyss-lab.com
+        </p>
+
+      </section>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer>
@@ -291,13 +521,58 @@
       <div class="row">
         <div class="col-12 col-md-6">
           <strong>ABYSS LAB.</strong><br>
-          Agence basee Bordeaux. Deplacement partout en France et a l'etranger.
+          Agence basee Bordeaux. Déplacement partout en France et à l'etranger.
+        </div>
+
+        <div class="col-12 col-md-6 text-md-end mt-4 mt-md-0">
+          <a href="mentions-legales.html" class="text-white me-3">Mentions legales</a>
+          <a href="cgu.html" class="text-white me-3">CGU</a>
+          <a href="cgv.html" class="text-white me-3">CGV</a>
+          <a href="politique-confidentialite.html" class="text-white">Politique de confidentialite</a>
         </div>
       </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      const currentLocation = location.pathname.split("/").pop();
+      const menuItems = document.querySelectorAll(".nav-link");
+
+      menuItems.forEach(link => {
+        if(link.getAttribute("href") === currentLocation){
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
+
+  <script>
+    window.addEventListener("scroll", function(){
+      const navbar = document.querySelector(".navbar");
+      navbar.classList.toggle("scrolled", window.scrollY > 50);
+    });
+
+    const faders = document.querySelectorAll(".fade-in");
+
+    const appearOptions = {
+      threshold: 0.15
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer){
+      entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
 
 </body>
 </html>
