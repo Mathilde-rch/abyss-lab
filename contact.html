@@ -1,55 +1,35 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contactez Abyss Lab pour vos projets de branding, identité visuelle, direction artistique, stratégie digitale, création de contenu, social media et web design.">
+  <title>Contact | ABYSS LAB</title>
 
-  <title>Contact | Abyss Lab</title>
-
-  <meta
-    name="description"
-    content="Contactez Abyss Lab pour créer une identité forte, du contenu impactant et une présence digitale mémorable."
-  >
-
-  <!-- BOOTSTRAP -->
-
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  >
-
-  <!-- ICONS -->
-
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-    rel="stylesheet"
-  >
-
-  <!-- FONT -->
-
-  <link
-    href="https://fonts.cdnfonts.com/css/couture"
-    rel="stylesheet"
-  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/couture" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
   <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
+    :root{
+      --white:#ffffff;
+      --white-soft:rgba(255,255,255,.84);
+      --white-muted:rgba(255,255,255,.66);
+      --line:rgba(255,255,255,.14);
+      --line-soft:rgba(255,255,255,.10);
     }
 
     body{
       background:#000;
       color:#fff;
       font-family:'Montserrat', sans-serif;
+      min-height:100vh;
       overflow-x:hidden;
     }
-
-    /* VIDEO */
 
     .video-background{
       position:fixed;
@@ -69,183 +49,156 @@
       content:"";
       position:absolute;
       inset:0;
-      background:
-      linear-gradient(
-        180deg,
-        rgba(0,0,0,.48),
-        rgba(0,0,0,.82)
-      );
+      background:rgba(0,0,0,.58);
+      z-index:1;
     }
-
-    /* HEADER */
 
     .navbar{
       position:relative;
-      z-index:20;
-      padding:22px 0;
+      z-index:30;
+      transition:background-color .3s ease, backdrop-filter .3s ease;
+    }
+
+    .navbar.scrolled{
+      background:rgba(0,0,0,.68);
+      backdrop-filter:blur(14px);
     }
 
     .navbar-brand{
-      color:#fff!important;
-      font-size:.95rem;
-      letter-spacing:.14em;
-      font-weight:800;
+      letter-spacing:1px;
+      color:var(--white)!important;
     }
 
     .nav-link{
-      color:rgba(255,255,255,.76)!important;
-      text-transform:uppercase;
-      font-size:.75rem;
+      font-family:'couture', sans-serif;
+      font-size:.80rem;
       letter-spacing:.16em;
-      font-weight:700;
-      margin-left:24px;
-      transition:.25s ease;
+      text-transform:uppercase;
+      font-weight:600;
+      color:var(--white-soft)!important;
+      padding-left:1rem!important;
+      padding-right:1rem!important;
     }
 
     .nav-link:hover,
     .nav-link.active{
-      color:#fff!important;
+      color:var(--white)!important;
     }
 
-    /* SECTION */
-
-    .contact-section{
+    .section-space{
       position:relative;
       z-index:2;
-      padding:90px 0 100px;
+      padding:82px 0 95px;
     }
 
-    .eyebrow{
+    .eyebrow,
+    .small-label{
       display:inline-block;
-      margin-bottom:20px;
-
+      margin-bottom:18px;
       font-size:.72rem;
       letter-spacing:.18em;
       text-transform:uppercase;
-
-      color:rgba(255,255,255,.58);
+      color:var(--white-muted);
       font-weight:700;
     }
 
     .page-title{
       font-family:'couture', sans-serif;
-      font-size:clamp(2.6rem,6vw,6rem);
-      line-height:.94;
+      font-size:clamp(1.75rem, 4vw, 3.45rem);
+      line-height:1.05;
+      letter-spacing:.09em;
       text-transform:uppercase;
-      letter-spacing:.06em;
-      max-width:950px;
-      margin-bottom:26px;
+      color:#fff;
+      max-width:860px;
+      margin:0 0 24px;
     }
 
-    .hero-text{
+    .hero-lead{
       max-width:720px;
-      color:rgba(255,255,255,.82);
-      line-height:1.85;
-      font-size:1.03rem;
+      color:var(--white-soft);
+      font-size:1rem;
+      line-height:1.75;
+      margin:0;
     }
 
-    /* KEYWORDS */
-
-    .keywords{
+    .hero-keywords{
       display:flex;
       flex-wrap:wrap;
-      gap:12px;
-      margin-top:36px;
+      gap:10px;
+      margin-top:34px;
+      max-width:1050px;
     }
 
-    .keywords span{
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.05);
-      backdrop-filter:blur(10px);
-
-      padding:12px 16px;
-
+    .hero-keywords span{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.045);
+      padding:10px 14px;
       border-radius:999px;
-
-      font-size:.72rem;
-      letter-spacing:.12em;
+      font-size:.68rem;
+      letter-spacing:.11em;
       text-transform:uppercase;
-
-      color:rgba(255,255,255,.82);
+      color:rgba(255,255,255,.72);
       font-weight:700;
+      transition:.45s ease;
     }
 
-    /* GRID */
+    .hero-keywords span.is-visible{
+      background:rgba(255,255,255,.16);
+      color:#fff;
+      border-color:rgba(255,255,255,.55);
+      box-shadow:0 0 22px rgba(255,255,255,.18);
+    }
 
     .contact-grid{
+      margin-top:60px;
       display:grid;
-      grid-template-columns:1fr 1.08fr;
-      gap:28px;
-      margin-top:70px;
+      grid-template-columns:.92fr 1.08fr;
+      gap:26px;
+      align-items:start;
     }
 
     .contact-card{
-      border:1px solid rgba(255,255,255,.12);
-
-      background:
-      linear-gradient(
-        145deg,
-        rgba(255,255,255,.09),
-        rgba(255,255,255,.04)
-      );
-
+      border:1px solid var(--line);
+      background:linear-gradient(145deg, rgba(255,255,255,.085), rgba(255,255,255,.04));
       backdrop-filter:blur(16px);
-
-      border-radius:28px;
-
-      padding:36px;
-    }
-
-    .small-label{
-      display:inline-block;
-
-      margin-bottom:18px;
-
-      font-size:.72rem;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-
-      color:rgba(255,255,255,.56);
-      font-weight:700;
+      border-radius:26px;
+      padding:32px;
     }
 
     .contact-card h2{
-      font-size:clamp(1.5rem,2.5vw,2.4rem);
-      line-height:1.1;
-      margin-bottom:22px;
-      text-transform:uppercase;
+      font-size:clamp(1.25rem,2vw,1.85rem);
+      line-height:1.15;
+      margin-bottom:18px;
       font-weight:800;
+      text-transform:uppercase;
     }
 
     .contact-text,
     .form-intro{
-      color:rgba(255,255,255,.76);
-      line-height:1.8;
-      font-size:.97rem;
+      color:var(--white-soft);
+      line-height:1.65;
+      font-size:.96rem;
+      margin:0;
     }
 
-    /* SERVICES */
-
     .services-list{
-      margin-top:34px;
+      margin-top:28px;
       display:flex;
       flex-direction:column;
-      gap:14px;
+      gap:10px;
     }
 
     .service-item{
       display:flex;
-      gap:18px;
-
-      padding:14px 0;
-
-      border-bottom:1px solid rgba(255,255,255,.08);
+      gap:16px;
+      padding:12px 0;
+      border-bottom:1px solid var(--line-soft);
     }
 
     .service-item span{
-      font-size:.74rem;
+      font-size:.72rem;
       font-weight:800;
-      color:rgba(255,255,255,.42);
+      color:var(--white-muted);
       letter-spacing:.12em;
     }
 
@@ -255,10 +208,12 @@
       font-weight:500;
     }
 
-    /* LINKS */
-
-    .contact-links{
-      margin-top:34px;
+    .contact-links,
+    .social-links{
+      margin-top:24px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
     }
 
     .contact-line,
@@ -266,20 +221,13 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-
       gap:12px;
-
       color:#fff;
       text-decoration:none;
-
-      border:1px solid rgba(255,255,255,.12);
-
+      border:1px solid var(--line);
       border-radius:18px;
-
-      padding:14px 16px;
-
-      background:rgba(255,255,255,.03);
-
+      padding:13px 15px;
+      background:rgba(255,255,255,.035);
       transition:.25s ease;
     }
 
@@ -290,39 +238,27 @@
     }
 
     .social-title{
-      margin-top:34px;
-      margin-bottom:14px;
-
+      margin-top:30px;
+      margin-bottom:0;
       font-size:.72rem;
       letter-spacing:.18em;
       text-transform:uppercase;
-
-      color:rgba(255,255,255,.55);
+      color:var(--white-muted);
       font-weight:700;
     }
-
-    .social-links{
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-
-    /* FORM */
 
     .form-control,
     .form-select{
       background:rgba(255,255,255,.06);
       border:1px solid rgba(255,255,255,.18);
-
       color:#fff;
-
-      border-radius:16px;
-
-      padding:15px 16px;
+      border-radius:15px;
+      padding:14px 15px;
+      font-size:.95rem;
     }
 
     .form-control::placeholder{
-      color:rgba(255,255,255,.42);
+      color:rgba(255,255,255,.48);
     }
 
     .form-select option{
@@ -332,31 +268,25 @@
     .form-control:focus,
     .form-select:focus{
       background:rgba(255,255,255,.08);
-      border-color:#fff;
       color:#fff;
+      border-color:#fff;
       box-shadow:none;
     }
 
-    /* BUTTON */
-
     .btn-abyss{
       width:100%;
-
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
       border:1.5px solid rgba(255,255,255,.82);
-
-      background:transparent;
       color:#fff;
-
+      background:transparent;
       border-radius:999px;
-
-      padding:15px 22px;
-
-      font-size:.78rem;
+      padding:14px 22px;
       font-weight:800;
-
       letter-spacing:.08em;
       text-transform:uppercase;
-
+      font-size:.76rem;
       transition:.25s ease;
     }
 
@@ -364,8 +294,6 @@
       background:#fff;
       color:#000;
     }
-
-    /* RGPD */
 
     .consent-check{
       display:flex;
@@ -377,22 +305,14 @@
     .consent-check .form-check-input{
       appearance:none;
       -webkit-appearance:none;
-
       width:20px;
       height:20px;
-
       margin-top:4px;
-
       border:1px solid rgba(255,255,255,.45);
-
       border-radius:5px;
-
       background:transparent;
-
       position:relative;
-
       flex-shrink:0;
-
       cursor:pointer;
     }
 
@@ -403,261 +323,266 @@
 
     .consent-check .form-check-input:checked::after{
       content:"✓";
-
       position:absolute;
       inset:0;
-
       display:flex;
       align-items:center;
       justify-content:center;
-
       color:#000;
-
       font-size:15px;
       font-weight:900;
     }
 
     .consent-check .form-check-label{
-      color:rgba(255,255,255,.68);
-      font-size:.84rem;
-      line-height:1.6;
+      color:var(--white-muted);
+      font-size:.82rem;
+      line-height:1.55;
     }
 
     .consent-check strong{
       color:#fff;
     }
 
-    /* FORM MESSAGE */
-
     .form-message{
-      margin-top:18px;
+      margin-top:16px;
+      color:var(--white-soft);
       font-size:.88rem;
-      color:rgba(255,255,255,.72);
     }
 
-    /* FOOTER */
-
-    footer{
+    .footer{
+      border-top:1px solid var(--line);
+      padding:28px 0 14px;
       position:relative;
       z-index:2;
+    }
 
-      padding:40px 0;
-
-      border-top:1px solid rgba(255,255,255,.08);
+    .footer-top{
+      padding-bottom:20px;
+      margin-bottom:20px;
+      border-bottom:1px solid rgba(255,255,255,.18);
     }
 
     .footer-brand{
+      font-size:.98rem;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:10px;
+      color:var(--white);
+    }
+
+    .footer-tagline{
+      margin:0;
+      max-width:640px;
+      font-size:.93rem;
+      line-height:1.66;
+      font-weight:600;
+      text-transform:uppercase;
+      color:var(--white);
+    }
+
+    .footer-location{
+      margin-top:10px;
       font-size:.92rem;
-      font-weight:800;
-      letter-spacing:.14em;
+      line-height:1.68;
+      color:var(--white-soft);
     }
 
-    .footer-text{
-      margin-top:12px;
-
-      color:rgba(255,255,255,.56);
-
-      font-size:.82rem;
-      line-height:1.7;
-
-      max-width:540px;
+    .footer-social-block{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
     }
 
-    .footer-socials a{
-      color:#fff;
+    .footer-social-title{
+      font-size:.92rem;
+      line-height:1.5;
+      font-weight:600;
+      color:var(--white);
+      margin-bottom:10px;
+    }
+
+    .footer-socials{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .footer-social{
+      width:42px;
+      height:42px;
+      border:1.5px solid rgba(255,255,255,.78);
+      border-radius:50%;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--white);
+      text-decoration:none;
       font-size:1rem;
-      margin-left:16px;
-      transition:.25s ease;
+      background:rgba(255,255,255,.01);
     }
 
-    .footer-socials a:hover{
-      opacity:.6;
+    .footer-menu-row{
+      padding:0 0 18px;
+    }
+
+    .footer-menu{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+      width:100%;
+    }
+
+    .footer-menu a{
+      color:var(--white);
+      text-decoration:none;
+      font-size:.93rem;
+      font-weight:600;
+      letter-spacing:.10em;
+      text-transform:uppercase;
     }
 
     .footer-bottom{
-      margin-top:26px;
-      padding-top:18px;
-      border-top:1px solid rgba(255,255,255,.08);
-
-      color:rgba(255,255,255,.5);
-
-      font-size:.78rem;
+      border-top:1px solid var(--line-soft);
+      padding-top:12px;
     }
 
-    .footer-bottom a{
-      color:rgba(255,255,255,.5);
+    .footer-bottom-inner{
+      display:grid;
+      grid-template-columns:1fr auto;
+      align-items:center;
+      gap:18px;
+    }
+
+    .footer-legal{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px 30px;
+    }
+
+    .footer-legal a{
+      color:var(--white-muted);
       text-decoration:none;
+      font-size:.82rem;
     }
 
-    /* RESPONSIVE */
+    .footer-copy{
+      color:var(--white-muted);
+      font-size:.82rem;
+      text-align:right;
+      white-space:nowrap;
+    }
 
-    @media(max-width:991px){
-
+    @media(max-width:991.98px){
       .contact-grid{
         grid-template-columns:1fr;
       }
-
-      .contact-card{
-        padding:28px;
-      }
-
-      .nav-link{
-        margin-left:0;
-        margin-top:12px;
-      }
-
     }
 
-    @media(max-width:767px){
-
-      .contact-section{
-        padding:70px 0 80px;
+    @media(max-width:767.98px){
+      .section-space{
+        padding:68px 0;
       }
 
       .page-title{
-        font-size:2.4rem;
+        font-size:1.75rem;
+        line-height:1.12;
       }
 
+      .contact-card{
+        padding:24px;
+      }
+
+      .footer-menu{
+        grid-template-columns:1fr;
+      }
+
+      .footer-bottom-inner{
+        grid-template-columns:1fr;
+      }
+
+      .footer-copy{
+        text-align:left;
+      }
     }
-
   </style>
-
 </head>
 
 <body>
 
-  <!-- VIDEO -->
-
   <div class="video-background">
-
-    <video autoplay muted loop playsinline preload="auto">
-
-      <source
-        src="assets/video/abyss-lab.mp4"
-        type="video/mp4"
-      >
-
+    <video id="bg-video" autoplay muted loop playsinline webkit-playsinline preload="auto">
+      <source src="assets/video/abyss-lab.mp4" type="video/mp4">
     </video>
-
   </div>
 
-  <!-- HEADER -->
-
-  <nav class="navbar navbar-expand-lg navbar-dark">
-
+  <nav class="navbar navbar-expand-lg navbar-dark py-3">
     <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">ABYSS LAB.</a>
 
-      <a class="navbar-brand" href="index.html">
-        ABYSS LAB.
-      </a>
-
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navmenu"
-      >
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div
-        class="collapse navbar-collapse justify-content-end"
-        id="navmenu"
-      >
-
+      <div class="collapse navbar-collapse justify-content-end" id="navmenu">
         <ul class="navbar-nav">
-
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">
-              ACCUEIL
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="services.html">
-              SERVICES
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="references.html">
-              REFERENCES
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link active" href="contact.html">
-              CONTACT
-            </a>
-          </li>
-
+          <li class="nav-item"><a class="nav-link" href="index.html">ACCUEIL</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">SERVICES</a></li>
+          <li class="nav-item"><a class="nav-link" href="references.html">REFERENCES</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">CONTACT</a></li>
         </ul>
-
       </div>
-
     </div>
-
   </nav>
 
-  <!-- MAIN -->
-
   <main>
-
-    <section class="contact-section">
-
+    <section class="section-space">
       <div class="container">
 
-        <span class="eyebrow">
-          BRANDING • CONTENT • DIGITAL EXPERIENCE
-        </span>
+        <span class="eyebrow">CONTACT • STUDIO CRÉATIF • BORDEAUX</span>
 
         <h1 class="page-title">
-          DONNEZ À VOTRE IMAGE<br>
-          UNE VRAIE DIMENSION.
+          DONNEZ À VOTRE IMAGE UNE VRAIE DIMENSION.
         </h1>
 
-        <p class="hero-text">
-          Branding, direction artistique, contenu et stratégie digitale
-          pour les marques qui veulent réellement se démarquer.
+        <p class="hero-lead">
+          Abyss Lab accompagne les marques, artistes et projets ambitieux dans la création d’une identité forte,
+          d’un contenu impactant et d’une présence digitale mémorable.
         </p>
 
-        <!-- KEYWORDS -->
-
-        <div class="keywords">
-
+        <div class="hero-keywords">
           <span>Branding</span>
-          <span>Direction Artistique</span>
-          <span>Contenu</span>
-          <span>Social Media</span>
-          <span>Web Design</span>
-
+          <span>Identité visuelle</span>
+          <span>Direction artistique</span>
+          <span>Stratégie digitale</span>
+          <span>Création de contenu</span>
+          <span>Social media</span>
+          <span>Web design</span>
+          <span>Site internet</span>
+          <span>Design graphique</span>
+          <span>Image de marque</span>
+          <span>Storytelling</span>
+          <span>Production créative</span>
+          <span>Communication digitale</span>
+          <span>Univers de marque</span>
+          <span>Contenu Instagram</span>
+          <span>Campagne digitale</span>
+          <span>Expérience immersive</span>
+          <span>Studio créatif Bordeaux</span>
         </div>
-
-        <!-- GRID -->
 
         <div class="contact-grid">
 
-          <!-- LEFT -->
-
           <div class="contact-card">
+            <span class="small-label">CONTACT</span>
 
-            <span class="small-label">
-              CONTACT
-            </span>
-
-            <h2>
-              Créons une image forte.
-            </h2>
+            <h2>Créons une image forte.</h2>
 
             <p class="contact-text">
-              Nous accompagnons les marques qui veulent
-              construire une présence moderne, forte et mémorable.
+              Branding, contenu et stratégie pour construire une présence claire, moderne et mémorable.
             </p>
 
-            <!-- SERVICES -->
-
             <div class="services-list">
-
               <div class="service-item">
                 <span>01</span>
                 <p>Branding</p>
@@ -672,348 +597,263 @@
                 <span>03</span>
                 <p>Contenu & social media</p>
               </div>
-
             </div>
 
-            <!-- MAIL -->
-
             <div class="contact-links">
-
-              <a
-                class="contact-line"
-                href="mailto:mathilde@abyss-lab.com"
-              >
-
+              <a class="contact-line" href="mailto:mathilde@abyss-lab.com">
                 <span>
                   <i class="bi bi-envelope"></i>
                   mathilde@abyss-lab.com
                 </span>
-
                 <i class="bi bi-arrow-right"></i>
-
               </a>
-
             </div>
 
-            <!-- SOCIALS -->
-
-            <div class="social-title">
-              SUIVRE ABYSS LAB
-            </div>
+            <div class="social-title">SUIVRE ABYSS LAB</div>
 
             <div class="social-links">
-
-              <a
-                class="social-link"
-                href="https://www.instagram.com/abyss.lab_/"
-                target="_blank"
-              >
-
+              <a class="social-link" href="https://www.instagram.com/abyss.lab_/" target="_blank">
                 <span>
                   <i class="bi bi-instagram"></i>
                   Instagram
                 </span>
-
                 <i class="bi bi-arrow-right"></i>
-
               </a>
 
-              <a
-                class="social-link"
-                href="https://www.linkedin.com/company/abyss-lab/"
-                target="_blank"
-              >
-
+              <a class="social-link" href="https://www.linkedin.com/company/abyss-lab/" target="_blank">
                 <span>
                   <i class="bi bi-linkedin"></i>
                   LinkedIn
                 </span>
-
                 <i class="bi bi-arrow-right"></i>
-
               </a>
 
+              <a class="social-link" href="https://www.tiktok.com/@abyss.lab" target="_blank">
+                <span>
+                  <i class="bi bi-tiktok"></i>
+                  TikTok
+                </span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
             </div>
-
           </div>
 
-          <!-- RIGHT -->
-
           <div class="contact-card">
+            <span class="small-label">COMMENCER UN PROJET</span>
 
-            <span class="small-label">
-              COMMENCER UN PROJET
-            </span>
-
-            <h2>
-              Parlez-nous de votre projet.
-            </h2>
+            <h2>Parlez-nous de votre projet.</h2>
 
             <p class="form-intro">
-              Une idée, une marque ou une ambition ?
-              Construisons quelque chose de fort.
+              Une idée, une marque, une ambition ? Construisons quelque chose de fort.
             </p>
 
-            <!-- FORM -->
-
-            <form
-              action="https://formsubmit.co/ajax/mathilde@abyss-lab.com"
-              method="POST"
-              class="mt-4"
-              id="contactForm"
-            >
-
-              <input
-                type="hidden"
-                name="_captcha"
-                value="false"
-              >
-
-              <input
-                type="hidden"
-                name="_subject"
-                value="Nouveau contact - Abyss Lab"
-              >
-
-              <!-- INPUTS -->
+            <form action="https://formsubmit.co/ajax/mathilde@abyss-lab.com" method="POST" class="mt-4" id="contactForm">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_subject" value="Nouveau contact - Abyss Lab">
+              <input type="hidden" name="_template" value="table">
+              <input type="text" name="_honey" style="display:none">
 
               <div class="mb-3">
-
-                <input
-                  type="text"
-                  class="form-control"
-                  name="Nom"
-                  placeholder="Nom / Société"
-                  required
-                >
-
+                <input type="text" class="form-control" name="Nom / Société" placeholder="Nom / Société" required>
               </div>
 
               <div class="mb-3">
-
-                <input
-                  type="email"
-                  class="form-control"
-                  name="Email"
-                  placeholder="Adresse email"
-                  required
-                >
-
+                <input type="email" class="form-control" name="Email" placeholder="Adresse email" required>
               </div>
 
               <div class="mb-3">
-
-                <input
-                  type="text"
-                  class="form-control"
-                  name="Instagram / Site"
-                  placeholder="Instagram / Site web"
-                >
-
+                <input type="text" class="form-control" name="Instagram / Site web" placeholder="Instagram / Site web">
               </div>
 
               <div class="mb-3">
-
-                <select
-                  class="form-select"
-                  name="Besoin"
-                  required
-                >
-
-                  <option value="" selected disabled>
-                    Votre besoin
-                  </option>
-
+                <select class="form-select" name="Besoin" required>
+                  <option value="" selected disabled>Votre besoin</option>
                   <option>Branding</option>
                   <option>Direction artistique</option>
                   <option>Création de contenu</option>
                   <option>Site internet</option>
                   <option>Social media</option>
-
+                  <option>Stratégie digitale</option>
+                  <option>Projet global</option>
                 </select>
-
               </div>
 
               <div class="mb-3">
-
-                <textarea
-                  class="form-control"
-                  name="Message"
-                  rows="5"
-                  placeholder="Parlez-nous de votre projet..."
-                  required
-                ></textarea>
-
+                <textarea class="form-control" name="Message" rows="5" placeholder="Parlez-nous de votre projet..." required></textarea>
               </div>
-
-              <!-- RGPD -->
 
               <div class="form-check consent-check">
+                <input class="form-check-input" type="checkbox" id="rgpdConsent" name="Consentement RGPD" value="Oui" required>
 
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  id="rgpdConsent"
-                  required
-                >
-
-                <label
-                  class="form-check-label"
-                  for="rgpdConsent"
-                >
-
-                  J'accepte que mes coordonnées soient enregistrées
-                  par <strong>Abyss Lab</strong>.
-
+                <label class="form-check-label" for="rgpdConsent">
+                  J'accepte que mes coordonnées soient enregistrées par <strong>Abyss Lab</strong>.
                 </label>
-
               </div>
 
-              <!-- BUTTON -->
-
-              <button
-                type="submit"
-                class="btn-abyss"
-              >
-
+              <button type="submit" class="btn-abyss">
                 ENVOYER LA DEMANDE
-
               </button>
 
-              <p
-                id="formMessage"
-                class="form-message"
-              ></p>
-
+              <p id="formMessage" class="form-message"></p>
             </form>
-
           </div>
 
         </div>
 
       </div>
-
     </section>
-
   </main>
 
-  <!-- FOOTER -->
-
-  <footer>
-
+  <footer class="footer">
     <div class="container">
 
-      <div class="d-flex flex-column flex-lg-row justify-content-between align-items-start align-items-lg-center gap-4">
+      <div class="footer-top">
+        <div class="row align-items-start gy-4">
 
-        <div>
+          <div class="col-12 col-lg-6">
+            <div class="footer-brand">ABYSS LAB.</div>
 
-          <div class="footer-brand">
-            ABYSS LAB
+            <p class="footer-tagline">
+              NOUS REVELONS LA PROFONDEUR DES MARQUES POUR FAIRE EMERGER DES UNIVERS FORTS ET DURABLES.
+            </p>
+
+            <div class="footer-location">
+              Basée à Bordeaux, disponible partout en France et à l'étranger.
+            </div>
           </div>
 
-          <div class="footer-text">
-            Branding, direction artistique, contenu et stratégie digitale
-            pour les marques qui veulent marquer les esprits.
+          <div class="col-12 col-lg-6 d-lg-flex justify-content-lg-end">
+            <div class="footer-social-block">
+
+              <div class="footer-social-title">
+                Suivez-nous sur les réseaux sociaux :
+              </div>
+
+              <div class="footer-socials">
+                <a class="footer-social" href="https://www.instagram.com/abyss.lab_/" target="_blank">
+                  <i class="bi bi-instagram"></i>
+                </a>
+
+                <a class="footer-social" href="https://www.linkedin.com/company/abyss-lab/" target="_blank">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+
+                <a class="footer-social" href="https://www.tiktok.com/@abyss.lab" target="_blank">
+                  <i class="bi bi-tiktok"></i>
+                </a>
+              </div>
+
+            </div>
           </div>
 
         </div>
-
-        <div class="footer-socials">
-
-          <a
-            href="https://www.instagram.com/abyss.lab_/"
-            target="_blank"
-          >
-            <i class="bi bi-instagram"></i>
-          </a>
-
-          <a
-            href="https://www.linkedin.com/company/abyss-lab/"
-            target="_blank"
-          >
-            <i class="bi bi-linkedin"></i>
-          </a>
-
-        </div>
-
       </div>
 
-      <div class="footer-bottom d-flex justify-content-between flex-wrap gap-3">
+      <div class="footer-menu-row">
+        <nav class="footer-menu">
+          <a href="index.html">Accueil</a>
+          <a href="services.html">Services</a>
+          <a href="references.html">Références</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
 
-        <div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
 
-          <a href="cgv.html">
-            CGV
-          </a>
+          <div class="footer-legal">
+            <a href="mentions-legales.html">Mentions légales</a>
+            <a href="cgu.html">CGU</a>
+            <a href="cgv.html">CGV</a>
+            <a href="politique-confidentialite.html">Politique de confidentialité</a>
+          </div>
+
+          <div class="footer-copy">
+            © 2026 Abyss Lab. Tous droits réservés.
+          </div>
 
         </div>
-
-        <div>
-          © 2026 ABYSS LAB
-        </div>
-
       </div>
 
     </div>
-
   </footer>
-
-  <!-- BOOTSTRAP -->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- FORM -->
-
   <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const video = document.getElementById("bg-video");
 
-    const contactForm = document.getElementById("contactForm");
-    const formMessage = document.getElementById("formMessage");
+      if(video){
+        video.muted = true;
+        video.defaultMuted = true;
+        video.playsInline = true;
 
-    if(contactForm){
-
-      contactForm.addEventListener("submit", async function(event){
-
-        event.preventDefault();
-
-        formMessage.textContent = "Envoi en cours...";
-
-        const formData = new FormData(contactForm);
-
-        try{
-
-          const response = await fetch(contactForm.action, {
-            method:"POST",
-            body:formData,
-            headers:{
-              "Accept":"application/json"
-            }
-          });
-
-          if(response.ok){
-
-            contactForm.reset();
-
-            formMessage.textContent =
-            "Merci, votre demande a bien été envoyée.";
-
-          } else {
-
-            formMessage.textContent =
-            "Une erreur est survenue. Essayez à nouveau.";
-
+        const playVideo = () => {
+          const promise = video.play();
+          if (promise !== undefined) {
+            promise.catch(() => {});
           }
+        };
 
-        } catch(error){
+        playVideo();
 
-          formMessage.textContent =
-          "Service indisponible. Contactez-nous directement par email.";
+        document.addEventListener("touchstart", playVideo, { once:true, passive:true });
+        document.addEventListener("click", playVideo, { once:true });
 
-        }
+        document.addEventListener("visibilitychange", function () {
+          if (!document.hidden) playVideo();
+        });
+      }
 
+      window.addEventListener("scroll", function () {
+        document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 50);
       });
 
-    }
+      const keywordObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if(entry.isIntersecting){
+            entry.target.classList.add("is-visible");
+          }
+        });
+      }, {
+        threshold:0.35
+      });
 
+      document.querySelectorAll(".hero-keywords span").forEach((keyword) => {
+        keywordObserver.observe(keyword);
+      });
+
+      const contactForm = document.getElementById("contactForm");
+      const formMessage = document.getElementById("formMessage");
+
+      if(contactForm){
+        contactForm.addEventListener("submit", async function(event){
+          event.preventDefault();
+
+          formMessage.textContent = "Envoi en cours...";
+
+          const formData = new FormData(contactForm);
+
+          try{
+            const response = await fetch(contactForm.action, {
+              method:"POST",
+              body:formData,
+              headers:{ "Accept":"application/json" }
+            });
+
+            if(response.ok){
+              contactForm.reset();
+              formMessage.textContent = "Merci, votre demande a bien été envoyée.";
+            }else{
+              formMessage.textContent = "Une erreur est survenue. Écrivez-nous à mathilde@abyss-lab.com.";
+            }
+          }catch(error){
+            formMessage.textContent = "Service indisponible. Écrivez-nous à mathilde@abyss-lab.com.";
+          }
+        });
+      }
+    });
   </script>
 
 </body>
