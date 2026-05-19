@@ -49,7 +49,7 @@
       content:"";
       position:absolute;
       inset:0;
-      background:rgba(0,0,0,.58);
+      background:rgba(0,0,0,.62);
       z-index:1;
     }
 
@@ -122,31 +122,42 @@
     }
 
     .hero-keywords{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:34px;
-      max-width:1050px;
+      display:grid;
+      grid-template-columns:repeat(6, 1fr);
+      gap:12px;
+      margin-top:36px;
+      width:100%;
     }
 
     .hero-keywords span{
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.045);
-      padding:10px 14px;
+      min-height:46px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(0,0,0,.34);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      padding:10px 12px;
       border-radius:999px;
-      font-size:.68rem;
-      letter-spacing:.11em;
+      font-size:.66rem;
+      letter-spacing:.095em;
       text-transform:uppercase;
-      color:rgba(255,255,255,.72);
+      color:rgba(255,255,255,.78);
       font-weight:700;
-      transition:.45s ease;
+      transition:background .35s ease, color .35s ease, border-color .35s ease, box-shadow .35s ease, transform .35s ease;
     }
 
+    .hero-keywords span:hover,
     .hero-keywords span.is-visible{
       background:rgba(255,255,255,.16);
       color:#fff;
-      border-color:rgba(255,255,255,.55);
-      box-shadow:0 0 22px rgba(255,255,255,.18);
+      border-color:rgba(255,255,255,.62);
+      box-shadow:
+        0 0 20px rgba(255,255,255,.20),
+        inset 0 0 16px rgba(255,255,255,.08);
+      transform:translateY(-2px);
     }
 
     .contact-grid{
@@ -343,12 +354,6 @@
       color:#fff;
     }
 
-    .form-message{
-      margin-top:16px;
-      color:var(--white-soft);
-      font-size:.88rem;
-    }
-
     .footer{
       border-top:1px solid var(--line);
       padding:28px 0 14px;
@@ -473,9 +478,19 @@
       white-space:nowrap;
     }
 
+    @media(max-width:1199.98px){
+      .hero-keywords{
+        grid-template-columns:repeat(4, 1fr);
+      }
+    }
+
     @media(max-width:991.98px){
       .contact-grid{
         grid-template-columns:1fr;
+      }
+
+      .hero-keywords{
+        grid-template-columns:repeat(3, 1fr);
       }
     }
 
@@ -493,6 +508,10 @@
         padding:24px;
       }
 
+      .hero-keywords{
+        grid-template-columns:repeat(2, 1fr);
+      }
+
       .footer-menu{
         grid-template-columns:1fr;
       }
@@ -503,6 +522,12 @@
 
       .footer-copy{
         text-align:left;
+      }
+    }
+
+    @media(max-width:420px){
+      .hero-keywords{
+        grid-template-columns:1fr;
       }
     }
   </style>
@@ -647,43 +672,40 @@
               Une idée, une marque, une ambition ? Construisons quelque chose de fort.
             </p>
 
-            <form action="https://formsubmit.co/ajax/mathilde@abyss-lab.com" method="POST" class="mt-4" id="contactForm">
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_subject" value="Nouveau contact - Abyss Lab">
-              <input type="hidden" name="_template" value="table">
+            <form action="send-mail.php" method="POST" class="mt-4" id="contactForm">
               <input type="text" name="_honey" style="display:none">
 
               <div class="mb-3">
-                <input type="text" class="form-control" name="Nom / Société" placeholder="Nom / Société" required>
+                <input type="text" class="form-control" name="nom" placeholder="Nom / Société" required>
               </div>
 
               <div class="mb-3">
-                <input type="email" class="form-control" name="Email" placeholder="Adresse email" required>
+                <input type="email" class="form-control" name="email" placeholder="Adresse email" required>
               </div>
 
               <div class="mb-3">
-                <input type="text" class="form-control" name="Instagram / Site web" placeholder="Instagram / Site web">
+                <input type="text" class="form-control" name="instagram_site" placeholder="Instagram / Site web">
               </div>
 
               <div class="mb-3">
-                <select class="form-select" name="Besoin" required>
+                <select class="form-select" name="besoin" required>
                   <option value="" selected disabled>Votre besoin</option>
-                  <option>Branding</option>
-                  <option>Direction artistique</option>
-                  <option>Création de contenu</option>
-                  <option>Site internet</option>
-                  <option>Social media</option>
-                  <option>Stratégie digitale</option>
-                  <option>Projet global</option>
+                  <option value="Branding">Branding</option>
+                  <option value="Direction artistique">Direction artistique</option>
+                  <option value="Création de contenu">Création de contenu</option>
+                  <option value="Site internet">Site internet</option>
+                  <option value="Social media">Social media</option>
+                  <option value="Stratégie digitale">Stratégie digitale</option>
+                  <option value="Projet global">Projet global</option>
                 </select>
               </div>
 
               <div class="mb-3">
-                <textarea class="form-control" name="Message" rows="5" placeholder="Parlez-nous de votre projet..." required></textarea>
+                <textarea class="form-control" name="message" rows="5" placeholder="Parlez-nous de votre projet..." required></textarea>
               </div>
 
               <div class="form-check consent-check">
-                <input class="form-check-input" type="checkbox" id="rgpdConsent" name="Consentement RGPD" value="Oui" required>
+                <input class="form-check-input" type="checkbox" id="rgpdConsent" name="rgpd" value="Oui" required>
 
                 <label class="form-check-label" for="rgpdConsent">
                   J'accepte que mes coordonnées soient enregistrées par <strong>Abyss Lab</strong>.
@@ -693,8 +715,6 @@
               <button type="submit" class="btn-abyss">
                 ENVOYER LA DEMANDE
               </button>
-
-              <p id="formMessage" class="form-message"></p>
             </form>
           </div>
 
@@ -817,42 +837,12 @@
           }
         });
       }, {
-        threshold:0.35
+        threshold:0.25
       });
 
       document.querySelectorAll(".hero-keywords span").forEach((keyword) => {
         keywordObserver.observe(keyword);
       });
-
-      const contactForm = document.getElementById("contactForm");
-      const formMessage = document.getElementById("formMessage");
-
-      if(contactForm){
-        contactForm.addEventListener("submit", async function(event){
-          event.preventDefault();
-
-          formMessage.textContent = "Envoi en cours...";
-
-          const formData = new FormData(contactForm);
-
-          try{
-            const response = await fetch(contactForm.action, {
-              method:"POST",
-              body:formData,
-              headers:{ "Accept":"application/json" }
-            });
-
-            if(response.ok){
-              contactForm.reset();
-              formMessage.textContent = "Merci, votre demande a bien été envoyée.";
-            }else{
-              formMessage.textContent = "Une erreur est survenue. Écrivez-nous à mathilde@abyss-lab.com.";
-            }
-          }catch(error){
-            formMessage.textContent = "Service indisponible. Écrivez-nous à mathilde@abyss-lab.com.";
-          }
-        });
-      }
     });
   </script>
 
