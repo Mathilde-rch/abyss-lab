@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>REFERENCES | ABYSS LAB</title>
+  <meta name="description" content="Références Abyss Lab : projets accompagnés en marketing et communication 360°, direction de marque, direction artistique, brand content, site internet, SEO et visibilité digitale pour l’hôtellerie, la restauration, le luxe, le lifestyle et l’art de vivre.">
+  <title>Références Abyss Lab | Projets marketing, communication & hospitality</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,329 +15,521 @@
   <link rel="stylesheet" href="assets/css/style.css">
 
   <style>
-    body {
-      color: #fff;
-      background: #000;
-      overflow-x: hidden;
+    :root{
+      --white:#ffffff;
+      --white-soft:rgba(255,255,255,.82);
+      --white-muted:rgba(255,255,255,.66);
+      --line:rgba(255,255,255,.14);
+      --line-soft:rgba(255,255,255,.10);
+      --bg:#000000;
     }
 
-    .video-background {
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -2;
-      overflow: hidden;
+    html{scroll-behavior:smooth;}
+
+    body{
+      overflow-x:hidden;
+      color:var(--white);
+      font-family:'Montserrat',sans-serif;
+      background:#000;
     }
 
-    .video-background video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    a{transition:all .3s ease;}
+    img,video{max-width:100%;display:block;}
+
+    .video-background{
+      position:fixed;
+      inset:0;
+      z-index:-2;
+      overflow:hidden;
+      background:#000;
     }
 
-    .video-background::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,.58);
-      z-index: 1;
+    .video-background video{
+      width:100%;
+      height:100%;
+      object-fit:cover;
     }
 
-    .navbar,
-    main,
-    footer {
-      position: relative;
-      z-index: 2;
+    .video-background::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,.48), rgba(0,0,0,.84)),
+        rgba(0,0,0,.18);
+      z-index:1;
     }
 
-    .references-page {
-      padding: 120px 0 80px;
+    .navbar{
+      position:relative;
+      z-index:30;
+      transition:background-color .3s ease, backdrop-filter .3s ease;
     }
 
-    .references-hero {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto 70px;
+    .navbar.scrolled{
+      background:rgba(0,0,0,.68);
+      backdrop-filter:blur(14px);
     }
 
-    .references-kicker {
-      font-size: 11px;
-      letter-spacing: .34em;
-      text-transform: uppercase;
-      opacity: .65;
-      margin-bottom: 16px;
+    .navbar-brand{
+      letter-spacing:1px;
+      color:var(--white)!important;
     }
 
-    .references-title {
-      font-family: 'Couture', sans-serif;
-      font-size: clamp(54px, 8vw, 112px);
-      line-height: .9;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-      margin-bottom: 22px;
+    .nav-link{
+      font-family:'couture',sans-serif;
+      font-size:.80rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      font-weight:600;
+      color:var(--white-soft)!important;
+      padding-left:1rem!important;
+      padding-right:1rem!important;
     }
 
-    .references-intro {
-      max-width: 640px;
-      margin: 0 auto;
-      font-size: 14px;
-      line-height: 1.8;
-      opacity: .76;
+    .nav-link:hover,
+    .nav-link.active{color:var(--white)!important;}
+
+    .btn-outline-light{
+      border-radius:999px;
+      padding:11px 24px;
+      font-size:.78rem;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      border-color:rgba(255,255,255,.55);
     }
 
-    .references-grid {
-      width: min(100%, 1180px);
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 26px;
+    .btn-outline-light:hover{
+      background:var(--white);
+      color:#000;
+      border-color:var(--white);
     }
 
-    .reference-card {
-      position: relative;
-      display: block;
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
-      border-radius: .35rem;
-      color: #fff;
-      text-decoration: none;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.04);
-      cursor: pointer;
-      -webkit-tap-highlight-color: transparent;
-
-      opacity: 0;
-      transform: translateY(55px) scale(.96);
-      filter: blur(8px);
-      transition:
-        opacity .9s ease,
-        transform .9s cubic-bezier(.22,1,.36,1),
-        filter .9s ease;
+    .visually-hidden-seo{
+      position:absolute!important;
+      width:1px!important;
+      height:1px!important;
+      padding:0!important;
+      margin:-1px!important;
+      overflow:hidden!important;
+      clip:rect(0,0,0,0)!important;
+      white-space:nowrap!important;
+      border:0!important;
     }
 
-    .reference-card.revealed {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      filter: blur(0);
+    .references-page{
+      position:relative;
+      z-index:2;
+      padding:100px 0 64px;
     }
 
-    .reference-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      transition: transform .85s ease, filter .85s ease;
+    .references-hero{
+      max-width:880px;
+      margin:0 auto 46px;
+      text-align:center;
     }
 
-    .reference-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      opacity: 0;
-      background: rgba(0,0,0,.28);
-      backdrop-filter: blur(8px);
-      transition: opacity .45s ease;
+    .references-kicker{
+      margin:0 0 10px;
+      font-size:.76rem;
+      font-weight:700;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:var(--white-soft);
     }
 
-    .reference-overlay {
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-      padding: 26px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity .45s ease, transform .45s ease;
+    .references-title{
+      font-family:'couture',sans-serif;
+      font-size:3.05rem;
+      line-height:1;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      color:var(--white);
+      margin:0 0 14px;
     }
 
-    .reference-card:hover img,
-    .reference-card.active img {
-      transform: scale(1.07);
-      filter: brightness(.55) contrast(1.08);
+    .references-intro{
+      max-width:840px;
+      margin:0 auto;
+      text-align:center;
+      font-size:1rem;
+      line-height:1.82;
+      color:var(--white-soft);
     }
 
-    .reference-card:hover::after,
-    .reference-card.active::after {
-      opacity: 1;
+    .references-grid{
+      width:min(100%,1180px);
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:26px;
     }
 
-    .reference-card:hover .reference-overlay,
-    .reference-card.active .reference-overlay {
-      opacity: 1;
-      transform: translateY(0);
+    .reference-card{
+      position:relative;
+      display:block;
+      aspect-ratio:1/1;
+      overflow:hidden;
+      color:#fff;
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.03);
+      cursor:pointer;
+      -webkit-tap-highlight-color:transparent;
+      opacity:0;
+      transform:translateY(18px);
+      transition:opacity .7s ease, transform .7s ease, border-color .35s ease;
     }
 
-    .reference-number {
-      font-size: 10px;
-      letter-spacing: .22em;
-      opacity: .65;
+    .reference-card.revealed{
+      opacity:1;
+      transform:translateY(0);
     }
 
-    .reference-name {
-      font-family: 'Montserrat', sans-serif;
-      font-size: clamp(20px, 1.9vw, 27px);
-      line-height: 1;
-      font-weight: 800;
-      text-transform: uppercase;
-      margin-bottom: 13px;
+    .reference-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      transition:transform .55s ease, opacity .55s ease, filter .55s ease;
     }
 
-    .reference-missions {
-      font-size: 10px;
-      line-height: 1.55;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      opacity: .84;
-      margin-bottom: 15px;
+    .reference-card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:1;
+      background:linear-gradient(180deg, rgba(0,0,0,.04) 0%, rgba(0,0,0,.60) 100%);
+      opacity:.88;
+      transition:opacity .35s ease, backdrop-filter .35s ease;
+      pointer-events:none;
     }
 
-    .reference-stats {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
+    .reference-overlay{
+      position:absolute;
+      inset:0;
+      z-index:2;
+      padding:20px 18px 18px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      opacity:1;
+      transform:none;
+      transition:opacity .35s ease, transform .35s ease;
     }
 
-    .reference-stats span {
-      font-size: 8px;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      border: 1px solid rgba(255,255,255,.3);
-      border-radius: 999px;
-      padding: 6px 9px;
-      background: rgba(255,255,255,.08);
+    .reference-card:hover{
+      border-color:rgba(255,255,255,.32);
+      color:#fff;
     }
 
-    .references-cta {
-      text-align: center;
-      padding: 100px 0 20px;
+    .reference-card:hover img{
+      transform:scale(1.05);
+      opacity:.78;
+      filter:contrast(1.05);
     }
 
-    .references-cta h2 {
-      font-family: 'Couture', sans-serif;
-      font-size: clamp(36px, 5vw, 72px);
-      line-height: .9;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
+    .reference-card:hover::after{
+      opacity:1;
+      backdrop-filter:blur(4px);
     }
 
-    .references-cta p {
-      max-width: 650px;
-      margin: 0 auto 34px;
-      font-size: 13px;
-      line-height: 1.8;
-      opacity: .72;
+    .reference-number{
+      font-size:.72rem;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--white-soft);
     }
 
-    .cta-buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 14px;
+    .reference-name{
+      font-family:'couture',sans-serif;
+      font-size:.98rem;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      color:var(--white);
+      margin:0 0 8px;
+      line-height:1.4;
     }
 
-    .cta-btn {
-      display: inline-block;
-      padding: 13px 24px;
-      border: 1px solid rgba(255,255,255,.35);
-      border-radius: 999px;
-      color: #fff;
-      text-decoration: none;
-      font-size: 11px;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      transition: all .35s ease;
-      background: rgba(255,255,255,.04);
-      backdrop-filter: blur(10px);
+    .reference-missions{
+      margin:0 0 11px;
+      font-size:.78rem;
+      line-height:1.6;
+      color:var(--white-soft);
+      text-transform:none;
+      letter-spacing:.02em;
+      max-width:95%;
     }
 
-    .cta-btn:hover {
-      background: #fff;
-      color: #000;
+    .reference-stats{
+      display:flex;
+      flex-wrap:wrap;
+      gap:7px;
     }
 
-    footer {
-      padding: 40px 0;
+    .reference-stats span{
+      font-size:.62rem;
+      font-weight:700;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      border:1px solid rgba(255,255,255,.28);
+      border-radius:999px;
+      padding:5px 8px;
+      color:var(--white-soft);
+      background:rgba(255,255,255,.06);
     }
 
-    .fade-in {
-      opacity: 0;
-      transform: translateY(25px);
-      transition: opacity .8s ease, transform .8s ease;
+    .references-cta{
+      padding:64px 0 0;
+      text-align:center;
     }
 
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .references-cta-inner{
+      max-width:720px;
+      margin:0 auto;
     }
 
-    @media (max-width: 991px) {
-      .references-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 18px;
-      }
+    .references-cta h2{
+      font-family:'couture',sans-serif;
+      font-size:1.88rem;
+      line-height:1.18;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin:0 0 14px;
+      color:var(--white);
     }
 
-    @media (max-width: 575px) {
-      .references-page {
-        padding: 90px 0 70px;
-      }
+    .references-cta p{
+      font-size:1rem;
+      line-height:1.82;
+      color:var(--white-soft);
+      margin:0 auto 22px;
+      max-width:680px;
+    }
 
-      .references-grid {
-        grid-template-columns: 1fr;
-        gap: 22px;
-      }
+    .footer{
+      border-top:1px solid var(--line);
+      padding:28px 0 14px;
+      margin-top:0;
+      position:relative;
+      z-index:2;
+    }
 
-      .reference-card {
-        transform: translateY(38px) scale(.98);
-        filter: blur(5px);
-      }
+    .footer-top{
+      padding-bottom:20px;
+      margin-bottom:20px;
+      border-bottom:1px solid rgba(255,255,255,.18);
+    }
 
-      .reference-card.in-view img {
-        transform: scale(1.035);
-        filter: brightness(.72) contrast(1.04);
-      }
+    .footer-brand{
+      font-size:.98rem;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:10px;
+      color:var(--white);
+    }
 
-      .reference-card.in-view::after {
-        opacity: 1;
-        background: rgba(0,0,0,.22);
-        backdrop-filter: blur(5px);
-      }
+    .footer-tagline{
+      margin:0;
+      max-width:640px;
+      font-size:.93rem;
+      line-height:1.66;
+      font-weight:600;
+      text-transform:uppercase;
+      color:var(--white);
+    }
 
-      .reference-card.in-view .reference-overlay {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .footer-location{
+      margin-top:10px;
+      font-size:.92rem;
+      line-height:1.68;
+      color:var(--white-soft);
+    }
+
+    .footer-social-block{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+    }
+
+    .footer-social-title{
+      font-size:.92rem;
+      line-height:1.5;
+      font-weight:600;
+      color:var(--white);
+      margin-bottom:10px;
+    }
+
+    .footer-socials{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .footer-social{
+      width:42px;
+      height:42px;
+      border:1.5px solid rgba(255,255,255,.78);
+      border-radius:50%;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--white);
+      text-decoration:none;
+      font-size:1rem;
+      background:rgba(255,255,255,.01);
+    }
+
+    .footer-social:hover{
+      color:var(--white);
+      border-color:var(--white);
+      transform:translateY(-2px);
+      background:rgba(255,255,255,.04);
+    }
+
+    .footer-menu-row{padding:0 0 18px;}
+
+    .footer-menu{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+      width:100%;
+    }
+
+    .footer-menu a{
+      color:var(--white);
+      text-decoration:none;
+      font-size:.93rem;
+      font-weight:600;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      text-align:left;
+    }
+
+    .footer-menu a:hover{opacity:.72;}
+
+    .footer-bottom{
+      border-top:1px solid var(--line-soft);
+      padding-top:12px;
+    }
+
+    .footer-bottom-inner{
+      display:grid;
+      grid-template-columns:1fr auto;
+      align-items:center;
+      gap:18px;
+    }
+
+    .footer-legal{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px 30px;
+    }
+
+    .footer-legal a{
+      color:var(--white-muted);
+      text-decoration:none;
+      font-size:.82rem;
+      line-height:1.5;
+    }
+
+    .footer-legal a:hover{color:var(--white);}
+
+    .footer-copy{
+      color:var(--white-muted);
+      font-size:.82rem;
+      line-height:1.5;
+      text-align:right;
+      white-space:nowrap;
+    }
+
+    .fade-in{
+      opacity:0;
+      transform:translateY(18px);
+      transition:opacity .7s ease, transform .7s ease;
+    }
+
+    .fade-in.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @media(min-width:992px){
+      .references-title{font-size:5rem;}
+    }
+
+    @media(max-width:991.98px){
+      .references-page{padding:88px 0 46px;}
+      .references-grid{grid-template-columns:repeat(2,1fr);gap:18px;}
+      .footer-social-block{margin-top:4px;}
+      .footer-menu{grid-template-columns:repeat(2,1fr);gap:14px 22px;}
+      .footer-bottom-inner{grid-template-columns:1fr;gap:10px;}
+      .footer-copy{text-align:left;white-space:normal;}
+    }
+
+    @media(max-width:767.98px){
+      .references-page{padding:88px 0 36px;}
+      .references-hero{text-align:left;margin-bottom:32px;}
+      .references-title{font-size:2.38rem;margin-bottom:12px;}
+      .references-kicker{font-size:.76rem;letter-spacing:.18em;}
+      .references-intro{font-size:.94rem;line-height:1.76;text-align:left;max-width:100%;}
+      .references-grid{grid-template-columns:1fr;gap:18px;}
+      .reference-overlay{padding:18px 16px 16px;}
+      .reference-name{font-size:.94rem;}
+      .reference-missions{font-size:.78rem;}
+      .references-cta{padding:46px 0 0;text-align:left;}
+      .references-cta h2{font-size:1.34rem;}
+      .references-cta p{font-size:.93rem;line-height:1.72;}
+      .references-cta .btn-outline-light{width:100%;}
+      .footer{padding:24px 0 12px;}
+      .footer-menu{grid-template-columns:1fr;gap:10px;}
+      .footer-menu a{font-size:.88rem;}
+      .footer-legal{gap:8px 18px;}
+      .footer-legal a,
+      .footer-copy{font-size:.79rem;}
     }
   </style>
 </head>
 
 <body>
 
+  <h1 class="visually-hidden-seo">
+    Références Abyss Lab, agence marketing et communication luxe à Bordeaux : projets hospitality, hôtels, restaurants, brand content, direction artistique, stratégie de marque, site internet premium et SEO.
+  </h1>
+
   <div class="video-background">
-    <video autoplay muted loop playsinline preload="auto">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      webkit-playsinline
+      preload="auto"
+      poster="assets/img/poster.jpg"
+      disablepictureinpicture
+      controlslist="nodownload nofullscreen noremoteplayback"
+      id="bg-video"
+    >
       <source src="assets/video/abyss-lab.mp4" type="video/mp4">
     </video>
   </div>
 
   <nav class="navbar navbar-expand-lg navbar-dark py-3">
     <div class="container">
-      <a class="navbar-brand" href="index.html">ABYSS LAB.</a>
+      <a class="navbar-brand fw-bold" href="index.html" aria-label="Abyss Lab - Retour à l'accueil">ABYSS LAB.</a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-label="Ouvrir le menu">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Ouvrir le menu">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse justify-content-end" id="navmenu">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">A PROPOS</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">ACCUEIL</a></li>
           <li class="nav-item"><a class="nav-link" href="services.html">SERVICES</a></li>
-          <li class="nav-item"><a class="nav-link" href="references.html">REFERENCES</a></li>
+          <li class="nav-item"><a class="nav-link active" href="references.html">REFERENCES</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
         </ul>
       </div>
@@ -347,10 +540,10 @@
     <div class="container">
 
       <section class="references-hero fade-in">
-        <p class="references-kicker">SELECTED WORKS</p>
-        <h1 class="references-title">REFERENCES</h1>
+        <p class="references-kicker">Références Abyss Lab.</p>
+        <p class="references-title">REFERENCES</p>
         <p class="references-intro">
-        Une sélection de projets accompagnés en stratégie 360°, direction artistique, communication, brand content et développement de marque.
+          Une sélection de projets accompagnés en stratégie marketing et communication 360°, direction artistique, brand content, site internet, SEO, visibilité digitale et développement de marque pour les univers luxe, lifestyle, hospitality et art de vivre.
         </p>
       </section>
 
@@ -395,109 +588,158 @@
       </section>
 
       <section class="references-cta fade-in">
-        <h2>FROM DEPTH TO DISTINCTION.</h2>
-        <p>
-          Chaque reference revele une facon d'accompagner les marques :
-          strategie, image, contenu et coherence pour faire emerger leur singularite.
-        </p>
-
-        <div class="cta-buttons">
-          <a class="cta-btn" href="contact.html">Me contacter</a>
+        <div class="references-cta-inner">
+          <h2>DONNONS DE LA PROFONDEUR A VOTRE RAYONNEMENT</h2>
+          <p>
+            Abyss Lab accompagne les marques premium, hôtels, restaurants et lieux de vie qui veulent clarifier leur positionnement, élever leur image et construire une présence digitale forte, cohérente et durable.
+          </p>
+          <a class="btn btn-outline-light" href="contact.html">Demarrer un projet</a>
         </div>
       </section>
 
     </div>
   </main>
 
-  <footer>
+  <footer class="footer">
     <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <strong>ABYSS LAB.</strong><br>
-          Agence basée Bordeaux. Déplacement partout en France et à l'étranger.
-        </div>
+      <div class="footer-top">
+        <div class="row align-items-start gy-4">
+          <div class="col-12 col-lg-6">
+            <div class="footer-brand">ABYSS LAB.</div>
 
-        <div class="col-12 col-md-6 text-md-end mt-4 mt-md-0">
-          <a href="mentions-legales.html" class="text-white me-3">Mentions légales</a>
-          <a href="cgu.html" class="text-white me-3">CGU</a>
-          <a href="politique-confidentialite.html" class="text-white">Politique de confidentialité</a>
+            <p class="footer-tagline">
+              NOUS REVELONS LA PROFONDEUR DES MARQUES POUR FAIRE EMERGER DES UNIVERS FORTS ET DURABLES.
+            </p>
+
+            <div class="footer-location">
+              Basée à Bordeaux, disponible partout en France et à l'étranger.
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6 d-lg-flex justify-content-lg-end">
+            <div class="footer-social-block">
+              <div class="footer-social-title">Suivez-nous sur les réseaux sociaux :</div>
+
+              <div class="footer-socials">
+                <a class="footer-social" href="https://www.instagram.com/abyss.lab_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Abyss Lab">
+                  <i class="bi bi-instagram"></i>
+                </a>
+
+                <a class="footer-social" href="https://www.linkedin.com/company/abyss-lab/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Abyss Lab">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+
+                <a class="footer-social" href="https://www.tiktok.com/@abyss.lab" target="_blank" rel="noopener noreferrer" aria-label="TikTok Abyss Lab">
+                  <i class="bi bi-tiktok"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-menu-row">
+        <nav class="footer-menu" aria-label="Menu footer">
+          <a href="index.html">Accueil</a>
+          <a href="services.html">Services</a>
+          <a href="references.html">Références</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+          <div class="footer-legal">
+            <a href="mentions-legales.html">Mentions légales</a>
+            <a href="cgu.html">CGU</a>
+            <a href="cgv.html">CGV</a>
+            <a href="politique-confidentialite.html">Politique de confidentialité</a>
+          </div>
+
+          <div class="footer-copy">
+            © 2026 Abyss Lab. Tous droits réservés.
+          </div>
         </div>
       </div>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const video = document.getElementById("bg-video");
+      if (!video) return;
 
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-  const currentLocation = location.pathname.split("/").pop();
-  const menuItems = document.querySelectorAll(".nav-link");
+      video.muted = true;
+      video.defaultMuted = true;
+      video.setAttribute("muted", "");
+      video.setAttribute("playsinline", "");
+      video.setAttribute("webkit-playsinline", "");
+      video.setAttribute("autoplay", "");
+      video.setAttribute("loop", "");
 
-  menuItems.forEach(link => {
-    if(link.getAttribute("href") === currentLocation){
-      link.classList.add("active");
-    }
-  });
-
-  const faders = document.querySelectorAll(".fade-in");
-
-  const appearOnScroll = new IntersectionObserver(function(entries, observer){
-    entries.forEach(entry=>{
-      if(!entry.isIntersecting) return;
-      entry.target.classList.add("visible");
-      observer.unobserve(entry.target);
-    });
-  }, { threshold:0.2 });
-
-  faders.forEach(fader=>{
-    appearOnScroll.observe(fader);
-  });
-
-  const cards = document.querySelectorAll(".reference-card");
-
-  const revealCards = new IntersectionObserver(function(entries){
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add("revealed");
-      }
-    });
-  }, {
-    threshold: 0.12,
-    rootMargin: "0px 0px -8% 0px"
-  });
-
-  cards.forEach((card, index) => {
-    card.style.transitionDelay = `${Math.min(index * 45, 360)}ms`;
-    revealCards.observe(card);
-
-  });
-
-  const mobileObserver = new IntersectionObserver(function(entries){
-    entries.forEach(entry => {
-      if(window.innerWidth <= 575) {
-        if(entry.intersectionRatio >= 0.86) {
-          setTimeout(() => {
-            entry.target.classList.add("in-view");
-          }, 700);
-        } else {
-          entry.target.classList.remove("in-view");
+      const startVideo = () => {
+        const promise = video.play();
+        if (promise !== undefined) {
+          promise.catch(() => {
+            console.log("Autoplay bloqué");
+          });
         }
-      }
+      };
+
+      video.load();
+      startVideo();
+
+      document.addEventListener("touchstart", startVideo, { once: true, passive: true });
+      document.addEventListener("click", startVideo, { once: true });
+      document.addEventListener("visibilitychange", function () {
+        if (!document.hidden) startVideo();
+      });
     });
-  }, {
-    threshold: [0, 0.5, 0.86, 1]
-  });
+  </script>
 
-  cards.forEach(card => {
-    mobileObserver.observe(card);
-  });
-});
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const currentLocation = location.pathname.split("/").pop() || "index.html";
+      const menuItems = document.querySelectorAll(".nav-link");
 
-window.addEventListener("scroll", function(){
-  const navbar = document.querySelector(".navbar");
-  navbar.classList.toggle("scrolled", window.scrollY > 50);
-});
-</script>
+      menuItems.forEach(link => {
+        if (link.getAttribute("href") === currentLocation) {
+          link.classList.add("active");
+        }
+      });
+
+      const navbar = document.querySelector(".navbar");
+      const faders = document.querySelectorAll(".fade-in");
+      const cards = document.querySelectorAll(".reference-card");
+
+      window.addEventListener("scroll", function () {
+        if (navbar) navbar.classList.toggle("scrolled", window.scrollY > 50);
+      });
+
+      const appearOnScroll = new IntersectionObserver(function(entries, observer){
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        });
+      }, { threshold:0.18 });
+
+      faders.forEach(fader => appearOnScroll.observe(fader));
+
+      const revealCards = new IntersectionObserver(function(entries){
+        entries.forEach(entry => {
+          if(entry.isIntersecting) entry.target.classList.add("revealed");
+        });
+      }, { threshold:0.12, rootMargin:"0px 0px -8% 0px" });
+
+      cards.forEach((card, index) => {
+        card.style.transitionDelay = `${Math.min(index * 45, 360)}ms`;
+        revealCards.observe(card);
+      });
+    });
+  </script>
+
 </body>
 </html>
