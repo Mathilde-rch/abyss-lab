@@ -568,47 +568,126 @@
         white-space:normal;
       }
     }
-
+    
     @media(max-width:767.98px){
-      .references-page{
-        padding:84px 0 36px;
-      }
 
-      .references-hero{
-        margin:0 auto 28px;
-        text-align:left;
-      }
+  .references-page{
+    padding:84px 0 36px;
+  }
 
-      .references-title{
-        font-size:1.34rem;
-        letter-spacing:.08em;
-        line-height:1.12;
-        max-width:310px;
-        margin:0 0 10px;
-        text-align:left;
-      }
+  .references-hero{
+    margin:0 auto 28px;
+    text-align:left;
+  }
 
-      .references-kicker{
-        font-size:.72rem;
-        letter-spacing:.18em;
-      }
+  .references-title{
+    font-size:1.34rem;
+    letter-spacing:.08em;
+    line-height:1.12;
+    max-width:310px;
+    margin:0 0 10px;
+    text-align:left;
+  }
 
-      .references-intro{
-        max-width:none;
-        margin:0;
-        text-align:left;
-        font-size:.91rem;
-        line-height:1.7;
-      }
+  .references-kicker{
+    font-size:.72rem;
+    letter-spacing:.18em;
+  }
 
-      .references-grid{
-        grid-template-columns:1fr;
-        gap:18px;
-      }
+  .references-intro{
+    max-width:none;
+    margin:0;
+    text-align:left;
+    font-size:.91rem;
+    line-height:1.7;
+  }
 
-      .reference-card{
-        aspect-ratio:1 / 1.08;
-      }
+  .references-grid{
+    grid-template-columns:1fr;
+    gap:0 !important;
+    margin-top:20px;
+  }
+
+  .reference-card{
+    aspect-ratio:1 / 1.08;
+    margin-bottom:36px !important;
+    border-radius:14px;
+    overflow:hidden;
+  }
+
+  .reference-card:last-child{
+    margin-bottom:0 !important;
+  }
+
+  .reference-card::after{
+    opacity:1;
+    background:linear-gradient(
+      180deg,
+      rgba(0,0,0,.05) 0%,
+      rgba(0,0,0,.58) 100%
+    );
+    backdrop-filter:none;
+  }
+
+  .reference-overlay{
+    opacity:1;
+    transform:none;
+    padding:24px 20px 20px;
+  }
+
+  .reference-name{
+    font-size:1rem;
+    line-height:1.28;
+    letter-spacing:.12em;
+    margin-bottom:10px;
+  }
+
+  .reference-missions{
+    font-size:.66rem;
+    line-height:1.5;
+    margin-bottom:14px;
+  }
+
+  .reference-stats span{
+    font-size:.55rem;
+    padding:5px 8px;
+  }
+
+  .references-cta{
+    padding:42px 0 0;
+  }
+
+  .cta-title{
+    font-size:1.34rem;
+  }
+
+  .cta-text{
+    font-size:.93rem;
+    line-height:1.72;
+  }
+
+  .footer{
+    padding:24px 0 12px;
+  }
+
+  .footer-menu{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+
+  .footer-menu a{
+    font-size:.88rem;
+  }
+
+  .footer-legal{
+    gap:8px 18px;
+  }
+
+  .footer-legal a,
+  .footer-copy{
+    font-size:.79rem;
+  }
+}
 
       .reference-card::after{
         opacity:1;
