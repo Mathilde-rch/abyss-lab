@@ -526,28 +526,9 @@
       }
 
       .references-grid{
-    grid-template-columns:1fr;
-    gap:28px;
-    margin-top:12px;
-}
-
-      .reference-card{
-    border-radius:12px;
-}
-
-.reference-overlay{
-    padding:26px 22px 22px;
-}
-
-.reference-name{
-    font-size:1rem;
-    letter-spacing:.12em;
-}
-
-.reference-missions{
-    margin-top:4px;
-    margin-bottom:14px;
-}
+        grid-template-columns:repeat(2, 1fr);
+        gap:18px;
+      }
 
       .footer-social-block{
         margin-top:4px;
@@ -568,126 +549,47 @@
         white-space:normal;
       }
     }
-    
+
     @media(max-width:767.98px){
+      .references-page{
+        padding:84px 0 36px;
+      }
 
-  .references-page{
-    padding:84px 0 36px;
-  }
+      .references-hero{
+        margin:0 auto 28px;
+        text-align:left;
+      }
 
-  .references-hero{
-    margin:0 auto 28px;
-    text-align:left;
-  }
+      .references-title{
+        font-size:1.34rem;
+        letter-spacing:.08em;
+        line-height:1.12;
+        max-width:310px;
+        margin:0 0 10px;
+        text-align:left;
+      }
 
-  .references-title{
-    font-size:1.34rem;
-    letter-spacing:.08em;
-    line-height:1.12;
-    max-width:310px;
-    margin:0 0 10px;
-    text-align:left;
-  }
+      .references-kicker{
+        font-size:.72rem;
+        letter-spacing:.18em;
+      }
 
-  .references-kicker{
-    font-size:.72rem;
-    letter-spacing:.18em;
-  }
+      .references-intro{
+        max-width:none;
+        margin:0;
+        text-align:left;
+        font-size:.91rem;
+        line-height:1.7;
+      }
 
-  .references-intro{
-    max-width:none;
-    margin:0;
-    text-align:left;
-    font-size:.91rem;
-    line-height:1.7;
-  }
+      .references-grid{
+        grid-template-columns:1fr;
+        gap:28px;
+      }
 
-  .references-grid{
-    grid-template-columns:1fr;
-    gap:0 !important;
-    margin-top:20px;
-  }
-
-  .reference-card{
-    aspect-ratio:1 / 1.08;
-    margin-bottom:36px !important;
-    border-radius:14px;
-    overflow:hidden;
-  }
-
-  .reference-card:last-child{
-    margin-bottom:0 !important;
-  }
-
-  .reference-card::after{
-    opacity:1;
-    background:linear-gradient(
-      180deg,
-      rgba(0,0,0,.05) 0%,
-      rgba(0,0,0,.58) 100%
-    );
-    backdrop-filter:none;
-  }
-
-  .reference-overlay{
-    opacity:1;
-    transform:none;
-    padding:24px 20px 20px;
-  }
-
-  .reference-name{
-    font-size:1rem;
-    line-height:1.28;
-    letter-spacing:.12em;
-    margin-bottom:10px;
-  }
-
-  .reference-missions{
-    font-size:.66rem;
-    line-height:1.5;
-    margin-bottom:14px;
-  }
-
-  .reference-stats span{
-    font-size:.55rem;
-    padding:5px 8px;
-  }
-
-  .references-cta{
-    padding:42px 0 0;
-  }
-
-  .cta-title{
-    font-size:1.34rem;
-  }
-
-  .cta-text{
-    font-size:.93rem;
-    line-height:1.72;
-  }
-
-  .footer{
-    padding:24px 0 12px;
-  }
-
-  .footer-menu{
-    grid-template-columns:1fr;
-    gap:10px;
-  }
-
-  .footer-menu a{
-    font-size:.88rem;
-  }
-
-  .footer-legal{
-    gap:8px 18px;
-  }
-
-  .footer-legal a,
-  .footer-copy{
-    font-size:.79rem;
-  }
-}
+      .reference-card{
+        aspect-ratio:1 / 1.08;
+      }
 
       .reference-card::after{
         opacity:1;
@@ -836,6 +738,19 @@
       }
     }
 
+
+    /* ===== ESPACEMENT REFERENCES MOBILE UNIQUEMENT ===== */
+    @media(max-width:767.98px){
+      .references-grid{
+        row-gap:28px !important;
+        column-gap:0 !important;
+      }
+
+      .reference-card{
+        margin:0 !important;
+      }
+    }
+
   </style>
 </head>
 
@@ -930,7 +845,7 @@
           <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896953/chateau_de_sacy_reims_mathilde_ranchon_ow2xel.webp" alt="Château de Sacy, hôtel en Champagne accompagné en communication et partenariats">
           <div class="reference-overlay">
             <div>
-              <h3 class="reference-name">Château de Sacy</h3>
+              <h3 class="reference-name">Chateau de Sacy</h3>
               <p class="reference-missions">Marketing & communication 360 / activations / partenariats</p>
               <div class="reference-stats"><span>Champagne</span><span>Art de vivre</span></div>
             </div>
@@ -974,7 +889,7 @@
           <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777905363/chateau_theoule_sur_mer_marketing_communication_mathilde_ranchon_y2fluo.webp" alt="Château de Théoule, hôtel Côte d’Azur accompagné en marketing communication">
           <div class="reference-overlay">
             <div>
-              <h3 class="reference-name">Chateau de Théoule</h3>
+              <h3 class="reference-name">Chateau de Theoule</h3>
               <p class="reference-missions">Marketing & communication 360 / activations / partenariats</p>
               <div class="reference-stats"><span>Côte d'Azur</span><span>Luxury stay</span></div>
             </div>
@@ -985,7 +900,7 @@
           <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/grand_hotel_soleil_or_megeve_mathilde_ranchon_sk2avw.webp" alt="Soleil d’Or Megève, hôtel lifestyle accompagné en communication">
           <div class="reference-overlay">
             <div>
-              <h3 class="reference-name">Grand Hotel Soleil d'Or</h3>
+              <h3 class="reference-name">Soleil d'Or</h3>
               <p class="reference-missions">Marketing & communication 360 / activations / partenariats</p>
               <div class="reference-stats"><span>Megève</span><span>Montagne</span></div>
             </div>
@@ -1040,9 +955,9 @@
           <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777905473/java_cap_ferret_abyss_lab_ixfw6w.webp" alt="Java Cap Ferret, restaurant lifestyle accompagné en communication">
           <div class="reference-overlay">
             <div>
-              <h3 class="reference-name">Java Cap Ferret</h3>
+              <h3 class="reference-name">Java</h3>
               <p class="reference-missions">Marketing & communication 360 / activations / partenariats</p>
-              <div class="reference-stats"><span>Branding</span><span>Lifestyle</span></div>
+              <div class="reference-stats"><span>Cap Ferret</span><span>Lifestyle</span></div>
             </div>
           </div>
         </a>
@@ -1062,7 +977,7 @@
           <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896955/restaurant_le_manege_leognan_mathilde_ranchon_epzset.webp" alt="Restaurant Le Manège à Léognan, référence communication restaurant">
           <div class="reference-overlay">
             <div>
-              <h3 class="reference-name">Le Manege</h3>
+              <h3 class="reference-name">Le Manège</h3>
               <p class="reference-missions">Marketing & communication 360 / activations / partenariats</p>
               <div class="reference-stats"><span>Léognan</span><span>Restaurant</span></div>
             </div>
