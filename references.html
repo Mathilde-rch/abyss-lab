@@ -505,18 +505,15 @@
     }
 
     /* ===== ANIMATIONS ===== */
-    .fade-in{
-      opacity:0;
-      transform:translateY(18px);
-      transition:opacity .7s ease, transform .7s ease;
-    }
-
+    .fade-in,
     .fade-in.visible{
-      opacity:1;
-      transform:translateY(0);
+      opacity:1 !important;
+      visibility:visible !important;
+      display:block !important;
+      transform:none !important;
     }
 
-    /* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE ===== */
     @media(min-width:992px){
       .references-title{
         font-size:2.78rem;
@@ -658,6 +655,89 @@
         font-size:.79rem;
       }
     }
+
+    /* ===== SECURITE AFFICHAGE MOBILE ===== */
+    main,
+    .references-page,
+    .references-hero,
+    .references-grid,
+    .references-cta,
+    .reference-card,
+    .reference-card img{
+      opacity:1 !important;
+      visibility:visible !important;
+      transform:none !important;
+      filter:none !important;
+    }
+
+    .references-grid{
+      display:grid !important;
+    }
+
+    .reference-number{
+      display:none !important;
+    }
+
+    @media(max-width:767.98px){
+      html,
+      body{
+        width:100% !important;
+        min-height:100% !important;
+        overflow-x:hidden !important;
+      }
+
+      main.references-page{
+        display:block !important;
+        height:auto !important;
+        min-height:100vh !important;
+        overflow:visible !important;
+        opacity:1 !important;
+        visibility:visible !important;
+      }
+
+      .references-page .container{
+        display:block !important;
+        opacity:1 !important;
+        visibility:visible !important;
+      }
+
+      .references-grid{
+        display:grid !important;
+        grid-template-columns:1fr !important;
+        gap:18px !important;
+        width:100% !important;
+        height:auto !important;
+        overflow:visible !important;
+      }
+
+      .reference-card{
+        display:block !important;
+        width:100% !important;
+        min-height:340px !important;
+        aspect-ratio:1 / 1.08 !important;
+        overflow:hidden !important;
+      }
+
+      .reference-card img{
+        display:block !important;
+        width:100% !important;
+        height:100% !important;
+        object-fit:cover !important;
+      }
+
+      .reference-overlay{
+        opacity:1 !important;
+        visibility:visible !important;
+        transform:none !important;
+      }
+
+      .reference-card::after{
+        opacity:1 !important;
+        background:linear-gradient(180deg, rgba(0,0,0,.05) 0%, rgba(0,0,0,.58) 100%) !important;
+        backdrop-filter:none !important;
+      }
+    }
+
   </style>
 </head>
 
@@ -1052,7 +1132,6 @@
       });
 
       const navbar = document.querySelector(".navbar");
-      const faders = document.querySelectorAll(".fade-in");
 
       window.addEventListener("scroll", function () {
         if (navbar) {
@@ -1060,25 +1139,12 @@
         }
       });
 
-      if ("IntersectionObserver" in window) {
-        const appearOnScroll = new IntersectionObserver(function(entries, observer){
-          entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          });
-        }, {
-          threshold:0.12
-        });
-
-        faders.forEach(fader => {
-          appearOnScroll.observe(fader);
-        });
-      } else {
-        faders.forEach(fader => {
-          fader.classList.add("visible");
-        });
-      }
+      document.querySelectorAll(".fade-in").forEach(element => {
+        element.classList.add("visible");
+        element.style.opacity = "1";
+        element.style.visibility = "visible";
+        element.style.transform = "none";
+      });
     });
   </script>
 
