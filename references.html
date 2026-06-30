@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <meta name="description" content="Références Abyss Lab : projets accompagnés en marketing, communication 360°, direction artistique, brand content, site internet, SEO, visibilité digitale et stratégie de marque pour hôtels, restaurants, lieux lifestyle et marques premium.">
   <title>Références Abyss Lab | Marketing, communication & direction de marque</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/couture" rel="stylesheet">
@@ -19,14 +21,17 @@
       --white:#ffffff;
       --white-soft:rgba(255,255,255,.84);
       --white-muted:rgba(255,255,255,.66);
-      --white-faint:rgba(255,255,255,.50);
       --line:rgba(255,255,255,.14);
       --line-soft:rgba(255,255,255,.10);
     }
 
-    html{scroll-behavior:smooth;}
+    html{
+      scroll-behavior:smooth;
+      overflow-x:hidden;
+    }
 
     body{
+      margin:0;
       overflow-x:hidden;
       color:var(--white);
       font-family:'Montserrat',sans-serif;
@@ -41,7 +46,7 @@
       inset:0;
       z-index:-2;
       overflow:hidden;
-      background:#000;
+      background:#000 url("assets/img/poster.jpg") center/cover no-repeat;
     }
 
     .video-background video{
@@ -58,6 +63,7 @@
         linear-gradient(to bottom, rgba(0,0,0,.42), rgba(0,0,0,.80) 42%, rgba(0,0,0,.95) 100%),
         rgba(0,0,0,.16);
       z-index:1;
+      pointer-events:none;
     }
 
     .navbar{
@@ -74,6 +80,10 @@
     .navbar-brand{
       letter-spacing:1px;
       color:var(--white)!important;
+    }
+
+    .navbar-toggler{
+      border-color:rgba(255,255,255,.35);
     }
 
     .nav-link{
@@ -160,10 +170,11 @@
     }
 
     .references-grid{
-      width:min(100%,1180px);
+      width:100%;
+      max-width:1180px;
       margin:0 auto;
       display:grid;
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:repeat(3,minmax(0,1fr));
       gap:26px;
     }
 
@@ -210,6 +221,7 @@
       background:rgba(0,0,0,.28);
       backdrop-filter:blur(8px);
       transition:opacity .45s ease;
+      pointer-events:none;
     }
 
     .reference-overlay{
@@ -223,6 +235,7 @@
       opacity:0;
       transform:translateY(16px);
       transition:opacity .45s ease, transform .45s ease;
+      pointer-events:none;
     }
 
     .reference-card:hover img,
@@ -458,12 +471,18 @@
     }
 
     @media(max-width:991.98px){
-      .references-grid{
-        grid-template-columns:repeat(2,1fr);
-        gap:18px;
+      .navbar-collapse{
+        margin-top:14px;
+        padding:14px 0;
+        background:rgba(0,0,0,.76);
+        backdrop-filter:blur(12px);
+        border-radius:18px;
       }
 
-      .footer-social-block{margin-top:4px;}
+      .references-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:18px;
+      }
 
       .footer-menu{
         grid-template-columns:repeat(2,1fr);
@@ -482,61 +501,111 @@
     }
 
     @media(max-width:767.98px){
+      .video-background video{
+        display:none;
+      }
+
       .references-page{
-        padding:82px 0 54px;
+        padding:72px 0 48px;
       }
 
       .references-hero{
         text-align:left;
-        margin:0 auto 38px;
+        margin:0 auto 34px;
+      }
+
+      .references-kicker{
+        font-size:.64rem;
+        letter-spacing:.18em;
       }
 
       .references-title{
-        font-size:1.34rem;
+        font-size:1.38rem;
         letter-spacing:.08em;
-        line-height:1.12;
+        line-height:1.14;
         max-width:310px;
         margin:0 0 10px;
       }
 
       .references-intro,
       .references-cta p{
-        font-size:.91rem;
-        line-height:1.7;
+        font-size:.88rem;
+        line-height:1.68;
       }
 
       .references-grid{
         grid-template-columns:1fr;
-        gap:22px;
+        gap:20px;
       }
 
       .reference-card{
-        transform:translateY(38px) scale(.98);
-        filter:blur(5px);
+        opacity:1;
+        transform:none;
+        filter:none;
+        aspect-ratio:4/5;
+        min-height:360px;
       }
 
+      .reference-card img{
+        transform:none;
+        filter:brightness(.78) contrast(1.04);
+      }
+
+      .reference-card::after{
+        opacity:1;
+        background:linear-gradient(
+          to bottom,
+          rgba(0,0,0,.16) 0%,
+          rgba(0,0,0,.18) 38%,
+          rgba(0,0,0,.72) 100%
+        );
+        backdrop-filter:none;
+      }
+
+      .reference-overlay{
+        opacity:1;
+        transform:none;
+        padding:22px;
+      }
+
+      .reference-card:hover img,
+      .reference-card.active img,
       .reference-card.in-view img{
-        transform:scale(1.035);
-        filter:brightness(.72) contrast(1.04);
+        transform:none;
+        filter:brightness(.78) contrast(1.04);
       }
 
+      .reference-card:hover::after,
+      .reference-card.active::after,
       .reference-card.in-view::after{
         opacity:1;
-        background:rgba(0,0,0,.22);
-        backdrop-filter:blur(5px);
       }
 
+      .reference-card:hover .reference-overlay,
+      .reference-card.active .reference-overlay,
       .reference-card.in-view .reference-overlay{
         opacity:1;
-        transform:translateY(0);
+        transform:none;
+      }
+
+      .reference-name{
+        font-size:1.30rem;
+      }
+
+      .reference-missions{
+        font-size:.60rem;
+      }
+
+      .reference-stats span{
+        font-size:.49rem;
       }
 
       .references-cta{
-        padding:62px 0 4px;
+        padding:58px 0 4px;
       }
 
       .references-cta h2{
-        font-size:1.30rem;
+        font-size:1.28rem;
       }
 
       .references-cta .btn-outline-light{
@@ -557,6 +626,38 @@
       .footer-legal a,
       .footer-copy{font-size:.79rem;}
     }
+
+    @media(max-width:380px){
+      .reference-card{
+        min-height:330px;
+      }
+
+      .reference-overlay{
+        padding:18px;
+      }
+
+      .reference-name{
+        font-size:1.16rem;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      *,
+      *::before,
+      *::after{
+        animation-duration:.01ms!important;
+        animation-iteration-count:1!important;
+        scroll-behavior:auto!important;
+        transition-duration:.01ms!important;
+      }
+
+      .fade-in,
+      .reference-card{
+        opacity:1!important;
+        transform:none!important;
+        filter:none!important;
+      }
+    }
   </style>
 </head>
 
@@ -566,8 +667,8 @@
     Références Abyss Lab : projets accompagnés en marketing, communication 360°, direction artistique, stratégie de marque, brand content, site internet, SEO, social media, visibilité digitale et accompagnement pour hôtels, restaurants, lieux lifestyle et marques premium.
   </h1>
 
-  <div class="video-background">
-    <video autoplay muted loop playsinline webkit-playsinline preload="auto" poster="assets/img/poster.jpg" disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback" id="bg-video">
+  <div class="video-background" aria-hidden="true">
+    <video autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="assets/img/poster.jpg" disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback" id="bg-video">
       <source src="assets/video/abyss-lab.mp4" type="video/mp4">
     </video>
   </div>
@@ -605,7 +706,7 @@
       <section class="references-grid fade-in">
 
         <a class="reference-card" href="https://mondrianhotels.com/fr/bordeaux-les-carmes/" target="_blank" rel="noopener noreferrer">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777905364/mondrian_bordeaux_les_carmes_mathilde_ranchon_abyss_lab_c1uaqt.webp" alt="Mondrian Bordeaux Les Carmes">
+          <img loading="lazy" src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777905364/mondrian_bordeaux_les_carmes_mathilde_ranchon_abyss_lab_c1uaqt.webp" alt="Mondrian Bordeaux Les Carmes">
           <div class="reference-overlay">
             <div class="reference-number">01</div>
             <div>
@@ -617,7 +718,7 @@
         </a>
 
         <a class="reference-card" href="https://mondrianhotels.com/fr/bordeaux-les-carmes/dining/morimoto/" target="_blank" rel="noopener noreferrer">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777905364/morimoto_bordeaux_communication_qspykg.webp" alt="Morimoto Bordeaux">
+          <img loading="lazy" src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777905364/morimoto_bordeaux_communication_qspykg.webp" alt="Morimoto Bordeaux">
           <div class="reference-overlay">
             <div class="reference-number">02</div>
             <div>
@@ -629,7 +730,7 @@
         </a>
 
         <a class="reference-card" href="https://chateaudesacy-reims.fr/" target="_blank" rel="noopener noreferrer">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896953/chateau_de_sacy_reims_mathilde_ranchon_ow2xel.webp" alt="Château de Sacy">
+          <img loading="lazy" src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896953/chateau_de_sacy_reims_mathilde_ranchon_ow2xel.webp" alt="Château de Sacy">
           <div class="reference-overlay">
             <div class="reference-number">03</div>
             <div>
@@ -641,7 +742,7 @@
         </a>
 
         <a class="reference-card" href="https://www.villadesorangers.com/fr/" target="_blank" rel="noopener noreferrer">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777905364/villa-des-orangers-marrakech-mathilde-ranchon_o6gemi.webp" alt="Villa des Orangers Marrakech">
+          <img loading="lazy" src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777905364/villa-des-orangers-marrakech-mathilde-ranchon_o6gemi.webp" alt="Villa des Orangers Marrakech">
           <div class="reference-overlay">
             <div class="reference-number">04</div>
             <div>
@@ -653,7 +754,7 @@
         </a>
 
         <a class="reference-card" href="https://brindos-cotebasque.fr/" target="_blank" rel="noopener noreferrer">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777905363/brindos-lac-et-chateau-mathilde-ranchon_kskw72.webp" alt="Château Brindos">
+          <img loading="lazy" src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777905363/brindos-lac-et-chateau-mathilde-ranchon_kskw72.webp" alt="Château Brindos">
           <div class="reference-overlay">
             <div class="reference-number">05</div>
             <div>
@@ -665,7 +766,7 @@
         </a>
 
         <a class="reference-card" href="https://chateauleognan.com/" target="_blank" rel="noopener noreferrer">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896953/chateau_leognan_bordeaux_mathilde_ranchon_qdvwlx.webp" alt="Château Léognan">
+          <img loading="lazy" src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896953/chateau_leognan_bordeaux_mathilde_ranchon_qdvwlx.webp" alt="Château Léognan">
           <div class="reference-overlay">
             <div class="reference-number">06</div>
             <div>
@@ -677,7 +778,7 @@
         </a>
 
         <a class="reference-card" href="https://chateau-de-theoule.com/" target="_blank" rel="noopener noreferrer">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777905363/chateau_theoule_sur_mer_marketing_communication_mathilde_ranchon_y2fluo.webp" alt="Château de Théoule">
+          <img loading="lazy" src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777905363/chateau_theoule_sur_mer_marketing_communication_mathilde_ranchon_y2fluo.webp" alt="Château de Théoule">
           <div class="reference-overlay">
             <div class="reference-number">07</div>
             <div>
@@ -689,7 +790,7 @@
         </a>
 
         <a class="reference-card" href="https://soleildor-megeve.com/fr/" target="_blank" rel="noopener noreferrer">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/grand_hotel_soleil_or_megeve_mathilde_ranchon_sk2avw.webp" alt="Grand Hôtel Soleil d'Or Megève">
+          <img loading="lazy" src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/grand_hotel_soleil_or_megeve_mathilde_ranchon_sk2avw.webp" alt="Grand Hôtel Soleil d'Or Megève">
           <div class="reference-overlay">
             <div class="reference-number">08</div>
             <div>
@@ -701,7 +802,7 @@
         </a>
 
         <a class="reference-card" href="https://www.domainederaba-talence.fr/" target="_blank" rel="noopener noreferrer">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/domaine_de_raba_bordeaux_mathilde_ranchon_x5bvou.webp" alt="Domaine de Raba Bordeaux">
+          <img loading="lazy" src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/domaine_de_raba_bordeaux_mathilde_ranchon_x5bvou.webp" alt="Domaine de Raba Bordeaux">
           <div class="reference-overlay">
             <div class="reference-number">09</div>
             <div>
@@ -713,7 +814,7 @@
         </a>
 
         <a class="reference-card" href="https://www.cocoricoporto.com/" target="_blank" rel="noopener noreferrer">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/cocorico_porto_hotel_mathilde_ranchon_si8qn9.webp" alt="Cocorico Porto">
+          <img loading="lazy" src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/cocorico_porto_hotel_mathilde_ranchon_si8qn9.webp" alt="Cocorico Porto">
           <div class="reference-overlay">
             <div class="reference-number">10</div>
             <div>
@@ -725,7 +826,7 @@
         </a>
 
         <a class="reference-card" href="https://www.constancehotels.com/fr/" target="_blank" rel="noopener noreferrer">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/constance_hotels_resort_mathilde_ranchon_y8drpp.webp" alt="Constance Hotels and Resorts">
+          <img loading="lazy" src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/constance_hotels_resort_mathilde_ranchon_y8drpp.webp" alt="Constance Hotels and Resorts">
           <div class="reference-overlay">
             <div class="reference-number">11</div>
             <div>
@@ -737,7 +838,7 @@
         </a>
 
         <a class="reference-card" href="https://cafe-bonart.fr/" target="_blank" rel="noopener noreferrer">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777905474/cafe_bonart_rebranding_mathilde_ranchon_dipm6p.webp" alt="Café Bonart Bordeaux">
+          <img loading="lazy" src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777905474/cafe_bonart_rebranding_mathilde_ranchon_dipm6p.webp" alt="Café Bonart Bordeaux">
           <div class="reference-overlay">
             <div class="reference-number">12</div>
             <div>
@@ -749,7 +850,7 @@
         </a>
 
         <a class="reference-card" href="https://restaurantjava.fr/fr" target="_blank" rel="noopener noreferrer">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777905473/java_cap_ferret_abyss_lab_ixfw6w.webp" alt="Java Cap Ferret">
+          <img loading="lazy" src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777905473/java_cap_ferret_abyss_lab_ixfw6w.webp" alt="Java Cap Ferret">
           <div class="reference-overlay">
             <div class="reference-number">13</div>
             <div>
@@ -761,7 +862,7 @@
         </a>
 
         <a class="reference-card" href="https://www.lapalmeraie-labaule.fr/" target="_blank" rel="noopener noreferrer">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/palmeraie_la_baule_mathilde_ranchon_k1k1nk.webp" alt="Palmeraie La Baule">
+          <img loading="lazy" src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/palmeraie_la_baule_mathilde_ranchon_k1k1nk.webp" alt="Palmeraie La Baule">
           <div class="reference-overlay">
             <div class="reference-number">14</div>
             <div>
@@ -773,7 +874,7 @@
         </a>
 
         <a class="reference-card" href="https://chateauleognan.com/fr/page/le-manege-restaurant-chic-francais-vers-bordeaux-chateau-leognan.26637.html" target="_blank" rel="noopener noreferrer">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896955/restaurant_le_manege_leognan_mathilde_ranchon_epzset.webp" alt="Restaurant Le Manège Léognan">
+          <img loading="lazy" src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896955/restaurant_le_manege_leognan_mathilde_ranchon_epzset.webp" alt="Restaurant Le Manège Léognan">
           <div class="reference-overlay">
             <div class="reference-number">15</div>
             <div>
@@ -785,7 +886,7 @@
         </a>
 
         <a class="reference-card" href="https://www.eklohotels.com/fr/" target="_blank" rel="noopener noreferrer">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/eklo_hotels_mathilde_ranchon_off5rn.webp" alt="Eklo Hotels">
+          <img loading="lazy" src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/eklo_hotels_mathilde_ranchon_off5rn.webp" alt="Eklo Hotels">
           <div class="reference-overlay">
             <div class="reference-number">16</div>
             <div>
@@ -797,7 +898,7 @@
         </a>
 
         <a class="reference-card" href="https://share.google/AUBERXZ4eENjJlcs5" target="_blank" rel="noopener noreferrer">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/la_course_bordeaux_mathilde_ranchon_lezuzt.webp" alt="Maison La Course Bordeaux">
+          <img loading="lazy" src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777896954/la_course_bordeaux_mathilde_ranchon_lezuzt.webp" alt="Maison La Course Bordeaux">
           <div class="reference-overlay">
             <div class="reference-number">17</div>
             <div>
@@ -809,7 +910,7 @@
         </a>
 
         <a class="reference-card" href="https://www.echos-judiciaires.com/actualites/la-signature-millesime/" target="_blank" rel="noopener noreferrer">
-          <img src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777905363/millesime_collection_marketing_brrgjm.webp" alt="Millésime Collection">
+          <img loading="lazy" src="https://res.cloudinary.com/dycdc9tku/image/upload/v1777905363/millesime_collection_marketing_brrgjm.webp" alt="Millésime Collection">
           <div class="reference-overlay">
             <div class="reference-number">18</div>
             <div>
@@ -888,14 +989,24 @@
   <script>
     document.addEventListener("DOMContentLoaded", function(){
       const navbar = document.querySelector(".navbar");
-
-      window.addEventListener("scroll", function(){
-        if(navbar){
-          navbar.classList.toggle("scrolled", window.scrollY > 20);
-        }
-      });
-
       const faders = document.querySelectorAll(".fade-in");
+      const cards = document.querySelectorAll(".reference-card");
+
+      function revealEverything(){
+        faders.forEach(el => el.classList.add("visible"));
+        cards.forEach(el => el.classList.add("revealed"));
+      }
+
+      if(navbar){
+        window.addEventListener("scroll", function(){
+          navbar.classList.toggle("scrolled", window.scrollY > 20);
+        }, { passive:true });
+      }
+
+      if(!("IntersectionObserver" in window)){
+        revealEverything();
+        return;
+      }
 
       const appearOnScroll = new IntersectionObserver(function(entries, observer){
         entries.forEach(entry => {
@@ -903,13 +1014,14 @@
           entry.target.classList.add("visible");
           observer.unobserve(entry.target);
         });
-      }, { threshold:0.2 });
+      }, {
+        threshold:0.08,
+        rootMargin:"0px 0px -4% 0px"
+      });
 
       faders.forEach(fader => {
         appearOnScroll.observe(fader);
       });
-
-      const cards = document.querySelectorAll(".reference-card");
 
       const revealCards = new IntersectionObserver(function(entries){
         entries.forEach(entry => {
@@ -918,19 +1030,25 @@
           }
         });
       }, {
-        threshold:0.12,
-        rootMargin:"0px 0px -8% 0px"
+        threshold:0.04,
+        rootMargin:"0px 0px 12% 0px"
       });
 
       cards.forEach((card, index) => {
-        card.style.transitionDelay = `${Math.min(index * 45, 360)}ms`;
+        if(window.innerWidth > 767){
+          card.style.transitionDelay = `${Math.min(index * 45, 360)}ms`;
+        } else {
+          card.style.transitionDelay = "0ms";
+          card.classList.add("revealed");
+        }
+
         revealCards.observe(card);
       });
 
       const mobileObserver = new IntersectionObserver(function(entries){
         entries.forEach(entry => {
           if(window.innerWidth <= 767){
-            if(entry.intersectionRatio >= 0.76){
+            if(entry.isIntersecting){
               entry.target.classList.add("in-view");
             } else {
               entry.target.classList.remove("in-view");
@@ -938,12 +1056,14 @@
           }
         });
       }, {
-        threshold:[0, 0.5, 0.76, 1]
+        threshold:0.35
       });
 
       cards.forEach(card => {
         mobileObserver.observe(card);
       });
+
+      setTimeout(revealEverything, 900);
     });
   </script>
 
