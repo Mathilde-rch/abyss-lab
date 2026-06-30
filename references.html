@@ -543,25 +543,22 @@
       .reference-card{
         opacity:1;
         transform:none;
-        filter:none;
+        filter:none!important;
         aspect-ratio:4/5;
         min-height:360px;
+        background:transparent;
+        border:1px solid rgba(255,255,255,.10);
       }
 
       .reference-card img{
-        transform:none;
-        filter:brightness(.78) contrast(1.04);
+        transform:none!important;
+        filter:none!important;
       }
 
       .reference-card::after{
-        opacity:1;
-        background:linear-gradient(
-          to bottom,
-          rgba(0,0,0,.16) 0%,
-          rgba(0,0,0,.18) 38%,
-          rgba(0,0,0,.72) 100%
-        );
-        backdrop-filter:none;
+        opacity:0!important;
+        background:none!important;
+        backdrop-filter:none!important;
       }
 
       .reference-overlay{
@@ -574,14 +571,15 @@
       .reference-card:hover img,
       .reference-card.active img,
       .reference-card.in-view img{
-        transform:none;
-        filter:brightness(.78) contrast(1.04);
+        transform:none!important;
+        filter:none!important;
       }
 
       .reference-card:hover::after,
       .reference-card.active::after,
       .reference-card.in-view::after{
-        opacity:1;
+        opacity:0!important;
+        background:none!important;
       }
 
       .reference-card:hover .reference-overlay,
@@ -589,6 +587,12 @@
       .reference-card.in-view .reference-overlay{
         opacity:1;
         transform:none;
+      }
+
+      .reference-name,
+      .reference-missions,
+      .reference-stats{
+        text-shadow:0 1px 8px rgba(0,0,0,.35);
       }
 
       .reference-name{
@@ -601,6 +605,7 @@
 
       .reference-stats span{
         font-size:.49rem;
+        background:rgba(0,0,0,.18);
       }
 
       .references-cta{
