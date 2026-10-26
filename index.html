@@ -20,7 +20,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link href="https://fonts.cdnfonts.com/css/couture" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="assets/css/style.css">
-  
+
   <style>
     :root{
       --white:#ffffff;
@@ -33,10 +33,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     html{
       scroll-behavior:smooth;
+      overflow-x:clip;
     }
 
     body{
-      overflow-x:hidden;
+      overflow-x:clip;
       color:var(--white);
       font-family:'Montserrat',sans-serif;
       background:#000;
@@ -95,8 +96,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     /* ===== NAVBAR ===== */
     .navbar{
-      position:relative;
-      z-index:30;
+      position:sticky;
+      top:0;
+      z-index:1030;
       transition:background-color .3s ease, backdrop-filter .3s ease;
     }
 
@@ -789,7 +791,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="hero-title">ABYSS LAB.</p>
         <p class="hero-baseline">FROM DEPTH, DISTINCTION EMERGES</p>
         <p class="hero-intro">
-          Nous révélons ce qui distingue en profondeur les marques premium, luxe, lifestyle, hospitality et d’art de vivre, 
+          Nous révélons ce qui distingue en profondeur les marques premium, luxe, lifestyle, hospitality et d’art de vivre,
           puis nous le transformons en direction stratégique, en image signature et en présence qui génère de la croissance.
         </p>
 
@@ -807,9 +809,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p class="section-kicker">L'approche Abyss Lab.</p>
           <h2 class="section-title">Plonger en profondeur pour faire emerger votre essence</h2>
           <p class="section-text">
-            Chez Abyss Lab, l’essentiel se révèle en profondeur. 
-            Nous explorons ce qui structure la tenue, le relief et 
-            la singularité d’une marque, puis nous le faisons émerger 
+            Chez Abyss Lab, l’essentiel se révèle en profondeur.
+            Nous explorons ce qui structure la tenue, le relief et
+            la singularité d’une marque, puis nous le faisons émerger
             en un territoire lisible, une image juste et une présence durable.
           </p>
         </div>
@@ -956,7 +958,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="cta-block">
           <h2 class="cta-title">DONNONS DE LA PROFONDEUR A VOTRE RAYONNEMENT</h2>
           <p class="cta-text">
-            Abyss Lab accompagne les marques qui veulent clarifier ou fonder leur positionnement, 
+            Abyss Lab accompagne les marques qui veulent clarifier ou fonder leur positionnement,
             élever leur image et construire une présence forte, cohérente et durable.
           </p>
           <a href="contact.html" class="btn btn-outline-light">Demarrer un projet</a>
