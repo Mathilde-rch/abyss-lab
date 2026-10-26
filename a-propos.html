@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>L’Agence | Abyss Lab — Sous la surface</title>
-  <meta name="description" content="Découvrez Abyss Lab et sa fondatrice Mathilde Ranchon : une approche de la stratégie de marque, de l’image et de la communication qui commence en profondeur. Basée à Bordeaux.">
+  <title>L’Agence | Abyss Lab — Une interlocutrice, toute la chaîne</title>
+
+  <meta name="description" content="Mathilde Ranchon, fondatrice d’Abyss Lab à Bordeaux. Un parcours en marketing et communication chez Mondrian, Millésime, Eklo et Constance. Une interlocutrice pour votre stratégie, votre image et votre déploiement digital.">
 
   <!-- Google Tag Manager -->
   <script>
@@ -19,7 +20,6 @@
       f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NLQ723SC');
   </script>
-  <!-- End Google Tag Manager -->
 
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,18 +32,18 @@
 
   <style>
     :root{
-      --depth:0;
       --navy:#041332;
-      --text:#f5f5f0;
-      --soft:rgba(245,245,240,.75);
-      --muted:rgba(245,245,240,.49);
-      --line:rgba(245,245,240,.18);
+      --white:#fff;
+      --soft:rgba(255,255,255,.82);
+      --muted:rgba(255,255,255,.58);
+      --line:rgba(255,255,255,.16);
       --aqua:#a9d7db;
+      --depth:0;
     }
 
     html{
-      scroll-behavior:smooth;
       overflow-x:clip;
+      scroll-behavior:smooth;
       scroll-padding-top:100px;
     }
 
@@ -51,59 +51,86 @@
       margin:0;
       overflow-x:clip;
       background:var(--navy);
-      color:var(--text);
+      color:var(--white);
       font-family:'Montserrat',sans-serif;
+      -webkit-font-smoothing:antialiased;
     }
 
     a{
       color:inherit;
       text-decoration:none;
+      transition:color .25s,background-color .25s;
     }
 
-    a:hover{
-      color:var(--aqua);
-    }
+    a:hover{color:var(--aqua);}
+    img{display:block;max-width:100%;}
 
     a:focus-visible,
     button:focus-visible{
       outline:2px solid var(--aqua);
-      outline-offset:6px;
-    }
-
-    img{
-      display:block;
-      max-width:100%;
+      outline-offset:5px;
     }
 
     ::selection{
-      background:#a9d7db;
-      color:#041332;
+      background:var(--aqua);
+      color:var(--navy);
     }
 
     .skip-link{
       position:fixed;
-      top:8px;
-      left:8px;
-      padding:12px;
-      background:#fff;
-      color:#041332;
+      top:10px;
+      left:10px;
       z-index:2000;
-      transform:translateY(-180%);
+      padding:12px 18px;
+      background:#fff;
+      color:var(--navy);
+      transform:translateY(-160%);
     }
 
-    .skip-link:focus{
-      transform:none;
+    .skip-link:focus{transform:none;}
+
+    /* EAU EN MOUVEMENT */
+
+    .video-background{
+      position:fixed;
+      inset:0;
+      z-index:0;
+      overflow:hidden;
+      pointer-events:none;
+      background:#041332 url("assets/img/poster.jpg") center/cover no-repeat;
     }
 
-    /* ===== MENU STICKY ===== */
+    .video-background video{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      opacity:.78;
+    }
+
+    .video-background::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(4,19,50,.40),
+          rgba(4,19,50,.67) 55%,
+          rgba(2,9,24,.78)
+        );
+      background-color:rgba(0,5,18,calc(var(--depth)*.12));
+    }
+
+    /* MENU STICKY */
 
     .navbar{
       position:sticky;
       top:0;
       z-index:1030;
+      background:transparent;
       border-bottom:0!important;
       box-shadow:none!important;
-      background:transparent;
       transition:background-color .3s;
     }
 
@@ -113,7 +140,8 @@
       content:none!important;
     }
 
-    .navbar.scrolled{
+    .navbar.scrolled,
+    .navbar.menu-open{
       background:#041332!important;
       border-bottom:0!important;
       box-shadow:none!important;
@@ -127,9 +155,9 @@
     .nav-link{
       font-family:'couture',sans-serif;
       font-size:.80rem;
+      font-weight:600;
       letter-spacing:.16em;
       text-transform:uppercase;
-      font-weight:600;
       color:var(--soft)!important;
       padding-left:1rem!important;
       padding-right:1rem!important;
@@ -140,172 +168,210 @@
       color:#fff!important;
     }
 
-    /* ===== FOND IMMERSIF ===== */
+    /* STRUCTURE */
 
-    .dive-background{
-      position:fixed;
-      inset:0;
-      z-index:0;
-      overflow:hidden;
-      pointer-events:none;
-      background:#041332 url('assets/img/poster.jpg') center/cover;
-    }
-
-    .dive-background video{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      opacity:calc(.65 - var(--depth)*.48);
-    }
-
-    .dive-background::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(
-        180deg,
-        rgba(4,19,50,.30),
-        rgba(2,10,25,.65)
-      );
-      background-color:rgba(0,5,16,calc(var(--depth)*.74));
-    }
-
-    .dive-light{
-      position:absolute;
-      inset:-20% -20% 0;
-      background:conic-gradient(
-        from 155deg at 70% 0%,
-        transparent 0deg,
-        rgba(169,215,219,.11) 8deg,
-        transparent 12deg,
-        transparent 20deg,
-        rgba(169,215,219,.06) 24deg,
-        transparent 30deg
-      );
-      opacity:calc(1 - var(--depth));
-    }
-
-    /* ===== STRUCTURE ===== */
-
-    .journey{
+    .agency-main{
       position:relative;
       z-index:1;
     }
 
-    .chapter{
-      position:relative;
-      min-height:95svh;
-      display:flex;
-      align-items:center;
-      padding:110px 0;
-      scroll-margin-top:90px;
-    }
-
-    .dive-container{
-      width:min(1120px,calc(100% - 160px));
+    .agency-container{
+      width:min(1120px,calc(100% - 190px));
       margin:0 auto;
     }
 
-    .chapter-label{
-      display:block;
-      margin:0 0 26px;
-      font-size:.64rem;
-      font-weight:600;
-      letter-spacing:.24em;
+    .dive-section{
+      position:relative;
+      padding:90px 0;
+    }
+
+    .section-tag{
+      margin:0 0 20px;
+      font-size:.65rem;
+      font-weight:700;
+      letter-spacing:.20em;
+      line-height:1.6;
       text-transform:uppercase;
       color:var(--aqua);
     }
 
-    .dive-title{
-      font-family:'couture','Montserrat',sans-serif;
-      font-style:italic;
-      font-weight:800;
-      font-size:clamp(2.8rem,6.7vw,6.8rem);
-      line-height:1.04;
-      letter-spacing:.015em;
+    .agency-title{
+      font-family:'couture',sans-serif;
+      font-size:2.78rem;
+      line-height:1.10;
+      letter-spacing:.08em;
       text-transform:uppercase;
-      margin:0 0 28px;
-    }
-
-    .dive-title span{
-      display:block;
-    }
-
-    .dive-lead{
-      max-width:530px;
-      color:var(--soft);
-      font-size:clamp(.94rem,1.2vw,1.08rem);
-      line-height:1.9;
-      margin:0;
-    }
-
-    /* ===== SURFACE ===== */
-
-    .surface{
-      min-height:calc(100svh - 76px);
-      padding-top:90px;
-      padding-bottom:90px;
-    }
-
-    .surface .dive-title{
-      max-width:1000px;
-    }
-
-    .scroll-invite{
-      display:inline-flex;
-      align-items:center;
-      gap:18px;
-      margin-top:48px;
-      font-size:.60rem;
-      letter-spacing:.22em;
-      text-transform:uppercase;
-    }
-
-    .scroll-invite b{
-      font-size:1.7rem;
-      font-weight:400;
-      animation:descend 2s ease-in-out infinite;
-    }
-
-    @keyframes descend{
-      0%,100%{transform:translateY(0);}
-      50%{transform:translateY(7px);}
-    }
-
-    /* ===== COMPTEUR DE PROFONDEUR ===== */
-
-    .depth-gauge{
-      position:fixed;
-      left:22px;
-      top:50%;
-      transform:translateY(-50%);
-      z-index:1040;
-      width:95px;
-    }
-
-    .depth-readout{
-      display:block;
-      font-variant-numeric:tabular-nums;
-      font-size:.83rem;
-      font-weight:600;
-      letter-spacing:.02em;
+      margin:0 0 22px;
       color:#fff;
     }
 
-    .depth-caption{
-      font-size:.46rem;
+    .agency-title span,
+    .section-title span{
+      display:block;
+    }
+
+    .section-title{
+      font-family:'couture',sans-serif;
+      font-size:clamp(1.45rem,2.6vw,2.15rem);
+      line-height:1.20;
+      letter-spacing:.06em;
       text-transform:uppercase;
-      letter-spacing:.16em;
-      color:var(--muted);
+      margin:0 0 24px;
+      color:#fff;
+    }
+
+    .agency-lead{
+      max-width:740px;
+      margin:0;
+      font-size:1rem;
+      line-height:1.85;
+      color:var(--soft);
+    }
+
+    .body-copy{
+      margin:0 0 18px;
+      font-size:.93rem;
+      line-height:1.85;
+      color:var(--soft);
+    }
+
+    .strong-copy{
+      margin:0 0 22px;
+      font-size:clamp(1.05rem,1.6vw,1.3rem);
+      line-height:1.65;
+      font-weight:600;
+    }
+
+    .split-layout{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:65px;
+      align-items:center;
+    }
+
+    .text-link{
+      display:inline-flex;
+      align-items:center;
+      gap:15px;
+      margin-top:12px;
+      padding-bottom:8px;
+      border-bottom:1px solid var(--line);
+      font-size:.64rem;
+      font-weight:600;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .agency-button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:20px;
+      padding:14px 24px;
+      border:1px solid rgba(255,255,255,.65);
+      border-radius:999px;
+      font-size:.66rem;
+      font-weight:700;
+      letter-spacing:.14em;
+      line-height:1.5;
+      text-transform:uppercase;
+      color:#fff;
+    }
+
+    .agency-button:hover{
+      background:#fff;
+      color:var(--navy);
+    }
+
+    /* HERO */
+
+    .agency-hero{
+      min-height:70svh;
+      display:flex;
+      align-items:center;
+      padding:98px 0 75px;
+    }
+
+    .hero-actions{
+      display:flex;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:20px 28px;
+      margin-top:30px;
+    }
+
+    .scroll-link{
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+      font-size:.60rem;
+      font-weight:600;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+      color:var(--soft);
+    }
+
+    .scroll-arrow{
+      font-size:1.3rem;
+      animation:floatDown 2s ease-in-out infinite;
+    }
+
+    @keyframes floatDown{
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(6px);}
+    }
+
+    .brand-line{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px 26px;
+      margin-top:40px;
+      padding-top:23px;
+      border-top:1px solid var(--line);
+      font-size:.65rem;
+      font-weight:600;
+      letter-spacing:.13em;
+      text-transform:uppercase;
+      color:var(--soft);
+    }
+
+    /* NAVIGATION DES PROFONDEURS */
+
+    .depth-gauge{
+      position:fixed;
+      top:50%;
+      left:24px;
+      transform:translateY(-50%);
+      width:98px;
+      z-index:1020;
+    }
+
+    .depth-value{
+      font-family:'Montserrat',sans-serif;
+      font-size:.82rem;
+      font-style:normal;
+      font-weight:500;
+      font-variant-numeric:lining-nums tabular-nums;
+      white-space:nowrap;
+      color:#fff;
+      -webkit-text-stroke:0;
+      text-shadow:none;
+    }
+
+    .depth-caption{
       margin-top:5px;
+      font-size:.45rem;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+      color:var(--muted);
     }
 
     .depth-track{
-      height:190px;
-      width:1px;
-      background:var(--line);
-      margin:20px 0 20px 6px;
       position:relative;
+      width:1px;
+      height:165px;
+      margin:22px 0 22px 5px;
+      background:var(--line);
     }
 
     .depth-fill{
@@ -316,311 +382,364 @@
       transform-origin:top;
     }
 
-    .depth-dot{
+    .depth-point{
       position:absolute;
-      left:-3px;
       top:calc(var(--depth)*100%);
+      left:-3px;
       width:7px;
       height:7px;
       border-radius:50%;
       background:var(--aqua);
-      box-shadow:0 0 14px rgba(169,215,219,.45);
     }
 
     .depth-links{
       display:grid;
-      gap:12px;
+      gap:9px;
     }
 
     .depth-links a{
-      font-size:.47rem;
-      letter-spacing:.11em;
+      padding:4px 0;
+      font-size:.46rem;
+      letter-spacing:.10em;
       text-transform:uppercase;
       color:var(--muted);
-      padding:4px 0;
     }
 
     .depth-links a[aria-current="location"]{
       color:#fff;
     }
 
-    /* ===== CHAPITRES ===== */
+    /* COMPTEURS */
 
-    .chapter-heading{
-      font-family:'couture','Montserrat',sans-serif;
-      font-style:italic;
-      font-weight:800;
-      font-size:clamp(2.2rem,5vw,4.6rem);
-      line-height:1.08;
-      text-transform:uppercase;
-      letter-spacing:.02em;
-      margin:0 0 28px;
+    .numbers-section{
+      padding:65px 0;
+      background:rgba(4,19,50,.56);
     }
 
-    .chapter-heading span{
-      display:block;
+    .numbers-heading{
+      max-width:680px;
+      margin-bottom:42px;
     }
 
-    .split{
+    .numbers-grid{
       display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:9%;
-      align-items:center;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:28px;
     }
 
-    .body-copy{
-      font-size:.94rem;
-      line-height:1.95;
-      color:var(--soft);
-      margin:0 0 20px;
+    .number-item{
+      text-align:center;
     }
 
-    .large-statement{
-      font-size:clamp(1.2rem,2vw,1.7rem);
-      font-weight:500;
-      line-height:1.65;
-      margin:0 0 26px;
+    .number-value,
+    .method-number,
+    .scope-value{
+      font-family:'Montserrat',sans-serif!important;
+      font-style:normal!important;
+      font-weight:400!important;
+      color:var(--aqua)!important;
+      -webkit-text-stroke:0!important;
+      text-shadow:none!important;
+      font-variant-numeric:lining-nums tabular-nums;
     }
 
-    .text-link{
-      display:inline-block;
-      margin-top:12px;
-      padding-bottom:7px;
-      border-bottom:1px solid var(--line);
-      font-size:.62rem;
-      letter-spacing:.14em;
+    .number-value{
+      display:block;
+      font-size:clamp(3.4rem,6.5vw,6rem);
+      line-height:1.1;
+      letter-spacing:-.04em;
+    }
+
+    .number-label{
+      display:block;
+      margin-top:16px;
+      font-family:'couture',sans-serif;
+      font-size:.73rem;
+      line-height:1.6;
+      letter-spacing:.07em;
       text-transform:uppercase;
     }
 
-    .contours{
-      position:absolute;
-      width:600px;
-      height:600px;
-      border:1px solid rgba(169,215,219,.07);
-      border-radius:43% 57% 65% 35%;
-      right:-220px;
-      top:5%;
-      transform:rotate(-20deg);
-      pointer-events:none;
+    .number-description{
+      display:block;
+      max-width:210px;
+      margin:8px auto 0;
+      font-size:.72rem;
+      line-height:1.65;
+      color:var(--muted);
     }
 
-    .contours::before,
-    .contours::after{
-      content:"";
-      position:absolute;
-      inset:30px;
-      border:1px solid rgba(169,215,219,.08);
-      border-radius:inherit;
+    .numbers-note{
+      max-width:850px;
+      margin:35px auto 0;
+      text-align:center;
+      font-size:.64rem;
+      line-height:1.75;
+      color:var(--muted);
     }
 
-    .contours::after{
-      inset:65px;
-    }
-
-    /* ===== FONDATRICE ===== */
+    /* FONDATRICE */
 
     .portrait{
       margin:0;
-      position:relative;
-    }
-
-    .portrait::after{
-      content:"";
-      position:absolute;
-      inset:0 0 30px;
-      background:linear-gradient(
-        180deg,
-        transparent 50%,
-        rgba(4,19,50,.25)
-      );
-      pointer-events:none;
     }
 
     .portrait img{
       width:100%;
       aspect-ratio:4/5;
       object-fit:cover;
-      filter:saturate(.65);
     }
 
     .portrait figcaption{
-      padding-top:16px;
+      margin-top:14px;
       font-size:.55rem;
-      letter-spacing:.17em;
-      text-transform:uppercase;
-      color:var(--soft);
-    }
-
-    .founder-name{
-      font-size:.70rem;
-      font-weight:600;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      margin-bottom:24px;
-      color:var(--aqua);
-    }
-
-    /* ===== APPROCHE ===== */
-
-    .method-list{
-      display:grid;
-      gap:0;
-    }
-
-    .method-item{
-      display:grid;
-      grid-template-columns:110px 1fr;
-      gap:28px;
-      border-top:1px solid var(--line);
-      padding:34px 0;
-      align-items:start;
-    }
-
-    .method-number{
-      font-size:4.6rem;
-      line-height:1;
-      font-weight:400;
-      color:transparent;
-      -webkit-text-stroke:1px rgba(169,215,219,.55);
-    }
-
-    .method-item h3{
-      font-family:'couture',sans-serif;
-      font-size:1.1rem;
-      text-transform:uppercase;
-      letter-spacing:.06em;
-      margin:4px 0 12px;
-    }
-
-    .method-item p{
-      max-width:460px;
-      margin:0;
-      font-size:.88rem;
-      line-height:1.85;
-      color:var(--soft);
-    }
-
-    .method-intro{
-      align-self:start;
-      position:sticky;
-      top:140px;
-    }
-
-    /* ===== RENCONTRE ===== */
-
-    .abyss{
-      min-height:90svh;
-      text-align:center;
-    }
-
-    .abyss .dive-container{
-      position:relative;
-    }
-
-    .abyss .dive-container::before{
-      content:"";
-      position:absolute;
-      inset:-100px -30px;
-      background:radial-gradient(
-        ellipse,
-        rgba(68,151,168,.12),
-        transparent 65%
-      );
-      pointer-events:none;
-      z-index:-1;
-    }
-
-    .abyss .dive-lead{
-      margin:0 auto 32px;
-    }
-
-    .dive-button{
-      display:inline-flex;
-      justify-content:center;
-      align-items:center;
-      gap:24px;
-      padding:17px 26px;
-      border:1px solid rgba(245,245,240,.65);
-      border-radius:999px;
-      font-size:.65rem;
-      font-weight:600;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      transition:background-color .25s,color .25s;
-    }
-
-    .dive-button:hover{
-      background:var(--text);
-      color:var(--navy);
-    }
-
-    .back-surface{
-      display:block;
-      width:fit-content;
-      margin:38px auto 0;
-      font-size:.55rem;
-      letter-spacing:.16em;
+      letter-spacing:.13em;
+      line-height:1.7;
       text-transform:uppercase;
       color:var(--muted);
     }
 
-    /* ===== FOOTER ===== */
+    .founder-name{
+      margin:0 0 22px;
+      font-size:.70rem;
+      font-weight:700;
+      line-height:1.6;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--aqua);
+    }
+
+    /* PARCOURS */
+
+    .timeline-heading{
+      max-width:720px;
+      margin-bottom:40px;
+    }
+
+    .career-item{
+      display:grid;
+      grid-template-columns:150px 1fr;
+      gap:35px;
+      padding:30px 0;
+      border-top:1px solid var(--line);
+    }
+
+    .career-date{
+      padding-top:4px;
+      font-size:.69rem;
+      font-weight:600;
+      line-height:1.8;
+      letter-spacing:.07em;
+      color:var(--aqua);
+    }
+
+    .career-item h3{
+      margin:0 0 6px;
+      font-family:'couture',sans-serif;
+      font-size:1.08rem;
+      letter-spacing:.05em;
+      line-height:1.5;
+      text-transform:uppercase;
+    }
+
+    .career-role{
+      margin:0 0 13px;
+      font-size:.75rem;
+      font-weight:600;
+      line-height:1.7;
+      color:#fff;
+    }
+
+    .career-item p:last-child{
+      margin-bottom:0;
+    }
+
+    .career-scope{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px 28px;
+      margin:16px 0;
+    }
+
+    .scope-item{
+      font-size:.75rem;
+      color:var(--soft);
+    }
+
+    .scope-value{
+      font-size:1.25rem;
+      margin-right:6px;
+    }
+
+    .career-caption{
+      margin:30px 0 0;
+      font-size:.67rem;
+      line-height:1.8;
+      color:var(--muted);
+    }
+
+    /* EXPERTISES */
+
+    .expertise-intro{
+      max-width:730px;
+      margin-bottom:40px;
+    }
+
+    .expertise-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:0 45px;
+    }
+
+    .expertise-item{
+      display:grid;
+      grid-template-columns:45px 1fr;
+      gap:18px;
+      padding:27px 0;
+      border-top:1px solid var(--line);
+    }
+
+    .method-number{
+      font-size:1.7rem;
+      line-height:1.1;
+    }
+
+    .expertise-item h3{
+      margin:0 0 12px;
+      font-family:'couture',sans-serif;
+      font-size:.97rem;
+      line-height:1.5;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+    }
+
+    .expertise-item p{
+      margin:0;
+      font-size:.85rem;
+      line-height:1.85;
+      color:var(--soft);
+    }
+
+    /* RELATION DIRECTE */
+
+    .direct-section{
+      background:rgba(4,19,50,.45);
+    }
+
+    .direct-list{
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+
+    .direct-list li{
+      border-top:1px solid var(--line);
+      padding:20px 0;
+      font-size:.90rem;
+      line-height:1.8;
+      color:var(--soft);
+    }
+
+    .direct-list strong{
+      display:block;
+      margin-bottom:7px;
+      font-size:.79rem;
+      font-weight:700;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      color:#fff;
+    }
+
+    /* CONTACT */
+
+    .final-section{
+      padding:105px 0;
+      text-align:center;
+    }
+
+    .final-section .agency-lead{
+      max-width:640px;
+      margin:0 auto 28px;
+    }
+
+    .back-top{
+      display:block;
+      width:fit-content;
+      margin:30px auto 0;
+      font-size:.56rem;
+      letter-spacing:.13em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    /* FOOTER */
 
     .agency-footer{
       position:relative;
       z-index:1;
-      padding:35px 0 25px;
-      background:#020916;
+      padding:30px 0 22px;
+      background:rgba(2,9,24,.88);
     }
 
-    .footer-topline{
+    .footer-heading{
       display:flex;
       justify-content:space-between;
-      gap:25px;
-      padding-bottom:26px;
+      flex-wrap:wrap;
+      gap:16px 30px;
+      padding-bottom:22px;
       border-bottom:1px solid var(--line);
     }
 
     .footer-brand{
+      font-size:.94rem;
       font-weight:700;
       letter-spacing:.14em;
     }
 
     .footer-location{
-      font-size:.7rem;
+      font-size:.72rem;
+      line-height:1.7;
       color:var(--soft);
     }
 
     .footer-navigation{
       display:flex;
       flex-wrap:wrap;
-      gap:18px 28px;
-      padding:25px 0;
-      font-size:.62rem;
+      gap:16px 26px;
+      padding:23px 0;
+      font-size:.64rem;
       letter-spacing:.10em;
       text-transform:uppercase;
+    }
+
+    .footer-socials{
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px 24px;
+      margin-bottom:23px;
+      font-size:.70rem;
+      color:var(--soft);
     }
 
     .footer-legal{
       display:flex;
       flex-wrap:wrap;
-      gap:12px 24px;
+      gap:10px 22px;
       font-size:.64rem;
+      line-height:1.7;
       color:var(--muted);
     }
 
     .footer-copy{
-      margin-top:20px;
-      font-size:.62rem;
+      margin:20px 0 0;
+      font-size:.63rem;
       color:var(--muted);
     }
 
-    /* ===== RESPONSIVE ===== */
+    /* TABLETTE */
 
-    @media(min-width:1400px){
-      .depth-gauge{
-        left:38px;
-      }
+    @media(min-width:1450px){
+      .depth-gauge{left:40px;}
     }
 
     @media(max-width:991.98px){
@@ -629,161 +748,207 @@
         overflow-y:auto;
       }
 
-      .split{
-        gap:6%;
+      .agency-container{
+        width:calc(100% - 155px);
+        margin-left:130px;
       }
 
-      .dive-container{
-        width:calc(100% - 145px);
-        margin-left:120px;
+      .split-layout{
+        grid-template-columns:1fr;
+        gap:40px;
       }
 
-      .method-item{
-        grid-template-columns:75px 1fr;
-        gap:18px;
+      .portrait{max-width:480px;}
+
+      .numbers-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:38px 24px;
       }
 
-      .method-number{
-        font-size:3.5rem;
+      .career-item{
+        grid-template-columns:110px 1fr;
+        gap:25px;
       }
+
+      .expertise-grid{gap:0 28px;}
     }
 
+    /* MOBILE */
+
     @media(max-width:767.98px){
-      html{
-        scroll-padding-top:120px;
+      html{scroll-padding-top:110px;}
+
+      .agency-container{
+        width:calc(100% - 32px);
+        margin:0 auto;
       }
 
-      .navbar-brand{
-        font-size:1.15rem;
+      .agency-hero{
+        min-height:auto;
+        padding:82px 0 55px;
+      }
+
+      .agency-title{
+        font-size:1.34rem;
+        line-height:1.14;
+        letter-spacing:.08em;
+        margin-bottom:18px;
+      }
+
+      .section-title{
+        font-size:1.30rem;
+        line-height:1.2;
+        margin-bottom:20px;
+      }
+
+      .section-tag{
+        font-size:.54rem;
+        letter-spacing:.15em;
+        margin-bottom:16px;
+      }
+
+      .agency-lead,
+      .body-copy{
+        font-size:.89rem;
+        line-height:1.78;
+      }
+
+      .strong-copy{
+        font-size:1.03rem;
+      }
+
+      .dive-section{padding:60px 0;}
+
+      .agency-hero{padding-top:82px;}
+
+      .hero-actions{
+        gap:20px;
+        margin-top:25px;
+      }
+
+      .hero-actions .agency-button{width:100%;}
+
+      .agency-button{
+        padding:13px 19px;
+        font-size:.60rem;
+        letter-spacing:.10em;
+      }
+
+      .scroll-link{font-size:.54rem;}
+
+      .brand-line{
+        margin-top:30px;
+        gap:12px 20px;
+        font-size:.56rem;
       }
 
       .depth-gauge{
         left:auto;
         right:14px;
-        top:88px;
-        transform:none;
+        top:85px;
         width:auto;
+        transform:none;
         text-align:right;
         pointer-events:none;
       }
 
-      .depth-readout{
-        font-size:.7rem;
-      }
-
-      .depth-caption{
-        font-size:.42rem;
-      }
+      .depth-value{font-size:.68rem;}
+      .depth-caption{font-size:.39rem;}
 
       .depth-track,
       .depth-links{
         display:none;
       }
 
-      .dive-container{
-        width:calc(100% - 40px);
-        margin:0 auto;
+      body.menu-is-open .depth-gauge{visibility:hidden;}
+
+      .numbers-section{padding:45px 0;}
+      .numbers-heading{margin-bottom:30px;}
+
+      .numbers-grid{
+        gap:34px 16px;
       }
 
-      .chapter{
-        padding:85px 0;
-        min-height:auto;
-        scroll-margin-top:120px;
+      .number-value{font-size:3.5rem;}
+
+      .number-label{
+        font-size:.61rem;
+        margin-top:12px;
       }
 
-      .surface{
-        min-height:calc(100svh - 76px);
-        padding:100px 0 75px;
+      .number-description{
+        font-size:.66rem;
       }
 
-      .chapter-label{
-        font-size:.55rem;
-        letter-spacing:.18em;
-        margin-bottom:22px;
+      .numbers-note{
+        font-size:.60rem;
+        text-align:left;
       }
 
-      .dive-title{
-        font-size:clamp(2.05rem,9vw,3.6rem);
-        line-height:1.09;
-      }
+      .portrait img{aspect-ratio:4/4.8;}
+      .founder-name{font-size:.63rem;}
 
-      .dive-lead{
-        font-size:.88rem;
-        line-height:1.85;
-      }
-
-      .chapter-heading{
-        font-size:clamp(1.9rem,8vw,3rem);
-      }
-
-      .split{
+      .career-item{
         grid-template-columns:1fr;
-        gap:40px;
+        gap:10px;
+        padding:25px 0;
       }
 
-      .large-statement{
-        font-size:1.22rem;
+      .career-date{
+        font-size:.64rem;
       }
 
-      .body-copy{
-        font-size:.88rem;
-        line-height:1.85;
-      }
-
-      .portrait{
-        max-width:460px;
-      }
-
-      .portrait img{
-        aspect-ratio:4/4.6;
-      }
-
-      .method-intro{
-        position:static;
-      }
-
-      .method-item{
-        grid-template-columns:65px 1fr;
-        gap:18px;
-        padding:28px 0;
-      }
-
-      .method-number{
-        font-size:3rem;
-      }
-
-      .method-item h3{
+      .career-item h3{
         font-size:.95rem;
       }
 
-      .method-item p{
-        font-size:.84rem;
+      .career-role{
+        font-size:.71rem;
       }
 
-      .abyss{
-        min-height:75svh;
+      .career-scope{
+        gap:10px 20px;
       }
 
-      .dive-button{
-        font-size:.57rem;
-        letter-spacing:.10em;
-        padding:16px 20px;
+      .scope-item{font-size:.70rem;}
+
+      .expertise-grid{
+        grid-template-columns:1fr;
       }
 
-      .footer-topline{
+      .expertise-item{
+        grid-template-columns:38px 1fr;
+        gap:15px;
+        padding:24px 0;
+      }
+
+      .expertise-item h3{font-size:.88rem;}
+
+      .expertise-item p{
+        font-size:.83rem;
+        line-height:1.78;
+      }
+
+      .method-number{font-size:1.5rem;}
+
+      .direct-list li{font-size:.85rem;}
+      .direct-list strong{font-size:.74rem;}
+
+      .final-section{padding:75px 0;}
+
+      .footer-heading{
         flex-direction:column;
         gap:12px;
       }
 
       .footer-navigation{
-        gap:17px 22px;
+        font-size:.59rem;
+        gap:14px 20px;
       }
     }
 
     @media(prefers-reduced-motion:reduce){
-      html{
-        scroll-behavior:auto;
-      }
+      html{scroll-behavior:auto;}
 
       *,
       *::before,
@@ -805,13 +970,13 @@
       style="display:none;visibility:hidden"
     ></iframe>
   </noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
   <a href="#surface" class="skip-link">Aller au contenu</a>
 
-  <!-- FOND IMMERSIF -->
-  <div class="dive-background" aria-hidden="true">
+  <!-- EAU EN MOUVEMENT -->
+  <div class="video-background" aria-hidden="true">
     <video
+      id="bg-video"
       autoplay
       muted
       loop
@@ -819,12 +984,10 @@
       webkit-playsinline
       preload="metadata"
       poster="assets/img/poster.jpg"
-      id="bg-video"
+      disablepictureinpicture
     >
       <source src="assets/video/abyss-lab.mp4" type="video/mp4">
     </video>
-
-    <div class="dive-light"></div>
   </div>
 
   <!-- MENU STICKY -->
@@ -852,7 +1015,7 @@
             <a class="nav-link" href="index.html">ACCUEIL</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="a-propos.html">L’AGENCE</a>
+            <a class="nav-link active" href="a-propos.html" aria-current="page">L’AGENCE</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="services.html">SERVICES</a>
@@ -868,253 +1031,615 @@
     </div>
   </nav>
 
-  <!-- COMPTEUR ET NAVIGATION DES CHAPITRES -->
-  <aside class="depth-gauge" aria-label="Progression de la plongée">
+  <!-- NAVIGATION VERS LES PROFONDEURS -->
+  <aside class="depth-gauge" aria-label="Progression dans la page">
     <div aria-hidden="true">
-      <span class="depth-readout" id="depth-value">0 m</span>
+      <div class="depth-value" id="depth-value">0 m</div>
       <div class="depth-caption">Profondeur</div>
 
       <div class="depth-track">
         <div class="depth-fill"></div>
-        <div class="depth-dot"></div>
+        <div class="depth-point"></div>
       </div>
     </div>
 
     <nav class="depth-links" aria-label="Chapitres de l’agence">
-      <a href="#surface" aria-current="location">00 / Surface</a>
-      <a href="#conviction">01 / Vision</a>
-      <a href="#origine">02 / Origine</a>
-      <a href="#approche">03 / Approche</a>
-      <a href="#rencontre">04 / Rencontre</a>
+      <a href="#surface" aria-current="location">00 / L’agence</a>
+      <a href="#chiffres">01 / Les preuves</a>
+      <a href="#fondatrice">02 / La fondatrice</a>
+      <a href="#parcours">03 / Le parcours</a>
+      <a href="#expertises">04 / Les expertises</a>
+      <a href="#relation">05 / La relation</a>
+      <a href="#contact">06 / Votre projet</a>
     </nav>
   </aside>
 
-  <main class="journey" id="journey">
+  <main class="agency-main">
 
-    <!-- 0 M : LA SURFACE -->
+    <!-- 0 M : POSITIONNEMENT -->
     <section
-      class="chapter surface"
+      class="agency-hero dive-section"
       id="surface"
       data-depth="0"
-      aria-labelledby="surface-title"
+      aria-labelledby="agency-title"
     >
-      <div class="dive-container">
-        <p class="chapter-label">
-          L’agence / Bordeaux / Sous la surface
-        </p>
+      <div class="agency-container">
+        <p class="section-tag">L’agence / Mathilde Ranchon / Bordeaux</p>
 
-        <h1 class="dive-title" id="surface-title">
-          <span>Ce qui compte</span>
-          <span>se trouve</span>
-          <span>sous la surface.</span>
+        <h1 class="agency-title" id="agency-title">
+          <span>Une interlocutrice.</span>
+          <span>Toute la chaîne.</span>
         </h1>
 
-        <p class="dive-lead">
-          Une image attire le regard. Ce qui la fonde fait la différence.
-          Bienvenue dans les profondeurs d’Abyss Lab.
+        <p class="agency-lead">
+          Du siège d’un groupe hôtelier au terrain d’un cinq étoiles,
+          j’ai appris à penser la marque, produire ses contenus
+          et déployer sa communication.
+          Avec Abyss Lab, cette expérience travaille directement pour vous.
         </p>
 
-        <a class="scroll-invite" href="#conviction">
-          <b aria-hidden="true">↓</b>
-          Scrollez pour plonger
-        </a>
+        <div class="hero-actions">
+          <a href="contact.html" class="agency-button">
+            Parlons de votre projet
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <a href="#chiffres" class="scroll-link">
+            <span class="scroll-arrow" aria-hidden="true">↓</span>
+            Découvrez ce qu’il y a derrière
+          </a>
+        </div>
+
+        <div class="brand-line" aria-label="Marques hôtelières de mon parcours">
+          <span>Mondrian</span>
+          <span>Millésime</span>
+          <span>Eklo</span>
+          <span>Constance</span>
+        </div>
       </div>
     </section>
 
-    <!-- -200 M : LA CONVICTION -->
+    <!-- 150 M : CHIFFRES -->
     <section
-      class="chapter"
-      id="conviction"
-      data-depth="200"
-      aria-labelledby="conviction-title"
+      class="numbers-section dive-section"
+      id="chiffres"
+      data-depth="150"
+      aria-labelledby="numbers-title"
     >
-      <div class="contours" aria-hidden="true"></div>
+      <div class="agency-container">
+        <div class="numbers-heading">
+          <p class="section-tag">−150 m / Les preuves</p>
 
-      <div class="dive-container split">
-        <div>
-          <p class="chapter-label">−200 m / La conviction</p>
-
-          <h2 class="chapter-heading" id="conviction-title">
-            <span>Avant l’image,</span>
-            <span>l’essence.</span>
+          <h2 class="section-title" id="numbers-title">
+            <span>Du terrain.</span>
+            <span>De l’ampleur.</span>
+            <span>Une seule interlocutrice.</span>
           </h2>
         </div>
 
-        <div>
-          <p class="large-statement">
-            Une marque forte se construit sur ce qui la rend singulière.
-          </p>
+        <div class="numbers-grid">
 
-          <p class="body-copy">
-            Son histoire, sa vision, ses contradictions, son ambition.
-            C’est cette matière que nous explorons avant de lui donner une forme.
-          </p>
+          <div class="number-item">
+            <span
+              class="number-value"
+              data-count="2014"
+              aria-hidden="true"
+            >2014</span>
 
-          <p class="body-copy">
-            Abyss Lab relie stratégie, direction artistique et communication
-            pour faire émerger une présence juste, cohérente et durable.
-          </p>
+            <span class="visually-hidden">2014</span>
 
-          <a class="text-link" href="#origine">
-            Découvrir ce qui nous anime ↘
-          </a>
+            <span class="number-label">
+              Premiers pas en communication
+            </span>
+
+            <span class="number-description">
+              Un parcours construit entre institution, entrepreneuriat et hospitality.
+            </span>
+          </div>
+
+          <div class="number-item">
+            <span
+              class="number-value"
+              data-count="23"
+              aria-hidden="true"
+            >23</span>
+
+            <span class="visually-hidden">23</span>
+
+            <span class="number-label">
+              Établissements dans mes périmètres
+            </span>
+
+            <span class="number-description">
+              Des missions au siège et sur le terrain, au fil de mon parcours.
+            </span>
+          </div>
+
+          <div class="number-item">
+            <span
+              class="number-value"
+              data-count="4"
+              aria-hidden="true"
+            >4</span>
+
+            <span class="visually-hidden">4</span>
+
+            <span class="number-label">
+              Marques hôtelières
+            </span>
+
+            <span class="number-description">
+              Constance, Eklo, Millésime et Mondrian.
+            </span>
+          </div>
+
+          <div class="number-item">
+            <span
+              class="number-value"
+              data-count="1"
+              aria-hidden="true"
+            >1</span>
+
+            <span class="visually-hidden">1</span>
+
+            <span class="number-label">
+              Interlocutrice pour votre projet
+            </span>
+
+            <span class="number-description">
+              Une vision qui reste, de la stratégie au déploiement.
+            </span>
+          </div>
+
         </div>
+
+        <p class="numbers-note">
+          Données issues de mon parcours professionnel, stages et alternance compris.
+          Les 23 établissements correspondent aux périmètres de mission déclarés :
+          7 chez Constance, 5 chez Eklo, 10 chez Millésime et le Mondrian Bordeaux.
+          Le restaurant Morimoto est inclus dans le périmètre Mondrian.
+        </p>
       </div>
     </section>
 
-    <!-- -500 M : LA FONDATRICE -->
+    <!-- 300 M : FONDATRICE -->
     <section
-      class="chapter"
-      id="origine"
-      data-depth="500"
-      aria-labelledby="origine-title"
+      class="dive-section"
+      id="fondatrice"
+      data-depth="300"
+      aria-labelledby="founder-title"
     >
-      <div class="dive-container split">
+      <div class="agency-container split-layout">
         <figure class="portrait">
           <img
             src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773329727/agence_mathilde_ranchon_jtx26v.jpg"
             alt="Mathilde Ranchon, fondatrice d’Abyss Lab"
             loading="lazy"
           >
+
           <figcaption>
             Mathilde Ranchon / Fondatrice d’Abyss Lab
           </figcaption>
         </figure>
 
         <div>
-          <p class="chapter-label">−500 m / À l’origine</p>
+          <p class="section-tag">−300 m / La fondatrice</p>
 
-          <h2 class="chapter-heading" id="origine-title">
-            <span>Un regard.</span>
-            <span>Une direction.</span>
+          <h2 class="section-title" id="founder-title">
+            <span>Je connais les enjeux.</span>
+            <span>J’ai porté les missions.</span>
           </h2>
 
           <p class="founder-name">
             Mathilde Ranchon — Fondatrice
           </p>
 
-          <p class="body-copy">
-            J’accompagne les marques qui attendent d’un regard extérieur
-            plus qu’une exécution : une lecture, une direction,
-            une exigence réelle.
+          <p class="strong-copy">
+            Construire un plan de communication. Produire les images.
+            Animer les communautés. Faire vivre un site.
+            Coordonner les campagnes. Répondre aux besoins du terrain.
           </p>
 
           <p class="body-copy">
-            Mon approche articule stratégie de marque, direction éditoriale,
-            sens du détail et maîtrise des leviers digitaux pour transformer
-            une intuition de départ en territoire clair.
+            Ces sujets ont fait partie de mon quotidien au sein
+            de groupes hôteliers et d’un établissement cinq étoiles.
+            J’en connais les exigences d’image, les contraintes opérationnelles
+            et les objectifs commerciaux.
           </p>
 
           <p class="body-copy">
-            Basée à Bordeaux, j’accompagne les univers premium, luxe,
-            lifestyle, hospitality et art de vivre, en France et à l’étranger.
+            Avec Abyss Lab, je mets cette expérience au service des marques
+            qui veulent avancer avec une direction claire
+            et une interlocutrice capable de passer de la réflexion à l’action.
           </p>
 
-          <a class="text-link" href="references.html">
-            Explorer les références ↗
+          <a href="references.html" class="text-link">
+            Voir les références
+            <span aria-hidden="true">↗</span>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- -800 M : L’APPROCHE -->
+    <!-- 500 M : PARCOURS -->
     <section
-      class="chapter"
-      id="approche"
-      data-depth="800"
-      aria-labelledby="approche-title"
+      class="dive-section"
+      id="parcours"
+      data-depth="500"
+      aria-labelledby="career-title"
     >
-      <div class="dive-container split">
-        <div class="method-intro">
-          <p class="chapter-label">
-            −800 m / La façon de travailler
-          </p>
+      <div class="agency-container">
+        <div class="timeline-heading">
+          <p class="section-tag">−500 m / Le parcours</p>
 
-          <h2 class="chapter-heading" id="approche-title">
-            <span>Aller au fond.</span>
-            <span>Viser juste.</span>
+          <h2 class="section-title" id="career-title">
+            <span>Une expérience construite</span>
+            <span>à plusieurs échelles.</span>
           </h2>
 
-          <p class="dive-lead">
-            Chaque projet commence par une exploration.
-            Chaque choix doit ensuite servir une direction.
+          <p class="body-copy">
+            Un établissement, une collection, une marque internationale :
+            chaque expérience m’a appris à relier la vision globale
+            aux besoins de chaque lieu.
           </p>
-
-          <a class="text-link" href="services.html">
-            Voir les accompagnements ↗
-          </a>
         </div>
 
-        <div class="method-list">
-          <article class="method-item">
+        <article class="career-item">
+          <div class="career-date">
+            2023 — 2025<br>
+            Bordeaux
+          </div>
+
+          <div>
+            <h3>Mondrian Bordeaux Les Carmes 5*</h3>
+
+            <p class="career-role">
+              Marketing Communication Manager — Hôtel & restaurant/bar Morimoto
+            </p>
+
+            <p class="body-copy">
+              Campagnes marketing et communication, plan de communication annuel,
+              contenus photo et vidéo, réseaux sociaux, e-réputation,
+              supports promotionnels et mise à jour des contenus web.
+            </p>
+
+            <p class="body-copy">
+              Coordination avec le siège, les équipes commerciales
+              et l’agence de relations presse. Organisation de voyages de presse
+              et soutien aux événements et aux promotions.
+            </p>
+          </div>
+        </article>
+
+        <article class="career-item">
+          <div class="career-date">
+            2019 — 2023<br>
+            Siège / Bordeaux
+          </div>
+
+          <div>
+            <h3>Millésime Collection</h3>
+
+            <p class="career-role">
+              Digital Marketing & Communication Manager
+            </p>
+
+            <div class="career-scope">
+              <span class="scope-item">
+                <span class="scope-value">10</span> établissements
+              </span>
+              <span class="scope-item">
+                <span class="scope-value">1</span> marque de collection
+              </span>
+            </div>
+
+            <p class="body-copy">
+              Production photo et vidéo au sein des maisons,
+              création des visuels, animation des réseaux sociaux,
+              social ads, collaborations et influence.
+            </p>
+
+            <p class="body-copy">
+              Webmastering, rédaction web, optimisation des contenus,
+              coordination SEO et SEA avec un prestataire spécialisé,
+              newsletters et segmentation des bases clients.
+              Un travail quotidien avec les maîtres de maison
+              pour soutenir les événements et les points de vente.
+            </p>
+
+            <p class="body-copy">
+              Brindos, Château Léognan, Château de Théoule,
+              Château de Sacy, Domaine de Raba, Grand Hôtel du Soleil d’Or,
+              La Course, La Palmeraie, Cocorico et Villa des Orangers.
+            </p>
+          </div>
+        </article>
+
+        <article class="career-item">
+          <div class="career-date">
+            2018<br>
+            Siège / Bordeaux
+          </div>
+
+          <div>
+            <h3>Eklo Hotels</h3>
+
+            <p class="career-role">
+              Chef de projet digital & web marketing — Alternance
+            </p>
+
+            <div class="career-scope">
+              <span class="scope-item">
+                <span class="scope-value">5</span> établissements dans le périmètre de mission
+              </span>
+            </div>
+
+            <p class="body-copy">
+              Écosystème digital, réseaux sociaux, site internet,
+              référencement, e-distribution et analyse.
+              Création de supports de marque, emailing,
+              suivi de la satisfaction client et marketing opérationnel
+              avec les équipes des hôtels.
+            </p>
+          </div>
+        </article>
+
+        <article class="career-item">
+          <div class="career-date">
+            2017<br>
+            Siège / Île Maurice
+          </div>
+
+          <div>
+            <h3>Constance Hotels & Resorts</h3>
+
+            <p class="career-role">
+              Assistante Responsable Communication, Marketing Digital & e-Business — Stage
+            </p>
+
+            <div class="career-scope">
+              <span class="scope-item">
+                <span class="scope-value">7</span> établissements
+              </span>
+              <span class="scope-item">
+                <span class="scope-value">4</span> destinations de l’océan Indien
+              </span>
+            </div>
+
+            <p class="body-copy">
+              Communication de marque, dossiers de presse,
+              supports multimédias, campagnes presse et publicitaires,
+              relations presse internationales et analyse des collaborations.
+            </p>
+
+            <p class="body-copy">
+              Contributions aux projets web, référencement,
+              parcours utilisateur, modernisation visuelle,
+              newsletters et services de conciergerie en ligne.
+              Un périmètre couvrant Maurice, les Seychelles,
+              les Maldives et Madagascar.
+            </p>
+          </div>
+        </article>
+
+        <article class="career-item">
+          <div class="career-date">
+            2015 — 2017<br>
+            Entrepreneuriat
+          </div>
+
+          <div>
+            <h3>BlinkTrip</h3>
+
+            <p class="career-role">
+              Co-fondatrice — Responsable communication & marketing digital
+            </p>
+
+            <p class="body-copy">
+              Stratégie de communication, étude de marché,
+              plan marketing, campagnes pour les appels à projets,
+              community management et création de supports.
+              Une expérience entrepreneuriale, de l’idée à sa présentation au public.
+            </p>
+          </div>
+        </article>
+
+        <article class="career-item">
+          <div class="career-date">
+            2014 — 2015<br>
+            Premières expériences
+          </div>
+
+          <div>
+            <h3>Communication institutionnelle & univers du vin</h3>
+
+            <p class="body-copy">
+              À la Gendarmerie Nationale : veille médiatique,
+              contenus pour les réseaux sociaux et visuels de prévention.
+              Au Musée du Vin et du Négoce de Bordeaux :
+              marketing direct, événements, promotion
+              et contact avec les visiteurs.
+            </p>
+          </div>
+        </article>
+
+        <p class="career-caption">
+          Ces expériences retracent mon parcours avant Abyss Lab.
+          Elles ont été réalisées au sein des structures mentionnées,
+          dans le cadre de postes salariés, d’une alternance,
+          de stages et d’un projet entrepreneurial.
+        </p>
+      </div>
+    </section>
+
+    <!-- 700 M : EXPERTISES -->
+    <section
+      class="dive-section"
+      id="expertises"
+      data-depth="700"
+      aria-labelledby="expertises-title"
+    >
+      <div class="agency-container">
+        <div class="expertise-intro">
+          <p class="section-tag">−700 m / Les expertises</p>
+
+          <h2 class="section-title" id="expertises-title">
+            <span>De l’idée au terrain.</span>
+            <span>Je garde la main.</span>
+          </h2>
+
+          <p class="body-copy">
+            La stratégie doit pouvoir se traduire en contenus,
+            en supports et en actions.
+            Mon rôle : relier ces métiers pour que votre marque
+            avance dans une seule direction.
+          </p>
+        </div>
+
+        <div class="expertise-grid">
+
+          <article class="expertise-item">
             <span class="method-number" aria-hidden="true">01</span>
 
             <div>
-              <h3>Comprendre</h3>
+              <h3>Stratégie & direction</h3>
               <p>
-                Écouter, questionner et clarifier ce qui vous distingue.
-                Comprendre votre univers avant de décider comment le faire rayonner.
+                Positionnement, messages, plans marketing et communication,
+                calendrier d’activation et priorités.
+                Transformer vos objectifs en feuille de route.
               </p>
             </div>
           </article>
 
-          <article class="method-item">
+          <article class="expertise-item">
             <span class="method-number" aria-hidden="true">02</span>
 
             <div>
-              <h3>Donner une direction</h3>
+              <h3>Image & création</h3>
               <p>
-                Relier le positionnement, les mots et l’image.
-                Construire un territoire de marque qui vous ressemble
-                et que l’on reconnaît.
+                Direction artistique, photographie, vidéo,
+                contenus éditoriaux, visuels d’événements
+                et supports de communication.
+                Donner une expression concrète à votre marque.
               </p>
             </div>
           </article>
 
-          <article class="method-item">
+          <article class="expertise-item">
             <span class="method-number" aria-hidden="true">03</span>
 
             <div>
-              <h3>Faire émerger</h3>
+              <h3>Web & visibilité</h3>
               <p>
-                Déployer cette direction dans les contenus, le site et
-                les bons leviers de communication. Garder le même cap
-                sur chaque point de contact.
+                Site internet, webmastering, contenus web,
+                optimisation SEO, réseaux sociaux,
+                newsletters et campagnes digitales.
+                Construire une présence qui travaille pour vous.
               </p>
             </div>
           </article>
+
+          <article class="expertise-item">
+            <span class="method-number" aria-hidden="true">04</span>
+
+            <div>
+              <h3>Activation & coordination</h3>
+              <p>
+                Collaborations, influence, événements,
+                coordination avec les équipes et les partenaires,
+                suivi des actions et des retombées.
+                Faire vivre la marque au contact de ses publics.
+              </p>
+            </div>
+          </article>
+
         </div>
+
+        <a href="services.html" class="text-link">
+          Explorer les accompagnements
+          <span aria-hidden="true">↗</span>
+        </a>
       </div>
     </section>
 
-    <!-- -1000 M : LA RENCONTRE -->
+    <!-- 850 M : RELATION DIRECTE -->
     <section
-      class="chapter abyss"
-      id="rencontre"
-      data-depth="1000"
-      aria-labelledby="rencontre-title"
+      class="dive-section direct-section"
+      id="relation"
+      data-depth="850"
+      aria-labelledby="relation-title"
     >
-      <div class="dive-container">
-        <p class="chapter-label">
-          −1 000 m / Ici commence la rencontre
-        </p>
+      <div class="agency-container split-layout">
+        <div>
+          <p class="section-tag">−850 m / La relation</p>
 
-        <h2 class="chapter-heading" id="rencontre-title">
-          <span>Allons au fond</span>
-          <span>de votre projet.</span>
+          <h2 class="section-title" id="relation-title">
+            <span>Vous avez mon numéro.</span>
+            <span>J’ai votre projet en tête.</span>
+          </h2>
+
+          <p class="strong-copy">
+            Une relation directe avec celle qui comprend votre marque,
+            construit sa direction et accompagne sa mise en œuvre.
+          </p>
+
+          <p class="body-copy">
+            Je suis votre interlocutrice tout au long du projet.
+            Et lorsqu’une expertise complémentaire est utile,
+            j’en coordonne l’intervention pour garder le même cap.
+          </p>
+        </div>
+
+        <ul class="direct-list">
+          <li>
+            <strong>Une vision qui reste</strong>
+            Votre histoire, vos objectifs et vos contraintes
+            suivent le projet à chaque étape.
+          </li>
+
+          <li>
+            <strong>Des décisions qui avancent</strong>
+            Des échanges directs, des priorités claires
+            et un suivi de la mise en œuvre.
+          </li>
+
+          <li>
+            <strong>La même exigence partout</strong>
+            Du discours à la photographie,
+            du site à la campagne :
+            chaque point de contact doit servir la même marque.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 1000 M : CONTACT -->
+    <section
+      class="dive-section final-section"
+      id="contact"
+      data-depth="1000"
+      aria-labelledby="contact-title"
+    >
+      <div class="agency-container">
+        <p class="section-tag">−1 000 m / Votre projet</p>
+
+        <h2 class="section-title" id="contact-title">
+          <span>Vous avez l’ambition.</span>
+          <span>Construisons la suite.</span>
         </h2>
 
-        <p class="dive-lead">
-          Ce que vous construisez mérite une direction à sa mesure.
-          Parlons de votre marque, de vos enjeux et de la suite.
+        <p class="agency-lead">
+          Un lieu à lancer, une marque à repositionner,
+          une communication à reprendre en main ?
+          Commençons par vos enjeux.
         </p>
 
-        <a class="dive-button" href="contact.html">
-          Parlons de votre marque
+        <a href="contact.html" class="agency-button">
+          Parlons de votre projet
           <span aria-hidden="true">↗</span>
         </a>
 
-        <a href="#surface" class="back-surface">
+        <a href="#surface" class="back-top">
           Remonter à la surface ↑
         </a>
       </div>
@@ -1124,13 +1649,13 @@
 
   <!-- FOOTER -->
   <footer class="agency-footer">
-    <div class="dive-container">
-      <div class="footer-topline">
+    <div class="agency-container">
+      <div class="footer-heading">
         <a href="index.html" class="footer-brand">ABYSS LAB.</a>
 
-        <span class="footer-location">
+        <div class="footer-location">
           Basée à Bordeaux, disponible partout en France et à l’étranger.
-        </span>
+        </div>
       </div>
 
       <nav class="footer-navigation" aria-label="Navigation secondaire">
@@ -1141,6 +1666,12 @@
         <a href="contact.html">Contact</a>
       </nav>
 
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/abyss.lab_/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+        <a href="https://www.linkedin.com/company/abyss-lab/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="https://www.tiktok.com/@abyss.lab" target="_blank" rel="noopener noreferrer">TikTok ↗</a>
+      </div>
+
       <div class="footer-legal">
         <a href="mentions-legales.html">Mentions légales</a>
         <a href="cgu.html">CGU</a>
@@ -1148,56 +1679,64 @@
         <a href="politique-confidentialite.html">Politique de confidentialité</a>
       </div>
 
-      <div class="footer-copy">
+      <p class="footer-copy">
         © 2026 Abyss Lab. Tous droits réservés.
-      </div>
+      </p>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function(){
+    document.addEventListener('DOMContentLoaded',function(){
+
       const root = document.documentElement;
       const navbar = document.querySelector('.navbar');
+      const menu = document.getElementById('navmenu');
+      const depthValue = document.getElementById('depth-value');
+      const video = document.getElementById('bg-video');
 
-      const chapters = Array.from(
+      const sections = Array.from(
         document.querySelectorAll('[data-depth]')
       );
 
-      const links = Array.from(
+      const chapterLinks = Array.from(
         document.querySelectorAll('.depth-links a')
       );
 
-      const readout = document.getElementById('depth-value');
-      const video = document.getElementById('bg-video');
-
-      const reducedMotion = window.matchMedia(
+      const motionPreference = window.matchMedia(
         '(prefers-reduced-motion: reduce)'
       );
 
+      let positions = [];
       let scheduled = false;
 
-      function updateDive(){
-        scheduled = false;
+      /* NAVIGATION ET PROFONDEUR */
 
-        const marker = window.scrollY + window.innerHeight * .45;
-
-        const positions = chapters.map(function(section, index){
+      function measureSections(){
+        positions = sections.map(function(section){
           return {
             position:
               section.getBoundingClientRect().top +
               window.scrollY +
-              section.offsetHeight * .45,
-            depth: Number(section.dataset.depth),
-            index: index
+              section.offsetHeight * .35,
+            depth:Number(section.dataset.depth)
           };
         });
+
+        requestUpdate();
+      }
+
+      function updatePage(){
+        scheduled = false;
+
+        const marker =
+          window.scrollY + window.innerHeight * .35;
 
         let depth = 0;
         let active = 0;
 
-        for(let i = 0; i < positions.length; i++){
+        for(let i = 0;i < positions.length;i++){
           if(marker >= positions[i].position){
             depth = positions[i].depth;
             active = i;
@@ -1208,39 +1747,45 @@
             marker >= positions[i].position &&
             marker < positions[i + 1].position
           ){
-            const progress =
-              (marker - positions[i].position) /
-              (positions[i + 1].position - positions[i].position);
+            const distance =
+              positions[i + 1].position - positions[i].position;
+
+            const progress = distance > 0
+              ? (marker - positions[i].position) / distance
+              : 0;
 
             depth =
               positions[i].depth +
-              progress * (positions[i + 1].depth - positions[i].depth);
+              progress *
+              (positions[i + 1].depth - positions[i].depth);
 
             break;
           }
         }
 
-        const value = Math.max(
+        const roundedDepth = Math.max(
           0,
-          Math.min(1000, Math.round(depth))
+          Math.min(1000,Math.round(depth))
         );
 
-        readout.textContent =
-          value === 0
-            ? '0 m'
-            : '−' + value.toLocaleString('fr-FR') + ' m';
+        depthValue.textContent = roundedDepth === 0
+          ? '0 m'
+          : '−' + roundedDepth.toLocaleString('fr-FR') + ' m';
 
-        root.style.setProperty('--depth', value / 1000);
+        root.style.setProperty(
+          '--depth',
+          roundedDepth / 1000
+        );
 
         navbar.classList.toggle(
           'scrolled',
           window.scrollY > 20
         );
 
-        links.forEach(function(link, index){
+        chapterLinks.forEach(function(link,index){
           if(index === active){
-            link.setAttribute('aria-current', 'location');
-          } else {
+            link.setAttribute('aria-current','location');
+          }else{
             link.removeAttribute('aria-current');
           }
         });
@@ -1249,62 +1794,202 @@
       function requestUpdate(){
         if(!scheduled){
           scheduled = true;
-          window.requestAnimationFrame(updateDive);
+          requestAnimationFrame(updatePage);
         }
       }
 
       window.addEventListener(
         'scroll',
         requestUpdate,
-        { passive:true }
+        {passive:true}
       );
 
-      window.addEventListener('resize', requestUpdate);
-      window.addEventListener('pageshow', requestUpdate);
-      window.addEventListener('load', requestUpdate);
+      window.addEventListener('resize',measureSections);
+      window.addEventListener('load',measureSections);
+      window.addEventListener('pageshow',measureSections);
 
       if('ResizeObserver' in window){
-        const resizeObserver = new ResizeObserver(requestUpdate);
+        const resizeObserver =
+          new ResizeObserver(measureSections);
 
-        chapters.forEach(function(section){
+        sections.forEach(function(section){
           resizeObserver.observe(section);
         });
       }
 
-      function syncVideo(){
+      if(document.fonts && document.fonts.ready){
+        document.fonts.ready.then(measureSections);
+      }
+
+      /* MENU MOBILE */
+
+      menu.addEventListener('show.bs.collapse',function(){
+        navbar.classList.add('menu-open');
+        document.body.classList.add('menu-is-open');
+      });
+
+      menu.addEventListener('hidden.bs.collapse',function(){
+        navbar.classList.remove('menu-open');
+        document.body.classList.remove('menu-is-open');
+        measureSections();
+      });
+
+      /* EAU EN MOUVEMENT */
+
+      function playVideo(){
         if(!video) return;
 
-        if(reducedMotion.matches){
+        if(motionPreference.matches || document.hidden){
           video.pause();
-        } else {
-          video.muted = true;
-          video.play().catch(function(){});
+          return;
+        }
+
+        video.muted = true;
+        video.defaultMuted = true;
+        video.playsInline = true;
+
+        const promise = video.play();
+
+        if(promise !== undefined){
+          promise.catch(function(){});
         }
       }
 
-      syncVideo();
-
-      reducedMotion.addEventListener('change', syncVideo);
-
-      document.addEventListener('visibilitychange', function(){
-        if(!video) return;
-
-        if(document.hidden){
-          video.pause();
-        } else {
-          syncVideo();
-        }
-      });
+      playVideo();
 
       document.addEventListener(
         'touchstart',
-        syncVideo,
-        { once:true, passive:true }
+        playVideo,
+        {once:true,passive:true}
       );
 
-      updateDive();
+      document.addEventListener(
+        'click',
+        playVideo,
+        {once:true}
+      );
+
+      document.addEventListener(
+        'visibilitychange',
+        playVideo
+      );
+
+      window.addEventListener('pageshow',playVideo);
+
+      /* COMPTEURS ANIMÉS */
+
+      const counterSection =
+        document.querySelector('.numbers-section');
+
+      const counters = Array.from(
+        document.querySelectorAll('[data-count]')
+      );
+
+      let counterFrame = 0;
+      let counterObserver = null;
+      let countersStarted = false;
+
+      function showFinalNumbers(){
+        cancelAnimationFrame(counterFrame);
+
+        counters.forEach(function(counter){
+          const target = Number(counter.dataset.count);
+
+          counter.textContent = target === 2014
+            ? '2014'
+            : target.toLocaleString('fr-FR');
+        });
+      }
+
+      function animateNumbers(){
+        if(countersStarted) return;
+
+        countersStarted = true;
+
+        if(motionPreference.matches){
+          showFinalNumbers();
+          return;
+        }
+
+        const start = performance.now();
+        const duration = 1800;
+
+        function frame(now){
+          const progress = Math.min(
+            (now - start) / duration,
+            1
+          );
+
+          const eased = 1 - Math.pow(1 - progress,3);
+
+          counters.forEach(function(counter){
+            const target = Number(counter.dataset.count);
+
+            /*
+              La date reste lisible pendant que les
+              quantités montent de 0 à leur valeur finale.
+            */
+            if(target === 2014){
+              counter.textContent = '2014';
+              return;
+            }
+
+            counter.textContent = Math.round(
+              target * eased
+            ).toLocaleString('fr-FR');
+          });
+
+          if(progress < 1){
+            counterFrame = requestAnimationFrame(frame);
+          }else{
+            showFinalNumbers();
+          }
+        }
+
+        counterFrame = requestAnimationFrame(frame);
+      }
+
+      if(
+        counterSection &&
+        'IntersectionObserver' in window &&
+        !motionPreference.matches
+      ){
+        counters.forEach(function(counter){
+          if(Number(counter.dataset.count) !== 2014){
+            counter.textContent = '0';
+          }
+        });
+
+        counterObserver = new IntersectionObserver(
+          function(entries,observer){
+            entries.forEach(function(entry){
+              if(entry.isIntersecting){
+                animateNumbers();
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {threshold:.15}
+        );
+
+        counterObserver.observe(counterSection);
+      }
+
+      motionPreference.addEventListener('change',function(){
+        playVideo();
+
+        if(motionPreference.matches){
+          if(counterObserver){
+            counterObserver.disconnect();
+          }
+
+          showFinalNumbers();
+        }
+      });
+
+      measureSections();
+      updatePage();
     });
   </script>
-
 </body>
 </html>
