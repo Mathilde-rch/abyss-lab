@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>L’Agence | Abyss Lab — Direction marketing & communication externalisée</title>
-
-  <meta name="description" content="Abyss Lab : votre direction marketing et communication externalisée. Plus de 10 ans d’expérience, 23 établissements accompagnés, 15 lancements et une interlocutrice pour piloter votre marque de A à Z.">
+  <meta name="description" content="Mathilde Ranchon, votre directrice marketing et communication externalisée. Plus de 10 ans dans l’art du bon vivre, 23 établissements accompagnés et 15 lancements.">
+  <link rel="canonical" href="https://abyss-lab.com/agence-abyss-lab.html">
+  <link rel="icon" href="assets/favicon.png">
 
   <!-- Google Tag Manager -->
   <script>
@@ -14,1009 +15,922 @@
       w[l]=w[l]||[];
       w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
       var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+          j=d.createElement(s),
+          dl=l!='dataLayer'?'&l='+l:'';
       j.async=true;
       j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
       f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NLQ723SC');
   </script>
+  <!-- End Google Tag Manager -->
 
-  <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/couture" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
 
   <style>
-    :root{
-      --white:#fff;
-      --soft:rgba(255,255,255,.83);
-      --muted:rgba(255,255,255,.59);
-      --white-soft:rgba(255,255,255,.82);
-      --white-muted:rgba(255,255,255,.66);
-      --line:rgba(255,255,255,.16);
-      --line-soft:rgba(255,255,255,.10);
-      --depth:0;
-      --darkness:.38;
+    :root {
+      --agency-white: #fff;
+      --agency-soft: rgba(255,255,255,.84);
+      --agency-muted: rgba(255,255,255,.65);
+      --agency-line: rgba(255,255,255,.22);
+      --agency-darkness: .42;
+      --agency-progress: 0;
+      --agency-header-height: 76px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: clip;
+      scroll-padding-top: calc(var(--agency-header-height) + 24px);
+    }
+
+    body.agency-page {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: "Montserrat", sans-serif;
+      overflow-x: clip;
+      isolation: isolate;
+    }
+
+    .agency-page *,
+    .agency-page *::before,
+    .agency-page *::after {
+      box-sizing: border-box;
+    }
+
+    .agency-page a:focus-visible,
+    .agency-page button:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 5px;
+    }
+
+    .agency-skip {
+      position: fixed;
+      top: -100px;
+      left: 16px;
+      z-index: 2000;
+      padding: 12px 18px;
+      background: #fff;
+      color: #041332;
+    }
+
+    .agency-skip:focus {
+      top: 12px;
     }
 
-    html{
-      overflow-x:clip;
-      scroll-behavior:smooth;
-      scroll-padding-top:100px;
+    /* Fond d'eau : assombrissement progressif au scroll */
+    .agency-ocean {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      overflow: hidden;
+      background: #000;
+      pointer-events: none;
     }
 
-    body{
-      margin:0;
-      overflow-x:clip;
-      background:#000;
-      color:#fff;
-      font-family:'Montserrat',sans-serif;
-      -webkit-font-smoothing:antialiased;
+    .agency-ocean video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    a{
-      color:inherit;
-      text-decoration:none;
-      transition:opacity .25s,background-color .25s,color .25s;
+    .agency-ocean::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: #000;
+      opacity: var(--agency-darkness);
     }
 
-    a:hover{color:#fff;}
-
-    img{
-      display:block;
-      max-width:100%;
-    }
-
-    a:focus-visible,
-    button:focus-visible{
-      outline:2px solid #fff;
-      outline-offset:5px;
-    }
-
-    ::selection{
-      background:#fff;
-      color:#000;
-    }
-
-    .skip-link{
-      position:fixed;
-      top:10px;
-      left:10px;
-      z-index:2000;
-      padding:12px 18px;
-      background:#fff;
-      color:#000;
-      transform:translateY(-170%);
-    }
-
-    .skip-link:focus{transform:none;}
-
-    /* ===== EAU EN MOUVEMENT ===== */
-
-    .agency-background{
-      position:fixed;
-      inset:0;
-      z-index:0;
-      overflow:hidden;
-      pointer-events:none;
-      background:#000 url("assets/img/poster.jpg") center/cover no-repeat;
-    }
-
-    .agency-background video{
-      display:block;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-    .agency-background::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,var(--darkness));
-    }
-
-    /* ===== MENU STICKY ===== */
-
-    .navbar{
-      position:sticky;
-      top:0;
-      z-index:1030;
-      background:transparent;
-      border-bottom:0!important;
-      box-shadow:none!important;
-      transition:background-color .3s;
-    }
-
-    .navbar::before,
-    .navbar::after{
-      content:none!important;
-      display:none!important;
-    }
-
-    .navbar.scrolled,
-    .navbar.menu-open{
-      background:#041332!important;
-      border-bottom:0!important;
-      box-shadow:none!important;
-    }
-
-    .navbar-brand{
-      color:#fff!important;
-      letter-spacing:1px;
-    }
-
-    .nav-link{
-      font-family:'couture',sans-serif;
-      font-size:.80rem;
-      font-weight:600;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      color:var(--soft)!important;
-      padding-left:1rem!important;
-      padding-right:1rem!important;
-    }
-
-    .nav-link:hover,
-    .nav-link.active{
-      color:#fff!important;
-    }
-
-    /* ===== STRUCTURE ===== */
-
-    .agency-main{
-      position:relative;
-      z-index:1;
-      background:transparent!important;
-    }
-
-    .agency-container{
-      width:min(1120px,calc(100% - 180px));
-      margin:0 auto;
-    }
-
-    .agency-section{
-      padding:42px 0;
-      background:transparent!important;
-    }
-
-    .section-tag{
-      margin:0 0 14px;
-      font-size:.61rem;
-      font-weight:700;
-      line-height:1.6;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:var(--muted);
-    }
-
-    .agency-title{
-      font-family:'couture',sans-serif;
-      font-size:2.78rem;
-      line-height:1.10;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      margin:0 0 20px;
-      color:#fff;
-    }
-
-    .agency-title span,
-    .agency-heading span{
-      display:block;
-    }
-
-    .agency-heading{
-      font-family:'couture',sans-serif;
-      font-size:clamp(1.4rem,2.5vw,2rem);
-      line-height:1.2;
-      letter-spacing:.06em;
-      text-transform:uppercase;
-      margin:0 0 19px;
-      color:#fff;
-    }
-
-    .agency-lead{
-      max-width:800px;
-      margin:0;
-      font-size:.98rem;
-      line-height:1.8;
-      color:var(--soft);
-    }
-
-    .agency-copy{
-      margin:0 0 15px;
-      font-size:.92rem;
-      line-height:1.8;
-      color:var(--soft);
-    }
-
-    .agency-copy:last-child{
-      margin-bottom:0;
-    }
-
-    .agency-statement{
-      margin:0 0 18px;
-      font-size:clamp(1.05rem,1.6vw,1.3rem);
-      font-weight:600;
-      line-height:1.65;
-      color:#fff;
+    .agency-motion {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 20;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      padding: 0;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 50%;
+      color: #fff;
+      background: rgba(0,0,0,.55);
+      cursor: pointer;
     }
-
-    .split-layout{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:50px;
-      align-items:center;
-    }
-
-    .agency-button{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:18px;
-      padding:13px 23px;
-      border:1px solid rgba(255,255,255,.7);
-      border-radius:999px;
-      font-size:.65rem;
-      font-weight:700;
-      line-height:1.5;
-      letter-spacing:.13em;
-      text-transform:uppercase;
-    }
-
-    .agency-button:hover{
-      background:#fff;
-      color:#000;
-    }
-
-    .agency-text-link{
-      display:inline-flex;
-      align-items:center;
-      gap:14px;
-      margin-top:15px;
-      padding-bottom:7px;
-      border-bottom:1px solid rgba(255,255,255,.5);
-      font-size:.62rem;
-      font-weight:600;
-      letter-spacing:.11em;
-      text-transform:uppercase;
+
+    .agency-motion[hidden] {
+      display: none;
     }
 
-    .agency-text-link:hover{
-      opacity:.7;
+    /* Menu commun */
+    .agency-page .navbar {
+      position: sticky !important;
+      top: 0;
+      z-index: 1030;
+      width: 100%;
+      margin: 0;
+      background: transparent;
+      border: 0 !important;
+      box-shadow: none !important;
+      transition: background-color .2s ease;
     }
 
-    /* ===== HERO ===== */
-
-    .agency-hero{
-      padding:68px 0 32px;
+    .agency-page .navbar.scrolled,
+    .agency-page .navbar.menu-open {
+      background: #041332 !important;
+      border: 0 !important;
+      box-shadow: none !important;
     }
 
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      align-items:center;
-      gap:20px 28px;
-      margin-top:25px;
+    .agency-page .navbar::before,
+    .agency-page .navbar::after {
+      display: none !important;
     }
 
-    .scroll-link{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      font-size:.57rem;
-      font-weight:600;
-      letter-spacing:.13em;
-      text-transform:uppercase;
-      color:var(--soft);
+    .agency-page .navbar-brand {
+      color: #fff;
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: .025em;
     }
 
-    .scroll-arrow{
-      font-size:1.3rem;
-      animation:floatDown 2s ease-in-out infinite;
+    .agency-page .nav-link {
+      font-family: "couture", sans-serif;
+      font-size: .78rem;
+      letter-spacing: .13em;
+      color: var(--agency-soft) !important;
     }
 
-    @keyframes floatDown{
-      0%,100%{transform:translateY(0);}
-      50%{transform:translateY(5px);}
+    .agency-page .nav-link:hover,
+    .agency-page .nav-link.active {
+      color: #fff !important;
     }
-
-    /* ===== PROFONDEUR ===== */
 
-    .depth-gauge{
-      position:fixed;
-      top:50%;
-      left:24px;
-      transform:translateY(-50%);
-      z-index:1020;
-      width:96px;
+    /* Lecture et rythme */
+    .agency-main {
+      position: relative;
+      z-index: 1;
     }
 
-    .depth-value{
-      font-family:'Montserrat',sans-serif;
-      font-size:.80rem;
-      font-style:normal;
-      font-weight:500;
-      font-variant-numeric:lining-nums tabular-nums;
-      color:#fff;
-      white-space:nowrap;
-      -webkit-text-stroke:0;
-      text-shadow:none;
+    .agency-main section {
+      position: relative;
+      padding: 42px 0;
+      background: transparent;
+      scroll-margin-top: calc(var(--agency-header-height) + 20px);
     }
 
-    .depth-caption{
-      margin-top:5px;
-      font-size:.43rem;
-      letter-spacing:.15em;
-      text-transform:uppercase;
-      color:var(--muted);
+    .agency-main .agency-hero {
+      padding-top: 64px;
+      padding-bottom: 38px;
     }
 
-    .depth-track{
-      position:relative;
-      width:1px;
-      height:150px;
-      margin:19px 0 19px 5px;
-      background:rgba(255,255,255,.24);
+    .agency-label {
+      display: block;
+      margin-bottom: 16px;
+      color: var(--agency-muted);
+      font-size: .67rem;
+      font-weight: 700;
+      line-height: 1.7;
+      letter-spacing: .15em;
+      text-transform: uppercase;
     }
 
-    .depth-fill{
-      position:absolute;
-      inset:0;
-      background:#fff;
-      transform:scaleY(var(--depth));
-      transform-origin:top;
+    .agency-main h1,
+    .agency-main h2,
+    .agency-main h3 {
+      font-family: "couture", "Montserrat", sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+      text-wrap: balance;
     }
 
-    .depth-point{
-      position:absolute;
-      top:calc(var(--depth)*100%);
-      left:-3px;
-      width:7px;
-      height:7px;
-      background:#fff;
-      border-radius:50%;
+    .agency-main h1 {
+      max-width: 1100px;
+      margin: 0 0 22px;
+      font-size: 2.78rem;
+      line-height: 1.15;
+      letter-spacing: .045em;
     }
 
-    .depth-links{
-      display:grid;
-      gap:8px;
+    .agency-main h2 {
+      margin: 0 0 20px;
+      font-size: clamp(1.4rem, 2.4vw, 2rem);
+      line-height: 1.22;
+      letter-spacing: .035em;
     }
 
-    .depth-links a{
-      padding:4px 0;
-      font-size:.45rem;
-      letter-spacing:.09em;
-      text-transform:uppercase;
-      color:var(--muted);
+    .agency-main h3 {
+      margin: 0 0 12px;
+      font-size: 1rem;
+      line-height: 1.4;
+      letter-spacing: .035em;
     }
 
-    .depth-links a[aria-current="location"]{
-      color:#fff;
+    .agency-main p {
+      margin: 0 0 16px;
+      color: var(--agency-soft);
+      font-size: .96rem;
+      line-height: 1.85;
     }
 
-    /* ===== COMPTEURS ===== */
-
-    .numbers-section{
-      padding:30px 0 35px;
+    .agency-main p:last-child {
+      margin-bottom: 0;
     }
 
-    .numbers-grid{
-      display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
-      gap:25px;
-      padding:27px 0;
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
+    .agency-main strong {
+      color: #fff;
+      font-weight: 700;
     }
 
-    .number-item{
-      text-align:center;
+    .agency-intro {
+      max-width: 850px;
     }
 
-    .number-line{
-      display:flex;
-      align-items:baseline;
-      justify-content:center;
-      gap:2px;
+    .agency-main .agency-promise {
+      margin-bottom: 12px;
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: #fff;
     }
 
-    .number-value,
-    .number-suffix,
-    .expertise-number{
-      font-family:'Montserrat',sans-serif!important;
-      font-style:normal!important;
-      font-weight:400!important;
-      color:#fff!important;
-      -webkit-text-stroke:0!important;
-      text-shadow:none!important;
-      font-variant-numeric:lining-nums tabular-nums;
+    .agency-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px 28px;
+      margin-top: 26px;
     }
 
-    .number-value{
-      font-size:clamp(3rem,6vw,5.5rem);
-      line-height:1.1;
-      letter-spacing:-.04em;
+    .agency-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      min-height: 46px;
+      padding: 13px 22px;
+      border: 1px solid rgba(255,255,255,.85);
+      border-radius: 999px;
+      color: #fff;
+      background: transparent;
+      text-decoration: none;
+      font-size: .65rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      line-height: 1.5;
+      text-align: center;
+      transition: background .2s ease, color .2s ease;
     }
 
-    .number-suffix{
-      font-size:2rem;
-      line-height:1;
+    .agency-button:hover {
+      color: #041332;
+      background: #fff;
     }
 
-    .number-label{
-      display:block;
-      margin-top:12px;
-      font-family:'couture',sans-serif;
-      font-size:.69rem;
-      line-height:1.6;
-      letter-spacing:.06em;
-      text-transform:uppercase;
+    .agency-text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 44px;
+      color: #fff;
+      text-decoration: none;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .09em;
     }
 
-    .numbers-note{
-      max-width:850px;
-      margin:15px auto 0;
-      font-size:.61rem;
-      line-height:1.75;
-      text-align:center;
-      color:var(--muted);
+    .agency-text-link:hover {
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 6px;
     }
-
-    /* ===== PORTRAIT INTEGRAL ===== */
 
-    .founder-layout{
-      grid-template-columns:.85fr 1.15fr;
+    .agency-dive {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: fit-content;
+      min-height: 44px;
+      margin-top: 24px;
+      color: var(--agency-soft);
+      font-size: .59rem;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-decoration: none;
     }
 
-    .agency-main .portrait{
-      margin:0;
-      width:100%;
-      min-width:0;
-      height:auto!important;
-      max-height:none!important;
-      overflow:visible!important;
-      clip-path:none!important;
-      mask-image:none!important;
-      -webkit-mask-image:none!important;
+    .agency-dive:hover {
+      color: #fff;
     }
 
-    .agency-main .portrait::before,
-    .agency-main .portrait::after{
-      display:none!important;
-      content:none!important;
+    .agency-dive span {
+      font-size: 1.3rem;
+      animation: agency-arrow 2s ease-in-out infinite;
     }
 
-    .agency-main .portrait img{
-      display:block!important;
-      position:static!important;
-      width:100%!important;
-      max-width:100%!important;
-      min-width:0!important;
-      height:auto!important;
-      min-height:0!important;
-      max-height:none!important;
-      aspect-ratio:auto!important;
-      object-fit:contain!important;
-      object-position:center!important;
-      transform:none!important;
-      clip-path:none!important;
-      mask-image:none!important;
-      -webkit-mask-image:none!important;
-      border-radius:0!important;
-      filter:none!important;
+    @keyframes agency-arrow {
+      0%, 100% { transform: translateY(-3px); }
+      50% { transform: translateY(4px); }
     }
 
-    .portrait figcaption{
-      margin-top:11px;
-      font-size:.53rem;
-      line-height:1.7;
-      letter-spacing:.10em;
-      color:var(--muted);
+    /* Compteurs homogènes */
+    .agency-main .agency-proof {
+      padding-top: 10px;
+      padding-bottom: 30px;
+    }
+
+    .agency-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 24px;
+      padding: 30px 0;
+      border-top: 1px solid var(--agency-line);
+      border-bottom: 1px solid var(--agency-line);
+    }
+
+    .agency-stat {
+      text-align: center;
     }
 
-    .founder-name{
-      margin:0 0 17px;
-      font-size:.66rem;
-      font-weight:700;
-      letter-spacing:.11em;
-      line-height:1.6;
-      text-transform:uppercase;
+    .agency-number {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      gap: 3px;
+      margin-bottom: 12px;
+      color: #fff;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 400;
+      font-style: normal;
+      font-variant-numeric: tabular-nums;
+      line-height: 1.1;
+      letter-spacing: -.04em;
+      -webkit-text-stroke: 0;
+      text-shadow: none;
     }
 
-    .brand-signature{
-      margin-top:23px;
-      padding-top:18px;
-      border-top:1px solid var(--line);
+    .agency-number small {
+      font-size: .35em;
+      font-weight: 400;
+      letter-spacing: 0;
     }
 
-    .brand-caption{
-      margin:0 0 13px;
-      font-family:'couture',sans-serif;
-      font-size:.76rem;
-      font-weight:600;
-      line-height:1.6;
-      letter-spacing:.10em;
-      text-transform:uppercase;
-      color:#fff;
+    .agency-stat-label {
+      display: block;
+      font-size: .68rem;
+      font-weight: 700;
+      line-height: 1.65;
+      letter-spacing: .045em;
     }
 
-    .brand-names{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px 20px;
-      font-family:'couture',sans-serif;
-      font-size:.72rem;
-      letter-spacing:.04em;
-      line-height:1.7;
-      text-transform:uppercase;
-      color:var(--soft);
+    .agency-main .agency-stat-note {
+      margin: 12px 0 0;
+      color: var(--agency-muted);
+      font-size: .65rem;
+      line-height: 1.7;
     }
 
-    /* ===== DIRECTION A 360 ===== */
-
-    .expertise-intro{
-      max-width:760px;
-      margin-bottom:25px;
+    /* Portrait intégral : aucun recadrage */
+    .agency-founder {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      align-items: start;
+      gap: clamp(28px, 5vw, 66px);
     }
 
-    .expertise-grid{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:0 40px;
+    .agency-portrait {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: auto;
+      margin: 0;
+      padding: 0;
+      overflow: visible;
+      background: transparent;
     }
 
-    .expertise-item{
-      display:grid;
-      grid-template-columns:38px 1fr;
-      gap:16px;
-      padding:22px 0;
-      border-top:1px solid var(--line);
+    .agency-portrait::before,
+    .agency-portrait::after {
+      display: none !important;
     }
 
-    .expertise-number{
-      font-size:1.5rem;
-      line-height:1.1;
+    .agency-main .agency-portrait img {
+      display: block !important;
+      position: static !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      max-height: none !important;
+      aspect-ratio: auto !important;
+      object-fit: contain !important;
+      transform: none !important;
+      clip-path: none !important;
+      mask-image: none !important;
+      border-radius: 0;
     }
 
-    .expertise-item h3{
-      margin:0 0 9px;
-      font-family:'couture',sans-serif;
-      font-size:.94rem;
-      line-height:1.45;
-      letter-spacing:.05em;
-      text-transform:uppercase;
+    .agency-portrait figcaption {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 6px 18px;
+      margin-top: 12px;
+      color: var(--agency-muted);
+      font-size: .61rem;
+      line-height: 1.7;
     }
 
-    .expertise-item p{
-      margin:0;
-      font-size:.84rem;
-      line-height:1.8;
-      color:var(--soft);
+    .agency-main .agency-founder-name {
+      margin-bottom: 12px;
+      font-size: .7rem;
+      font-weight: 700;
+      line-height: 1.7;
+      letter-spacing: .06em;
+      color: #fff;
     }
-
-    /* ===== COLLECTIF ===== */
 
-    .partner-list{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-top:20px;
+    .agency-founder-note {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--agency-line);
     }
 
-    .partner-list span{
-      padding:7px 10px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      font-size:.58rem;
-      line-height:1.5;
-      letter-spacing:.06em;
-      text-transform:uppercase;
-      color:var(--soft);
+    /* Adresses : expérience de la fondatrice */
+    .agency-addresses {
+      margin-top: 30px;
+      padding-top: 26px;
+      border-top: 1px solid var(--agency-line);
     }
 
-    .direct-list{
-      list-style:none;
-      padding:0;
-      margin:0;
+    .agency-main .agency-addresses h3 {
+      margin-bottom: 10px;
+      font-size: .9rem;
     }
 
-    .direct-list li{
-      padding:18px 0;
-      border-top:1px solid var(--line);
-      font-size:.87rem;
-      line-height:1.75;
-      color:var(--soft);
+    .agency-main .agency-addresses p {
+      max-width: 800px;
+      font-size: .82rem;
     }
 
-    .direct-list strong{
-      display:block;
-      margin-bottom:6px;
-      font-size:.77rem;
-      font-weight:700;
-      letter-spacing:.04em;
-      text-transform:uppercase;
-      color:#fff;
+    .agency-brand-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 26px;
+      margin: 22px 0 14px;
+      padding: 0;
+      list-style: none;
     }
 
-    /* ===== CONTACT ===== */
-
-    .final-section{
-      text-align:center;
-      padding:60px 0;
+    .agency-brand-list li {
+      font-family: "couture", "Montserrat", sans-serif;
+      font-size: .78rem;
+      line-height: 1.8;
+      letter-spacing: .045em;
+      color: #fff;
     }
 
-    .final-section .agency-lead{
-      max-width:650px;
-      margin:0 auto 24px;
+    /* Un accompagnement lisible */
+    .agency-section-heading {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: end;
+      gap: 24px 60px;
+      margin-bottom: 26px;
     }
 
-    .back-top{
-      display:block;
-      width:fit-content;
-      margin:25px auto 0;
-      font-size:.55rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:var(--muted);
+    .agency-section-heading h2 {
+      margin-bottom: 0;
     }
-
-    /* ===== FOOTER DU SITE ===== */
 
-    .footer{
-      border-top:1px solid var(--line);
-      padding:28px 0 14px;
-      margin-top:0;
-      position:relative;
-      z-index:2;
-      background:transparent;
+    .agency-section-heading p {
+      margin-bottom: 0;
     }
 
-    .footer-top{
-      padding-bottom:20px;
-      margin-bottom:20px;
-      border-bottom:1px solid rgba(255,255,255,.18);
+    .agency-steps {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 40px;
     }
 
-    .footer-brand{
-      font-size:.98rem;
-      font-weight:700;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      margin-bottom:10px;
-      color:var(--white);
+    .agency-step {
+      display: grid;
+      grid-template-columns: 38px minmax(0, 1fr);
+      gap: 14px;
+      padding: 24px 0;
+      border-top: 1px solid var(--agency-line);
     }
 
-    .footer-tagline{
-      margin:0;
-      max-width:640px;
-      font-size:.93rem;
-      line-height:1.66;
-      font-weight:600;
-      text-transform:uppercase;
-      color:var(--white);
+    .agency-step-index {
+      padding-top: 3px;
+      color: var(--agency-muted);
+      font-family: "Montserrat", sans-serif;
+      font-size: .85rem;
+      font-weight: 500;
+      font-style: normal;
+      -webkit-text-stroke: 0;
+      text-shadow: none;
     }
 
-    .footer-location{
-      margin-top:10px;
-      font-size:.92rem;
-      line-height:1.68;
-      color:var(--white-soft);
+    .agency-step p {
+      font-size: .88rem;
     }
 
-    .footer-social-block{
-      display:flex;
-      flex-direction:column;
-      align-items:flex-start;
+    /* Fonctionnement de l'agence */
+    .agency-crew {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px 60px;
+      padding-top: 30px;
+      border-top: 1px solid var(--agency-line);
     }
 
-    .footer-social-title{
-      font-size:.92rem;
-      line-height:1.5;
-      font-weight:600;
-      color:var(--white);
-      margin-bottom:10px;
+    .agency-crew-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
     }
 
-    .footer-socials{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
+    .agency-crew-list li {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--agency-line);
     }
 
-    .footer-social{
-      width:42px;
-      height:42px;
-      border:1.5px solid rgba(255,255,255,.78);
-      border-radius:50%;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      color:var(--white);
-      text-decoration:none;
-      font-size:1rem;
-      background:rgba(255,255,255,.01);
+    .agency-crew-list li:first-child {
+      padding-top: 0;
     }
 
-    .footer-social:hover{
-      color:var(--white);
-      border-color:var(--white);
-      transform:translateY(-2px);
-      background:rgba(255,255,255,.04);
+    .agency-crew-list h3 {
+      margin-bottom: 7px;
+      font-size: .8rem;
     }
 
-    .footer-menu-row{
-      padding:0 0 18px;
+    .agency-crew-list p {
+      font-size: .86rem;
     }
 
-    .footer-menu{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:18px;
-      width:100%;
+    .agency-main .agency-contact {
+      padding-top: 40px;
+      padding-bottom: 54px;
+      text-align: center;
     }
 
-    .footer-menu a{
-      color:var(--white);
-      text-decoration:none;
-      font-size:.93rem;
-      font-weight:600;
-      letter-spacing:.10em;
-      text-transform:uppercase;
-      text-align:left;
+    .agency-contact p {
+      max-width: 720px;
+      margin-right: auto;
+      margin-left: auto;
     }
 
-    .footer-menu a:hover{opacity:.72;}
-
-    .footer-bottom{
-      border-top:1px solid var(--line-soft);
-      padding-top:12px;
+    .agency-contact .agency-actions {
+      justify-content: center;
     }
 
-    .footer-bottom-inner{
-      display:grid;
-      grid-template-columns:1fr auto;
-      align-items:center;
-      gap:18px;
+    .agency-back {
+      display: block;
+      width: fit-content;
+      margin: 22px auto 0;
+      padding: 10px;
+      color: var(--agency-muted);
+      font-size: .6rem;
+      letter-spacing: .08em;
+      text-decoration: none;
     }
 
-    .footer-legal{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px 30px;
+    .agency-back:hover {
+      color: #fff;
     }
 
-    .footer-legal a{
-      color:var(--white-muted);
-      text-decoration:none;
-      font-size:.82rem;
-      line-height:1.5;
+    /* Jauge : la profondeur est une métaphore de lecture */
+    .agency-depth {
+      position: fixed;
+      top: calc(var(--agency-header-height) + 16px);
+      right: 14px;
+      z-index: 10;
+      color: rgba(255,255,255,.8);
+      font-size: .58rem;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: .08em;
+      pointer-events: none;
     }
 
-    .footer-legal a:hover{color:var(--white);}
-
-    .footer-copy{
-      color:var(--white-muted);
-      font-size:.82rem;
-      line-height:1.5;
-      text-align:right;
-      white-space:nowrap;
+    .agency-depth small {
+      display: block;
+      margin-top: 3px;
+      font-size: .43rem;
+      letter-spacing: .12em;
+      text-align: right;
+      opacity: .75;
     }
-
-    /* ===== TABLETTE ===== */
 
-    @media(min-width:1450px){
-      .depth-gauge{left:40px;}
+    .agency-depth-nav {
+      display: none;
     }
 
-    @media(max-width:991.98px){
-      .navbar-collapse{
-        max-height:calc(100svh - 80px);
-        overflow-y:auto;
+    @media (min-width: 1500px) {
+      .agency-depth-nav {
+        position: fixed;
+        top: 50%;
+        left: 20px;
+        z-index: 20;
+        display: grid;
+        gap: 20px;
+        padding-left: 16px;
+        transform: translateY(-50%);
       }
 
-      .agency-container{
-        width:calc(100% - 150px);
-        margin-left:125px;
+      .agency-depth-nav::before,
+      .agency-depth-nav::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 100%;
+        background: rgba(255,255,255,.22);
       }
 
-      .split-layout{gap:32px;}
-
-      .founder-layout{
-        grid-template-columns:1fr;
+      .agency-depth-nav::after {
+        background: #fff;
+        transform-origin: top;
+        transform: scaleY(var(--agency-progress));
       }
 
-      .agency-main .portrait{
-        max-width:440px;
+      .agency-depth-nav a {
+        padding: 5px 0;
+        color: var(--agency-muted);
+        text-decoration: none;
+        font-size: .52rem;
+        font-weight: 600;
+        letter-spacing: .08em;
       }
 
-      .numbers-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-        gap:28px 20px;
-      }
-
-      .footer-social-block{margin-top:4px;}
-
-      .footer-menu{
-        grid-template-columns:repeat(2,1fr);
-        gap:14px 22px;
-      }
-
-      .footer-bottom-inner{
-        grid-template-columns:1fr;
-        gap:10px;
-      }
-
-      .footer-copy{
-        text-align:left;
-        white-space:normal;
+      .agency-depth-nav a[aria-current="location"],
+      .agency-depth-nav a:hover {
+        color: #fff;
       }
     }
 
-    /* ===== MOBILE ===== */
-
-    @media(max-width:767.98px){
-      html{scroll-padding-top:110px;}
-
-      .agency-container{
-        width:calc(100% - 32px);
-        margin:0 auto;
-      }
-
-      .agency-section{padding:30px 0;}
-
-      .agency-hero{
-        padding:72px 0 25px;
-      }
-
-      .agency-title{
-        font-size:1.34rem;
-        line-height:1.14;
-        letter-spacing:.08em;
-        margin-bottom:17px;
-      }
-
-      .agency-heading{
-        font-size:1.30rem;
-        line-height:1.2;
-        margin-bottom:17px;
-      }
-
-      .section-tag{
-        font-size:.53rem;
-        letter-spacing:.14em;
-        margin-bottom:13px;
-      }
-
-      .agency-lead,
-      .agency-copy{
-        font-size:.88rem;
-        line-height:1.75;
-      }
-
-      .agency-statement{
-        font-size:1.03rem;
-        line-height:1.65;
-      }
-
-      .hero-actions{
-        gap:18px;
-        margin-top:22px;
-      }
-
-      .hero-actions .agency-button{width:100%;}
-
-      .agency-button{
-        padding:12px 18px;
-        font-size:.59rem;
-        letter-spacing:.10em;
-      }
-
-      .scroll-link{font-size:.53rem;}
-
-      .depth-gauge{
-        left:auto;
-        right:14px;
-        top:85px;
-        transform:none;
-        width:auto;
-        text-align:right;
-        pointer-events:none;
-      }
-
-      .depth-value{font-size:.67rem;}
-      .depth-caption{font-size:.39rem;}
-
-      .depth-track,
-      .depth-links{display:none;}
-
-      body.menu-is-open .depth-gauge{
-        visibility:hidden;
-      }
-
-      .numbers-section{
-        padding:23px 0 28px;
-      }
-
-      .numbers-grid{
-        gap:27px 16px;
-        padding:24px 0;
-      }
-
-      .number-value{font-size:3.1rem;}
-      .number-suffix{font-size:1.5rem;}
-
-      .number-label{
-        margin-top:9px;
-        font-size:.59rem;
-      }
-
-      .numbers-note{
-        text-align:left;
-        font-size:.58rem;
-      }
-
-      .split-layout{
-        grid-template-columns:1fr;
-        gap:25px;
-      }
-
-      .founder-name{font-size:.62rem;}
-      .brand-caption{font-size:.69rem;}
-      .brand-names{font-size:.65rem;}
-
-      .expertise-grid{
-        grid-template-columns:1fr;
-      }
-
-      .expertise-item{
-        grid-template-columns:32px 1fr;
-        gap:14px;
-        padding:20px 0;
-      }
-
-      .expertise-number{font-size:1.4rem;}
-      .expertise-item h3{font-size:.86rem;}
-      .expertise-item p{font-size:.82rem;}
-
-      .direct-list li{font-size:.83rem;}
-      .direct-list strong{font-size:.72rem;}
-
-      .final-section{padding:45px 0;}
-
-      .footer{padding:24px 0 12px;}
-
-      .footer-menu{
-        grid-template-columns:1fr;
-        gap:10px;
-      }
-
-      .footer-menu a{font-size:.88rem;}
-      .footer-legal{gap:8px 18px;}
-
-      .footer-legal a,
-      .footer-copy{font-size:.79rem;}
+    /* Footer commun */
+    .agency-page .footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid rgba(255,255,255,.14);
+      padding: 28px 0 14px;
+      background: transparent;
     }
 
-    @media(prefers-reduced-motion:reduce){
-      html{scroll-behavior:auto;}
+    .agency-page .footer-top {
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(255,255,255,.18);
+    }
 
-      *,
-      *::before,
-      *::after{
-        animation:none!important;
-        transition:none!important;
+    .agency-page .footer-brand {
+      margin-bottom: 10px;
+      font-size: .98rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+    }
+
+    .agency-page .footer-tagline {
+      margin: 0;
+      max-width: 640px;
+      font-size: .93rem;
+      line-height: 1.66;
+      font-weight: 600;
+    }
+
+    .agency-page .footer-location {
+      margin-top: 10px;
+      color: var(--agency-soft);
+      font-size: .92rem;
+      line-height: 1.68;
+    }
+
+    .agency-page .footer-social-title {
+      margin-bottom: 14px;
+      color: var(--agency-soft);
+      font-size: .85rem;
+    }
+
+    .agency-page .footer-socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .agency-page .footer-social {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border: 1.5px solid rgba(255,255,255,.78);
+      border-radius: 50%;
+      color: #fff;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+
+    .agency-page .footer-menu {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 18px;
+    }
+
+    .agency-page .footer-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-size: .93rem;
+      font-weight: 600;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+    }
+
+    .agency-page .footer-bottom {
+      margin-top: 18px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,.10);
+    }
+
+    .agency-page .footer-bottom-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .agency-page .footer-legal {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 30px;
+    }
+
+    .agency-page .footer-legal a,
+    .agency-page .footer-copy {
+      color: var(--agency-muted);
+      font-size: .82rem;
+      text-decoration: none;
+    }
+
+    @media (max-width: 991.98px) {
+      .agency-page .navbar-collapse {
+        padding-top: 12px;
+      }
+
+      .agency-page .navbar-nav {
+        gap: 3px;
+        margin: 0;
+        padding-left: 0;
+      }
+
+      .agency-page .nav-link {
+        padding: 10px 0;
+      }
+
+      .agency-founder {
+        gap: 30px;
+      }
+
+      .agency-section-heading,
+      .agency-crew {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .agency-section-heading {
+        align-items: start;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .agency-main section {
+        padding: 30px 0;
+      }
+
+      .agency-main .agency-hero {
+        padding-top: 58px;
+        padding-bottom: 28px;
+      }
+
+      .agency-main h1 {
+        font-size: 1.34rem;
+        line-height: 1.3;
+        letter-spacing: .035em;
+      }
+
+      .agency-main h2 {
+        font-size: 1.3rem;
+        line-height: 1.3;
+      }
+
+      .agency-main p {
+        font-size: .9rem;
+        line-height: 1.8;
+      }
+
+      .agency-main .agency-promise {
+        font-size: .98rem;
+      }
+
+      .agency-label {
+        font-size: .58rem;
+        letter-spacing: .12em;
+      }
+
+      .agency-actions {
+        gap: 12px 20px;
+        margin-top: 20px;
+      }
+
+      .agency-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 26px 16px;
+        padding: 24px 0;
+      }
+
+      .agency-number {
+        font-size: 3.25rem;
+      }
+
+      .agency-stat-label {
+        font-size: .59rem;
+      }
+
+      .agency-founder,
+      .agency-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .agency-portrait {
+        max-width: 480px;
+        margin-inline: auto;
+      }
+
+      .agency-brand-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .agency-brand-list li {
+        font-size: .75rem;
+      }
+
+      .agency-step {
+        padding: 20px 0;
+      }
+
+      .agency-page .footer-menu {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .agency-page .footer-bottom-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .agency-page .footer-copy {
+        padding-right: 38px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .agency-page .footer-menu {
+        grid-template-columns: 1fr;
+      }
+
+      .agency-number {
+        font-size: 2.8rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .agency-dive span {
+        animation: none;
+      }
+
+      .agency-page .navbar,
+      .agency-button {
+        transition: none;
       }
     }
   </style>
 </head>
 
-<body>
+<body class="agency-page">
   <!-- Google Tag Manager (noscript) -->
   <noscript>
     <iframe
@@ -1024,32 +938,45 @@
       height="0"
       width="0"
       style="display:none;visibility:hidden"
-    ></iframe>
+      title="Google Tag Manager">
+    </iframe>
   </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-  <a href="#surface" class="skip-link">Aller au contenu</a>
+  <a class="agency-skip" href="#surface">Aller au contenu</a>
 
-  <!-- EAU EN MOUVEMENT -->
-  <div class="agency-background" aria-hidden="true">
+  <div class="agency-ocean" aria-hidden="true">
     <video
-      id="bg-video"
+      id="agency-video"
       autoplay
       muted
       loop
       playsinline
-      webkit-playsinline
       preload="metadata"
       poster="assets/img/poster.jpg"
-      disablepictureinpicture
-    >
+      disablepictureinpicture>
       <source src="assets/video/abyss-lab.mp4" type="video/mp4">
     </video>
   </div>
 
-  <!-- MENU STICKY -->
-  <nav class="navbar navbar-expand-lg navbar-dark py-3" aria-label="Navigation principale">
+  <button
+    class="agency-motion"
+    id="agency-motion"
+    type="button"
+    aria-label="Mettre le fond animé en pause"
+    hidden>
+    <i class="bi bi-pause" aria-hidden="true"></i>
+  </button>
+
+  <nav
+    class="navbar navbar-expand-lg navbar-dark py-3"
+    id="agency-header"
+    aria-label="Navigation principale">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html" aria-label="Abyss Lab - Accueil">
+      <a
+        class="navbar-brand fw-bold"
+        href="index.html"
+        aria-label="Abyss Lab - Accueil">
         ABYSS LAB.
       </a>
 
@@ -1060,8 +987,7 @@
         data-bs-target="#navmenu"
         aria-controls="navmenu"
         aria-expanded="false"
-        aria-label="Ouvrir le menu"
-      >
+        aria-label="Ouvrir le menu">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -1071,7 +997,10 @@
             <a class="nav-link" href="index.html">ACCUEIL</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="a-propos.html" aria-current="page">L'AGENCE</a>
+            <a
+              class="nav-link active"
+              href="agence-abyss-lab.html"
+              aria-current="page">L'AGENCE</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="services.html">SERVICES</a>
@@ -1087,411 +1016,367 @@
     </div>
   </nav>
 
-  <!-- PROFONDEUR -->
-  <aside class="depth-gauge" aria-label="Progression dans la page">
-    <div aria-hidden="true">
-      <div class="depth-value" id="depth-value">0 m</div>
-      <div class="depth-caption">PROFONDEUR</div>
+  <div class="agency-depth" aria-hidden="true">
+    <span id="agency-depth-value">0 m</span>
+    <small>PROFONDEUR</small>
+  </div>
 
-      <div class="depth-track">
-        <div class="depth-fill"></div>
-        <div class="depth-point"></div>
-      </div>
-    </div>
+  <nav class="agency-depth-nav" aria-label="Chapitres de la page">
+    <a href="#surface" aria-current="location">SURFACE</a>
+    <a href="#preuves">EXPERIENCE</a>
+    <a href="#direction">IMMERSION</a>
+    <a href="#expertises">ACTION</a>
+    <a href="#collectif">EQUIPAGE</a>
+    <a href="#rencontre">RENCONTRE</a>
+  </nav>
 
-    <nav class="depth-links" aria-label="Chapitres de l’agence">
-      <a href="#surface" aria-current="location">00 / L'AGENCE</a>
-      <a href="#preuves">01 / LES PREUVES</a>
-      <a href="#direction">02 / LA DIRECTION</a>
-      <a href="#expertises">03 / DE A A Z</a>
-      <a href="#collectif">04 / LE COLLECTIF</a>
-      <a href="#rencontre">05 / VOTRE PROJET</a>
-    </nav>
-  </aside>
-
-  <main class="agency-main" id="agency-main">
-
-    <!-- HERO -->
+  <main class="agency-main">
     <section
-      class="agency-section agency-hero"
+      class="agency-hero"
       id="surface"
-      data-depth="0"
-      aria-labelledby="agency-title"
-    >
-      <div class="agency-container">
-        <p class="section-tag">
+      aria-labelledby="agency-title">
+      <div class="container">
+        <span class="agency-label">
           DIRECTION MARKETING & COMMUNICATION EXTERNALISEE
-        </p>
+        </span>
 
-        <h1 class="agency-title" id="agency-title">
-          <span>UNE EXPERTISE EN PROFONDEUR, UN RAYONNEMENT A 360°.</span>
+        <h1 id="agency-title">
+          PLONGER DANS VOTRE UNIVERS.<br>
+          FAIRE EMERGER VOTRE DIFFERENCE.
         </h1>
 
-        <p class="agency-lead">
-          Toute la force d’une direction marketing et communication,
-          avec la souplesse d’un partenaire externalisé.
-          Abyss Lab structure votre stratégie, crée votre communication
-          et orchestre son déploiement de A à Z.
-          À la direction : Mathilde Ranchon, plus de 10 ans
-          au service des hôtels, restaurants, lieux de vie
-          et marques qui cultivent l’art du bon vivre.
-        </p>
+        <div class="agency-intro">
+          <p class="agency-promise">
+            Votre directrice marketing et communication.
+            De la première intuition à la dernière mise en ligne.
+          </p>
 
-        <div class="hero-actions">
-          <a href="contact.html" class="agency-button">
+          <p>
+            Comprendre ce qui rend votre marque singulière,
+            lui donner une direction et la faire vivre sur tous ses
+            points de contact. Abyss Lab réunit
+            <strong>stratégie, création et déploiement</strong>
+            dans un même accompagnement, porté par Mathilde Ranchon.
+          </p>
+
+          <p>
+            Plus de 10 ans dans les univers de
+            <strong>l’art du bon vivre</strong> :
+            hôtellerie, restauration, lieux de vie et marques premium.
+          </p>
+        </div>
+
+        <div class="agency-actions">
+          <a class="agency-button" href="contact.html">
             PARLONS DE VOTRE PROJET
-            <span aria-hidden="true">↗</span>
-          </a>
-
-          <a href="#preuves" class="scroll-link">
-            <span class="scroll-arrow" aria-hidden="true">↓</span>
-            SCROLLEZ POUR PLONGER
+            <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
           </a>
         </div>
+
+        <a class="agency-dive" href="#preuves">
+          <span aria-hidden="true">↓</span>
+          SCROLLEZ POUR PLONGER
+        </a>
       </div>
     </section>
 
-    <!-- CHIFFRES -->
     <section
-      class="agency-section numbers-section"
+      class="agency-proof"
       id="preuves"
-      data-depth="180"
-      aria-label="L’expérience en chiffres"
-    >
-      <div class="agency-container">
-        <div class="numbers-grid">
-
-          <div class="number-item">
-            <div class="number-line" aria-hidden="true">
-              <span class="number-value" data-count="10">10</span>
-              <span class="number-suffix">+</span>
+      aria-label="L’expérience en chiffres">
+      <div class="container">
+        <div class="agency-stats">
+          <div class="agency-stat" aria-label="Plus de 10 ans dans l’art du bon vivre">
+            <div class="agency-number" aria-hidden="true">
+              <span data-count="10">10</span><small>+</small>
             </div>
-
-            <span class="visually-hidden">Plus de 10</span>
-            <span class="number-label">
-              ANS DANS L'ART DU BON VIVRE
+            <span class="agency-stat-label" aria-hidden="true">
+              ANS DANS L'ART<br>DU BON VIVRE
             </span>
           </div>
 
-          <div class="number-item">
-            <div class="number-line" aria-hidden="true">
-              <span class="number-value" data-count="23">23</span>
+          <div class="agency-stat" aria-label="23 établissements accompagnés">
+            <div class="agency-number" aria-hidden="true">
+              <span data-count="23">23</span>
             </div>
-
-            <span class="visually-hidden">23</span>
-            <span class="number-label">
-              ETABLISSEMENTS ACCOMPAGNES
+            <span class="agency-stat-label" aria-hidden="true">
+              ETABLISSEMENTS<br>ACCOMPAGNES
             </span>
           </div>
 
-          <div class="number-item">
-            <div class="number-line" aria-hidden="true">
-              <span class="number-value" data-count="15">15</span>
+          <div class="agency-stat" aria-label="15 lancements">
+            <div class="agency-number" aria-hidden="true">
+              <span data-count="15">15</span>
             </div>
-
-            <span class="visually-hidden">15</span>
-            <span class="number-label">
+            <span class="agency-stat-label" aria-hidden="true">
               LANCEMENTS
             </span>
           </div>
 
-          <div class="number-item">
-            <div class="number-line" aria-hidden="true">
-              <span class="number-value" data-count="1">1</span>
+          <div class="agency-stat" aria-label="Une interlocutrice de A à Z">
+            <div class="agency-number" aria-hidden="true">
+              <span data-count="1">1</span>
             </div>
-
-            <span class="visually-hidden">1</span>
-            <span class="number-label">
-              INTERLOCUTRICE DE A A Z
+            <span class="agency-stat-label" aria-hidden="true">
+              INTERLOCUTRICE<br>DE A A Z
             </span>
           </div>
-
         </div>
 
-        <p class="numbers-note">
-          Chiffres issus du parcours professionnel de la fondatrice,
-          avant et au sein d’Abyss Lab.
-          Les 23 établissements correspondent aux périmètres de mission cumulés.
+        <p class="agency-stat-note">
+          Chiffres issus du parcours professionnel de Mathilde Ranchon,
+          avant et au sein d’Abyss Lab. Les établissements correspondent
+          aux périmètres de mission cumulés.
         </p>
       </div>
     </section>
 
-    <!-- DIRECTION -->
-    <section
-      class="agency-section"
-      id="direction"
-      data-depth="380"
-      aria-labelledby="direction-title"
-    >
-      <div class="agency-container split-layout founder-layout">
+    <section id="direction" aria-labelledby="direction-title">
+      <div class="container">
+        <div class="agency-founder">
+          <figure class="agency-portrait">
+            <img
+              src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773329727/agence_mathilde_ranchon_jtx26v.jpg"
+              alt="Mathilde Ranchon, fondatrice d’Abyss Lab, photographiée par Michaël Boudot."
+              width="1080"
+              height="1080"
+              loading="lazy"
+              decoding="async">
+            <figcaption>
+              <span>MATHILDE RANCHON / FONDATRICE D'ABYSS LAB</span>
+              <span>Photographie © Michaël Boudot</span>
+            </figcaption>
+          </figure>
 
-        <!-- Photo intégrale : aucun recadrage -->
-        <figure class="portrait">
-          <img
-            src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773329727/agence_mathilde_ranchon_jtx26v.jpg"
-            alt="Mathilde Ranchon, fondatrice d’Abyss Lab. Photographie de Michaël Boudot."
-            loading="lazy"
-          >
+          <div>
+            <span class="agency-label">01 / L'IMMERSION</span>
 
-          <figcaption>
-            MATHILDE RANCHON / FONDATRICE D'ABYSS LAB<br>
-            Photographie © Michaël Boudot
-          </figcaption>
-        </figure>
+            <h2 id="direction-title">
+              LA VISION D'ENSEMBLE.<br>
+              LE SENS DU DETAIL.
+            </h2>
 
-        <div>
-          <p class="section-tag">−380 M / LA DIRECTION</p>
-
-          <h2 class="agency-heading" id="direction-title">
-            <span>UN CAP CLAIR.</span>
-            <span>TOUT LE PROJET EN MAIN.</span>
-          </h2>
-
-          <p class="founder-name">
-            MATHILDE RANCHON — VOTRE DIRECTRICE MARKETING & COMMUNICATION EXTERNALISEE
-          </p>
-
-          <p class="agency-statement">
-            Une vision stratégique.
-            La capacité de créer.
-            L’expérience pour piloter l’ensemble.
-          </p>
-
-          <p class="agency-copy">
-            Stratégies à 360°, lancements, contenus, campagnes,
-            visibilité digitale : une expérience construite
-            au cœur des établissements et des marques,
-            au contact de leurs enjeux d’image et de développement.
-          </p>
-
-          <p class="agency-copy">
-            Abyss Lab apporte cette maîtrise à votre projet :
-            comprendre les priorités, donner une direction
-            et faire avancer chaque sujet.
-            Du positionnement au shooting, du site à la campagne,
-            les décisions et la réalisation restent reliées.
-          </p>
-
-          <div class="brand-signature">
-            <p class="brand-caption">
-              DES ADRESSES FORTES. UNE EXPERIENCE QUI COMPTE.
+            <p class="agency-founder-name">
+              MATHILDE RANCHON<br>
+              DIRECTRICE MARKETING & COMMUNICATION EXTERNALISEE
             </p>
 
-            <div class="brand-names">
-              <span>MONDRIAN BORDEAUX LES CARMES</span>
-              <span>MORIMOTO</span>
-              <span>CHATEAU LEOGNAN</span>
-              <span>BRINDOS, LAC & CHATEAU</span>
-              <span>CHATEAU DE THEOULE</span>
-              <span>VILLA DES ORANGERS</span>
-              <span>GRAND HOTEL DU SOLEIL D'OR</span>
+            <p>
+              Une ouverture à préparer. Une identité à affirmer.
+              Un restaurant à faire connaître. Une communication à
+              faire vivre au quotidien. Derrière chaque marque,
+              il y a une réalité de terrain à comprendre.
+            </p>
+
+            <p>
+              C’est au cœur de ces enjeux que s’est construite
+              l’expérience de Mathilde :
+              <strong>concevoir des stratégies à 360° et en orchestrer
+              personnellement le déploiement</strong>, au contact
+              des dirigeants, des équipes et des partenaires.
+            </p>
+
+            <div class="agency-founder-note">
+              <p>
+                Avec Abyss Lab, cette expérience devient une ressource
+                pour votre entreprise : une directrice impliquée,
+                capable de penser le positionnement, de créer les
+                contenus et de coordonner les actions jusqu’à leur
+                mise en œuvre.
+              </p>
             </div>
           </div>
+        </div>
 
-          <a href="references.html" class="agency-text-link">
-            VOIR LES REFERENCES
+        <div class="agency-addresses">
+          <h3>DES MAISONS DE CARACTERE. UNE EMPREINTE DANS LE PARCOURS.</h3>
+
+          <p>
+            Parmi les établissements et marques accompagnés
+            au fil du parcours de Mathilde :
+          </p>
+
+          <ul class="agency-brand-list">
+            <li>MONDRIAN BORDEAUX LES CARMES</li>
+            <li>MORIMOTO</li>
+            <li>CHATEAU LEOGNAN</li>
+            <li>BRINDOS, LAC & CHATEAU</li>
+            <li>CHATEAU DE THEOULE</li>
+            <li>VILLA DES ORANGERS</li>
+            <li>GRAND HOTEL DU SOLEIL D'OR</li>
+          </ul>
+
+          <a class="agency-text-link" href="references.html">
+            DECOUVRIR LES REFERENCES
             <span aria-hidden="true">↗</span>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- DE A A Z -->
-    <section
-      class="agency-section"
-      id="expertises"
-      data-depth="620"
-      aria-labelledby="expertises-title"
-    >
-      <div class="agency-container">
-        <div class="expertise-intro">
-          <p class="section-tag">−620 M / DE A A Z</p>
+    <section id="expertises" aria-labelledby="expertises-title">
+      <div class="container">
+        <span class="agency-label">02 / LE CHAMP D'ACTION</span>
 
-          <h2 class="agency-heading" id="expertises-title">
-            <span>DE LA STRATEGIE AU TERRAIN.</span>
-            <span>CHAQUE LEVIER SOUS LA MEME DIRECTION.</span>
+        <div class="agency-section-heading">
+          <h2 id="expertises-title">
+            UNE STRATEGIE EN PROFONDEUR.<br>
+            UNE PRESENCE A 360°.
           </h2>
 
-          <p class="agency-copy">
-            Votre marque gagne en force lorsque la stratégie,
-            l’image et les actions avancent ensemble.
-            Abyss Lab en assure la cohérence
-            et le pilotage au quotidien.
+          <p>
+            Du premier diagnostic au lancement d’une campagne,
+            chaque action prolonge la même intention :
+            rendre votre marque reconnaissable, désirable
+            et présente auprès des bons publics.
           </p>
         </div>
 
-        <div class="expertise-grid">
-
-          <article class="expertise-item">
-            <span class="expertise-number" aria-hidden="true">01</span>
-
+        <div class="agency-steps">
+          <article class="agency-step">
+            <span class="agency-step-index" aria-hidden="true">01</span>
             <div>
-              <h3>DEFINIR LE CAP</h3>
+              <h3>COMPRENDRE CE QUI VOUS DISTINGUE</h3>
               <p>
-                Positionnement, messages, stratégie marketing
-                et communication, feuille de route.
-                Des objectifs clairs et des priorités
-                adaptées à votre activité.
+                Explorer votre univers, vos publics et vos ambitions.
+                Définir le positionnement, les messages et les priorités
+                qui guideront votre marketing et votre communication.
               </p>
             </div>
           </article>
 
-          <article class="expertise-item">
-            <span class="expertise-number" aria-hidden="true">02</span>
-
+          <article class="agency-step">
+            <span class="agency-step-index" aria-hidden="true">02</span>
             <div>
-              <h3>FAIRE VIVRE LA MARQUE</h3>
+              <h3>DONNER CORPS A VOTRE MARQUE</h3>
               <p>
-                Direction artistique, photographie, vidéo,
-                contenus éditoriaux et supports.
-                Une expression reconnaissable,
-                cohérente avec votre positionnement.
+                Traduire cette direction en images, en mots et en
+                expériences : direction artistique, shootings,
+                contenus éditoriaux, supports et présence digitale.
               </p>
             </div>
           </article>
 
-          <article class="expertise-item">
-            <span class="expertise-number" aria-hidden="true">03</span>
-
+          <article class="agency-step">
+            <span class="agency-step-index" aria-hidden="true">03</span>
             <div>
-              <h3>ACTIVER LA VISIBILITE</h3>
+              <h3>AMPLIFIER VOTRE RAYONNEMENT</h3>
               <p>
-                Site internet, référencement, réseaux sociaux,
-                newsletters, campagnes et collaborations.
-                Les bons canaux au service
-                des bons publics et des bons objectifs.
+                Articuler site internet, réseaux sociaux, newsletters,
+                campagnes et collaborations. Choisir les leviers utiles
+                et leur donner un rôle dans votre développement.
               </p>
             </div>
           </article>
 
-          <article class="expertise-item">
-            <span class="expertise-number" aria-hidden="true">04</span>
-
+          <article class="agency-step">
+            <span class="agency-step-index" aria-hidden="true">04</span>
             <div>
-              <h3>PILOTER LA REALISATION</h3>
+              <h3>FAIRE AVANCER CHAQUE SUJET</h3>
               <p>
-                Calendrier, coordination, équipes,
-                partenaires et suivi des actions.
-                Une direction présente pour orchestrer
-                le projet jusqu’à sa mise en œuvre.
+                Organiser le calendrier, coordonner les intervenants,
+                suivre les budgets et les résultats. Ajuster les actions
+                et garder le projet en mouvement.
               </p>
             </div>
           </article>
-
         </div>
 
-        <a href="services.html" class="agency-text-link">
+        <a class="agency-text-link" href="services.html">
           EXPLORER LES ACCOMPAGNEMENTS
           <span aria-hidden="true">↗</span>
         </a>
       </div>
     </section>
 
-    <!-- COLLECTIF -->
-    <section
-      class="agency-section"
-      id="collectif"
-      data-depth="820"
-      aria-labelledby="collective-title"
-    >
-      <div class="agency-container split-layout">
-        <div>
-          <p class="section-tag">−820 M / LE COLLECTIF</p>
+    <section id="collectif" aria-labelledby="collectif-title">
+      <div class="container">
+        <div class="agency-crew">
+          <div>
+            <span class="agency-label">03 / L'EQUIPAGE</span>
 
-          <h2 class="agency-heading" id="collective-title">
-            <span>UNE CHEFFE D'ORCHESTRE.</span>
-            <span>LES BONS TALENTS AUTOUR.</span>
-          </h2>
+            <h2 id="collectif-title">
+              UN POINT D'ANCRAGE.<br>
+              LES TALENTS A LA MESURE.
+            </h2>
 
-          <p class="agency-statement">
-            Une équipe dimensionnée pour votre projet.
-            Une seule interlocutrice pour le piloter.
-          </p>
+            <p>
+              <strong>Mathilde reste votre interlocutrice,
+              quelle que soit l’ampleur du projet.</strong>
+              Elle prend en charge la stratégie et la réalisation,
+              puis compose, lorsque la mission le demande,
+              une équipe de spécialistes.
+            </p>
 
-          <p class="agency-copy">
-            Selon l’ampleur de la mission,
-            la réalisation est prise en charge directement
-            ou enrichie par les meilleurs acteurs
-            pour les expertises nécessaires :
-            création, développement, production,
-            acquisition ou relations presse.
-          </p>
-
-          <p class="agency-copy">
-            Sélection des talents, coordination des interventions,
-            cohérence des livrables :
-            Mathilde reste aux commandes,
-            du premier échange à la mise en œuvre.
-          </p>
-
-          <div class="partner-list" aria-label="Expertises mobilisables selon le projet">
-            <span>CREATION</span>
-            <span>PHOTO & VIDEO</span>
-            <span>DEVELOPPEMENT WEB</span>
-            <span>SEO & ACQUISITION</span>
-            <span>RELATIONS PRESSE</span>
-            <span>PRODUCTION</span>
+            <p>
+              Photographes, vidéastes, designers, développeurs,
+              experts en acquisition ou relations presse :
+              les partenaires sont sélectionnés pour leur savoir-faire
+              et leur pertinence pour votre marque.
+            </p>
           </div>
+
+          <ul class="agency-crew-list">
+            <li>
+              <h3>UNE IMMERSION DANS VOTRE ENTREPRISE</h3>
+              <p>
+                Comprendre votre activité, travailler avec vos équipes
+                et intégrer vos contraintes au quotidien.
+              </p>
+            </li>
+            <li>
+              <h3>UNE EQUIPE COMPOSEE POUR LA MISSION</h3>
+              <p>
+                Mobiliser les bonnes compétences au bon moment,
+                selon vos objectifs, votre calendrier et votre budget.
+              </p>
+            </li>
+            <li>
+              <h3>UN MEME FIL DU DEBUT A LA FIN</h3>
+              <p>
+                Centraliser les échanges et les arbitrages,
+                suivre les livrables et préserver la cohérence
+                de chaque prise de parole.
+              </p>
+            </li>
+          </ul>
         </div>
-
-        <ul class="direct-list">
-          <li>
-            <strong>UNE DIRECTION IMPLIQUEE</strong>
-            Votre marque, vos objectifs et vos contraintes
-            restent au centre de chaque décision.
-          </li>
-
-          <li>
-            <strong>LES EXPERTISES UTILES</strong>
-            Les talents sont mobilisés selon
-            les besoins et l’ampleur du projet.
-          </li>
-
-          <li>
-            <strong>UN PILOTAGE CONTINU</strong>
-            Une interlocutrice qui relie
-            la vision, les équipes et la réalisation.
-          </li>
-        </ul>
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section
-      class="agency-section final-section"
+      class="agency-contact"
       id="rencontre"
-      data-depth="1000"
-      aria-labelledby="contact-title"
-    >
-      <div class="agency-container">
-        <p class="section-tag">−1 000 M / VOTRE PROJET</p>
+      aria-labelledby="rencontre-title">
+      <div class="container">
+        <span class="agency-label">04 / LA RENCONTRE</span>
 
-        <h2 class="agency-heading" id="contact-title">
-          <span>VOTRE AMBITION.</span>
-          <span>UNE DIRECTION POUR LA CONCRETISER.</span>
+        <h2 id="rencontre-title">
+          VOTRE PROCHAIN CHAPITRE<br>
+          COMMENCE EN PROFONDEUR.
         </h2>
 
-        <p class="agency-lead">
-          Un lancement, une nouvelle image,
-          une communication à structurer ou à piloter ?
-          Donnez à votre marque une direction marketing
-          et communication à la hauteur de ses enjeux.
+        <p>
+          Une adresse à lancer, une marque à affirmer,
+          une communication à reprendre en main ?
+          Parlons de votre réalité, de vos ambitions
+          et de ce qu’il faut mettre en place pour avancer.
         </p>
 
-        <a href="contact.html" class="agency-button">
-          PARLONS DE VOTRE PROJET
-          <span aria-hidden="true">↗</span>
-        </a>
+        <div class="agency-actions">
+          <a class="agency-button" href="contact.html">
+            PARLONS DE VOTRE PROJET
+            <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+          </a>
+        </div>
 
-        <a href="#surface" class="back-top">
+        <a class="agency-back" href="#surface">
           REMONTER A LA SURFACE ↑
         </a>
       </div>
     </section>
-
   </main>
 
-  <!-- FOOTER DU SITE -->
   <footer class="footer">
     <div class="container">
       <div class="footer-top">
@@ -1500,19 +1385,21 @@
             <div class="footer-brand">ABYSS LAB.</div>
 
             <p class="footer-tagline">
-              NOUS REVELONS LA PROFONDEUR DES MARQUES POUR FAIRE EMERGER DES UNIVERS FORTS ET DURABLES.
+              NOUS REVELONS LA PROFONDEUR DES MARQUES
+              POUR FAIRE EMERGER DES UNIVERS FORTS ET DURABLES.
             </p>
 
             <div class="footer-location">
-              Basée à Bordeaux, disponible partout en France et à l'étranger.
+              Basée à Bordeaux, disponible partout en France
+              et à l'étranger.
             </div>
           </div>
 
           <div class="col-12 col-lg-6 d-lg-flex justify-content-lg-end">
-            <div class="footer-social-block">
-              <div class="footer-social-title">
+            <div>
+              <p class="footer-social-title">
                 Suivez-nous sur les réseaux sociaux :
-              </div>
+              </p>
 
               <div class="footer-socials">
                 <a
@@ -1520,9 +1407,8 @@
                   href="https://www.instagram.com/abyss.lab_/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Instagram Abyss Lab"
-                >
-                  <i class="bi bi-instagram"></i>
+                  aria-label="Instagram Abyss Lab">
+                  <i class="bi bi-instagram" aria-hidden="true"></i>
                 </a>
 
                 <a
@@ -1530,9 +1416,8 @@
                   href="https://www.linkedin.com/company/abyss-lab/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="LinkedIn Abyss Lab"
-                >
-                  <i class="bi bi-linkedin"></i>
+                  aria-label="LinkedIn Abyss Lab">
+                  <i class="bi bi-linkedin" aria-hidden="true"></i>
                 </a>
 
                 <a
@@ -1540,9 +1425,8 @@
                   href="https://www.tiktok.com/@abyss.lab"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="TikTok Abyss Lab"
-                >
-                  <i class="bi bi-tiktok"></i>
+                  aria-label="TikTok Abyss Lab">
+                  <i class="bi bi-tiktok" aria-hidden="true"></i>
                 </a>
               </div>
             </div>
@@ -1550,14 +1434,12 @@
         </div>
       </div>
 
-      <div class="footer-menu-row">
-        <nav class="footer-menu" aria-label="Menu footer">
-          <a href="index.html">Accueil</a>
-          <a href="services.html">Services</a>
-          <a href="references.html">Références</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-      </div>
+      <nav class="footer-menu" aria-label="Menu footer">
+        <a href="index.html">ACCUEIL</a>
+        <a href="services.html">SERVICES</a>
+        <a href="references.html">REFERENCES</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
 
       <div class="footer-bottom">
         <div class="footer-bottom-inner">
@@ -1565,7 +1447,9 @@
             <a href="mentions-legales.html">Mentions légales</a>
             <a href="cgu.html">CGU</a>
             <a href="cgv.html">CGV</a>
-            <a href="politique-confidentialite.html">Politique de confidentialité</a>
+            <a href="politique-confidentialite.html">
+              Politique de confidentialité
+            </a>
           </div>
 
           <div class="footer-copy">
@@ -1579,319 +1463,251 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    document.addEventListener('DOMContentLoaded',function(){
+    (() => {
+      "use strict";
 
       const root = document.documentElement;
-      const main = document.getElementById('agency-main');
-      const navbar = document.querySelector('.navbar');
-      const menu = document.getElementById('navmenu');
-      const readout = document.getElementById('depth-value');
-      const video = document.getElementById('bg-video');
-
-      const sections = Array.from(
-        document.querySelectorAll('[data-depth]')
-      );
-
+      const header = document.getElementById("agency-header");
+      const menu = document.getElementById("navmenu");
+      const toggler = header.querySelector(".navbar-toggler");
+      const depthLabel = document.getElementById("agency-depth-value");
+      const main = document.querySelector(".agency-main");
+      const sections = Array.from(main.querySelectorAll("section[id]"));
       const chapterLinks = Array.from(
-        document.querySelectorAll('.depth-links a')
+        document.querySelectorAll(".agency-depth-nav a")
       );
-
       const motionPreference = window.matchMedia(
-        '(prefers-reduced-motion: reduce)'
+        "(prefers-reduced-motion: reduce)"
       );
 
-      let positions = [];
-      let framePending = false;
-      let mainStart = 0;
-      let scrollDistance = 1;
+      let updatePending = false;
 
-      /* MESURE */
+      function updatePage() {
+        updatePending = false;
 
-      function measurePage(){
-        positions = sections.map(function(section){
-          return {
-            position:
-              section.getBoundingClientRect().top +
-              window.scrollY +
-              section.offsetHeight * .35,
-            depth:Number(section.dataset.depth)
-          };
-        });
+        const scrollY = Math.max(0, window.scrollY);
+        const headerHeight = header.getBoundingClientRect().height;
 
-        mainStart =
-          main.getBoundingClientRect().top + window.scrollY;
-
-        scrollDistance = Math.max(
-          1,
-          main.offsetHeight - window.innerHeight
+        root.style.setProperty(
+          "--agency-header-height",
+          `${headerHeight}px`
         );
 
+        header.classList.toggle("scrolled", scrollY > 20);
+
+        const mainTop = main.getBoundingClientRect().top + scrollY;
+        const mainBottom = mainTop + main.offsetHeight;
+        const travel = Math.max(1, mainBottom - window.innerHeight);
+        const progress = Math.min(1, Math.max(0, scrollY / travel));
+
+        root.style.setProperty(
+          "--agency-darkness",
+          (0.42 + progress * 0.46).toFixed(3)
+        );
+        root.style.setProperty(
+          "--agency-progress",
+          progress.toFixed(4)
+        );
+
+        const depth = Math.round(progress * 1000);
+        depthLabel.textContent = depth === 0
+          ? "0 m"
+          : `−${depth.toLocaleString("fr-FR")} m`;
+
+        let activeId = sections[0].id;
+
+        sections.forEach(section => {
+          if (
+            section.getBoundingClientRect().top <=
+            headerHeight + window.innerHeight * 0.3
+          ) {
+            activeId = section.id;
+          }
+        });
+
+        chapterLinks.forEach(link => {
+          if (link.getAttribute("href") === `#${activeId}`) {
+            link.setAttribute("aria-current", "location");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      }
+
+      function requestUpdate() {
+        if (updatePending) return;
+        updatePending = true;
+        window.requestAnimationFrame(updatePage);
+      }
+
+      window.addEventListener("scroll", requestUpdate, { passive: true });
+      window.addEventListener("resize", requestUpdate);
+      window.addEventListener("load", requestUpdate);
+
+      if ("ResizeObserver" in window) {
+        const observer = new ResizeObserver(requestUpdate);
+        observer.observe(main);
+        observer.observe(header);
+      }
+
+      menu.addEventListener("show.bs.collapse", () => {
+        header.classList.add("menu-open");
+        toggler.setAttribute("aria-label", "Fermer le menu");
+      });
+
+      menu.addEventListener("hidden.bs.collapse", () => {
+        header.classList.remove("menu-open");
+        toggler.setAttribute("aria-label", "Ouvrir le menu");
         requestUpdate();
-      }
-
-      /* PROFONDEUR ET ASSOMBRISSEMENT */
-
-      function updatePage(){
-        framePending = false;
-
-        const marker =
-          window.scrollY + window.innerHeight * .35;
-
-        let depth = 0;
-        let active = 0;
-
-        for(let i = 0;i < positions.length;i++){
-          if(marker >= positions[i].position){
-            depth = positions[i].depth;
-            active = i;
-          }
-
-          if(
-            i < positions.length - 1 &&
-            marker >= positions[i].position &&
-            marker < positions[i + 1].position
-          ){
-            const distance =
-              positions[i + 1].position - positions[i].position;
-
-            const progress = distance > 0
-              ? (marker - positions[i].position) / distance
-              : 0;
-
-            depth =
-              positions[i].depth +
-              progress *
-              (positions[i + 1].depth - positions[i].depth);
-
-            break;
-          }
-        }
-
-        const roundedDepth = Math.max(
-          0,
-          Math.min(1000,Math.round(depth))
-        );
-
-        readout.textContent = roundedDepth === 0
-          ? '0 m'
-          : '−' + roundedDepth.toLocaleString('fr-FR') + ' m';
-
-        root.style.setProperty(
-          '--depth',
-          roundedDepth / 1000
-        );
-
-        const scrollProgress = Math.max(
-          0,
-          Math.min(
-            1,
-            (window.scrollY - mainStart) / scrollDistance
-          )
-        );
-
-        const darkness = .38 + scrollProgress * .52;
-
-        root.style.setProperty(
-          '--darkness',
-          darkness.toFixed(3)
-        );
-
-        navbar.classList.toggle(
-          'scrolled',
-          window.scrollY > 20
-        );
-
-        chapterLinks.forEach(function(link,index){
-          if(index === active){
-            link.setAttribute('aria-current','location');
-          }else{
-            link.removeAttribute('aria-current');
-          }
-        });
-      }
-
-      function requestUpdate(){
-        if(!framePending){
-          framePending = true;
-          requestAnimationFrame(updatePage);
-        }
-      }
-
-      window.addEventListener(
-        'scroll',
-        requestUpdate,
-        {passive:true}
-      );
-
-      window.addEventListener('resize',measurePage);
-      window.addEventListener('load',measurePage);
-      window.addEventListener('pageshow',measurePage);
-
-      if('ResizeObserver' in window){
-        const pageObserver = new ResizeObserver(measurePage);
-        pageObserver.observe(main);
-      }
-
-      if(document.fonts && document.fonts.ready){
-        document.fonts.ready.then(measurePage);
-      }
-
-      /* MENU MOBILE */
-
-      menu.addEventListener('show.bs.collapse',function(){
-        navbar.classList.add('menu-open');
-        document.body.classList.add('menu-is-open');
       });
 
-      menu.addEventListener('hidden.bs.collapse',function(){
-        navbar.classList.remove('menu-open');
-        document.body.classList.remove('menu-is-open');
-        measurePage();
+      menu.addEventListener("shown.bs.collapse", requestUpdate);
+
+      header.addEventListener("keydown", event => {
+        if (
+          event.key === "Escape" &&
+          menu.classList.contains("show") &&
+          window.bootstrap
+        ) {
+          bootstrap.Collapse.getOrCreateInstance(
+            menu,
+            { toggle: false }
+          ).hide();
+          toggler.focus();
+        }
       });
 
-      /* VIDEO */
-
-      function syncVideo(){
-        if(!video) return;
-
-        if(motionPreference.matches || document.hidden){
-          video.pause();
-          return;
-        }
-
-        video.muted = true;
-        video.defaultMuted = true;
-        video.playsInline = true;
-
-        const playPromise = video.play();
-
-        if(playPromise !== undefined){
-          playPromise.catch(function(){});
-        }
-      }
-
-      syncVideo();
-
-      document.addEventListener(
-        'touchstart',
-        syncVideo,
-        {once:true,passive:true}
-      );
-
-      document.addEventListener(
-        'click',
-        syncVideo,
-        {once:true}
-      );
-
-      document.addEventListener(
-        'visibilitychange',
-        syncVideo
-      );
-
-      window.addEventListener('pageshow',syncVideo);
-
-      /* COMPTEURS */
-
-      const numbersSection =
-        document.querySelector('.numbers-section');
-
-      const counters = Array.from(
-        document.querySelectorAll('[data-count]')
-      );
-
-      let counterFrame = 0;
-      let counterObserver = null;
+      /* Les valeurs finales restent présentes sans JavaScript. */
+      const stats = document.querySelector(".agency-stats");
+      const counters = Array.from(stats.querySelectorAll("[data-count]"));
       let countersStarted = false;
 
-      function showFinalNumbers(){
-        cancelAnimationFrame(counterFrame);
-
-        counters.forEach(function(counter){
-          counter.textContent =
-            Number(counter.dataset.count).toLocaleString('fr-FR');
+      function finishCounters() {
+        counters.forEach(counter => {
+          counter.textContent = counter.dataset.count;
         });
       }
 
-      function animateNumbers(){
-        if(countersStarted) return;
-
+      function animateCounters() {
+        if (countersStarted) return;
         countersStarted = true;
 
-        if(motionPreference.matches){
-          showFinalNumbers();
+        if (motionPreference.matches) {
+          finishCounters();
           return;
         }
 
         const start = performance.now();
-        const duration = 1600;
+        const duration = 1500;
 
-        function animate(now){
-          const progress = Math.min(
-            (now - start) / duration,
-            1
-          );
+        function frame(now) {
+          if (motionPreference.matches) {
+            finishCounters();
+            return;
+          }
 
-          const easedProgress =
-            1 - Math.pow(1 - progress,3);
+          const progress = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - progress, 3);
 
-          counters.forEach(function(counter){
+          counters.forEach(counter => {
             const target = Number(counter.dataset.count);
 
-            counter.textContent = Math.round(
-              target * easedProgress
-            ).toLocaleString('fr-FR');
+            /* L'unique interlocutrice reste toujours affichée. */
+            counter.textContent = target === 1
+              ? "1"
+              : Math.round(target * eased).toLocaleString("fr-FR");
           });
 
-          if(progress < 1){
-            counterFrame = requestAnimationFrame(animate);
-          }else{
-            showFinalNumbers();
+          if (progress < 1) {
+            requestAnimationFrame(frame);
+          } else {
+            finishCounters();
           }
         }
 
-        counterFrame = requestAnimationFrame(animate);
+        requestAnimationFrame(frame);
       }
 
-      if(
-        numbersSection &&
-        'IntersectionObserver' in window &&
-        !motionPreference.matches
-      ){
-        counters.forEach(function(counter){
-          counter.textContent = '0';
-        });
-
-        counterObserver = new IntersectionObserver(
-          function(entries,observer){
-            entries.forEach(function(entry){
-              if(entry.isIntersecting){
-                animateNumbers();
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          {threshold:.15}
-        );
-
-        counterObserver.observe(numbersSection);
-      }
-
-      motionPreference.addEventListener('change',function(){
-        syncVideo();
-
-        if(motionPreference.matches){
-          if(counterObserver){
+      if ("IntersectionObserver" in window) {
+        const counterObserver = new IntersectionObserver(entries => {
+          if (entries.some(entry => entry.isIntersecting)) {
+            animateCounters();
             counterObserver.disconnect();
           }
+        }, { threshold: 0.25 });
 
-          showFinalNumbers();
+        counterObserver.observe(stats);
+      }
+
+      /* Fond animé avec commande de pause. */
+      const video = document.getElementById("agency-video");
+      const motionButton = document.getElementById("agency-motion");
+      const motionIcon = motionButton.querySelector("i");
+      let userPaused = motionPreference.matches;
+
+      video.muted = true;
+      video.defaultMuted = true;
+      video.playsInline = true;
+      motionButton.hidden = false;
+
+      function syncMotionButton() {
+        const paused = video.paused;
+        motionButton.setAttribute(
+          "aria-label",
+          paused
+            ? "Animer le fond d’eau"
+            : "Mettre le fond animé en pause"
+        );
+        motionIcon.className = paused ? "bi bi-play" : "bi bi-pause";
+      }
+
+      function playVideo() {
+        if (userPaused || document.hidden) return;
+        const playback = video.play();
+        if (playback) playback.catch(syncMotionButton);
+      }
+
+      motionButton.addEventListener("click", () => {
+        if (video.paused) {
+          userPaused = false;
+          playVideo();
+        } else {
+          userPaused = true;
+          video.pause();
         }
       });
 
-      measurePage();
+      video.addEventListener("play", syncMotionButton);
+      video.addEventListener("pause", syncMotionButton);
+      video.addEventListener("error", () => {
+        motionButton.hidden = true;
+      });
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+          video.pause();
+        } else {
+          playVideo();
+        }
+      });
+
+      motionPreference.addEventListener("change", event => {
+        if (event.matches) {
+          userPaused = true;
+          video.pause();
+          finishCounters();
+        }
+      });
+
+      if (userPaused) {
+        video.pause();
+      } else {
+        playVideo();
+      }
+
+      syncMotionButton();
       updatePage();
-    });
+    })();
   </script>
 </body>
 </html>
