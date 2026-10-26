@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>L’Agence | Abyss Lab — Une vision à 360°. Une seule interlocutrice.</title>
+  <title>L’Agence | Abyss Lab — Direction marketing & communication externalisée</title>
 
-  <meta name="description" content="Mathilde Ranchon, fondatrice d’Abyss Lab. Plus de 10 ans dans l’hôtellerie, la restauration et l’art de vivre. Stratégie, création et communication à 360°, avec une seule interlocutrice.">
+  <meta name="description" content="Abyss Lab : votre direction marketing et communication externalisée. Plus de 10 ans d’expérience, 23 établissements accompagnés, 15 lancements et une interlocutrice pour piloter votre marque de A à Z.">
 
   <!-- Google Tag Manager -->
   <script>
@@ -66,7 +66,11 @@
     }
 
     a:hover{color:#fff;}
-    img{display:block;max-width:100%;}
+
+    img{
+      display:block;
+      max-width:100%;
+    }
 
     a:focus-visible,
     button:focus-visible{
@@ -163,7 +167,7 @@
       color:#fff!important;
     }
 
-    /* ===== STRUCTURE COMPACTE ===== */
+    /* ===== STRUCTURE ===== */
 
     .agency-main{
       position:relative;
@@ -177,7 +181,7 @@
     }
 
     .agency-section{
-      padding:44px 0;
+      padding:42px 0;
       background:transparent!important;
     }
 
@@ -217,7 +221,7 @@
     }
 
     .agency-lead{
-      max-width:790px;
+      max-width:800px;
       margin:0;
       font-size:.98rem;
       line-height:1.8;
@@ -246,7 +250,7 @@
     .split-layout{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:55px;
+      gap:50px;
       align-items:center;
     }
 
@@ -290,7 +294,7 @@
     /* ===== HERO ===== */
 
     .agency-hero{
-      padding:68px 0 35px;
+      padding:68px 0 32px;
     }
 
     .hero-actions{
@@ -396,10 +400,10 @@
       color:#fff;
     }
 
-    /* ===== CHIFFRES ===== */
+    /* ===== COMPTEURS ===== */
 
     .numbers-section{
-      padding:32px 0 40px;
+      padding:30px 0 35px;
     }
 
     .numbers-grid{
@@ -464,29 +468,55 @@
       color:var(--muted);
     }
 
-    /* ===== FONDATRICE ===== */
+    /* ===== PORTRAIT INTEGRAL ===== */
 
     .founder-layout{
       grid-template-columns:.85fr 1.15fr;
     }
 
-    .portrait{
+    .agency-main .portrait{
       margin:0;
+      width:100%;
+      min-width:0;
+      height:auto!important;
+      max-height:none!important;
+      overflow:visible!important;
+      clip-path:none!important;
+      mask-image:none!important;
+      -webkit-mask-image:none!important;
     }
 
-    .portrait img{
-      width:100%;
-      aspect-ratio:4/4.7;
-      object-fit:cover;
-      filter:saturate(.35);
+    .agency-main .portrait::before,
+    .agency-main .portrait::after{
+      display:none!important;
+      content:none!important;
+    }
+
+    .agency-main .portrait img{
+      display:block!important;
+      position:static!important;
+      width:100%!important;
+      max-width:100%!important;
+      min-width:0!important;
+      height:auto!important;
+      min-height:0!important;
+      max-height:none!important;
+      aspect-ratio:auto!important;
+      object-fit:contain!important;
+      object-position:center!important;
+      transform:none!important;
+      clip-path:none!important;
+      mask-image:none!important;
+      -webkit-mask-image:none!important;
+      border-radius:0!important;
+      filter:none!important;
     }
 
     .portrait figcaption{
       margin-top:11px;
       font-size:.53rem;
-      line-height:1.6;
-      letter-spacing:.12em;
-      text-transform:uppercase;
+      line-height:1.7;
+      letter-spacing:.10em;
       color:var(--muted);
     }
 
@@ -507,10 +537,11 @@
 
     .brand-caption{
       margin:0 0 13px;
-      font-size:.62rem;
-      font-weight:700;
+      font-family:'couture',sans-serif;
+      font-size:.76rem;
+      font-weight:600;
       line-height:1.6;
-      letter-spacing:.14em;
+      letter-spacing:.10em;
       text-transform:uppercase;
       color:#fff;
     }
@@ -518,16 +549,16 @@
     .brand-names{
       display:flex;
       flex-wrap:wrap;
-      gap:12px 20px;
+      gap:10px 20px;
       font-family:'couture',sans-serif;
-      font-size:.73rem;
-      letter-spacing:.05em;
+      font-size:.72rem;
+      letter-spacing:.04em;
       line-height:1.7;
       text-transform:uppercase;
       color:var(--soft);
     }
 
-    /* ===== DE A A Z ===== */
+    /* ===== DIRECTION A 360 ===== */
 
     .expertise-intro{
       max-width:760px;
@@ -617,11 +648,11 @@
 
     .final-section{
       text-align:center;
-      padding:65px 0;
+      padding:60px 0;
     }
 
     .final-section .agency-lead{
-      max-width:620px;
+      max-width:650px;
       margin:0 auto 24px;
     }
 
@@ -740,9 +771,7 @@
       text-align:left;
     }
 
-    .footer-menu a:hover{
-      opacity:.72;
-    }
+    .footer-menu a:hover{opacity:.72;}
 
     .footer-bottom{
       border-top:1px solid var(--line-soft);
@@ -769,9 +798,7 @@
       line-height:1.5;
     }
 
-    .footer-legal a:hover{
-      color:var(--white);
-    }
+    .footer-legal a:hover{color:var(--white);}
 
     .footer-copy{
       color:var(--white-muted);
@@ -798,16 +825,14 @@
         margin-left:125px;
       }
 
-      .split-layout{
-        gap:35px;
-      }
+      .split-layout{gap:32px;}
 
       .founder-layout{
         grid-template-columns:1fr;
       }
 
-      .portrait{
-        max-width:410px;
+      .agency-main .portrait{
+        max-width:440px;
       }
 
       .numbers-grid{
@@ -815,9 +840,7 @@
         gap:28px 20px;
       }
 
-      .footer-social-block{
-        margin-top:4px;
-      }
+      .footer-social-block{margin-top:4px;}
 
       .footer-menu{
         grid-template-columns:repeat(2,1fr);
@@ -838,18 +861,14 @@
     /* ===== MOBILE ===== */
 
     @media(max-width:767.98px){
-      html{
-        scroll-padding-top:110px;
-      }
+      html{scroll-padding-top:110px;}
 
       .agency-container{
         width:calc(100% - 32px);
         margin:0 auto;
       }
 
-      .agency-section{
-        padding:30px 0;
-      }
+      .agency-section{padding:30px 0;}
 
       .agency-hero{
         padding:72px 0 25px;
@@ -890,9 +909,7 @@
         margin-top:22px;
       }
 
-      .hero-actions .agency-button{
-        width:100%;
-      }
+      .hero-actions .agency-button{width:100%;}
 
       .agency-button{
         padding:12px 18px;
@@ -900,9 +917,7 @@
         letter-spacing:.10em;
       }
 
-      .scroll-link{
-        font-size:.53rem;
-      }
+      .scroll-link{font-size:.53rem;}
 
       .depth-gauge{
         left:auto;
@@ -914,18 +929,11 @@
         pointer-events:none;
       }
 
-      .depth-value{
-        font-size:.67rem;
-      }
-
-      .depth-caption{
-        font-size:.39rem;
-      }
+      .depth-value{font-size:.67rem;}
+      .depth-caption{font-size:.39rem;}
 
       .depth-track,
-      .depth-links{
-        display:none;
-      }
+      .depth-links{display:none;}
 
       body.menu-is-open .depth-gauge{
         visibility:hidden;
@@ -940,13 +948,8 @@
         padding:24px 0;
       }
 
-      .number-value{
-        font-size:3.1rem;
-      }
-
-      .number-suffix{
-        font-size:1.5rem;
-      }
+      .number-value{font-size:3.1rem;}
+      .number-suffix{font-size:1.5rem;}
 
       .number-label{
         margin-top:9px;
@@ -960,20 +963,12 @@
 
       .split-layout{
         grid-template-columns:1fr;
-        gap:26px;
+        gap:25px;
       }
 
-      .portrait img{
-        aspect-ratio:4/4.5;
-      }
-
-      .founder-name{
-        font-size:.62rem;
-      }
-
-      .brand-names{
-        font-size:.66rem;
-      }
+      .founder-name{font-size:.62rem;}
+      .brand-caption{font-size:.69rem;}
+      .brand-names{font-size:.65rem;}
 
       .expertise-grid{
         grid-template-columns:1fr;
@@ -985,57 +980,31 @@
         padding:20px 0;
       }
 
-      .expertise-number{
-        font-size:1.4rem;
-      }
+      .expertise-number{font-size:1.4rem;}
+      .expertise-item h3{font-size:.86rem;}
+      .expertise-item p{font-size:.82rem;}
 
-      .expertise-item h3{
-        font-size:.86rem;
-      }
+      .direct-list li{font-size:.83rem;}
+      .direct-list strong{font-size:.72rem;}
 
-      .expertise-item p{
-        font-size:.82rem;
-      }
+      .final-section{padding:45px 0;}
 
-      .direct-list li{
-        font-size:.83rem;
-      }
-
-      .direct-list strong{
-        font-size:.72rem;
-      }
-
-      .final-section{
-        padding:45px 0;
-      }
-
-      .footer{
-        padding:24px 0 12px;
-      }
+      .footer{padding:24px 0 12px;}
 
       .footer-menu{
         grid-template-columns:1fr;
         gap:10px;
       }
 
-      .footer-menu a{
-        font-size:.88rem;
-      }
-
-      .footer-legal{
-        gap:8px 18px;
-      }
+      .footer-menu a{font-size:.88rem;}
+      .footer-legal{gap:8px 18px;}
 
       .footer-legal a,
-      .footer-copy{
-        font-size:.79rem;
-      }
+      .footer-copy{font-size:.79rem;}
     }
 
     @media(prefers-reduced-motion:reduce){
-      html{
-        scroll-behavior:auto;
-      }
+      html{scroll-behavior:auto;}
 
       *,
       *::before,
@@ -1077,7 +1046,7 @@
     </video>
   </div>
 
-  <!-- MENU -->
+  <!-- MENU STICKY -->
   <nav class="navbar navbar-expand-lg navbar-dark py-3" aria-label="Navigation principale">
     <div class="container">
       <a class="navbar-brand fw-bold" href="index.html" aria-label="Abyss Lab - Accueil">
@@ -1132,8 +1101,8 @@
 
     <nav class="depth-links" aria-label="Chapitres de l’agence">
       <a href="#surface" aria-current="location">00 / L'AGENCE</a>
-      <a href="#preuves">01 / L'EXPERIENCE</a>
-      <a href="#fondatrice">02 / LE PILOTAGE</a>
+      <a href="#preuves">01 / LES PREUVES</a>
+      <a href="#direction">02 / LA DIRECTION</a>
       <a href="#expertises">03 / DE A A Z</a>
       <a href="#collectif">04 / LE COLLECTIF</a>
       <a href="#rencontre">05 / VOTRE PROJET</a>
@@ -1150,7 +1119,9 @@
       aria-labelledby="agency-title"
     >
       <div class="agency-container">
-        <p class="section-tag">L'AGENCE / MATHILDE RANCHON / BORDEAUX</p>
+        <p class="section-tag">
+          DIRECTION MARKETING & COMMUNICATION EXTERNALISEE
+        </p>
 
         <h1 class="agency-title" id="agency-title">
           <span>UNE VISION A 360°.</span>
@@ -1158,12 +1129,13 @@
         </h1>
 
         <p class="agency-lead">
-          Depuis plus de 10 ans, je fais rayonner les hôtels,
-          restaurants, lieux de vie et marques qui cultivent
-          l’art du bon vivre. Avec Abyss Lab, je donne le cap,
-          crée les contenus et orchestre votre communication de A à Z.
-          Selon l’ampleur du projet, je réunis les talents les plus adaptés,
-          tout en restant votre interlocutrice à chaque étape.
+          Toute la force d’une direction marketing et communication,
+          avec la souplesse d’un partenaire externalisé.
+          Abyss Lab structure votre stratégie, crée votre communication
+          et orchestre son déploiement de A à Z.
+          À la direction : Mathilde Ranchon, plus de 10 ans
+          au service des hôtels, restaurants, lieux de vie
+          et marques qui cultivent l’art du bon vivre.
         </p>
 
         <div class="hero-actions">
@@ -1197,7 +1169,9 @@
             </div>
 
             <span class="visually-hidden">Plus de 10</span>
-            <span class="number-label">ANS DANS L'ART DU BON VIVRE</span>
+            <span class="number-label">
+              ANS DANS L'ART DU BON VIVRE
+            </span>
           </div>
 
           <div class="number-item">
@@ -1206,17 +1180,20 @@
             </div>
 
             <span class="visually-hidden">23</span>
-            <span class="number-label">ETABLISSEMENTS DANS MES PERIMETRES</span>
+            <span class="number-label">
+              ETABLISSEMENTS ACCOMPAGNES
+            </span>
           </div>
 
           <div class="number-item">
             <div class="number-line" aria-hidden="true">
-              <span class="number-value" data-count="360">360</span>
-              <span class="number-suffix">°</span>
+              <span class="number-value" data-count="15">15</span>
             </div>
 
-            <span class="visually-hidden">360 degrés</span>
-            <span class="number-label">DE LA STRATEGIE AU DEPLOIEMENT</span>
+            <span class="visually-hidden">15</span>
+            <span class="number-label">
+              LANCEMENTS
+            </span>
           </div>
 
           <div class="number-item">
@@ -1225,82 +1202,90 @@
             </div>
 
             <span class="visually-hidden">1</span>
-            <span class="number-label">INTERLOCUTRICE DU DEBUT A LA FIN</span>
+            <span class="number-label">
+              INTERLOCUTRICE DE A A Z
+            </span>
           </div>
 
         </div>
 
         <p class="numbers-note">
-          Les 23 établissements correspondent aux périmètres de mission
-          de mon parcours professionnel avant Abyss Lab,
-          stages et alternance compris.
-          Le restaurant Morimoto est inclus dans le périmètre Mondrian Bordeaux.
+          Chiffres issus du parcours professionnel de la fondatrice,
+          avant et au sein d’Abyss Lab.
+          Les 23 établissements correspondent aux périmètres de mission cumulés.
         </p>
       </div>
     </section>
 
-    <!-- FONDATRICE -->
+    <!-- DIRECTION -->
     <section
       class="agency-section"
-      id="fondatrice"
+      id="direction"
       data-depth="380"
-      aria-labelledby="founder-title"
+      aria-labelledby="direction-title"
     >
       <div class="agency-container split-layout founder-layout">
+
+        <!-- Photo intégrale : aucun recadrage -->
         <figure class="portrait">
           <img
             src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773329727/agence_mathilde_ranchon_jtx26v.jpg"
-            alt="Mathilde Ranchon, fondatrice d’Abyss Lab"
+            alt="Mathilde Ranchon, fondatrice d’Abyss Lab. Photographie de Michaël Boudot."
             loading="lazy"
           >
 
           <figcaption>
-            MATHILDE RANCHON / FONDATRICE D'ABYSS LAB
+            MATHILDE RANCHON / FONDATRICE D'ABYSS LAB<br>
+            Photographie © Michaël Boudot
           </figcaption>
         </figure>
 
         <div>
-          <p class="section-tag">−380 M / LE PILOTAGE</p>
+          <p class="section-tag">−380 M / LA DIRECTION</p>
 
-          <h2 class="agency-heading" id="founder-title">
-            <span>JE DONNE LE CAP.</span>
-            <span>JE FAIS AVANCER L'ENSEMBLE.</span>
+          <h2 class="agency-heading" id="direction-title">
+            <span>UN CAP CLAIR.</span>
+            <span>TOUT LE PROJET EN MAIN.</span>
           </h2>
 
           <p class="founder-name">
-            MATHILDE RANCHON — FONDATRICE
+            MATHILDE RANCHON — VOTRE DIRECTRICE MARKETING & COMMUNICATION EXTERNALISEE
           </p>
 
           <p class="agency-statement">
-            J’ai piloté des stratégies à 360°,
-            créé les contenus et coordonné leur déploiement.
-            Aujourd’hui, je mets cette expérience au service de votre marque.
+            Une vision stratégique.
+            La capacité de créer.
+            L’expérience pour piloter l’ensemble.
           </p>
 
           <p class="agency-copy">
-            Je connais les réalités d’un hôtel, d’un restaurant,
-            d’une collection et d’un lieu qui doit faire parler de lui.
-            Construire une image, attirer les bons publics,
-            soutenir l’activité et garder une cohérence partout :
-            ces enjeux ont été mon quotidien.
+            Stratégies à 360°, lancements, contenus, campagnes,
+            visibilité digitale : une expérience construite
+            au cœur des établissements et des marques,
+            au contact de leurs enjeux d’image et de développement.
           </p>
 
           <p class="agency-copy">
-            Mon rôle : comprendre votre ambition, décider des priorités
-            et orchestrer les actions.
-            Du positionnement à la campagne, du shooting au site,
-            je garde le fil de votre projet de A à Z.
+            Abyss Lab apporte cette maîtrise à votre projet :
+            comprendre les priorités, donner une direction
+            et faire avancer chaque sujet.
+            Du positionnement au shooting, du site à la campagne,
+            les décisions et la réalisation restent reliées.
           </p>
 
           <div class="brand-signature">
-            <p class="brand-caption">J'AI FAIT BRILLER</p>
+            <p class="brand-caption">
+              DES ADRESSES FORTES. UNE EXPERIENCE QUI COMPTE.
+            </p>
 
             <div class="brand-names">
-              <span>MONDRIAN BORDEAUX</span>
+              <span>MONDRIAN BORDEAUX LES CARMES</span>
               <span>MORIMOTO</span>
               <span>CHATEAU LEOGNAN</span>
-              <span>BRINDOS</span>
+              <span>BRINDOS, LAC & CHATEAU</span>
               <span>CHATEAU DE THEOULE</span>
+              <span>VILLA DES ORANGERS</span>
+              <span>GRAND HOTEL DU SOLEIL D'OR</span>
             </div>
           </div>
 
@@ -1324,14 +1309,15 @@
           <p class="section-tag">−620 M / DE A A Z</p>
 
           <h2 class="agency-heading" id="expertises-title">
-            <span>JE PENSE. JE CREE.</span>
-            <span>JE COORDONNE. JE DEPLOIE.</span>
+            <span>DE LA STRATEGIE AU TERRAIN.</span>
+            <span>CHAQUE LEVIER SOUS LA MEME DIRECTION.</span>
           </h2>
 
           <p class="agency-copy">
-            Plusieurs métiers, une même lecture du projet.
-            Je relie la stratégie, la création et l’opérationnel
-            pour que chaque action serve votre marque.
+            Votre marque gagne en force lorsque la stratégie,
+            l’image et les actions avancent ensemble.
+            Abyss Lab en assure la cohérence
+            et le pilotage au quotidien.
           </p>
         </div>
 
@@ -1341,11 +1327,12 @@
             <span class="expertise-number" aria-hidden="true">01</span>
 
             <div>
-              <h3>POSER LA DIRECTION</h3>
+              <h3>DEFINIR LE CAP</h3>
               <p>
                 Positionnement, messages, stratégie marketing
-                et communication, plan d’action.
-                Définir ce qui vous distingue et comment le faire savoir.
+                et communication, feuille de route.
+                Des objectifs clairs et des priorités
+                adaptées à votre activité.
               </p>
             </div>
           </article>
@@ -1354,12 +1341,12 @@
             <span class="expertise-number" aria-hidden="true">02</span>
 
             <div>
-              <h3>PRODUIRE L'IMAGE</h3>
+              <h3>FAIRE VIVRE LA MARQUE</h3>
               <p>
                 Direction artistique, photographie, vidéo,
                 contenus éditoriaux et supports.
-                Traduire votre identité en une présence
-                que l’on reconnaît.
+                Une expression reconnaissable,
+                cohérente avec votre positionnement.
               </p>
             </div>
           </article>
@@ -1368,12 +1355,12 @@
             <span class="expertise-number" aria-hidden="true">03</span>
 
             <div>
-              <h3>ACTIVER LES LEVIERS</h3>
+              <h3>ACTIVER LA VISIBILITE</h3>
               <p>
                 Site internet, référencement, réseaux sociaux,
                 newsletters, campagnes et collaborations.
-                Faire travailler les bons canaux
-                au service des bons objectifs.
+                Les bons canaux au service
+                des bons publics et des bons objectifs.
               </p>
             </div>
           </article>
@@ -1382,12 +1369,12 @@
             <span class="expertise-number" aria-hidden="true">04</span>
 
             <div>
-              <h3>ORCHESTRER L'ENSEMBLE</h3>
+              <h3>PILOTER LA REALISATION</h3>
               <p>
-                Priorités, calendrier, équipes, partenaires
-                et suivi des actions.
-                Coordonner les expertises et garder le cap
-                jusqu’à la mise en œuvre.
+                Calendrier, coordination, équipes,
+                partenaires et suivi des actions.
+                Une direction présente pour orchestrer
+                le projet jusqu’à sa mise en œuvre.
               </p>
             </div>
           </article>
@@ -1418,20 +1405,24 @@
           </h2>
 
           <p class="agency-statement">
-            Je dimensionne l’équipe à la hauteur de votre projet.
+            Une équipe dimensionnée pour votre projet.
+            Une seule interlocutrice pour le piloter.
           </p>
 
           <p class="agency-copy">
-            Selon vos besoins, je prends directement en charge
-            la réalisation ou je m’entoure des meilleurs acteurs
-            pour la mission : création, développement, production,
+            Selon l’ampleur de la mission,
+            la réalisation est prise en charge directement
+            ou enrichie par les meilleurs acteurs
+            pour les expertises nécessaires :
+            création, développement, production,
             acquisition ou relations presse.
           </p>
 
           <p class="agency-copy">
-            Je sélectionne les expertises, je coordonne les interventions
-            et je veille à la cohérence du résultat.
-            Vous gardez une seule interlocutrice.
+            Sélection des talents, coordination des interventions,
+            cohérence des livrables :
+            Mathilde reste aux commandes,
+            du premier échange à la mise en œuvre.
           </p>
 
           <div class="partner-list" aria-label="Expertises mobilisables selon le projet">
@@ -1446,21 +1437,21 @@
 
         <ul class="direct-list">
           <li>
-            <strong>UNE DIRECTION CLAIRE</strong>
-            Une personne qui connaît votre marque,
-            vos objectifs et vos contraintes.
+            <strong>UNE DIRECTION IMPLIQUEE</strong>
+            Votre marque, vos objectifs et vos contraintes
+            restent au centre de chaque décision.
           </li>
 
           <li>
-            <strong>UNE EQUIPE SUR MESURE</strong>
-            Les compétences utiles,
-            mobilisées selon l’ampleur et les besoins du projet.
+            <strong>LES EXPERTISES UTILES</strong>
+            Les talents sont mobilisés selon
+            les besoins et l’ampleur du projet.
           </li>
 
           <li>
-            <strong>UN PILOTAGE DE BOUT EN BOUT</strong>
-            Je fais le lien entre la vision,
-            les talents et la réalisation.
+            <strong>UN PILOTAGE CONTINU</strong>
+            Une interlocutrice qui relie
+            la vision, les équipes et la réalisation.
           </li>
         </ul>
       </div>
@@ -1478,13 +1469,14 @@
 
         <h2 class="agency-heading" id="contact-title">
           <span>VOTRE AMBITION.</span>
-          <span>MON PROCHAIN TERRAIN D'ACTION.</span>
+          <span>UNE DIRECTION POUR LA CONCRETISER.</span>
         </h2>
 
         <p class="agency-lead">
           Un lancement, une nouvelle image,
-          une communication à structurer ?
-          Parlons de votre marque et de ce qu’elle peut devenir.
+          une communication à structurer ou à piloter ?
+          Donnez à votre marque une direction marketing
+          et communication à la hauteur de ses enjeux.
         </p>
 
         <a href="contact.html" class="agency-button">
@@ -1614,7 +1606,7 @@
       let mainStart = 0;
       let scrollDistance = 1;
 
-      /* MESURE DE LA PAGE */
+      /* MESURE */
 
       function measurePage(){
         positions = sections.map(function(section){
