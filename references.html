@@ -35,12 +35,12 @@
 
     html{
       scroll-behavior:smooth;
-      overflow-x:hidden;
+      overflow-x:clip;
     }
 
     body{
       margin:0;
-      overflow-x:hidden;
+      overflow-x:clip;
       color:var(--white);
       font-family:'Montserrat',sans-serif;
       background:#000;
@@ -76,8 +76,9 @@
     }
 
     .navbar{
-      position:relative;
-      z-index:30;
+      position:sticky;
+      top:0;
+      z-index:1030;
       transition:background-color .3s ease, backdrop-filter .3s ease;
       border-bottom:0!important;
       box-shadow:none!important;
@@ -90,7 +91,9 @@
     }
 
     .navbar.scrolled{
-      background:rgba(0,0,0,.68);
+      background:#041332!important;
+      border-bottom:0!important;
+      box-shadow:none!important;
       backdrop-filter:blur(14px);
     }
 
