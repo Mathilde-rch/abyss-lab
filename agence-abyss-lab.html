@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>L’Agence | Abyss Lab — Direction marketing & communication externalisée</title>
-  <meta name="description" content="Mathilde Ranchon, votre directrice marketing et communication externalisée. Plus de 10 ans dans l’art du bon vivre, 23 établissements accompagnés et 15 lancements.">
+
+  <meta
+    name="description"
+    content="Une direction marketing et communication externalisée, de la stratégie au déploiement. Mathilde Ranchon : plus de 10 ans dans l’art du bon vivre, 23 établissements accompagnés et 15 lancements."
+  >
+
   <link rel="canonical" href="https://abyss-lab.com/agence-abyss-lab.html">
   <link rel="icon" href="assets/favicon.png">
 
@@ -22,10 +27,10 @@
       f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NLQ723SC');
   </script>
-  <!-- End Google Tag Manager -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/couture" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -34,27 +39,27 @@
 
   <style>
     :root {
-      --agency-white: #fff;
-      --agency-soft: rgba(255,255,255,.84);
-      --agency-muted: rgba(255,255,255,.65);
-      --agency-line: rgba(255,255,255,.22);
-      --agency-darkness: .42;
-      --agency-progress: 0;
-      --agency-header-height: 76px;
+      --abyss-soft: rgba(255,255,255,.86);
+      --abyss-muted: rgba(255,255,255,.66);
+      --abyss-line: rgba(255,255,255,.23);
+      --abyss-darkness: .40;
+      --abyss-progress: 0;
+      --abyss-header: 76px;
     }
 
     html {
-      scroll-behavior: smooth;
       overflow-x: clip;
-      scroll-padding-top: calc(var(--agency-header-height) + 24px);
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--abyss-header) + 20px);
     }
 
     body.agency-page {
       margin: 0;
+      padding-bottom: 108px;
+      overflow-x: clip;
       background: #000;
       color: #fff;
       font-family: "Montserrat", sans-serif;
-      overflow-x: clip;
       isolation: isolate;
     }
 
@@ -74,7 +79,7 @@
       position: fixed;
       top: -100px;
       left: 16px;
-      z-index: 2000;
+      z-index: 3000;
       padding: 12px 18px;
       background: #fff;
       color: #041332;
@@ -84,7 +89,8 @@
       top: 12px;
     }
 
-    /* Fond d'eau : assombrissement progressif au scroll */
+    /* EAU ET PROFONDEUR */
+
     .agency-ocean {
       position: fixed;
       inset: 0;
@@ -106,32 +112,29 @@
       position: absolute;
       inset: 0;
       background: #000;
-      opacity: var(--agency-darkness);
+      opacity: var(--abyss-darkness);
     }
 
-    .agency-motion {
+    .agency-watermarks {
       position: fixed;
-      right: 16px;
-      bottom: 16px;
-      z-index: 20;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 38px;
-      height: 38px;
-      padding: 0;
-      border: 1px solid rgba(255,255,255,.35);
-      border-radius: 50%;
-      color: #fff;
-      background: rgba(0,0,0,.55);
-      cursor: pointer;
+      top: calc(var(--abyss-header) + 25px);
+      bottom: 130px;
+      right: 15px;
+      z-index: 0;
+      width: 12px;
+      opacity: .28;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,.7) 0,
+        rgba(255,255,255,.7) 1px,
+        transparent 1px,
+        transparent 20px
+      );
     }
 
-    .agency-motion[hidden] {
-      display: none;
-    }
+    /* MENU STICKY */
 
-    /* Menu commun */
     .agency-page .navbar {
       position: sticky !important;
       top: 0;
@@ -157,17 +160,17 @@
     }
 
     .agency-page .navbar-brand {
-      color: #fff;
       font-size: 1.25rem;
       font-weight: 800;
       letter-spacing: .025em;
+      color: #fff;
     }
 
     .agency-page .nav-link {
       font-family: "couture", sans-serif;
       font-size: .78rem;
-      letter-spacing: .13em;
-      color: var(--agency-soft) !important;
+      letter-spacing: .12em;
+      color: var(--abyss-soft) !important;
     }
 
     .agency-page .nav-link:hover,
@@ -175,7 +178,8 @@
       color: #fff !important;
     }
 
-    /* Lecture et rythme */
+    /* TEXTE ET ESPACEMENTS */
+
     .agency-main {
       position: relative;
       z-index: 1;
@@ -183,25 +187,23 @@
 
     .agency-main section {
       position: relative;
-      padding: 42px 0;
+      padding: 40px 0;
       background: transparent;
-      scroll-margin-top: calc(var(--agency-header-height) + 20px);
     }
 
     .agency-main .agency-hero {
-      padding-top: 64px;
-      padding-bottom: 38px;
+      padding-top: 58px;
+      padding-bottom: 26px;
     }
 
     .agency-label {
       display: block;
       margin-bottom: 16px;
-      color: var(--agency-muted);
-      font-size: .67rem;
+      color: var(--abyss-muted);
+      font-size: .65rem;
       font-weight: 700;
       line-height: 1.7;
-      letter-spacing: .15em;
-      text-transform: uppercase;
+      letter-spacing: .14em;
     }
 
     .agency-main h1,
@@ -215,17 +217,16 @@
     }
 
     .agency-main h1 {
-      max-width: 1100px;
       margin: 0 0 22px;
       font-size: 2.78rem;
-      line-height: 1.15;
-      letter-spacing: .045em;
+      line-height: 1.17;
+      letter-spacing: .04em;
     }
 
     .agency-main h2 {
       margin: 0 0 20px;
       font-size: clamp(1.4rem, 2.4vw, 2rem);
-      line-height: 1.22;
+      line-height: 1.25;
       letter-spacing: .035em;
     }
 
@@ -233,12 +234,12 @@
       margin: 0 0 12px;
       font-size: 1rem;
       line-height: 1.4;
-      letter-spacing: .035em;
+      letter-spacing: .03em;
     }
 
     .agency-main p {
       margin: 0 0 16px;
-      color: var(--agency-soft);
+      color: var(--abyss-soft);
       font-size: .96rem;
       line-height: 1.85;
     }
@@ -252,109 +253,229 @@
       font-weight: 700;
     }
 
-    .agency-intro {
-      max-width: 850px;
-    }
-
     .agency-main .agency-promise {
-      margin-bottom: 12px;
-      font-size: 1.08rem;
+      margin-bottom: 14px;
+      font-size: 1.06rem;
       font-weight: 600;
       color: #fff;
     }
+
+    /* TOUS LES CTA EN BOUTONS */
 
     .agency-actions {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 20px 28px;
-      margin-top: 26px;
+      gap: 12px;
+      margin-top: 24px;
     }
 
     .agency-button {
       display: inline-flex;
-      align-items: center;
       justify-content: center;
-      gap: 18px;
+      align-items: center;
       min-height: 46px;
-      padding: 13px 22px;
+      padding: 13px 23px;
       border: 1px solid rgba(255,255,255,.85);
       border-radius: 999px;
-      color: #fff;
       background: transparent;
+      color: #fff;
       text-decoration: none;
+      text-align: center;
+      font-family: "Montserrat", sans-serif;
       font-size: .65rem;
       font-weight: 800;
-      letter-spacing: .08em;
       line-height: 1.5;
-      text-align: center;
+      letter-spacing: .07em;
+      cursor: pointer;
       transition: background .2s ease, color .2s ease;
     }
 
     .agency-button:hover {
-      color: #041332;
       background: #fff;
+      color: #041332;
     }
 
-    .agency-text-link {
-      display: inline-flex;
+    .agency-button-primary {
+      background: #fff;
+      color: #041332;
+    }
+
+    .agency-button-primary:hover {
+      background: #e7f1f5;
+      border-color: #e7f1f5;
+      color: #041332;
+    }
+
+    /* HERO : INVITATION A PLONGER */
+
+    .agency-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 260px;
       align-items: center;
-      gap: 12px;
-      min-height: 44px;
-      color: #fff;
-      text-decoration: none;
-      font-size: .65rem;
-      font-weight: 700;
-      letter-spacing: .09em;
+      gap: 45px;
     }
 
-    .agency-text-link:hover {
-      color: #fff;
-      text-decoration: underline;
-      text-underline-offset: 6px;
+    .agency-dive-card {
+      position: relative;
+      text-align: center;
     }
 
-    .agency-dive {
+    .agency-sonar {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 220px;
+      height: 220px;
+      margin: 0 auto 18px;
+      border: 1px solid rgba(255,255,255,.38);
+      border-radius: 50%;
+      background:
+        radial-gradient(circle, rgba(255,255,255,.07), transparent 68%);
+    }
+
+    .agency-sonar::before,
+    .agency-sonar::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .agency-sonar::before {
+      inset: 18px;
+    }
+
+    .agency-sonar::after {
+      inset: 0;
+      animation: agency-sonar-pulse 3.2s ease-out infinite;
+    }
+
+    .agency-sonar-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .agency-sonar-small {
+      display: block;
+      color: var(--abyss-muted);
+      font-size: .55rem;
+      font-weight: 600;
+      letter-spacing: .17em;
+    }
+
+    .agency-sonar-number {
+      display: block;
+      margin: 7px 0;
+      font-size: 2.7rem;
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -.055em;
+    }
+
+    .agency-sonar-number small {
+      font-size: .35em;
+      letter-spacing: 0;
+    }
+
+    .agency-dive-card .agency-button {
+      min-width: 200px;
+    }
+
+    .agency-main .agency-scroll-hint {
+      margin-top: 13px;
+      font-size: .58rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      color: var(--abyss-muted);
+    }
+
+    .agency-scroll-indicator {
+      position: relative;
+      display: block;
+      width: 17px;
+      height: 28px;
+      margin: 12px auto 0;
+      border: 1px solid rgba(255,255,255,.55);
+      border-radius: 12px;
+    }
+
+    .agency-scroll-indicator::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      width: 3px;
+      height: 6px;
+      border-radius: 2px;
+      background: #fff;
+      animation: agency-scroll-dot 1.8s ease-in-out infinite;
+    }
+
+    @keyframes agency-sonar-pulse {
+      0% { transform: scale(.96); opacity: .7; }
+      100% { transform: scale(1.18); opacity: 0; }
+    }
+
+    @keyframes agency-scroll-dot {
+      0%, 100% { transform: translateY(0); opacity: .5; }
+      50% { transform: translateY(8px); opacity: 1; }
+    }
+
+    /* BALISES DE PROFONDEUR */
+
+    .agency-stage {
       display: flex;
       align-items: center;
-      gap: 12px;
-      width: fit-content;
-      min-height: 44px;
-      margin-top: 24px;
-      color: var(--agency-soft);
-      font-size: .59rem;
-      font-weight: 600;
-      letter-spacing: .15em;
-      text-decoration: none;
+      gap: 14px;
+      margin-bottom: 24px;
     }
 
-    .agency-dive:hover {
+    .agency-stage-depth {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      min-width: 82px;
+      min-height: 34px;
+      padding: 7px 12px;
+      border: 1px solid rgba(255,255,255,.45);
+      border-radius: 999px;
       color: #fff;
+      font-size: .68rem;
+      font-weight: 500;
+      font-variant-numeric: tabular-nums;
     }
 
-    .agency-dive span {
-      font-size: 1.3rem;
-      animation: agency-arrow 2s ease-in-out infinite;
+    .agency-stage-name {
+      color: var(--abyss-muted);
+      font-size: .6rem;
+      font-weight: 700;
+      line-height: 1.5;
+      letter-spacing: .12em;
     }
 
-    @keyframes agency-arrow {
-      0%, 100% { transform: translateY(-3px); }
-      50% { transform: translateY(4px); }
+    .agency-stage::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--abyss-line);
     }
 
-    /* Compteurs homogènes */
+    /* CHIFFRES */
+
     .agency-main .agency-proof {
-      padding-top: 10px;
-      padding-bottom: 30px;
+      padding-top: 26px;
+      padding-bottom: 26px;
     }
 
     .agency-stats {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 24px;
-      padding: 30px 0;
-      border-top: 1px solid var(--agency-line);
-      border-bottom: 1px solid var(--agency-line);
+      padding: 18px 0 28px;
+      border-bottom: 1px solid var(--abyss-line);
     }
 
     .agency-stat {
@@ -363,8 +484,8 @@
 
     .agency-number {
       display: flex;
-      justify-content: center;
       align-items: baseline;
+      justify-content: center;
       gap: 3px;
       margin-bottom: 12px;
       color: #fff;
@@ -375,8 +496,8 @@
       font-variant-numeric: tabular-nums;
       line-height: 1.1;
       letter-spacing: -.04em;
-      -webkit-text-stroke: 0;
       text-shadow: none;
+      -webkit-text-stroke: 0;
     }
 
     .agency-number small {
@@ -387,30 +508,31 @@
 
     .agency-stat-label {
       display: block;
-      font-size: .68rem;
+      font-size: .67rem;
       font-weight: 700;
       line-height: 1.65;
-      letter-spacing: .045em;
+      letter-spacing: .04em;
     }
 
     .agency-main .agency-stat-note {
       margin: 12px 0 0;
-      color: var(--agency-muted);
+      color: var(--abyss-muted);
       font-size: .65rem;
       line-height: 1.7;
     }
 
-    /* Portrait intégral : aucun recadrage */
+    /* PORTRAIT : COPYRIGHT TOUJOURS VISIBLE */
+
     .agency-founder {
       display: grid;
       grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
       align-items: start;
-      gap: clamp(28px, 5vw, 66px);
+      gap: clamp(28px, 5vw, 60px);
     }
 
     .agency-portrait {
-      display: block;
       position: relative;
+      display: block;
       width: 100%;
       height: auto;
       margin: 0;
@@ -445,73 +567,70 @@
       justify-content: space-between;
       gap: 6px 18px;
       margin-top: 12px;
-      color: var(--agency-muted);
-      font-size: .61rem;
+      color: var(--abyss-muted);
+      font-size: .6rem;
       line-height: 1.7;
     }
 
     .agency-main .agency-founder-name {
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      color: #fff;
       font-size: .7rem;
       font-weight: 700;
-      line-height: 1.7;
+      line-height: 1.8;
       letter-spacing: .06em;
-      color: #fff;
     }
 
     .agency-founder-note {
-      margin-top: 22px;
+      margin-top: 20px;
       padding-top: 18px;
-      border-top: 1px solid var(--agency-line);
+      border-top: 1px solid var(--abyss-line);
     }
 
-    /* Adresses : expérience de la fondatrice */
+    /* REFERENCES */
+
     .agency-addresses {
       margin-top: 30px;
       padding-top: 26px;
-      border-top: 1px solid var(--agency-line);
+      border-top: 1px solid var(--abyss-line);
     }
 
     .agency-main .agency-addresses h3 {
-      margin-bottom: 10px;
-      font-size: .9rem;
+      font-size: 1rem;
     }
 
     .agency-main .agency-addresses p {
-      max-width: 800px;
-      font-size: .82rem;
+      font-size: .83rem;
     }
 
     .agency-brand-list {
       display: flex;
       flex-wrap: wrap;
       gap: 12px 26px;
-      margin: 22px 0 14px;
+      margin: 20px 0;
       padding: 0;
       list-style: none;
     }
 
     .agency-brand-list li {
+      color: #fff;
       font-family: "couture", "Montserrat", sans-serif;
       font-size: .78rem;
       line-height: 1.8;
-      letter-spacing: .045em;
-      color: #fff;
+      letter-spacing: .04em;
     }
 
-    /* Un accompagnement lisible */
+    /* CHAMP D'ACTION */
+
     .agency-section-heading {
       display: grid;
       grid-template-columns: 1.1fr .9fr;
       align-items: end;
-      gap: 24px 60px;
+      gap: 24px 50px;
       margin-bottom: 26px;
     }
 
-    .agency-section-heading h2 {
-      margin-bottom: 0;
-    }
-
+    .agency-section-heading h2,
     .agency-section-heading p {
       margin-bottom: 0;
     }
@@ -527,31 +646,30 @@
       grid-template-columns: 38px minmax(0, 1fr);
       gap: 14px;
       padding: 24px 0;
-      border-top: 1px solid var(--agency-line);
+      border-top: 1px solid var(--abyss-line);
     }
 
     .agency-step-index {
       padding-top: 3px;
-      color: var(--agency-muted);
+      color: var(--abyss-muted);
       font-family: "Montserrat", sans-serif;
       font-size: .85rem;
       font-weight: 500;
       font-style: normal;
-      -webkit-text-stroke: 0;
       text-shadow: none;
+      -webkit-text-stroke: 0;
     }
 
     .agency-step p {
       font-size: .88rem;
     }
 
-    /* Fonctionnement de l'agence */
+    /* COLLECTIF */
+
     .agency-crew {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 28px 60px;
-      padding-top: 30px;
-      border-top: 1px solid var(--agency-line);
     }
 
     .agency-crew-list {
@@ -561,8 +679,8 @@
     }
 
     .agency-crew-list li {
-      padding: 16px 0;
-      border-bottom: 1px solid var(--agency-line);
+      padding: 17px 0;
+      border-bottom: 1px solid var(--abyss-line);
     }
 
     .agency-crew-list li:first-child {
@@ -570,7 +688,7 @@
     }
 
     .agency-crew-list h3 {
-      margin-bottom: 7px;
+      margin-bottom: 8px;
       font-size: .8rem;
     }
 
@@ -578,14 +696,21 @@
       font-size: .86rem;
     }
 
+    /* CONTACT */
+
     .agency-main .agency-contact {
-      padding-top: 40px;
       padding-bottom: 54px;
+    }
+
+    .agency-contact-inner {
+      max-width: 850px;
+      margin: 0 auto;
+      padding-top: 12px;
       text-align: center;
     }
 
-    .agency-contact p {
-      max-width: 720px;
+    .agency-contact-inner p {
+      max-width: 700px;
       margin-right: auto;
       margin-left: auto;
     }
@@ -594,97 +719,149 @@
       justify-content: center;
     }
 
-    .agency-back {
-      display: block;
-      width: fit-content;
-      margin: 22px auto 0;
-      padding: 10px;
-      color: var(--agency-muted);
-      font-size: .6rem;
-      letter-spacing: .08em;
-      text-decoration: none;
-    }
+    /* CONSOLE DE PLONGEE */
 
-    .agency-back:hover {
-      color: #fff;
-    }
-
-    /* Jauge : la profondeur est une métaphore de lecture */
-    .agency-depth {
+    .agency-dive-console {
       position: fixed;
-      top: calc(var(--agency-header-height) + 16px);
-      right: 14px;
-      z-index: 10;
-      color: rgba(255,255,255,.8);
-      font-size: .58rem;
+      right: 20px;
+      bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+      left: 20px;
+      z-index: 1020;
+      display: grid;
+      grid-template-columns: 125px minmax(0, 1fr) auto 36px;
+      align-items: center;
+      gap: 22px;
+      width: calc(100% - 40px);
+      max-width: 930px;
+      margin-inline: auto;
+      padding: 13px 18px;
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 22px;
+      background: rgba(0,0,0,.84);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 10px 35px rgba(0,0,0,.25);
+    }
+
+    .agency-console-caption {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--abyss-muted);
+      font-size: .48rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+    }
+
+    .agency-console-depth {
+      display: block;
+      color: #fff;
+      font-size: 1.35rem;
+      font-weight: 500;
+      line-height: 1.2;
       font-variant-numeric: tabular-nums;
-      letter-spacing: .08em;
+    }
+
+    .agency-console-chapter {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--abyss-soft);
+      font-size: .55rem;
+      font-weight: 600;
+      letter-spacing: .07em;
+    }
+
+    .agency-console-track {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 24px;
+    }
+
+    .agency-console-track::before,
+    .agency-console-track::after {
+      content: "";
+      position: absolute;
+      right: 12px;
+      left: 12px;
+      top: 11px;
+      height: 2px;
+      background: rgba(255,255,255,.25);
       pointer-events: none;
     }
 
-    .agency-depth small {
-      display: block;
-      margin-top: 3px;
-      font-size: .43rem;
-      letter-spacing: .12em;
-      text-align: right;
-      opacity: .75;
+    .agency-console-track::after {
+      background: #fff;
+      transform: scaleX(var(--abyss-progress));
+      transform-origin: left;
     }
 
-    .agency-depth-nav {
+    .agency-console-stop {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .agency-console-stop::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      background: #151b20;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .agency-console-stop.is-reached::before {
+      background: #fff;
+    }
+
+    .agency-console-stop[aria-current="location"]::before {
+      transform: scale(1.5);
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(255,255,255,.12);
+    }
+
+    .agency-console-next {
+      min-width: 155px;
+      min-height: 40px;
+      padding: 10px 15px;
+      font-size: .58rem;
+    }
+
+    .agency-motion {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      padding: 0;
+      border: 1px solid rgba(255,255,255,.4);
+      border-radius: 50%;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .agency-motion[hidden] {
       display: none;
     }
 
-    @media (min-width: 1500px) {
-      .agency-depth-nav {
-        position: fixed;
-        top: 50%;
-        left: 20px;
-        z-index: 20;
-        display: grid;
-        gap: 20px;
-        padding-left: 16px;
-        transform: translateY(-50%);
-      }
+    /* FOOTER COMMUN */
 
-      .agency-depth-nav::before,
-      .agency-depth-nav::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 1px;
-        height: 100%;
-        background: rgba(255,255,255,.22);
-      }
-
-      .agency-depth-nav::after {
-        background: #fff;
-        transform-origin: top;
-        transform: scaleY(var(--agency-progress));
-      }
-
-      .agency-depth-nav a {
-        padding: 5px 0;
-        color: var(--agency-muted);
-        text-decoration: none;
-        font-size: .52rem;
-        font-weight: 600;
-        letter-spacing: .08em;
-      }
-
-      .agency-depth-nav a[aria-current="location"],
-      .agency-depth-nav a:hover {
-        color: #fff;
-      }
-    }
-
-    /* Footer commun */
     .agency-page .footer {
       position: relative;
       z-index: 1;
-      border-top: 1px solid rgba(255,255,255,.14);
       padding: 28px 0 14px;
+      border-top: 1px solid rgba(255,255,255,.14);
       background: transparent;
     }
 
@@ -702,23 +879,23 @@
     }
 
     .agency-page .footer-tagline {
-      margin: 0;
       max-width: 640px;
+      margin: 0;
       font-size: .93rem;
-      line-height: 1.66;
       font-weight: 600;
+      line-height: 1.66;
     }
 
     .agency-page .footer-location {
       margin-top: 10px;
-      color: var(--agency-soft);
+      color: var(--abyss-soft);
       font-size: .92rem;
       line-height: 1.68;
     }
 
     .agency-page .footer-social-title {
       margin-bottom: 14px;
-      color: var(--agency-soft);
+      color: var(--abyss-soft);
       font-size: .85rem;
     }
 
@@ -749,10 +926,10 @@
 
     .agency-page .footer-menu a {
       color: #fff;
-      text-decoration: none;
       font-size: .93rem;
       font-weight: 600;
       letter-spacing: .10em;
+      text-decoration: none;
       text-transform: uppercase;
     }
 
@@ -777,9 +954,21 @@
 
     .agency-page .footer-legal a,
     .agency-page .footer-copy {
-      color: var(--agency-muted);
+      color: var(--abyss-muted);
       font-size: .82rem;
       text-decoration: none;
+    }
+
+    @media (max-width: 1199.98px) {
+      .agency-hero-grid {
+        grid-template-columns: minmax(0,1fr) 220px;
+        gap: 30px;
+      }
+
+      .agency-sonar {
+        width: 190px;
+        height: 190px;
+      }
     }
 
     @media (max-width: 991.98px) {
@@ -797,8 +986,38 @@
         padding: 10px 0;
       }
 
-      .agency-founder {
+      .agency-hero-grid {
+        grid-template-columns: 1fr;
         gap: 30px;
+      }
+
+      .agency-dive-card {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 22px;
+        text-align: left;
+      }
+
+      .agency-sonar {
+        flex: 0 0 auto;
+        width: 140px;
+        height: 140px;
+        margin: 0;
+        text-align: center;
+      }
+
+      .agency-sonar-number {
+        font-size: 2rem;
+      }
+
+      .agency-sonar-small {
+        font-size: .45rem;
+      }
+
+      .agency-scroll-indicator {
+        display: none;
       }
 
       .agency-section-heading,
@@ -807,19 +1026,23 @@
         gap: 24px;
       }
 
-      .agency-section-heading {
-        align-items: start;
+      .agency-founder {
+        gap: 30px;
       }
     }
 
     @media (max-width: 767.98px) {
+      body.agency-page {
+        padding-bottom: calc(140px + env(safe-area-inset-bottom, 0px));
+      }
+
       .agency-main section {
         padding: 30px 0;
       }
 
       .agency-main .agency-hero {
-        padding-top: 58px;
-        padding-bottom: 28px;
+        padding-top: 42px;
+        padding-bottom: 18px;
       }
 
       .agency-main h1 {
@@ -844,18 +1067,69 @@
 
       .agency-label {
         font-size: .58rem;
-        letter-spacing: .12em;
+        letter-spacing: .1em;
       }
 
       .agency-actions {
-        gap: 12px 20px;
         margin-top: 20px;
       }
 
+      .agency-dive-card {
+        gap: 17px;
+      }
+
+      .agency-sonar {
+        width: 112px;
+        height: 112px;
+      }
+
+      .agency-sonar::before {
+        inset: 10px;
+      }
+
+      .agency-sonar-number {
+        font-size: 1.6rem;
+      }
+
+      .agency-sonar-small {
+        font-size: .4rem;
+      }
+
+      .agency-dive-card .agency-button {
+        min-width: 0;
+        padding-inline: 16px;
+        font-size: .58rem;
+      }
+
+      .agency-main .agency-scroll-hint {
+        max-width: 165px;
+        font-size: .5rem;
+        line-height: 1.7;
+      }
+
+      .agency-watermarks {
+        right: 3px;
+        width: 6px;
+        opacity: .18;
+      }
+
+      .agency-stage {
+        gap: 10px;
+        margin-bottom: 22px;
+      }
+
+      .agency-stage-depth {
+        min-width: 74px;
+        font-size: .62rem;
+      }
+
+      .agency-stage-name {
+        font-size: .52rem;
+      }
+
       .agency-stats {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 26px 16px;
-        padding: 24px 0;
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        gap: 25px 16px;
       }
 
       .agency-number {
@@ -890,6 +1164,56 @@
         padding: 20px 0;
       }
 
+      .agency-dive-console {
+        right: 10px;
+        left: 10px;
+        bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+        grid-template-columns: 88px minmax(0,1fr) 30px;
+        gap: 9px 12px;
+        width: calc(100% - 20px);
+        padding: 11px 14px;
+        border-radius: 18px;
+      }
+
+      .agency-console-reading {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .agency-console-navigation {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .agency-console-depth {
+        font-size: 1.15rem;
+      }
+
+      .agency-console-caption {
+        font-size: .4rem;
+      }
+
+      .agency-console-chapter {
+        font-size: .48rem;
+        margin-bottom: 4px;
+      }
+
+      .agency-console-next {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        width: 100%;
+        min-height: 34px;
+        padding: 7px 12px;
+        font-size: .55rem;
+      }
+
+      .agency-motion {
+        grid-column: 3;
+        grid-row: 1;
+        width: 30px;
+        height: 30px;
+      }
+
       .agency-page .footer-menu {
         grid-template-columns: repeat(2,1fr);
       }
@@ -897,19 +1221,24 @@
       .agency-page .footer-bottom-inner {
         grid-template-columns: 1fr;
       }
-
-      .agency-page .footer-copy {
-        padding-right: 38px;
-      }
     }
 
     @media (max-width: 380px) {
+      .agency-number {
+        font-size: 2.8rem;
+      }
+
       .agency-page .footer-menu {
         grid-template-columns: 1fr;
       }
 
-      .agency-number {
-        font-size: 2.8rem;
+      .agency-dive-card {
+        gap: 12px;
+      }
+
+      .agency-sonar {
+        width: 100px;
+        height: 100px;
       }
     }
 
@@ -918,12 +1247,14 @@
         scroll-behavior: auto;
       }
 
-      .agency-dive span {
+      .agency-sonar::after,
+      .agency-scroll-indicator::before {
         animation: none;
       }
 
+      .agency-button,
       .agency-page .navbar,
-      .agency-button {
+      .agency-console-stop::before {
         transition: none;
       }
     }
@@ -941,7 +1272,6 @@
       title="Google Tag Manager">
     </iframe>
   </noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
   <a class="agency-skip" href="#surface">Aller au contenu</a>
 
@@ -959,14 +1289,7 @@
     </video>
   </div>
 
-  <button
-    class="agency-motion"
-    id="agency-motion"
-    type="button"
-    aria-label="Mettre le fond animé en pause"
-    hidden>
-    <i class="bi bi-pause" aria-hidden="true"></i>
-  </button>
+  <div class="agency-watermarks" aria-hidden="true"></div>
 
   <nav
     class="navbar navbar-expand-lg navbar-dark py-3"
@@ -1000,7 +1323,9 @@
             <a
               class="nav-link active"
               href="agence-abyss-lab.html"
-              aria-current="page">L'AGENCE</a>
+              aria-current="page">
+              L'AGENCE
+            </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="services.html">SERVICES</a>
@@ -1016,77 +1341,97 @@
     </div>
   </nav>
 
-  <div class="agency-depth" aria-hidden="true">
-    <span id="agency-depth-value">0 m</span>
-    <small>PROFONDEUR</small>
-  </div>
-
-  <nav class="agency-depth-nav" aria-label="Chapitres de la page">
-    <a href="#surface" aria-current="location">SURFACE</a>
-    <a href="#preuves">EXPERIENCE</a>
-    <a href="#direction">IMMERSION</a>
-    <a href="#expertises">ACTION</a>
-    <a href="#collectif">EQUIPAGE</a>
-    <a href="#rencontre">RENCONTRE</a>
-  </nav>
-
   <main class="agency-main">
     <section
       class="agency-hero"
       id="surface"
+      data-depth="0"
+      data-chapter="LA SURFACE"
       aria-labelledby="agency-title">
       <div class="container">
-        <span class="agency-label">
-          DIRECTION MARKETING & COMMUNICATION EXTERNALISEE
-        </span>
+        <div class="agency-hero-grid">
+          <div>
+            <span class="agency-label">
+              DIRECTION MARKETING & COMMUNICATION EXTERNALISEE
+            </span>
 
-        <h1 id="agency-title">
-          PLONGER DANS VOTRE UNIVERS.<br>
-          FAIRE EMERGER VOTRE DIFFERENCE.
-        </h1>
+            <h1 id="agency-title">
+              VOTRE SINGULARITE EN PROFONDEUR.<br>
+              VOTRE RAYONNEMENT A 360°.
+            </h1>
 
-        <div class="agency-intro">
-          <p class="agency-promise">
-            Votre directrice marketing et communication.
-            De la première intuition à la dernière mise en ligne.
-          </p>
+            <p class="agency-promise">
+              Une directrice marketing et communication
+              qui pense, crée et déploie.
+            </p>
 
-          <p>
-            Comprendre ce qui rend votre marque singulière,
-            lui donner une direction et la faire vivre sur tous ses
-            points de contact. Abyss Lab réunit
-            <strong>stratégie, création et déploiement</strong>
-            dans un même accompagnement, porté par Mathilde Ranchon.
-          </p>
+            <p>
+              Abyss Lab s’immerge dans votre univers pour révéler
+              ce qui vous distingue et lui donner toute sa portée.
+              <strong>Stratégie, image, contenus et activation :</strong>
+              chaque levier avance sous une même direction,
+              de la première idée à sa réalisation.
+            </p>
 
-          <p>
-            Plus de 10 ans dans les univers de
-            <strong>l’art du bon vivre</strong> :
-            hôtellerie, restauration, lieux de vie et marques premium.
-          </p>
+            <p>
+              À la direction, <strong>Mathilde Ranchon</strong> :
+              plus de 10 ans au cœur de l’hôtellerie, de la restauration,
+              des lieux de vie et des marques qui cultivent
+              l’art du bon vivre.
+            </p>
+
+            <div class="agency-actions">
+              <a class="agency-button" href="contact.html">
+                PARLONS DE VOTRE PROJET
+              </a>
+            </div>
+          </div>
+
+          <div class="agency-dive-card">
+            <div class="agency-sonar" aria-hidden="true">
+              <div class="agency-sonar-content">
+                <span class="agency-sonar-small">DESTINATION</span>
+                <span class="agency-sonar-number">
+                  −1 000 <small>m</small>
+                </span>
+                <span class="agency-sonar-small">AU COEUR D'ABYSS</span>
+              </div>
+            </div>
+
+            <div>
+              <a
+                class="agency-button agency-button-primary"
+                href="#preuves">
+                COMMENCER LA PLONGEE
+              </a>
+
+              <p class="agency-scroll-hint">
+                SCROLLEZ POUR EXPLORER LES PROFONDEURS
+              </p>
+
+              <span class="agency-scroll-indicator" aria-hidden="true"></span>
+            </div>
+          </div>
         </div>
-
-        <div class="agency-actions">
-          <a class="agency-button" href="contact.html">
-            PARLONS DE VOTRE PROJET
-            <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
-          </a>
-        </div>
-
-        <a class="agency-dive" href="#preuves">
-          <span aria-hidden="true">↓</span>
-          SCROLLEZ POUR PLONGER
-        </a>
       </div>
     </section>
 
     <section
       class="agency-proof"
       id="preuves"
+      data-depth="200"
+      data-chapter="L'EXPERIENCE"
       aria-label="L’expérience en chiffres">
       <div class="container">
+        <div class="agency-stage" aria-hidden="true">
+          <span class="agency-stage-depth">−200 m</span>
+          <span class="agency-stage-name">L'EXPERIENCE SOUS LA SURFACE</span>
+        </div>
+
         <div class="agency-stats">
-          <div class="agency-stat" aria-label="Plus de 10 ans dans l’art du bon vivre">
+          <div
+            class="agency-stat"
+            aria-label="Plus de 10 ans dans l’art du bon vivre">
             <div class="agency-number" aria-hidden="true">
               <span data-count="10">10</span><small>+</small>
             </div>
@@ -1095,7 +1440,9 @@
             </span>
           </div>
 
-          <div class="agency-stat" aria-label="23 établissements accompagnés">
+          <div
+            class="agency-stat"
+            aria-label="23 établissements accompagnés">
             <div class="agency-number" aria-hidden="true">
               <span data-count="23">23</span>
             </div>
@@ -1113,7 +1460,9 @@
             </span>
           </div>
 
-          <div class="agency-stat" aria-label="Une interlocutrice de A à Z">
+          <div
+            class="agency-stat"
+            aria-label="Une interlocutrice de A à Z">
             <div class="agency-number" aria-hidden="true">
               <span data-count="1">1</span>
             </div>
@@ -1131,17 +1480,27 @@
       </div>
     </section>
 
-    <section id="direction" aria-labelledby="direction-title">
+    <section
+      id="direction"
+      data-depth="400"
+      data-chapter="L'IMMERSION"
+      aria-labelledby="direction-title">
       <div class="container">
+        <div class="agency-stage" aria-hidden="true">
+          <span class="agency-stage-depth">−400 m</span>
+          <span class="agency-stage-name">LA FORCE DERRIERE LA VISION</span>
+        </div>
+
         <div class="agency-founder">
           <figure class="agency-portrait">
             <img
               src="https://res.cloudinary.com/dycdc9tku/image/upload/v1773329727/agence_mathilde_ranchon_jtx26v.jpg"
-              alt="Mathilde Ranchon, fondatrice d’Abyss Lab, photographiée par Michaël Boudot."
+              alt="Mathilde Ranchon, fondatrice d’Abyss Lab. Photographie de Michaël Boudot."
               width="1080"
               height="1080"
               loading="lazy"
               decoding="async">
+
             <figcaption>
               <span>MATHILDE RANCHON / FONDATRICE D'ABYSS LAB</span>
               <span>Photographie © Michaël Boudot</span>
@@ -1149,86 +1508,96 @@
           </figure>
 
           <div>
-            <span class="agency-label">01 / L'IMMERSION</span>
-
             <h2 id="direction-title">
-              LA VISION D'ENSEMBLE.<br>
-              LE SENS DU DETAIL.
+              VOIR LOIN.<br>
+              CONNAITRE LE TERRAIN.
             </h2>
 
             <p class="agency-founder-name">
               MATHILDE RANCHON<br>
-              DIRECTRICE MARKETING & COMMUNICATION EXTERNALISEE
+              VOTRE DIRECTRICE MARKETING & COMMUNICATION EXTERNALISEE
             </p>
 
             <p>
-              Une ouverture à préparer. Une identité à affirmer.
-              Un restaurant à faire connaître. Une communication à
-              faire vivre au quotidien. Derrière chaque marque,
-              il y a une réalité de terrain à comprendre.
+              Lancer une adresse, faire vivre un restaurant,
+              affirmer le caractère d’un hôtel :
+              une marque se construit dans les choix stratégiques
+              comme dans les détails du quotidien.
             </p>
 
             <p>
-              C’est au cœur de ces enjeux que s’est construite
-              l’expérience de Mathilde :
-              <strong>concevoir des stratégies à 360° et en orchestrer
-              personnellement le déploiement</strong>, au contact
-              des dirigeants, des équipes et des partenaires.
+              Cette double exigence façonne le parcours de Mathilde.
+              <strong>Des stratégies à 360° conçues et pilotées
+              personnellement</strong>, des lancements orchestrés,
+              des contenus créés et des équipes coordonnées,
+              au plus près des enjeux de chaque établissement.
             </p>
 
             <div class="agency-founder-note">
               <p>
-                Avec Abyss Lab, cette expérience devient une ressource
-                pour votre entreprise : une directrice impliquée,
-                capable de penser le positionnement, de créer les
-                contenus et de coordonner les actions jusqu’à leur
-                mise en œuvre.
+                Abyss Lab met cette expérience au service de votre marque.
+                Une interlocutrice capable de passer du positionnement
+                au shooting, du plan de communication à la mise en ligne,
+                <strong>avec la même attention portée à l’ensemble
+                et à chaque détail.</strong>
               </p>
             </div>
           </div>
         </div>
 
         <div class="agency-addresses">
-          <h3>DES MAISONS DE CARACTERE. UNE EMPREINTE DANS LE PARCOURS.</h3>
+          <h3>
+            DES ADRESSES QUI MARQUENT.<br>
+            UNE EXPERIENCE QUI FAIT LA DIFFERENCE.
+          </h3>
 
           <p>
-            Parmi les établissements et marques accompagnés
-            au fil du parcours de Mathilde :
+            Parmi les maisons et marques accompagnées au fil
+            du parcours de Mathilde :
           </p>
 
           <ul class="agency-brand-list">
             <li>MONDRIAN BORDEAUX LES CARMES</li>
-            <li>MORIMOTO</li>
-            <li>CHATEAU LEOGNAN</li>
+            <li>MORIMOTO BORDEAUX</li>
+            <li>CHATEAU DE SACY</li>
             <li>BRINDOS, LAC & CHATEAU</li>
             <li>CHATEAU DE THEOULE</li>
             <li>VILLA DES ORANGERS</li>
             <li>GRAND HOTEL DU SOLEIL D'OR</li>
           </ul>
 
-          <a class="agency-text-link" href="references.html">
-            DECOUVRIR LES REFERENCES
-            <span aria-hidden="true">↗</span>
-          </a>
+          <div class="agency-actions">
+            <a class="agency-button" href="references.html">
+              DECOUVRIR LES REFERENCES
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="expertises" aria-labelledby="expertises-title">
+    <section
+      id="expertises"
+      data-depth="600"
+      data-chapter="LE CHAMP D'ACTION"
+      aria-labelledby="expertises-title">
       <div class="container">
-        <span class="agency-label">02 / LE CHAMP D'ACTION</span>
+        <div class="agency-stage" aria-hidden="true">
+          <span class="agency-stage-depth">−600 m</span>
+          <span class="agency-stage-name">DE L'INTENTION A L'IMPACT</span>
+        </div>
 
         <div class="agency-section-heading">
           <h2 id="expertises-title">
-            UNE STRATEGIE EN PROFONDEUR.<br>
-            UNE PRESENCE A 360°.
+            PENSER LA MARQUE.<br>
+            ACTIVER TOUT SON POTENTIEL.
           </h2>
 
           <p>
-            Du premier diagnostic au lancement d’une campagne,
-            chaque action prolonge la même intention :
-            rendre votre marque reconnaissable, désirable
-            et présente auprès des bons publics.
+            Votre positionnement donne le sens.
+            Votre image le rend tangible.
+            Vos actions le font vivre.
+            Abyss Lab relie ces dimensions pour construire
+            une présence cohérente, de A à Z.
           </p>
         </div>
 
@@ -1236,11 +1605,11 @@
           <article class="agency-step">
             <span class="agency-step-index" aria-hidden="true">01</span>
             <div>
-              <h3>COMPRENDRE CE QUI VOUS DISTINGUE</h3>
+              <h3>ALLER AU FOND DES CHOSES</h3>
               <p>
-                Explorer votre univers, vos publics et vos ambitions.
-                Définir le positionnement, les messages et les priorités
-                qui guideront votre marketing et votre communication.
+                Comprendre votre activité, vos publics et vos ambitions.
+                Définir votre positionnement, vos messages et une
+                feuille de route adaptée à vos priorités.
               </p>
             </div>
           </article>
@@ -1248,11 +1617,11 @@
           <article class="agency-step">
             <span class="agency-step-index" aria-hidden="true">02</span>
             <div>
-              <h3>DONNER CORPS A VOTRE MARQUE</h3>
+              <h3>FAIRE EMERGER VOTRE SIGNATURE</h3>
               <p>
-                Traduire cette direction en images, en mots et en
-                expériences : direction artistique, shootings,
-                contenus éditoriaux, supports et présence digitale.
+                Donner une expression à votre singularité :
+                direction artistique, photographie, vidéo,
+                contenus éditoriaux et supports de communication.
               </p>
             </div>
           </article>
@@ -1260,11 +1629,11 @@
           <article class="agency-step">
             <span class="agency-step-index" aria-hidden="true">03</span>
             <div>
-              <h3>AMPLIFIER VOTRE RAYONNEMENT</h3>
+              <h3>ETENDRE VOTRE RAYONNEMENT</h3>
               <p>
-                Articuler site internet, réseaux sociaux, newsletters,
-                campagnes et collaborations. Choisir les leviers utiles
-                et leur donner un rôle dans votre développement.
+                Articuler site internet, référencement, réseaux sociaux,
+                newsletters, campagnes et collaborations pour toucher
+                les bons publics avec les bons messages.
               </p>
             </div>
           </article>
@@ -1272,71 +1641,78 @@
           <article class="agency-step">
             <span class="agency-step-index" aria-hidden="true">04</span>
             <div>
-              <h3>FAIRE AVANCER CHAQUE SUJET</h3>
+              <h3>GARDER LA MAIN SUR L'ENSEMBLE</h3>
               <p>
                 Organiser le calendrier, coordonner les intervenants,
-                suivre les budgets et les résultats. Ajuster les actions
-                et garder le projet en mouvement.
+                suivre les budgets et les résultats.
+                Faire avancer les actions et ajuster les priorités.
               </p>
             </div>
           </article>
         </div>
 
-        <a class="agency-text-link" href="services.html">
-          EXPLORER LES ACCOMPAGNEMENTS
-          <span aria-hidden="true">↗</span>
-        </a>
+        <div class="agency-actions">
+          <a class="agency-button" href="services.html">
+            EXPLORER LES ACCOMPAGNEMENTS
+          </a>
+        </div>
       </div>
     </section>
 
-    <section id="collectif" aria-labelledby="collectif-title">
+    <section
+      id="collectif"
+      data-depth="800"
+      data-chapter="L'EQUIPAGE"
+      aria-labelledby="collectif-title">
       <div class="container">
+        <div class="agency-stage" aria-hidden="true">
+          <span class="agency-stage-depth">−800 m</span>
+          <span class="agency-stage-name">LES TALENTS DANS LE MEME SILLAGE</span>
+        </div>
+
         <div class="agency-crew">
           <div>
-            <span class="agency-label">03 / L'EQUIPAGE</span>
-
             <h2 id="collectif-title">
-              UN POINT D'ANCRAGE.<br>
-              LES TALENTS A LA MESURE.
+              UNE CHEFFE D'ORCHESTRE.<br>
+              UN EQUIPAGE SUR MESURE.
             </h2>
 
             <p>
-              <strong>Mathilde reste votre interlocutrice,
-              quelle que soit l’ampleur du projet.</strong>
-              Elle prend en charge la stratégie et la réalisation,
-              puis compose, lorsque la mission le demande,
-              une équipe de spécialistes.
+              <strong>Un projet porté de bout en bout,
+              avec les compétences qu’il mérite.</strong>
+              Mathilde assure la stratégie et la réalisation,
+              puis s’entoure, selon l’ampleur de la mission,
+              de partenaires sélectionnés pour leur expertise.
             </p>
 
             <p>
               Photographes, vidéastes, designers, développeurs,
-              experts en acquisition ou relations presse :
-              les partenaires sont sélectionnés pour leur savoir-faire
-              et leur pertinence pour votre marque.
+              spécialistes de l’acquisition ou des relations presse :
+              les talents sont réunis autour de votre projet,
+              avec une direction commune et une coordination centralisée.
             </p>
           </div>
 
           <ul class="agency-crew-list">
             <li>
-              <h3>UNE IMMERSION DANS VOTRE ENTREPRISE</h3>
+              <h3>UNE INTERLOCUTRICE QUI CONNAIT VOTRE UNIVERS</h3>
               <p>
-                Comprendre votre activité, travailler avec vos équipes
-                et intégrer vos contraintes au quotidien.
+                Vos objectifs, vos équipes et vos contraintes
+                restent au cœur de chaque décision.
               </p>
             </li>
             <li>
-              <h3>UNE EQUIPE COMPOSEE POUR LA MISSION</h3>
+              <h3>LES BONNES EXPERTISES AU BON MOMENT</h3>
               <p>
-                Mobiliser les bonnes compétences au bon moment,
-                selon vos objectifs, votre calendrier et votre budget.
+                Une équipe dimensionnée selon les besoins,
+                le calendrier et le budget de la mission.
               </p>
             </li>
             <li>
-              <h3>UN MEME FIL DU DEBUT A LA FIN</h3>
+              <h3>UNE CONTINUITE DE LA VISION A L'EXECUTION</h3>
               <p>
-                Centraliser les échanges et les arbitrages,
-                suivre les livrables et préserver la cohérence
-                de chaque prise de parole.
+                Des échanges centralisés, des livrables suivis
+                et une cohérence préservée jusqu’au déploiement.
               </p>
             </li>
           </ul>
@@ -1347,32 +1723,36 @@
     <section
       class="agency-contact"
       id="rencontre"
+      data-depth="1000"
+      data-chapter="VOTRE PROJET"
       aria-labelledby="rencontre-title">
       <div class="container">
-        <span class="agency-label">04 / LA RENCONTRE</span>
-
-        <h2 id="rencontre-title">
-          VOTRE PROCHAIN CHAPITRE<br>
-          COMMENCE EN PROFONDEUR.
-        </h2>
-
-        <p>
-          Une adresse à lancer, une marque à affirmer,
-          une communication à reprendre en main ?
-          Parlons de votre réalité, de vos ambitions
-          et de ce qu’il faut mettre en place pour avancer.
-        </p>
-
-        <div class="agency-actions">
-          <a class="agency-button" href="contact.html">
-            PARLONS DE VOTRE PROJET
-            <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
-          </a>
+        <div class="agency-stage" aria-hidden="true">
+          <span class="agency-stage-depth">−1 000 m</span>
+          <span class="agency-stage-name">LE POINT DE DEPART DE VOTRE PROJET</span>
         </div>
 
-        <a class="agency-back" href="#surface">
-          REMONTER A LA SURFACE ↑
-        </a>
+        <div class="agency-contact-inner">
+          <h2 id="rencontre-title">
+            VOUS AVEZ L'AMBITION.<br>
+            DONNONS-LUI TOUTE SA PORTEE.
+          </h2>
+
+          <p>
+            Une adresse à lancer, une marque à affirmer,
+            une communication à reprendre en main ?
+            Parlons de votre réalité et de ce qu’il faut
+            mettre en mouvement pour la faire rayonner.
+          </p>
+
+          <div class="agency-actions">
+            <a
+              class="agency-button agency-button-primary"
+              href="contact.html">
+              PARLONS DE VOTRE PROJET
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -1460,6 +1840,83 @@
     </div>
   </footer>
 
+  <!-- Console interactive de progression -->
+  <aside
+    class="agency-dive-console"
+    aria-label="Console de plongée dans la page">
+    <div class="agency-console-reading" aria-hidden="true">
+      <span class="agency-console-caption">VOTRE PROFONDEUR</span>
+      <span class="agency-console-depth" id="agency-depth-value">
+        0 m
+      </span>
+    </div>
+
+    <div class="agency-console-navigation">
+      <span
+        class="agency-console-chapter"
+        id="agency-current-chapter"
+        aria-hidden="true">
+        LA SURFACE
+      </span>
+
+      <nav class="agency-console-track" aria-label="Paliers de la plongée">
+        <a
+          class="agency-console-stop"
+          href="#surface"
+          aria-label="Surface : présentation"
+          aria-current="location"
+          title="Surface">
+        </a>
+        <a
+          class="agency-console-stop"
+          href="#preuves"
+          aria-label="Moins 200 mètres : l’expérience en chiffres"
+          title="−200 m : l’expérience">
+        </a>
+        <a
+          class="agency-console-stop"
+          href="#direction"
+          aria-label="Moins 400 mètres : Mathilde Ranchon"
+          title="−400 m : l’immersion">
+        </a>
+        <a
+          class="agency-console-stop"
+          href="#expertises"
+          aria-label="Moins 600 mètres : le champ d’action"
+          title="−600 m : le champ d’action">
+        </a>
+        <a
+          class="agency-console-stop"
+          href="#collectif"
+          aria-label="Moins 800 mètres : l’équipage"
+          title="−800 m : l’équipage">
+        </a>
+        <a
+          class="agency-console-stop"
+          href="#rencontre"
+          aria-label="Moins 1000 mètres : votre projet"
+          title="−1 000 m : votre projet">
+        </a>
+      </nav>
+    </div>
+
+    <a
+      class="agency-button agency-console-next"
+      id="agency-next"
+      href="#preuves">
+      PLONGER A −200 M
+    </a>
+
+    <button
+      class="agency-motion"
+      id="agency-motion"
+      type="button"
+      aria-label="Mettre les animations en pause"
+      hidden>
+      <i class="bi bi-pause" aria-hidden="true"></i>
+    </button>
+  </aside>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
@@ -1470,84 +1927,160 @@
       const header = document.getElementById("agency-header");
       const menu = document.getElementById("navmenu");
       const toggler = header.querySelector(".navbar-toggler");
-      const depthLabel = document.getElementById("agency-depth-value");
       const main = document.querySelector(".agency-main");
-      const sections = Array.from(main.querySelectorAll("section[id]"));
-      const chapterLinks = Array.from(
-        document.querySelectorAll(".agency-depth-nav a")
+
+      const sections = Array.from(
+        main.querySelectorAll("section[data-depth]")
       );
+
+      const depthLabel = document.getElementById("agency-depth-value");
+      const chapterLabel = document.getElementById("agency-current-chapter");
+      const nextButton = document.getElementById("agency-next");
+
+      const stops = Array.from(
+        document.querySelectorAll(".agency-console-stop")
+      );
+
       const motionPreference = window.matchMedia(
         "(prefers-reduced-motion: reduce)"
       );
 
-      let updatePending = false;
+      let framePending = false;
+      let sectionPositions = [];
+      let headerHeight = 76;
 
-      function updatePage() {
-        updatePending = false;
-
-        const scrollY = Math.max(0, window.scrollY);
-        const headerHeight = header.getBoundingClientRect().height;
+      function measurePage() {
+        headerHeight = header.getBoundingClientRect().height;
 
         root.style.setProperty(
-          "--agency-header-height",
+          "--abyss-header",
           `${headerHeight}px`
         );
 
+        const scrollY = window.scrollY;
+        const maxScroll = Math.max(
+          0,
+          document.documentElement.scrollHeight - window.innerHeight
+        );
+
+        sectionPositions = sections.map((section, index) => {
+          if (index === 0) return 0;
+
+          const position =
+            section.getBoundingClientRect().top +
+            scrollY -
+            headerHeight -
+            20;
+
+          return Math.min(maxScroll, Math.max(0, position));
+        });
+
+        requestUpdate();
+      }
+
+      function updatePage() {
+        framePending = false;
+
+        const scrollY = Math.max(0, window.scrollY);
         header.classList.toggle("scrolled", scrollY > 20);
 
-        const mainTop = main.getBoundingClientRect().top + scrollY;
-        const mainBottom = mainTop + main.offsetHeight;
-        const travel = Math.max(1, mainBottom - window.innerHeight);
-        const progress = Math.min(1, Math.max(0, scrollY / travel));
+        let activeIndex = 0;
+
+        sectionPositions.forEach((position, index) => {
+          if (scrollY >= position - 2) {
+            activeIndex = index;
+          }
+        });
+
+        const activeSection = sections[activeIndex];
+        let depth = Number(activeSection.dataset.depth);
+
+        if (activeIndex < sections.length - 1) {
+          const start = sectionPositions[activeIndex];
+          const end = sectionPositions[activeIndex + 1];
+          const distance = Math.max(1, end - start);
+
+          const localProgress = Math.min(
+            1,
+            Math.max(0, (scrollY - start) / distance)
+          );
+
+          const nextDepth = Number(
+            sections[activeIndex + 1].dataset.depth
+          );
+
+          depth += (nextDepth - depth) * localProgress;
+        }
+
+        depth = Math.min(1000, Math.max(0, Math.round(depth)));
+        const progress = depth / 1000;
 
         root.style.setProperty(
-          "--agency-darkness",
-          (0.42 + progress * 0.46).toFixed(3)
-        );
-        root.style.setProperty(
-          "--agency-progress",
+          "--abyss-progress",
           progress.toFixed(4)
         );
 
-        const depth = Math.round(progress * 1000);
+        root.style.setProperty(
+          "--abyss-darkness",
+          (0.40 + progress * 0.48).toFixed(3)
+        );
+
         depthLabel.textContent = depth === 0
           ? "0 m"
           : `−${depth.toLocaleString("fr-FR")} m`;
 
-        let activeId = sections[0].id;
+        chapterLabel.textContent = activeSection.dataset.chapter;
 
-        sections.forEach(section => {
-          if (
-            section.getBoundingClientRect().top <=
-            headerHeight + window.innerHeight * 0.3
-          ) {
-            activeId = section.id;
-          }
-        });
+        stops.forEach((stop, index) => {
+          stop.classList.toggle("is-reached", index <= activeIndex);
 
-        chapterLinks.forEach(link => {
-          if (link.getAttribute("href") === `#${activeId}`) {
-            link.setAttribute("aria-current", "location");
+          if (index === activeIndex) {
+            stop.setAttribute("aria-current", "location");
           } else {
-            link.removeAttribute("aria-current");
+            stop.removeAttribute("aria-current");
           }
         });
+
+        if (activeIndex < sections.length - 1) {
+          const nextSection = sections[activeIndex + 1];
+          const nextDepth = Number(nextSection.dataset.depth);
+
+          nextButton.href = `#${nextSection.id}`;
+          nextButton.textContent =
+            `PLONGER A −${nextDepth.toLocaleString("fr-FR")} M`;
+
+          nextButton.setAttribute(
+            "aria-label",
+            `Aller au palier suivant : ${nextSection.dataset.chapter}`
+          );
+        } else {
+          nextButton.href = "contact.html";
+          nextButton.textContent = "PARLONS DE VOTRE PROJET";
+          nextButton.setAttribute(
+            "aria-label",
+            "Parlons de votre projet : ouvrir la page contact"
+          );
+        }
       }
 
       function requestUpdate() {
-        if (updatePending) return;
-        updatePending = true;
-        window.requestAnimationFrame(updatePage);
+        if (framePending) return;
+        framePending = true;
+        requestAnimationFrame(updatePage);
       }
 
       window.addEventListener("scroll", requestUpdate, { passive: true });
-      window.addEventListener("resize", requestUpdate);
-      window.addEventListener("load", requestUpdate);
+      window.addEventListener("resize", measurePage);
+      window.addEventListener("load", measurePage);
 
       if ("ResizeObserver" in window) {
-        const observer = new ResizeObserver(requestUpdate);
-        observer.observe(main);
-        observer.observe(header);
+        const sizeObserver = new ResizeObserver(measurePage);
+        sizeObserver.observe(main);
+        sizeObserver.observe(header);
+      }
+
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(measurePage);
       }
 
       menu.addEventListener("show.bs.collapse", () => {
@@ -1555,13 +2088,13 @@
         toggler.setAttribute("aria-label", "Fermer le menu");
       });
 
+      menu.addEventListener("shown.bs.collapse", measurePage);
+
       menu.addEventListener("hidden.bs.collapse", () => {
         header.classList.remove("menu-open");
         toggler.setAttribute("aria-label", "Ouvrir le menu");
-        requestUpdate();
+        measurePage();
       });
-
-      menu.addEventListener("shown.bs.collapse", requestUpdate);
 
       header.addEventListener("keydown", event => {
         if (
@@ -1573,14 +2106,19 @@
             menu,
             { toggle: false }
           ).hide();
+
           toggler.focus();
         }
       });
 
-      /* Les valeurs finales restent présentes sans JavaScript. */
+      /* Compteurs : une seule animation à l’apparition */
       const stats = document.querySelector(".agency-stats");
-      const counters = Array.from(stats.querySelectorAll("[data-count]"));
+      const counters = Array.from(
+        stats.querySelectorAll("[data-count]")
+      );
+
       let countersStarted = false;
+      let userPaused = motionPreference.matches;
 
       function finishCounters() {
         counters.forEach(counter => {
@@ -1592,7 +2130,7 @@
         if (countersStarted) return;
         countersStarted = true;
 
-        if (motionPreference.matches) {
+        if (motionPreference.matches || userPaused) {
           finishCounters();
           return;
         }
@@ -1601,7 +2139,7 @@
         const duration = 1500;
 
         function frame(now) {
-          if (motionPreference.matches) {
+          if (motionPreference.matches || userPaused) {
             finishCounters();
             return;
           }
@@ -1612,7 +2150,6 @@
           counters.forEach(counter => {
             const target = Number(counter.dataset.count);
 
-            /* L'unique interlocutrice reste toujours affichée. */
             counter.textContent = target === 1
               ? "1"
               : Math.round(target * eased).toLocaleString("fr-FR");
@@ -1639,11 +2176,19 @@
         counterObserver.observe(stats);
       }
 
-      /* Fond animé avec commande de pause. */
+      /* Pause du fond et des animations décoratives */
       const video = document.getElementById("agency-video");
       const motionButton = document.getElementById("agency-motion");
       const motionIcon = motionButton.querySelector("i");
-      let userPaused = motionPreference.matches;
+
+      const pauseStyle = document.createElement("style");
+      pauseStyle.textContent = `
+        .agency-page.animations-paused .agency-sonar::after,
+        .agency-page.animations-paused .agency-scroll-indicator::before {
+          animation-play-state: paused;
+        }
+      `;
+      document.head.appendChild(pauseStyle);
 
       video.muted = true;
       video.defaultMuted = true;
@@ -1651,36 +2196,42 @@
       motionButton.hidden = false;
 
       function syncMotionButton() {
-        const paused = video.paused;
+        document.body.classList.toggle("animations-paused", userPaused);
+
         motionButton.setAttribute(
           "aria-label",
-          paused
-            ? "Animer le fond d’eau"
-            : "Mettre le fond animé en pause"
+          userPaused
+            ? "Reprendre les animations"
+            : "Mettre les animations en pause"
         );
-        motionIcon.className = paused ? "bi bi-play" : "bi bi-pause";
+
+        motionIcon.className = userPaused
+          ? "bi bi-play"
+          : "bi bi-pause";
       }
 
       function playVideo() {
         if (userPaused || document.hidden) return;
+
         const playback = video.play();
-        if (playback) playback.catch(syncMotionButton);
+
+        if (playback) {
+          playback.catch(() => {
+            /* Le contenu reste visible si la lecture auto est bloquée. */
+          });
+        }
       }
 
       motionButton.addEventListener("click", () => {
-        if (video.paused) {
-          userPaused = false;
-          playVideo();
-        } else {
-          userPaused = true;
-          video.pause();
-        }
-      });
+        userPaused = !userPaused;
 
-      video.addEventListener("play", syncMotionButton);
-      video.addEventListener("pause", syncMotionButton);
-      video.addEventListener("error", () => {
-        motionButton.hidden = true;
+        if (userPaused) {
+          video.pause();
+        } else {
+          playVideo();
+        }
+
+        syncMotionButton();
       });
 
       document.addEventListener("visibilitychange", () => {
@@ -1696,6 +2247,7 @@
           userPaused = true;
           video.pause();
           finishCounters();
+          syncMotionButton();
         }
       });
 
@@ -1706,7 +2258,7 @@
       }
 
       syncMotionButton();
-      updatePage();
+      measurePage();
     })();
   </script>
 </body>
